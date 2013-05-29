@@ -2,5 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml_4.0.2.v20130114-0902.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.ocl_3.2.1.v20130128-1158.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.ocl.uml_4.0.0.v20130128-1158.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.8.0.v20130125-0546.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -7,7 +7,6 @@ import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.uml.ExpressionInOCL;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
-import org.eclipse.ocl.utilities.Visitor;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Model;
