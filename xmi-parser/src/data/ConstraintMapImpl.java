@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
@@ -81,11 +80,13 @@ public class ConstraintMapImpl implements ConstraintMap {
 		if(map.containsKey(node)){
 			map.get(node).add(constraint);
 		}else{
+			@SuppressWarnings({ "serial" })
 			EList<Constraint> l = new BasicEList<Constraint>(){
 				protected boolean isUnique(){
 					return true;
 				}
 			};
+			map.put(node, l);
 		}
 		
 	}

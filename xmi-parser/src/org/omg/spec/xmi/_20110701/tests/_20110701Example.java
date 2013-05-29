@@ -8,27 +8,18 @@ import java.util.Iterator;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
-
 import org.omg.spec.xmi._20110701.Add;
 import org.omg.spec.xmi._20110701.DocumentRoot;
 import org.omg.spec.xmi._20110701._20110701Factory;
 import org.omg.spec.xmi._20110701._20110701Package;
-
-import org.omg.spec.xmi._20110701.util._20110701ResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc --> A sample utility for the '<em><b>_20110701</b></em>'

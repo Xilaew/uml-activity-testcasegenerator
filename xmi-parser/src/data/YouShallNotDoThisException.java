@@ -12,6 +12,11 @@ public class YouShallNotDoThisException extends Exception {
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 4589291019292953173L;
+
+	/**
+	 * 
+	 */
 	public YouShallNotDoThisException() {
 		// TODO Auto-generated constructor stub
 	}

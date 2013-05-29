@@ -2,22 +2,12 @@ package experimental;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.internal.resource.XMI2UMLResourceImpl;
-import org.eclipse.uml2.uml.resource.*;
-import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
 public class ResourceFactorys {
 
