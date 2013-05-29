@@ -77,20 +77,18 @@ public class ConstraintMapImpl implements ConstraintMap {
 
 	@Override
 	public void put(Element node, Constraint constraint) {
-		if(map.containsKey(node)){
+		if (map.containsKey(node)) {
 			map.get(node).add(constraint);
-		}else{
+		} else {
 			@SuppressWarnings({ "serial" })
-			EList<Constraint> l = new BasicEList<Constraint>(){
-				protected boolean isUnique(){
+			EList<Constraint> l = new BasicEList<Constraint>() {
+				protected boolean isUnique() {
 					return true;
 				}
 			};
+			l.add(constraint);
 			map.put(node, l);
 		}
-		
 	}
-
-	
 
 }

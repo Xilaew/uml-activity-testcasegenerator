@@ -3,9 +3,7 @@ package tools;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -20,6 +18,7 @@ import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ControlFlow;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.FinalNode;
 import org.eclipse.uml2.uml.InitialNode;
 import org.eclipse.uml2.uml.Model;
@@ -30,11 +29,13 @@ import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
 import util.Messages;
 import data.ActivityPath;
+import data.ConstraintMap;
+import data.ConstraintMapImpl;
 import data.YouShallNotDoThisException;
 
 public class UMLPathsearch extends AbstractTool {
 
-	static Map<EObject, EList<Constraint>> constraintMap = new HashMap<EObject, EList<Constraint>>();
+	static ConstraintMap constraintMap = new ConstraintMapImpl();
 
 	/**
 	 * @param args
@@ -55,21 +56,12 @@ public class UMLPathsearch extends AbstractTool {
 		for (NamedElement e : activity.getMembers()) {
 			System.out.println(e);
 			if (e instanceof Constraint) {
-				System.out.println("\t" //$NON-NLS-1$
+				out("\t" //$NON-NLS-1$
 						+ ((Constraint) e).getConstrainedElements());
-				for (EObject constrainee : ((Constraint) e)
+				for (Element constrainee : ((Constraint) e)
 						.getConstrainedElements()) {
-					if (constraintMap.containsKey(constrainee)) {
-						constraintMap.get(constrainee).add((Constraint) e);
-					} else {
-						BasicEList<Constraint> l = new BasicEList<Constraint>();
-						l.add((Constraint) e);
-						constraintMap.put(constrainee, l);
-					}
+					constraintMap.put(constrainee, (Constraint) e);
 				}
-				((NamedElement) ((Constraint) e).getConstrainedElements()
-						.get(0)).createNameExpression(((Constraint) e)
-						.getSpecification().stringValue(), null);
 			}
 		}
 		findPath(activity);
@@ -132,7 +124,6 @@ public class UMLPathsearch extends AbstractTool {
 						break;
 					}
 				}
-
 
 			} while (!(currentNode instanceof FinalNode));
 		} catch (YouShallNotDoThisException e) {
