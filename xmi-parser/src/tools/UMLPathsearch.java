@@ -65,12 +65,9 @@ public class UMLPathsearch extends AbstractTool {
 			}
 		}
 		findPath(activity);
+		
 	}
 
-	protected static EList<Constraint> getAppliedConstraints(
-			ActivityNode currentNode) {
-		return constraintMap.get(currentNode);
-	}
 
 	protected static ActivityPath findPath(Activity a) {
 		EList<ActivityNode> nodes = a.getOwnedNodes();
@@ -95,8 +92,8 @@ public class UMLPathsearch extends AbstractTool {
 			do {
 				out("Node: " + currentNode.getLabel()); //$NON-NLS-1$
 				// StringExpression it = currentNode.getNameExpression();
-				if (getAppliedConstraints(currentNode) != null) {
-					for (Constraint c : getAppliedConstraints(currentNode)) {
+				if (constraintMap.get(currentNode) != null) {
+					for (Constraint c : constraintMap.get(currentNode)) {
 						System.out.println(c);
 						for (EObject o : c.getOwnedElements()) {
 							System.out.println("\t" + o); //$NON-NLS-1$
@@ -127,6 +124,7 @@ public class UMLPathsearch extends AbstractTool {
 
 			} while (!(currentNode instanceof FinalNode));
 		} catch (YouShallNotDoThisException e) {
+			e.printStackTrace();
 		}
 		return path;
 	}
