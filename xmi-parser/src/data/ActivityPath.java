@@ -11,13 +11,15 @@ import util.Messages;
 
 /**
  * A data structure that can be used to represent one control flow in an
- * Activity. A control flow path is uniquely defined by an initial node and an ordered list
- * of consecutive control flow edges. The last control flow edge needs to end in a Final Node.
+ * Activity. A control flow path is uniquely defined by an initial node and an
+ * ordered list of consecutive control flow edges. The last control flow edge
+ * needs to end in a Final Node.
  * 
  * @author Felix Kurth
  */
 public class ActivityPath {
-	//TODO implement function to return read only iterator through nodes and edges.
+	// TODO implement function to return read only iterator through nodes and
+	// edges.
 
 	EList<ControlFlow> edges = new BasicEList<ControlFlow>();
 	FinalNode finalNode;
@@ -25,21 +27,20 @@ public class ActivityPath {
 	ActivityNode currentNode;
 
 	public boolean add(ControlFlow o) throws YouShallNotDoThisException {
-		if (finalNode!=null){
+		// final Node is already set. ->ActivityPath is unmodifiable
+		if (finalNode != null) {
 			throw new YouShallNotDoThisException(
 					Messages.getString("ErrorMessage.FINAL_NODE_ALREADY_SET")); //$NON-NLS-1$
 		}
-		//first edge only needs to be 
-		if (edges.size()==0 && o.getSource().equals(startNode)){
-			return edges.add(o); //TODO improve logic so that also a path with just one edge from initialNode to finalNode will work
-		}
-		//check for adjacency
-		if (((!o.getSource().equals(edges.get(edges.size() - 1).getTarget())))) {
+		// check for adjacency
+		if (!(edges.size() == 0 && o.getSource().equals(startNode))
+				&& !(o.getSource().equals(edges.get(edges.size() - 1)
+						.getTarget()))) {
 			throw new YouShallNotDoThisException(
 					Messages.getString("ErrorMessage.EDGES_NOT_ADJACENT")); //$NON-NLS-1$
 		}
-		//Path ends here
-		if (o.getTarget() instanceof FinalNode){
+		// Path ends here
+		if (o.getTarget() instanceof FinalNode) {
 			finalNode = (FinalNode) o.getTarget();
 		}
 		return edges.add(o);
@@ -53,7 +54,8 @@ public class ActivityPath {
 		return startNode;
 	}
 
-	public void setInitialNode(InitialNode start) throws YouShallNotDoThisException {
+	public void setInitialNode(InitialNode start)
+			throws YouShallNotDoThisException {
 		if (startNode != null) {
 			throw new YouShallNotDoThisException(
 					Messages.getString("ErrorMessages.INITIAL_NODE_ALREADY_SET")); //$NON-NLS-1$

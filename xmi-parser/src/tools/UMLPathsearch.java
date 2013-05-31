@@ -53,8 +53,9 @@ public class UMLPathsearch extends AbstractTool {
 		Activity activity = selectActivity(model);
 		System.out.println("you selected: " + activity.getLabel()); //$NON-NLS-1$
 
+		out("The following Members were found within the selected Activity");
 		for (NamedElement e : activity.getMembers()) {
-			System.out.println(e);
+			out(e.toString());
 			if (e instanceof Constraint) {
 				out("\t" //$NON-NLS-1$
 						+ ((Constraint) e).getConstrainedElements());
@@ -65,12 +66,16 @@ public class UMLPathsearch extends AbstractTool {
 			}
 		}
 		findPath(activity);
-		
 	}
 
-
-	protected static ActivityPath findPath(Activity a) {
-		EList<ActivityNode> nodes = a.getOwnedNodes();
+/**
+ * finds a control flow path from an initial node to a FinalNode within an activity
+ * @param activity an activity in which a path should be found
+ * @return an inmodifiable ActivityPath instance representing the found path
+ * @see ActivityPath
+ */
+	protected static ActivityPath findPath(Activity activity) {
+		EList<ActivityNode> nodes = activity.getOwnedNodes();
 		ActivityNode currentNode = null;
 		ActivityPath path = new ActivityPath();
 		out("there are " + nodes.size() //$NON-NLS-1$
@@ -84,39 +89,43 @@ public class UMLPathsearch extends AbstractTool {
 				}
 				break;
 			}
+			// initial node found?
 			if (currentNode == null) {
 				err(Messages.getString("Error.INITIAL_NODE_NOT_FOUND")); //$NON-NLS-1$
 				System.exit(-1);
 			}
-
+			//print Path 
+			out("A valid path through the activity is:");
 			do {
+				// node and its linked constraints
 				out("Node: " + currentNode.getLabel()); //$NON-NLS-1$
-				// StringExpression it = currentNode.getNameExpression();
 				if (constraintMap.get(currentNode) != null) {
 					for (Constraint c : constraintMap.get(currentNode)) {
-						System.out.println(c);
+						out(c.toString());
 						for (EObject o : c.getOwnedElements()) {
-							System.out.println("\t" + o); //$NON-NLS-1$
+							out("\t" + o); //$NON-NLS-1$
+							String expression = new String();
 							for (String s : ((OpaqueExpression) o).getBodies()) {
-								System.out.print(s);
+								expression = expression.concat(s);
 							}
-							System.out.println();
+							out(expression);
 						}
 					}
 				}
-				// System.out.println(it);
 
+				// edge and its guard conditions
 				for (ActivityEdge edge : currentNode.getOutgoings()) {
 					if (edge instanceof ControlFlow) {
 						path.add((ControlFlow) edge);
 						out("Edge: " + edge.getName()); //$NON-NLS-1$
 						for (EObject e : edge.eContents()) {
 							out(e.toString());
+							String expression = new String();
 							for (String s : ((OpaqueExpression) e).getBodies()) {
-								out(s);
+								expression = expression.concat(s);
 							}
+							out(expression);
 						}
-						out("");
 						currentNode = edge.getTarget();
 						break;
 					}
@@ -146,37 +155,6 @@ public class UMLPathsearch extends AbstractTool {
 		System.out.println(Messages.getString("Message.SELECT_ACTIVITY")); //$NON-NLS-1$
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		return activitys.get(Integer.parseInt(br.readLine()));
-	}
-
-	protected static Model load(URI uri) {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		UMLResourcesUtil.init(resourceSet); // MDT/UML2 4.0.0 (Juno)
-		Resource resource = resourceSet.createResource(uri);
-		for (Entry<String, Object> entry : resourceSet
-				.getResourceFactoryRegistry().getExtensionToFactoryMap()
-				.entrySet()) {
-			System.out.println(entry.getKey() + ": " + entry.getValue()); //$NON-NLS-1$
-		}
-		try {
-			System.out.println(resource);
-			resource.load(null);
-		} catch (IOException ioe) {
-			System.err.println(ioe.getMessage());
-		}
-		System.out.println(resource.getContents().size());
-		Iterator<EObject> it = resource.getAllContents();
-		while (it.hasNext()) {
-			EObject o = it.next();
-			if (o instanceof Activity) {
-				System.out.println(o);
-				Iterator<EObject> it2 = o.eAllContents();
-				while (it2.hasNext()) {
-					EObject o2 = it2.next();
-					System.out.println("\t" + o2); //$NON-NLS-1$
-				}
-			}
-		}
-		return (Model) resource.getContents().get(0);
 	}
 
 }

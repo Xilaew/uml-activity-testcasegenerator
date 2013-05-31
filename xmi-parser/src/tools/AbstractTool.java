@@ -62,17 +62,18 @@ public abstract class AbstractTool {
 	 * @return List of the root objects in the model
 	 */
 	protected static EList<? extends EObject> load(String fileName) {
+		URI uri = URI
+				.createFileURI(fileName);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
 				"xmi", UMLResource.Factory.INSTANCE);
 		UMLResourcesUtil.init(RESOURCE_SET); // MDT/UML2 4.0.0 (Juno)
-		Resource resource = RESOURCE_SET.createResource(URI
-				.createFileURI(fileName));
+		Resource resource = RESOURCE_SET.createResource(uri);
 		try {
 			resource.load(null);
 		} catch (IOException ioe) {
 			err(ioe.getMessage());
 		}
-		out("" + resource.getContents().size()); //$NON-NLS-1$
+		out("successfully loaded \'" + uri + "\' :\t" + resource.getContents().size() + " toplevel EObjects found"); //$NON-NLS-1$
 		return (EList<? extends EObject>) resource.getContents();
 	}
 
@@ -89,6 +90,13 @@ public abstract class AbstractTool {
 		}
 	}
 
+	/**
+	 * interprets command line input and sets fields accordingly. this might be the first function you want to call in your program.
+	 * Currently commanline arguments can have the following format
+	 * inputFilename [outputFilename [OPTIONS]]
+	 * available Options: -noDebug (disable Debug output)
+	 * @param args siply pass on the args from the main
+	 */
 	protected static void readCmdArgs(String[] args) {
 		if (args.length < 1) {
 			err(Messages.getString("ErrorMessage.NO_INPUT_FILE_SPECIFIED"));
