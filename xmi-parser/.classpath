@@ -63,5 +63,7 @@
 			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/lpg.runtime.java_2.0.18.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.ocl.common_1.0.2.v20130125-1817.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
