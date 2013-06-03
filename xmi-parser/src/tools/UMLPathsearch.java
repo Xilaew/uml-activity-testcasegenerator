@@ -3,16 +3,10 @@ package tools;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Iterator;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
@@ -25,7 +19,6 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
 import util.Messages;
 import data.ActivityPath;

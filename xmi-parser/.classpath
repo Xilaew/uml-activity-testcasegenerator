@@ -65,5 +65,14 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/lpg.runtime.java_2.0.18.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.ocl.common_1.0.2.v20130125-1817.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.examples.pivot_3.2.2.v20130114-1121.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.examples.pivot.source_3.2.2.v20130114-1121.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/ocl/javadoc/4.0.0/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/org.eclipse.emf.examples.library"/>
+	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.examples.domain_3.2.0.v20120503-1141.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.eclipse.emf.edit_2.8.0.v20130125-0826.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

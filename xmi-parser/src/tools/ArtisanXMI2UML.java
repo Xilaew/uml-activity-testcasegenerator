@@ -44,7 +44,7 @@ public class ArtisanXMI2UML extends AbstractTool {
 					"xmlns:uml = \"http://www.eclipse.org/uml2/4.0.0/UML\"");
 			//Primitive Datatype references
 			s = s.replace("http://www.omg.org/spec/UML/20090901/UML.xmi",
-					"http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi");
+					"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml");
 			//References to UML Profile
 			s = s.replace(
 					"http://www.omg.org/spec/UML/20090901/StandardProfileL2.xmi",
