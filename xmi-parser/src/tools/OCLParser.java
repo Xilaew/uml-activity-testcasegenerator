@@ -8,6 +8,7 @@ import org.eclipse.ocl.helper.OCLHelper;
 import org.eclipse.ocl.uml.ExpressionInOCL;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
+import org.eclipse.ocl.utilities.ASTNode;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Model;
@@ -38,9 +39,10 @@ public class OCLParser extends UMLPathsearch {
 		for (Variable<Classifier, ?> v : helper.getEnvironment().getVariables()){
 			out(v.toString());
 			//out(v.getRepresentedParameter());
-			out(v.getName());
-			out(v.getType().toString());
-			out(""+v.getTypeEndPosition());
+			//out(v.getName());
+			//out(v.getType().toString());
+			out(v.getClass().toString());
+			//out(""+v.getTypeEndPosition());
 			Iterator<EObject> it = v.eAllContents();
 			while (it.hasNext()){
 				out(it.next().getClass().toString());
@@ -50,7 +52,11 @@ public class OCLParser extends UMLPathsearch {
 		Constraint invariant = helper.createInvariant("x<5");
 		Iterator<EObject> it = invariant.eAllContents();
 		while (it.hasNext()){
-			out(it.next().getClass().toString());
+			EObject o = it.next();
+			out(o.getClass().toString());
+			if ( o instanceof ASTNode ){
+				out("found AST Node" + ((ASTNode) o).getStartPosition());
+			}
 		}
 		out(invariant.toString());
 		out(invariant.getSpecification().toString());

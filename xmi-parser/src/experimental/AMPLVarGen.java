@@ -38,6 +38,7 @@ public class AMPLVarGen extends UMLPathsearch {
 		// typeMap.put(key, value);
 		// RESOURCE_SET;
 
+		// write Variable declarations to AMPL file
 		for (Parameter param : activity.getOwnedParameters()) {
 			String typeSpec = null;
 			if (param.getType().toString().contains("Integer"))
@@ -51,10 +52,6 @@ public class AMPLVarGen extends UMLPathsearch {
 			if (typeSpec != null)
 				outputFile.println("var " + param.getName() + "{0.."
 						+ (pathlength - 1) + "} " + typeSpec + ";");
-			for (DirectedRelationship r : param
-					.getTargetDirectedRelationships()) {
-				out(r.toString());
-			}
 		}
 		outputFile.close();
 	}

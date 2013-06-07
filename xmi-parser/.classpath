@@ -74,5 +74,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.examples.domain_3.2.0.v20120503-1141.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/eclipse-modeling/plugins/org.eclipse.emf.edit_2.8.0.v20130125-0826.jar"/>
+	<classpathentry kind="src" path="/net.sf.parteg.base"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

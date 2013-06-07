@@ -48,7 +48,7 @@ public class ArtisanXMI2UML extends AbstractTool {
 			//References to UML Profile
 			s = s.replace(
 					"http://www.omg.org/spec/UML/20090901/StandardProfileL2.xmi",
-					"http://www.omg.org/spec/UML/20110701/StandardProfileL2.xmi");
+					"pathmap://UML_PROFILES/StandardL2.profile.uml");
 
 			pw.println(s);
 		}
