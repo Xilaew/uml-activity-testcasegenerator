@@ -1,7 +1,9 @@
-package experimental;
+package tools;
 
+import java.io.IOException;
 import java.util.Iterator;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
@@ -12,6 +14,7 @@ import org.eclipse.ocl.uml.OperationCallExp;
 import org.eclipse.ocl.uml.PropertyCallExp;
 import org.eclipse.ocl.uml.UMLEnvironmentFactory;
 import org.eclipse.ocl.utilities.Visitor;
+import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -25,10 +28,44 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.State;
 
-import tools.UMLPathsearch;
+import data.ActivityPath;
+
+import util.Messages;
 import utility.OCLtoAMPLVisitor;
 
-public class ConstraintParsing extends UMLPathsearch {
+public class AMPLModelGenerator extends UMLPathsearch {
+
+	public static String generateParameterVar(Parameter param, int pathLength) {
+		String typeSpec = null;
+		if (param.getType().toString().contains("Integer"))
+			typeSpec = ": integer";
+		if (param.getType().toString().contains("Boolean"))
+			typeSpec = "in 0..1";
+		if (param.getType().toString().contains("Real"))
+			typeSpec = "";
+		if (param.getType().toString().contains("UnlimitedNatural"))
+			typeSpec = "";
+		if (typeSpec != null)
+			return "var " + param.getName() + "{0.." + (pathLength - 1) + "} "
+					+ typeSpec + ";";
+		else return "" ;
+	}
+	
+	public static String generatePropertyVar(Property property, int pathLength){
+		String typeSpec = null;
+		if (property.getType().toString().contains("Integer"))
+			typeSpec = ": integer";
+		if (property.getType().toString().contains("Boolean"))
+			typeSpec = "in 0..1";
+		if (property.getType().toString().contains("Real"))
+			typeSpec = "";
+		if (property.getType().toString().contains("UnlimitedNatural"))
+			typeSpec = "";
+		if (typeSpec != null)
+			return "var " + "self_" + property.getName() + "{0.." + (pathLength - 1) + "} "
+					+ typeSpec + ";";
+		else return "" ;
+	}
 
 	public static void parseOCLExpr(Classifier context, String invariant) {
 
@@ -44,8 +81,8 @@ public class ConstraintParsing extends UMLPathsearch {
 			// set the OCL context classifier
 			helper.setContext(context);
 
-			Constraint query = helper
-					.createConstraint(ConstraintKind.INVARIANT, invariant);
+			Constraint query = helper.createConstraint(
+					ConstraintKind.INVARIANT, invariant);
 			// OCLExpression<EClassifier> exp = helper.createQuery("test");
 
 			Iterator<EObject> it = query.eAllContents();
@@ -65,7 +102,10 @@ public class ConstraintParsing extends UMLPathsearch {
 
 			}
 			Visitor<String, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> amplConverter = new OCLtoAMPLVisitor<Classifier, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction>();
-			System.out.println(amplConverter.visitExpressionInOCL((org.eclipse.ocl.utilities.ExpressionInOCL<Classifier, Parameter>) query.getSpecification()));
+			System.out
+					.println(amplConverter
+							.visitExpressionInOCL((org.eclipse.ocl.utilities.ExpressionInOCL<Classifier, Parameter>) query
+									.getSpecification()));
 			System.out.println(amplConverter.visitConstraint(query));
 			// record success
 		} catch (ParserException e) {
@@ -75,7 +115,9 @@ public class ConstraintParsing extends UMLPathsearch {
 		}
 
 	}
-	public static void parseOCLOperationExpr(Classifier context,Operation operation, String invariant) {
+
+	public static void parseOCLOperationExpr(Classifier context,
+			Operation operation, String invariant) {
 
 		OCL<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint, Class, EObject> ocl;
 		UMLEnvironmentFactory umlEnv = new UMLEnvironmentFactory();
@@ -89,8 +131,8 @@ public class ConstraintParsing extends UMLPathsearch {
 			// set the OCL context classifier
 			helper.setOperationContext(context, operation);
 
-			Constraint query = helper
-					.createConstraint(ConstraintKind.POSTCONDITION, invariant);
+			Constraint query = helper.createConstraint(
+					ConstraintKind.POSTCONDITION, invariant);
 			// OCLExpression<EClassifier> exp = helper.createQuery("test");
 
 			Iterator<EObject> it = query.eAllContents();
@@ -109,7 +151,9 @@ public class ConstraintParsing extends UMLPathsearch {
 				}
 			}
 			Visitor<String, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> amplConverter = new OCLtoAMPLVisitor<Classifier, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction>();
-			System.out.println(amplConverter.visitExpressionInOCL((ExpressionInOCL)query.getSpecification()));
+			System.out.println(amplConverter
+					.visitExpressionInOCL((ExpressionInOCL) query
+							.getSpecification()));
 			System.out.println(amplConverter.visitConstraint(query));
 			// record success
 		} catch (ParserException e) {
@@ -119,31 +163,19 @@ public class ConstraintParsing extends UMLPathsearch {
 		}
 
 	}
-
-	public static void main(String[] args) {
+	
+	public static void main(String[] args){
 		readCmdArgs(args);
-
-		// read Model
+		
 		Model model = (Model) load(inFile).get(0);
-		out("ModelName: " + model.getName()); //$NON-NLS-1$
+		
+		Activity activity = null;
+		
+		activity = selectActivity(model);
 
-		Package package1 = model.getNestedPackage("Package1");
-		out(package1.toString());
-		Class class1 = (Class) package1.getPackagedElement("Class1");
-		out(class1.toString());
-		ConstraintParsing.parseOCLExpr(class1, "x<2");
-		try {
-			//Activity activity = selectActivity(model);
-			Operation operation = class1.getOwnedOperations().get(0);
-			ConstraintParsing.parseOCLOperationExpr(class1, operation, "a=2*x@pre");
-			
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-		// a.parseOCLExpr(simpleDecision,"a<10");
+		
+		ActivityPath path = findPath(activity);
+		
+		path.getEdges().size();
 	}
-
 }

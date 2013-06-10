@@ -4,12 +4,12 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml_4.0.2.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.uml.source_4.0.2.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.ocl_3.2.1.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.source_3.2.1.v20130128-1158.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/ocl/javadoc/4.0.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.ocl.uml_4.0.0.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.uml.source_4.0.0.v20130128-1158.jar">
@@ -34,28 +34,28 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml.resources_4.0.2.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.uml.resources.source_4.0.2.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.common_1.7.0.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.common.source_1.7.0.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.types_1.0.0.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.types.source_1.0.0.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml.profile.l2_1.0.1.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.uml.profile.l2.source_1.0.1.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml.profile.l3_1.0.1.v20130114-0902.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.uml2.uml.profile.l3.source_1.0.1.v20130114-0902.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
+			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20130125-0826.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.emf.mapping.ecore2xml.source_2.7.0.v20130125-0826.jar">

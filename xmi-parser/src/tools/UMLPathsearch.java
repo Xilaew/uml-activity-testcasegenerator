@@ -3,6 +3,7 @@ package tools;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collections;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -61,12 +62,15 @@ public class UMLPathsearch extends AbstractTool {
 		findPath(activity);
 	}
 
-/**
- * finds a control flow path from an initial node to a FinalNode within an activity
- * @param activity an activity in which a path should be found
- * @return an inmodifiable ActivityPath instance representing the found path
- * @see ActivityPath
- */
+	/**
+	 * finds a control flow path from an initial node to a FinalNode within an
+	 * activity
+	 * 
+	 * @param activity
+	 *            an activity in which a path should be found
+	 * @return an inmodifiable ActivityPath instance representing the found path
+	 * @see ActivityPath
+	 */
 	protected static ActivityPath findPath(Activity activity) {
 		EList<ActivityNode> nodes = activity.getOwnedNodes();
 		ActivityNode currentNode = null;
@@ -87,7 +91,7 @@ public class UMLPathsearch extends AbstractTool {
 				err(Messages.getString("Error.INITIAL_NODE_NOT_FOUND")); //$NON-NLS-1$
 				System.exit(-1);
 			}
-			//print Path 
+			// print Path
 			out("A valid path through the activity is:");
 			do {
 				// node and its linked constraints
@@ -131,8 +135,7 @@ public class UMLPathsearch extends AbstractTool {
 		return path;
 	}
 
-	protected static Activity selectActivity(Model model)
-			throws NumberFormatException, IOException {
+	protected static Activity selectActivity(Model model) {
 		EList<Activity> activitys = new BasicEList<Activity>();
 		int i = 0;
 		for (EObject e : model.allOwnedElements()) {
@@ -147,7 +150,19 @@ public class UMLPathsearch extends AbstractTool {
 		}
 		System.out.println(Messages.getString("Message.SELECT_ACTIVITY")); //$NON-NLS-1$
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		return activitys.get(Integer.parseInt(br.readLine()));
+		Activity ret = null;
+		for (int i1 = 3; i1 < 0; i1--) {
+			try {
+				ret = activitys.get(Integer.parseInt(br.readLine()));
+				break;
+			} catch (NumberFormatException | IndexOutOfBoundsException e1) {
+				out(Messages.getString("Message.SELECT_ACTIVITY"));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		return ret;
 	}
 
 }

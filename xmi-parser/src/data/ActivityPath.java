@@ -1,7 +1,11 @@
 package data;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ControlFlow;
 import org.eclipse.uml2.uml.FinalNode;
@@ -22,9 +26,27 @@ public class ActivityPath {
 	// edges.
 
 	EList<ControlFlow> edges = new BasicEList<ControlFlow>();
+	EList<ActivityNode> nodes = new BasicEList<ActivityNode>();
 	FinalNode finalNode;
 	InitialNode startNode;
 	ActivityNode currentNode;
+	
+	public List<ControlFlow> getEdges() {
+		return Collections.unmodifiableList(edges);
+	}
+
+	public List<ActivityNode> getNodes() {
+		return Collections.unmodifiableList(nodes);
+	}
+
+	public InitialNode getStartNode() {
+		return startNode;
+	}
+
+	public ActivityNode getCurrentNode() {
+		return currentNode;
+	}
+
 
 	public boolean add(ControlFlow o) throws YouShallNotDoThisException {
 		// final Node is already set. ->ActivityPath is unmodifiable
