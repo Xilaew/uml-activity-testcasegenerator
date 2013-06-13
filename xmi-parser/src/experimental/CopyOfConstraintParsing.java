@@ -26,13 +26,11 @@ import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.State;
-import org.eclipse.uml2.uml.TypedElement;
-import org.eclipse.uml2.uml.internal.impl.TypedElementImpl;
 
 import tools.UMLPathsearch;
 import utility.OCLtoAMPLVisitor;
 
-public class ConstraintParsing extends UMLPathsearch {
+public class CopyOfConstraintParsing extends UMLPathsearch {
 
 	public static void parseOCLExpr(Classifier context, String invariant) {
 
@@ -128,14 +126,11 @@ public class ConstraintParsing extends UMLPathsearch {
 			Activity activity) {
 		out(activity.getName());
 		for (Parameter p : activity.getOwnedParameters()) {
-			out(p.toString());
-			//XXX do not use getType(). it will cause the OCL parser to crash. Instead cast to TypedElementImpl and call basicGetType()
-			Property prop = containingClass.createOwnedAttribute(p.getName(), ((TypedElementImpl)p).basicGetType());
+			Property prop = containingClass.createOwnedAttribute(p.getName(), p.getType());
+			prop.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 			out("converting " + p.getName() + " into Attribute");
+			// p.destroy();
 		}
-		//Parameter p = (Parameter) activity.getOwnedMember("return");
-		
-		//p.getType();
 		return containingClass.createOwnedOperation(activity.getName(), null,
 				null);
 	}
@@ -144,11 +139,11 @@ public class ConstraintParsing extends UMLPathsearch {
 		out(activity.getName());
 		for (Parameter p:activity.getOwnedParameters()){
 			out("converting "+p.getName()+" into Attribute");
-			//activity.createOwnedAttribute(p.getName(), null);
+			activity.createOwnedAttribute(p.getName(), p.getType());
 			p.destroy();
 		}
 		Parameter p = (Parameter) activity.getOwnedMember("return");
-		//activity.createOwnedAttribute(p.getName(), p.getType());
+		activity.createOwnedAttribute(p.getName(), p.getType());
 		p.destroy();
 		return activity.createOwnedOperation(activity.getName(), null, null);
 	}
@@ -166,13 +161,13 @@ public class ConstraintParsing extends UMLPathsearch {
 		out(class1.toString());
 		Activity activity = (Activity) class1.getOwnedBehaviors().get(0);
 		out(activity.toString());
-		Operation operation = adaptVariables(class1,activity);
-		out(operation.toString());
-//		for(Property p : class1.getOwnedAttributes()){
-//			out(p.toString());
-//			out(p.getType().toString());
-//		}
-		ConstraintParsing.parseOCLExpr(class1, "return<2");
+		//Operation operation = adaptVariables(class1,activity);
+		//out(operation.toString());
+		for(Property p : class1.getOwnedAttributes()){
+			out(p.toString());
+			out(p.getType().toString());
+		}
+		CopyOfConstraintParsing.parseOCLExpr(class1, "x<2");
 		try {
 			//Activity activity = selectActivity(model);
 			//Operation operation = class1.getOwnedOperations().get(0);

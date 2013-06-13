@@ -29,7 +29,7 @@ import data.YouShallNotDoThisException;
 
 public class UMLPathsearch extends AbstractTool {
 
-	static ConstraintMap constraintMap = new ConstraintMapImpl();
+	static ConstraintMap constraintMap = ConstraintMap.INSTANCE;
 
 	/**
 	 * @param args
@@ -82,7 +82,7 @@ public class UMLPathsearch extends AbstractTool {
 			for (ActivityNode n : nodes) {
 				if (n instanceof InitialNode) {
 					currentNode = (InitialNode) n;
-					path.setInitialNode((InitialNode) n);
+					path.setStartNode((InitialNode) n);
 				}
 				break;
 			}
@@ -151,7 +151,7 @@ public class UMLPathsearch extends AbstractTool {
 		System.out.println(Messages.getString("Message.SELECT_ACTIVITY")); //$NON-NLS-1$
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Activity ret = null;
-		for (int i1 = 3; i1 < 0; i1--) {
+		for (int i1 = 3; i1 > 0; i1--) {
 			try {
 				ret = activitys.get(Integer.parseInt(br.readLine()));
 				break;
@@ -165,4 +165,17 @@ public class UMLPathsearch extends AbstractTool {
 		return ret;
 	}
 
+	protected static void fillConstraintMap(Activity activity){
+		for (NamedElement e : activity.getMembers()) {
+			out(e.toString());
+			if (e instanceof Constraint) {
+				out("\t" //$NON-NLS-1$
+						+ ((Constraint) e).getConstrainedElements());
+				for (Element constrainee : ((Constraint) e)
+						.getConstrainedElements()) {
+					constraintMap.put(constrainee, (Constraint) e);
+				}
+			}
+		}
+	}
 }

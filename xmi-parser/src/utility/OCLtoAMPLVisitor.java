@@ -131,6 +131,7 @@ public class OCLtoAMPLVisitor<C, EL, PM, S, COA, SSA>
 	@SuppressWarnings("unchecked")
 	protected ExpressionInOCL<C, PM> getSpecification(Constraint constraint) {
 		ValueSpecification spec = constraint.getSpecification();
+		System.out.println(spec);
 		if (spec instanceof ExpressionInOCL<?, ?>){
 			return ((ExpressionInOCL<C, PM>) spec);
 		}

@@ -39,13 +39,28 @@ public class ActivityPath {
 		return Collections.unmodifiableList(nodes);
 	}
 
+	public ActivityNode getCurrentNode() {
+		return currentNode;
+	}
+	
+	public FinalNode getFinalNode() {
+		return finalNode;
+	}
+
 	public InitialNode getStartNode() {
 		return startNode;
 	}
 
-	public ActivityNode getCurrentNode() {
-		return currentNode;
+	public void setStartNode(InitialNode start)
+			throws YouShallNotDoThisException {
+		if (startNode != null) {
+			throw new YouShallNotDoThisException(
+					Messages.getString("ErrorMessages.INITIAL_NODE_ALREADY_SET")); //$NON-NLS-1$
+		}
+		nodes.add(start);
+		this.startNode = start;
 	}
+
 
 
 	public boolean add(ControlFlow o) throws YouShallNotDoThisException {
@@ -55,9 +70,7 @@ public class ActivityPath {
 					Messages.getString("ErrorMessage.FINAL_NODE_ALREADY_SET")); //$NON-NLS-1$
 		}
 		// check for adjacency
-		if (!(edges.size() == 0 && o.getSource().equals(startNode))
-				&& !(o.getSource().equals(edges.get(edges.size() - 1)
-						.getTarget()))) {
+		if (!(o.getSource().equals(nodes.get(nodes.size()-1)))) {
 			throw new YouShallNotDoThisException(
 					Messages.getString("ErrorMessage.EDGES_NOT_ADJACENT")); //$NON-NLS-1$
 		}
@@ -65,23 +78,7 @@ public class ActivityPath {
 		if (o.getTarget() instanceof FinalNode) {
 			finalNode = (FinalNode) o.getTarget();
 		}
+		nodes.add(o.getTarget());
 		return edges.add(o);
-	}
-
-	public FinalNode getFinalNode() {
-		return finalNode;
-	}
-
-	public InitialNode getInitialNode() {
-		return startNode;
-	}
-
-	public void setInitialNode(InitialNode start)
-			throws YouShallNotDoThisException {
-		if (startNode != null) {
-			throw new YouShallNotDoThisException(
-					Messages.getString("ErrorMessages.INITIAL_NODE_ALREADY_SET")); //$NON-NLS-1$
-		}
-		this.startNode = start;
 	}
 }
