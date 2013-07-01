@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_p4R8oNdBEeKhvf4i2m-IKg" name="package1">
+  <packagedElement xmi:type="uml:Class" xmi:id="_shjE8NdBEeKhvf4i2m-IKg" name="class">
+    <ownedAttribute xmi:id="_hfCqsNdKEeKhvf4i2m-IKg" name="x">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_trnEUNdBEeKhvf4i2m-IKg" name="stateMachine">
+      <ownedOperation xmi:id="_sos_YNdNEeKhvf4i2m-IKg" name="setFalse" postcondition="_vKiC8NdNEeKhvf4i2m-IKg">
+        <ownedRule xmi:id="_vKiC8NdNEeKhvf4i2m-IKg">
+          <specification xmi:type="uml:LiteralString" xmi:id="_wOCHUNdNEeKhvf4i2m-IKg" value="return=false"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_zxSLoNdNEeKhvf4i2m-IKg" name="setTrue" postcondition="_0jfrsNdNEeKhvf4i2m-IKg">
+        <ownedRule xmi:id="_0jfrsNdNEeKhvf4i2m-IKg">
+          <specification xmi:type="uml:LiteralString" xmi:id="_1UXvANdNEeKhvf4i2m-IKg" value="return=true"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedParameter xmi:id="_eNQpgNdNEeKhvf4i2m-IKg" name="return" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ibu1ENdNEeKhvf4i2m-IKg" value=""/>
+      </ownedParameter>
+      <region xmi:id="_D4GUoNdCEeKhvf4i2m-IKg">
+        <transition xmi:id="_cTTNUNdEEeKhvf4i2m-IKg" name="startToIf" source="_OFNB0NdCEeKhvf4i2m-IKg" target="_xk7X4NdEEeKhvf4i2m-IKg"/>
+        <transition xmi:id="_B4P1YNdFEeKhvf4i2m-IKg" name="ifToReturnFalse" guard="_HpL5QNdFEeKhvf4i2m-IKg" source="_xk7X4NdEEeKhvf4i2m-IKg" target="_KssN4NdCEeKhvf4i2m-IKg">
+          <ownedRule xmi:id="_HpL5QNdFEeKhvf4i2m-IKg" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_b49zANdKEeKhvf4i2m-IKg" value="x>5"/>
+          </ownedRule>
+        </transition>
+        <transition xmi:id="_S11TsNdMEeKhvf4i2m-IKg" guard="_T-GjUNdMEeKhvf4i2m-IKg">
+          <ownedRule xmi:id="_T-GjUNdMEeKhvf4i2m-IKg">
+            <specification xmi:type="uml:LiteralString" xmi:id="_VXEhYNdMEeKhvf4i2m-IKg" value="x&lt;=5"/>
+          </ownedRule>
+          <effect xmi:type="uml:FunctionBehavior" xmi:id="_2nQIoNdMEeKhvf4i2m-IKg" name=""/>
+        </transition>
+        <subvertex xmi:type="uml:State" xmi:id="_KssN4NdCEeKhvf4i2m-IKg" name="returnFalse"/>
+        <subvertex xmi:type="uml:State" xmi:id="_iFcyINdEEeKhvf4i2m-IKg" name="returnTrue"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_OFNB0NdCEeKhvf4i2m-IKg" name="start"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_xk7X4NdEEeKhvf4i2m-IKg" name="if" kind="choice"/>
+      </region>
+    </ownedBehavior>
+  </packagedElement>
+</uml:Package>

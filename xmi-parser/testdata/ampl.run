@@ -3,3 +3,6 @@ option show_stats 1;
 model output/AMPLModel.mod;
 solve;
 display a, return, self_x, self_a, self_return;
+
+Aufräumen Preprocessing,
+Arbeitsplan aktualisieren Parteg,

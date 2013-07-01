@@ -1,4 +1,4 @@
-package tools;
+package com.airbus.artisanuml;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,18 +6,12 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EcoreFactoryImpl;
-import org.eclipse.emf.ecore.xml.type.AnyType;
-import org.eclipse.ocl.uml.UMLEnvironmentFactory;
+
+import tools.AbstractTool;
 
 /**
  * Tool to convert xmi files exportet by Artisan Studio into .uml files suitable
@@ -106,6 +100,11 @@ public class ArtisanXMI2UML extends AbstractTool {
 		readCmdArgs(args);
 
 		convert(inFile, outFile);
+		
+		//TODO this conversion should be possible in the first go
+		EList<? extends EObject> model = load(outFile);
+		Constraint2LocalPostconditionHelper.convert((org.eclipse.uml2.uml.Package)model.get(0));
+		save(model, outFile);
 	}
 
 }
