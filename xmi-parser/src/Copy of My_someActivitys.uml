@@ -12,6 +12,14 @@
           <body>self.x&lt;5</body>
         </specification>
       </ownedRule>
+      <ownedRule xmi:id="_hA7gwOIeEeKHtqB22-pFtg">
+        <specification xmi:type="uml:Expression" xmi:id="_qmu9YOIeEeKHtqB22-pFtg" name="adition" symbol="+">
+          <operand xmi:type="uml:Expression" xmi:id="_vBkJ8OIeEeKHtqB22-pFtg"/>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_x8toQOIlEeKTluEPw3LZgg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_z0hecOIlEeKTluEPw3LZgg"/>
+      </ownedRule>
       <ownedAttribute xmi:id="_02d2fb85-4294-44cb-a4ff-aaff3731fe83" name="x" visibility="private" type="_99a344ff-5e14-45a3-95b4-996fcddb9a42" aggregation="composite">
         <ownedRule xmi:type="uml:Constraint" xmi:id="_10cb199a-de0e-44ff-b44d-8057688060af" name="x&lt;5">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_10cb199a-de0e-44ff-b44d-8057688060afspecification">

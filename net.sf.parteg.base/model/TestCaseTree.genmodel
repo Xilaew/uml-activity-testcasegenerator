@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.parteg.base/src"
+    modelPluginID="net.sf.parteg.base" modelName="TestCaseTree" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>TestCaseTree.ecore</foreignModel>
+  <genPackages prefix="Net" disposableProviderFactory="true" ecorePackage="TestCaseTree.ecore#/">
+    <nestedGenPackages prefix="Sf" disposableProviderFactory="true" ecorePackage="TestCaseTree.ecore#//sf">
+      <nestedGenPackages prefix="Parteg" disposableProviderFactory="true" ecorePackage="TestCaseTree.ecore#//sf/parteg">
+        <nestedGenPackages prefix="Base" disposableProviderFactory="true" ecorePackage="TestCaseTree.ecore#//sf/parteg/base">
+          <nestedGenPackages prefix="Testcasetree" disposableProviderFactory="true"
+              ecorePackage="TestCaseTree.ecore#//sf/parteg/base/testcasetree">
+            <nestedGenPackages prefix="Generated" disposableProviderFactory="true"
+                ecorePackage="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated">
+              <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification">
+                <genEnumLiterals ecoreEnumLiteral="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification/activeDependent"/>
+                <genEnumLiterals ecoreEnumLiteral="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification/independent"/>
+                <genEnumLiterals ecoreEnumLiteral="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification/inputParameter"/>
+                <genEnumLiterals ecoreEnumLiteral="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification/passiveDependent"/>
+                <genEnumLiterals ecoreEnumLiteral="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/VariableClassification/unknown"/>
+              </genEnums>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/name"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/condition"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/incomingTransitions"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/outgoingTransitions"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/parameters"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/distanceToRoot"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/correspondsNegativeExpression"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/originalExpression"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/invariant"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGNode/origonalNode"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph/root"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph/nodes"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph/transitions"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph/conditions"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TestCaseGraph/attributes"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/name"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/sourceNode"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/targetNode"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/event"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/precondition"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGTransition/postcondition"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEquivalenceClass">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEquivalenceClass/minBorder"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEquivalenceClass/minIncluded"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEquivalenceClass/maxBorder"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEquivalenceClass/maxIncluded"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEvent">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEvent/name"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEvent/parameters"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEvent/event"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGEvent/defaultEvent"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLExpression">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLExpression/classification"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLExpression/oclReference"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGConjunction">
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGConjunction/expressions"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGConjunction/canChangeValueIfOneExpressionChanges"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGConjunction/positiveSubExpressionOfOriginal"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGDisjunctiveNormalForm">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGDisjunctiveNormalForm/conjunctions"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLOperation">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLOperation/left"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLOperation/right"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLOperation/operation"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLOperation/operationName"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLAtom">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLAtom/element"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLAtom/tcgParameter"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLIfThenElse">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLIfThenElse/condition"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLIfThenElse/thenExpression"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGOCLIfThenElse/elseExpression"/>
+              </genClasses>
+              <genClasses image="false" ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter/name"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter/type"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter/reference"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter/definingTransition"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGParameter/container"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGPrimitiveParameter">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGPrimitiveParameter/equivalenceClass"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGComplexParameter">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGComplexParameter/parameter"/>
+              </genClasses>
+              <genClasses ecoreClass="TestCaseTree.ecore#//sf/parteg/base/testcasetree/generated/TCGElement"/>
+            </nestedGenPackages>
+          </nestedGenPackages>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
