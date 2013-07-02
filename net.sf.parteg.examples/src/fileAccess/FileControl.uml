@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_MJ-1gEJVEd6COckyEqmZ3A" name="">
+  <packagedElement xmi:type="uml:Package" xmi:id="_U-4ZoEJVEd6COckyEqmZ3A" name="fileAccess">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Dv0xoEIeEd6wSpDVUNkuiA" name="FileAccess">
+      <ownedAttribute xmi:id="_86desEJREd6COckyEqmZ3A" name="bad_access">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Z6jJwEJSEd6COckyEqmZ3A" name="closed">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uomtMEJSEd6COckyEqmZ3A" name="state" type="_wVYYEEJSEd6COckyEqmZ3A"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_lTO24EIeEd6wSpDVUNkuiA" name="fileaccess">
+        <region xmi:id="_oLQz8EIeEd6wSpDVUNkuiA" name="region">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_rMrWgEIeEd6wSpDVUNkuiA" name="init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_tgpkQEIeEd6wSpDVUNkuiA" name="idle">
+            <stateInvariant xmi:id="_6LjL8EJSEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_64Gv8EJSEd6COckyEqmZ3A" value="state = State::idle"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_sNDOYEIeEd6wSpDVUNkuiA" name="write">
+            <stateInvariant xmi:id="_9Kb-8EJSEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_96Q5YEJSEd6COckyEqmZ3A" value="state = State::write"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uFc6cUIeEd6wSpDVUNkuiA" name="verify">
+            <stateInvariant xmi:id="_A84V0EJTEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_C-qnYEJTEd6COckyEqmZ3A" value="state = State::verify"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uFc6cEIeEd6wSpDVUNkuiA" name="commit">
+            <stateInvariant xmi:id="_ElCIQEJTEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_FT-R4EJTEd6COckyEqmZ3A" value="closed = true"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_upD90EIeEd6wSpDVUNkuiA" name="error">
+            <stateInvariant xmi:id="_G01AoEJTEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_HXtEMEJTEd6COckyEqmZ3A" value="closed = false"/>
+            </stateInvariant>
+          </subvertex>
+          <transition xmi:id="_1X2xEEIeEd6wSpDVUNkuiA" name="init_2_idle" target="_tgpkQEIeEd6wSpDVUNkuiA" source="_rMrWgEIeEd6wSpDVUNkuiA"/>
+          <transition xmi:id="_S0114EJTEd6COckyEqmZ3A" name="idle_2_write" target="_sNDOYEIeEd6wSpDVUNkuiA" source="_tgpkQEIeEd6wSpDVUNkuiA">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_d8hU8EJTEd6COckyEqmZ3A" specification="_E82AwEJSEd6COckyEqmZ3A"/>
+            <trigger xmi:id="_b5FdkEJTEd6COckyEqmZ3A" event="__3Zw8EJREd6COckyEqmZ3A"/>
+          </transition>
+          <transition xmi:id="_T3mTYEJTEd6COckyEqmZ3A" name="write_2_idle" target="_tgpkQEIeEd6wSpDVUNkuiA" source="_sNDOYEIeEd6wSpDVUNkuiA">
+            <trigger xmi:id="_h2jhkEJTEd6COckyEqmZ3A" event="_ANdggEJSEd6COckyEqmZ3A"/>
+          </transition>
+          <transition xmi:id="_UK97UEJTEd6COckyEqmZ3A" name="write_2_write1" target="_sNDOYEIeEd6wSpDVUNkuiA" source="_sNDOYEIeEd6wSpDVUNkuiA">
+            <trigger xmi:id="_krAmMEJTEd6COckyEqmZ3A" event="_AcD9MEJSEd6COckyEqmZ3A"/>
+          </transition>
+          <transition xmi:id="_U0Ph0EJTEd6COckyEqmZ3A" name="write_2_write2" target="_sNDOYEIeEd6wSpDVUNkuiA" source="_sNDOYEIeEd6wSpDVUNkuiA">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_pkh54EJTEd6COckyEqmZ3A" specification="_IRMGYEJSEd6COckyEqmZ3A"/>
+            <trigger xmi:id="_npmeQEJTEd6COckyEqmZ3A" event="_Ao4RMEJSEd6COckyEqmZ3A"/>
+          </transition>
+          <transition xmi:id="_WRrJIEJTEd6COckyEqmZ3A" name="write_2_verify" target="_uFc6cUIeEd6wSpDVUNkuiA" source="_sNDOYEIeEd6wSpDVUNkuiA">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_2K_EEEJTEd6COckyEqmZ3A" specification="_IffoIEJSEd6COckyEqmZ3A"/>
+            <trigger xmi:id="_sFA5oEJTEd6COckyEqmZ3A" event="_A37Z0EJSEd6COckyEqmZ3A"/>
+          </transition>
+          <transition xmi:id="_WrAPIEJTEd6COckyEqmZ3A" name="verify_2_commit" guard="_uK-gkEJTEd6COckyEqmZ3A" target="_uFc6cEIeEd6wSpDVUNkuiA" source="_uFc6cUIeEd6wSpDVUNkuiA">
+            <ownedRule xmi:id="_uK-gkEJTEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_uyw5UEJTEd6COckyEqmZ3A" value="bad_access = false"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_W_RO8EJTEd6COckyEqmZ3A" name="verify_2_error" guard="_xmBrIEJTEd6COckyEqmZ3A" target="_upD90EIeEd6wSpDVUNkuiA" source="_uFc6cUIeEd6wSpDVUNkuiA">
+            <ownedRule xmi:id="_xmBrIEJTEd6COckyEqmZ3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_yLbeQEJTEd6COckyEqmZ3A" value="bad_access = true"/>
+            </ownedRule>
+          </transition>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_E82AwEJSEd6COckyEqmZ3A" name="open_w" method="_d8hU8EJTEd6COckyEqmZ3A" postcondition="_TVceAEJSEd6COckyEqmZ3A">
+        <ownedRule xmi:id="_TVceAEJSEd6COckyEqmZ3A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_T4dEcEJSEd6COckyEqmZ3A" value="bad_access = false"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Hz1cAEJSEd6COckyEqmZ3A" name="read"/>
+      <ownedOperation xmi:id="_ID7GcEJSEd6COckyEqmZ3A" name="write"/>
+      <ownedOperation xmi:id="_IRMGYEJSEd6COckyEqmZ3A" name="bad_write" method="_pkh54EJTEd6COckyEqmZ3A" postcondition="_VwaroEJSEd6COckyEqmZ3A">
+        <ownedRule xmi:id="_VwaroEJSEd6COckyEqmZ3A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_WeJ7YEJSEd6COckyEqmZ3A" value="bad_access = true"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_IffoIEJSEd6COckyEqmZ3A" name="close" method="_2K_EEEJTEd6COckyEqmZ3A" postcondition="_gN7MUEJSEd6COckyEqmZ3A">
+        <ownedRule xmi:id="_gN7MUEJSEd6COckyEqmZ3A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_g0hSQEJSEd6COckyEqmZ3A" value="closed = close()"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_kWkcsEJSEd6COckyEqmZ3A" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="__3Zw8EJREd6COckyEqmZ3A" name="open_w" operation="_E82AwEJSEd6COckyEqmZ3A"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_ANdggEJSEd6COckyEqmZ3A" name="read" operation="_Hz1cAEJSEd6COckyEqmZ3A"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_AcD9MEJSEd6COckyEqmZ3A" name="write" operation="_ID7GcEJSEd6COckyEqmZ3A"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_Ao4RMEJSEd6COckyEqmZ3A" name="bad_write" operation="_IRMGYEJSEd6COckyEqmZ3A"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_A37Z0EJSEd6COckyEqmZ3A" name="close" operation="_IffoIEJSEd6COckyEqmZ3A"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_wVYYEEJSEd6COckyEqmZ3A" name="State">
+      <ownedLiteral xmi:id="_z3RxgEJSEd6COckyEqmZ3A" name="idle"/>
+      <ownedLiteral xmi:id="_1XPvcEJSEd6COckyEqmZ3A" name="write"/>
+      <ownedLiteral xmi:id="_2klFQEJSEd6COckyEqmZ3A" name="verify"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

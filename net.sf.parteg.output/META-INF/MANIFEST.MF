@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ParTeG Output
+Bundle-SymbolicName: net.sf.parteg.output
+Bundle-Version: 1.4.0
+Bundle-Vendor: Weissleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: net.sf.parteg.base,
+ net.sf.parteg.core,
+ org.eclipse.uml2.uml,
+ org.eclipse.ocl.uml
+Export-Package: net.sf.parteg.output.testgraph,
+ net.sf.parteg.output.testgraph.languages
+Bundle-ActivationPolicy: lazy

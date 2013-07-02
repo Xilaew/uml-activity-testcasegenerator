@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ParTeG Core
+Bundle-SymbolicName: net.sf.parteg.core
+Bundle-Version: 1.4.0
+Bundle-Vendor: Weissleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: net.sf.parteg.core.output,
+ net.sf.parteg.core.structures,
+ net.sf.parteg.core.testcase
+Bundle-ActivationPolicy: lazy

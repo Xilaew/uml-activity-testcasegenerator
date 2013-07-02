@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ParTeG Input Statemachine
+Bundle-SymbolicName: net.sf.parteg.input.statemachine;singleton:=true
+Bundle-Version: 1.4.0
+Bundle-Vendor: Weissleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ org.eclipse.osgi,
+ net.sf.parteg.base,
+ net.sf.parteg.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.uml2.uml,
+ net.sf.parteg.output,
+ org.eclipse.swt,
+ org.eclipse.emf.common,
+ org.eclipse.uml2.uml.resources,
+ org.eclipse.uml2.uml.editor;resolution:=optional
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: net.sf.parteg.input.statemachine.Activator
+Export-Package: net.sf.parteg.input.statemachine,
+ net.sf.parteg.input.statemachine.handlers

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ASCII"?>
+<modelcoupling.uml.statesclasses.generated:TestCaseGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelcoupling.uml.statesclasses.generated="http://default" xsi:schemaLocation="http://default test.ecore" nodes="//@root //@root/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.2/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.3/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.4/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.0/@targetNode //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.1/@targetNode" transitions="//@root/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.2 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.3 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.4 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.0 //@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.1">
+  <root name="idle_1">
+    <outgoingTransitions name="detectItemEvent_1" sourceNode="//@root">
+      <targetNode name="tmp 2" incomingTransitions="//@root/@outgoingTransitions.0" distanceToRoot="1">
+        <outgoingTransitions name="detectItem_2" sourceNode="//@root/@outgoingTransitions.0/@targetNode">
+          <targetNode name="object_inserted_3" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0" distanceToRoot="2">
+            <outgoingTransitions name="default_3" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+              <targetNode name="tmp 4" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0" distanceToRoot="3">
+                <outgoingTransitions name="recognize_4" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                  <targetNode name="object_evaluated_6" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0" distanceToRoot="4">
+                    <outgoingTransitions name="default_7" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                      <targetNode name="object_recognized_8" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0" distanceToRoot="5">
+                        <outgoingTransitions name="default_9" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                          <targetNode name="object_is_too_big_10" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0" distanceToRoot="6">
+                            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                              <equivalenceClass minBorder="13.0" minIncluded="false" maxBorder="1000.0" maxIncluded="true"/>
+                            </parameters>
+                            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                            </parameters>
+                          </targetNode>
+                          <event name="default" defaultEvent="true"/>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName=">">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXzJ0IEdyNHJI4buwo8g"/>
+                          </precondition>
+                        </outgoingTransitions>
+                        <outgoingTransitions name="default_12" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                          <targetNode name="object_is_too_small_13" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1" distanceToRoot="6">
+                            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="8.0" maxIncluded="false"/>
+                            </parameters>
+                            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                            </parameters>
+                          </targetNode>
+                          <event name="default" defaultEvent="true"/>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXyZ0IEdyNHJI4buwo8g"/>
+                          </precondition>
+                        </outgoingTransitions>
+                        <outgoingTransitions name="default_14" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                          <targetNode name="tmp 15" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.2" distanceToRoot="6" correspondsNegativeExpression="true">
+                            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                              <equivalenceClass minBorder="13.0" minIncluded="false" maxBorder="1000.0" maxIncluded="true"/>
+                            </parameters>
+                            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                            </parameters>
+                          </targetNode>
+                          <event name="default" defaultEvent="true"/>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName=">=">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkX0p0IEdyNHJI4buwo8g"/>
+                          </precondition>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName=">">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXz50IEdyNHJI4buwo8g"/>
+                          </precondition>
+                        </outgoingTransitions>
+                        <outgoingTransitions name="default_15" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                          <targetNode name="tmp 16" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.3" distanceToRoot="6" correspondsNegativeExpression="true">
+                            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="8.0" maxIncluded="false"/>
+                            </parameters>
+                            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                            </parameters>
+                          </targetNode>
+                          <event name="default" defaultEvent="true"/>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkX0p0IEdyNHJI4buwo8g"/>
+                          </precondition>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;=">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXz50IEdyNHJI4buwo8g"/>
+                          </precondition>
+                        </outgoingTransitions>
+                        <outgoingTransitions name="default_16" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                          <targetNode name="tmp 17" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.4" distanceToRoot="6">
+                            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                              <equivalenceClass minBorder="8.0" minIncluded="true" maxBorder="13.0" maxIncluded="true"/>
+                            </parameters>
+                            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                            </parameters>
+                          </targetNode>
+                          <event name="default" defaultEvent="true"/>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName=">=">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkX0p0IEdyNHJI4buwo8g"/>
+                          </precondition>
+                          <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;=">
+                            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXz50IEdyNHJI4buwo8g"/>
+                          </precondition>
+                        </outgoingTransitions>
+                        <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                        </parameters>
+                        <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                        </parameters>
+                      </targetNode>
+                      <event name="default" defaultEvent="true"/>
+                      <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+                        <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+                      </precondition>
+                    </outgoingTransitions>
+                    <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                      <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                      <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                      <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                    </parameters>
+                    <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                      <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                      <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                      <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="9.0" maxIncluded="false"/>
+                    </parameters>
+                  </targetNode>
+                  <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;">
+                    <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXyZ0IEdyNHJI4buwo8g"/>
+                  </postcondition>
+                  <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+                    <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+                  </postcondition>
+                </outgoingTransitions>
+                <outgoingTransitions name="recognize_5" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode">
+                  <targetNode name="object_evaluated_17" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1" distanceToRoot="4">
+                    <outgoingTransitions name="default_17" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode">
+                      <targetNode name="object_not_recognized_18" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.0" distanceToRoot="5">
+                        <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                        </parameters>
+                        <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                          <equivalenceClass minBorder="9.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                        </parameters>
+                      </targetNode>
+                      <event name="default" defaultEvent="true"/>
+                      <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+                        <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+                      </precondition>
+                    </outgoingTransitions>
+                    <outgoingTransitions name="default_19" sourceNode="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode">
+                      <targetNode name="tmp 20" incomingTransitions="//@root/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.0/@targetNode/@outgoingTransitions.1/@targetNode/@outgoingTransitions.1" distanceToRoot="5" correspondsNegativeExpression="true">
+                        <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                        </parameters>
+                        <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                          <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                          <equivalenceClass minBorder="9.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                        </parameters>
+                      </targetNode>
+                      <event name="default" defaultEvent="true"/>
+                      <precondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="&lt;">
+                        <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+                      </precondition>
+                    </outgoingTransitions>
+                    <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                      <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                      <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                      <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                    </parameters>
+                    <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                      <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                      <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                      <equivalenceClass minBorder="9.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                    </parameters>
+                  </targetNode>
+                  <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName=">=">
+                    <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXyZ0IEdyNHJI4buwo8g"/>
+                  </postcondition>
+                  <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+                    <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+                  </postcondition>
+                </outgoingTransitions>
+                <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+                  <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                  <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+                  <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                </parameters>
+                <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+                  <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+                  <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+                  <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+                </parameters>
+              </targetNode>
+              <event name="default" defaultEvent="true"/>
+            </outgoingTransitions>
+            <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+              <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+            </parameters>
+            <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+              <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+              <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+              <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+            </parameters>
+          </targetNode>
+          <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+          </postcondition>
+          <postcondition xsi:type="modelcoupling.uml.statesclasses.generated:TCGOCLOperation" operationName="=">
+            <operation href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.uml#_mYkXsZ0IEdyNHJI4buwo8g"/>
+          </postcondition>
+        </outgoingTransitions>
+        <parameters name="width_0" definingTransition="//@root/@outgoingTransitions.0">
+          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+          <reference href="model/test/SortingMachine.uml#_I6FVUOzQEduqQpSKns4XGA"/>
+          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+        </parameters>
+        <parameters name="height_1" definingTransition="//@root/@outgoingTransitions.0">
+          <type href="model/test/SortingMachine.uml#_fjK84OziEduyUZBQ55Ou4w"/>
+          <reference href="model/test/SortingMachine.uml#_Hpe_AJeIEdyqN79LFuBS7A"/>
+          <equivalenceClass minBorder="-1000.0" minIncluded="true" maxBorder="1000.0" maxIncluded="true"/>
+        </parameters>
+      </targetNode>
+      <event name="detectItemEvent" parameters="//@root/@outgoingTransitions.0/@targetNode/@parameters.0 //@root/@outgoingTransitions.0/@targetNode/@parameters.1">
+        <event href="model/test/SortingMachine.uml#_MaE9UOjKEdu6LJeVabImNg"/>
+      </event>
+    </outgoingTransitions>
+  </root>
+</modelcoupling.uml.statesclasses.generated:TestCaseGraph>
