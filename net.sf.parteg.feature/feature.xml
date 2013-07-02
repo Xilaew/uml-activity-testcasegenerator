@@ -117,14 +117,11 @@ DER LIZENZGEBER HAFTET IHNEN GEGENÜBER IN BEZUG AUF SCHÄDEN AUS DER VERLETZUNG
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.ocl.uml"/>
       <import plugin="org.eclipse.swt"/>
-      <import plugin="net.sf.parteg.core"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.osgi"/>
-      <import plugin="net.sf.parteg.base"/>
       <import plugin="org.eclipse.uml2.uml"/>
-      <import plugin="net.sf.parteg.output"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.uml2.uml.resources"/>
    </requires>
@@ -133,28 +130,24 @@ DER LIZENZGEBER HAFTET IHNEN GEGENÜBER IN BEZUG AUF SCHÄDEN AUS DER VERLETZUNG
          id="net.sf.parteg.base"
          download-size="0"
          install-size="0"
-         version="1.4.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.parteg.core"
          download-size="0"
          install-size="0"
-         version="1.4.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.parteg.input.statemachine"
          download-size="0"
          install-size="0"
-         version="1.4.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.parteg.output"
          download-size="0"
          install-size="0"
-         version="1.4.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
