@@ -5,6 +5,27 @@
   <eSubpackages name="generated" nsURI="http://org.xilaew.atg.abstractTestCaseGraph.generated"
       nsPrefix="org.xilaew.atg.abstractTestCaseGraph.generated">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGElement" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGContainer" eSuperTypes="#//generated/AbstractTCGElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGContainer" eSuperTypes="#//generated/AbstractTCGElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          eType="#//generated/AbstractTCGNode" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+          eType="#//generated/AbstractTCGEdge" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGNode" eSuperTypes="#//generated/AbstractTCGElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
+          eType="#//generated/AbstractTCGEdge" eOpposite="#//generated/AbstractTCGEdge/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+          eType="#//generated/AbstractTCGEdge" eOpposite="#//generated/AbstractTCGEdge/target"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGEdge" eSuperTypes="#//generated/AbstractTCGElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+          eType="#//generated/AbstractTCGNode" eOpposite="#//generated/AbstractTCGNode/outgoing"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          eType="#//generated/AbstractTCGNode" eOpposite="#//generated/AbstractTCGNode/incoming"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//generated/AbstractTCGConstraint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGRealNode" eSuperTypes="#//generated/AbstractTCGNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGPseudoNode" eSuperTypes="#//generated/AbstractTCGNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGConstraint"/>
   </eSubpackages>
 </ecore:EPackage>
