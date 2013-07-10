@@ -4,15 +4,14 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.expressions.Variable;
-import org.eclipse.ocl.helper.OCLHelper;
 import org.eclipse.ocl.uml.ExpressionInOCL;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
 import org.eclipse.ocl.utilities.ASTNode;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
 
 public class OCLParser extends UMLPathsearch {

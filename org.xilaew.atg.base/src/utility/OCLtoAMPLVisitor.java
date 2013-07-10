@@ -3,23 +3,12 @@
  */
 package utility;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.ocl.expressions.BooleanLiteralExp;
-import org.eclipse.ocl.expressions.CollectionItem;
-import org.eclipse.ocl.expressions.CollectionLiteralExp;
-import org.eclipse.ocl.expressions.CollectionRange;
 import org.eclipse.ocl.expressions.IntegerLiteralExp;
-import org.eclipse.ocl.expressions.IterateExp;
-import org.eclipse.ocl.expressions.IteratorExp;
-import org.eclipse.ocl.expressions.LetExp;
-import org.eclipse.ocl.expressions.MessageExp;
-import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.ocl.expressions.OperationCallExp;
 import org.eclipse.ocl.expressions.PropertyCallExp;
-import org.eclipse.ocl.expressions.TupleLiteralExp;
-import org.eclipse.ocl.expressions.TupleLiteralPart;
 import org.eclipse.ocl.expressions.VariableExp;
 import org.eclipse.ocl.utilities.AbstractVisitor;
 import org.eclipse.ocl.utilities.ExpressionInOCL;

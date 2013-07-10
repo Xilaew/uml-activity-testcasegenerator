@@ -4,22 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
-import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.helper.ConstraintKind;
 import org.eclipse.ocl.helper.OCLHelper;
-import org.eclipse.ocl.uml.ExpressionInOCL;
-import org.eclipse.ocl.uml.OperationCallExp;
-import org.eclipse.ocl.uml.PropertyCallExp;
 import org.eclipse.ocl.uml.UMLEnvironmentFactory;
-import org.eclipse.ocl.utilities.Visitor;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
@@ -40,12 +33,12 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.internal.impl.TypedElementImpl;
 
+import util.Messages;
+import utility.OCLtoAMPLVisitor;
 import data.ActivityPath;
 import data.ConstraintMap;
 
-import util.Messages;
-import utility.OCLtoAMPLVisitor;
-
+@SuppressWarnings("restriction")
 public class AMPLModelGenerator extends UMLPathsearch {
 
 	static UMLEnvironmentFactory umlEnv = new UMLEnvironmentFactory();
@@ -73,10 +66,9 @@ public class AMPLModelGenerator extends UMLPathsearch {
 			Activity activity) {
 		out(activity.getName());
 		for (Parameter p : activity.getOwnedParameters()) {
-			// XXX do not use getType(). it will cause the OCL parser to crash.
-			// Instead cast to TypedElementImpl and call basicGetType()
-			Property prop = containingClass.createOwnedAttribute(p.getName(),
+			containingClass.createOwnedAttribute(p.getName(),
 					((TypedElementImpl) p).basicGetType());
+			//XXX this direct access to the implementing Class is necessary since otherwise the Proxy resolving will cause the oclParser to crash later.
 			out("converting " + p.getName() + " into Attribute");
 		}
 		return containingClass.createOwnedOperation(activity.getName(), null,

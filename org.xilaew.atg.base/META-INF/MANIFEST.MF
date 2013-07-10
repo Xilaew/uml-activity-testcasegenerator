@@ -5,4 +5,10 @@ Bundle-SymbolicName: org.xilaew.atg.base
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.uml2.uml
-Require-Bundle: org.eclipse.emf.common
+Require-Bundle: org.eclipse.emf.common,
+ org.eclipse.emf.ecore,
+ org.eclipse.ocl.uml
+Export-Package: data,
+ tools,
+ util,
+ utility
