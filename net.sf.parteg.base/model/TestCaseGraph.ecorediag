@@ -335,7 +335,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_GSFy7-TMEeK-GuvFyfqnXA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TestCaseGraph.ecore#//sf/parteg/base/testcasegraph/generated/TCGOCLIfThenElse"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GSFy8OTMEeK-GuvFyfqnXA" x="1940" y="732"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GSFy8OTMEeK-GuvFyfqnXA" x="1945" y="790"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_GSFy-uTMEeK-GuvFyfqnXA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_GSFy_eTMEeK-GuvFyfqnXA" type="4001"/>
@@ -844,7 +844,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_GSYujeTMEeK-GuvFyfqnXA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_GSYujuTMEeK-GuvFyfqnXA" fontColor="4210752" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="TestCaseGraph.ecore#//sf/parteg/base/testcasegraph/generated/TCGConjunction/expressions"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSYuj-TMEeK-GuvFyfqnXA" points="[0, 0, -350, 60]$[350, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSYuj-TMEeK-GuvFyfqnXA" points="[0, 0, -351, 62]$[186, -68, -165, -6]$[329, -68, -22, -6]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GjOmT-TMEeK-GuvFyfqnXA" id="(0.7477477477477478,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GjOmUOTMEeK-GuvFyfqnXA" id="(0.08745247148288973,1.0)"/>
   </edges>
@@ -944,13 +944,13 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_GSie-eTMEeK-GuvFyfqnXA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_GSie-uTMEeK-GuvFyfqnXA" fontColor="4210752" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="TestCaseGraph.ecore#//sf/parteg/base/testcasegraph/generated/TCGOCLIfThenElse/thenExpression"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSie--TMEeK-GuvFyfqnXA" points="[0, 0, 100, 60]$[-100, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSie--TMEeK-GuvFyfqnXA" points="[0, 0, 105, 120]$[0, -126, 105, -6]$[-46, -126, 59, -6]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GjOmVeTMEeK-GuvFyfqnXA" id="(0.59375,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GjOmVuTMEeK-GuvFyfqnXA" id="(0.7756653992395437,1.0)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_GSifAOTMEeK-GuvFyfqnXA" type="3002" source="_GSFy7uTMEeK-GuvFyfqnXA" target="_GR8CBOTMEeK-GuvFyfqnXA">
     <children xmi:type="notation:Node" xmi:id="_GSifBOTMEeK-GuvFyfqnXA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSifBeTMEeK-GuvFyfqnXA" x="-10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSifBeTMEeK-GuvFyfqnXA" x="-4" y="4"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_GSifBuTMEeK-GuvFyfqnXA" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_GSifB-TMEeK-GuvFyfqnXA" x="10" y="10"/>

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="activityTestCaseGraph" nsURI="http://org.xilaew.atg.activityTestCaseGraph"
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activityTestCaseGraph" nsURI="http://org.xilaew.atg.activityTestCaseGraph"
     nsPrefix="org.xilaew.atg.activityTestCaseGraph">
   <eSubpackages name="generated" nsURI="http://org.xilaew.atg.activityTestCaseGraph.generated"
-      nsPrefix="org.xilaew.atg.activityTestCaseGraph.generated"/>
+      nsPrefix="org.xilaew.atg.activityTestCaseGraph.generated">
+    <eClassifiers xsi:type="ecore:EClass" name="TCGActivity" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGContainer">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+          eType="#//generated/Variable" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGRealNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" eType="ecore:EClass AbstractTestCaseGraph.ecore#//generated/AbstractTCGConstraint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGEdge"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGPseudoNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TCGStructuredActivityNode" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGContainer AbstractTestCaseGraph.ecore#//generated/AbstractTCGNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+          eType="#//generated/Variable" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="EEnum0">
+      <eLiterals name="Loop"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGElement"/>
+  </eSubpackages>
 </ecore:EPackage>
