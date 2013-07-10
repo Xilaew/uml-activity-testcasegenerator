@@ -4,5 +4,4 @@ model output/AMPLModel.mod;
 solve;
 display a, return, self_x, self_a, self_return;
 
-Aufräumen Preprocessing,
-Arbeitsplan aktualisieren Parteg,
+display a, return, self_x, self_a, self_return;

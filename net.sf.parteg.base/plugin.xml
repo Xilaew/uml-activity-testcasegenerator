@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestCaseGraph -->
+      <package
+            uri="http://net.sf.parteg.base.testcasegraph.generated"
+            class="net.sf.parteg.base.testcasegraph.generated.GeneratedPackage"
+            genModel="model/TestCaseGraph.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestCaseGraph -->
+      <package
+            uri="http://net.sf.parteg.base.runtime.generated"
+            class="net.sf.parteg.base.runtime.generated.GeneratedPackage"
+            genModel="model/TestCaseGraph.genmodel"/>
+   </extension>
+
+</plugin>

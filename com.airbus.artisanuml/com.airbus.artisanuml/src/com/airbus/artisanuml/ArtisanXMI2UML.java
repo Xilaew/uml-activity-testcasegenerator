@@ -66,7 +66,7 @@ public class ArtisanXMI2UML extends AbstractTool {
 		List<String> lines;
 		try {
 			lines = Files.readAllLines(Paths.get(tmpFile),
-					Charset.defaultCharset());
+					Charset.forName("UTF-8"));
 			PrintWriter pw;
 			pw = new PrintWriter(new FileWriter(outFile));
 			for (String s : lines) {
