@@ -1,14 +1,26 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Base
-Bundle-SymbolicName: org.xilaew.atg.base
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.xilaew.atg.base;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.uml2.uml
 Require-Bundle: org.eclipse.emf.common,
+ org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.ocl.uml
+Bundle-ActivationPolicy: lazy
 Export-Package: data,
  tools,
  util,
- utility
+ utility,
+ org.xilaew.atg.abstractTestCaseGraph.generated,
+ org.xilaew.atg.abstractTestCaseGraph.generated.impl,
+ org.xilaew.atg.abstractTestCaseGraph.generated.util,
+ org.xilaew.atg.activityTestCaseGraph.generated,
+ org.xilaew.atg.activityTestCaseGraph.generated.impl,
+ org.xilaew.atg.activityTestCaseGraph.generated.util
