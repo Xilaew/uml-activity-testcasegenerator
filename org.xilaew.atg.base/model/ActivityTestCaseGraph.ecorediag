@@ -136,29 +136,6 @@
     <element xmi:type="ecore:EClass" href="ActivityTestCaseGraph.ecore#//TCGBasicVarialbe"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hfiu8uomEeKCpZcXHyUKIg" x="630" y="85"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_heI-8OomEeKCpZcXHyUKIg" type="1005">
-    <children xmi:type="notation:Node" xmi:id="_heI-8-omEeKCpZcXHyUKIg" type="4010"/>
-    <children xmi:type="notation:Node" xmi:id="_heI-9OomEeKCpZcXHyUKIg" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_jp7hEOomEeKCpZcXHyUKIg" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//BasicVariableType/Integer"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_jp7hEeomEeKCpZcXHyUKIg"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_ktJRkOomEeKCpZcXHyUKIg" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//BasicVariableType/Real"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ktJRkeomEeKCpZcXHyUKIg"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_l830EOomEeKCpZcXHyUKIg" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//BasicVariableType/Boolean"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_l830EeomEeKCpZcXHyUKIg"/>
-      </children>
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_heI-9eomEeKCpZcXHyUKIg"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_heI-9uomEeKCpZcXHyUKIg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_heI-9-omEeKCpZcXHyUKIg"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_heI-8eomEeKCpZcXHyUKIg" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="ActivityTestCaseGraph.ecore#//BasicVariableType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heI-8uomEeKCpZcXHyUKIg" x="673" y="153"/>
-  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TSv4QeobEeKCpZcXHyUKIg"/>
   <element xmi:type="ecore:EPackage" href="ActivityTestCaseGraph.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_TTpQIOobEeKCpZcXHyUKIg" type="3002" source="_TTVuIOobEeKCpZcXHyUKIg" target="_TTffKeobEeKCpZcXHyUKIg">

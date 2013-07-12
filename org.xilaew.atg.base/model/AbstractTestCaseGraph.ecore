@@ -2,7 +2,10 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="abstractTestCaseGraph" nsURI="http://org.xilaew.atg.model.abstractTestCaseGraph"
     nsPrefix="org.xilaew.atg.model.abstractTestCaseGraph">
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGElement" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGElement" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGContainer" eSuperTypes="#//AbstractTCGElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
         eType="#//AbstractTCGNode" containment="true"/>

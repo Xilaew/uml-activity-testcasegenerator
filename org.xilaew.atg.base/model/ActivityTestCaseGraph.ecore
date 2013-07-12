@@ -2,20 +2,20 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activityTestCaseGraph" nsURI="http://org.xilaew.atg.model.activityTestCaseGraph"
     nsPrefix="org.xilaew.atg.model.activityTestCaseGraph">
-  <eClassifiers xsi:type="ecore:EClass" name="TCGActivity" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="TCGActivity" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//TCGVariable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGRealNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" eType="ecore:EClass AbstractTestCaseGraph.ecore#//generated/AbstractTCGConstraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGEdge"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGPseudoNode"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGStructuredActivityNode" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGContainer AbstractTestCaseGraph.ecore#//generated/AbstractTCGNode">
+  <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGPseudoNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGStructuredActivityNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGContainer AbstractTestCaseGraph.ecore#//AbstractTCGNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//TCGVariable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//generated/AbstractTCGElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
         upperBound="-1" eType="#//TCGVariable"/>
@@ -23,9 +23,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="TCGBasicVarialbe" eSuperTypes="#//TCGVariable">
     <eOperations name="getAbsoluteName"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableType" lowerBound="1"
-        eType="#//BasicVariableType"/>
+        eType="#//TCGBasicVariableType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="BasicVariableType">
+  <eClassifiers xsi:type="ecore:EEnum" name="TCGBasicVariableType">
     <eLiterals name="Integer"/>
     <eLiterals name="Real" value="1"/>
     <eLiterals name="Boolean" value="2"/>
