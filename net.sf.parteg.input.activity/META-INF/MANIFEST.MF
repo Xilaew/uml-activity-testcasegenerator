@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Activity
+Bundle-SymbolicName: net.sf.parteg.input.activity;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.sf.parteg.input.activity.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.sf.parteg.base,
+ org.eclipse.emf.common,
+ org.eclipse.uml2.uml,
+ net.sf.parteg.core,
+ net.sf.parteg.output,
+ org.eclipse.uml2.uml.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
