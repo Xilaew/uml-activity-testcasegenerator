@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="net.sf.parteg.feature.examples"
-      label="ParTeG Examples"
-      version="1.4.0"
+      label="ParTeG Examples Feature"
+      version="1.3.2"
       provider-name="weissleder">
 
    <description url="http://parteg.sourceforge.net">

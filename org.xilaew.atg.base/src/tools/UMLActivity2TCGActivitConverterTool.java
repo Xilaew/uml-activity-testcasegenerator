@@ -24,7 +24,7 @@ public class UMLActivity2TCGActivitConverterTool extends UMLPathsearch {
 		UMLActivity2TCGActivityConverter converter = new UMLActivity2TCGActivityConverter();
 		ActivityTestCaseGraphResourceFactoryImpl resFactory = new ActivityTestCaseGraphResourceFactoryImpl();
 		Resource res = resFactory.createResource(URI.createFileURI(outFile));
-		res.getContents().add(converter.convert(activity));
+		res.getContents().add(converter.transform(activity));
 		try {
 			res.save(null);
 		} catch (IOException e) {

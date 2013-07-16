@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_soD9MOjJEdu6LJeVabImNg">
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_soD9MOjJEdu6LJeVabImNg">
   <packagedElement xmi:type="uml:Package" xmi:id="_wPxqwOjJEdu6LJeVabImNg" name="elevatorControl">
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_URRwoMHzEdytzJ0at14pUg" name="insertWeight" operation="_HQGfwOzQEduqQpSKns4XGA"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_SpkL8MHzEdytzJ0at14pUg" name="removeWeight" operation="_xhSRwO2yEdu00tpIhIjmTg"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_MaE9UOjKEdu6LJeVabImNg" name="pressButton" operation="_wegX8JG6EdydJaDhzZfmUQ"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_bb7ZcMHzEdytzJ0at14pUg" name="reachFloor" operation="_dYbdEJK5EdyTRYb9X5VB4w"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_CbgIUOzQEduqQpSKns4XGA" name="Elevator" classifierBehavior="_2Y0fgJ0ZEdyNrffIHb491A">
-      <ownedAttribute xmi:id="_LlucMOzQEduqQpSKns4XGA" name="minWeight" isReadOnly="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LlucMOzQEduqQpSKns4XGA" name="minWeight" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_YAFOcJKwEdyUSNhMCOPPLg" name="" value="0"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_eN0dAO2yEdu00tpIhIjmTg" name="maxWeight" isReadOnly="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eN0dAO2yEdu00tpIhIjmTg" name="maxWeight" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_H4HP4JKxEdyUSNhMCOPPLg" name="" value="30"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_30YcwMHzEdytzJ0at14pUg" name="minRank" isReadOnly="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_30YcwMHzEdytzJ0at14pUg" name="minRank" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_30YcwcHzEdytzJ0at14pUg" value="3"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_4HAd0MHzEdytzJ0at14pUg" name="basement" isReadOnly="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4HAd0MHzEdytzJ0at14pUg" name="basement" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_4HAd0cHzEdytzJ0at14pUg" value="0"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_0T5XcJKyEdyUSNhMCOPPLg" name="actualWeight">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0T5XcJKyEdyUSNhMCOPPLg" name="actualWeight">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_DJM3cJK2EdyUSNhMCOPPLg" name="currentFloor" isReadOnly="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DJM3cJK2EdyUSNhMCOPPLg" name="currentFloor" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_gIDHoMgEEdy1PoW24fuu1A" value="5"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_GTqyoJ0aEdyNrffIHb491A" name="state" type="_zIpSwJsCEd20fKiJK1xsTw"/>
-      <ownedBehavior xmi:type="uml:FunctionBehavior" xmi:id="_2Y0fgJ0ZEdyNrffIHb491A" name="setState" postcondition="_KTh6cJ0aEdyNrffIHb491A">
-        <ownedRule xmi:id="_KTh6cJ0aEdyNrffIHb491A">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GTqyoJ0aEdyNrffIHb491A" name="state" type="_zIpSwJsCEd20fKiJK1xsTw"/>
+      <ownedBehavior xmi:type="uml:FunctionBehavior" xmi:id="_2Y0fgJ0ZEdyNrffIHb491A" name="setState" isReentrant="false" postcondition="_KTh6cJ0aEdyNrffIHb491A">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_KTh6cJ0aEdyNrffIHb491A">
           <specification xmi:type="uml:LiteralString" xmi:id="_K_yjgJ0aEdyNrffIHb491A" value="state = x"/>
         </ownedRule>
-        <ownedParameter xmi:id="_BzKb4J0aEdyNrffIHb491A" name="x"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzKb4J0aEdyNrffIHb491A" name="x"/>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yqv4YOjJEdu6LJeVabImNg" name="ElevatorControl">
-        <region xmi:id="_VIx8EJKuEdyUSNhMCOPPLg" name="elevator">
-          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZMY7cJKuEdyUSNhMCOPPLg" name="init"/>
-          <subvertex xmi:type="uml:State" xmi:id="_dCb_8JKuEdyUSNhMCOPPLg" name="idle">
-            <stateInvariant xmi:id="_O1-5oMemEdyg0K3zp0GwTw">
-              <specification xmi:type="uml:LiteralString" xmi:id="_PndZ4MemEdyg0K3zp0GwTw" value="state = State::idle"/>
-            </stateInvariant>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_6TZPAJeEEdyCyNzfMULFnw" name="button_pressed">
-            <stateInvariant xmi:id="_Te0F8MemEdyg0K3zp0GwTw">
-              <specification xmi:type="uml:LiteralString" xmi:id="_UcgdQMemEdyg0K3zp0GwTw" value="state = State::button_pressed"/>
-            </stateInvariant>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_7YFmMJeEEdyCyNzfMULFnw" name="start_moving">
-            <stateInvariant xmi:id="_xpD0AP_uEdyOkO9Upx3XMg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_zUNHMP_uEdyOkO9Upx3XMg" value="state = State::start_moving"/>
-            </stateInvariant>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_7jj2YJeEEdyCyNzfMULFnw" name="move_fast">
-            <stateInvariant xmi:id="_397rYP_uEdyOkO9Upx3XMg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_43l3QP_uEdyOkO9Upx3XMg" value="state = State::move_fast"/>
-            </stateInvariant>
-          </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_7xuOMJeEEdyCyNzfMULFnw" name="move_slow">
-            <stateInvariant xmi:id="_6kYJMP_uEdyOkO9Upx3XMg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_7efBAP_uEdyOkO9Upx3XMg" value="state = State::move_slow"/>
-            </stateInvariant>
-          </subvertex>
-          <transition xmi:id="_KHZoYJeHEdyqN79LFuBS7A" name="init2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_ZMY7cJKuEdyUSNhMCOPPLg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_OuoAYMHzEdytzJ0at14pUg" specification="_xKoXAMHyEdytzJ0at14pUg"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yqv4YOjJEdu6LJeVabImNg" name="ElevatorControl" isReentrant="false">
+        <region xmi:type="uml:Region" xmi:id="_VIx8EJKuEdyUSNhMCOPPLg" name="elevator">
+          <transition xmi:type="uml:Transition" xmi:id="_KHZoYJeHEdyqN79LFuBS7A" name="init2idle" source="_ZMY7cJKuEdyUSNhMCOPPLg" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_OuoAYMHzEdytzJ0at14pUg" isReentrant="false" specification="_xKoXAMHyEdytzJ0at14pUg"/>
           </transition>
-          <transition xmi:id="_6Q7poMHxEdytzJ0at14pUg" name="idle2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_dCb_8JKuEdyUSNhMCOPPLg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_6Q7pocHxEdytzJ0at14pUg" name="" specification="_HQGfwOzQEduqQpSKns4XGA"/>
-            <trigger xmi:id="_6Q7posHxEdytzJ0at14pUg" event="_URRwoMHzEdytzJ0at14pUg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_6Q7poMHxEdytzJ0at14pUg" name="idle2idle" source="_dCb_8JKuEdyUSNhMCOPPLg" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_6Q7pocHxEdytzJ0at14pUg" name="" isReentrant="false" specification="_HQGfwOzQEduqQpSKns4XGA"/>
+            <trigger xmi:type="uml:Trigger" xmi:id="_6Q7posHxEdytzJ0at14pUg" event="_URRwoMHzEdytzJ0at14pUg"/>
           </transition>
-          <transition xmi:id="_5_y2UMHxEdytzJ0at14pUg" name="idle2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_dCb_8JKuEdyUSNhMCOPPLg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_5_y2UcHxEdytzJ0at14pUg" specification="_xhSRwO2yEdu00tpIhIjmTg"/>
-            <trigger xmi:id="_5_y2UsHxEdytzJ0at14pUg" event="_SpkL8MHzEdytzJ0at14pUg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_5_y2UMHxEdytzJ0at14pUg" name="idle2idle" source="_dCb_8JKuEdyUSNhMCOPPLg" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_5_y2UcHxEdytzJ0at14pUg" isReentrant="false" specification="_xhSRwO2yEdu00tpIhIjmTg"/>
+            <trigger xmi:type="uml:Trigger" xmi:id="_5_y2UsHxEdytzJ0at14pUg" event="_SpkL8MHzEdytzJ0at14pUg"/>
           </transition>
-          <transition xmi:id="_KncaYJeHEdyqN79LFuBS7A" name="idle2button_pressed" guard="_uOT6YMHzEdytzJ0at14pUg" target="_6TZPAJeEEdyCyNzfMULFnw" source="_dCb_8JKuEdyUSNhMCOPPLg">
-            <ownedRule xmi:id="_uOT6YMHzEdytzJ0at14pUg">
+          <transition xmi:type="uml:Transition" xmi:id="_KncaYJeHEdyqN79LFuBS7A" name="idle2button_pressed" guard="_uOT6YMHzEdytzJ0at14pUg" source="_dCb_8JKuEdyUSNhMCOPPLg" target="_6TZPAJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_uOT6YMHzEdytzJ0at14pUg">
               <specification xmi:type="uml:LiteralString" xmi:id="_u18iIMHzEdytzJ0at14pUg" value="(b &lt;> currentFloor) and (b > basement or r > minRank)"/>
             </ownedRule>
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_yZe5QMekEdyg0K3zp0GwTw"/>
-            <trigger xmi:id="_uATI4JeIEdyqN79LFuBS7A" event="_MaE9UOjKEdu6LJeVabImNg"/>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_yZe5QMekEdyg0K3zp0GwTw" isReentrant="false"/>
+            <trigger xmi:type="uml:Trigger" xmi:id="_uATI4JeIEdyqN79LFuBS7A" event="_MaE9UOjKEdu6LJeVabImNg"/>
           </transition>
-          <transition xmi:id="_LBEbUJeHEdyqN79LFuBS7A" name="button_pressed2idle" guard="_B4Q8gMH0EdytzJ0at14pUg" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_6TZPAJeEEdyCyNzfMULFnw">
-            <ownedRule xmi:id="_B4Q8gMH0EdytzJ0at14pUg" name="">
+          <transition xmi:type="uml:Transition" xmi:id="_LBEbUJeHEdyqN79LFuBS7A" name="button_pressed2idle" guard="_B4Q8gMH0EdytzJ0at14pUg" source="_6TZPAJeEEdyCyNzfMULFnw" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_B4Q8gMH0EdytzJ0at14pUg" name="">
               <specification xmi:type="uml:LiteralString" xmi:id="_C0nQAMH0EdytzJ0at14pUg" value="actualWeight > maxWeight"/>
             </ownedRule>
           </transition>
-          <transition xmi:id="_LbJvQJeHEdyqN79LFuBS7A" name="button_pressed2start_moving" guard="_GnDm4MH0EdytzJ0at14pUg" target="_7YFmMJeEEdyCyNzfMULFnw" source="_6TZPAJeEEdyCyNzfMULFnw">
-            <ownedRule xmi:id="_GnDm4MH0EdytzJ0at14pUg">
+          <transition xmi:type="uml:Transition" xmi:id="_LbJvQJeHEdyqN79LFuBS7A" name="button_pressed2start_moving" guard="_GnDm4MH0EdytzJ0at14pUg" source="_6TZPAJeEEdyCyNzfMULFnw" target="_7YFmMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_GnDm4MH0EdytzJ0at14pUg">
               <specification xmi:type="uml:LiteralString" xmi:id="_HN8nwMH0EdytzJ0at14pUg" value="actualWeight &lt;= maxWeight"/>
             </ownedRule>
           </transition>
-          <transition xmi:id="_LzldYJeHEdyqN79LFuBS7A" name="start_moving2move_slow" guard="_KosQUMH0EdytzJ0at14pUg" target="_7xuOMJeEEdyCyNzfMULFnw" source="_7YFmMJeEEdyCyNzfMULFnw">
-            <ownedRule xmi:id="_KosQUMH0EdytzJ0at14pUg">
+          <transition xmi:type="uml:Transition" xmi:id="_LzldYJeHEdyqN79LFuBS7A" name="start_moving2move_slow" guard="_KosQUMH0EdytzJ0at14pUg" source="_7YFmMJeEEdyCyNzfMULFnw" target="_7xuOMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_KosQUMH0EdytzJ0at14pUg">
               <specification xmi:type="uml:LiteralString" xmi:id="_LO1qUMH0EdytzJ0at14pUg" value="actualWeight > minWeight"/>
             </ownedRule>
           </transition>
-          <transition xmi:id="_MMnocJeHEdyqN79LFuBS7A" name="start_moving2move_fast" guard="_OP0IAMH0EdytzJ0at14pUg" target="_7jj2YJeEEdyCyNzfMULFnw" source="_7YFmMJeEEdyCyNzfMULFnw">
-            <ownedRule xmi:id="_OP0IAMH0EdytzJ0at14pUg">
+          <transition xmi:type="uml:Transition" xmi:id="_MMnocJeHEdyqN79LFuBS7A" name="start_moving2move_fast" guard="_OP0IAMH0EdytzJ0at14pUg" source="_7YFmMJeEEdyCyNzfMULFnw" target="_7jj2YJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_OP0IAMH0EdytzJ0at14pUg">
               <specification xmi:type="uml:LiteralString" xmi:id="_OyFuoMH0EdytzJ0at14pUg" value="actualWeight = minWeight"/>
             </ownedRule>
           </transition>
-          <transition xmi:id="_Moo2EJeHEdyqN79LFuBS7A" name="move_slow2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_7xuOMJeEEdyCyNzfMULFnw">
-            <trigger xmi:id="_TMA8QMH0EdytzJ0at14pUg" event="_bb7ZcMHzEdytzJ0at14pUg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Moo2EJeHEdyqN79LFuBS7A" name="move_slow2idle" source="_7xuOMJeEEdyCyNzfMULFnw" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <trigger xmi:type="uml:Trigger" xmi:id="_TMA8QMH0EdytzJ0at14pUg" event="_bb7ZcMHzEdytzJ0at14pUg"/>
           </transition>
-          <transition xmi:id="_NRwrkJeHEdyqN79LFuBS7A" name="move_fast2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_7jj2YJeEEdyCyNzfMULFnw">
-            <trigger xmi:id="_U5iOAMH0EdytzJ0at14pUg" event="_bb7ZcMHzEdytzJ0at14pUg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_NRwrkJeHEdyqN79LFuBS7A" name="move_fast2idle" source="_7jj2YJeEEdyCyNzfMULFnw" target="_dCb_8JKuEdyUSNhMCOPPLg">
+            <trigger xmi:type="uml:Trigger" xmi:id="_U5iOAMH0EdytzJ0at14pUg" event="_bb7ZcMHzEdytzJ0at14pUg"/>
           </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZMY7cJKuEdyUSNhMCOPPLg" name="init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_dCb_8JKuEdyUSNhMCOPPLg" name="idle" stateInvariant="_O1-5oMemEdyg0K3zp0GwTw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_O1-5oMemEdyg0K3zp0GwTw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_PndZ4MemEdyg0K3zp0GwTw" value="state = State::idle"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_6TZPAJeEEdyCyNzfMULFnw" name="button_pressed" stateInvariant="_Te0F8MemEdyg0K3zp0GwTw">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_Te0F8MemEdyg0K3zp0GwTw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_UcgdQMemEdyg0K3zp0GwTw" value="state = State::button_pressed"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7YFmMJeEEdyCyNzfMULFnw" name="start_moving" stateInvariant="_xpD0AP_uEdyOkO9Upx3XMg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_xpD0AP_uEdyOkO9Upx3XMg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_zUNHMP_uEdyOkO9Upx3XMg" value="state = State::start_moving"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7jj2YJeEEdyCyNzfMULFnw" name="move_fast" stateInvariant="_397rYP_uEdyOkO9Upx3XMg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_397rYP_uEdyOkO9Upx3XMg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_43l3QP_uEdyOkO9Upx3XMg" value="state = State::move_fast"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7xuOMJeEEdyCyNzfMULFnw" name="move_slow" stateInvariant="_6kYJMP_uEdyOkO9Upx3XMg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_6kYJMP_uEdyOkO9Upx3XMg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_7efBAP_uEdyOkO9Upx3XMg" value="state = State::move_slow"/>
+            </ownedRule>
+          </subvertex>
         </region>
       </ownedBehavior>
-      <ownedOperation xmi:id="_xKoXAMHyEdytzJ0at14pUg" name="initialize" method="_OuoAYMHzEdytzJ0at14pUg" postcondition="_xKoXAcHyEdytzJ0at14pUg">
-        <ownedRule xmi:id="_xKoXAcHyEdytzJ0at14pUg" name="post">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xKoXAMHyEdytzJ0at14pUg" name="initialize" method="_OuoAYMHzEdytzJ0at14pUg" postcondition="_xKoXAcHyEdytzJ0at14pUg">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_xKoXAcHyEdytzJ0at14pUg" name="post">
           <specification xmi:type="uml:LiteralString" xmi:id="_xKoXAsHyEdytzJ0at14pUg" value="actualWeight = 0"/>
         </ownedRule>
       </ownedOperation>
-      <ownedOperation xmi:id="_HQGfwOzQEduqQpSKns4XGA" name="insertWeight" method="_6Q7pocHxEdytzJ0at14pUg" postcondition="_VQ5GAPWlEdygfYrMopklDw">
-        <ownedRule xmi:id="_VQ5GAPWlEdygfYrMopklDw">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_HQGfwOzQEduqQpSKns4XGA" name="insertWeight" method="_6Q7pocHxEdytzJ0at14pUg" postcondition="_VQ5GAPWlEdygfYrMopklDw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_VQ5GAPWlEdygfYrMopklDw">
           <specification xmi:type="uml:LiteralString" xmi:id="_XfDmsPWlEdygfYrMopklDw" value="actualWeight = w"/>
         </ownedRule>
-        <ownedParameter xmi:id="_I6FVUOzQEduqQpSKns4XGA" name="w">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_I6FVUOzQEduqQpSKns4XGA" name="w">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_xhSRwO2yEdu00tpIhIjmTg" name="removeWeight" method="_5_y2UcHxEdytzJ0at14pUg" postcondition="_ZqYOwPWlEdygfYrMopklDw">
-        <ownedRule xmi:id="_ZqYOwPWlEdygfYrMopklDw">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xhSRwO2yEdu00tpIhIjmTg" name="removeWeight" method="_5_y2UcHxEdytzJ0at14pUg" postcondition="_ZqYOwPWlEdygfYrMopklDw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_ZqYOwPWlEdygfYrMopklDw">
           <specification xmi:type="uml:LiteralString" xmi:id="_aM8wUPWlEdygfYrMopklDw" value="actualWeight = -w"/>
         </ownedRule>
-        <ownedParameter xmi:id="_rFaFMMHyEdytzJ0at14pUg" name="w">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rFaFMMHyEdytzJ0at14pUg" name="w">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_wegX8JG6EdydJaDhzZfmUQ" name="pressButton">
-        <ownedParameter xmi:id="_0uHzAJG6EdydJaDhzZfmUQ" name="b">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wegX8JG6EdydJaDhzZfmUQ" name="pressButton">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_0uHzAJG6EdydJaDhzZfmUQ" name="b">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_JDx9cMHzEdytzJ0at14pUg" name="r">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JDx9cMHzEdytzJ0at14pUg" name="r">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_dYbdEJK5EdyTRYb9X5VB4w" name="reachFloor"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dYbdEJK5EdyTRYb9X5VB4w" name="reachFloor"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_zIpSwJsCEd20fKiJK1xsTw" name="State">
-      <ownedLiteral xmi:id="_z4LSQJsCEd20fKiJK1xsTw" name="idle"/>
-      <ownedLiteral xmi:id="_1CPRoJsCEd20fKiJK1xsTw" name="button_pressed"/>
-      <ownedLiteral xmi:id="_1OKNwJsCEd20fKiJK1xsTw" name="start_moving"/>
-      <ownedLiteral xmi:id="_1cnggJsCEd20fKiJK1xsTw" name="move_fast"/>
-      <ownedLiteral xmi:id="_1o-hgJsCEd20fKiJK1xsTw" name="move_slow"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_z4LSQJsCEd20fKiJK1xsTw" name="idle"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1CPRoJsCEd20fKiJK1xsTw" name="button_pressed"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1OKNwJsCEd20fKiJK1xsTw" name="start_moving"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1cnggJsCEd20fKiJK1xsTw" name="move_fast"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1o-hgJsCEd20fKiJK1xsTw" name="move_slow"/>
     </packagedElement>
   </packagedElement>
 </uml:Model>

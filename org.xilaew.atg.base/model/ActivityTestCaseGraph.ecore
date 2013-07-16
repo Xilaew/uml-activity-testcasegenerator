@@ -7,7 +7,8 @@
         eType="#//TCGVariable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localPostconditions" upperBound="-1"
+        eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGPseudoNode"/>
@@ -15,7 +16,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//TCGVariable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedBy" upperBound="-1"
+        eType="#//TCGVariableCallExp" eOpposite="#//TCGVariableCallExp/variable"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
         upperBound="-1" eType="#//TCGVariable"/>
@@ -29,5 +33,30 @@
     <eLiterals name="Integer"/>
     <eLiterals name="Real" value="1"/>
     <eLiterals name="Boolean" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLExpression" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLOperationCallExp" eSuperTypes="#//TCGOCLExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//TCGOCLExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//TCGOCLExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+        eType="#//TCGOCLOperationType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGVariableCallExp" eSuperTypes="#//TCGOCLExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+        eType="#//TCGVariable" eOpposite="#//TCGVariable/referencedBy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TCGOCLOperationType">
+    <eLiterals name="multiplication"/>
+    <eLiterals name="division" value="1"/>
+    <eLiterals name="addition" value="2"/>
+    <eLiterals name="subtraction" value="3"/>
+    <eLiterals name="size" value="4"/>
+    <eLiterals name="equals" value="5"/>
+    <eLiterals name="greaterThan" value="6"/>
+    <eLiterals name="lessThan" value="7"/>
+    <eLiterals name="greaterEquals" value="8"/>
+    <eLiterals name="lessEquals" value="9"/>
   </eClassifiers>
 </ecore:EPackage>

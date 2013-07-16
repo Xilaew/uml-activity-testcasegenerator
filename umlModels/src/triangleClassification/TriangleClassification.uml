@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_soD9MOjJEdu6LJeVabImNg">
+  <packagedElement xmi:type="uml:Package" xmi:id="_wPxqwOjJEdu6LJeVabImNg" name="triangle">
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_MaE9UOjKEdu6LJeVabImNg" name="classifyTriangle" operation="_HQGfwOzQEduqQpSKns4XGA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Q8rvEJKuEdyUSNhMCOPPLg" name="Events">
+      <ownedOperation xmi:id="_nLzqYJKzEdyUSNhMCOPPLg" name="classifyTriangle">
+        <ownedParameter xmi:id="_0CqJYJeHEdyqN79LFuBS7A" name="a">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5gJJ4JidEd2w2bfHYSPmew" name="b">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5szs4JidEd2w2bfHYSPmew" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CbgIUOzQEduqQpSKns4XGA" name="TriangleClassificator">
+      <ownedAttribute xmi:id="_MbKpcJieEd2w2bfHYSPmew" name="x">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_QhRjMJieEd2w2bfHYSPmew" name="y">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Qs5kYJieEd2w2bfHYSPmew" name="z">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_i5t6IJieEd2w2bfHYSPmew" name="classification" type="_mraqIJieEd2w2bfHYSPmew"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yqv4YOjJEdu6LJeVabImNg" name="TriangleClassification">
+        <region xmi:id="_VIx8EJKuEdyUSNhMCOPPLg" name="sort">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZMY7cJKuEdyUSNhMCOPPLg" name="init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_dCb_8JKuEdyUSNhMCOPPLg" name="idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_3cCw0AJsEd6095Ax6zFgzw" name="inProgress"/>
+          <subvertex xmi:type="uml:State" xmi:id="_7YFmMJeEEdyCyNzfMULFnw" name="illegal">
+            <stateInvariant xmi:id="_7cJnwAr8Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_88RWsAr8Ed2Pmahp7QLr3A" value="classification = TriangleClassification::illegal"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_ls0ZQKdXEd2zQYi1l1uHuA" name="unknown">
+            <stateInvariant xmi:id="_sqD4MKdXEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_uFZ00KdXEd2zQYi1l1uHuA" value="classification = TriangleClassification::unknown"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_ALOKsKdYEd2zQYi1l1uHuA" name="scalene">
+            <stateInvariant xmi:id="_ALOKsadYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_ALOKsqdYEd2zQYi1l1uHuA" value="classification = TriangleClassification::scalene"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_ApeM8KdYEd2zQYi1l1uHuA" name="isosceles">
+            <stateInvariant xmi:id="_ApeM8adYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_ApeM8qdYEd2zQYi1l1uHuA" value="classification = TriangleClassification::isosceles"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_A0WnQKdYEd2zQYi1l1uHuA" name="equilateral">
+            <stateInvariant xmi:id="_A0WnQadYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_A0WnQqdYEd2zQYi1l1uHuA" value="classification = TriangleClassification::equilateral"/>
+            </stateInvariant>
+          </subvertex>
+          <transition xmi:id="_KHZoYJeHEdyqN79LFuBS7A" name="init2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_ZMY7cJKuEdyUSNhMCOPPLg"/>
+          <transition xmi:id="_2A_vIAJsEd6095Ax6zFgzw" name="idle2inProgress" target="_3cCw0AJsEd6095Ax6zFgzw" source="_dCb_8JKuEdyUSNhMCOPPLg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_8i0dYAJsEd6095Ax6zFgzw" specification="_HQGfwOzQEduqQpSKns4XGA"/>
+            <trigger xmi:id="_7HyCwAJsEd6095Ax6zFgzw" event="_MaE9UOjKEdu6LJeVabImNg"/>
+          </transition>
+          <transition xmi:id="_KncaYJeHEdyqN79LFuBS7A" name="inProgress2illegal" guard="_rqVlwJifEd2w2bfHYSPmew" target="_7YFmMJeEEdyCyNzfMULFnw" source="_3cCw0AJsEd6095Ax6zFgzw">
+            <ownedRule xmi:id="_rqVlwJifEd2w2bfHYSPmew">
+              <specification xmi:type="uml:LiteralString" xmi:id="_sgH-QJifEd2w2bfHYSPmew" value="else"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_NYuGwKdYEd2zQYi1l1uHuA" name="inProgress2unknown" guard="_X8oxcKdYEd2zQYi1l1uHuA" target="_ls0ZQKdXEd2zQYi1l1uHuA" source="_3cCw0AJsEd6095Ax6zFgzw">
+            <ownedRule xmi:id="_X8oxcKdYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_YsA_8KdYEd2zQYi1l1uHuA" value="(x &lt; y + z) and (y &lt; x + z) and (z &lt; x + y) and (x > 0) and (y > 0) and (z > 0)"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_e6CBYKdYEd2zQYi1l1uHuA" name="unknown2scalene" guard="_e6CBYadYEd2zQYi1l1uHuA" target="_ALOKsKdYEd2zQYi1l1uHuA" source="_ls0ZQKdXEd2zQYi1l1uHuA">
+            <ownedRule xmi:id="_e6CBYadYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_e6CBYqdYEd2zQYi1l1uHuA" value="else"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_vw4CsKdYEd2zQYi1l1uHuA" name="unknown2isosceles" guard="_vw4CsadYEd2zQYi1l1uHuA" target="_ApeM8KdYEd2zQYi1l1uHuA" source="_ls0ZQKdXEd2zQYi1l1uHuA">
+            <ownedRule xmi:id="_vw4CsadYEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_vw4CsqdYEd2zQYi1l1uHuA" value="(x = y) or (x = z) or (y = z)"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_DVeDsKdZEd2zQYi1l1uHuA" name="isosceles2equilateral" guard="_IZ3KoKdZEd2zQYi1l1uHuA" target="_A0WnQKdYEd2zQYi1l1uHuA" source="_ApeM8KdYEd2zQYi1l1uHuA">
+            <ownedRule xmi:id="_IZ3KoKdZEd2zQYi1l1uHuA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_KQn38KdZEd2zQYi1l1uHuA" value="(x = y) and (y = z)"/>
+            </ownedRule>
+          </transition>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_HQGfwOzQEduqQpSKns4XGA" name="classifyTriangle" method="_8i0dYAJsEd6095Ax6zFgzw" postcondition="_89x-YJKyEdyUSNhMCOPPLg">
+        <ownedRule xmi:id="_89x-YJKyEdyUSNhMCOPPLg" name="post">
+          <specification xmi:type="uml:LiteralString" xmi:id="_98NVgJKyEdyUSNhMCOPPLg" value="x = a and y = b and z = c"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_JCWTgJieEd2w2bfHYSPmew" name="a">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_JCWTgZieEd2w2bfHYSPmew" name="b">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_JCWTgpieEd2w2bfHYSPmew" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_mraqIJieEd2w2bfHYSPmew" name="TriangleClassification">
+      <ownedLiteral xmi:id="_RQF7kJifEd2w2bfHYSPmew" name="unknown"/>
+      <ownedLiteral xmi:id="_-JAV8JieEd2w2bfHYSPmew" name="illegal"/>
+      <ownedLiteral xmi:id="_E386MJifEd2w2bfHYSPmew" name="scalene"/>
+      <ownedLiteral xmi:id="_FC0tcJifEd2w2bfHYSPmew" name="isosceles"/>
+      <ownedLiteral xmi:id="_FSUiAJifEd2w2bfHYSPmew" name="equilateral"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

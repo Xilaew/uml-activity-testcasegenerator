@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_soD9MOjJEdu6LJeVabImNg">
+  <packagedElement xmi:type="uml:Package" xmi:id="_wPxqwOjJEdu6LJeVabImNg" name="sortingMachine">
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_MaE9UOjKEdu6LJeVabImNg" name="detectItemEvent" operation="_HQGfwOzQEduqQpSKns4XGA"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_bYYgYJ1kEd2-QuK1wi3wXw" name="resetEvent" operation="_dYbdEJK5EdyTRYb9X5VB4w"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CbgIUOzQEduqQpSKns4XGA" name="SortingMachine" classifierBehavior="_2Y0fgJ0ZEdyNrffIHb491A">
+      <ownedAttribute xmi:id="_LlucMOzQEduqQpSKns4XGA" name="minCompare" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_YAFOcJKwEdyUSNhMCOPPLg" name="" value="20"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eN0dAO2yEdu00tpIhIjmTg" name="maxCompare" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_H4HP4JKxEdyUSNhMCOPPLg" name="" value="30"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0T5XcJKyEdyUSNhMCOPPLg" name="m_width">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_4Pu64JKyEdyUSNhMCOPPLg" value="0"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DJM3cJK2EdyUSNhMCOPPLg" name="m_height">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_DJM3cZK2EdyUSNhMCOPPLg" name="" value="0"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_GTqyoJ0aEdyNrffIHb491A" name="state" type="_dMVB4JsBEd20fKiJK1xsTw"/>
+      <ownedAttribute xmi:id="_kWDRIJeIEdyqN79LFuBS7A" name="recognized">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:FunctionBehavior" xmi:id="_2Y0fgJ0ZEdyNrffIHb491A" name="setState" postcondition="_KTh6cJ0aEdyNrffIHb491A">
+        <ownedRule xmi:id="_KTh6cJ0aEdyNrffIHb491A">
+          <specification xmi:type="uml:LiteralString" xmi:id="_K_yjgJ0aEdyNrffIHb491A" value="state = x"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_BzKb4J0aEdyNrffIHb491A" name="x"/>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yqv4YOjJEdu6LJeVabImNg" name="SortingMachine">
+        <region xmi:id="_VIx8EJKuEdyUSNhMCOPPLg" name="sort">
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ZMY7cJKuEdyUSNhMCOPPLg" name="init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_dCb_8JKuEdyUSNhMCOPPLg" name="idle">
+            <stateInvariant xmi:id="_jjS8QAr8Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_klwe0Ar8Ed2Pmahp7QLr3A" value="state = State::idle"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_6TZPAJeEEdyCyNzfMULFnw" name="object_inserted">
+            <stateInvariant xmi:id="_3qwZwAr8Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_4TlUUAr8Ed2Pmahp7QLr3A" value="state = State::object_inserted"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7YFmMJeEEdyCyNzfMULFnw" name="object_evaluated">
+            <stateInvariant xmi:id="_7cJnwAr8Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_88RWsAr8Ed2Pmahp7QLr3A" value="state = State::object_evaluated"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7jj2YJeEEdyCyNzfMULFnw" name="object_not_recognized">
+            <stateInvariant xmi:id="_-zCEAAr8Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="__floAAr8Ed2Pmahp7QLr3A" value="state = State::object_not_recognized"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7xuOMJeEEdyCyNzfMULFnw" name="object_recognized">
+            <stateInvariant xmi:id="_AavosAr9Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_A-gdEAr9Ed2Pmahp7QLr3A" value="state = State::object_recognized"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_8B9poJeEEdyCyNzfMULFnw" name="object_is_too_big">
+            <stateInvariant xmi:id="_B8fvUAr9Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_CgZtoAr9Ed2Pmahp7QLr3A" value="state = State::object_is_too_big"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_8RTtMJeEEdyCyNzfMULFnw" name="object_is_too_small">
+            <stateInvariant xmi:id="_DjdtIAr9Ed2Pmahp7QLr3A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_EMvToAr9Ed2Pmahp7QLr3A" value="state = State::object_is_too_small"/>
+            </stateInvariant>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_GwSbAJ1kEd2-QuK1wi3wXw" name="object_is_fitting">
+            <stateInvariant xmi:id="_LiNR4J1kEd2-QuK1wi3wXw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_My0lMJ1kEd2-QuK1wi3wXw" value="state = State::object_is_fitting"/>
+            </stateInvariant>
+          </subvertex>
+          <transition xmi:id="_KHZoYJeHEdyqN79LFuBS7A" name="init2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_ZMY7cJKuEdyUSNhMCOPPLg"/>
+          <transition xmi:id="_KncaYJeHEdyqN79LFuBS7A" name="idle2object_inserted" target="_6TZPAJeEEdyCyNzfMULFnw" source="_dCb_8JKuEdyUSNhMCOPPLg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_wOwkgJeIEdyqN79LFuBS7A" specification="_HQGfwOzQEduqQpSKns4XGA"/>
+            <trigger xmi:id="_uATI4JeIEdyqN79LFuBS7A" event="_MaE9UOjKEdu6LJeVabImNg"/>
+          </transition>
+          <transition xmi:id="_LBEbUJeHEdyqN79LFuBS7A" name="object_inserted2object_evaluated" target="_7YFmMJeEEdyCyNzfMULFnw" source="_6TZPAJeEEdyCyNzfMULFnw">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="__BX4cJgxEdya-JAksPDiSg" specification="_xhSRwO2yEdu00tpIhIjmTg"/>
+          </transition>
+          <transition xmi:id="_LbJvQJeHEdyqN79LFuBS7A" name="object_evaluated2object_not_recognized" guard="_7A0_8JeIEdyqN79LFuBS7A" target="_7jj2YJeEEdyCyNzfMULFnw" source="_7YFmMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:id="_7A0_8JeIEdyqN79LFuBS7A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_8ATf8JeIEdyqN79LFuBS7A" value="recognized = false"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_LzldYJeHEdyqN79LFuBS7A" name="object_evaluated2object_recognized" guard="_gWhrEJeJEdyqN79LFuBS7A" target="_7xuOMJeEEdyCyNzfMULFnw" source="_7YFmMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:id="_gWhrEJeJEdyqN79LFuBS7A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_g8YKIJeJEdyqN79LFuBS7A" value="recognized = true"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_MMnocJeHEdyqN79LFuBS7A" name="object_recognized2object_is_too_big" guard="_jhLpMJeJEdyqN79LFuBS7A" target="_8B9poJeEEdyCyNzfMULFnw" source="_7xuOMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:id="_jhLpMJeJEdyqN79LFuBS7A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_kGbrUJeJEdyqN79LFuBS7A" value="m_width > maxCompare"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_Moo2EJeHEdyqN79LFuBS7A" name="object_recognized2object_is_too_small" guard="_ntQBAJeJEdyqN79LFuBS7A" target="_8RTtMJeEEdyCyNzfMULFnw" source="_7xuOMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:id="_ntQBAJeJEdyqN79LFuBS7A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_oQ3rcJeJEdyqN79LFuBS7A" value="m_width &lt; minCompare"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_NyPicJeHEdyqN79LFuBS7A" name="object_recognized2object_is_fitting" guard="_uV8MQJeJEdyqN79LFuBS7A" target="_GwSbAJ1kEd2-QuK1wi3wXw" source="_7xuOMJeEEdyCyNzfMULFnw">
+            <ownedRule xmi:id="_uV8MQJeJEdyqN79LFuBS7A">
+              <specification xmi:type="uml:LiteralString" xmi:id="_vfP9sJeJEdyqN79LFuBS7A" value="(m_width >= minCompare) and (m_width &lt;= maxCompare)"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_NRwrkJeHEdyqN79LFuBS7A" name="object_not_recognized2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_7jj2YJeEEdyCyNzfMULFnw">
+            <trigger xmi:id="_mwJp4J1kEd2-QuK1wi3wXw" event="_bYYgYJ1kEd2-QuK1wi3wXw"/>
+          </transition>
+          <transition xmi:id="_XL21kJ1kEd2-QuK1wi3wXw" name="object_is_fitting2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_GwSbAJ1kEd2-QuK1wi3wXw">
+            <trigger xmi:id="_n--0gJ1kEd2-QuK1wi3wXw" event="_bYYgYJ1kEd2-QuK1wi3wXw"/>
+          </transition>
+          <transition xmi:id="_OQpVsJeHEdyqN79LFuBS7A" name="object_is_too_small2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_8RTtMJeEEdyCyNzfMULFnw">
+            <trigger xmi:id="_pRiBgJ1kEd2-QuK1wi3wXw" event="_bYYgYJ1kEd2-QuK1wi3wXw"/>
+          </transition>
+          <transition xmi:id="_OrA9gJeHEdyqN79LFuBS7A" name="object_is_too_big2idle" target="_dCb_8JKuEdyUSNhMCOPPLg" source="_8B9poJeEEdyCyNzfMULFnw">
+            <trigger xmi:id="_qkYwgJ1kEd2-QuK1wi3wXw" event="_bYYgYJ1kEd2-QuK1wi3wXw"/>
+          </transition>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_HQGfwOzQEduqQpSKns4XGA" name="detectItem" method="_wOwkgJeIEdyqN79LFuBS7A" postcondition="_89x-YJKyEdyUSNhMCOPPLg">
+        <ownedRule xmi:id="_89x-YJKyEdyUSNhMCOPPLg" name="post">
+          <specification xmi:type="uml:LiteralString" xmi:id="_98NVgJKyEdyUSNhMCOPPLg" value="(m_height = (object.height * 2) + 2) and (m_width = (object.width + 2) * 2)"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_I6FVUOzQEduqQpSKns4XGA" name="object" type="_oNnFYJ0WEdyc6NRSa0inkw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_xhSRwO2yEdu00tpIhIjmTg" name="recognize" method="__BX4cJgxEdya-JAksPDiSg" postcondition="_QFTo4JKzEdyUSNhMCOPPLg">
+        <ownedRule xmi:id="_QFTo4JKzEdyUSNhMCOPPLg" name="post">
+          <specification xmi:type="uml:LiteralString" xmi:id="_RuqMUJKzEdyUSNhMCOPPLg" value="if(m_height@pre &lt; minCompare) then recognized = true else recognized = false endif"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wegX8JG6EdydJaDhzZfmUQ" name="setState">
+        <nameExpression xmi:id="_hP00IJKzEdyUSNhMCOPPLg" name="comment" symbol="setButton currently has no implementation"/>
+        <ownedParameter xmi:id="_0uHzAJG6EdydJaDhzZfmUQ" name="state"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_dYbdEJK5EdyTRYb9X5VB4w" name="reset"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oNnFYJ0WEdyc6NRSa0inkw" name="Item">
+      <ownedAttribute xmi:id="_pkfgMMDuEdyBYuVuyZIlOg" name="width">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_pxc-IMDuEdyBYuVuyZIlOg" name="height">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_dMVB4JsBEd20fKiJK1xsTw" name="State">
+      <ownedLiteral xmi:id="_hms7cJsBEd20fKiJK1xsTw" name="idle"/>
+      <ownedLiteral xmi:id="_iYoHoJsBEd20fKiJK1xsTw" name="object_inserted"/>
+      <ownedLiteral xmi:id="_ilI5oJsBEd20fKiJK1xsTw" name="object_evaluated"/>
+      <ownedLiteral xmi:id="_ixNmwJsBEd20fKiJK1xsTw" name="object_recognized"/>
+      <ownedLiteral xmi:id="_jMemcJsBEd20fKiJK1xsTw" name="object_not_recognized"/>
+      <ownedLiteral xmi:id="_jXNPwJsBEd20fKiJK1xsTw" name="object_is_too_small"/>
+      <ownedLiteral xmi:id="_i-d_oJsBEd20fKiJK1xsTw" name="object_is_too_big"/>
+      <ownedLiteral xmi:id="_JUy_IJ1kEd2-QuK1wi3wXw" name="object_is_fitting"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

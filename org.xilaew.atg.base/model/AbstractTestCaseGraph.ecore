@@ -23,7 +23,8 @@
         eType="#//AbstractTCGNode" eOpposite="#//AbstractTCGNode/outgoing"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//AbstractTCGNode" eOpposite="#//AbstractTCGNode/incoming"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//AbstractTCGConstraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//AbstractTCGConstraint"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGRealNode" eSuperTypes="#//AbstractTCGNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGPseudoNode" eSuperTypes="#//AbstractTCGNode"/>

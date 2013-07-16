@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_UJy60OTSEeKeSJkjazoWww" name="model">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_UL3-cOTSEeKeSJkjazoWww" name="testActivity" group="_4F5YsOV1EeKaPs8U9gcP2w" node="_eayCcOTSEeKeSJkjazoWww _hN5DQOTSEeKeSJkjazoWww _hiA5IOTSEeKeSJkjazoWww _krnuYOTSEeKeSJkjazoWww _lHOdkOTYEeKucLyI-x0uYQ _y6HQUOV1EeKaPs8U9gcP2w _UnOEIOV2EeKaPs8U9gcP2w _uK-qsOfFEeKpRLfNUb338g">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_iU-nIOTSEeKeSJkjazoWww" name="ControlFlow1" source="_eayCcOTSEeKeSJkjazoWww" target="_hN5DQOTSEeKeSJkjazoWww"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_i57uUOTSEeKeSJkjazoWww" name="ControlFlow2" source="_hN5DQOTSEeKeSJkjazoWww" target="_hiA5IOTSEeKeSJkjazoWww"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_l6ANEOTSEeKeSJkjazoWww" name="ControlFlow3" source="_hiA5IOTSEeKeSJkjazoWww" target="_krnuYOTSEeKeSJkjazoWww"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LYzz0OV2EeKaPs8U9gcP2w" name="ControlFlow4" source="_EtOsoOV2EeKaPs8U9gcP2w" target="_JMd4EOV2EeKaPs8U9gcP2w"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KH1pQOV4EeKaPs8U9gcP2w" name="ControlFlow5" source="_JMd4EOV2EeKaPs8U9gcP2w" target="_hN5DQOTSEeKeSJkjazoWww"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_PeSwkOV4EeKaPs8U9gcP2w" name="ControlFlow6" source="_UnOEIOV2EeKaPs8U9gcP2w"/>
+    <group xmi:type="uml:StructuredActivityNode" xmi:id="_4F5YsOV1EeKaPs8U9gcP2w" name="StructuredActivityNode1">
+      <node xmi:type="uml:InitialNode" xmi:id="_EtOsoOV2EeKaPs8U9gcP2w" name="InitialNode3" outgoing="_LYzz0OV2EeKaPs8U9gcP2w"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_JMd4EOV2EeKaPs8U9gcP2w" name="OpaqueAction3" outgoing="_KH1pQOV4EeKaPs8U9gcP2w" incoming="_LYzz0OV2EeKaPs8U9gcP2w"/>
+    </group>
+    <node xmi:type="uml:InitialNode" xmi:id="_eayCcOTSEeKeSJkjazoWww" name="InitialNode1" outgoing="_iU-nIOTSEeKeSJkjazoWww"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hN5DQOTSEeKeSJkjazoWww" name="OpaqueAction1" outgoing="_i57uUOTSEeKeSJkjazoWww" incoming="_iU-nIOTSEeKeSJkjazoWww _KH1pQOV4EeKaPs8U9gcP2w">
+      <localPostcondition xmi:type="uml:Constraint" xmi:id="_faCb0OTZEeKucLyI-x0uYQ" name="false">
+        <specification xmi:type="uml:LiteralString" xmi:id="_faCb0eTZEeKucLyI-x0uYQ" name="false" value="return=false"/>
+      </localPostcondition>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hiA5IOTSEeKeSJkjazoWww" name="OpaqueAction2" outgoing="_l6ANEOTSEeKeSJkjazoWww" incoming="_i57uUOTSEeKeSJkjazoWww">
+      <localPostcondition xmi:type="uml:Constraint" xmi:id="_4qRGgOV0EeKaPs8U9gcP2w" name="myPostcondition">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_4qRGgeV0EeKaPs8U9gcP2w" name="return false">
+          <language>OCL</language>
+          <body>return=false</body>
+        </specification>
+      </localPostcondition>
+    </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_krnuYOTSEeKeSJkjazoWww" name="ActivityFinalNode1" incoming="_l6ANEOTSEeKeSJkjazoWww"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_lHOdkOTYEeKucLyI-x0uYQ" name="InitialNode2"/>
+    <node xmi:type="uml:AddVariableValueAction" xmi:id="_y6HQUOV1EeKaPs8U9gcP2w" name="AddVariableValueAction1">
+      <value xmi:type="uml:InputPin" xmi:id="_y6j8QOV1EeKaPs8U9gcP2w" name="value">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_y6j8QeV1EeKaPs8U9gcP2w" value="1"/>
+      </value>
+      <insertAt xmi:type="uml:InputPin" xmi:id="_y6tGMOV1EeKaPs8U9gcP2w" name="insertAt">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_y6tGMeV1EeKaPs8U9gcP2w" value="1"/>
+      </insertAt>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_UnOEIOV2EeKaPs8U9gcP2w" name="OpaqueAction3" outgoing="_PeSwkOV4EeKaPs8U9gcP2w"/>
+    <node xmi:type="uml:CallBehaviorAction" xmi:id="_uK-qsOfFEeKpRLfNUb338g" name="Activity1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_qe_zgOTYEeKucLyI-x0uYQ" name="package1">
+    <packagedElement xmi:type="uml:Class" xmi:id="_r5c_UOTYEeKucLyI-x0uYQ" name="class1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RE-m8OlcEeKhw86PTc_7RQ" name="Attribute1" visibility="public" type="_LTfekOleEeKhw86PTc_7RQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RfNE0OlcEeKhw86PTc_7RQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RfpwwOlcEeKhw86PTc_7RQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_RgPmoOlcEeKhw86PTc_7RQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_tRESgOTYEeKucLyI-x0uYQ" name="testActivity"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Kbjb4OlcEeKhw86PTc_7RQ" name="class2">
+      <generalization xmi:type="uml:Generalization" xmi:id="_bjFkkOlcEeKhw86PTc_7RQ" general="_r5c_UOTYEeKucLyI-x0uYQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VY89kOlcEeKhw86PTc_7RQ" name="Attribute2" visibility="public" type="_MP_jEOleEeKhw86PTc_7RQ" subsettedProperty="_RE-m8OlcEeKhw86PTc_7RQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WX-xoOlcEeKhw86PTc_7RQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WYIioOlcEeKhw86PTc_7RQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_WYbdkOlcEeKhw86PTc_7RQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LTfekOleEeKhw86PTc_7RQ" name="type1"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MP_jEOleEeKhw86PTc_7RQ" name="type2">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OTRCYOleEeKhw86PTc_7RQ" general="_LTfekOleEeKhw86PTc_7RQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_kLOvIOV3EeKaPs8U9gcP2w" name="Activity1" group="_czG_8OfFEeKpRLfNUb338g">
+    <group xmi:type="uml:ExpansionRegion" xmi:id="_czG_8OfFEeKpRLfNUb338g" name="ExpansionRegion1"/>
+  </packagedElement>
+</uml:Model>

@@ -3,8 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ParTeG Input Statemachine
 Bundle-SymbolicName: net.sf.parteg.input.statemachine;singleton:=true
 Bundle-Version: 1.4.0
-Bundle-Vendor: Weissleder
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: weissleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.workbench,
  org.eclipse.jface,
