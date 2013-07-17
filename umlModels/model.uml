@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_UJy60OTSEeKeSJkjazoWww" name="model">
-  <packagedElement xmi:type="uml:Activity" xmi:id="_UL3-cOTSEeKeSJkjazoWww" name="testActivity" group="_4F5YsOV1EeKaPs8U9gcP2w" node="_eayCcOTSEeKeSJkjazoWww _hN5DQOTSEeKeSJkjazoWww _hiA5IOTSEeKeSJkjazoWww _krnuYOTSEeKeSJkjazoWww _lHOdkOTYEeKucLyI-x0uYQ _y6HQUOV1EeKaPs8U9gcP2w _UnOEIOV2EeKaPs8U9gcP2w _uK-qsOfFEeKpRLfNUb338g">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_UL3-cOTSEeKeSJkjazoWww" name="testActivity" specification="_jcntcO4OEeKhs5T3phCz4g" group="_4F5YsOV1EeKaPs8U9gcP2w" node="_eayCcOTSEeKeSJkjazoWww _hN5DQOTSEeKeSJkjazoWww _hiA5IOTSEeKeSJkjazoWww _krnuYOTSEeKeSJkjazoWww _lHOdkOTYEeKucLyI-x0uYQ _y6HQUOV1EeKaPs8U9gcP2w _UnOEIOV2EeKaPs8U9gcP2w _uK-qsOfFEeKpRLfNUb338g">
     <edge xmi:type="uml:ControlFlow" xmi:id="_iU-nIOTSEeKeSJkjazoWww" name="ControlFlow1" source="_eayCcOTSEeKeSJkjazoWww" target="_hN5DQOTSEeKeSJkjazoWww"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_i57uUOTSEeKeSJkjazoWww" name="ControlFlow2" source="_hN5DQOTSEeKeSJkjazoWww" target="_hiA5IOTSEeKeSJkjazoWww"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_l6ANEOTSEeKeSJkjazoWww" name="ControlFlow3" source="_hiA5IOTSEeKeSJkjazoWww" target="_krnuYOTSEeKeSJkjazoWww"/>
@@ -58,6 +58,7 @@
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jcntcO4OEeKhs5T3phCz4g" name="Operation1" method="_UL3-cOTSEeKeSJkjazoWww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LTfekOleEeKhw86PTc_7RQ" name="type1"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_MP_jEOleEeKhw86PTc_7RQ" name="type2">

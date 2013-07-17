@@ -1,7 +1,6 @@
 package org.eclipse.atg.model;
 
 import java.util.List;
-
 import org.eclipse.ocl.expressions.OperationCallExp;
 import org.eclipse.ocl.expressions.PropertyCallExp;
 import org.eclipse.ocl.utilities.AbstractVisitor;
@@ -19,7 +18,12 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphFactory;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationCallExp;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationType;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLVariableCallExp;
 
+import util.Output;
+
+//XXX this class is not used any more. Development was continued as anonymus subclass of UMLActivity2TCGActivityConverter
 public class OCLtoTCGVisitor extends
 		AbstractVisitor<org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> {
 
@@ -45,6 +49,12 @@ public class OCLtoTCGVisitor extends
 			TCGOCLExpression sourceResult,
 			List<TCGOCLExpression> argumentResults) {
 		TCGOCLOperationCallExp tcgOpCall = factory.createTCGOCLOperationCallExp();
+		tcgOpCall.setName(callExp.getReferredOperation().getName());
+		tcgOpCall.setSource(sourceResult);
+		tcgOpCall.setOperation(TCGOCLOperationType.get(callExp.getReferredOperation().getName()));
+		if (argumentResults!=null){
+			tcgOpCall.getArguments().addAll(argumentResults);
+		}
 		return tcgOpCall;
 	}
 
@@ -53,8 +63,9 @@ public class OCLtoTCGVisitor extends
 			PropertyCallExp<Classifier, Property> callExp,
 			TCGOCLExpression sourceResult,
 			List<TCGOCLExpression> qualifierResults) {
-		// TODO Auto-generated method stub
-		return super.handlePropertyCallExp(callExp, sourceResult, qualifierResults);
+		TCGOCLVariableCallExp tcgVar = factory.createTCGOCLVariableCallExp();
+		callExp.getReferredProperty()
+		return tcgVar;
 	}
 
 	@SuppressWarnings("unchecked")

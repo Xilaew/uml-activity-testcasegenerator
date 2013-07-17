@@ -3,11 +3,12 @@ package experimental;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.OCL;
+import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.helper.ConstraintKind;
 import org.eclipse.ocl.helper.OCLHelper;
 import org.eclipse.ocl.uml.ExpressionInOCL;
+import org.eclipse.ocl.uml.OCL.Helper;
 import org.eclipse.ocl.uml.OperationCallExp;
 import org.eclipse.ocl.uml.PropertyCallExp;
 import org.eclipse.ocl.uml.UMLEnvironmentFactory;
@@ -34,12 +35,12 @@ public class CopyOfConstraintParsing extends UMLPathsearch {
 
 	public static void parseOCLExpr(Classifier context, String invariant) {
 
-		OCL<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint, Class, EObject> ocl;
+		OCL ocl;
 		UMLEnvironmentFactory umlEnv = new UMLEnvironmentFactory();
 		ocl = OCL.newInstance(umlEnv);
 
 		// create an OCL helper object
-		OCLHelper<Classifier, Operation, Property, Constraint> helper = ocl
+		Helper helper = ocl
 				.createOCLHelper();
 
 		try {
@@ -79,7 +80,7 @@ public class CopyOfConstraintParsing extends UMLPathsearch {
 	}
 	public static void parseOCLOperationExpr(Classifier context,Operation operation, String invariant) {
 
-		OCL<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint, Class, EObject> ocl;
+		OCL ocl;
 		UMLEnvironmentFactory umlEnv = new UMLEnvironmentFactory();
 		ocl = OCL.newInstance(umlEnv);
 
@@ -165,7 +166,7 @@ public class CopyOfConstraintParsing extends UMLPathsearch {
 		//out(operation.toString());
 		for(Property p : class1.getOwnedAttributes()){
 			out(p.toString());
-			out(p.getType().toString());
+			//out(p.getType().toString());
 		}
 		CopyOfConstraintParsing.parseOCLExpr(class1, "x<2");
 		try {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_824b49cf-8739-46e1-946f-01fe7db160ef" name="SomeActivityDiagrams">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_jW4EYO8XEeKmSvuiPtMeiA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Package" xmi:id="_ae57f156-e2a3-4583-82e0-e268d193aafe" name="Package1">
     <packagedElement xmi:type="uml:Class" xmi:id="_b46209c4-a730-4f9c-8663-740dd5f97be7" name="Class1">
       <ownedRule xmi:type="uml:Constraint" xmi:id="_2250400b-aa02-4bb2-aa72-b128a4e31b27" name="RangeOfX" constrainedElement="_b46209c4-a730-4f9c-8663-740dd5f97be7 _02d2fb85-4294-44cb-a4ff-aaff3731fe83">
@@ -12,20 +15,14 @@
           <body>self.x&lt;5</body>
         </specification>
       </ownedRule>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_02d2fb85-4294-44cb-a4ff-aaff3731fe83" name="x" visibility="private" aggregation="composite">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_02d2fb85-4294-44cb-a4ff-aaff3731fe83" name="x" visibility="public" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_20448964-8165-41bb-bbd3-58cbbabe7d5d" name="simpleDecision" isReentrant="false">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_46b07cdc-cf4a-4629-92cd-ffb555b9ae27" name="a">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_20448964-8165-41bb-bbd3-58cbbabe7d5dreturn" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_46b07cdc-cf4a-4629-92cd-ffb555b9ae27" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_20448964-8165-41bb-bbd3-58cbbabe7d5dreturn" name="return" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_3a2043da-ff84-4cdf-8ed8-b9edf873eb98" name="" source="_4fbd043a-f168-4a2c-abab-5064ddbb6bb8" target="_0d98b333-5be2-46a3-819e-4528d516743f">
           <guard xmi:type="uml:OpaqueExpression" xmi:id="_3a2043da-ff84-4cdf-8ed8-b9edf873eb98guard" name="">
             <language>OCL</language>
-            <body>x>=5</body>
+            <body>a>=5</body>
           </guard>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_78dfab90-98af-4cdd-8825-06b13c5f37e6" name="" source="_d333c3fe-925b-4185-b546-325556c72c58" target="_47933ec5-3e3c-49e9-910a-1634e2867101">
@@ -160,12 +157,8 @@
         </node>
       </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_88800fff-8f52-4529-9bed-ec819f29005fop" name="simpleDecision" visibility="public">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_88800fff-8f52-4529-9bed-ec819f29005freturn" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7b9134fc-fc09-4445-8e2c-b80e8460d000" name="a">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7b9134fc-fc09-4445-8e2c-b80e8460d000" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_wdVjAO4UEeKhs5T3phCz4g" name="return" type="_RMbtMO8XEeKmSvuiPtMeiA" effect="create"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768op" name="assignmentDecision" visibility="public" method="_78522cd8-0ed5-4f87-940a-71176f2627ab _bf91084e-921c-4b36-986e-ed761ece9f55">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768return" direction="return">
@@ -245,6 +238,8 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_9a6ff4ad-ee9f-455c-936b-620722c7d460" visibility="private" type="_23d0f0bd-83c0-4c53-8096-95dbab959778" association="_8e31b880-4123-4978-a763-5d7e29fa7cc5"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3_PE8O8WEeKmSvuiPtMeiA" name="Integer" isLeaf="true"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_RMbtMO8XEeKmSvuiPtMeiA" name="Boolean"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_profileApplication0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cK92EO1QEeK9Ioq1wwdCHA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>

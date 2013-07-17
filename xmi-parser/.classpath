@@ -7,12 +7,12 @@
 			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/uml2/javadoc/4.1.0/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/org.eclipse.ocl_3.2.1.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.source_3.2.1.v20130128-1158.jar">
+	<classpathentry kind="lib" path="lib/org.eclipse.ocl_3.2.1.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-kepler/plugins/org.eclipse.ocl.source_3.3.0.v20130610-1317.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/mdt/ocl/javadoc/4.0.0/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/org.eclipse.ocl.uml_4.0.0.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-modeling/plugins/org.eclipse.ocl.uml.source_4.0.0.v20130128-1158.jar">
+	<classpathentry kind="lib" path="lib/org.eclipse.ocl.uml_4.0.0.v20130128-1158.jar" sourcepath="C:/Program Files/eclipse-kepler/plugins/org.eclipse.ocl.uml.source_4.0.100.v20130610-1317.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://download.eclipse.org/modeling/emf/emf/javadoc/2.8.0"/>
 		</attributes>

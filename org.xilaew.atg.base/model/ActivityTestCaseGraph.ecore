@@ -18,7 +18,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedBy" upperBound="-1"
-        eType="#//TCGVariableCallExp" eOpposite="#//TCGVariableCallExp/variable"/>
+        eType="#//TCGOCLVariableCallExp" eOpposite="#//TCGOCLVariableCallExp/variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
@@ -43,20 +43,29 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
         eType="#//TCGOCLOperationType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGVariableCallExp" eSuperTypes="#//TCGOCLExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLVariableCallExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//TCGVariable" eOpposite="#//TCGVariable/referencedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPre" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TCGOCLOperationType">
-    <eLiterals name="multiplication"/>
-    <eLiterals name="division" value="1"/>
-    <eLiterals name="addition" value="2"/>
-    <eLiterals name="subtraction" value="3"/>
+    <eLiterals name="multiplication" literal="*"/>
+    <eLiterals name="division" value="1" literal="/"/>
+    <eLiterals name="addition" value="2" literal="+"/>
+    <eLiterals name="subtraction" value="3" literal="-"/>
     <eLiterals name="size" value="4"/>
-    <eLiterals name="equals" value="5"/>
-    <eLiterals name="greaterThan" value="6"/>
-    <eLiterals name="lessThan" value="7"/>
-    <eLiterals name="greaterEquals" value="8"/>
-    <eLiterals name="lessEquals" value="9"/>
+    <eLiterals name="equals" value="5" literal="="/>
+    <eLiterals name="greaterThan" value="6" literal=">"/>
+    <eLiterals name="lessThan" value="7" literal="&lt;"/>
+    <eLiterals name="greaterEquals" value="8" literal=">="/>
+    <eLiterals name="lessEquals" value="9" literal="&lt;="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLLiteralExp" eSuperTypes="#//TCGOCLExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TCGBasicVariableType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="the value of the literal is stored as a float. Depending on the type it has either to be interpreted:&#xD;&#xA;as boolean 0=false, 1=true, everything else = undefined;&#xD;&#xA;as integer only the integral part of value is evaluatet e.g. 4.989=>4; 2.000=>2 (those are the normal typecasting rules)&#xD;&#xA;as float you can guess that one."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

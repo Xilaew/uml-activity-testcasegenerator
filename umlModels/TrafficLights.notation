@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_xq3sEO7jEeKmSvuiPtMeiA" type="PapyrusUMLStateMachineDiagram" name="TrafficLightControlerSM" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_xq3sEe7jEeKmSvuiPtMeiA" type="2000" fontHeight="8" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_xq3sEu7jEeKmSvuiPtMeiA" type="2001">
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xq3sE-7jEeKmSvuiPtMeiA" width="700" height="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_xq3sFO7jEeKmSvuiPtMeiA" type="2002">
+      <children xmi:type="notation:Shape" xmi:id="_xq3sFe7jEeKmSvuiPtMeiA" type="3000" fontHeight="8" lineColor="0">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xq3sFu7jEeKmSvuiPtMeiA" source="RegionAnnotationKey">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xq3sF-7jEeKmSvuiPtMeiA" key="RegionZoneKey" value=""/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_xq3sGO7jEeKmSvuiPtMeiA" type="3002">
+          <children xmi:type="notation:Shape" xmi:id="_WB1eEO7kEeKmSvuiPtMeiA" type="8000" fontHeight="8" lineColor="0">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB1eEu7kEeKmSvuiPtMeiA" source="ShadowFigure">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB1eE-7kEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB1eFO7kEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB1eFe7kEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB1eFu7kEeKmSvuiPtMeiA" source="QualifiedName">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB1eF-7kEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+            </eAnnotations>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WB1eGO7kEeKmSvuiPtMeiA" type="8001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WB1eGe7kEeKmSvuiPtMeiA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WB1eGu7kEeKmSvuiPtMeiA" type="8002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WB1eG-7kEeKmSvuiPtMeiA" x="25" y="-10"/>
+            </children>
+            <element xmi:type="uml:Pseudostate" href="TrafficLights.uml#_43442167-fbf2-11d2-a53d-00104bb05af8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WB1eEe7kEeKmSvuiPtMeiA" x="55" y="12"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_WB-oAO7kEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB-oAu7kEeKmSvuiPtMeiA" source="ShadowFigure">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB-oA-7kEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB-oBO7kEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB-oBe7kEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WB-oBu7kEeKmSvuiPtMeiA" source="QualifiedName">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WB-oB-7kEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+            </eAnnotations>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WB-oCO7kEeKmSvuiPtMeiA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bdLscO7kEeKmSvuiPtMeiA" width="506" height="32"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WB-oCe7kEeKmSvuiPtMeiA" type="6002">
+              <children xmi:type="notation:Shape" xmi:id="_q7EWwO7kEeKmSvuiPtMeiA" type="3000" fontHeight="8" lineColor="0">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7EWwu7kEeKmSvuiPtMeiA" source="ShadowFigure">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q7EWw-7kEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                </eAnnotations>
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7EWxO7kEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q7EWxe7kEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                </eAnnotations>
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7EWxu7kEeKmSvuiPtMeiA" source="QualifiedName">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q7EWx-7kEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                </eAnnotations>
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q7EWyu7kEeKmSvuiPtMeiA" source="RegionAnnotationKey">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q7EWy-7kEeKmSvuiPtMeiA" key="RegionZoneKey" value=""/>
+                </eAnnotations>
+                <children xmi:type="notation:DecorationNode" xmi:id="_q7EWyO7kEeKmSvuiPtMeiA" type="3002">
+                  <children xmi:type="notation:Shape" xmi:id="_DsPxYO7lEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsPxYu7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsPxY-7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsPxZO7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsPxZe7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsPxZu7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsPxZ-7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_DsPxaO7lEeKmSvuiPtMeiA" type="6001"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_DsPxae7lEeKmSvuiPtMeiA" visible="false" type="6002">
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsPxau7lEeKmSvuiPtMeiA"/>
+                    </children>
+                    <element xmi:type="uml:State" href="TrafficLights.uml#_43442163-fbf2-11d2-a53d-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsPxYe7lEeKmSvuiPtMeiA" x="40" y="228"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_DsZiY-7lEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsZiZe7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsZiZu7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsZiZ-7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsZiaO7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DsZiae7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DsZiau7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_DsZia-7lEeKmSvuiPtMeiA" type="6001"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_DsZibO7lEeKmSvuiPtMeiA" visible="false" type="6002">
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsZibe7lEeKmSvuiPtMeiA"/>
+                    </children>
+                    <element xmi:type="uml:State" href="TrafficLights.uml#_43442158-fbf2-11d2-a53d-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsZiZO7lEeKmSvuiPtMeiA" x="40" y="43"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_EGLUUO7lEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUUu7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUU-7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUVO7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUVe7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUVu7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUV-7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_EGLUWO7lEeKmSvuiPtMeiA" type="6001"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_EGLUWe7lEeKmSvuiPtMeiA" visible="false" type="6002">
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EGLUWu7lEeKmSvuiPtMeiA"/>
+                    </children>
+                    <element xmi:type="uml:State" href="TrafficLights.uml#_0018e609-fd6b-11d2-a540-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EGLUUe7lEeKmSvuiPtMeiA" x="185" y="118"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_EGLUXu7lEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUYO7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUYe7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUYu7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUY-7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EGLUZO7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EGLUZe7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_EGLUZu7lEeKmSvuiPtMeiA" type="6001"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_EGLUZ-7lEeKmSvuiPtMeiA" visible="false" type="6002">
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EGLUaO7lEeKmSvuiPtMeiA"/>
+                    </children>
+                    <element xmi:type="uml:State" href="TrafficLights.uml#_43442161-fbf2-11d2-a53d-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EGLUX-7lEeKmSvuiPtMeiA" x="185" y="233"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_E7qx4O7lEeKmSvuiPtMeiA" type="8000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E7qx4u7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E7qx4-7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E7qx5O7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E7qx5e7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E7qx5u7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E7qx5-7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_E7qx6O7lEeKmSvuiPtMeiA" type="8001">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_E7qx6e7lEeKmSvuiPtMeiA" x="25" y="3"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_E7qx6u7lEeKmSvuiPtMeiA" type="8002">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_E7qx6-7lEeKmSvuiPtMeiA" x="25" y="-10"/>
+                    </children>
+                    <element xmi:type="uml:Pseudostate" href="TrafficLights.uml#_43442156-fbf2-11d2-a53d-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E7qx4e7lEeKmSvuiPtMeiA" x="15" y="3"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_Fa0MAO7lEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Fa0MAu7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Fa0MA-7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Fa0MBO7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Fa0MBe7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Fa0MBu7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Fa0MB-7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_Fa0MCO7lEeKmSvuiPtMeiA" type="6001"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_Fa0MCe7lEeKmSvuiPtMeiA" visible="false" type="6002">
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fa0MCu7lEeKmSvuiPtMeiA"/>
+                    </children>
+                    <element xmi:type="uml:State" href="TrafficLights.uml#_4344215f-fbf2-11d2-a53d-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fa0MAe7lEeKmSvuiPtMeiA" x="360" y="143"/>
+                  </children>
+                  <children xmi:type="notation:Shape" xmi:id="_F1pG0O7lEeKmSvuiPtMeiA" type="12000" fontHeight="8" lineColor="0">
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F1pG0u7lEeKmSvuiPtMeiA" source="ShadowFigure">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F1pG0-7lEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F1pG1O7lEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F1pG1e7lEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+                    </eAnnotations>
+                    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F1pG1u7lEeKmSvuiPtMeiA" source="QualifiedName">
+                      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F1pG1-7lEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+                    </eAnnotations>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_F1pG2O7lEeKmSvuiPtMeiA" type="12001">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_F1pG2e7lEeKmSvuiPtMeiA" x="25" y="3"/>
+                    </children>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_F1pG2u7lEeKmSvuiPtMeiA" type="12002">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_F1pG2-7lEeKmSvuiPtMeiA" x="25" y="-10"/>
+                    </children>
+                    <element xmi:type="uml:Pseudostate" href="TrafficLights.uml#_b1665ae2-fe27-11d2-a541-00104bb05af8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F1pG0e7lEeKmSvuiPtMeiA" x="220" y="48"/>
+                  </children>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q7EWye7kEeKmSvuiPtMeiA"/>
+                </children>
+                <element xmi:type="uml:Region" href="TrafficLights.uml#_43442165-fbf2-11d2-a53d-00104bb05af8region"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q7EWwe7kEeKmSvuiPtMeiA" width="506" height="309"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WB-oCu7kEeKmSvuiPtMeiA" y="32" width="506" height="309"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_WCSKAO7kEeKmSvuiPtMeiA" visible="false" type="compartment_shape_display">
+              <styles xmi:type="notation:TitleStyle" xmi:id="_WCSKAe7kEeKmSvuiPtMeiA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WCSKAu7kEeKmSvuiPtMeiA"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_l6PhMO7kEeKmSvuiPtMeiA" type="690" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Activity" href="TrafficLights.uml#_f6e23ed2-fd7b-11d2-a540-00104bb05af8Activ"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_l6PhMe7kEeKmSvuiPtMeiA" x="158" y="66"/>
+            </children>
+            <element xmi:type="uml:State" href="TrafficLights.uml#_43442165-fbf2-11d2-a53d-00104bb05af8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WB-oAe7kEeKmSvuiPtMeiA" x="50" y="82" width="506" height="341"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_WcD78O7kEeKmSvuiPtMeiA" type="6000" fontHeight="8" lineColor="0">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WcD78u7kEeKmSvuiPtMeiA" source="ShadowFigure">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WcD78-7kEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WcD79O7kEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WcD79e7kEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WcD79u7kEeKmSvuiPtMeiA" source="QualifiedName">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WcD79-7kEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+            </eAnnotations>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WcD7-O7kEeKmSvuiPtMeiA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dwZsQO7kEeKmSvuiPtMeiA" width="146"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_WcD7-e7kEeKmSvuiPtMeiA" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WcD7-u7kEeKmSvuiPtMeiA" y="-1" width="146"/>
+            </children>
+            <element xmi:type="uml:State" href="TrafficLights.uml#_5b638f17-2e26-11d3-a571-00104bb05af8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WcD78e7kEeKmSvuiPtMeiA" x="300" y="17" width="146"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_XYaPcO7kEeKmSvuiPtMeiA" type="5000" fontHeight="8" lineColor="0">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XYaPcu7kEeKmSvuiPtMeiA" source="ShadowFigure">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XYaPc-7kEeKmSvuiPtMeiA" key="ShadowFigure_Value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XYaPdO7kEeKmSvuiPtMeiA" source="displayNameLabelIcon">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XYaPde7kEeKmSvuiPtMeiA" key="displayNameLabelIcon_value" value="false"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XYaPdu7kEeKmSvuiPtMeiA" source="QualifiedName">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XYaPd-7kEeKmSvuiPtMeiA" key="QualifiedNameDepth" value="1000"/>
+            </eAnnotations>
+            <children xmi:type="notation:DecorationNode" xmi:id="_XYaPeO7kEeKmSvuiPtMeiA" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_XYaPee7kEeKmSvuiPtMeiA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_XYaPeu7kEeKmSvuiPtMeiA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_XYaPe-7kEeKmSvuiPtMeiA" x="25" y="-10"/>
+            </children>
+            <element xmi:type="uml:FinalState" href="TrafficLights.uml#_a45ea742-fe1c-11d2-a541-00104bb05af8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XYaPce7kEeKmSvuiPtMeiA" x="135" y="12"/>
+          </children>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xq3sGe7jEeKmSvuiPtMeiA"/>
+        </children>
+        <element xmi:type="uml:Region" href="TrafficLights.uml#_15addf51-4e6b-44f3-8842-6d79672511afregion"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xq3sGu7jEeKmSvuiPtMeiA" width="700" height="463"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xq3sG-7jEeKmSvuiPtMeiA" y="18" width="700" height="463"/>
+    </children>
+    <element xmi:type="uml:StateMachine" href="TrafficLights.uml#_15addf51-4e6b-44f3-8842-6d79672511af"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xq3sHO7jEeKmSvuiPtMeiA" x="30" y="30" width="700" height="481"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_xq3sHe7jEeKmSvuiPtMeiA"/>
+  <element xmi:type="uml:StateMachine" href="TrafficLights.uml#_15addf51-4e6b-44f3-8842-6d79672511af"/>
+  <edges xmi:type="notation:Connector" xmi:id="_WClE8O7kEeKmSvuiPtMeiA" type="7000" source="_WB1eEO7kEeKmSvuiPtMeiA" target="_WB-oAO7kEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_WClE8-7kEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WClE9O7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WClE9e7kEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WClE9u7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WClE9-7kEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WClE-O7kEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_WClE8e7kEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_43442169-fbf2-11d2-a53d-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WClE8u7kEeKmSvuiPtMeiA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WcD7_u7kEeKmSvuiPtMeiA" type="7000" source="_WcD78O7kEeKmSvuiPtMeiA" target="_WB-oAO7kEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_WcD8Ae7kEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WcD8Au7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WcD8A-7kEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WcD8BO7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_WcD8Be7kEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WcD8Bu7kEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_WcD7_-7kEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_5b638f19-2e26-11d3-a571-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WcD8AO7kEeKmSvuiPtMeiA" points="[0, 0, -188, -121]$[168, 108, -20, -13]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fTpAoO7kEeKmSvuiPtMeiA" id="(0.9794520547945206,0.75)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fsiBwO7kEeKmSvuiPtMeiA" id="(0.766798418972332,0.0603448275862069)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_W7zL8O7kEeKmSvuiPtMeiA" type="7000" source="_WB-oAO7kEeKmSvuiPtMeiA" target="_WcD78O7kEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_W7zL8-7kEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_W7zL9O7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_W7zL9e7kEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_W7zL9u7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_W7zL9-7kEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_W7zL-O7kEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_W7zL8e7kEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_a45ea744-fe1c-11d2-a541-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_W7zL8u7kEeKmSvuiPtMeiA" points="[20, 8, -163, -74]$[163, 73, -20, -9]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gSOv0O7kEeKmSvuiPtMeiA" id="(0.07534246575342465,0.825)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XYkAcO7kEeKmSvuiPtMeiA" type="7000" source="_WB-oAO7kEeKmSvuiPtMeiA" target="_XYaPcO7kEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XYkAc-7kEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XYkAdO7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_XYkAde7kEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XYkAdu7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_XYkAd-7kEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XYkAeO7kEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XYkAce7kEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_5b638f12-2e26-11d3-a571-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XYkAcu7kEeKmSvuiPtMeiA" points="[-20, -13, 168, 108]$[-188, -121, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_X3szgO7kEeKmSvuiPtMeiA" type="7000" source="_WB-oAO7kEeKmSvuiPtMeiA" target="_WB-oAO7kEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_X3szg-7kEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X3szhO7kEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_X3szhe7kEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X3szhu7kEeKmSvuiPtMeiA" x="-78" y="-36"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_X3szh-7kEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X3sziO7kEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_X3szge7kEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_0018e602-fd6b-11d2-a540-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X3szgu7kEeKmSvuiPtMeiA" points="[0, -3, 64, -2]$[0, -80, 64, -79]$[-70, -80, -6, -79]$[-70, -3, -6, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3-uaUO7kEeKmSvuiPtMeiA" id="(0.9782608695652174,0.008797653958944282)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4nGo8O7kEeKmSvuiPtMeiA" id="(0.8517786561264822,0.005865102639296188)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_DsjTYO7lEeKmSvuiPtMeiA" type="7000" source="_DsPxYO7lEeKmSvuiPtMeiA" target="_DsZiY-7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DsjTY-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DsjTZO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DsjTZe7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DsjTZu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DsjTZ-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DsjTaO7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_DsjTYe7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_4344217d-fbf2-11d2-a53d-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DsjTYu7lEeKmSvuiPtMeiA" points="[0, -20, 0, 22]$[0, -22, 0, 20]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_EGVFU-7lEeKmSvuiPtMeiA" type="7000" source="_EGLUUO7lEeKmSvuiPtMeiA" target="_EGLUXu7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EGVFVu7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EGVFV-7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EGVFWO7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EGVFWe7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EGVFWu7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EGVFW-7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_EGVFVO7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_0018e622-fd6b-11d2-a540-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EGVFVe7lEeKmSvuiPtMeiA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_EhAPIO7lEeKmSvuiPtMeiA" type="7000" source="_EGLUXu7lEeKmSvuiPtMeiA" target="_DsPxYO7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EhAPI-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EhAPJO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EhAPJe7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EhAPJu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_EhAPJ-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EhAPKO7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_EhAPIe7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_43442178-fbf2-11d2-a53d-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EhAPIu7lEeKmSvuiPtMeiA" points="[-20, -4, 134, 25]$[-134, -26, 20, 3]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_E7qx7O7lEeKmSvuiPtMeiA" type="7000" source="_E7qx4O7lEeKmSvuiPtMeiA" target="_DsZiY-7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_E7qx7-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_E7qx8O7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_E7qx8e7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_E7qx8u7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_E7qx8-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_E7qx9O7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_E7qx7e7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_4344215a-fbf2-11d2-a53d-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E7qx7u7lEeKmSvuiPtMeiA" points="[0, 0, -60, -45]$[40, 30, -20, -15]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Fa0MDu7lEeKmSvuiPtMeiA" type="7000" source="_Fa0MAO7lEeKmSvuiPtMeiA" target="_EGLUXu7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fa0MEe7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Fa0MEu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fa0ME-7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Fa0MFO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Fa0MFe7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Fa0MFu7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Fa0MD-7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_43442173-fbf2-11d2-a53d-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Fa0MEO7lEeKmSvuiPtMeiA" points="[0, 0, -214, -134]$[194, 121, -20, -13]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_F1yQwO7lEeKmSvuiPtMeiA" type="7000" source="_F1pG0O7lEeKmSvuiPtMeiA" target="_EGLUUO7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_F1yQw-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F1yQxO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_F1yQxe7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F1yQxu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_F1yQx-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F1yQyO7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_F1yQwe7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_b1665ae9-fe27-11d2-a541-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F1yQwu7lEeKmSvuiPtMeiA" points="[0, 0, -215, -194]$[194, 175, -21, -19]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GSZUQO7lEeKmSvuiPtMeiA" type="7000" source="_F1pG0O7lEeKmSvuiPtMeiA" target="_Fa0MAO7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GSZUQ-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSZURO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GSZURe7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSZURu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GSZUR-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSZUSO7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GSZUQe7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_b1665ae4-fe27-11d2-a541-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSZUQu7lEeKmSvuiPtMeiA" points="[5, -6, -143, 155]$[129, -141, -19, 20]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GwWbkO7lEeKmSvuiPtMeiA" type="7000" source="_DsZiY-7lEeKmSvuiPtMeiA" target="_F1pG0O7lEeKmSvuiPtMeiA" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GwWbk-7lEeKmSvuiPtMeiA" type="7001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GwWblO7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GwWble7lEeKmSvuiPtMeiA" type="7002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GwWblu7lEeKmSvuiPtMeiA"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GwWbl-7lEeKmSvuiPtMeiA" type="7003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GwWbmO7lEeKmSvuiPtMeiA" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GwWbke7lEeKmSvuiPtMeiA" fontHeight="8"/>
+    <element xmi:type="uml:Transition" href="TrafficLights.uml#_0018e61d-fd6b-11d2-a540-00104bb05af8"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GwWbku7lEeKmSvuiPtMeiA" points="[13, 20, -151, -226]$[160, 241, -4, -5]"/>
+  </edges>
+</notation:Diagram>

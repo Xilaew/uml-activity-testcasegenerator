@@ -1,14 +1,23 @@
 package org.eclipse.atg.model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.expressions.BooleanLiteralExp;
+import org.eclipse.ocl.expressions.IntegerLiteralExp;
+import org.eclipse.ocl.expressions.OperationCallExp;
+import org.eclipse.ocl.expressions.PropertyCallExp;
+import org.eclipse.ocl.expressions.RealLiteralExp;
+import org.eclipse.ocl.expressions.UnlimitedNaturalLiteralExp;
 import org.eclipse.ocl.helper.ConstraintKind;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
 import org.eclipse.ocl.uml.UMLEnvironmentFactory;
 import org.eclipse.ocl.utilities.AbstractVisitor;
+import org.eclipse.ocl.utilities.ExpressionInOCL;
+import org.eclipse.ocl.utilities.Visitor;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
@@ -21,7 +30,6 @@ import org.eclipse.uml2.uml.ControlNode;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralString;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -29,6 +37,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGConstraint;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
@@ -37,9 +46,16 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphFactory;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGAction;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGBasicVariableType;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGBasicVarialbe;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGControlFlow;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGControlNode;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLLiteralExp;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationCallExp;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationType;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLVariableCallExp;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 
 import util.Output;
 
@@ -72,14 +88,118 @@ public class UMLActivity2TCGActivityConverter {
 		ocl = OCL.newInstance();
 	}
 
-	protected org.eclipse.ocl.uml.util.UMLSwitch<AbstractTCGElement> oclSwitch = new org.eclipse.ocl.uml.util.UMLSwitch<AbstractTCGElement>() {
+	protected Visitor<org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> oclVisitor = new AbstractVisitor<org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint>() {
+		@Override
+		public TCGOCLExpression visitIntegerLiteralExp(
+				IntegerLiteralExp<Classifier> literalExp) {
+			TCGOCLLiteralExp tcgLiteral = factory.createTCGOCLLiteralExp();
+			tcgLiteral.setName(literalExp.getName());
+			tcgLiteral.setType(TCGBasicVariableType.INTEGER);
+			tcgLiteral.setValue(literalExp.getIntegerSymbol().floatValue());
+			return tcgLiteral;
+		}
+
+		@Override
+		public TCGOCLExpression visitUnlimitedNaturalLiteralExp(
+				UnlimitedNaturalLiteralExp<Classifier> literalExp) {
+			TCGOCLLiteralExp tcgLiteral = factory.createTCGOCLLiteralExp();
+			tcgLiteral.setName(literalExp.getName());
+			tcgLiteral.setType(TCGBasicVariableType.INTEGER);
+			tcgLiteral.setValue(literalExp.getIntegerSymbol().floatValue());
+			return tcgLiteral;
+		}
+
+		@Override
+		public TCGOCLExpression visitRealLiteralExp(
+				RealLiteralExp<Classifier> literalExp) {
+			TCGOCLLiteralExp tcgLiteral = factory.createTCGOCLLiteralExp();
+			tcgLiteral.setName(literalExp.getName());
+			tcgLiteral.setType(TCGBasicVariableType.REAL);
+			tcgLiteral.setValue(literalExp.getRealSymbol().floatValue());
+			return tcgLiteral;
+		}
+
+		@Override
+		public TCGOCLExpression visitBooleanLiteralExp(
+				BooleanLiteralExp<Classifier> literalExp) {
+			TCGOCLLiteralExp tcgLiteral = factory.createTCGOCLLiteralExp();
+			tcgLiteral.setName(literalExp.getName());
+			tcgLiteral.setType(TCGBasicVariableType.BOOLEAN);
+			tcgLiteral.setValue(literalExp.getBooleanSymbol() ? 1 : 0);
+			return tcgLiteral;
+		}
+
+		@Override
+		protected TCGOCLExpression handleConstraint(Constraint constraint,
+				TCGOCLExpression specificationResult) {
+			return specificationResult;
+		}
+
+		@Override
+		protected TCGOCLExpression handleExpressionInOCL(
+				ExpressionInOCL<Classifier, Parameter> expression,
+				TCGOCLExpression contextResult, TCGOCLExpression resultResult,
+				List<TCGOCLExpression> parameterResults,
+				TCGOCLExpression bodyResult) {
+			return bodyResult;
+		}
+
+		// ActivityTestCaseGraphFactory factory =
+		// ActivityTestCaseGraphFactory.eINSTANCE;
+
+		@Override
+		protected TCGOCLExpression handleOperationCallExp(
+				OperationCallExp<Classifier, Operation> callExp,
+				TCGOCLExpression sourceResult,
+				List<TCGOCLExpression> argumentResults) {
+			TCGOCLOperationCallExp tcgOpCall = factory
+					.createTCGOCLOperationCallExp();
+			tcgOpCall.setName(callExp.getReferredOperation().getName());
+			tcgOpCall.setSource(sourceResult);
+			tcgOpCall.setOperation(TCGOCLOperationType.get(callExp
+					.getReferredOperation().getName()));
+			if (argumentResults != null) {
+				tcgOpCall.getArguments().addAll(argumentResults);
+			}
+			return tcgOpCall;
+		}
+
+		@Override
+		protected TCGOCLExpression handlePropertyCallExp(
+				PropertyCallExp<Classifier, Property> callExp,
+				TCGOCLExpression sourceResult,
+				List<TCGOCLExpression> qualifierResults) {
+			TCGOCLVariableCallExp tcgVar = factory
+					.createTCGOCLVariableCallExp();
+			tcgVar.setVariable((TCGVariable) transformElement(callExp
+					.getReferredProperty()));
+			;
+			Output.debug("Prop CallExp source: " + callExp.getSource(), this);
+			return tcgVar;
+		}
+
+		@SuppressWarnings("unchecked")
+		@Override
+		protected ExpressionInOCL<Classifier, Parameter> getSpecification(
+				Constraint constraint) {
+			// TODO Auto-generated method stub
+			ValueSpecification spec = constraint.getSpecification();
+			if (spec instanceof ExpressionInOCL<?, ?>) {
+				return (ExpressionInOCL<Classifier, Parameter>) spec;
+			}
+			return null;
+		}
 
 	};
 
-	protected OCLtoTCGVisitor oclVisitor = new OCLtoTCGVisitor();
-
 	protected UMLSwitch<AbstractTCGElement> umlSwitch = new UMLSwitch<AbstractTCGElement>() {
-		ActivityTestCaseGraphFactory factory = ActivityTestCaseGraphFactory.eINSTANCE;
+		// ActivityTestCaseGraphFactory factory =
+		// ActivityTestCaseGraphFactory.eINSTANCE;
+
+		@Override
+		public AbstractTCGElement caseProperty(Property object) {
+			return handleProperty(object);
+		}
 
 		@Override
 		public AbstractTCGElement caseAction(Action object) {
@@ -105,13 +225,12 @@ public class UMLActivity2TCGActivityConverter {
 		}
 
 		public AbstractTCGElement caseLiteralString(LiteralString object) {
-			Output.debug("literalString found trying to parse it as ocl: "
-					+ object.getValue(), this);
+			Output.debug("literalString found" + object.getValue(), this);
 			return parseLiteralStringAsOCL(object);
 		}
 
 		public AbstractTCGElement caseOpaqueExpression(OpaqueExpression object) {
-			Output.debug("OpaqueExpression Found", this);
+			Output.debug("OpaqueExpression Found" + object, this);
 			return parseOpaqueExpressionAsOCL(object);
 		}
 
@@ -129,7 +248,7 @@ public class UMLActivity2TCGActivityConverter {
 	 * delegate to the a Switch, which will create an appropriate Test Case
 	 * Graph Model Element to represent the given UML Element
 	 */
-	protected AbstractTCGElement transformElement(Element umlElement) {
+	AbstractTCGElement transformElement(Element umlElement) {
 		if (umlElement == null)
 			return null;
 		if (!uml2tcgmap.containsKey(umlElement)) {
@@ -138,6 +257,12 @@ public class UMLActivity2TCGActivityConverter {
 			return tcgObject;
 		} else
 			return uml2tcgmap.get(umlElement);
+	}
+
+	protected AbstractTCGElement handleProperty(Property object) {
+		TCGBasicVarialbe var = factory.createTCGBasicVarialbe();
+
+		return null;
 	}
 
 	/**
@@ -151,19 +276,13 @@ public class UMLActivity2TCGActivityConverter {
 	private Constraint parseOCL(String oclExpr, Classifier contextClass,
 			Operation contextOperation, ConstraintKind kind) {
 		Helper helper = ocl.createOCLHelper();
-		switch (kind) {
-		case INVARIANT:
-			helper.setContext(contextClass);
-			break;
-		case POSTCONDITION:
+		if (contextOperation != null) {
 			helper.setOperationContext(contextClass, contextOperation);
-			break;
-		default:
-			break;
+		} else {
 		}
-		;
 		Constraint oclConstraint = null;
 		try {
+			Output.debug("trying to parse: " + oclExpr, this);
 			oclConstraint = helper.createConstraint(kind, oclExpr);
 		} catch (ParserException e) {
 			Output.warn("COULD_NOT_PARSE_INVARIANT");
@@ -176,20 +295,27 @@ public class UMLActivity2TCGActivityConverter {
 	private AbstractTCGElement parseLiteralStringAsOCL(LiteralString object) {
 		Output.debug("namespace is: " + UMLHelper.getNamespace(object), this);
 		Constraint oclConstraint = null;
-
-		if (object.eContainingFeature().getFeatureID() == UMLPackage.CONTROL_FLOW__GUARD) {
-			Output.debug("this is a GuardCondition!", object);
+		if (object.eContainmentFeature().equals(
+				UMLPackage.Literals.ACTIVITY_EDGE__GUARD)) {
+			// Parse Guardconditions like invariants
+			Output.debug("this is a GuardCondition!", this);
 			oclConstraint = parseOCL(object.getValue(),
-					(Classifier) UMLHelper.getNamespace(object), null,
-					ConstraintKind.INVARIANT);
-		}
-		if (object.eContainingFeature().getFeatureID() == UMLPackage.CONSTRAINT__SPECIFICATION) {
-			if (object.getOwner().eContainmentFeature().getFeatureID() == UMLPackage.ACTION__LOCAL_POSTCONDITION) {
-				Output.debug("this is a local Postcondition", object);
-			}
-			if (object.getOwner().eContainingFeature().getFeatureID() == UMLPackage.ACCEPT_CALL_ACTION__LOCAL_POSTCONDITION) {
-				Output.debug("does not work", this);
-			}
+					(Classifier) UMLHelper.getNamespace(object),
+					UMLHelper.getContextOperation((ActivityEdge) object
+							.getOwner()), ConstraintKind.INVARIANT);
+		} else if (object.getOwner().eContainmentFeature()
+				.equals(UMLPackage.Literals.ACTION__LOCAL_POSTCONDITION)) {
+			// Parse Local Postconditions like Postconditions with an Operation
+			// Context
+			Output.debug("this is a local Postcondition!", this);
+			oclConstraint = parseOCL(object.getValue(),
+					(Classifier) UMLHelper.getNamespace(object),
+					UMLHelper.getContextOperation((Constraint) object
+							.getOwner()), ConstraintKind.POSTCONDITION);
+		} else if (object.getOwner().eContainmentFeature()
+				.equals(UMLPackage.Literals.NAMESPACE__OWNED_RULE)) {
+			// TODO Parse an invariant as invariant!
+			Output.debug("this is a Class invariant", this);
 		}
 		if (oclConstraint != null) {
 			return oclVisitor.visitConstraint(oclConstraint);
@@ -200,6 +326,7 @@ public class UMLActivity2TCGActivityConverter {
 	private AbstractTCGElement parseOpaqueExpressionAsOCL(
 			OpaqueExpression umlOpaqueExp) {
 		String oclExp = null;
+		Constraint oclConstraint = null;
 		int index;
 		if ((index = umlOpaqueExp.getLanguages().indexOf("OCL")) != -1) {
 			oclExp = umlOpaqueExp.getBodies().get(index);
@@ -209,9 +336,28 @@ public class UMLActivity2TCGActivityConverter {
 					this);
 		}
 		;
-
+		if (umlOpaqueExp.eContainmentFeature().equals(
+				UMLPackage.Literals.ACTIVITY_EDGE__GUARD)) {
+			// Parse Guardconditions like invariants
+			Output.debug("this is a GuardCondition!", this);
+			oclConstraint = parseOCL(oclExp,
+					(Classifier) UMLHelper.getNamespace(umlOpaqueExp),
+					UMLHelper.getContextOperation((ActivityEdge) umlOpaqueExp
+							.getOwner()), ConstraintKind.INVARIANT);
+		} else if (umlOpaqueExp.getOwner().eContainmentFeature()
+				.equals(UMLPackage.Literals.ACTION__LOCAL_POSTCONDITION)) {
+			// Parse Local Postconditions like Postconditions with an Operation
+			// Context
+			Output.debug("this is a local Postcondition!", this);
+		} else if (umlOpaqueExp.getOwner().eContainmentFeature()
+				.equals(UMLPackage.Literals.NAMESPACE__OWNED_RULE)) {
+			// TODO Parse an invariant as invariant!
+			Output.debug("this is a Class invariant", this);
+		}
+		if (oclConstraint != null) {
+			return oclVisitor.visitConstraint(oclConstraint);
+		}
 		return null;
-
 	}
 
 	public TCGActivity transform(Activity umlActivity) {
