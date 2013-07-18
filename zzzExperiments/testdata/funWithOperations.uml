@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_NmKtkO7JEeKmSvuiPtMeiA" name="Model">
+  <packageImport xmi:id="_NmKtke7JEeKmSvuiPtMeiA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Component" xmi:id="_mUN7sO7JEeKmSvuiPtMeiA" clientDependency="_AUPIAO7KEeKmSvuiPtMeiA" name="MyComponent">
+    <ownedAttribute xmi:id="_DFr_IO7OEeKmSvuiPtMeiA" name="switcher" visibility="protected"/>
+    <ownedAttribute xmi:id="_fMstIO7OEeKmSvuiPtMeiA" name="bool" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_K4etYO7LEeKmSvuiPtMeiA" name="operation1" method="_AHmkwO7LEeKmSvuiPtMeiA" postcondition="_tnaNwO7PEeKmSvuiPtMeiA _t2SMsO7OEeKmSvuiPtMeiA">
+      <ownedRule xmi:id="_t2SMsO7OEeKmSvuiPtMeiA" name="postcondition">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_nk4DkO7PEeKmSvuiPtMeiA" name="setBool">
+          <language>OCL</language>
+          <body>bool=w</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_tnaNwO7PEeKmSvuiPtMeiA" name="postcondition2">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_79UjYO7PEeKmSvuiPtMeiA" name="switch">
+          <language>OCL</language>
+          <body>switcher@pre=switcher</body>
+        </specification>
+      </ownedRule>
+      <ownedParameter xmi:id="_4LQ48O7NEeKmSvuiPtMeiA" name="w">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:FunctionBehavior" xmi:id="_la4qgO7KEeKmSvuiPtMeiA" name="FunctionBehavior1"/>
+    <nestedClassifier xmi:type="uml:OpaqueBehavior" xmi:id="_7Y9EUO7KEeKmSvuiPtMeiA" name="OpaqueBehavior1"/>
+    <nestedClassifier xmi:type="uml:Activity" xmi:id="_AHmkwO7LEeKmSvuiPtMeiA" name="Activity1" specification="_K4etYO7LEeKmSvuiPtMeiA">
+      <variable xmi:id="_oTPiQO7LEeKmSvuiPtMeiA" name="myVar">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </variable>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_2rLjEO7JEeKmSvuiPtMeiA" name="IMyComponent">
+    <ownedRule xmi:id="_5Giq4O7MEeKmSvuiPtMeiA" name="Constraint1">
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_RsZmUO7NEeKmSvuiPtMeiA">
+        <language>OCL</language>
+        <body>self.x&lt;=self.y</body>
+      </specification>
+    </ownedRule>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_AUPIAO7KEeKmSvuiPtMeiA" name="Realization0" client="_mUN7sO7JEeKmSvuiPtMeiA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-JFpoO7KEeKmSvuiPtMeiA" name="Class1">
+    <ownedOperation xmi:id="_U65YEO7MEeKmSvuiPtMeiA" name="CopyOf_operation1_1">
+      <ownedParameter xmi:id="_i3ziYO7NEeKmSvuiPtMeiA" name="myParameter"/>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>
