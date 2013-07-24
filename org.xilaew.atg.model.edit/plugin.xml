@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated ActivityTestCaseGraph -->
+      <factory
+            uri="http://org.xilaew.atg.model.activityTestCaseGraph"
+            class="org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated ActivityTestCaseGraph -->
+      <extender
+            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
+            class="org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphItemProviderAdapterFactory$AbstractTestCaseGraphChildCreationExtender"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated AbstractTestCaseGraph -->
+      <factory
+            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
+            class="org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+</plugin>
