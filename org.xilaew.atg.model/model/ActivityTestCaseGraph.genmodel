@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xilaew.atg.model/src" editDirectory="/org.xilaew.atg.model.edit/src"
+    modelPluginID="org.xilaew.atg.model" modelName="ActivityTestCaseGraph" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="org.xilaew.atg.model.edit" editorPluginID="org.xilaew.atg.model.editor"
+    usedGenPackages="AbstractTestCaseGraph.genmodel#//abstractTestCaseGraph ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ActivityTestCaseGraph.ecore</foreignModel>
+  <genPackages prefix="ActivityTestCaseGraph" basePackage="org.xilaew.atg.model" resource="XMI"
+      disposableProviderFactory="true" loadInitialization="true" dataTypeConverters="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="ActivityTestCaseGraph.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityTestCaseGraph.ecore#//TCGBasicVariableType">
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Boolean"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityTestCaseGraph.ecore#//TCGOCLOperationType">
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/multiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/division"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/addition"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/subtraction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/size"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/equals"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/lessThan"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/greaterEquals"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/lessEquals"/>
+    </genEnums>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGActivity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGActivity/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGAction/localPostconditions"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGControlFlow"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGControlNode"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGStructuredActivityNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGStructuredActivityNode/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGVariable/referencedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGObjectVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGObjectVariable/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGBasicVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGBasicVariable/variableType"/>
+      <genOperations ecoreOperation="ActivityTestCaseGraph.ecore#//TCGBasicVariable/getAbsoluteName"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLExpression"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp/isPre"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
