@@ -10,16 +10,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xilaew.atg.model.abstractTestCaseGraph,
  org.xilaew.atg.model.abstractTestCaseGraph.impl,
  org.xilaew.atg.model.abstractTestCaseGraph.util,
- org.xilaew.atg.model.activityTestCaseGraph,
- org.xilaew.atg.model.activityTestCaseGraph.impl,
- org.xilaew.atg.model.activityTestCaseGraph.util,
- tools
+ tools,
+ utility
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.xilaew.atg.base;visibility:=reexport,
- org.eclipse.uml2.uml,
- org.eclipse.uml2.uml.resources,
- org.eclipse.ocl,
- org.eclipse.ocl.uml
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy
