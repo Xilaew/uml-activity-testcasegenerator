@@ -10,10 +10,16 @@
  *******************************************************************************/
 package org.eclipse.uml2.conversion.artisan.importWizards;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
@@ -27,6 +33,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.eclipse.uml2.conversion.artisan.ArtisanXMI2UML;
 
 
 public class ImportWizardPage extends WizardNewFileCreationPage {
@@ -78,11 +85,15 @@ public class ImportWizardPage extends WizardNewFileCreationPage {
 	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#getInitialContents()
 	 */
 	protected InputStream getInitialContents() {
-		try {
-			return new FileInputStream(new File(editor.getStringValue()));
-		} catch (FileNotFoundException e) {
-			return null;
-		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+try {
+		ArtisanXMI2UML.convert(new FileInputStream(new File(editor.getStringValue())), out);
+		out.close();
+} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+}
+return new ByteArrayInputStream(out.toByteArray());
 	}
 
 	/* (non-Javadoc)

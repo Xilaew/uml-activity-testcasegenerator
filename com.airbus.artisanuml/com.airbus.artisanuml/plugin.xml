@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="org.eclipse.uml2.import.artisan.category"
+            name="Artisan Studios">
+      </category>
+      <wizard
+            category="org.eclipse.uml2.import.artisan.category"
+            class="org.eclipse.uml2.conversion.artisan.importWizards.ImportWizard"
+            icon="icons/artisan.gif"
+            id="org.eclipse.uml2.import.artisan.wizard"
+            name="Artisan Studio XMI Import">
+      </wizard>
+   </extension>
+
+</plugin>

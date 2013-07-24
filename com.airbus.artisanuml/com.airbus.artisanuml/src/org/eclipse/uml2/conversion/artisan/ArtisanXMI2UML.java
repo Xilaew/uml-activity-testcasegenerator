@@ -1,15 +1,24 @@
 package org.eclipse.uml2.conversion.artisan;
 
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
 import tools.AbstractTool;
 
@@ -22,53 +31,37 @@ import tools.AbstractTool;
  */
 public class ArtisanXMI2UML extends AbstractTool {
 
-	static final String tmpFile = "./tmp.uml";
+	static final String tmpFile = "./umlconverter.tmp";
 
-	public static void convert(String inFile, String outFile) {
-		EList<? extends EObject> model = load(inFile);
-//		AnyType xmlModel = (AnyType) model.get(1);
-//		out(xmlModel.eClass().getEAllStructuralFeatures().toString());
-//		
-//		Iterator<EObject> it = model.get(1).eAllContents();
-//		EStructuralFeature ownedRule ;
-//		while(it.hasNext()){
-//			EObject o = it.next();
-//			//out(o.toString());
-//			if (o.eContainmentFeature().getName().equals("ownedRule")){
-//				EcoreFactory factory = EcoreFactory.eINSTANCE;
-//				EStructuralFeature  f = factory.eContainmentFeature();
-//				//f.setName("localPostcondition");
-//				ownedRule = o.eContainmentFeature();
-//				if (ownedRule!=null)out(o.eContainer().eGet(ownedRule).toString());
-//				org.eclipse.emf.ecore.util.FeatureMapUtil.FeatureEList<?> xml = (org.eclipse.emf.ecore.util.FeatureMapUtil.FeatureEList<?>) o.eContainer().eGet(ownedRule);
-////				xml.getAny().add(Entry)
-//				ownedRule = o.eContainingFeature();
-//				if (ownedRule!=null)out(o.eContainer().eGet(ownedRule).toString());
-//
-//			out("." + o.eClass().toString() /*.getInstanceTypeName()+": "+o.eClass().getInstanceClassName()*/);
-//				out(o.eContainingFeature().toString());
-//				out(o.eContainmentFeature().toString());
-//			}
-////			o.eClass().eContainingFeature()
-////			o.eContainmentFeature().setName("localPostcondition");
-////			o.eContainmentFeature().setDefaultValueLiteral("localPostcondition");
-//			//out(o.eClass().getEAllContainments().size()+"");
-////			out(out);
-////			EStructuralFeature feature = UMLEnvironmentFactory.
-////			o.eContainer().eSet(feature, newValue)
-//		}
+	public static void convert(InputStream in , OutputStream out) throws IOException {
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+				"xmi", UMLResource.Factory.INSTANCE);
+		UMLResourcesUtil.init(RESOURCE_SET); // MDT/UML2 4.0.0 (Juno)
+		Resource resource = RESOURCE_SET.createResource(URI.createFileURI("./org.xilaew.test.xmi"));
+		try {
+			resource.load(in,null);
+		} catch (IOException ioe) {
+			err(ioe.getMessage());
+		}
+		EList<EObject> model = resource.getContents();
 		out(model.get(0).toString());
 		out("-----------------------");
 		out(model.get(1).toString());
 		model.remove(0);
+		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
 
-		save(model, tmpFile);
-		List<String> lines;
+		resource.save(out1,null);
+		out1.close();
+		List<String> lines = new ArrayList<String>();
 		try {
-			lines = Files.readAllLines(Paths.get(tmpFile),
-					Charset.forName("UTF-8"));
+			BufferedReader r = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(out1.toByteArray())));
+			String s1;
+			while((s1=r.readLine()) != null){
+				lines.add(s1);
+			}
 			PrintWriter pw;
-			pw = new PrintWriter(new FileWriter(outFile));
+			out1.reset();
+			pw = new PrintWriter(out1);
 			for (String s : lines) {
 				// UML Namespace
 				s = s.replace(
@@ -85,24 +78,23 @@ public class ArtisanXMI2UML extends AbstractTool {
 				pw.println(s);
 			}
 			pw.close();
-			Files.deleteIfExists(Paths.get(tmpFile));
+			//Files.deleteIfExists(Paths.get(tmpFile));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		model = load(outFile);
+		resource = RESOURCE_SET.createResource(URI.createFileURI("./umlFile.uml"));
+		resource.load(new ByteArrayInputStream(out1.toByteArray()),null);
+		model = resource.getContents();
 		Constraint2LocalPostconditionHelper.convert((org.eclipse.uml2.uml.Package)model.get(0));
-		save(model, outFile);
+		resource.save(out, null);
 	}
-
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
+	
+	
 	public static void main(String[] args) throws IOException {
 		readCmdArgs(args);
 
-		convert(inFile, outFile);
+		convert(new FileInputStream(inFile), new FileOutputStream(outFile));
 		
 	}
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_vwoDAPNvEeK6iMIFjUA6jQ" name="model">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_wAttcPNvEeK6iMIFjUA6jQ" name="Generating Testcases Overview" group="_8FV88PNvEeK6iMIFjUA6jQ _3WMl4PNyEeK6iMIFjUA6jQ _lDXOEPN6EeK6iMIFjUA6jQ _tArp8PN6EeK6iMIFjUA6jQ" node="_AcSvEPNwEeK6iMIFjUA6jQ _O9aZsPNxEeK6iMIFjUA6jQ _cwAm4PNxEeK6iMIFjUA6jQ _DpZSUPNyEeK6iMIFjUA6jQ _OIsiwPNyEeK6iMIFjUA6jQ _kq0r4PNyEeK6iMIFjUA6jQ _vM9N4PNyEeK6iMIFjUA6jQ _zA4ygPNyEeK6iMIFjUA6jQ _AvKgYPNzEeK6iMIFjUA6jQ _OKzmIPNzEeK6iMIFjUA6jQ _dA53sPNzEeK6iMIFjUA6jQ _7vHRcPNzEeK6iMIFjUA6jQ _WuvKgPN9EeK6iMIFjUA6jQ">
+    <ownedParameter xmi:type="uml:Parameter" xmi:id="_r9nO8PNwEeK6iMIFjUA6jQ" name="Model" type="_1KEXcPNwEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZvCJMPNxEeK6iMIFjUA6jQ" name="ControlFlow1" source="_AcSvEPNwEeK6iMIFjUA6jQ" target="_O9aZsPNxEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_v_IuMPNxEeK6iMIFjUA6jQ" name="activity2Check" source="_O9aZsPNxEeK6iMIFjUA6jQ" target="_cwAm4PNxEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Knc-sPN0EeK6iMIFjUA6jQ" name="ControlFlow2" source="_cwAm4PNxEeK6iMIFjUA6jQ" target="_DpZSUPNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_LgXjsPN0EeK6iMIFjUA6jQ" name="ControlFlow3" source="_DpZSUPNyEeK6iMIFjUA6jQ" target="_kq0r4PNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_MKF2IPN0EeK6iMIFjUA6jQ" name="ControlFlow4" source="_kq0r4PNyEeK6iMIFjUA6jQ" target="_vM9N4PNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_G4DC0PN2EeK6iMIFjUA6jQ" name="ControlFlow5" source="_zA4ygPNyEeK6iMIFjUA6jQ" target="_AvKgYPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ItKxYPN2EeK6iMIFjUA6jQ" name="ControlFlow6" source="_AvKgYPNzEeK6iMIFjUA6jQ" target="_OKzmIPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JxHhsPN2EeK6iMIFjUA6jQ" name="ControlFlow7" source="_OKzmIPNzEeK6iMIFjUA6jQ" target="_dA53sPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_S7qJMPN3EeK6iMIFjUA6jQ" name="ControlFlow8" source="_DpZSUPNyEeK6iMIFjUA6jQ" target="_OIsiwPNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_T0vGQPN3EeK6iMIFjUA6jQ" name="ControlFlow9" source="_OIsiwPNyEeK6iMIFjUA6jQ" target="_kq0r4PNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZM9IIPN3EeK6iMIFjUA6jQ" name="ControlFlow10" source="_kq0r4PNyEeK6iMIFjUA6jQ" target="_OIsiwPNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aS-8EPN3EeK6iMIFjUA6jQ" name="ControlFlow11" source="_OIsiwPNyEeK6iMIFjUA6jQ" target="_vM9N4PNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_rfy7cPN5EeK6iMIFjUA6jQ" name="ControlFlow12" source="_OKzmIPNzEeK6iMIFjUA6jQ" target="_7vHRcPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_r-8VkPN5EeK6iMIFjUA6jQ" name="ControlFlow13" source="_7vHRcPNzEeK6iMIFjUA6jQ" target="_OKzmIPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sqAEwPN5EeK6iMIFjUA6jQ" name="ControlFlow14" source="_dA53sPNzEeK6iMIFjUA6jQ" target="_7vHRcPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tQAU0PN5EeK6iMIFjUA6jQ" name="ControlFlow15" source="_7vHRcPNzEeK6iMIFjUA6jQ" target="_dA53sPNzEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_xewNMPN5EeK6iMIFjUA6jQ" name="ControlFlow16" source="_vM9N4PNyEeK6iMIFjUA6jQ" target="_zA4ygPNyEeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_REMpkPN9EeK6iMIFjUA6jQ" name="ControlFlow17" source="_0sk-oPN6EeK6iMIFjUA6jQ" target="_6_MzQPN6EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_SphooPN9EeK6iMIFjUA6jQ" name="ControlFlow18" source="_6_MzQPN6EeK6iMIFjUA6jQ" target="_lDXOEPN6EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_TvQhoPN9EeK6iMIFjUA6jQ" name="ControlFlow19" source="_2HDjIPN7EeK6iMIFjUA6jQ" target="_gTPG8PN6EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_UNNo8PN9EeK6iMIFjUA6jQ" name="ControlFlow20" source="_gTPG8PN6EeK6iMIFjUA6jQ" target="_lAttQPN7EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_UnlQwPN9EeK6iMIFjUA6jQ" name="ControlFlow21" source="_lAttQPN7EeK6iMIFjUA6jQ" target="_n4JNYPN7EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_VGuq4PN9EeK6iMIFjUA6jQ" name="ControlFlow22" source="_n4JNYPN7EeK6iMIFjUA6jQ" target="_qds6YPN7EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZKT1EPN9EeK6iMIFjUA6jQ" name="ControlFlow23" source="_lDXOEPN6EeK6iMIFjUA6jQ" target="_WuvKgPN9EeK6iMIFjUA6jQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hOyB0PN9EeK6iMIFjUA6jQ" name="ControlFlow24" source="_dA53sPNzEeK6iMIFjUA6jQ" target="_0sk-oPN6EeK6iMIFjUA6jQ"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_8FV88PNvEeK6iMIFjUA6jQ" name="Normalisation" node="_vM9N4PNyEeK6iMIFjUA6jQ _DpZSUPNyEeK6iMIFjUA6jQ _cwAm4PNxEeK6iMIFjUA6jQ _OIsiwPNyEeK6iMIFjUA6jQ _kq0r4PNyEeK6iMIFjUA6jQ"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_3WMl4PNyEeK6iMIFjUA6jQ" name="Generate Abstract Testcases" node="_OKzmIPNzEeK6iMIFjUA6jQ _dA53sPNzEeK6iMIFjUA6jQ _AvKgYPNzEeK6iMIFjUA6jQ _7vHRcPNzEeK6iMIFjUA6jQ _WuvKgPN9EeK6iMIFjUA6jQ"/>
+    <group xmi:type="uml:LoopNode" xmi:id="_lDXOEPN6EeK6iMIFjUA6jQ" name="For Each Abstract TestCase" inPartition="_tArp8PN6EeK6iMIFjUA6jQ" outgoing="_ZKT1EPN9EeK6iMIFjUA6jQ" incoming="_SphooPN9EeK6iMIFjUA6jQ" bodyPart="_gTPG8PN6EeK6iMIFjUA6jQ" test="_2HDjIPN7EeK6iMIFjUA6jQ">
+      <node xmi:type="uml:OpaqueAction" xmi:id="_gTPG8PN6EeK6iMIFjUA6jQ" name="Set AMPL Parameter" outgoing="_UNNo8PN9EeK6iMIFjUA6jQ" incoming="_TvQhoPN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_6_MzQPN6EeK6iMIFjUA6jQ" name="Convert Constraints to AMPL" outgoing="_SphooPN9EeK6iMIFjUA6jQ" incoming="_REMpkPN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_0sk-oPN6EeK6iMIFjUA6jQ" name="Convert Variables to AMPL" outgoing="_REMpkPN9EeK6iMIFjUA6jQ" incoming="_hOyB0PN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_lAttQPN7EeK6iMIFjUA6jQ" name="AMPL solve" outgoing="_UnlQwPN9EeK6iMIFjUA6jQ" incoming="_UNNo8PN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_n4JNYPN7EeK6iMIFjUA6jQ" name="Read Results" outgoing="_VGuq4PN9EeK6iMIFjUA6jQ" incoming="_UnlQwPN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_qds6YPN7EeK6iMIFjUA6jQ" name="Generate Testcode" incoming="_VGuq4PN9EeK6iMIFjUA6jQ"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_2HDjIPN7EeK6iMIFjUA6jQ" name="Get Next Abstract Test Case" outgoing="_TvQhoPN9EeK6iMIFjUA6jQ"/>
+    </group>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_tArp8PN6EeK6iMIFjUA6jQ" name="Generate Concrete Testdata" node="_lDXOEPN6EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_AcSvEPNwEeK6iMIFjUA6jQ" name="InitialNode1" outgoing="_ZvCJMPNxEeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_O9aZsPNxEeK6iMIFjUA6jQ" name="select Activity" outgoing="_v_IuMPNxEeK6iMIFjUA6jQ" incoming="_ZvCJMPNxEeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_cwAm4PNxEeK6iMIFjUA6jQ" name="Check Designrules" inPartition="_8FV88PNvEeK6iMIFjUA6jQ" outgoing="_Knc-sPN0EeK6iMIFjUA6jQ" incoming="_v_IuMPNxEeK6iMIFjUA6jQ">
+      <language>Natural language</language>
+      <body>Check wheather there is an operation specifing this Activity. This Operation needs to be used as Operation Context for Parsing OCL Expressions. It should also be directly contained within a Namespace.</body>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_DpZSUPNyEeK6iMIFjUA6jQ" name="Parse Guards/LocalPostConditions" inPartition="_8FV88PNvEeK6iMIFjUA6jQ" outgoing="_LgXjsPN0EeK6iMIFjUA6jQ _S7qJMPN3EeK6iMIFjUA6jQ" incoming="_Knc-sPN0EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_OIsiwPNyEeK6iMIFjUA6jQ" name="Convert OCL to DNF" inPartition="_8FV88PNvEeK6iMIFjUA6jQ" outgoing="_T0vGQPN3EeK6iMIFjUA6jQ _aS-8EPN3EeK6iMIFjUA6jQ" incoming="_S7qJMPN3EeK6iMIFjUA6jQ _ZM9IIPN3EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_kq0r4PNyEeK6iMIFjUA6jQ" name="Transform UML Model into TCG Model" inPartition="_8FV88PNvEeK6iMIFjUA6jQ" outgoing="_MKF2IPN0EeK6iMIFjUA6jQ _ZM9IIPN3EeK6iMIFjUA6jQ" incoming="_LgXjsPN0EeK6iMIFjUA6jQ _T0vGQPN3EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_vM9N4PNyEeK6iMIFjUA6jQ" name="Add Continuity Constraints" inPartition="_8FV88PNvEeK6iMIFjUA6jQ" outgoing="_xewNMPN5EeK6iMIFjUA6jQ" incoming="_MKF2IPN0EeK6iMIFjUA6jQ _aS-8EPN3EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_zA4ygPNyEeK6iMIFjUA6jQ" name="Select Coverage Criterium" outgoing="_G4DC0PN2EeK6iMIFjUA6jQ" incoming="_xewNMPN5EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_AvKgYPNzEeK6iMIFjUA6jQ" name="Generate Testgoals" inPartition="_3WMl4PNyEeK6iMIFjUA6jQ" outgoing="_ItKxYPN2EeK6iMIFjUA6jQ" incoming="_G4DC0PN2EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_OKzmIPNzEeK6iMIFjUA6jQ" name="Forward Breadth first Search" inPartition="_3WMl4PNyEeK6iMIFjUA6jQ" outgoing="_JxHhsPN2EeK6iMIFjUA6jQ _rfy7cPN5EeK6iMIFjUA6jQ" incoming="_ItKxYPN2EeK6iMIFjUA6jQ _r-8VkPN5EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_dA53sPNzEeK6iMIFjUA6jQ" name="Complete Path to final Node" inPartition="_3WMl4PNyEeK6iMIFjUA6jQ" outgoing="_sqAEwPN5EeK6iMIFjUA6jQ _hOyB0PN9EeK6iMIFjUA6jQ" incoming="_JxHhsPN2EeK6iMIFjUA6jQ _tQAU0PN5EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7vHRcPNzEeK6iMIFjUA6jQ" name="Early Infeasible Path Check" inPartition="_3WMl4PNyEeK6iMIFjUA6jQ" outgoing="_r-8VkPN5EeK6iMIFjUA6jQ _tQAU0PN5EeK6iMIFjUA6jQ" incoming="_rfy7cPN5EeK6iMIFjUA6jQ _sqAEwPN5EeK6iMIFjUA6jQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_WuvKgPN9EeK6iMIFjUA6jQ" name="ActivityFinalNode1" inPartition="_3WMl4PNyEeK6iMIFjUA6jQ" incoming="_ZKT1EPN9EeK6iMIFjUA6jQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_1KEXcPNwEeK6iMIFjUA6jQ" name="UML_Model"/>
+</uml:Model>
