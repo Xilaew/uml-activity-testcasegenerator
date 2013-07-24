@@ -7,12 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: abstractTestCaseGraph,
- abstractTestCaseGraph.impl,
- abstractTestCaseGraph.util,
- activityTestCaseGraph,
- activityTestCaseGraph.impl,
- activityTestCaseGraph.util,
+Export-Package: org.eclipse.atg.model,
  org.xilaew.atg.model.abstractTestCaseGraph,
  org.xilaew.atg.model.abstractTestCaseGraph.impl,
  org.xilaew.atg.model.abstractTestCaseGraph.util,
