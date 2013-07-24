@@ -47,7 +47,13 @@
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_tRESgOTYEeKucLyI-x0uYQ" name="testActivity"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_tRESgOTYEeKucLyI-x0uYQ" name="testActivity" node="_CDblsPKkEeKBB_F6ttd91A">
+        <node xmi:type="uml:DataStoreNode" xmi:id="_CDblsPKkEeKBB_F6ttd91A" name="localVarTest">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_CDvHsPKkEeKBB_F6ttd91A" value="1"/>
+        </node>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_3QJpUPKjEeKBB_F6ttd91A" name="testActivity"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Kbjb4OlcEeKhw86PTc_7RQ" name="class2">
       <generalization xmi:type="uml:Generalization" xmi:id="_bjFkkOlcEeKhw86PTc_7RQ" general="_r5c_UOTYEeKucLyI-x0uYQ"/>

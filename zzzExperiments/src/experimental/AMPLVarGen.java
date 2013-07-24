@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Type;

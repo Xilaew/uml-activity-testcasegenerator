@@ -12,3 +12,4 @@ Import-Package: org.eclipse.emf.ecore.resource
 Export-Package: data,
  tools,
  util
+Bundle-ActivationPolicy: lazy

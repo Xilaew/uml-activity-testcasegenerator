@@ -455,6 +455,24 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YFTYFeTbEeKucLyI-x0uYQ"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_YFTYFuTbEeKucLyI-x0uYQ" type="7004">
+        <children xmi:type="notation:Shape" xmi:id="_CELMkPKkEeKBB_F6ttd91A" type="3078" fontHeight="8" lineColor="0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CEn4gPKkEeKBB_F6ttd91A" source="ShadowFigure">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CEn4gfKkEeKBB_F6ttd91A" key="ShadowFigure_Value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CEn4gvKkEeKBB_F6ttd91A" source="displayNameLabelIcon">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CEn4g_KkEeKBB_F6ttd91A" key="displayNameLabelIcon_value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CEn4hPKkEeKBB_F6ttd91A" source="QualifiedName">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CEn4hfKkEeKBB_F6ttd91A" key="QualifiedNameDepth" value="1000"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_CEn4hvKkEeKBB_F6ttd91A" type="5127"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_CEn4h_KkEeKBB_F6ttd91A" type="5128">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CEn4iPKkEeKBB_F6ttd91A" y="5"/>
+          </children>
+          <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_CELMkfKkEeKBB_F6ttd91A"/>
+          <element xmi:type="uml:DataStoreNode" href="model.uml#_CDblsPKkEeKBB_F6ttd91A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CELMkvKkEeKBB_F6ttd91A" x="120" y="286"/>
+        </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YFTYF-TbEeKucLyI-x0uYQ"/>
       </children>
       <element xmi:type="uml:Activity" href="model.uml#_tRESgOTYEeKucLyI-x0uYQ"/>

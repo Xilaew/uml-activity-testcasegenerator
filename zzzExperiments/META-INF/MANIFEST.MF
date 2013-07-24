@@ -4,9 +4,15 @@ Bundle-Name: ZzzExperiments
 Bundle-SymbolicName: zzzExperiments
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.xilaew.atg.base,
+Require-Bundle: org.xilaew.atg.model,
  org.eclipse.uml2.uml,
  org.eclipse.ocl.uml,
  org.eclipse.ocl.examples.pivot,
  org.eclipse.ocl.examples,
- org.apache.log4j
+ org.apache.log4j,
+ org.xilaew.atg.core,
+ net.sf.parteg.base,
+ net.sf.parteg.input.statemachine,
+ net.sf.parteg.output,
+ net.sf.parteg.core,
+ org.xilaew.atg.base
