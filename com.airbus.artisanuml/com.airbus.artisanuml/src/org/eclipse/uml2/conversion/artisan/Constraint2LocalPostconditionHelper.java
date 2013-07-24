@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.airbus.artisanuml;
+package org.eclipse.uml2.conversion.artisan;
 
 import java.util.Iterator;
 

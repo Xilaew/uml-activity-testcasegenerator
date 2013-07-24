@@ -1,4 +1,4 @@
-package com.airbus.artisanuml;
+package org.eclipse.uml2.conversion.artisan;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -85,11 +85,14 @@ public class ArtisanXMI2UML extends AbstractTool {
 				pw.println(s);
 			}
 			pw.close();
+			Files.deleteIfExists(Paths.get(tmpFile));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		model = load(outFile);
+		Constraint2LocalPostconditionHelper.convert((org.eclipse.uml2.uml.Package)model.get(0));
+		save(model, outFile);
 	}
 
 	/**
@@ -101,10 +104,6 @@ public class ArtisanXMI2UML extends AbstractTool {
 
 		convert(inFile, outFile);
 		
-		//TODO this conversion should be possible in the first go
-		EList<? extends EObject> model = load(outFile);
-		Constraint2LocalPostconditionHelper.convert((org.eclipse.uml2.uml.Package)model.get(0));
-		save(model, outFile);
 	}
 
 }

@@ -5,4 +5,4 @@
  * @author th51e0
  *
  */
-package com.airbus.artisanuml;
+package org.eclipse.uml2.conversion.artisan;
