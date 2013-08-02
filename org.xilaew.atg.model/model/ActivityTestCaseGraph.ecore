@@ -12,16 +12,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGPseudoNode"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGStructuredActivityNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGContainer AbstractTestCaseGraph.ecore#//AbstractTCGNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
-        eType="#//TCGVariable" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A general Class representing Properties, References or local Variables inside the Activity and Structured Activity Nodes."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedBy" upperBound="-1"
         eType="#//TCGOCLVariableCallExp" eOpposite="#//TCGOCLVariableCallExp/variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

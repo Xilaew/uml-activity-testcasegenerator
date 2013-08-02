@@ -1,0 +1,20 @@
+package Model
+{
+	class MyComponent
+	{
+		operation operation1(_'in' : Boolean)
+		{
+			postcondition postcondition2: not(switcher@pre=switcher);
+			postcondition postcondition: bool=_'in';
+		}
+		attribute bool : Boolean;
+		property switcher : Boolean;
+	}
+	class IMyComponent { interface }
+	{
+	}
+	class Class1
+	{
+		operation CopyOf_operation1_1(myParameter);
+	}
+}

@@ -93,10 +93,6 @@ public class ActivityTestCaseGraphAdapterFactory extends AdapterFactoryImpl {
 				return createTCGControlNodeAdapter();
 			}
 			@Override
-			public Adapter caseTCGStructuredActivityNode(TCGStructuredActivityNode object) {
-				return createTCGStructuredActivityNodeAdapter();
-			}
-			@Override
 			public Adapter caseTCGVariable(TCGVariable object) {
 				return createTCGVariableAdapter();
 			}
@@ -229,20 +225,6 @@ public class ActivityTestCaseGraphAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTCGControlNodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGStructuredActivityNode <em>TCG Structured Activity Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGStructuredActivityNode
-	 * @generated
-	 */
-	public Adapter createTCGStructuredActivityNodeAdapter() {
 		return null;
 	}
 

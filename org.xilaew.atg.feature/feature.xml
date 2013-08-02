@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.xilaew.atg.feature"
-      label="Feature"
-      version="1.0.0">
+      label="ActivityTestGenerator"
+      version="1.0.0"
+      provider-name="Felix Kurth">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -22,14 +23,13 @@
       <import plugin="org.eclipse.uml2.uml.resources"/>
       <import plugin="org.eclipse.ocl.uml"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.xilaew.atg.base"/>
       <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.xilaew.atg.base.edit"/>
+      <import plugin="org.xilaew.atg.base"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
    </requires>

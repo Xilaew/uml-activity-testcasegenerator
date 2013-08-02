@@ -13,13 +13,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGEdge"/>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGPseudoNode"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGStructuredActivityNode" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGContainer http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
-        eType="#//TCGVariable" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGVariable" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedBy" upperBound="-1"
         eType="#//TCGOCLVariableCallExp" eOpposite="#//TCGOCLVariableCallExp/variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"

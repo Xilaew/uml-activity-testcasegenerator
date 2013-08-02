@@ -1,0 +1,4 @@
+param Pathlength := 2;
+set assignment := 1;
+set decision2false := 1 ;
+set False := 2;

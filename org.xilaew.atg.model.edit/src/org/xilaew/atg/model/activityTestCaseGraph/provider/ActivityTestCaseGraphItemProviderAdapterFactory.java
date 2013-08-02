@@ -191,29 +191,6 @@ public class ActivityTestCaseGraphItemProviderAdapterFactory extends ActivityTes
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.xilaew.atg.model.activityTestCaseGraph.TCGStructuredActivityNode} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TCGStructuredActivityNodeItemProvider tcgStructuredActivityNodeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.xilaew.atg.model.activityTestCaseGraph.TCGStructuredActivityNode}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTCGStructuredActivityNodeAdapter() {
-		if (tcgStructuredActivityNodeItemProvider == null) {
-			tcgStructuredActivityNodeItemProvider = new TCGStructuredActivityNodeItemProvider(this);
-		}
-
-		return tcgStructuredActivityNodeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,7 +481,6 @@ public class ActivityTestCaseGraphItemProviderAdapterFactory extends ActivityTes
 		if (tcgActionItemProvider != null) tcgActionItemProvider.dispose();
 		if (tcgControlFlowItemProvider != null) tcgControlFlowItemProvider.dispose();
 		if (tcgControlNodeItemProvider != null) tcgControlNodeItemProvider.dispose();
-		if (tcgStructuredActivityNodeItemProvider != null) tcgStructuredActivityNodeItemProvider.dispose();
 		if (tcgVariableItemProvider != null) tcgVariableItemProvider.dispose();
 		if (tcgObjectVariableItemProvider != null) tcgObjectVariableItemProvider.dispose();
 		if (tcgBasicVariableItemProvider != null) tcgBasicVariableItemProvider.dispose();
@@ -570,11 +546,6 @@ public class ActivityTestCaseGraphItemProviderAdapterFactory extends ActivityTes
 					(createChildParameter
 						(AbstractTestCaseGraphPackage.Literals.ABSTRACT_TCG_CONTAINER__NODES,
 						 ActivityTestCaseGraphFactory.eINSTANCE.createTCGControlNode()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(AbstractTestCaseGraphPackage.Literals.ABSTRACT_TCG_CONTAINER__NODES,
-						 ActivityTestCaseGraphFactory.eINSTANCE.createTCGStructuredActivityNode()));
 
 				newChildDescriptors.add
 					(createChildParameter

@@ -3,12 +3,13 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Artisan Studio xmi Importer
 Bundle-SymbolicName: org.eclipse.uml2.import.artisan;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Vendor: AIRBUS
+Bundle-Vendor: Felix Kurth
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.eclipse.ocl.uml,
  org.eclipse.jface,
  org.eclipse.ui.workbench,
  org.eclipse.ui.ide,
- org.xilaew.atg.core,
- org.eclipse.ui
+ org.eclipse.ui,
+ org.xilaew.atg.core
 Import-Package: org.eclipse.core.runtime
+Export-Package: org.eclipse.uml2.conversion.artisan

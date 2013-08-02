@@ -61,7 +61,6 @@ public class ActivityTestCaseGraphFactoryImpl extends EFactoryImpl implements Ac
 			case ActivityTestCaseGraphPackage.TCG_ACTION: return createTCGAction();
 			case ActivityTestCaseGraphPackage.TCG_CONTROL_FLOW: return createTCGControlFlow();
 			case ActivityTestCaseGraphPackage.TCG_CONTROL_NODE: return createTCGControlNode();
-			case ActivityTestCaseGraphPackage.TCG_STRUCTURED_ACTIVITY_NODE: return createTCGStructuredActivityNode();
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE: return createTCGVariable();
 			case ActivityTestCaseGraphPackage.TCG_OBJECT_VARIABLE: return createTCGObjectVariable();
 			case ActivityTestCaseGraphPackage.TCG_BASIC_VARIABLE: return createTCGBasicVariable();
@@ -146,16 +145,6 @@ public class ActivityTestCaseGraphFactoryImpl extends EFactoryImpl implements Ac
 	public TCGControlNode createTCGControlNode() {
 		TCGControlNodeImpl tcgControlNode = new TCGControlNodeImpl();
 		return tcgControlNode;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TCGStructuredActivityNode createTCGStructuredActivityNode() {
-		TCGStructuredActivityNodeImpl tcgStructuredActivityNode = new TCGStructuredActivityNodeImpl();
-		return tcgStructuredActivityNode;
 	}
 
 	/**

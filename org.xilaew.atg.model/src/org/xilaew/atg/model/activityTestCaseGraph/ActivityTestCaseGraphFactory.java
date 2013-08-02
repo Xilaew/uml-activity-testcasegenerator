@@ -58,15 +58,6 @@ public interface ActivityTestCaseGraphFactory extends EFactory {
 	TCGControlNode createTCGControlNode();
 
 	/**
-	 * Returns a new object of class '<em>TCG Structured Activity Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TCG Structured Activity Node</em>'.
-	 * @generated
-	 */
-	TCGStructuredActivityNode createTCGStructuredActivityNode();
-
-	/**
 	 * Returns a new object of class '<em>TCG Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

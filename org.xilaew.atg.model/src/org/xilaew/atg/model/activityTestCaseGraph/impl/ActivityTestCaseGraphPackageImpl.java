@@ -75,13 +75,6 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tcgStructuredActivityNodeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass tcgVariableEClass = null;
 
 	/**
@@ -273,30 +266,9 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTCGStructuredActivityNode() {
-		if (tcgStructuredActivityNodeEClass == null) {
-			tcgStructuredActivityNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(4);
-		}
-		return tcgStructuredActivityNodeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTCGStructuredActivityNode_Variables() {
-        return (EReference)getTCGStructuredActivityNode().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTCGVariable() {
 		if (tcgVariableEClass == null) {
-			tcgVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(5);
+			tcgVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(4);
 		}
 		return tcgVariableEClass;
 	}
@@ -315,9 +287,18 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTCGVariable_IsParameter() {
+        return (EAttribute)getTCGVariable().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTCGObjectVariable() {
 		if (tcgObjectVariableEClass == null) {
-			tcgObjectVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(6);
+			tcgObjectVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(5);
 		}
 		return tcgObjectVariableEClass;
 	}
@@ -338,7 +319,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EClass getTCGBasicVariable() {
 		if (tcgBasicVariableEClass == null) {
-			tcgBasicVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(7);
+			tcgBasicVariableEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(6);
 		}
 		return tcgBasicVariableEClass;
 	}
@@ -368,7 +349,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EClass getTCGOCLExpression() {
 		if (tcgoclExpressionEClass == null) {
-			tcgoclExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(9);
+			tcgoclExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(8);
 		}
 		return tcgoclExpressionEClass;
 	}
@@ -380,7 +361,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EClass getTCGOCLOperationCallExp() {
 		if (tcgoclOperationCallExpEClass == null) {
-			tcgoclOperationCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(10);
+			tcgoclOperationCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(9);
 		}
 		return tcgoclOperationCallExpEClass;
 	}
@@ -419,7 +400,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EClass getTCGOCLVariableCallExp() {
 		if (tcgoclVariableCallExpEClass == null) {
-			tcgoclVariableCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(11);
+			tcgoclVariableCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(10);
 		}
 		return tcgoclVariableCallExpEClass;
 	}
@@ -449,7 +430,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EClass getTCGOCLLiteralExp() {
 		if (tcgoclLiteralExpEClass == null) {
-			tcgoclLiteralExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(13);
+			tcgoclLiteralExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(12);
 		}
 		return tcgoclLiteralExpEClass;
 	}
@@ -479,7 +460,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EEnum getTCGBasicVariableType() {
 		if (tcgBasicVariableTypeEEnum == null) {
-			tcgBasicVariableTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(8);
+			tcgBasicVariableTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(7);
 		}
 		return tcgBasicVariableTypeEEnum;
 	}
@@ -491,7 +472,7 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EEnum getTCGOCLOperationType() {
 		if (tcgoclOperationTypeEEnum == null) {
-			tcgoclOperationTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(12);
+			tcgoclOperationTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(11);
 		}
 		return tcgoclOperationTypeEEnum;
 	}

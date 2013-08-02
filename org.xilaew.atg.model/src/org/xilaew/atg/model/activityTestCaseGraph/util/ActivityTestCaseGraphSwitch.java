@@ -113,16 +113,6 @@ public class ActivityTestCaseGraphSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ActivityTestCaseGraphPackage.TCG_STRUCTURED_ACTIVITY_NODE: {
-				TCGStructuredActivityNode tcgStructuredActivityNode = (TCGStructuredActivityNode)theEObject;
-				T result = caseTCGStructuredActivityNode(tcgStructuredActivityNode);
-				if (result == null) result = caseAbstractTCGContainer(tcgStructuredActivityNode);
-				if (result == null) result = caseAbstractTCGNode(tcgStructuredActivityNode);
-				if (result == null) result = caseAbstractTCGElement(tcgStructuredActivityNode);
-				if (result == null) result = caseEModelElement(tcgStructuredActivityNode);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE: {
 				TCGVariable tcgVariable = (TCGVariable)theEObject;
 				T result = caseTCGVariable(tcgVariable);
@@ -249,21 +239,6 @@ public class ActivityTestCaseGraphSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTCGControlNode(TCGControlNode object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>TCG Structured Activity Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>TCG Structured Activity Node</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTCGStructuredActivityNode(TCGStructuredActivityNode object) {
 		return null;
 	}
 

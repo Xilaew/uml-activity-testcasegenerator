@@ -1,0 +1,20 @@
+option solver couenne;
+model output/assignment.mod;
+data assignment0.dat;
+let x[0]:=1;
+let x[1]:=5;
+let x[2]:=-1;
+let a:=5;
+display x,a,return;
+solve;
+display x, a, return;
+
+reset data;
+data assignment1.dat;
+let x[0]:=1;
+let x[1]:=5;
+let x[2]:=-1;
+let a:=5;
+display x, a, return;
+solve;
+display x, a, return;

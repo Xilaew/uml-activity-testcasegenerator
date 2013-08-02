@@ -91,12 +91,15 @@ public class UMLActivity2TCGActivityConverter {
 				VariableExp<Classifier, Parameter> v) {
 			TCGOCLVariableCallExp tcgVar = factory
 					.createTCGOCLVariableCallExp();
-			Output.debug("visitVariableExp"+tcgVar +":"+ v.getReferredVariable() , v);
+			Output.debug(
+					"visitVariableExp" + tcgVar + ":" + v.getReferredVariable(),
+					v);
 			tcgVar.setName(v.getName());
 			if (v.getReferredVariable().getRepresentedParameter() != null) {
 				tcgVar.setVariable((TCGVariable) transformElement(v
 						.getReferredVariable().getRepresentedParameter()));
 			}
+			// tcgVar.setIsPre(v.);
 			return tcgVar;
 		}
 
@@ -160,10 +163,10 @@ public class UMLActivity2TCGActivityConverter {
 				List<TCGOCLExpression> qualifierResults) {
 			TCGOCLVariableCallExp tcgVar = factory
 					.createTCGOCLVariableCallExp();
-			Output.debug("visitVariableExp"+tcgVar , callExp);
+			Output.debug("visitVariableExp" + tcgVar, callExp);
 			tcgVar.setVariable((TCGVariable) transformElement(callExp
 					.getReferredProperty()));
-			;
+			tcgVar.setIsPre(callExp.isMarkedPre());
 			Output.debug("Prop CallExp source: " + callExp.getSource(), this);
 			return tcgVar;
 		}
@@ -172,16 +175,17 @@ public class UMLActivity2TCGActivityConverter {
 		protected TCGOCLExpression handleVariable(
 				Variable<Classifier, Parameter> variable,
 				TCGOCLExpression initResult) {
-			TCGOCLVariableCallExp tcgVar = factory
-					.createTCGOCLVariableCallExp();
-			Output.debug("visitVariable"+tcgVar +":"+ variable, variable);
-
-			tcgVar.setName(variable.getName());
-			if (variable.getRepresentedParameter() != null) {
-				tcgVar.setVariable((TCGVariable) transformElement(variable
-						.getRepresentedParameter()));
-			}
-			return tcgVar;
+			transformElement(variable.getRepresentedParameter());
+			// TCGOCLVariableCallExp tcgVar = factory
+			// .createTCGOCLVariableCallExp();
+			// Output.debug("visitVariable"+tcgVar +":"+ variable, variable);
+			//
+			// tcgVar.setName(variable.getName());
+			// if (variable.getRepresentedParameter() != null) {
+			// tcgVar.setVariable((TCGVariable) transformElement(variable
+			// .getRepresentedParameter()));
+			// }
+			return null;
 		}
 
 		@Override
@@ -353,6 +357,7 @@ public class UMLActivity2TCGActivityConverter {
 
 	protected AbstractTCGEdge handleControlFlow(ControlFlow umlControlFlow,
 			AbstractTCGEdge tcgEdge) {
+		Output.debug("Handle ControlFlow: Name := " + umlControlFlow.getQualifiedName(), this);
 		tcgEdge.setName(umlControlFlow.getQualifiedName());
 		tcgEdge.setSource((AbstractTCGNode) transformElement(umlControlFlow
 				.getSource()));
@@ -471,6 +476,10 @@ public class UMLActivity2TCGActivityConverter {
 			Output.debug(
 					"obviously no languagespecification in opaque expression will join all bodys",
 					this);
+			oclExp="";
+			for (String s : umlOpaqueExp.getBodies()){
+				oclExp=oclExp.concat(s);
+			}
 		}
 		;
 		if (umlOpaqueExp.eContainmentFeature().equals(
@@ -497,6 +506,12 @@ public class UMLActivity2TCGActivityConverter {
 		return null;
 	}
 
+	/**
+	 * Transforms an UML Activity into a TCGActivity. This transformation is necessary to normalize the Model.
+	 * @param umlActivity a reference to any UML Activity containing OCL expressions in local Postconditions as well as guards
+	 * @return a Normalized Testcasegraph to be used with Testgenerating Algorithms
+	 * @throws YouShallNotDoThisException When some Design Rules for Activitys are violated
+	 */
 	public TCGActivity transform(Activity umlActivity)
 			throws YouShallNotDoThisException {
 		Output.debug("transform called", this);

@@ -163,11 +163,6 @@ public class TCGActivityItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AbstractTestCaseGraphPackage.Literals.ABSTRACT_TCG_CONTAINER__NODES,
-				 ActivityTestCaseGraphFactory.eINSTANCE.createTCGStructuredActivityNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(AbstractTestCaseGraphPackage.Literals.ABSTRACT_TCG_CONTAINER__EDGES,
 				 ActivityTestCaseGraphFactory.eINSTANCE.createTCGControlFlow()));
 

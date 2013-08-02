@@ -17,6 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTCGElementItemProvider;
 
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage;
@@ -58,6 +60,7 @@ public class TCGVariableItemProvider
 			super.getPropertyDescriptors(object);
 
 			addReferencedByPropertyDescriptor(object);
+			addIsParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +83,28 @@ public class TCGVariableItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TCGVariable_isParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TCGVariable_isParameter_feature", "_UI_TCGVariable_type"),
+				 ActivityTestCaseGraphPackage.Literals.TCG_VARIABLE__IS_PARAMETER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -119,6 +144,12 @@ public class TCGVariableItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(TCGVariable.class)) {
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -4,6 +4,7 @@ package org.xilaew.atg.model.activityTestCaseGraph.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +30,7 @@ import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGVariableImpl#getReferencedBy <em>Referenced By</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGVariableImpl#isIsParameter <em>Is Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +46,25 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 	 * @ordered
 	 */
 	protected EList<TCGOCLVariableCallExp> referencedBy;
+
+	/**
+	 * The default value of the '{@link #isIsParameter() <em>Is Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_PARAMETER_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isIsParameter() <em>Is Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isParameter = IS_PARAMETER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +95,27 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 			referencedBy = new EObjectWithInverseResolvingEList<TCGOCLVariableCallExp>(TCGOCLVariableCallExp.class, this, ActivityTestCaseGraphPackage.TCG_VARIABLE__REFERENCED_BY, ActivityTestCaseGraphPackage.TCGOCL_VARIABLE_CALL_EXP__VARIABLE);
 		}
 		return referencedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsParameter() {
+		return isParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsParameter(boolean newIsParameter) {
+		boolean oldIsParameter = isParameter;
+		isParameter = newIsParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER, oldIsParameter, isParameter));
 	}
 
 	/**
@@ -114,6 +157,8 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 		switch (featureID) {
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__REFERENCED_BY:
 				return getReferencedBy();
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+				return isIsParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,6 +176,9 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 				getReferencedBy().clear();
 				getReferencedBy().addAll((Collection<? extends TCGOCLVariableCallExp>)newValue);
 				return;
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+				setIsParameter((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -146,6 +194,9 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__REFERENCED_BY:
 				getReferencedBy().clear();
 				return;
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+				setIsParameter(IS_PARAMETER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -160,8 +211,26 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 		switch (featureID) {
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__REFERENCED_BY:
 				return referencedBy != null && !referencedBy.isEmpty();
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+				return isParameter != IS_PARAMETER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isParameter: ");
+		result.append(isParameter);
+		result.append(')');
+		return result.toString();
 	}
 
 } //TCGVariableImpl

@@ -19,6 +19,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getReferencedBy <em>Referenced By</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#isIsParameter <em>Is Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,5 +45,32 @@ public interface TCGVariable extends AbstractTCGElement {
 	 * @generated
 	 */
 	EList<TCGOCLVariableCallExp> getReferencedBy();
+
+	/**
+	 * Returns the value of the '<em><b>Is Parameter</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Parameter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Parameter</em>' attribute.
+	 * @see #setIsParameter(boolean)
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage#getTCGVariable_IsParameter()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isIsParameter();
+
+	/**
+	 * Sets the value of the '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#isIsParameter <em>Is Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Parameter</em>' attribute.
+	 * @see #isIsParameter()
+	 * @generated
+	 */
+	void setIsParameter(boolean value);
 
 } // TCGVariable
