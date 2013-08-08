@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_QgpAMAAYEeON2MikzImwLA" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_QjVH0AAYEeON2MikzImwLA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_QkEusAAYEeON2MikzImwLA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_QkN4oAAYEeON2MikzImwLA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QkN4oQAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QkN4ogAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QkN4owAYEeON2MikzImwLA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_QkN4pAAYEeON2MikzImwLA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QkN4pQAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QkN4pgAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QkN4pwAYEeON2MikzImwLA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_QjVH0QAYEeON2MikzImwLA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="TCGOCLFunctionLib.ecore#//FunctionLibrary"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjVH0gAYEeON2MikzImwLA" x="260" y="15"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_QmJyUAAYEeON2MikzImwLA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_QmJyUwAYEeON2MikzImwLA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_QmJyVAAYEeON2MikzImwLA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_QpSl4AAYEeON2MikzImwLA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="TCGOCLFunctionLib.ecore#//TcgOclFunction/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QpSl4QAYEeON2MikzImwLA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QpSl4gAYEeON2MikzImwLA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="TCGOCLFunctionLib.ecore#//TcgOclFunction/amplLiteral"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QpSl4wAYEeON2MikzImwLA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QpSl5AAYEeON2MikzImwLA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="TCGOCLFunctionLib.ecore#//TcgOclFunction/oclLiteral"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QpSl5QAYEeON2MikzImwLA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QpSl5gAYEeON2MikzImwLA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="TCGOCLFunctionLib.ecore#//TcgOclFunction/amplCloseLiteral"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QpSl5wAYEeON2MikzImwLA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QmJyVQAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QmJyVgAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QmJyVwAYEeON2MikzImwLA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_QmJyWAAYEeON2MikzImwLA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_QmJyWQAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_QmJyWgAYEeON2MikzImwLA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_QmJyWwAYEeON2MikzImwLA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_QmJyUQAYEeON2MikzImwLA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="TCGOCLFunctionLib.ecore#//TcgOclFunction"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QmJyUgAYEeON2MikzImwLA" x="195" y="110" width="205" height="98"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QgpAMQAYEeON2MikzImwLA"/>
+  <element xmi:type="ecore:EPackage" href="TCGOCLFunctionLib.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_QqLWsAAYEeON2MikzImwLA" type="3002" source="_QjVH0AAYEeON2MikzImwLA" target="_QmJyUAAYEeON2MikzImwLA">
+    <children xmi:type="notation:Node" xmi:id="_QqLWtAAYEeON2MikzImwLA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_QqLWtQAYEeON2MikzImwLA" x="-2" y="-33"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_QqVHsAAYEeON2MikzImwLA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_QqVHsQAYEeON2MikzImwLA" x="2" y="18"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_QqLWsQAYEeON2MikzImwLA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QqLWsgAYEeON2MikzImwLA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="TCGOCLFunctionLib.ecore#//FunctionLibrary/function"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QqLWswAYEeON2MikzImwLA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RG8LMAAYEeON2MikzImwLA" id="(0.4954128440366973,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RG8LMQAYEeON2MikzImwLA" id="(0.5,1.0)"/>
+  </edges>
+</notation:Diagram>

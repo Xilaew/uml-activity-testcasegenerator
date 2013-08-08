@@ -7,10 +7,10 @@ import java.io.PrintWriter;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.xilaew.atg.mode.ampl.TCG2AMPLVisitor;
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphResourceFactoryImpl;
+import org.xilaew.atg.model.ampl.TCG2AMPLVisitor;
 
 public class TCG2AMPLConverterTool extends AbstractTool{
 

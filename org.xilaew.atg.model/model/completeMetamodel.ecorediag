@@ -771,4 +771,18 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3wViNPX5EeKKdLJ-ACT7aQ" id="(0.5,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3wViNfX5EeKKdLJ-ACT7aQ" id="(0.9488636363636364,0.6551724137931034)"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_dolU0P9-EeKTRf1iqucctw" type="3002" source="_PMaAnPX5EeKKdLJ-ACT7aQ" target="_NGcZkPX5EeKKdLJ-ACT7aQ">
+    <children xmi:type="notation:Node" xmi:id="_dolU1P9-EeKTRf1iqucctw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dolU1f9-EeKTRf1iqucctw" x="-27" y="5"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_dolU1v9-EeKTRf1iqucctw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dolU1_9-EeKTRf1iqucctw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_dolU0f9-EeKTRf1iqucctw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_dolU0v9-EeKTRf1iqucctw" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="AbstractTestCaseGraph.ecore#//AbstractTCGContainer/initialNode"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dolU0_9-EeKTRf1iqucctw" points="[1, 24, 1, 24]$[1, 24, 1, 24]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dovF0P9-EeKTRf1iqucctw" id="(0.1590909090909091,0.5862068965517241)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dovF0f9-EeKTRf1iqucctw" id="(0.5511363636363636,0.15517241379310345)"/>
+  </edges>
 </notation:Diagram>

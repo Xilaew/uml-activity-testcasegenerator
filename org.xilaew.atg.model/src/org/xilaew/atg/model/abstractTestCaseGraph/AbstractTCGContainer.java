@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getEdges <em>Edges</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getInitialNode <em>Initial Node</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,5 +58,31 @@ public interface AbstractTCGContainer extends AbstractTCGElement {
 	 * @generated
 	 */
 	EList<AbstractTCGEdge> getEdges();
+
+	/**
+	 * Returns the value of the '<em><b>Initial Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initial Node</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initial Node</em>' reference.
+	 * @see #setInitialNode(AbstractTCGNode)
+	 * @see org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage#getAbstractTCGContainer_InitialNode()
+	 * @model required="true"
+	 * @generated
+	 */
+	AbstractTCGNode getInitialNode();
+
+	/**
+	 * Sets the value of the '{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getInitialNode <em>Initial Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initial Node</em>' reference.
+	 * @see #getInitialNode()
+	 * @generated
+	 */
+	void setInitialNode(AbstractTCGNode value);
 
 } // AbstractTCGContainer

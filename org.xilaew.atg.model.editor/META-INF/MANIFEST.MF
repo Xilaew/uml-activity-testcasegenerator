@@ -9,7 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xilaew.atg.model.activityTestCaseGraph.presentation,
- org.xilaew.atg.model.abstractTestCaseGraph.presentation
+ org.xilaew.atg.model.abstractTestCaseGraph.presentation,
+ org.xilaew.atg.model.tcgoclfunctionlib.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.xilaew.atg.model.edit;visibility:=reexport,

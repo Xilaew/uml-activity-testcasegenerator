@@ -4,6 +4,7 @@ package org.xilaew.atg.model.abstractTestCaseGraph.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +30,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.impl.AbstractTCGContainerImpl#getNodes <em>Nodes</em>}</li>
  *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.impl.AbstractTCGContainerImpl#getEdges <em>Edges</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.abstractTestCaseGraph.impl.AbstractTCGContainerImpl#getInitialNode <em>Initial Node</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +56,16 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 	 * @ordered
 	 */
 	protected EList<AbstractTCGEdge> edges;
+
+	/**
+	 * The cached value of the '{@link #getInitialNode() <em>Initial Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitialNode()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractTCGNode initialNode;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +115,44 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AbstractTCGNode getInitialNode() {
+		if (initialNode != null && initialNode.eIsProxy()) {
+			InternalEObject oldInitialNode = (InternalEObject)initialNode;
+			initialNode = (AbstractTCGNode)eResolveProxy(oldInitialNode);
+			if (initialNode != oldInitialNode) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE, oldInitialNode, initialNode));
+			}
+		}
+		return initialNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractTCGNode basicGetInitialNode() {
+		return initialNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitialNode(AbstractTCGNode newInitialNode) {
+		AbstractTCGNode oldInitialNode = initialNode;
+		initialNode = newInitialNode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE, oldInitialNode, initialNode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -125,6 +176,9 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 				return getNodes();
 			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__EDGES:
 				return getEdges();
+			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE:
+				if (resolve) return getInitialNode();
+				return basicGetInitialNode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +200,9 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 				getEdges().clear();
 				getEdges().addAll((Collection<? extends AbstractTCGEdge>)newValue);
 				return;
+			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE:
+				setInitialNode((AbstractTCGNode)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +221,9 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__EDGES:
 				getEdges().clear();
 				return;
+			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE:
+				setInitialNode((AbstractTCGNode)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,6 +240,8 @@ public class AbstractTCGContainerImpl extends AbstractTCGElementImpl implements 
 				return nodes != null && !nodes.isEmpty();
 			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__EDGES:
 				return edges != null && !edges.isEmpty();
+			case AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE:
+				return initialNode != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.ControlFlow;
 import org.eclipse.uml2.uml.ControlNode;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.InitialNode;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
@@ -264,7 +265,15 @@ public class UMLActivity2TCGActivityConverter {
 			tcgControlNode.setName(object.getName());
 			return tcgControlNode;
 		}
+		
+		public AbstractTCGElement caseInitialNode(InitialNode object) {
+			TCGControlNode tcgControlNode = factory.createTCGControlNode();
+			tcgControlNode.setName(object.getQualifiedName());
+			tcgActivity.setInitialNode(tcgControlNode);
+			return tcgControlNode;
+		}
 
+		
 		public AbstractTCGElement caseLiteralString(LiteralString object) {
 			Output.debug("literalString found" + object.getValue(), this);
 			return parseLiteralStringAsOCL(object);

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_gM56cP94EeKTRf1iqucctw" type="EcoreTools" name="TestcaseGraphRuntime" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_i2oVwP94EeKTRf1iqucctw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_i2yGwP94EeKTRf1iqucctw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_i273wP94EeKTRf1iqucctw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_i273wf94EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_i273wv94EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_i273w_94EeKTRf1iqucctw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_i273xP94EeKTRf1iqucctw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_i273xf94EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_i273xv94EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_i273x_94EeKTRf1iqucctw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_i2oVwf94EeKTRf1iqucctw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="TestcaseGraphRuntime.ecore#//Path"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i2oVwv94EeKTRf1iqucctw" x="180" y="180" width="115" height="82"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_fwB7wP95EeKTRf1iqucctw" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fwoYsP95EeKTRf1iqucctw" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fwoYsf95EeKTRf1iqucctw" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_fwLswP95EeKTRf1iqucctw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_fwLswf95EeKTRf1iqucctw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fwLswv95EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fwLsw_95EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fwLsxP95EeKTRf1iqucctw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fwLsxf95EeKTRf1iqucctw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fwLsxv95EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fwLsx_95EeKTRf1iqucctw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fwLsyP95EeKTRf1iqucctw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_fwB7wf95EeKTRf1iqucctw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fwB7wv95EeKTRf1iqucctw" x="180" y="310"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_gM56cf94EeKTRf1iqucctw"/>
+  <element xmi:type="ecore:EPackage" href="TestcaseGraphRuntime.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_j7gdsP95EeKTRf1iqucctw" type="3002" source="_i2oVwP94EeKTRf1iqucctw" target="_fwB7wP95EeKTRf1iqucctw">
+    <children xmi:type="notation:Node" xmi:id="_j7gdtP95EeKTRf1iqucctw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_j7gdtf95EeKTRf1iqucctw" x="13" y="-25"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_j7qOsP95EeKTRf1iqucctw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_j7qOsf95EeKTRf1iqucctw" x="-12" y="17"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_j7gdsf95EeKTRf1iqucctw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_j7gdsv95EeKTRf1iqucctw" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="TestcaseGraphRuntime.ecore#//Path/edges"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_j7gds_95EeKTRf1iqucctw" points="[6, 40, -18, -130]$[26, 162, 2, -8]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_j7qOsv95EeKTRf1iqucctw" id="(0.6136363636363636,0.15517241379310345)"/>
+  </edges>
+</notation:Diagram>

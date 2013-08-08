@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
 encoding//model/AbstractTestCaseGraph.ecorediag=UTF-8
 encoding//model/ActivityTestCaseGraph.ecorediag=UTF-8
+encoding//model/TCGOCLFunctionLib.ecorediag=UTF-8
+encoding//model/TestcaseGraphRuntime.ecore=UTF-8
+encoding//model/TestcaseGraphRuntime.ecorediag=UTF-8
 encoding//model/completeMetamodel.ecorediag=UTF-8

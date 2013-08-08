@@ -23,6 +23,18 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated TCGOCLFunctionLib -->
+      <editor
+            id="org.xilaew.atg.model.tcgoclfunctionlib.presentation.TcgoclfunctionlibEditorID"
+            name="%_UI_TcgoclfunctionlibEditor_label"
+            icon="icons/full/obj16/TcgoclfunctionlibModelFile.gif"
+            extensions="tcgoclfunctionlib"
+            class="org.xilaew.atg.model.tcgoclfunctionlib.presentation.TcgoclfunctionlibEditor"
+            contributorClass="org.xilaew.atg.model.tcgoclfunctionlib.presentation.TcgoclfunctionlibActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
       <!-- @generated AbstractTestCaseGraph -->
       <editor
             id="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphEditorID"

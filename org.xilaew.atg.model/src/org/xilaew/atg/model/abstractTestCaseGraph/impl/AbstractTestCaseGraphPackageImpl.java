@@ -206,6 +206,15 @@ public class AbstractTestCaseGraphPackageImpl extends EPackageImpl implements Ab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAbstractTCGContainer_InitialNode() {
+        return (EReference)getAbstractTCGContainer().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractTCGNode() {
 		if (abstractTCGNodeEClass == null) {
 			abstractTCGNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(AbstractTestCaseGraphPackage.eNS_URI).getEClassifiers().get(2);

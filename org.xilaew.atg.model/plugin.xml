@@ -39,4 +39,20 @@
             type="activitytestcasegraph"
             class="org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphResourceFactoryImpl"/>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestcaseGraphRuntime -->
+      <package
+            uri="http://org.xilaew.atg.model.TestCaseGraphRuntime"
+            class="org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimePackage"
+            genModel="model/TestcaseGraphRuntime.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TCGOCLFunctionLib -->
+      <package
+            uri="http://org.xilaew.atg.model.tcgoclfunctionlib"
+            class="org.xilaew.atg.model.tcgoclfunctionlib.TcgoclfunctionlibPackage"
+            genModel="model/TCGOCLFunctionLib.genmodel"/>
+   </extension>
+
 </plugin>

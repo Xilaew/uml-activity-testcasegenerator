@@ -41,7 +41,11 @@
     <eLiterals name="Real" value="1"/>
     <eLiterals name="Boolean" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLExpression" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TCGOCLExpression" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Superclass for all nodes in an Abstract Syntax Tree for OCL Expressions."/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLOperationCallExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//TCGOCLExpression"
         containment="true"/>
@@ -57,8 +61,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TCGOCLOperationType">
     <eLiterals name="multiplication" literal="*"/>
-    <eLiterals name="division" value="1" literal="/"/>
     <eLiterals name="addition" value="2" literal="+"/>
+    <eLiterals name="division" value="1" literal="/"/>
     <eLiterals name="subtraction" value="3" literal="-"/>
     <eLiterals name="size" value="4"/>
     <eLiterals name="equals" value="5" literal="="/>

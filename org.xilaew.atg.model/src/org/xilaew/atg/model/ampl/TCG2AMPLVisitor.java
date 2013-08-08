@@ -1,4 +1,4 @@
-package org.xilaew.atg.mode.ampl;
+package org.xilaew.atg.model.ampl;
 
 import java.util.Iterator;
 

@@ -11,6 +11,8 @@
         eType="#//AbstractTCGNode" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
         eType="#//AbstractTCGEdge" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialNode" lowerBound="1"
+        eType="#//AbstractTCGNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractTCGNode" eSuperTypes="#//AbstractTCGElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"

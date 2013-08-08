@@ -8,13 +8,19 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.atg.model,
- org.xilaew.atg.mode.ampl,
  org.xilaew.atg.model.abstractTestCaseGraph,
  org.xilaew.atg.model.abstractTestCaseGraph.impl,
  org.xilaew.atg.model.abstractTestCaseGraph.util,
  org.xilaew.atg.model.activityTestCaseGraph,
  org.xilaew.atg.model.activityTestCaseGraph.impl,
- org.xilaew.atg.model.activityTestCaseGraph.util
+ org.xilaew.atg.model.activityTestCaseGraph.util,
+ org.xilaew.atg.model.ampl,
+ org.xilaew.atg.model.testCaseGraphRuntime,
+ org.xilaew.atg.model.testCaseGraphRuntime.impl,
+ org.xilaew.atg.model.testCaseGraphRuntime.util,
+ org.xilaew.atg.model.tcgoclfunctionlib,
+ org.xilaew.atg.model.tcgoclfunctionlib.impl,
+ org.xilaew.atg.model.tcgoclfunctionlib.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

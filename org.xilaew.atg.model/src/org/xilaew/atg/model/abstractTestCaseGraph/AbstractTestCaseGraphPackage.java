@@ -159,13 +159,22 @@ public interface AbstractTestCaseGraphPackage extends EPackage {
 	int ABSTRACT_TCG_CONTAINER__EDGES = ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Initial Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TCG_CONTAINER__INITIAL_NODE = ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract TCG Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TCG_CONTAINER_FEATURE_COUNT = ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_TCG_CONTAINER_FEATURE_COUNT = ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -596,6 +605,17 @@ public interface AbstractTestCaseGraphPackage extends EPackage {
 	EReference getAbstractTCGContainer_Edges();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getInitialNode <em>Initial Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Initial Node</em>'.
+	 * @see org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer#getInitialNode()
+	 * @see #getAbstractTCGContainer()
+	 * @generated
+	 */
+	EReference getAbstractTCGContainer_InitialNode();
+
+	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode <em>Abstract TCG Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -766,6 +786,14 @@ public interface AbstractTestCaseGraphPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_TCG_CONTAINER__EDGES = eINSTANCE.getAbstractTCGContainer_Edges();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Node</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_TCG_CONTAINER__INITIAL_NODE = eINSTANCE.getAbstractTCGContainer_InitialNode();
 
 		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.abstractTestCaseGraph.impl.AbstractTCGNodeImpl <em>Abstract TCG Node</em>}' class.
