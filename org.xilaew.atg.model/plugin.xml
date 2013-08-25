@@ -11,6 +11,10 @@
 <plugin>
 
 
+
+
+
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated AbstractTestCaseGraph -->
       <package
@@ -55,4 +59,18 @@
             genModel="model/TCGOCLFunctionLib.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Tests -->
+      <package
+            uri="http://org.xilaew.atg.model.tests"
+            class="org.xilaew.atg.model.tests.TestsPackage"
+            genModel="model/Tests.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Tests -->
+      <parser
+            type="tests"
+            class="org.xilaew.atg.model.tests.util.TestsResourceFactoryImpl"/>
+   </extension>
 </plugin>

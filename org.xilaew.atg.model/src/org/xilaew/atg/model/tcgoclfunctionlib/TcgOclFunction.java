@@ -78,7 +78,7 @@ public interface TcgOclFunction extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ocl Literal</b></em>' attribute.
-	 * The default value is <code>"\"\""</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ocl Literal</em>' attribute isn't clear,
@@ -88,7 +88,7 @@ public interface TcgOclFunction extends EObject {
 	 * @return the value of the '<em>Ocl Literal</em>' attribute.
 	 * @see #setOclLiteral(String)
 	 * @see org.xilaew.atg.model.tcgoclfunctionlib.TcgoclfunctionlibPackage#getTcgOclFunction_OclLiteral()
-	 * @model default="\"\""
+	 * @model default=""
 	 * @generated
 	 */
 	String getOclLiteral();
@@ -105,7 +105,7 @@ public interface TcgOclFunction extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ampl Close Literal</b></em>' attribute.
-	 * The default value is <code>"\"\""</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ampl Close Literal</em>' attribute isn't clear,
@@ -115,7 +115,7 @@ public interface TcgOclFunction extends EObject {
 	 * @return the value of the '<em>Ampl Close Literal</em>' attribute.
 	 * @see #setAmplCloseLiteral(String)
 	 * @see org.xilaew.atg.model.tcgoclfunctionlib.TcgoclfunctionlibPackage#getTcgOclFunction_AmplCloseLiteral()
-	 * @model default="\"\""
+	 * @model default=""
 	 * @generated
 	 */
 	String getAmplCloseLiteral();

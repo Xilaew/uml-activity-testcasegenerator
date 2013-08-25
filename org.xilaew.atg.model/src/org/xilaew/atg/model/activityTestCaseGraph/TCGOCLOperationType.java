@@ -29,16 +29,6 @@ public enum TCGOCLOperationType implements Enumerator {
 	MULTIPLICATION(0, "multiplication", "*"),
 
 	/**
-	 * The '<em><b>Division</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DIVISION_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	DIVISION(1, "division", "/"),
-
-	/**
 	 * The '<em><b>Addition</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +37,16 @@ public enum TCGOCLOperationType implements Enumerator {
 	 * @ordered
 	 */
 	ADDITION(2, "addition", "+"),
+
+	/**
+	 * The '<em><b>Division</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DIVISION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DIVISION(1, "division", "/"),
 
 	/**
 	 * The '<em><b>Subtraction</b></em>' literal object.
@@ -116,7 +116,39 @@ public enum TCGOCLOperationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LESS_EQUALS(9, "lessEquals", "<=");
+	LESS_EQUALS(9, "lessEquals", "<="), /**
+	 * The '<em><b>And</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AND_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AND(10, "and", "and"), /**
+	 * The '<em><b>Or</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OR(11, "or", "or"), /**
+	 * The '<em><b>Not</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT(12, "not", "not"), /**
+	 * The '<em><b>Xor</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #XOR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	XOR(13, "xor", "xor");
 
 	/**
 	 * The '<em><b>Multiplication</b></em>' literal value.
@@ -134,21 +166,6 @@ public enum TCGOCLOperationType implements Enumerator {
 	public static final int MULTIPLICATION_VALUE = 0;
 
 	/**
-	 * The '<em><b>Division</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Division</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #DIVISION
-	 * @model name="division" literal="/"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DIVISION_VALUE = 1;
-
-	/**
 	 * The '<em><b>Addition</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -162,6 +179,21 @@ public enum TCGOCLOperationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int ADDITION_VALUE = 2;
+
+	/**
+	 * The '<em><b>Division</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Division</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DIVISION
+	 * @model name="division" literal="/"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DIVISION_VALUE = 1;
 
 	/**
 	 * The '<em><b>Subtraction</b></em>' literal value.
@@ -269,6 +301,66 @@ public enum TCGOCLOperationType implements Enumerator {
 	public static final int LESS_EQUALS_VALUE = 9;
 
 	/**
+	 * The '<em><b>And</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>And</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #AND
+	 * @model name="and"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AND_VALUE = 10;
+
+	/**
+	 * The '<em><b>Or</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Or</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #OR
+	 * @model name="or"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OR_VALUE = 11;
+
+	/**
+	 * The '<em><b>Not</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Not</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT
+	 * @model name="not"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_VALUE = 12;
+
+	/**
+	 * The '<em><b>Xor</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Xor</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #XOR
+	 * @model name="xor"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int XOR_VALUE = 13;
+
+	/**
 	 * An array of all the '<em><b>TCGOCL Operation Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,8 +369,8 @@ public enum TCGOCLOperationType implements Enumerator {
 	private static final TCGOCLOperationType[] VALUES_ARRAY =
 		new TCGOCLOperationType[] {
 			MULTIPLICATION,
-			DIVISION,
 			ADDITION,
+			DIVISION,
 			SUBTRACTION,
 			SIZE,
 			EQUALS,
@@ -286,6 +378,10 @@ public enum TCGOCLOperationType implements Enumerator {
 			LESS_THAN,
 			GREATER_EQUALS,
 			LESS_EQUALS,
+			AND,
+			OR,
+			NOT,
+			XOR,
 		};
 
 	/**
@@ -337,8 +433,8 @@ public enum TCGOCLOperationType implements Enumerator {
 	public static TCGOCLOperationType get(int value) {
 		switch (value) {
 			case MULTIPLICATION_VALUE: return MULTIPLICATION;
-			case DIVISION_VALUE: return DIVISION;
 			case ADDITION_VALUE: return ADDITION;
+			case DIVISION_VALUE: return DIVISION;
 			case SUBTRACTION_VALUE: return SUBTRACTION;
 			case SIZE_VALUE: return SIZE;
 			case EQUALS_VALUE: return EQUALS;
@@ -346,6 +442,10 @@ public enum TCGOCLOperationType implements Enumerator {
 			case LESS_THAN_VALUE: return LESS_THAN;
 			case GREATER_EQUALS_VALUE: return GREATER_EQUALS;
 			case LESS_EQUALS_VALUE: return LESS_EQUALS;
+			case AND_VALUE: return AND;
+			case OR_VALUE: return OR;
+			case NOT_VALUE: return NOT;
+			case XOR_VALUE: return XOR;
 		}
 		return null;
 	}

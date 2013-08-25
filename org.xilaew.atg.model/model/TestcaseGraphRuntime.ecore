@@ -4,7 +4,7 @@
     nsPrefix="org.xilaew.atg.model.TestCaseGraphRuntime">
   <eClassifiers xsi:type="ecore:EClass" name="Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" unique="false" upperBound="-1"
-        eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGEdge" volatile="true"/>
+        eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AMPLPath">
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>

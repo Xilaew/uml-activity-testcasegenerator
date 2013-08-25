@@ -72,8 +72,9 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_ccc65fcd-b7cb-421a-bca6-2ba9fa8ff3bc" name="false2merge" source="_ca5119e1-e43f-4cc6-a26e-fae70df42e13" target="_4a9c4648-2181-46fa-bc2d-5fe3932af73b"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_5220a7df-b3a5-454e-aa5d-49a42293bdf0" name="initial2assignment" source="_315cb5ee-924a-4457-990d-d28e686620f7" target="_51ebff75-2164-4717-812f-72af01460325"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_ed5e2399-7eb6-470d-8860-dd8a0d6e6cb6" name="decision2true" source="_081a9671-d05c-4dcc-8789-0187fc60c224" target="_946d1fb4-754c-41d5-9220-5d126dc03e24">
-          <guard xmi:type="uml:OpaqueExpression" xmi:id="_ed5e2399-7eb6-470d-8860-dd8a0d6e6cb6guard" name="xislarger" language="">
-            <body>x>a</body>
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_ed5e2399-7eb6-470d-8860-dd8a0d6e6cb6guard" name="xislarger">
+            <language>OCL</language>
+            <body>x>=a+y</body>
           </guard>
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_315cb5ee-924a-4457-990d-d28e686620f7" name="Initial" visibility="public" outgoing="_5220a7df-b3a5-454e-aa5d-49a42293bdf0"/>
@@ -111,7 +112,7 @@
         </ownedParameter>
         <edge xmi:type="uml:ControlFlow" xmi:id="_6f3a5354-688d-46aa-8ae8-48f0c43b3703" source="_3fce6056-fffc-41fe-a8b1-720fa575604a" target="_0bcf72d8-eccc-4b81-91ac-2b5a7d6448e0"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_b1c072ac-2d1b-4706-852e-a780e918a994" source="_0bcf72d8-eccc-4b81-91ac-2b5a7d6448e0" target="_73322e5b-ea2a-41b5-a3ce-4fa29233c896">
-          <guard xmi:type="uml:OpaqueExpression" xmi:id="_b1c072ac-2d1b-4706-852e-a780e918a994guard">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_b1c072ac-2d1b-4706-852e-a780e918a994guard" name="">
             <body>x&lt;=a</body>
           </guard>
         </edge>
@@ -119,9 +120,10 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_fbff058a-b55d-4d51-8ad0-ed89d0c01d3e" source="_3f1dd4cd-f64b-4f07-8330-9bc53e9a98c1" target="_f9851fcf-62c5-44dc-aa0a-a83466bb19a4"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_601bc576-e951-4fca-b0a6-1f8d47535839" source="_73322e5b-ea2a-41b5-a3ce-4fa29233c896" target="_3f1dd4cd-f64b-4f07-8330-9bc53e9a98c1"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_dfddf444-eb9e-4d72-83ac-66a38f14f4c9" source="_99527bee-8fda-4ee7-a2f3-ad5e084c191d" target="_3fce6056-fffc-41fe-a8b1-720fa575604a"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_ca37e07b-ba34-421a-bcd9-26124746e884" source="_0bcf72d8-eccc-4b81-91ac-2b5a7d6448e0" target="_d87364fb-914f-47f6-ad09-67e53609d30e">
-          <guard xmi:type="uml:OpaqueExpression" xmi:id="_ca37e07b-ba34-421a-bcd9-26124746e884guard">
-            <body>x>a</body>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ca37e07b-ba34-421a-bcd9-26124746e884" name="" source="_0bcf72d8-eccc-4b81-91ac-2b5a7d6448e0" target="_d87364fb-914f-47f6-ad09-67e53609d30e">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_ca37e07b-ba34-421a-bcd9-26124746e884guard" name="">
+            <language>OCL</language>
+            <body>x>=a+1</body>
           </guard>
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_99527bee-8fda-4ee7-a2f3-ad5e084c191d" name="Initial Node1" visibility="public" outgoing="_dfddf444-eb9e-4d72-83ac-66a38f14f4c9"/>
@@ -157,6 +159,7 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768op" name="assignmentDecision" visibility="public" method="_bf91084e-921c-4b36-986e-ed761ece9f55 _78522cd8-0ed5-4f87-940a-71176f2627ab">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768return" name="return" type="_RMbtMO8XEeKmSvuiPtMeiA"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_939a0c52-a909-48dc-af5f-a6aaf47f2747" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fuc40ADwEeO2NIcdi9-HYg" name="y" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
       </ownedOperation>
     </packagedElement>
   </packagedElement>

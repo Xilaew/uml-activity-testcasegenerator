@@ -7,6 +7,19 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated AbstractTestCaseGraph -->
+      <factory
+            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
+            class="org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated ActivityTestCaseGraph -->
       <factory
             uri="http://org.xilaew.atg.model.activityTestCaseGraph"
@@ -25,12 +38,11 @@
             uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
             class="org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphItemProviderAdapterFactory$AbstractTestCaseGraphChildCreationExtender"/>
    </extension>
-
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated AbstractTestCaseGraph -->
+      <!-- @generated TestcaseGraphRuntime -->
       <factory
-            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphItemProviderAdapterFactory"
+            uri="http://org.xilaew.atg.model.TestCaseGraphRuntime"
+            class="org.xilaew.atg.model.testCaseGraphRuntime.provider.TestCaseGraphRuntimeItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -44,6 +56,19 @@
       <factory
             uri="http://org.xilaew.atg.model.tcgoclfunctionlib"
             class="org.xilaew.atg.model.tcgoclfunctionlib.provider.TcgoclfunctionlibItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Tests -->
+      <factory
+            uri="http://org.xilaew.atg.model.tests"
+            class="org.xilaew.atg.model.tests.provider.TestsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

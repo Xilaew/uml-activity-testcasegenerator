@@ -39,7 +39,7 @@
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yqv4YOjJEdu6LJeVabImNg" name="ElevatorControl" isReentrant="false">
         <region xmi:type="uml:Region" xmi:id="_VIx8EJKuEdyUSNhMCOPPLg" name="elevator">
           <transition xmi:type="uml:Transition" xmi:id="_KHZoYJeHEdyqN79LFuBS7A" name="init2idle" source="_ZMY7cJKuEdyUSNhMCOPPLg" target="_dCb_8JKuEdyUSNhMCOPPLg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_OuoAYMHzEdytzJ0at14pUg" isReentrant="false" specification="_xKoXAMHyEdytzJ0at14pUg"/>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_OuoAYMHzEdytzJ0at14pUg" name="" isReentrant="false" specification="_xKoXAMHyEdytzJ0at14pUg"/>
           </transition>
           <transition xmi:type="uml:Transition" xmi:id="_6Q7poMHxEdytzJ0at14pUg" name="idle2idle" source="_dCb_8JKuEdyUSNhMCOPPLg" target="_dCb_8JKuEdyUSNhMCOPPLg">
             <effect xmi:type="uml:FunctionBehavior" xmi:id="_6Q7pocHxEdytzJ0at14pUg" name="" isReentrant="false" specification="_HQGfwOzQEduqQpSKns4XGA"/>

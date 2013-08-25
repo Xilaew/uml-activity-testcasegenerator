@@ -6,18 +6,6 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated AbstractTestCaseGraph -->
-      <package
-            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated AbstractTestCaseGraph -->
-      <parser
-            type="abstracttestcasegraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.util.AbstractTestCaseGraphResourceFactoryImpl"/>
-   </extension>
 
 </plugin>

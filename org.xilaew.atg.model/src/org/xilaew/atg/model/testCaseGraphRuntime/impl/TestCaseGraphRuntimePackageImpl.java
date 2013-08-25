@@ -10,9 +10,11 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage;
 
+import org.xilaew.atg.model.testCaseGraphRuntime.AMPLPath;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimePackage;
+import org.xilaew.atg.model.testCaseGraphRuntime.indexSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +29,20 @@ public class TestCaseGraphRuntimePackageImpl extends EPackageImpl implements Tes
 	 * @generated
 	 */
 	private EClass pathEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass amplPathEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass indexSetEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -115,6 +131,33 @@ public class TestCaseGraphRuntimePackageImpl extends EPackageImpl implements Tes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAMPLPath() {
+		return amplPathEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAMPLPath_Edges() {
+		return (EReference)amplPathEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getindexSet() {
+		return indexSetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TestCaseGraphRuntimeFactory getTestCaseGraphRuntimeFactory() {
 		return (TestCaseGraphRuntimeFactory)getEFactoryInstance();
 	}
@@ -140,6 +183,11 @@ public class TestCaseGraphRuntimePackageImpl extends EPackageImpl implements Tes
 		// Create classes and their features
 		pathEClass = createEClass(PATH);
 		createEReference(pathEClass, PATH__EDGES);
+
+		amplPathEClass = createEClass(AMPL_PATH);
+		createEReference(amplPathEClass, AMPL_PATH__EDGES);
+
+		indexSetEClass = createEClass(INDEX_SET);
 	}
 
 	/**
@@ -176,7 +224,12 @@ public class TestCaseGraphRuntimePackageImpl extends EPackageImpl implements Tes
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPath_Edges(), theAbstractTestCaseGraphPackage.getAbstractTCGEdge(), null, "edges", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPath_Edges(), theAbstractTestCaseGraphPackage.getAbstractTCGEdge(), null, "edges", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(amplPathEClass, AMPLPath.class, "AMPLPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAMPLPath_Edges(), theAbstractTestCaseGraphPackage.getAbstractTCGEdge(), null, "edges", null, 0, 1, AMPLPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(indexSetEClass, indexSet.class, "indexSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -72,6 +72,14 @@ public class TestCaseGraphRuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createPathAdapter();
 			}
 			@Override
+			public Adapter caseAMPLPath(AMPLPath object) {
+				return createAMPLPathAdapter();
+			}
+			@Override
+			public Adapter caseindexSet(indexSet object) {
+				return createindexSetAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -102,6 +110,34 @@ public class TestCaseGraphRuntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPathAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xilaew.atg.model.testCaseGraphRuntime.AMPLPath <em>AMPL Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xilaew.atg.model.testCaseGraphRuntime.AMPLPath
+	 * @generated
+	 */
+	public Adapter createAMPLPathAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.xilaew.atg.model.testCaseGraphRuntime.indexSet <em>index Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.xilaew.atg.model.testCaseGraphRuntime.indexSet
+	 * @generated
+	 */
+	public Adapter createindexSetAdapter() {
 		return null;
 	}
 

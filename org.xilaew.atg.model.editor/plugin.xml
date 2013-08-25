@@ -7,19 +7,83 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated ActivityTestCaseGraph -->
+      <!-- @generated AbstractTestCaseGraph -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphModelWizardID"
-            name="%_UI_ActivityTestCaseGraphModelWizard_label"
-            class="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphModelWizard"
+            id="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphModelWizardID"
+            name="%_UI_AbstractTestCaseGraphModelWizard_label"
+            class="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ActivityTestCaseGraphModelFile.gif">
-         <description>%_UI_ActivityTestCaseGraphModelWizard_description</description>
+            icon="icons/full/obj16/AbstractTestCaseGraphModelFile.gif">
+         <description>%_UI_AbstractTestCaseGraphModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
+      <wizard
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            class="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphModelWizard"
+            icon="icons/full/obj16/ActivityTestCaseGraphModelFile.gif"
+            id="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphModelWizardID"
+            name="%_UI_ActivityTestCaseGraphModelWizard_label">
+         <description>
+            %_UI_ActivityTestCaseGraphModelWizard_description
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+      <wizard
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            class="org.xilaew.atg.model.tcgoclfunctionlib.presentation.TcgoclfunctionlibModelWizard"
+            icon="icons/full/obj16/tcgoclfunctionlibModelFile.gif"
+            id="org.xilaew.atg.model.tcgoclfunctionlib.presentation.tcgoclfunctionlibModelWizardID"
+            name="%_UI_TcgoclfunctionlibModelWizard_label">
+         <description>
+            %_UI_tcgoclfunctionlibModelWizard_description
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+      <wizard
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            class="org.xilaew.atg.model.testCaseGraphRuntime.presentation.TestCaseGraphRuntimeModelWizard"
+            icon="icons/full/obj16/testCaseGraphRuntimeModelFile.gif"
+            id="org.xilaew.atg.model.TestcaseGraphRuntime.presentation.TestcaseGraphRuntimeModelWizardID"
+            name="%_UI_TestCaseGraphRuntimeModelWizard_label">
+         <description>
+            %_UI_testCaseGraphRuntimeModelWizard_description
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+      <wizard
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            class="org.xilaew.atg.model.tests.presentation.TestsModelWizard"
+            icon="icons/full/obj16/testsModelFile.gif"
+            id="org.xilaew.atg.model.Tests.presentation.TestsModelWizardID"
+            name="%_UI_TestsModelWizard_label">
+         <description>
+            %_UI_testsModelWizard_description
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Tests -->
+      <editor
+            id="org.xilaew.atg.model.tests.presentation.TestsEditorID"
+            name="%_UI_TestsEditor_label"
+            icon="icons/full/obj16/TestsModelFile.gif"
+            extensions="tests"
+            class="org.xilaew.atg.model.tests.presentation.TestsEditor"
+            contributorClass="org.xilaew.atg.model.tests.presentation.TestsActionBarContributor">
+      </editor>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
@@ -35,14 +99,14 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated AbstractTestCaseGraph -->
+      <!-- @generated TestcaseGraphRuntime -->
       <editor
-            id="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphEditorID"
-            name="%_UI_AbstractTestCaseGraphEditor_label"
-            icon="icons/full/obj16/AbstractTestCaseGraphModelFile.gif"
-            extensions="abstracttestcasegraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphEditor"
-            contributorClass="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphActionBarContributor">
+            id="org.xilaew.atg.model.testCaseGraphRuntime.presentation.TestCaseGraphRuntimeEditorID"
+            name="%_UI_TestCaseGraphRuntimeEditor_label"
+            icon="icons/full/obj16/TestCaseGraphRuntimeModelFile.gif"
+            extensions="testcasegraphruntime"
+            class="org.xilaew.atg.model.testCaseGraphRuntime.presentation.TestCaseGraphRuntimeEditor"
+            contributorClass="org.xilaew.atg.model.testCaseGraphRuntime.presentation.TestCaseGraphRuntimeActionBarContributor">
       </editor>
    </extension>
 
@@ -55,6 +119,18 @@
             extensions="activitytestcasegraph"
             class="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphEditor"
             contributorClass="org.xilaew.atg.model.activityTestCaseGraph.presentation.ActivityTestCaseGraphActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated AbstractTestCaseGraph -->
+      <editor
+            id="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphEditorID"
+            name="%_UI_AbstractTestCaseGraphEditor_label"
+            icon="icons/full/obj16/AbstractTestCaseGraphModelFile.gif"
+            extensions="abstracttestcasegraph"
+            class="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphEditor"
+            contributorClass="org.xilaew.atg.model.abstractTestCaseGraph.presentation.AbstractTestCaseGraphActionBarContributor">
       </editor>
    </extension>
 

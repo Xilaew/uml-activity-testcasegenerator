@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -56,6 +57,7 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 	 * @ordered
 	 */
 	protected static final boolean IS_PARAMETER_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isIsParameter() <em>Is Parameter</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -1741,5 +1741,4 @@
           <expr xmi:type="uml:OpaqueExpression" xmi:id="_0018e621-fd6b-11d2-a540-00104bb05af8Expr" body="4000">
           </expr>
         </when>
-      </packagedElement>
-        </uml:Model>
+      </packagedElement></uml:Model>

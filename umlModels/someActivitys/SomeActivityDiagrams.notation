@@ -512,7 +512,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NFpt_XjEeKKdLJ-ACT7aQ"/>
       </children>
       <element xmi:type="uml:Activity" href="SomeActivityDiagrams.uml#_78522cd8-0ed5-4f87-940a-71176f2627ab"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NFpuPXjEeKKdLJ-ACT7aQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NFpuPXjEeKKdLJ-ACT7aQ" width="526" height="401"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="__NFpufXjEeKKdLJ-ACT7aQ"/>
     <element xmi:type="uml:Activity" href="SomeActivityDiagrams.uml#_78522cd8-0ed5-4f87-940a-71176f2627ab"/>

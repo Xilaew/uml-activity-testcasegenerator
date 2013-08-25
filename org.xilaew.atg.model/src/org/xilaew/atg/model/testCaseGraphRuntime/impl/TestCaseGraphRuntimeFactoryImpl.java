@@ -57,6 +57,8 @@ public class TestCaseGraphRuntimeFactoryImpl extends EFactoryImpl implements Tes
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case TestCaseGraphRuntimePackage.PATH: return createPath();
+			case TestCaseGraphRuntimePackage.AMPL_PATH: return createAMPLPath();
+			case TestCaseGraphRuntimePackage.INDEX_SET: return createindexSet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +72,26 @@ public class TestCaseGraphRuntimeFactoryImpl extends EFactoryImpl implements Tes
 	public Path createPath() {
 		PathImpl path = new PathImpl();
 		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AMPLPath createAMPLPath() {
+		AMPLPathImpl amplPath = new AMPLPathImpl();
+		return amplPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public indexSet createindexSet() {
+		indexSetImpl indexSet = new indexSetImpl();
+		return indexSet;
 	}
 
 	/**

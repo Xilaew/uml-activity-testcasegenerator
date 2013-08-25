@@ -49,8 +49,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TCGOCLOperationType">
     <eLiterals name="multiplication" literal="*"/>
-    <eLiterals name="division" value="1" literal="/"/>
     <eLiterals name="addition" value="2" literal="+"/>
+    <eLiterals name="division" value="1" literal="/"/>
     <eLiterals name="subtraction" value="3" literal="-"/>
     <eLiterals name="size" value="4"/>
     <eLiterals name="equals" value="5" literal="="/>
@@ -58,6 +58,10 @@
     <eLiterals name="lessThan" value="7" literal="&lt;"/>
     <eLiterals name="greaterEquals" value="8" literal=">="/>
     <eLiterals name="lessEquals" value="9" literal="&lt;="/>
+    <eLiterals name="and" value="10"/>
+    <eLiterals name="or" value="11"/>
+    <eLiterals name="not" value="12"/>
+    <eLiterals name="xor" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLLiteralExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TCGBasicVariableType"/>

@@ -234,6 +234,22 @@
         <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/lessEquals"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_LYxEQeyMEeKpbf_aWYxoPQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_9mCmEADVEeO2NIcdi9-HYg" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/and"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9mCmEQDVEeO2NIcdi9-HYg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_-ftZAADVEeO2NIcdi9-HYg" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/or"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-ftZAQDVEeO2NIcdi9-HYg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__J4XYADVEeO2NIcdi9-HYg" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/not"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__J4XYQDVEeO2NIcdi9-HYg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Akn3EADWEeO2NIcdi9-HYg" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/xor"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Akn3EQDWEeO2NIcdi9-HYg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_eFvWNeyLEeKpbf_aWYxoPQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_eFvWNuyLEeKpbf_aWYxoPQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_eFvWN-yLEeKpbf_aWYxoPQ"/>

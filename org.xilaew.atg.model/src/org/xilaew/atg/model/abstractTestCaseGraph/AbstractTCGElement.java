@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.EModelElement;
  * @generated
  */
 public interface AbstractTCGElement extends EModelElement {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>""</code>.
@@ -52,4 +51,5 @@ public interface AbstractTCGElement extends EModelElement {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // AbstractTCGElement

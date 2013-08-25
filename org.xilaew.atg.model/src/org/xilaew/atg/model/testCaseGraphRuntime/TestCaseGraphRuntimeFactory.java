@@ -31,6 +31,24 @@ public interface TestCaseGraphRuntimeFactory extends EFactory {
 	Path createPath();
 
 	/**
+	 * Returns a new object of class '<em>AMPL Path</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>AMPL Path</em>'.
+	 * @generated
+	 */
+	AMPLPath createAMPLPath();
+
+	/**
+	 * Returns a new object of class '<em>index Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>index Set</em>'.
+	 * @generated
+	 */
+	indexSet createindexSet();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

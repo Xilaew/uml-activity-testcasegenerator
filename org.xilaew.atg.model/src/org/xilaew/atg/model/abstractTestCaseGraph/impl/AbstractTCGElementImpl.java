@@ -3,11 +3,12 @@
 package org.xilaew.atg.model.abstractTestCaseGraph.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGElement;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage;
 
@@ -34,6 +35,7 @@ public class AbstractTCGElementImpl extends EModelElementImpl implements Abstrac
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = "";
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

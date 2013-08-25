@@ -70,6 +70,10 @@
     <eLiterals name="lessThan" value="7" literal="&lt;"/>
     <eLiterals name="greaterEquals" value="8" literal=">="/>
     <eLiterals name="lessEquals" value="9" literal="&lt;="/>
+    <eLiterals name="and" value="10"/>
+    <eLiterals name="or" value="11"/>
+    <eLiterals name="not" value="12"/>
+    <eLiterals name="xor" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLLiteralExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TCGBasicVariableType"/>

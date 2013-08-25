@@ -234,8 +234,8 @@ public class TcgoclfunctionlibPackageImpl extends EPackageImpl implements Tcgocl
 		initEClass(tcgOclFunctionEClass, TcgOclFunction.class, "TcgOclFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTcgOclFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTcgOclFunction_AmplLiteral(), ecorePackage.getEString(), "amplLiteral", null, 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTcgOclFunction_OclLiteral(), ecorePackage.getEString(), "oclLiteral", "\"\"", 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTcgOclFunction_AmplCloseLiteral(), ecorePackage.getEString(), "amplCloseLiteral", "\"\"", 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTcgOclFunction_OclLiteral(), ecorePackage.getEString(), "oclLiteral", "", 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTcgOclFunction_AmplCloseLiteral(), ecorePackage.getEString(), "amplCloseLiteral", "", 0, 1, TcgOclFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

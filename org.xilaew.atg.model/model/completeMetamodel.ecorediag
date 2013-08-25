@@ -252,7 +252,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_nX3UcfX4EeKKdLJ-ACT7aQ" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nX3UcvX4EeKKdLJ-ACT7aQ" x="865" y="-450"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nX3UcvX4EeKKdLJ-ACT7aQ" x="915" y="-470"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_nX3UjPX4EeKKdLJ-ACT7aQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_nX3Uj_X4EeKKdLJ-ACT7aQ" type="4001"/>

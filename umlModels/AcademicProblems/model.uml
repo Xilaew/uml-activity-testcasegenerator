@@ -1,2 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_MjC94P3WEeKKiu6deZ20Tg" name="model"/>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_MjC94P3WEeKKiu6deZ20Tg" name="model">
+  <packagedElement xmi:type="uml:Package" xmi:id="_2sjD4ADDEeO2NIcdi9-HYg" name="Package1">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ss9wADDEeO2NIcdi9-HYg" name="TriangleClassificator">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_yeKF8ADFEeO2NIcdi9-HYg" name="classify" specification="__1bT8ADDEeO2NIcdi9-HYg" node="_C7hQQADGEeO2NIcdi9-HYg _EdIM8ADGEeO2NIcdi9-HYg _GgGxUADGEeO2NIcdi9-HYg _NOvzkADGEeO2NIcdi9-HYg _-azMMADHEeO2NIcdi9-HYg _JTInsADIEeO2NIcdi9-HYg _TQmWYADIEeO2NIcdi9-HYg _4BMwYADIEeO2NIcdi9-HYg _-FQIEADJEeO2NIcdi9-HYg _CnFUgADKEeO2NIcdi9-HYg _R4wHwADKEeO2NIcdi9-HYg _wuSvMADjEeO2NIcdi9-HYg _aHazgADkEeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4XmlkADFEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4XwWkADFEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4X5ggADFEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4YDRgADFEeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_WUaFoADIEeO2NIcdi9-HYg" name="ininit2check" source="_-azMMADHEeO2NIcdi9-HYg" target="_JTInsADIEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_az_2YADIEeO2NIcdi9-HYg" name="check2unknown" source="_JTInsADIEeO2NIcdi9-HYg" target="_TQmWYADIEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_Gk0jUAD0EeO2NIcdi9-HYg">
+            <language>OCL</language>
+            <body>(x&lt;y+z) and (y&lt;x+z) and (z&lt;x+y)and(x>0) and (y>0)and(z>0)</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_tNfWMADIEeO2NIcdi9-HYg" name="check2invalid" source="_JTInsADIEeO2NIcdi9-HYg" target="_C7hQQADGEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_yp4GYADIEeO2NIcdi9-HYg" name="xislarger">
+            <language>OCL</language>
+            <body>(x>=z+y) or (y>=x+z) or (z>=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_5ArQYADIEeO2NIcdi9-HYg" name="uunkown2clasify" source="_TQmWYADIEeO2NIcdi9-HYg" target="_4BMwYADIEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_9X69cADIEeO2NIcdi9-HYg" name="classify2equilateral" source="_4BMwYADIEeO2NIcdi9-HYg" target="_NOvzkADGEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_WCQJMADJEeO2NIcdi9-HYg" value="(x = y) and (y = z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="__7GE0ADIEeO2NIcdi9-HYg" name="classify2isosceles" source="_wuSvMADjEeO2NIcdi9-HYg" target="_GgGxUADGEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_QFrdEADJEeO2NIcdi9-HYg" name="guard" value="(x = y) or (x = z) or (y = z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_C-mSEADJEeO2NIcdi9-HYg" name="classify2scalane" source="_4BMwYADIEeO2NIcdi9-HYg" target="_wuSvMADjEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_7udP0ADJEeO2NIcdi9-HYg" value="not (x=y) or not (y=z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="__Q9GMADJEeO2NIcdi9-HYg" name="ControlFlow1" source="_EdIM8ADGEeO2NIcdi9-HYg" target="_aHazgADkEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="__zhnwADJEeO2NIcdi9-HYg" name="ControlFlow2" source="_GgGxUADGEeO2NIcdi9-HYg" target="_aHazgADkEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_AdGJMADKEeO2NIcdi9-HYg" name="ControlFlow3" source="_NOvzkADGEeO2NIcdi9-HYg" target="_-FQIEADJEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_F0H4QADKEeO2NIcdi9-HYg" name="ControlFlow4" source="_-FQIEADJEeO2NIcdi9-HYg" target="_CnFUgADKEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GtyrMADKEeO2NIcdi9-HYg" name="ControlFlow5" source="_C7hQQADGEeO2NIcdi9-HYg" target="_CnFUgADKEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_TSwAkADKEeO2NIcdi9-HYg" name="ControlFlow6" source="_CnFUgADKEeO2NIcdi9-HYg" target="_R4wHwADKEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_cIdeMADkEeO2NIcdi9-HYg" name="ControlFlow7" source="_wuSvMADjEeO2NIcdi9-HYg" target="_EdIM8ADGEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_ONs-EADlEeO2NIcdi9-HYg" value="not(x=y) and not( y=z) and not (x=z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Exo20ADmEeO2NIcdi9-HYg" name="ControlFlow8" source="_aHazgADkEeO2NIcdi9-HYg" target="_-FQIEADJEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_C7hQQADGEeO2NIcdi9-HYg" name="invalid" outgoing="_GtyrMADKEeO2NIcdi9-HYg" incoming="_tNfWMADIEeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_DTk5AADIEeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_DUUf4ADIEeO2NIcdi9-HYg" name="constraintSpec" value="classification=-1"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_EdIM8ADGEeO2NIcdi9-HYg" name="scalane" outgoing="__Q9GMADJEeO2NIcdi9-HYg" incoming="_cIdeMADkEeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_3RfAIADHEeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_3SE2AADHEeO2NIcdi9-HYg" name="constraintSpec" value="classification=1"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_GgGxUADGEeO2NIcdi9-HYg" name="isosceles" outgoing="__zhnwADJEeO2NIcdi9-HYg" incoming="__7GE0ADIEeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_n9bnQADHEeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_n-CEMADHEeO2NIcdi9-HYg" name="constraintSpec" value="classification=2"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_NOvzkADGEeO2NIcdi9-HYg" name="eqilateral" outgoing="_AdGJMADKEeO2NIcdi9-HYg" incoming="_9X69cADIEeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_50UlwADGEeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_kGE7MADHEeO2NIcdi9-HYg" name="post">
+              <language>OCL</language>
+              <body>classification=3</body>
+            </specification>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:InitialNode" xmi:id="_-azMMADHEeO2NIcdi9-HYg" name="InitialNode1" outgoing="_WUaFoADIEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_JTInsADIEeO2NIcdi9-HYg" name="DecisionNode1" outgoing="_az_2YADIEeO2NIcdi9-HYg _tNfWMADIEeO2NIcdi9-HYg" incoming="_WUaFoADIEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_TQmWYADIEeO2NIcdi9-HYg" name="unknown" outgoing="_5ArQYADIEeO2NIcdi9-HYg" incoming="_az_2YADIEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_4BMwYADIEeO2NIcdi9-HYg" name="DecisionNode2" outgoing="_9X69cADIEeO2NIcdi9-HYg _C-mSEADJEeO2NIcdi9-HYg" incoming="_5ArQYADIEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_-FQIEADJEeO2NIcdi9-HYg" name="MergeNode1" outgoing="_F0H4QADKEeO2NIcdi9-HYg" incoming="_AdGJMADKEeO2NIcdi9-HYg _Exo20ADmEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_CnFUgADKEeO2NIcdi9-HYg" name="MergeNode2" outgoing="_TSwAkADKEeO2NIcdi9-HYg" incoming="_F0H4QADKEeO2NIcdi9-HYg _GtyrMADKEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_R4wHwADKEeO2NIcdi9-HYg" name="ActivityFinalNode1" incoming="_TSwAkADKEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_wuSvMADjEeO2NIcdi9-HYg" name="DecisionNode3" outgoing="__7GE0ADIEeO2NIcdi9-HYg _cIdeMADkEeO2NIcdi9-HYg" incoming="_C-mSEADJEeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_aHazgADkEeO2NIcdi9-HYg" name="MergeNode3" outgoing="_Exo20ADmEeO2NIcdi9-HYg" incoming="__Q9GMADJEeO2NIcdi9-HYg __zhnwADJEeO2NIcdi9-HYg"/>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_U2cnIAD6EeO2NIcdi9-HYg" name="classifyNoLogic" node="_U2cnOgD6EeO2NIcdi9-HYg _U2cnPQD6EeO2NIcdi9-HYg _U2cnQAD6EeO2NIcdi9-HYg _U2cnQwD6EeO2NIcdi9-HYg _U2cnRgD6EeO2NIcdi9-HYg _U2cnRwD6EeO2NIcdi9-HYg _U2cnSAD6EeO2NIcdi9-HYg _U2cnSQD6EeO2NIcdi9-HYg _U2cnSgD6EeO2NIcdi9-HYg _U2cnSwD6EeO2NIcdi9-HYg _U2cnTAD6EeO2NIcdi9-HYg _U2cnTQD6EeO2NIcdi9-HYg _U2cnTgD6EeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIQD6EeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIgD6EeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIwD6EeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnJAD6EeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnJQD6EeO2NIcdi9-HYg" name="ininit2check" source="_U2cnRgD6EeO2NIcdi9-HYg" target="_U2cnRwD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnJgD6EeO2NIcdi9-HYg" name="check2unknown" source="_U2cnRwD6EeO2NIcdi9-HYg" target="_U2cnSAD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_U2cnJwD6EeO2NIcdi9-HYg">
+            <language>OCL</language>
+            <body>(x&lt;y+z) and (y&lt;x+z) and (z&lt;x+y)and(x>0) and (y>0)and(z>0)</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnKAD6EeO2NIcdi9-HYg" name="check2invalid" source="_U2cnRwD6EeO2NIcdi9-HYg" target="_U2cnOgD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_U2cnKQD6EeO2NIcdi9-HYg" name="xislarger">
+            <language>OCL</language>
+            <body>(x>=z+y) or (y>=x+z) or (z>=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnKgD6EeO2NIcdi9-HYg" name="uunkown2clasify" source="_U2cnSAD6EeO2NIcdi9-HYg" target="_U2cnSQD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnKwD6EeO2NIcdi9-HYg" name="classify2equilateral" source="_U2cnSQD6EeO2NIcdi9-HYg" target="_U2cnQwD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_U2cnLAD6EeO2NIcdi9-HYg" value="(x = y) and (y = z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnLQD6EeO2NIcdi9-HYg" name="classify2isosceles" source="_U2cnTQD6EeO2NIcdi9-HYg" target="_U2cnQAD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_U2cnLgD6EeO2NIcdi9-HYg" name="guard" value="(x = y) or (x = z) or (y = z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnLwD6EeO2NIcdi9-HYg" name="classify2scalane" source="_U2cnSQD6EeO2NIcdi9-HYg" target="_U2cnTQD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_U2cnMAD6EeO2NIcdi9-HYg" value="not (x=y) or not (y=z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnMQD6EeO2NIcdi9-HYg" name="ControlFlow1" source="_U2cnPQD6EeO2NIcdi9-HYg" target="_U2cnTgD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnMgD6EeO2NIcdi9-HYg" name="ControlFlow2" source="_U2cnQAD6EeO2NIcdi9-HYg" target="_U2cnTgD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnMwD6EeO2NIcdi9-HYg" name="ControlFlow3" source="_U2cnQwD6EeO2NIcdi9-HYg" target="_U2cnSgD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnNAD6EeO2NIcdi9-HYg" name="ControlFlow4" source="_U2cnSgD6EeO2NIcdi9-HYg" target="_U2cnSwD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnNQD6EeO2NIcdi9-HYg" name="ControlFlow5" source="_U2cnOgD6EeO2NIcdi9-HYg" target="_U2cnSwD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnNgD6EeO2NIcdi9-HYg" name="ControlFlow6" source="_U2cnSwD6EeO2NIcdi9-HYg" target="_U2cnTAD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnNwD6EeO2NIcdi9-HYg" name="ControlFlow7" source="_U2cnTQD6EeO2NIcdi9-HYg" target="_U2cnPQD6EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_U2cnOAD6EeO2NIcdi9-HYg" value="not(x=y) and not( y=z) and not (x=z)"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnOQD6EeO2NIcdi9-HYg" name="ControlFlow8" source="_U2cnTgD6EeO2NIcdi9-HYg" target="_U2cnSgD6EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_vVTrkAD6EeO2NIcdi9-HYg" name="check2invalid_1">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_vVTrkQD6EeO2NIcdi9-HYg" name="xislarger">
+            <language>OCL</language>
+            <body>(x>=z+y) or (y>=x+z) or (z>=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_xS7O0AD6EeO2NIcdi9-HYg" name="check2invalid_2">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_xS7O0QD6EeO2NIcdi9-HYg" name="xislarger">
+            <language>OCL</language>
+            <body>(x>=z+y) or (y>=x+z) or (z>=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)</body>
+          </guard>
+        </edge>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnOgD6EeO2NIcdi9-HYg" name="invalid" outgoing="_U2cnNQD6EeO2NIcdi9-HYg" incoming="_U2cnKAD6EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnOwD6EeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPAD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=-1"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnPQD6EeO2NIcdi9-HYg" name="scalane" outgoing="_U2cnMQD6EeO2NIcdi9-HYg" incoming="_U2cnNwD6EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnPgD6EeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPwD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=1"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQAD6EeO2NIcdi9-HYg" name="isosceles" outgoing="_U2cnMgD6EeO2NIcdi9-HYg" incoming="_U2cnLQD6EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnQQD6EeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_U2cnQgD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=2"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQwD6EeO2NIcdi9-HYg" name="eqilateral" outgoing="_U2cnMwD6EeO2NIcdi9-HYg" incoming="_U2cnKwD6EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnRAD6EeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_U2cnRQD6EeO2NIcdi9-HYg" name="post">
+              <language>OCL</language>
+              <body>classification=3</body>
+            </specification>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:InitialNode" xmi:id="_U2cnRgD6EeO2NIcdi9-HYg" name="InitialNode1" outgoing="_U2cnJQD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_U2cnRwD6EeO2NIcdi9-HYg" name="DecisionNode1" outgoing="_U2cnJgD6EeO2NIcdi9-HYg _U2cnKAD6EeO2NIcdi9-HYg" incoming="_U2cnJQD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnSAD6EeO2NIcdi9-HYg" name="unknown" outgoing="_U2cnKgD6EeO2NIcdi9-HYg" incoming="_U2cnJgD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_U2cnSQD6EeO2NIcdi9-HYg" name="DecisionNode2" outgoing="_U2cnKwD6EeO2NIcdi9-HYg _U2cnLwD6EeO2NIcdi9-HYg" incoming="_U2cnKgD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_U2cnSgD6EeO2NIcdi9-HYg" name="MergeNode1" outgoing="_U2cnNAD6EeO2NIcdi9-HYg" incoming="_U2cnMwD6EeO2NIcdi9-HYg _U2cnOQD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_U2cnSwD6EeO2NIcdi9-HYg" name="MergeNode2" outgoing="_U2cnNgD6EeO2NIcdi9-HYg" incoming="_U2cnNAD6EeO2NIcdi9-HYg _U2cnNQD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_U2cnTAD6EeO2NIcdi9-HYg" name="ActivityFinalNode1" incoming="_U2cnNgD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_U2cnTQD6EeO2NIcdi9-HYg" name="DecisionNode3" outgoing="_U2cnLQD6EeO2NIcdi9-HYg _U2cnNwD6EeO2NIcdi9-HYg" incoming="_U2cnLwD6EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_U2cnTgD6EeO2NIcdi9-HYg" name="MergeNode3" outgoing="_U2cnOQD6EeO2NIcdi9-HYg" incoming="_U2cnMQD6EeO2NIcdi9-HYg _U2cnMgD6EeO2NIcdi9-HYg"/>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__1bT8ADDEeO2NIcdi9-HYg" name="classify" method="_yeKF8ADFEeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_m_8ysADEEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pVaOMADEEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rQCu4ADEEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZCgK8ADFEeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_H5rZQAD7EeO2NIcdi9-HYg" name="TyrePump">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XzubIAD7EeO2NIcdi9-HYg" name="pressure" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jvHPEAD7EeO2NIcdi9-HYg" name="temp" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_x66xAAD8EeO2NIcdi9-HYg" name="counter" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8VEJwAD-EeO2NIcdi9-HYg" name="varMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GnjGMAD_EeO2NIcdi9-HYg" name="varBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0_B2sAEGEeO2NIcdi9-HYg" name="n" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_Q3N8AAD7EeO2NIcdi9-HYg" name="pump" specification="_MXCVYAD7EeO2NIcdi9-HYg" node="_mYASAAD9EeO2NIcdi9-HYg _oLMG4AD9EeO2NIcdi9-HYg _qEfK0AD9EeO2NIcdi9-HYg _GOVKYAD-EeO2NIcdi9-HYg _KAB6YAD-EeO2NIcdi9-HYg _L2fswAD-EeO2NIcdi9-HYg _x8azkAEBEeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-FxZwAD7EeO2NIcdi9-HYg" name="maxPreasure" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_SD2RwAD8EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ynm5sAD8EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gVSXEAD8EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_f4G2YAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_2VxWQAD9EeO2NIcdi9-HYg" name="ControlFlow1" source="_mYASAAD9EeO2NIcdi9-HYg" target="_qEfK0AD9EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_9DqxoAD9EeO2NIcdi9-HYg">
+            <language>OCL</language>
+            <body>pumps&lt;=5</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_QcV2gAD-EeO2NIcdi9-HYg" name="ControlFlow2" source="_qEfK0AD9EeO2NIcdi9-HYg" target="_L2fswAD-EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_SDA5YAD-EeO2NIcdi9-HYg" name="ControlFlow3" source="_KAB6YAD-EeO2NIcdi9-HYg" target="_L2fswAD-EeO2NIcdi9-HYg">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_afCDcAD-EeO2NIcdi9-HYg">
+            <language>OCL</language>
+            <body>counter>=1</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_TrUT8AD-EeO2NIcdi9-HYg" name="ControlFlow4" source="_L2fswAD-EeO2NIcdi9-HYg" target="_oLMG4AD9EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_UbAEcAD-EeO2NIcdi9-HYg" name="ControlFlow5" source="_oLMG4AD9EeO2NIcdi9-HYg" target="_GOVKYAD-EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_VOQtYAD-EeO2NIcdi9-HYg" name="ControlFlow6" source="_GOVKYAD-EeO2NIcdi9-HYg" target="_KAB6YAD-EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_y8DEkAEBEeO2NIcdi9-HYg" name="ControlFlow7" source="_KAB6YAD-EeO2NIcdi9-HYg" target="_x8azkAEBEeO2NIcdi9-HYg">
+          <guard xmi:type="uml:LiteralString" xmi:id="_hoYdAAEEEeO2NIcdi9-HYg" value="counter&lt;=0"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_mYASAAD9EeO2NIcdi9-HYg" name="InitialNode1" outgoing="_2VxWQAD9EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_oLMG4AD9EeO2NIcdi9-HYg" name="doPump" outgoing="_UbAEcAD-EeO2NIcdi9-HYg" incoming="_TrUT8AD-EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_ZYBGIAEAEeO2NIcdi9-HYg" name="idealGas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_ZcogYAEAEeO2NIcdi9-HYg" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_hiL1wAEBEeO2NIcdi9-HYg" name="Adiabatic">
+            <specification xmi:type="uml:LiteralString" xmi:id="_hnP78AEBEeO2NIcdi9-HYg" name="constraintSpec" value="pressure@pre*((volume+pumpVolume)*(volume+pumpVolume))=pressure*volume*volume"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_I7GnsAHEEeOyK_U3qRzfXA" name="increasAirAmount">
+            <specification xmi:type="uml:LiteralString" xmi:id="_I7ZioAHEEeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre+(pressure@pre*pumpVolume/(temp@pre*0.287058))"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_qEfK0AD9EeO2NIcdi9-HYg" name="initialze" outgoing="_QcV2gAD-EeO2NIcdi9-HYg" incoming="_2VxWQAD9EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_vPIqwAD9EeO2NIcdi9-HYg" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_vVi0wAD9EeO2NIcdi9-HYg" name="constraintSpec" value="counter=pumps"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_PzahIAG1EeOyK_U3qRzfXA" name="idealGas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_Pz2mAAG1EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Z9sj0AG1EeOyK_U3qRzfXA" name="Volumen in m^3">
+            <specification xmi:type="uml:LiteralString" xmi:id="_Z9_ewAG1EeOyK_U3qRzfXA" name="constraintSpec" value="pumpVolume>=0.001"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_oHr9UAG1EeOyK_U3qRzfXA" name="Constraint8">
+            <specification xmi:type="uml:LiteralString" xmi:id="_oH-4QAG1EeOyK_U3qRzfXA" name="constraintSpec" value="temp>=300"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_z4DNAAG1EeOyK_U3qRzfXA" name="Constraint10">
+            <specification xmi:type="uml:LiteralString" xmi:id="_z5Pf0AG1EeOyK_U3qRzfXA" name="constraintSpec" value="volume>=2"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_PkuS8AG3EeOyK_U3qRzfXA" name="LuftmengeInGramm">
+            <specification xmi:type="uml:LiteralString" xmi:id="_PlBN4AG3EeOyK_U3qRzfXA" name="constraintSpec" value="n>=0.5"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_ViVg4AG3EeOyK_U3qRzfXA" name="Druck in AT">
+            <specification xmi:type="uml:LiteralString" xmi:id="_VjO4wAG3EeOyK_U3qRzfXA" name="constraintSpec" value="pressure>=1"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_GOVKYAD-EeO2NIcdi9-HYg" name="coolAlittle" outgoing="_VOQtYAD-EeO2NIcdi9-HYg" incoming="_UbAEcAD-EeO2NIcdi9-HYg">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Ori1AAEDEeO2NIcdi9-HYg" name="10PercentCooldown">
+            <specification xmi:type="uml:LiteralString" xmi:id="_Ov37YAEDEeO2NIcdi9-HYg" name="10PercentCooldown" value="11*temp=10*temp@pre+300"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_QqFv4AEEEeO2NIcdi9-HYg" name="reduceCounter">
+            <specification xmi:type="uml:LiteralString" xmi:id="_QwDN8AEEEeO2NIcdi9-HYg" name="constraintSpec" value="counter=counter@pre-1"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_AlEGoAHAEeOyK_U3qRzfXA" name="ideal Gas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_AlgykAHAEeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_FOV-4AHAEeOyK_U3qRzfXA" name="there is no leck in tyre">
+            <specification xmi:type="uml:LiteralString" xmi:id="_FOyq0AHAEeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:DecisionNode" xmi:id="_KAB6YAD-EeO2NIcdi9-HYg" name="DecisionNode1" outgoing="_SDA5YAD-EeO2NIcdi9-HYg _y8DEkAEBEeO2NIcdi9-HYg" incoming="_VOQtYAD-EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_L2fswAD-EeO2NIcdi9-HYg" name="MergeNode1" outgoing="_TrUT8AD-EeO2NIcdi9-HYg" incoming="_QcV2gAD-EeO2NIcdi9-HYg _SDA5YAD-EeO2NIcdi9-HYg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_x8azkAEBEeO2NIcdi9-HYg" name="ActivityFinalNode1" incoming="_y8DEkAEBEeO2NIcdi9-HYg"/>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_GgSKQAH0EeOyK_U3qRzfXA" name="pumpExtedet" specification="_MXCVYAD7EeO2NIcdi9-HYg" node="_GgSKUAH0EeOyK_U3qRzfXA _GgSKUQH0EeOyK_U3qRzfXA _GgSKWAH0EeOyK_U3qRzfXA _GgSKZwH0EeOyK_U3qRzfXA _GgSKcAH0EeOyK_U3qRzfXA _GgSKcQH0EeOyK_U3qRzfXA _GgSKcgH0EeOyK_U3qRzfXA _MIS7oAH0EeOyK_U3qRzfXA _N0ohoAH0EeOyK_U3qRzfXA _O8mPQAH0EeOyK_U3qRzfXA _RCQ7QAH0EeOyK_U3qRzfXA _Cg6VMAH1EeOyK_U3qRzfXA _Dn_SAAH1EeOyK_U3qRzfXA _3TJm0AH1EeOyK_U3qRzfXA">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKQgH0EeOyK_U3qRzfXA" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKQwH0EeOyK_U3qRzfXA" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKRAH0EeOyK_U3qRzfXA" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKRQH0EeOyK_U3qRzfXA" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uvrr8Al_EeOCSpHmMRM-3A" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKRgH0EeOyK_U3qRzfXA" name="ControlFlow1" source="_GgSKUAH0EeOyK_U3qRzfXA" target="_GgSKWAH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKSAH0EeOyK_U3qRzfXA" name="ControlFlow2" source="_GgSKWAH0EeOyK_U3qRzfXA" target="_GgSKcQH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKSQH0EeOyK_U3qRzfXA" name="ControlFlow3" source="_GgSKcAH0EeOyK_U3qRzfXA" target="_GgSKcQH0EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_GgSKSgH0EeOyK_U3qRzfXA">
+            <language>OCL</language>
+            <body>counter>=1</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKSwH0EeOyK_U3qRzfXA" name="ControlFlow4" source="_GgSKcQH0EeOyK_U3qRzfXA" target="_GgSKUQH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKTAH0EeOyK_U3qRzfXA" name="ControlFlow5" source="_GgSKUQH0EeOyK_U3qRzfXA" target="_MIS7oAH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKTQH0EeOyK_U3qRzfXA" name="ControlFlow6" source="_GgSKZwH0EeOyK_U3qRzfXA" target="_GgSKcAH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKTgH0EeOyK_U3qRzfXA" name="ControlFlow7" source="_GgSKcAH0EeOyK_U3qRzfXA" target="_3TJm0AH1EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_GgSKTwH0EeOyK_U3qRzfXA" value="counter&lt;=0"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_UmsrUAH0EeOyK_U3qRzfXA" name="melt" source="_MIS7oAH0EeOyK_U3qRzfXA" target="_O8mPQAH0EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_Z77qoAH0EeOyK_U3qRzfXA" value="temp>=400"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_bD5_UAH0EeOyK_U3qRzfXA" name="ControlFlow8" source="_O8mPQAH0EeOyK_U3qRzfXA" target="_N0ohoAH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_cdBHUAH0EeOyK_U3qRzfXA" name="ControlFlow9" source="_MIS7oAH0EeOyK_U3qRzfXA" target="_N0ohoAH0EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_ftL3kAH0EeOyK_U3qRzfXA" value="temp&lt;=399.99999999"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_m5CaQAH0EeOyK_U3qRzfXA" name="ControlFlow10" source="_RCQ7QAH0EeOyK_U3qRzfXA" target="_Cg6VMAH1EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_KrDFEAH1EeOyK_U3qRzfXA" name="ControlFlow11" source="_N0ohoAH0EeOyK_U3qRzfXA" target="_Dn_SAAH1EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Lv5NQAH1EeOyK_U3qRzfXA" name="burst" source="_Dn_SAAH1EeOyK_U3qRzfXA" target="_RCQ7QAH0EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_P6eXUAH1EeOyK_U3qRzfXA" value="pressure>=15"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_MWCnQAH1EeOyK_U3qRzfXA" name="ControlFlow13" source="_Dn_SAAH1EeOyK_U3qRzfXA" target="_Cg6VMAH1EeOyK_U3qRzfXA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_Tx-0YAH1EeOyK_U3qRzfXA" value="pressure&lt;=14.9999999999999999"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_UqmecAH1EeOyK_U3qRzfXA" name="ControlFlow14" source="_Cg6VMAH1EeOyK_U3qRzfXA" target="_GgSKZwH0EeOyK_U3qRzfXA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_4tAVsAH1EeOyK_U3qRzfXA" name="ControlFlow15" source="_3TJm0AH1EeOyK_U3qRzfXA" target="_GgSKcgH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_GgSKUAH0EeOyK_U3qRzfXA" name="InitialNode1" outgoing="_GgSKRgH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKUQH0EeOyK_U3qRzfXA" name="doPump" outgoing="_GgSKTAH0EeOyK_U3qRzfXA" incoming="_GgSKSwH0EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKUgH0EeOyK_U3qRzfXA" name="idealGas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKUwH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKVAH0EeOyK_U3qRzfXA" name="Adiabatic">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKVQH0EeOyK_U3qRzfXA" name="constraintSpec" value="pressure@pre*((volume+pumpVolume)*(volume+pumpVolume))=pressure*volume*volume"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKVgH0EeOyK_U3qRzfXA" name="increasAirAmount">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKVwH0EeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre+(pressure@pre*pumpVolume/(temp@pre*0.287058))"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKWAH0EeOyK_U3qRzfXA" name="initialze" outgoing="_GgSKSAH0EeOyK_U3qRzfXA" incoming="_GgSKRgH0EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKWQH0EeOyK_U3qRzfXA" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKWgH0EeOyK_U3qRzfXA" name="constraintSpec" value="counter=pumps"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKWwH0EeOyK_U3qRzfXA" name="idealGas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKXAH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKXQH0EeOyK_U3qRzfXA" name="Volumen in m^3">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKXgH0EeOyK_U3qRzfXA" name="constraintSpec" value="pumpVolume>=0.001"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKXwH0EeOyK_U3qRzfXA" name="Constraint8">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKYAH0EeOyK_U3qRzfXA" name="constraintSpec" value="temp>=300"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKYQH0EeOyK_U3qRzfXA" name="Constraint10">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKYgH0EeOyK_U3qRzfXA" name="constraintSpec" value="volume>=2"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKYwH0EeOyK_U3qRzfXA" name="LuftmengeInGramm">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKZAH0EeOyK_U3qRzfXA" name="constraintSpec" value="n>=0.5"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKZQH0EeOyK_U3qRzfXA" name="Druck in AT">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKZgH0EeOyK_U3qRzfXA" name="constraintSpec" value="pressure>=1"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_u9Pr0AH1EeOyK_U3qRzfXA" name="Constraint12">
+            <specification xmi:type="uml:LiteralString" xmi:id="_vAOHUAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted=false"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_y6Q7AAH1EeOyK_U3qRzfXA" name="Constraint14">
+            <specification xmi:type="uml:LiteralString" xmi:id="_y8pgoAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted=false"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKZwH0EeOyK_U3qRzfXA" name="coolAlittle" outgoing="_GgSKTQH0EeOyK_U3qRzfXA" incoming="_UqmecAH1EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKaAH0EeOyK_U3qRzfXA" name="10PercentCooldown">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKaQH0EeOyK_U3qRzfXA" name="10PercentCooldown" value="11*temp=10*temp@pre+300"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKagH0EeOyK_U3qRzfXA" name="reduceCounter">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKawH0EeOyK_U3qRzfXA" name="constraintSpec" value="counter=counter@pre-1"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbAH0EeOyK_U3qRzfXA" name="ideal Gas">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbQH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbgH0EeOyK_U3qRzfXA" name="there is no leck in tyre">
+            <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbwH0EeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:DecisionNode" xmi:id="_GgSKcAH0EeOyK_U3qRzfXA" name="DecisionNode1" outgoing="_GgSKSQH0EeOyK_U3qRzfXA _GgSKTgH0EeOyK_U3qRzfXA" incoming="_GgSKTQH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_GgSKcQH0EeOyK_U3qRzfXA" name="MergeNode1" outgoing="_GgSKSwH0EeOyK_U3qRzfXA" incoming="_GgSKSAH0EeOyK_U3qRzfXA _GgSKSQH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_GgSKcgH0EeOyK_U3qRzfXA" name="ActivityFinalNode1" incoming="_4tAVsAH1EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_MIS7oAH0EeOyK_U3qRzfXA" name="DecisionNode2" outgoing="_UmsrUAH0EeOyK_U3qRzfXA _cdBHUAH0EeOyK_U3qRzfXA" incoming="_GgSKTAH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_N0ohoAH0EeOyK_U3qRzfXA" name="MergeNode2" outgoing="_KrDFEAH1EeOyK_U3qRzfXA" incoming="_bD5_UAH0EeOyK_U3qRzfXA _cdBHUAH0EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_O8mPQAH0EeOyK_U3qRzfXA" name="TyreMelted" outgoing="_bD5_UAH0EeOyK_U3qRzfXA" incoming="_UmsrUAH0EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_sNtjcAH1EeOyK_U3qRzfXA" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_sQZEAAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted=true"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_RCQ7QAH0EeOyK_U3qRzfXA" name="TyreBurs" outgoing="_m5CaQAH0EeOyK_U3qRzfXA" incoming="_Lv5NQAH1EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_kJrbkAH1EeOyK_U3qRzfXA" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_kN2w8AH1EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted=true"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:MergeNode" xmi:id="_Cg6VMAH1EeOyK_U3qRzfXA" name="MergeNode3" outgoing="_UqmecAH1EeOyK_U3qRzfXA" incoming="_m5CaQAH0EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_Dn_SAAH1EeOyK_U3qRzfXA" name="DecisionNode3" outgoing="_Lv5NQAH1EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA" incoming="_KrDFEAH1EeOyK_U3qRzfXA"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_3TJm0AH1EeOyK_U3qRzfXA" name="return" outgoing="_4tAVsAH1EeOyK_U3qRzfXA" incoming="_GgSKTgH0EeOyK_U3qRzfXA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_6wScEAH1EeOyK_U3qRzfXA" name="Constraint2">
+            <specification xmi:type="uml:LiteralString" xmi:id="_6zHtoAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted@pre=tyreMelted"/>
+          </localPostcondition>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Cyh0MAH2EeOyK_U3qRzfXA" name="Constraint4">
+            <specification xmi:type="uml:LiteralString" xmi:id="_C1gPsAH2EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted@pre=tyreBursted"/>
+          </localPostcondition>
+        </node>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MXCVYAD7EeO2NIcdi9-HYg" name="pump" method="_GgSKQAH0EeOyK_U3qRzfXA _Q3N8AAD7EeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nen9oAD9EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NgQVUAD9EeO2NIcdi9-HYg" name="maxPreasure" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NhJtMAD9EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NiDFEAD9EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_chh8IAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-CPjoAEGEeO2NIcdi9-HYg" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rlEBIAHLEeOyK_U3qRzfXA" name="pow">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xpPKEAHLEeOyK_U3qRzfXA" name="basis" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_35oKEAHLEeOyK_U3qRzfXA" name="exponent" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ql8kAAD7EeO2NIcdi9-HYg" name="Real"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hcfNgADtEeO2NIcdi9-HYg" name="Integer" isLeaf="true"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_oNhccADtEeO2NIcdi9-HYg" name="Boolean"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_profileApplication0">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dxsIAADzEeO2NIcdi9-HYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>

@@ -141,9 +141,9 @@ public class UMLActivity2TCGActivityConverter {
 			Output.debug("handleOperation", callExp);
 
 			Output.debug(callExp.getReferredOperation().getName(), callExp);
-			Output.debug(callExp.getSource().toString(), callExp.getSource());
-			Output.debug(callExp.getArgument().get(0).toString(), callExp
-					.getArgument().get(0));
+			//Output.debug(callExp.getSource().toString(), callExp.getSource());
+			//Output.debug(callExp.getArgument().get(0).toString(), callExp
+					//.getArgument().get(0));
 			TCGOCLOperationCallExp tcgOpCall = factory
 					.createTCGOCLOperationCallExp();
 			tcgOpCall.setName(callExp.getReferredOperation().getName());
@@ -503,6 +503,10 @@ public class UMLActivity2TCGActivityConverter {
 				.equals(UMLPackage.Literals.ACTION__LOCAL_POSTCONDITION)) {
 			// Parse Local Postconditions like Postconditions with an Operation
 			// Context
+			oclConstraint = parseOCL(oclExp,
+					(Classifier) UMLHelper.getNamespace(umlOpaqueExp),
+					UMLHelper.getContextOperation((Constraint) umlOpaqueExp
+							.getOwner()), ConstraintKind.POSTCONDITION);
 			Output.debug("this is a local Postcondition!", this);
 		} else if (umlOpaqueExp.getOwner().eContainmentFeature()
 				.equals(UMLPackage.Literals.NAMESPACE__OWNED_RULE)) {

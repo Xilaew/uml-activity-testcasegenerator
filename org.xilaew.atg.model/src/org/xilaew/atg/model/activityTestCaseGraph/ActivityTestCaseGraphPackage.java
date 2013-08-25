@@ -107,6 +107,15 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	int TCG_ACTIVITY__EDGES = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__EDGES;
 
 	/**
+	 * The feature id for the '<em><b>Initial Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_ACTIVITY__INITIAL_NODE = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER__INITIAL_NODE;
+
+	/**
 	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

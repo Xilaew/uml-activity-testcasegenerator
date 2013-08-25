@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
@@ -63,11 +62,16 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<AbstractTCGEdge> getEdges() {
 		if (edges == null) {
-			edges = new EObjectResolvingEList<AbstractTCGEdge>(AbstractTCGEdge.class, this, TestCaseGraphRuntimePackage.PATH__EDGES);
+			edges = new EObjectResolvingEList<AbstractTCGEdge>(AbstractTCGEdge.class, this, TestCaseGraphRuntimePackage.PATH__EDGES){
+				private static final long serialVersionUID = 1L;
+				protected boolean isUnique (){
+					return false;
+				}
+			};
 		}
 		return edges;
 	}

@@ -77,7 +77,7 @@ public class TcgOclFunctionImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OCL_LITERAL_EDEFAULT = "\"\"";
+	protected static final String OCL_LITERAL_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getOclLiteral() <em>Ocl Literal</em>}' attribute.
@@ -97,7 +97,7 @@ public class TcgOclFunctionImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String AMPL_CLOSE_LITERAL_EDEFAULT = "\"\"";
+	protected static final String AMPL_CLOSE_LITERAL_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getAmplCloseLiteral() <em>Ampl Close Literal</em>}' attribute.

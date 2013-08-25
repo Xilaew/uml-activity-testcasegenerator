@@ -79,8 +79,13 @@ public class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		case TCGOCLOperationType.LESS_THAN_VALUE:
 			function = "<";
 			break;
+		default: function = " "+object.getOperation().getLiteral()+" ";
 		}
-		String result = source + function + argumentList + functionClose;
+		String result = "("+source +")"+ function + "("+ argumentList + ")";
+		// for Unary functions the function symbol is in front of its source
+		if(object.getArguments().isEmpty()){
+			result = "("+function + source+")";
+		}
 		return result;
 	}
 
@@ -146,14 +151,14 @@ public class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		// XXX here is some type Handling Code. Maybe it is better centralized
 		String typeSpec = null;
 		if (object.getVariableType().equals(TCGBasicVariableType.INTEGER))
-			typeSpec = " : integer;";
+			typeSpec = " : integer >=-10000, <= 10000";
 		if (object.getVariableType().equals(TCGBasicVariableType.BOOLEAN))
-			typeSpec = " in 0..1;";
+			typeSpec = " in 0..1";
 		if (object.getVariableType().equals(TCGBasicVariableType.REAL))
-			typeSpec = ";";
+			typeSpec = ">=-10000, <= 10000";
 		String result = "var " + object.getName()
 				+ (object.isIsParameter() ? "" : "{0..Pathlength}") + typeSpec
-				+ "\n";
+				+ " := 1;\n";
 		return result;
 	}
 

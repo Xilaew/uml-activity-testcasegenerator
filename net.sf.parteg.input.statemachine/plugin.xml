@@ -31,7 +31,7 @@
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
                icon="icons/parteg_3_16.gif"
-               id="net.sf.parteg.input.statemachine.menus.sampleMenu"
+               id="net.sf.parteg.menue"
                label="ParTeG"
                mnemonic="M">
             <command
@@ -76,7 +76,7 @@
          </separator>
          <menu
                icon="icons/parteg_3_16.gif"
-               id="net.sf.parteg.menue"
+               id="net.sf.parteg.popupmenue"
                label="ParTeG">
             <command
                   commandId="net.sf.parteg.testGenerationCommand"
