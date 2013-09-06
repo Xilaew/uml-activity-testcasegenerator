@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xilaew.atg.model.tests.SUT;
 import org.xilaew.atg.model.tests.TestCase;
 import org.xilaew.atg.model.tests.TestSuite;
 import org.xilaew.atg.model.tests.TestsPackage;
@@ -28,6 +29,7 @@ import org.xilaew.atg.model.tests.TestsPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xilaew.atg.model.tests.impl.TestSuiteImpl#getTests <em>Tests</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.tests.impl.TestSuiteImpl#getSut <em>Sut</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +45,16 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 	 * @ordered
 	 */
 	protected EList<TestCase> tests;
+
+	/**
+	 * The cached value of the '{@link #getSut() <em>Sut</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSut()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SUT> sut;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,11 +92,25 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SUT> getSut() {
+		if (sut == null) {
+			sut = new EObjectContainmentEList<SUT>(SUT.class, this, TestsPackage.TEST_SUITE__SUT);
+		}
+		return sut;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TestsPackage.TEST_SUITE__TESTS:
 				return ((InternalEList<?>)getTests()).basicRemove(otherEnd, msgs);
+			case TestsPackage.TEST_SUITE__SUT:
+				return ((InternalEList<?>)getSut()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,6 +125,8 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 		switch (featureID) {
 			case TestsPackage.TEST_SUITE__TESTS:
 				return getTests();
+			case TestsPackage.TEST_SUITE__SUT:
+				return getSut();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +144,10 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 				getTests().clear();
 				getTests().addAll((Collection<? extends TestCase>)newValue);
 				return;
+			case TestsPackage.TEST_SUITE__SUT:
+				getSut().clear();
+				getSut().addAll((Collection<? extends SUT>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +163,9 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 			case TestsPackage.TEST_SUITE__TESTS:
 				getTests().clear();
 				return;
+			case TestsPackage.TEST_SUITE__SUT:
+				getSut().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +180,8 @@ public class TestSuiteImpl extends MinimalEObjectImpl.Container implements TestS
 		switch (featureID) {
 			case TestsPackage.TEST_SUITE__TESTS:
 				return tests != null && !tests.isEmpty();
+			case TestsPackage.TEST_SUITE__SUT:
+				return sut != null && !sut.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,6 +5,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="TCGActivity" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//TCGVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="http://org.xilaew.atg.model.abstractTestCaseGraph#//AbstractTCGRealNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="localPostconditions" upperBound="-1"
@@ -18,6 +20,7 @@
         eType="#//TCGOCLVariableCallExp" eOpposite="#//TCGOCLVariableCallExp/variable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="#//TCGVariableUsage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
@@ -65,6 +68,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLLiteralExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TCGBasicVariableType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TCGVariableUsage">
+    <eLiterals name="inParameter"/>
+    <eLiterals name="outParameter" value="1"/>
+    <eLiterals name="inoutParameter" value="2"/>
+    <eLiterals name="returnParameter" value="3"/>
+    <eLiterals name="field" value="5"/>
+    <eLiterals name="localVariable" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

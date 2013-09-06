@@ -7,6 +7,9 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphEditPlugin;
+import org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphEditPlugin;
 
 /**
  * This is the central singleton for the Tests editor plugin.
@@ -40,6 +43,9 @@ public final class TestsEditorPlugin extends EMFPlugin {
 	public TestsEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				AbstractTestCaseGraphEditPlugin.INSTANCE,
+				ActivityTestCaseGraphEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
 			});
 	}
 

@@ -6,7 +6,6 @@
     editPluginID="org.xilaew.atg.model.edit" editorPluginID="org.xilaew.atg.model.editor"
     usedGenPackages="AbstractTestCaseGraph.genmodel#//abstractTestCaseGraph ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
-  <foreignModel>ActivityTestCaseGraph.ecore</foreignModel>
   <genPackages prefix="ActivityTestCaseGraph" basePackage="org.xilaew.atg.model" resource="XMI"
       disposableProviderFactory="true" loadInitialization="true" dataTypeConverters="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="ActivityTestCaseGraph.ecore#/">

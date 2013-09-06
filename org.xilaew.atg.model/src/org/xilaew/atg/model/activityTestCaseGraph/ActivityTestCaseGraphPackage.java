@@ -125,13 +125,31 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	int TCG_ACTIVITY__VARIABLES = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_ACTIVITY__CLASS_NAME = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_ACTIVITY__PACKAGE_NAME = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>TCG Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCG_ACTIVITY_FEATURE_COUNT = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER_FEATURE_COUNT + 1;
+	int TCG_ACTIVITY_FEATURE_COUNT = AbstractTestCaseGraphPackage.ABSTRACT_TCG_CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -435,13 +453,22 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	int TCG_VARIABLE__IS_PARAMETER = AbstractTestCaseGraphPackage.ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_VARIABLE__USAGE = AbstractTestCaseGraphPackage.ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>TCG Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCG_VARIABLE_FEATURE_COUNT = AbstractTestCaseGraphPackage.ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 2;
+	int TCG_VARIABLE_FEATURE_COUNT = AbstractTestCaseGraphPackage.ABSTRACT_TCG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -506,6 +533,15 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCG_OBJECT_VARIABLE__IS_PARAMETER = TCG_VARIABLE__IS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_OBJECT_VARIABLE__USAGE = TCG_VARIABLE__USAGE;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' reference list.
@@ -588,6 +624,15 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCG_BASIC_VARIABLE__IS_PARAMETER = TCG_VARIABLE__IS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCG_BASIC_VARIABLE__USAGE = TCG_VARIABLE__USAGE;
 
 	/**
 	 * The feature id for the '<em><b>Variable Type</b></em>' attribute.
@@ -939,6 +984,17 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage <em>TCG Variable Usage</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.impl.ActivityTestCaseGraphPackageImpl#getTCGVariableUsage()
+	 * @generated
+	 */
+	int TCG_VARIABLE_USAGE = 13;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGActivity <em>TCG Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -958,6 +1014,28 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTCGActivity_Variables();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGActivity#getClassName <em>Class Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class Name</em>'.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGActivity#getClassName()
+	 * @see #getTCGActivity()
+	 * @generated
+	 */
+	EAttribute getTCGActivity_ClassName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGActivity#getPackageName <em>Package Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package Name</em>'.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGActivity#getPackageName()
+	 * @see #getTCGActivity()
+	 * @generated
+	 */
+	EAttribute getTCGActivity_PackageName();
 
 	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGAction <em>TCG Action</em>}'.
@@ -1031,6 +1109,17 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTCGVariable_IsParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getUsage <em>Usage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Usage</em>'.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getUsage()
+	 * @see #getTCGVariable()
+	 * @generated
+	 */
+	EAttribute getTCGVariable_Usage();
 
 	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGObjectVariable <em>TCG Object Variable</em>}'.
@@ -1222,6 +1311,16 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 	EEnum getTCGOCLOperationType();
 
 	/**
+	 * Returns the meta object for enum '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage <em>TCG Variable Usage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>TCG Variable Usage</em>'.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage
+	 * @generated
+	 */
+	EEnum getTCGVariableUsage();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1261,6 +1360,22 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TCG_ACTIVITY__VARIABLES = eINSTANCE.getTCGActivity_Variables();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TCG_ACTIVITY__CLASS_NAME = eINSTANCE.getTCGActivity_ClassName();
+
+		/**
+		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TCG_ACTIVITY__PACKAGE_NAME = eINSTANCE.getTCGActivity_PackageName();
 
 		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGActionImpl <em>TCG Action</em>}' class.
@@ -1325,6 +1440,14 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TCG_VARIABLE__IS_PARAMETER = eINSTANCE.getTCGVariable_IsParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Usage</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TCG_VARIABLE__USAGE = eINSTANCE.getTCGVariable_Usage();
 
 		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGObjectVariableImpl <em>TCG Object Variable</em>}' class.
@@ -1485,6 +1608,16 @@ public interface ActivityTestCaseGraphPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TCGOCL_OPERATION_TYPE = eINSTANCE.getTCGOCLOperationType();
+
+		/**
+		 * The meta object literal for the '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage <em>TCG Variable Usage</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage
+		 * @see org.xilaew.atg.model.activityTestCaseGraph.impl.ActivityTestCaseGraphPackageImpl#getTCGVariableUsage()
+		 * @generated
+		 */
+		EEnum TCG_VARIABLE_USAGE = eINSTANCE.getTCGVariableUsage();
 
 	}
 

@@ -83,13 +83,22 @@ public interface TestsPackage extends EPackage {
 	int TEST_SUITE__TESTS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Sut</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_SUITE__SUT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Test Suite</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE_FEATURE_COUNT = 1;
+	int TEST_SUITE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Test Suite</em>' class.
@@ -111,22 +120,13 @@ public interface TestsPackage extends EPackage {
 	int TEST_CASE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Sut</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_CASE__SUT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Init Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__INIT_VALUES = 1;
+	int TEST_CASE__INIT_VALUES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' containment reference.
@@ -135,7 +135,7 @@ public interface TestsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__FUNCTION = 2;
+	int TEST_CASE__FUNCTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Test For Value</b></em>' containment reference list.
@@ -144,7 +144,7 @@ public interface TestsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__TEST_FOR_VALUE = 3;
+	int TEST_CASE__TEST_FOR_VALUE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Test Case</em>' class.
@@ -153,7 +153,7 @@ public interface TestsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE_FEATURE_COUNT = 4;
+	int TEST_CASE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Test Case</em>' class.
@@ -221,13 +221,22 @@ public interface TestsPackage extends EPackage {
 	int FUNCTION_CALL__PARAMETERS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__ACTIVITY = 2;
+
+	/**
 	 * The number of structural features of the '<em>Function Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CALL_FEATURE_COUNT = 2;
+	int FUNCTION_CALL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Function Call</em>' class.
@@ -267,13 +276,22 @@ public interface TestsPackage extends EPackage {
 	int SUT__OBJECT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Package Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUT__PACKAGE_NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>SUT</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUT_FEATURE_COUNT = 2;
+	int SUT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>SUT</em>' class.
@@ -313,13 +331,22 @@ public interface TestsPackage extends EPackage {
 	int VALUE__VALUE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE__VARIABLE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_FEATURE_COUNT = 2;
+	int VALUE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Value</em>' class.
@@ -353,6 +380,17 @@ public interface TestsPackage extends EPackage {
 	EReference getTestSuite_Tests();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.xilaew.atg.model.tests.TestSuite#getSut <em>Sut</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sut</em>'.
+	 * @see org.xilaew.atg.model.tests.TestSuite#getSut()
+	 * @see #getTestSuite()
+	 * @generated
+	 */
+	EReference getTestSuite_Sut();
+
+	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.tests.TestCase <em>Test Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,17 +399,6 @@ public interface TestsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTestCase();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.xilaew.atg.model.tests.TestCase#getSut <em>Sut</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Sut</em>'.
-	 * @see org.xilaew.atg.model.tests.TestCase#getSut()
-	 * @see #getTestCase()
-	 * @generated
-	 */
-	EReference getTestCase_Sut();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.xilaew.atg.model.tests.TestCase#getInitValues <em>Init Values</em>}'.
@@ -449,6 +476,17 @@ public interface TestsPackage extends EPackage {
 	EReference getFunctionCall_Parameters();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.xilaew.atg.model.tests.FunctionCall#getActivity <em>Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Activity</em>'.
+	 * @see org.xilaew.atg.model.tests.FunctionCall#getActivity()
+	 * @see #getFunctionCall()
+	 * @generated
+	 */
+	EReference getFunctionCall_Activity();
+
+	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.tests.SUT <em>SUT</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,6 +519,17 @@ public interface TestsPackage extends EPackage {
 	EAttribute getSUT_Object();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.xilaew.atg.model.tests.SUT#getPackageName <em>Package Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package Name</em>'.
+	 * @see org.xilaew.atg.model.tests.SUT#getPackageName()
+	 * @see #getSUT()
+	 * @generated
+	 */
+	EAttribute getSUT_PackageName();
+
+	/**
 	 * Returns the meta object for class '{@link org.xilaew.atg.model.tests.Value <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,6 +560,17 @@ public interface TestsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValue_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.xilaew.atg.model.tests.Value#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see org.xilaew.atg.model.tests.Value#getVariable()
+	 * @see #getValue()
+	 * @generated
+	 */
+	EReference getValue_Variable();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -554,6 +614,14 @@ public interface TestsPackage extends EPackage {
 		EReference TEST_SUITE__TESTS = eINSTANCE.getTestSuite_Tests();
 
 		/**
+		 * The meta object literal for the '<em><b>Sut</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEST_SUITE__SUT = eINSTANCE.getTestSuite_Sut();
+
+		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.tests.impl.TestCaseImpl <em>Test Case</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -562,14 +630,6 @@ public interface TestsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TEST_CASE = eINSTANCE.getTestCase();
-
-		/**
-		 * The meta object literal for the '<em><b>Sut</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEST_CASE__SUT = eINSTANCE.getTestCase_Sut();
 
 		/**
 		 * The meta object literal for the '<em><b>Init Values</b></em>' containment reference list feature.
@@ -632,6 +692,14 @@ public interface TestsPackage extends EPackage {
 		EReference FUNCTION_CALL__PARAMETERS = eINSTANCE.getFunctionCall_Parameters();
 
 		/**
+		 * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION_CALL__ACTIVITY = eINSTANCE.getFunctionCall_Activity();
+
+		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.tests.impl.SUTImpl <em>SUT</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -658,6 +726,14 @@ public interface TestsPackage extends EPackage {
 		EAttribute SUT__OBJECT = eINSTANCE.getSUT_Object();
 
 		/**
+		 * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUT__PACKAGE_NAME = eINSTANCE.getSUT_PackageName();
+
+		/**
 		 * The meta object literal for the '{@link org.xilaew.atg.model.tests.impl.ValueImpl <em>Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -682,6 +758,14 @@ public interface TestsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALUE__VALUE = eINSTANCE.getValue_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE__VARIABLE = eINSTANCE.getValue_Variable();
 
 	}
 

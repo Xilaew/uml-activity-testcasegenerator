@@ -1,4 +1,4 @@
-package org.eclipse.atg.model;
+package org.xilaew.atg.transformations.uml2actTCG;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;

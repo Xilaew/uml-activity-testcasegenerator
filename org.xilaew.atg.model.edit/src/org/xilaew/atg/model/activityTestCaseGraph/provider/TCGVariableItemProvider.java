@@ -61,6 +61,7 @@ public class TCGVariableItemProvider
 
 			addReferencedByPropertyDescriptor(object);
 			addIsParameterPropertyDescriptor(object);
+			addUsagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,28 @@ public class TCGVariableItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Usage feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TCGVariable_usage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TCGVariable_usage_feature", "_UI_TCGVariable_type"),
+				 ActivityTestCaseGraphPackage.Literals.TCG_VARIABLE__USAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns TCGVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,6 +170,7 @@ public class TCGVariableItemProvider
 
 		switch (notification.getFeatureID(TCGVariable.class)) {
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

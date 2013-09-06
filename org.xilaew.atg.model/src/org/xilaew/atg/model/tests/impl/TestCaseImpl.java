@@ -3,23 +3,16 @@
 package org.xilaew.atg.model.tests.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.xilaew.atg.model.tests.FunctionCall;
-import org.xilaew.atg.model.tests.SUT;
 import org.xilaew.atg.model.tests.TestCase;
 import org.xilaew.atg.model.tests.TestsPackage;
 import org.xilaew.atg.model.tests.Value;
@@ -31,7 +24,6 @@ import org.xilaew.atg.model.tests.Value;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xilaew.atg.model.tests.impl.TestCaseImpl#getSut <em>Sut</em>}</li>
  *   <li>{@link org.xilaew.atg.model.tests.impl.TestCaseImpl#getInitValues <em>Init Values</em>}</li>
  *   <li>{@link org.xilaew.atg.model.tests.impl.TestCaseImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xilaew.atg.model.tests.impl.TestCaseImpl#getTestForValue <em>Test For Value</em>}</li>
@@ -41,16 +33,6 @@ import org.xilaew.atg.model.tests.Value;
  * @generated
  */
 public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCase {
-	/**
-	 * The cached value of the '{@link #getSut() <em>Sut</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSut()
-	 * @generated
-	 * @ordered
-	 */
-	protected SUT sut;
-
 	/**
 	 * The cached value of the '{@link #getInitValues() <em>Init Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -98,49 +80,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	protected EClass eStaticClass() {
 		return TestsPackage.Literals.TEST_CASE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SUT getSut() {
-		return sut;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSut(SUT newSut, NotificationChain msgs) {
-		SUT oldSut = sut;
-		sut = newSut;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestsPackage.TEST_CASE__SUT, oldSut, newSut);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSut(SUT newSut) {
-		if (newSut != sut) {
-			NotificationChain msgs = null;
-			if (sut != null)
-				msgs = ((InternalEObject)sut).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestsPackage.TEST_CASE__SUT, null, msgs);
-			if (newSut != null)
-				msgs = ((InternalEObject)newSut).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestsPackage.TEST_CASE__SUT, null, msgs);
-			msgs = basicSetSut(newSut, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestsPackage.TEST_CASE__SUT, newSut, newSut));
 	}
 
 	/**
@@ -218,8 +157,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TestsPackage.TEST_CASE__SUT:
-				return basicSetSut(null, msgs);
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 				return ((InternalEList<?>)getInitValues()).basicRemove(otherEnd, msgs);
 			case TestsPackage.TEST_CASE__FUNCTION:
@@ -238,8 +175,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestsPackage.TEST_CASE__SUT:
-				return getSut();
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 				return getInitValues();
 			case TestsPackage.TEST_CASE__FUNCTION:
@@ -259,9 +194,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestsPackage.TEST_CASE__SUT:
-				setSut((SUT)newValue);
-				return;
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 				getInitValues().clear();
 				getInitValues().addAll((Collection<? extends Value>)newValue);
@@ -285,9 +217,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestsPackage.TEST_CASE__SUT:
-				setSut((SUT)null);
-				return;
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 				getInitValues().clear();
 				return;
@@ -309,8 +238,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestsPackage.TEST_CASE__SUT:
-				return sut != null;
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 				return initValues != null && !initValues.isEmpty();
 			case TestsPackage.TEST_CASE__FUNCTION:

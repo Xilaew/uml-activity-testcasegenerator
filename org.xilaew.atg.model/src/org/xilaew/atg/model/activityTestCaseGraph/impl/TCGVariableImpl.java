@@ -22,6 +22,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.impl.AbstractTCGElementImpl;
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLVariableCallExp;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +33,7 @@ import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGVariableImpl#getReferencedBy <em>Referenced By</em>}</li>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGVariableImpl#isIsParameter <em>Is Parameter</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.impl.TCGVariableImpl#getUsage <em>Usage</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +69,26 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 	 * @ordered
 	 */
 	protected boolean isParameter = IS_PARAMETER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUsage() <em>Usage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TCGVariableUsage USAGE_EDEFAULT = TCGVariableUsage.IN_PARAMETER;
+
+	/**
+	 * The cached value of the '{@link #getUsage() <em>Usage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsage()
+	 * @generated
+	 * @ordered
+	 */
+	protected TCGVariableUsage usage = USAGE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,6 +147,27 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TCGVariableUsage getUsage() {
+		return usage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUsage(TCGVariableUsage newUsage) {
+		TCGVariableUsage oldUsage = usage;
+		usage = newUsage == null ? USAGE_EDEFAULT : newUsage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE, oldUsage, usage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -161,6 +204,8 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 				return getReferencedBy();
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
 				return isIsParameter();
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE:
+				return getUsage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,6 +226,9 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
 				setIsParameter((Boolean)newValue);
 				return;
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE:
+				setUsage((TCGVariableUsage)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,6 +247,9 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
 				setIsParameter(IS_PARAMETER_EDEFAULT);
 				return;
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE:
+				setUsage(USAGE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,6 +266,8 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 				return referencedBy != null && !referencedBy.isEmpty();
 			case ActivityTestCaseGraphPackage.TCG_VARIABLE__IS_PARAMETER:
 				return isParameter != IS_PARAMETER_EDEFAULT;
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE__USAGE:
+				return usage != USAGE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -231,6 +284,8 @@ public class TCGVariableImpl extends AbstractTCGElementImpl implements TCGVariab
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isParameter: ");
 		result.append(isParameter);
+		result.append(", usage: ");
+		result.append(usage);
 		result.append(')');
 		return result.toString();
 	}

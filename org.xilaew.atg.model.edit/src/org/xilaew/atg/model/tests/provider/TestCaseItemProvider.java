@@ -77,7 +77,6 @@ public class TestCaseItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TestsPackage.Literals.TEST_CASE__SUT);
 			childrenFeatures.add(TestsPackage.Literals.TEST_CASE__INIT_VALUES);
 			childrenFeatures.add(TestsPackage.Literals.TEST_CASE__FUNCTION);
 			childrenFeatures.add(TestsPackage.Literals.TEST_CASE__TEST_FOR_VALUE);
@@ -132,7 +131,6 @@ public class TestCaseItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TestCase.class)) {
-			case TestsPackage.TEST_CASE__SUT:
 			case TestsPackage.TEST_CASE__INIT_VALUES:
 			case TestsPackage.TEST_CASE__FUNCTION:
 			case TestsPackage.TEST_CASE__TEST_FOR_VALUE:
@@ -152,11 +150,6 @@ public class TestCaseItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TestsPackage.Literals.TEST_CASE__SUT,
-				 TestsFactory.eINSTANCE.createSUT()));
 
 		newChildDescriptors.add
 			(createChildParameter

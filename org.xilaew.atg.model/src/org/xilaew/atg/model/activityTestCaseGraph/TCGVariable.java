@@ -20,6 +20,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGElement;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getReferencedBy <em>Referenced By</em>}</li>
  *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#isIsParameter <em>Is Parameter</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getUsage <em>Usage</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +73,34 @@ public interface TCGVariable extends AbstractTCGElement {
 	 * @generated
 	 */
 	void setIsParameter(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Usage</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Usage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Usage</em>' attribute.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage
+	 * @see #setUsage(TCGVariableUsage)
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage#getTCGVariable_Usage()
+	 * @model
+	 * @generated
+	 */
+	TCGVariableUsage getUsage();
+
+	/**
+	 * Sets the value of the '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGVariable#getUsage <em>Usage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Usage</em>' attribute.
+	 * @see org.xilaew.atg.model.activityTestCaseGraph.TCGVariableUsage
+	 * @see #getUsage()
+	 * @generated
+	 */
+	void setUsage(TCGVariableUsage value);
 
 } // TCGVariable

@@ -78,6 +78,7 @@ public class TestSuiteItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TestsPackage.Literals.TEST_SUITE__TESTS);
+			childrenFeatures.add(TestsPackage.Literals.TEST_SUITE__SUT);
 		}
 		return childrenFeatures;
 	}
@@ -130,6 +131,7 @@ public class TestSuiteItemProvider
 
 		switch (notification.getFeatureID(TestSuite.class)) {
 			case TestsPackage.TEST_SUITE__TESTS:
+			case TestsPackage.TEST_SUITE__SUT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -151,6 +153,11 @@ public class TestSuiteItemProvider
 			(createChildParameter
 				(TestsPackage.Literals.TEST_SUITE__TESTS,
 				 TestsFactory.eINSTANCE.createTestCase()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TestsPackage.Literals.TEST_SUITE__SUT,
+				 TestsFactory.eINSTANCE.createSUT()));
 	}
 
 	/**

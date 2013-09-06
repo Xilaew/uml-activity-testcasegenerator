@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="Transform to AMPL Model"
+            categoryId="net.sf.parteg.commandCathegory"
+            id="org.xilaew.atg.model.input.activity.commands.Activity2AMPL">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.xilaew.atg.model.input.activity.commands.Activity2AMPL"
+            class="org.xilaew.atg.model.input.activity.handlers.AMPLModelCreationHandler">
+         <enabledWhen>
+            <reference
+                  definitionId="org.xilaew.atg.handlerEnabled">
+            </reference>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.xilaew.atg.model.input.activity.commands.Activity2AMPL"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:net.sf.parteg.menue">
+         <command
+               commandId="org.xilaew.atg.model.input.activity.commands.Activity2AMPL"
+               icon="icons/atg.gif"
+               id="org.xilaew.atg.model.input.activity.menus.sampleCommand"
+               mnemonic="S">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="org.xilaew.atg.handlerEnabled">
+         <with
+               variable="selection">
+            <iterate
+                  ifEmpty="false"
+                  operator="or">
+               <or>
+                  <instanceof
+                        value="org.eclipse.uml2.uml.Activity">
+                  </instanceof>
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <test
+                           property="org.eclipse.core.resources.extension"
+                           value="uml">
+                     </test>
+                  </adapt>
+               </or>
+            </iterate>
+         </with>
+      </definition>
+   </extension>
+
+</plugin>

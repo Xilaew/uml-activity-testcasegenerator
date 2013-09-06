@@ -156,7 +156,10 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.xilaew.atg.model.tests.provider.TestsItemProviderAdapterFactory;
 
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphItemProviderAdapterFactory;
+import org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphItemProviderAdapterFactory;
 
 
 /**
@@ -702,6 +705,9 @@ public class TestsEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TestsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AbstractTestCaseGraphItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ActivityTestCaseGraphItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

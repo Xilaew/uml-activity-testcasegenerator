@@ -85,6 +85,8 @@ public class ActivityTestCaseGraphFactoryImpl extends EFactoryImpl implements Ac
 				return createTCGBasicVariableTypeFromString(eDataType, initialValue);
 			case ActivityTestCaseGraphPackage.TCGOCL_OPERATION_TYPE:
 				return createTCGOCLOperationTypeFromString(eDataType, initialValue);
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE_USAGE:
+				return createTCGVariableUsageFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +104,8 @@ public class ActivityTestCaseGraphFactoryImpl extends EFactoryImpl implements Ac
 				return convertTCGBasicVariableTypeToString(eDataType, instanceValue);
 			case ActivityTestCaseGraphPackage.TCGOCL_OPERATION_TYPE:
 				return convertTCGOCLOperationTypeToString(eDataType, instanceValue);
+			case ActivityTestCaseGraphPackage.TCG_VARIABLE_USAGE:
+				return convertTCGVariableUsageToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -291,6 +295,44 @@ public class ActivityTestCaseGraphFactoryImpl extends EFactoryImpl implements Ac
 	 */
 	public String convertTCGOCLOperationTypeToString(EDataType eDataType, Object instanceValue) {
 		return convertTCGOCLOperationType((TCGOCLOperationType)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TCGVariableUsage createTCGVariableUsage(String literal) {
+		TCGVariableUsage result = TCGVariableUsage.get(literal);
+		if (result == null) throw new IllegalArgumentException("The value '" + literal + "' is not a valid enumerator of '" + ActivityTestCaseGraphPackage.Literals.TCG_VARIABLE_USAGE.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TCGVariableUsage createTCGVariableUsageFromString(EDataType eDataType, String initialValue) {
+		return createTCGVariableUsage(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTCGVariableUsage(TCGVariableUsage instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTCGVariableUsageToString(EDataType eDataType, Object instanceValue) {
+		return convertTCGVariableUsage((TCGVariableUsage)instanceValue);
 	}
 
 	/**

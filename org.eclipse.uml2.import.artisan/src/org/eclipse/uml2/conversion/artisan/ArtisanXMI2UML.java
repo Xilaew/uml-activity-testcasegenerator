@@ -50,7 +50,7 @@ public class ArtisanXMI2UML extends AbstractTool {
 		out(model.get(1).toString());
 		model.remove(0);
 		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
-		ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+		//ByteArrayOutputStream out2 = new ByteArrayOutputStream();
 
 		resource.save(out1,null);
 		out1.close();
@@ -62,7 +62,7 @@ public class ArtisanXMI2UML extends AbstractTool {
 				lines.add(s1);
 			}
 			PrintWriter pw;
-			pw = new PrintWriter(new OutputStreamWriter(out2,"UTF-8"));
+			pw = new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
 			for (String s : lines) {
 				// UML Namespace
 				s = s.replace(
@@ -84,13 +84,13 @@ public class ArtisanXMI2UML extends AbstractTool {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		resource = RESOURCE_SET.createResource(URI.createURI("umlFile.uml"));
-		
-		resource.load(new ByteArrayInputStream(out2.toByteArray()), null);
-		model = resource.getContents();
-		Constraint2LocalPostconditionHelper
-				.convert((org.eclipse.uml2.uml.Package) model.get(0));
-		resource.save(out, null);
+//		resource = RESOURCE_SET.createResource(URI.createURI("umlFile.uml"));
+//		
+//		resource.load(new ByteArrayInputStream(out2.toByteArray()), null);
+//		model = resource.getContents();
+//		Constraint2LocalPostconditionHelper
+//				.convert((org.eclipse.uml2.uml.Package) model.get(0));
+//		resource.save(out, null);
 	}
 	
 	

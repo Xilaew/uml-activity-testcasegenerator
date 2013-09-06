@@ -1,4 +1,4 @@
-package org.xilaew.atg.model.ampl;
+package org.xilaew.atg.transformations.actTCG2ampl;
 
 import java.util.Iterator;
 
@@ -19,10 +19,11 @@ import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLVariableCallExp;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphSwitch;
 
-public class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
+class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 
 	@Override
-	public String caseTCGControlFlow(TCGControlFlow object) {
+	public
+	String caseTCGControlFlow(TCGControlFlow object) {
 		StringBuilder result = new StringBuilder();
 		String name = object.getName().replace("\\s", "_");
 		AbstractTCGConstraint spec = object.getGuard();
@@ -41,7 +42,6 @@ public class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 	@Override
 	public String caseTCGOCLOperationCallExp(TCGOCLOperationCallExp object) {
 		String function = "";
-		String functionClose = "";
 		String source = doSwitch(object.getSource());
 		StringBuilder argumentList = new StringBuilder();
 		for (Iterator<TCGOCLExpression> it = object.getArguments().iterator(); it

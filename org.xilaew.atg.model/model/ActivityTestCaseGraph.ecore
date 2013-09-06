@@ -5,6 +5,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="TCGActivity" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//TCGVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="localPostconditions" upperBound="-1"
@@ -18,8 +20,9 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedBy" upperBound="-1"
         eType="#//TCGOCLVariableCallExp" eOpposite="#//TCGOCLVariableCallExp/variable"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="#//TCGVariableUsage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGObjectVariable" eSuperTypes="#//TCGVariable">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -57,7 +60,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLVariableCallExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="#//TCGVariable" eOpposite="#//TCGVariable/referencedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPre" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TCGOCLOperationType">
     <eLiterals name="multiplication" literal="*"/>
@@ -77,10 +80,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGOCLLiteralExp" eSuperTypes="#//TCGOCLExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TCGBasicVariableType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="the value of the literal is stored as a float. Depending on the type it has either to be interpreted:&#xD;&#xA;as boolean 0=false, 1=true, everything else = undefined;&#xD;&#xA;as integer only the integral part of value is evaluatet e.g. 4.989=>4; 2.000=>2 (those are the normal typecasting rules)&#xD;&#xA;as float you can guess that one."/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TCGVariableUsage">
+    <eLiterals name="inParameter"/>
+    <eLiterals name="outParameter" value="1"/>
+    <eLiterals name="inoutParameter" value="2"/>
+    <eLiterals name="returnParameter" value="3"/>
+    <eLiterals name="field" value="5"/>
+    <eLiterals name="localVariable" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

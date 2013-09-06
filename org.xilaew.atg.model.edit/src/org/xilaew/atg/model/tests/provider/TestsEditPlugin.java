@@ -5,6 +5,9 @@ package org.xilaew.atg.model.tests.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.xilaew.atg.model.abstractTestCaseGraph.provider.AbstractTestCaseGraphEditPlugin;
+import org.xilaew.atg.model.activityTestCaseGraph.provider.ActivityTestCaseGraphEditPlugin;
 
 /**
  * This is the central singleton for the Tests edit plugin.
@@ -38,6 +41,9 @@ public final class TestsEditPlugin extends EMFPlugin {
 	public TestsEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     AbstractTestCaseGraphEditPlugin.INSTANCE,
+		     ActivityTestCaseGraphEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

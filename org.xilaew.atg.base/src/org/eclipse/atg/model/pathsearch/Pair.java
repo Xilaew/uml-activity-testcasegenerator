@@ -1,8 +1,8 @@
-package org.eclipse.atg.model;
+package org.eclipse.atg.model.pathsearch;
 
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 
-public class Pair {
+class Pair {
 	
 	@Override
 	public String toString() {
@@ -12,7 +12,7 @@ public class Pair {
 	/**
 	 * 
 	 */
-	Pair(AbstractTCGEdge first,Integer second){
+	public Pair(AbstractTCGEdge first,Integer second){
 		this.first=first;
 		this.second=second;
 	}

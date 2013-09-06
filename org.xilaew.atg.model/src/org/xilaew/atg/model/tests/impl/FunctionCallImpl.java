@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
+
 import org.xilaew.atg.model.tests.FunctionCall;
 import org.xilaew.atg.model.tests.TestsPackage;
 import org.xilaew.atg.model.tests.Value;
@@ -31,6 +33,7 @@ import org.xilaew.atg.model.tests.Value;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.tests.impl.FunctionCallImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xilaew.atg.model.tests.impl.FunctionCallImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.tests.impl.FunctionCallImpl#getActivity <em>Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +69,16 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 	 * @ordered
 	 */
 	protected EList<Value> parameters;
+
+	/**
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivity()
+	 * @generated
+	 * @ordered
+	 */
+	protected TCGActivity activity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +137,44 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TCGActivity getActivity() {
+		if (activity != null && activity.eIsProxy()) {
+			InternalEObject oldActivity = (InternalEObject)activity;
+			activity = (TCGActivity)eResolveProxy(oldActivity);
+			if (activity != oldActivity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestsPackage.FUNCTION_CALL__ACTIVITY, oldActivity, activity));
+			}
+		}
+		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TCGActivity basicGetActivity() {
+		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActivity(TCGActivity newActivity) {
+		TCGActivity oldActivity = activity;
+		activity = newActivity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestsPackage.FUNCTION_CALL__ACTIVITY, oldActivity, activity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,6 +196,9 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 				return getName();
 			case TestsPackage.FUNCTION_CALL__PARAMETERS:
 				return getParameters();
+			case TestsPackage.FUNCTION_CALL__ACTIVITY:
+				if (resolve) return getActivity();
+				return basicGetActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +219,9 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Value>)newValue);
 				return;
+			case TestsPackage.FUNCTION_CALL__ACTIVITY:
+				setActivity((TCGActivity)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +240,9 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 			case TestsPackage.FUNCTION_CALL__PARAMETERS:
 				getParameters().clear();
 				return;
+			case TestsPackage.FUNCTION_CALL__ACTIVITY:
+				setActivity((TCGActivity)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +259,8 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TestsPackage.FUNCTION_CALL__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case TestsPackage.FUNCTION_CALL__ACTIVITY:
+				return activity != null;
 		}
 		return super.eIsSet(featureID);
 	}

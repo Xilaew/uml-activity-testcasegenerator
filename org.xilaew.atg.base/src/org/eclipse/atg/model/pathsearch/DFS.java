@@ -1,8 +1,8 @@
-package org.eclipse.atg.model;
+package org.eclipse.atg.model.pathsearch;
 
 import java.util.ArrayDeque;
-import java.util.Collections;
 import java.util.Deque;
+import java.util.Properties;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -12,9 +12,9 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 
-public class DFS {
+public class DFS implements PathSearch {
 	
-	public static EList<Path> findAllPaths(AbstractTCGContainer atcg){
+	public EList<Path> findAllPaths(AbstractTCGContainer atcg){
 		EList<Path> result = new BasicEList<Path>();
 		Deque<AbstractTCGEdge> stack = new ArrayDeque<AbstractTCGEdge>();
 		
@@ -43,6 +43,11 @@ public class DFS {
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public void setProperties(Properties p) {
+		
 	}
 
 }

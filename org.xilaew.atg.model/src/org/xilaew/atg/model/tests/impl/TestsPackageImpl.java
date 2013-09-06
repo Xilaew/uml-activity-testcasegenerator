@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage;
+
 import org.xilaew.atg.model.tests.FunctionCall;
 import org.xilaew.atg.model.tests.TestCase;
 import org.xilaew.atg.model.tests.TestSuite;
@@ -112,6 +114,9 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		ActivityTestCaseGraphPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theTestsPackage.createPackageContents();
 
@@ -150,6 +155,15 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTestSuite_Sut() {
+		return (EReference)testSuiteEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTestCase() {
 		return testCaseEClass;
 	}
@@ -159,7 +173,7 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTestCase_Sut() {
+	public EReference getTestCase_InitValues() {
 		return (EReference)testCaseEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -168,7 +182,7 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTestCase_InitValues() {
+	public EReference getTestCase_Function() {
 		return (EReference)testCaseEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -177,17 +191,8 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTestCase_Function() {
-		return (EReference)testCaseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTestCase_TestForValue() {
-		return (EReference)testCaseEClass.getEStructuralFeatures().get(3);
+		return (EReference)testCaseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -231,6 +236,15 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFunctionCall_Activity() {
+		return (EReference)functionCallEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSUT() {
 		return sutEClass;
 	}
@@ -251,6 +265,15 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 */
 	public EAttribute getSUT_Object() {
 		return (EAttribute)sutEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSUT_PackageName() {
+		return (EAttribute)sutEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -285,6 +308,15 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getValue_Variable() {
+		return (EReference)valueEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TestsFactory getTestsFactory() {
 		return (TestsFactory)getEFactoryInstance();
 	}
@@ -310,9 +342,9 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 		// Create classes and their features
 		testSuiteEClass = createEClass(TEST_SUITE);
 		createEReference(testSuiteEClass, TEST_SUITE__TESTS);
+		createEReference(testSuiteEClass, TEST_SUITE__SUT);
 
 		testCaseEClass = createEClass(TEST_CASE);
-		createEReference(testCaseEClass, TEST_CASE__SUT);
 		createEReference(testCaseEClass, TEST_CASE__INIT_VALUES);
 		createEReference(testCaseEClass, TEST_CASE__FUNCTION);
 		createEReference(testCaseEClass, TEST_CASE__TEST_FOR_VALUE);
@@ -322,14 +354,17 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 		functionCallEClass = createEClass(FUNCTION_CALL);
 		createEAttribute(functionCallEClass, FUNCTION_CALL__NAME);
 		createEReference(functionCallEClass, FUNCTION_CALL__PARAMETERS);
+		createEReference(functionCallEClass, FUNCTION_CALL__ACTIVITY);
 
 		sutEClass = createEClass(SUT);
 		createEAttribute(sutEClass, SUT__NAME);
 		createEAttribute(sutEClass, SUT__OBJECT);
+		createEAttribute(sutEClass, SUT__PACKAGE_NAME);
 
 		valueEClass = createEClass(VALUE);
 		createEAttribute(valueEClass, VALUE__NAME);
 		createEAttribute(valueEClass, VALUE__VALUE);
+		createEReference(valueEClass, VALUE__VARIABLE);
 	}
 
 	/**
@@ -355,6 +390,9 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ActivityTestCaseGraphPackage theActivityTestCaseGraphPackage = (ActivityTestCaseGraphPackage)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -364,9 +402,9 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(testSuiteEClass, TestSuite.class, "TestSuite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTestSuite_Tests(), this.getTestCase(), null, "tests", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestSuite_Sut(), this.getSUT(), null, "sut", null, 0, -1, TestSuite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTestCase_Sut(), this.getSUT(), null, "sut", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestCase_InitValues(), this.getValue(), null, "initValues", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestCase_Function(), this.getFunctionCall(), null, "function", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestCase_TestForValue(), this.getValue(), null, "testForValue", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -376,14 +414,17 @@ public class TestsPackageImpl extends EPackageImpl implements TestsPackage {
 		initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunctionCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunctionCall_Parameters(), this.getValue(), null, "parameters", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunctionCall_Activity(), theActivityTestCaseGraphPackage.getTCGActivity(), null, "activity", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sutEClass, org.xilaew.atg.model.tests.SUT.class, "SUT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSUT_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xilaew.atg.model.tests.SUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSUT_Object(), ecorePackage.getEBoolean(), "object", null, 0, 1, org.xilaew.atg.model.tests.SUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSUT_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, org.xilaew.atg.model.tests.SUT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getValue_Variable(), theActivityTestCaseGraphPackage.getTCGVariable(), null, "variable", null, 1, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

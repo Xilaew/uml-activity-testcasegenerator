@@ -10,25 +10,21 @@
 
 <plugin>
 
-
-
-
-
-
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated AbstractTestCaseGraph -->
       <package
-            uri="http://org.xilaew.atg.model.abstractTestCaseGraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.AbstractTestCaseGraphPackage"
-            genModel="model/AbstractTestCaseGraph.genmodel"/>
+            uri="http://org.xilaew.atg.model.tests"
+            class="org.xilaew.atg.model.tests.TestsPackage"
+            genModel="model/Tests.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated AbstractTestCaseGraph -->
       <parser
-            type="abstracttestcasegraph"
-            class="org.xilaew.atg.model.abstractTestCaseGraph.util.AbstractTestCaseGraphResourceFactoryImpl"/>
+            type="tests"
+            class="org.xilaew.atg.model.tests.util.TestsResourceFactoryImpl"/>
    </extension>
+
+
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ActivityTestCaseGraph -->
       <package
@@ -42,35 +38,5 @@
       <parser
             type="activitytestcasegraph"
             class="org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphResourceFactoryImpl"/>
-   </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated TestcaseGraphRuntime -->
-      <package
-            uri="http://org.xilaew.atg.model.TestCaseGraphRuntime"
-            class="org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimePackage"
-            genModel="model/TestcaseGraphRuntime.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated TCGOCLFunctionLib -->
-      <package
-            uri="http://org.xilaew.atg.model.tcgoclfunctionlib"
-            class="org.xilaew.atg.model.tcgoclfunctionlib.TcgoclfunctionlibPackage"
-            genModel="model/TCGOCLFunctionLib.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated Tests -->
-      <package
-            uri="http://org.xilaew.atg.model.tests"
-            class="org.xilaew.atg.model.tests.TestsPackage"
-            genModel="model/Tests.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated Tests -->
-      <parser
-            type="tests"
-            class="org.xilaew.atg.model.tests.util.TestsResourceFactoryImpl"/>
    </extension>
 </plugin>

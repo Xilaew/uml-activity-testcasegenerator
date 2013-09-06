@@ -21,6 +21,7 @@ import org.xilaew.atg.model.tests.TestsPackage;
  * <ul>
  *   <li>{@link org.xilaew.atg.model.tests.impl.SUTImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xilaew.atg.model.tests.impl.SUTImpl#isObject <em>Object</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.tests.impl.SUTImpl#getPackageName <em>Package Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 	 * @ordered
 	 */
 	protected boolean object = OBJECT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackageName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PACKAGE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackageName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String packageName = PACKAGE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPackageName() {
+		return packageName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPackageName(String newPackageName) {
+		String oldPackageName = packageName;
+		packageName = newPackageName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestsPackage.SUT__PACKAGE_NAME, oldPackageName, packageName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 				return getName();
 			case TestsPackage.SUT__OBJECT:
 				return isObject();
+			case TestsPackage.SUT__PACKAGE_NAME:
+				return getPackageName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 				return;
 			case TestsPackage.SUT__OBJECT:
 				setObject((Boolean)newValue);
+				return;
+			case TestsPackage.SUT__PACKAGE_NAME:
+				setPackageName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 			case TestsPackage.SUT__OBJECT:
 				setObject(OBJECT_EDEFAULT);
 				return;
+			case TestsPackage.SUT__PACKAGE_NAME:
+				setPackageName(PACKAGE_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case TestsPackage.SUT__OBJECT:
 				return object != OBJECT_EDEFAULT;
+			case TestsPackage.SUT__PACKAGE_NAME:
+				return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class SUTImpl extends MinimalEObjectImpl.Container implements SUT {
 		result.append(name);
 		result.append(", object: ");
 		result.append(object);
+		result.append(", packageName: ");
+		result.append(packageName);
 		result.append(')');
 		return result.toString();
 	}

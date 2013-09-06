@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xilaew.atg.model.tests.TestSuite#getTests <em>Tests</em>}</li>
+ *   <li>{@link org.xilaew.atg.model.tests.TestSuite#getSut <em>Sut</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +44,21 @@ public interface TestSuite extends EObject {
 	 * @generated
 	 */
 	EList<TestCase> getTests();
+
+	/**
+	 * Returns the value of the '<em><b>Sut</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xilaew.atg.model.tests.SUT}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sut</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sut</em>' containment reference list.
+	 * @see org.xilaew.atg.model.tests.TestsPackage#getTestSuite_Sut()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SUT> getSut();
 
 } // TestSuite

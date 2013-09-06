@@ -36,7 +36,7 @@
       <wizard
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             class="org.xilaew.atg.model.tcgoclfunctionlib.presentation.TcgoclfunctionlibModelWizard"
-            icon="icons/full/obj16/tcgoclfunctionlibModelFile.gif"
+            icon="icons/full/obj16/TcgoclfunctionlibModelFile.gif"
             id="org.xilaew.atg.model.tcgoclfunctionlib.presentation.tcgoclfunctionlibModelWizardID"
             name="%_UI_TcgoclfunctionlibModelWizard_label">
          <description>
@@ -49,7 +49,7 @@
       <wizard
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             class="org.xilaew.atg.model.testCaseGraphRuntime.presentation.TestCaseGraphRuntimeModelWizard"
-            icon="icons/full/obj16/testCaseGraphRuntimeModelFile.gif"
+            icon="icons/full/obj16/TestCaseGraphRuntimeModelFile.gif"
             id="org.xilaew.atg.model.TestcaseGraphRuntime.presentation.TestcaseGraphRuntimeModelWizardID"
             name="%_UI_TestCaseGraphRuntimeModelWizard_label">
          <description>
@@ -62,7 +62,7 @@
       <wizard
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             class="org.xilaew.atg.model.tests.presentation.TestsModelWizard"
-            icon="icons/full/obj16/testsModelFile.gif"
+            icon="icons/full/obj16/TestsModelFile.gif"
             id="org.xilaew.atg.model.Tests.presentation.TestsModelWizardID"
             name="%_UI_TestsModelWizard_label">
          <description>

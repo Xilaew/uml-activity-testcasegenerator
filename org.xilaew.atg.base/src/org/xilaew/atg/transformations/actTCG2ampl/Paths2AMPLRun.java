@@ -1,4 +1,4 @@
-package org.xilaew.atg.model.ampl;
+package org.xilaew.atg.transformations.actTCG2ampl;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 
 public class Paths2AMPLRun {
 
-	public static String getAMPLCommands(Collection<Path> paths,
+	public static String transform(Collection<Path> paths,
 			TCGActivity tcgActivity, String filename) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("option solver minos;\n");

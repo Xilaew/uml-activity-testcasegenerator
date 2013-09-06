@@ -1,4 +1,4 @@
-package org.xilaew.atg.model.ampl;
+package org.xilaew.atg.transformations.actTCG2ampl;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,7 +13,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGRealNode;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 
 public class Path2AMPLData {
-	public static String getAMPLData(Path p){
+	public static String transform(Path p){
 		Map<AbstractTCGElement, Set<Integer>> amplPath = new HashMap<AbstractTCGElement, Set<Integer>>();
 		int i = 0;
 		for (AbstractTCGEdge edge : p.getEdges()) {

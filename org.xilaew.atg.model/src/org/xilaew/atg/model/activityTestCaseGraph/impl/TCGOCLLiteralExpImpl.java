@@ -55,7 +55,7 @@ public class TCGOCLLiteralExpImpl extends TCGOCLExpressionImpl implements TCGOCL
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float VALUE_EDEFAULT = 0.0F;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -65,7 +65,7 @@ public class TCGOCLLiteralExpImpl extends TCGOCLExpressionImpl implements TCGOCL
 	 * @generated
 	 * @ordered
 	 */
-	protected float value = VALUE_EDEFAULT;
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,7 +112,7 @@ public class TCGOCLLiteralExpImpl extends TCGOCLExpressionImpl implements TCGOCL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -121,8 +121,8 @@ public class TCGOCLLiteralExpImpl extends TCGOCLExpressionImpl implements TCGOCL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(float newValue) {
-		float oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActivityTestCaseGraphPackage.TCGOCL_LITERAL_EXP__VALUE, oldValue, value));
@@ -156,7 +156,7 @@ public class TCGOCLLiteralExpImpl extends TCGOCLExpressionImpl implements TCGOCL
 				setType((TCGBasicVariableType)newValue);
 				return;
 			case ActivityTestCaseGraphPackage.TCGOCL_LITERAL_EXP__VALUE:
-				setValue((Float)newValue);
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

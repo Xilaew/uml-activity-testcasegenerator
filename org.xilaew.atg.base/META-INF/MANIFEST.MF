@@ -7,7 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: tools,
+Export-Package: org.eclipse.atg.model,
+ org.eclipse.atg.model.pathsearch,
+ org.xilaew.atg.transformations.actTCG2ampl,
+ org.xilaew.atg.transformations.uml2actTCG,
+ org.xilaew.atg.unitTestOutput,
+ tools,
  utility
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
@@ -16,5 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl,
  org.eclipse.ocl.uml,
  org.xilaew.atg.core,
- org.xilaew.atg.model
+ org.xilaew.atg.model,
+ org.eclipse.jface
 Bundle-ActivationPolicy: lazy

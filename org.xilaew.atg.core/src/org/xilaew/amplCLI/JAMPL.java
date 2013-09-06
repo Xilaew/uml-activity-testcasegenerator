@@ -1,10 +1,9 @@
 /**
- * An slightly more convenient Interface to AMPL seting on top of the Simple CLI. 
+ * An slightly more convenient Interface to AMPL seated on top of the Simple CLI. 
  * Some Convenience functions for loading model, data and adding objective functions etc. are provided.
  */
 package org.xilaew.amplCLI;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -43,13 +42,20 @@ public class JAMPL {
 	}	
 	
 	public void loadData(String amplData) {
+		cli.sendCommand("reset data;");
 		cli.sendCommand("data;");
 		cli.sendCommand(amplData);
 		cli.sendCommand("model;");
 	}
 
-	public void loadModel(String fileName) {
-		cli.sendCommand("model " + fileName + ";");
+	public void loadModel(File file) {
+		cli.sendCommand("model " + file.getAbsolutePath() + ";");
+	}	
+	
+	public void loadModel(String amplModel) {
+		cli.sendCommand("reset model;");
+		cli.sendCommand("model;");
+		cli.sendCommand(amplModel);
 	}
 
 	public void setSolver(String solverName) {
@@ -81,16 +87,14 @@ public class JAMPL {
 			if (line != null) {
 				Matcher matcher = pattern.matcher(line);
 				if (matcher.matches()) {
-					if (matcher.matches()) {
 						result = SolveResult.Failure;
-					}
-					if (matcher.group(1).equals("solved")) {
+					if (matcher.group(1).contains("solved")) {
 						result = SolveResult.Solved;
 					}
-					if (matcher.group(1).equals("infeasible")) {
+					if (matcher.group(1).contains("infeasible")) {
 						result = SolveResult.Infeasable;
 					}
-					if (matcher.group(1).equals("unbounded")) {
+					if (matcher.group(1).contains("unbounded")) {
 						result = SolveResult.Unbounded;
 					}
 				}
@@ -109,25 +113,25 @@ public class JAMPL {
 		}
 	}
 
-	public Integer getParameter(String varName) {
+	public Double getParameter(String varName) {
 		skipOutput();
-		Integer result = null;
+		Double result = null;
 		cli.sendCommand("display " + varName + ";");
-		Pattern p = Pattern.compile("^(" + varName + ")\\s=\\s(-?\\d+)$");
+		Pattern p = Pattern.compile("^(" + varName + ")\\s=\\s(-?\\d+\\.?\\d*)$");
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m = p.matcher(line);
 			System.out.println(line);
 			if (m.matches()) {
-				result = Integer.parseInt(m.group(2));
+				result = Double.parseDouble(m.group(2));
 			}
 		}
 		return result;
 	}
 
-	public List<Float> getVariable(String varName) {
+	public List<Double> getVariable(String varName) {
 		skipOutput();
-		List<Float> result = null;
+		List<Double> result = null;
 		cli.sendCommand("display " + varName + ";");
 		Pattern p = Pattern.compile("^(" + varName + ")\\s\\[\\*\\]\\s:=\\s*$");
 		while (result == null) {
@@ -135,19 +139,19 @@ public class JAMPL {
 			Matcher m = p.matcher(line);
 			System.out.println(line);
 			if (m.matches()) {
-				result = new ArrayList<Float>();
+				result = new ArrayList<Double>();
 			}
 		}
-		p = Pattern.compile("^\\d+\\s+((-?\\d+\\.?\\d*)|NaN)");
+		p = Pattern.compile("^\\s*\\d+\\s+((-?\\d+\\.?\\d*)|NaN)");
 		while (true) {
 			String line = cli.readLine();
 			Matcher m = p.matcher(line);
 			System.out.println(line);
 			if (m.matches()){
 				if (m.group(1).equals("NaN")){
-					result.add(Float.NaN);
+					result.add(Double.NaN);
 				}else{
-					result.add(Float.parseFloat(m.group(1)));
+					result.add(Double.parseDouble(m.group(1)));
 				}
 			}else break;
 		}

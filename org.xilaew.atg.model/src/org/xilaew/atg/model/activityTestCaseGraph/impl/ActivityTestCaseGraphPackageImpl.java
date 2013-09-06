@@ -134,6 +134,13 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	private EEnum tcgoclOperationTypeEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum tcgVariableUsageEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -221,6 +228,24 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTCGActivity_ClassName() {
+        return (EAttribute)getTCGActivity().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTCGActivity_PackageName() {
+        return (EAttribute)getTCGActivity().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTCGAction() {
 		if (tcgActionEClass == null) {
 			tcgActionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(1);
@@ -289,6 +314,15 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 	 */
 	public EAttribute getTCGVariable_IsParameter() {
         return (EAttribute)getTCGVariable().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTCGVariable_Usage() {
+        return (EAttribute)getTCGVariable().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -475,6 +509,18 @@ public class ActivityTestCaseGraphPackageImpl extends EPackageImpl implements Ac
 			tcgoclOperationTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(11);
 		}
 		return tcgoclOperationTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTCGVariableUsage() {
+		if (tcgVariableUsageEEnum == null) {
+			tcgVariableUsageEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(ActivityTestCaseGraphPackage.eNS_URI).getEClassifiers().get(13);
+		}
+		return tcgVariableUsageEEnum;
 	}
 
 	/**

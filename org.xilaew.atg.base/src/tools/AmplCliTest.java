@@ -1,7 +1,6 @@
 package tools;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import org.xilaew.amplCLI.AmplFactory;
 import org.xilaew.amplCLI.CLI;

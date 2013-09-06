@@ -64,6 +64,7 @@ public class FunctionCallItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addActivityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class FunctionCallItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Activity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActivityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FunctionCall_activity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FunctionCall_activity_feature", "_UI_FunctionCall_type"),
+				 TestsPackage.Literals.FUNCTION_CALL__ACTIVITY,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

@@ -61,12 +61,12 @@ public interface TCGOCLLiteralExp extends TCGOCLExpression {
 	 * as float you can guess that one.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(float)
+	 * @see #setValue(double)
 	 * @see org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage#getTCGOCLLiteralExp_Value()
 	 * @model
 	 * @generated
 	 */
-	float getValue();
+	double getValue();
 
 	/**
 	 * Sets the value of the '{@link org.xilaew.atg.model.activityTestCaseGraph.TCGOCLLiteralExp#getValue <em>Value</em>}' attribute.
@@ -76,6 +76,6 @@ public interface TCGOCLLiteralExp extends TCGOCLExpression {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(float value);
+	void setValue(double value);
 
 } // TCGOCLLiteralExp

@@ -2,37 +2,31 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.xilaew.atg.model;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.eclipse.atg.model;uses:="org.eclipse.uml2.uml.util,  org.eclipse.emf.ecore.resource,  org.xilaew.atg.model.activityTestCaseGraph.util,  org.eclipse.emf.common.util,  org.xilaew.atg.model.abstractTestCaseGraph,  org.eclipse.ocl.utilities,  org.eclipse.uml2.uml,  org.eclipse.ocl.uml,  org.xilaew.atg.model.activityTestCaseGraph",
- org.xilaew.atg.model.abstractTestCaseGraph;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- org.xilaew.atg.model.abstractTestCaseGraph.impl;uses:="org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  org.xilaew.atg.model.abstractTestCaseGraph,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.impl",
- org.xilaew.atg.model.abstractTestCaseGraph.util;uses:="org.eclipse.emf.ecore.resource,  org.eclipse.emf.ecore.xmi.impl,  org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  org.eclipse.emf.common.notify.impl,  org.xilaew.atg.model.abstractTestCaseGraph,  org.eclipse.emf.ecore.resource.impl,  org.eclipse.emf.common.notify",
- org.xilaew.atg.model.activityTestCaseGraph;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util,org.xilaew.atg.model.abstractTestCaseGraph",
- org.xilaew.atg.model.activityTestCaseGraph.impl;uses:="org.xilaew.atg.model.abstractTestCaseGraph.impl,  org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  org.eclipse.emf.ecore.impl,  org.eclipse.emf.common.notify,  org.xilaew.atg.model.activityTestCaseGraph",
- org.xilaew.atg.model.activityTestCaseGraph.util;uses:="org.eclipse.emf.ecore.xmi.impl,  org.eclipse.emf.ecore.resource,  org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.util,  org.xilaew.atg.model.abstractTestCaseGraph,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.resource.impl,  org.xilaew.atg.model.activityTestCaseGraph",
- org.xilaew.atg.model.ampl;uses:="org.xilaew.atg.model.activityTestCaseGraph.util,  org.xilaew.atg.model.abstractTestCaseGraph,  org.xilaew.atg.model.activityTestCaseGraph,  org.xilaew.atg.model.testCaseGraphRuntime",
- org.xilaew.atg.model.tcgoclfunctionlib;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- org.xilaew.atg.model.tcgoclfunctionlib.impl;uses:="org.eclipse.emf.ecore,  org.xilaew.atg.model.tcgoclfunctionlib,  org.eclipse.emf.common.util,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.impl",
- org.xilaew.atg.model.tcgoclfunctionlib.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.xilaew.atg.model.tcgoclfunctionlib,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify",
- org.xilaew.atg.model.testCaseGraphRuntime;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- org.xilaew.atg.model.testCaseGraphRuntime.impl;uses:="org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  org.eclipse.emf.ecore.impl,  org.xilaew.atg.model.testCaseGraphRuntime",
- org.xilaew.atg.model.testCaseGraphRuntime.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify,  org.xilaew.atg.model.testCaseGraphRuntime",
+Export-Package: org.xilaew.atg.model.abstractTestCaseGraph,
+ org.xilaew.atg.model.abstractTestCaseGraph.util,
+ org.xilaew.atg.model.activityTestCaseGraph,
+ org.xilaew.atg.model.activityTestCaseGraph.impl,
+ org.xilaew.atg.model.activityTestCaseGraph.util,
+ org.xilaew.atg.model.tcgoclfunctionlib,
+ org.xilaew.atg.model.tcgoclfunctionlib.util,
+ org.xilaew.atg.model.testCaseGraphRuntime,
+ org.xilaew.atg.model.testCaseGraphRuntime.util,
  org.xilaew.atg.model.tests,
  org.xilaew.atg.model.tests.impl,
  org.xilaew.atg.model.tests.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.xilaew.atg.model;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.uml2.uml,
- org.eclipse.uml2.uml.resources,
- org.eclipse.ocl,
- org.eclipse.ocl.uml,
  org.xilaew.atg.core,
- org.eclipse.ui.workbench,
- org.eclipse.jface
+ org.eclipse.ocl.uml,
+ org.eclipse.jface,
+ org.eclipse.ocl,
+ org.eclipse.ocl.examples.pivot
 Bundle-ActivationPolicy: lazy

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.xilaew.atg.model.activityTestCaseGraph.ActivityTestCaseGraphPackage;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphResourceFactoryImpl;
-import org.xilaew.atg.model.ampl.TCG2AMPLVisitor;
+import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
 
 public class TCG2AMPLConverterTool extends AbstractTool{
 
@@ -25,8 +25,7 @@ public class TCG2AMPLConverterTool extends AbstractTool{
 			e.printStackTrace();
 		}
 		TCGActivity tcgActivity = (TCGActivity) res.getContents().get(0);
-		TCG2AMPLVisitor tcg2AMPL = new TCG2AMPLVisitor();
-		String amplModel = tcg2AMPL.doSwitch(tcgActivity);
+		String amplModel = ActTCG2AMPLModel.transform(tcgActivity);
 		out(amplModel);
 		try {
 			PrintWriter p = new PrintWriter(new FileOutputStream(outFile));

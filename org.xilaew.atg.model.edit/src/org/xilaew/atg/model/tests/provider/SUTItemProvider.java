@@ -62,6 +62,7 @@ public class SUTItemProvider
 
 			addNamePropertyDescriptor(object);
 			addObjectPropertyDescriptor(object);
+			addPackageNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class SUTItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Package Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPackageNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SUT_packageName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SUT_packageName_feature", "_UI_SUT_type"),
+				 TestsPackage.Literals.SUT__PACKAGE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns SUT.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +172,7 @@ public class SUTItemProvider
 		switch (notification.getFeatureID(SUT.class)) {
 			case TestsPackage.SUT__NAME:
 			case TestsPackage.SUT__OBJECT:
+			case TestsPackage.SUT__PACKAGE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

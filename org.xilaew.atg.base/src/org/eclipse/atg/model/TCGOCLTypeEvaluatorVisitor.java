@@ -2,7 +2,6 @@ package org.eclipse.atg.model;
 
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLLiteralExp;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationCallExp;
-import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLOperationType;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGOCLVariableCallExp;
 import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphSwitch;
 
