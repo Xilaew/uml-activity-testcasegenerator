@@ -1,8 +1,11 @@
 package org.xilaew.atg.unitTestOutput;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.atg.model.pathsearch.Witness;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.xilaew.amplCLI.AmplFactory;
 import org.xilaew.amplCLI.JAMPL;
@@ -22,7 +25,7 @@ import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 public class TestsGeneratorHelper {
 
 	public static TestSuite generateTests(TCGActivity tcgActivity,
-			EList<Path> paths) {
+			Collection<Path> paths) {
 		TestsFactory factory = TestsFactory.eINSTANCE;
 		TestSuite result = factory.createTestSuite();
 		SUT sut = factory.createSUT();
@@ -98,6 +101,68 @@ public class TestsGeneratorHelper {
 						tc.getTestForValue().add(vout);
 					}
 				}
+			}
+		}
+		return result;
+	}
+
+	public static TestSuite generateTests(TCGActivity tcgActivity,
+			EMap<Path, Witness> paths) {
+		TestsFactory factory = TestsFactory.eINSTANCE;
+		TestSuite result = factory.createTestSuite();
+		SUT sut = factory.createSUT();
+		sut.setName(tcgActivity.getClassName());
+		sut.setPackageName(tcgActivity.getPackageName());
+		result.getSut().add(sut);
+
+		// Create one Testcase per Path
+		for (Entry<Path,Witness> p : paths.entrySet()) {
+			// Read Values from Solver and store in Model
+			TestCase tc = factory.createTestCase();
+			result.getTests().add(tc);
+			FunctionCall func = factory.createFunctionCall();
+			func.setName(tcgActivity.getName());
+			func.setActivity(tcgActivity);
+			tc.setFunction(func);
+			for (TCGVariable var : tcgActivity.getVariables()) {
+				Value v = factory.createValue();
+				v.setName(var.getName());
+				v.setVariable(var);
+				if (var.isIsParameter()) {
+					Double value = p.getValue().get(var).get(0);
+					v.setValue(value);
+					switch (var.getUsage()) {
+					case IN_PARAMETER:
+						func.getParameters().add(v);
+						break;
+					case OUT_PARAMETER:
+						tc.getTestForValue().add(v);
+						break;
+					case INOUT_PARAMETER:
+						// XXX INOUT parameters currently can not be handled
+						// since there is only one value. For in/out
+						// Parameters a pre and a post Value would be
+						// necessary.
+						// func.getParameters().add(v); //@pre
+						// tc.getTestForValue().add(v); //post
+						break;
+					case RETURN_PARAMETER:
+						tc.getTestForValue().add(v);
+						break;
+					default:
+						break;
+					}
+				} else {
+					List<Double> trace = p.getValue().get(var);
+					v.setValue(trace.get(0));
+					tc.getInitValues().add(v);
+					Value vout = factory.createValue();
+					vout.setValue(trace.get(trace.size() - 1));
+					vout.setName(var.getName());
+					vout.setVariable(var);
+					tc.getTestForValue().add(vout);
+				}
+
 			}
 		}
 		return result;

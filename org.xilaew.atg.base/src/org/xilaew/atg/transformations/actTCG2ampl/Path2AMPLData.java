@@ -13,7 +13,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGRealNode;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 
 public class Path2AMPLData {
-	public static String transform(Path p){
+	public static String transform(Path p) {
 		Map<AbstractTCGElement, Set<Integer>> amplPath = new HashMap<AbstractTCGElement, Set<Integer>>();
 		int i = 0;
 		for (AbstractTCGEdge edge : p.getEdges()) {
@@ -43,13 +43,24 @@ public class Path2AMPLData {
 		sb.append("param Pathlength := " + i + ";\n");
 		for (Entry<AbstractTCGElement, Set<Integer>> entry : amplPath
 				.entrySet()) {
-			sb.append("set " + entry.getKey().getName().replaceAll("\\s", "_") + ":=");
+			sb.append("set " + entry.getKey().getName().replaceAll("\\s", "_")
+					+ ":=");
 			for (Integer j : entry.getValue()) {
 				sb.append(" " + j);
 			}
 			sb.append(";\n");
 		}
-		return sb.toString();	
+		return sb.toString();
+	}
+
+	public static int getPathlength(Path p) {
+		int i = 0;
+		for (AbstractTCGEdge edge : p.getEdges()) {
+			if ((edge.getTarget()) instanceof AbstractTCGRealNode) {
+				i++;
+			}
+		}
+		return i;
 	}
 
 }

@@ -24,7 +24,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 	public EMap<Path, Witness> findAllSatisfiableActivityPaths(TCGActivity atcg) {
 		EMap<Path, Witness> result = new BasicEMap<Path, Witness>();
 		Deque<Pair> stack = new ArrayDeque<Pair>();
-
+		ampl.setSolver(solver);
 		ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
 		for (AbstractTCGEdge edge : atcg.getInitialNode().getOutgoing()) {
 			stack.add(new Pair(edge, new Integer(0)));

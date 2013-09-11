@@ -1,5 +1,7 @@
 package org.xilaew.atg.transformations.actTCG2ampl;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Iterator;
 
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGConstraint;
@@ -20,12 +22,18 @@ import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphSwitch;
 
 class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
+	
+	  private SecureRandom random = new SecureRandom();
+
+	  protected String randomString()
+	  {
+	    return new BigInteger(64, random).toString(32);
+	  }
 
 	@Override
-	public
-	String caseTCGControlFlow(TCGControlFlow object) {
+	public String caseTCGControlFlow(TCGControlFlow object) {
 		StringBuilder result = new StringBuilder();
-		String name = object.getName().replace("\\s", "_");
+		String name = object.getName();
 		AbstractTCGConstraint spec = object.getGuard();
 		if (spec != null) {
 			result.append("set " + name
@@ -79,12 +87,14 @@ class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		case TCGOCLOperationType.LESS_THAN_VALUE:
 			function = "<";
 			break;
-		default: function = " "+object.getOperation().getLiteral()+" ";
+		default:
+			function = " " + object.getOperation().getLiteral() + " ";
 		}
-		String result = "("+source +")"+ function + "("+ argumentList + ")";
+		String result = "(" + source + ")" + function + "(" + argumentList
+				+ ")";
 		// for Unary functions the function symbol is in front of its source
-		if(object.getArguments().isEmpty()){
-			result = "("+function + source+")";
+		if (object.getArguments().isEmpty()) {
+			result = "(" + function + source + ")";
 		}
 		return result;
 	}

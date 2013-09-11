@@ -1,4 +1,0 @@
-param Pathlength := 2;
-set assignment := 1;
-set decision2true := 1 ;
-set True := 2;

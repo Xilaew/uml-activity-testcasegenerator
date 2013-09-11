@@ -10,6 +10,7 @@ import org.xilaew.atg.model.testCaseGraphRuntime.Path;
  */
 public interface SatisfiablePathSearch extends PathSearch {
 
+	public static final SatisfiablePathSearch SOLVER_DFS = new SolverDFS();
 	public static final String PROPERTY_SOLVER = "PATHSEARCH_SOLVER";
 
 	public EMap<Path, Witness> findAllSatisfiablePaths(

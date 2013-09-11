@@ -14,10 +14,11 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
+import org.eclipse.emf.ecore.xml.type.impl.AnyTypeImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
@@ -34,40 +35,66 @@ public class ArtisanXMI2UML extends AbstractTool {
 
 	static final String tmpFile = "./umlconverter.tmp";
 
-	public static void convert(InputStream in , OutputStream out) throws IOException {
+	public static void convert(InputStream in, OutputStream out)
+			throws IOException {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
 				"xmi", UMLResource.Factory.INSTANCE);
 		UMLResourcesUtil.init(RESOURCE_SET); // MDT/UML2 4.0.0 (Juno)
-		Resource resource = RESOURCE_SET.createResource(URI.createURI("org.xilaew.test.xmi"));
+		Resource inResource = RESOURCE_SET.createResource(URI
+				.createURI("org.xilaew.test.xmi"));
+		Resource outResource = RESOURCE_SET.createResource(URI
+				.createURI("org.xilaew.test.uml"));
 		try {
-			resource.load(in,null);
+			inResource.load(in, null);
 		} catch (IOException ioe) {
 			err(ioe.getMessage());
 		}
-		EList<EObject> model = resource.getContents();
-		out(model.get(0).toString());
-		out("-----------------------");
-		out(model.get(1).toString());
-		model.remove(0);
-		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
-		//ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+		AnyTypeImpl model = (AnyTypeImpl) inResource.getContents().get(1);
+		out(model.toString());
+		outResource.getContents().add(model);
+		
+		// Add all contents from model to outputResource
+		// Do not import Profiles from Artisan Studio, since they are Buggy
+		// as Hell
+		for (Entry topLevelPackage : model.getAny()) {
+			if (topLevelPackage.getValue() instanceof AnyTypeImpl) {
+				AnyTypeImpl topLevelPackageAny = (AnyTypeImpl) topLevelPackage.getValue();
+				FeatureMap f = topLevelPackageAny.getAnyAttribute();
+				boolean profilesFound = false;
+				for (Entry e : f) {
+					out(e.getEStructuralFeature().getName()
+							+ " = " + e.getValue());
+					out(e.getEStructuralFeature().toString());
+					if (e.getEStructuralFeature().getName().equals("name")) {
+						if (e.getValue().equals("Profiles")) {
+							profilesFound = true;
+							break;
+						}
+					}
+				}
+				if (profilesFound) {
+					model.getAny().remove(model.getAny().indexOf(topLevelPackage));
+					break;
+				}
+			}
+		}
 
-		resource.save(out1,null);
+		ByteArrayOutputStream out1 = new ByteArrayOutputStream();
+		outResource.save(out1, null);
 		out1.close();
+		
+		// Fix external References Line by Line
 		List<String> lines = new ArrayList<String>();
 		try {
-			BufferedReader r = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(out1.toByteArray()),"UTF-8"));
+			BufferedReader r = new BufferedReader(new InputStreamReader(
+					new ByteArrayInputStream(out1.toByteArray()), "UTF-8"));
 			String s1;
-			while((s1=r.readLine()) != null){
+			while ((s1 = r.readLine()) != null) {
 				lines.add(s1);
 			}
 			PrintWriter pw;
-			pw = new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
+			pw = new PrintWriter(new OutputStreamWriter(out, "UTF-8"));
 			for (String s : lines) {
-				// UML Namespace
-				s = s.replace(
-						"xmlns:uml=\"http://www.omg.org/spec/UML/20090901\"",
-						"xmlns:uml = \"http://www.eclipse.org/uml2/4.0.0/UML\"");
 				// Primitive Datatype references
 				s = s.replace("http://www.omg.org/spec/UML/20090901/UML.xmi",
 						"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml");
@@ -75,30 +102,35 @@ public class ArtisanXMI2UML extends AbstractTool {
 				s = s.replace(
 						"http://www.omg.org/spec/UML/20090901/StandardProfileL2.xmi",
 						"pathmap://UML_PROFILES/StandardL2.profile.uml");
-
+				// References to SysML profile
+				s = s.replace(
+						"http://www.omg.org/spec/SysML/20100301/SysML-profile.uml#_0",
+						"pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw");
+				// stupid Artisan Typos
+				s = s.replace(
+						"(<ownedLiteral xmi:type=\"uml:EnumerationLiteral\".*?)classifier=\".*?\"(>)",
+						"$1$2");
+				s = s.replace("visibility=\"Private\"",
+						"visibility=\"private\"");
+				// fix UML Namespace
+				s = s.replace(
+						"http://www.omg.org/spec/UML/20090901",
+						"http://www.eclipse.org/uml2/4.0.0/UML");
+				// fix XMI Namespace
+				s = s.replace(
+						"http://schema.omg.org/spec/XMI/2.1",
+						"http://www.omg.org/spec/XMI/20110701");
 				pw.println(s);
 			}
 			pw.close();
-			//Files.deleteIfExists(Paths.get(tmpFile));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		resource = RESOURCE_SET.createResource(URI.createURI("umlFile.uml"));
-//		
-//		resource.load(new ByteArrayInputStream(out2.toByteArray()), null);
-//		model = resource.getContents();
-//		Constraint2LocalPostconditionHelper
-//				.convert((org.eclipse.uml2.uml.Package) model.get(0));
-//		resource.save(out, null);
 	}
-	
-	
+
 	public static void main(String[] args) throws IOException {
 		readCmdArgs(args);
-
 		convert(new FileInputStream(inFile), new FileOutputStream(outFile));
-		
 	}
 
 }

@@ -1,5 +1,7 @@
 package org.xilaew.atg.transformations.uml2actTCG;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -93,6 +95,12 @@ public class UML2TCGActivity {
 	ActivityTestCaseGraphFactory factory = ActivityTestCaseGraphFactory.eINSTANCE;
 	OCL<?, Classifier, Operation, ?, ?, ?, ?, ?, ?, ?, ?, ?> ocl;
 
+	protected SecureRandom random = new SecureRandom();
+
+	protected String randomString() {
+		return new BigInteger(64, random).toString(32);
+	}
+
 	protected Visitor<org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> oclVisitor = new AbstractVisitor<org.xilaew.atg.model.activityTestCaseGraph.TCGOCLExpression, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint>() {
 		@Override
 		public TCGOCLExpression visitVariableExp(
@@ -148,9 +156,10 @@ public class UML2TCGActivity {
 			Output.debug("handleOperation", callExp);
 
 			Output.debug(callExp.getReferredOperation().getName(), callExp);
-			//Output.debug(callExp.getSource().toString(), callExp.getSource());
-			//Output.debug(callExp.getArgument().get(0).toString(), callExp
-					//.getArgument().get(0));
+			// Output.debug(callExp.getSource().toString(),
+			// callExp.getSource());
+			// Output.debug(callExp.getArgument().get(0).toString(), callExp
+			// .getArgument().get(0));
 			TCGOCLOperationCallExp tcgOpCall = factory
 					.createTCGOCLOperationCallExp();
 			tcgOpCall.setName(callExp.getReferredOperation().getName());
@@ -272,7 +281,7 @@ public class UML2TCGActivity {
 			tcgControlNode.setName(object.getName());
 			return tcgControlNode;
 		}
-		
+
 		public AbstractTCGElement caseInitialNode(InitialNode object) {
 			TCGControlNode tcgControlNode = factory.createTCGControlNode();
 			tcgControlNode.setName(object.getQualifiedName());
@@ -280,7 +289,6 @@ public class UML2TCGActivity {
 			return tcgControlNode;
 		}
 
-		
 		public AbstractTCGElement caseLiteralString(LiteralString object) {
 			Output.debug("literalString found" + object.getValue(), this);
 			return parseLiteralStringAsOCL(object);
@@ -304,7 +312,7 @@ public class UML2TCGActivity {
 	};
 
 	public UML2TCGActivity() {
-		UMLEnvironmentFactory envFactory = new UMLEnvironmentFactory(){
+		UMLEnvironmentFactory envFactory = new UMLEnvironmentFactory() {
 
 			@Override
 			public Environment<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint, Class, EObject> createOperationContext(
@@ -313,27 +321,30 @@ public class UML2TCGActivity {
 				Environment<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint, Class, EObject> result;
 				result = super.createOperationContext(parent, operation);
 				OCLFactory oclFactory = parent.getOCLFactory();
-		        UMLReflection<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> uml = parent.getUMLReflection();
-				Variable<Classifier, Parameter> var = oclFactory.createVariable();
+				UMLReflection<Package, Classifier, Operation, Property, EnumerationLiteral, Parameter, State, CallOperationAction, SendSignalAction, Constraint> uml = parent
+						.getUMLReflection();
+				Variable<Classifier, Parameter> var = oclFactory
+						.createVariable();
 				Parameter next = operation.getReturnResult();
 				uml.setName(var, uml.getName(next));
-				uml.setType(var, TypeUtil.resolveType(result, uml.getOCLType(next)));
+				uml.setType(var,
+						TypeUtil.resolveType(result, uml.getOCLType(next)));
 				var.setRepresentedParameter((Parameter) next);
-				
+
 				result.addElement(var.getName(), var, true);
 				return result;
 			}
-			
+
 		};
 		ocl = OCL.newInstance(envFactory);
-		//ocl = org.eclipse.ocl.uml.OCL.newInstance();
+		// ocl = org.eclipse.ocl.uml.OCL.newInstance();
 	}
 
-//	public UML2TCGActivity(
-//			org.eclipse.emf.ecore.resource.Resource resource) {
-//		ocl = OCL.newInstance(
-//				new UMLEnvironmentFactory(resource.getResourceSet()), resource);
-//	}
+	// public UML2TCGActivity(
+	// org.eclipse.emf.ecore.resource.Resource resource) {
+	// ocl = OCL.newInstance(
+	// new UMLEnvironmentFactory(resource.getResourceSet()), resource);
+	// }
 
 	/**
 	 * Delegates the conversion of relevant child Elements of an Action.
@@ -385,7 +396,8 @@ public class UML2TCGActivity {
 			}
 		}
 		tcgActivity.setClassName(UMLHelper.getNamespace(umlActivity).getName());
-		tcgActivity.setPackageName(umlActivity.getNearestPackage().getQualifiedName());
+		tcgActivity.setPackageName(umlActivity.getNearestPackage()
+				.getQualifiedName());
 		return tcgActivity;
 
 	}
@@ -396,7 +408,16 @@ public class UML2TCGActivity {
 
 	protected AbstractTCGEdge handleControlFlow(ControlFlow umlControlFlow,
 			AbstractTCGEdge tcgEdge) {
-		Output.debug("Handle ControlFlow: Name := " + umlControlFlow.getQualifiedName(), this);
+		String name;
+		if (umlControlFlow.getQualifiedName() == null) {
+			name = randomString() + "ControlFlow";
+		} else {
+			name = umlControlFlow.getQualifiedName().replace("\\s", "_");
+		}
+		Output.debug(
+				"Handle ControlFlow: Name := "
+						+ umlControlFlow.getQualifiedName() + " -> " + name,
+				this);
 		tcgEdge.setName(umlControlFlow.getQualifiedName());
 		tcgEdge.setSource((AbstractTCGNode) transformElement(umlControlFlow
 				.getSource()));
@@ -490,14 +511,19 @@ public class UML2TCGActivity {
 			Operation contextOperation, ConstraintKind kind) {
 		OCLHelper<Classifier, Operation, ?, ?> helper = ocl.createOCLHelper();
 		if (contextOperation != null) {
-			//contextOperation.getOwnedParameters().add(contextOperation.getReturnResult());
+			// contextOperation.getOwnedParameters().add(contextOperation.getReturnResult());
 			helper.setOperationContext(contextClass, contextOperation);
-//			Variable<Classifier, Parameter> var = helper.getEnvironment().getOCLFactory().createVariable();
-//			UMLReflection<?, Classifier, Operation, Property, ?, ?, ?, ?, ?, Constraint> uml = helper.getEnvironment().getUMLReflection();
-//			uml.setName(var, uml.getName(contextOperation.getReturnResult()));
-//			uml.setType(var, TypeUtil.resolveType(helper.getEnvironment(), uml.getOCLType(contextOperation.getReturnResult())));
-//			var.setRepresentedParameter(uml.getReturnResult(contextOperation));
-//			helper.getEnvironment().addElement(var.getName(), (Variable<Classifier, ? extends PM>) var, true);
+			// Variable<Classifier, Parameter> var =
+			// helper.getEnvironment().getOCLFactory().createVariable();
+			// UMLReflection<?, Classifier, Operation, Property, ?, ?, ?, ?, ?,
+			// Constraint> uml = helper.getEnvironment().getUMLReflection();
+			// uml.setName(var,
+			// uml.getName(contextOperation.getReturnResult()));
+			// uml.setType(var, TypeUtil.resolveType(helper.getEnvironment(),
+			// uml.getOCLType(contextOperation.getReturnResult())));
+			// var.setRepresentedParameter(uml.getReturnResult(contextOperation));
+			// helper.getEnvironment().addElement(var.getName(),
+			// (Variable<Classifier, ? extends PM>) var, true);
 		} else {
 		}
 		Object oclConstraint = null;
@@ -523,9 +549,9 @@ public class UML2TCGActivity {
 			Output.debug(
 					"obviously no languagespecification in opaque expression will join all bodys",
 					this);
-			oclExp="";
-			for (String s : umlOpaqueExp.getBodies()){
-				oclExp=oclExp.concat(s);
+			oclExp = "";
+			for (String s : umlOpaqueExp.getBodies()) {
+				oclExp = oclExp.concat(s);
 			}
 		}
 		;
@@ -558,12 +584,24 @@ public class UML2TCGActivity {
 	}
 
 	/**
-	 * Transforms an UML Activity into a TCGActivity. This transformation is necessary to normalize the Model.
-	 * @param umlActivity a reference to any UML Activity containing OCL expressions in local Postconditions as well as guards
-	 * @return a Normalized Testcasegraph to be used with Testgenerating Algorithms
-	 * @throws YouShallNotDoThisException When some Design Rules for Activitys are violated
+	 * Transforms an UML Activity into a TCGActivity. This transformation is
+	 * necessary to normalize the Model.
+	 * 
+	 * @param umlActivity
+	 *            a reference to any UML Activity containing OCL expressions in
+	 *            local Postconditions as well as guards
+	 * @return a Normalized Testcasegraph to be used with Testgenerating
+	 *         Algorithms
+	 * @throws YouShallNotDoThisException
+	 *             When some Design Rules for Activitys are violated
 	 */
-	public TCGActivity transform(Activity umlActivity)
+	public static TCGActivity transform(Activity umlActivity)
+			throws YouShallNotDoThisException {
+		UML2TCGActivity converter = new UML2TCGActivity();
+		return converter.transform_internal(umlActivity);
+	}
+
+	TCGActivity transform_internal(Activity umlActivity)
 			throws YouShallNotDoThisException {
 		Output.debug("transform called", this);
 		if (this.umlActivity != null) {

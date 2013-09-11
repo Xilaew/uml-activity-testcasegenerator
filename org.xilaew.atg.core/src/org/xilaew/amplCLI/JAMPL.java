@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,10 +39,12 @@ public class JAMPL {
 	final String matrixRow = "";
 	final String solveResult = "";
 
+	private String solver;
+
 	public void loadData(File file) {
 		cli.sendCommand("data " + file.getAbsolutePath() + ";");
-	}	
-	
+	}
+
 	public void loadData(String amplData) {
 		cli.sendCommand("reset data;");
 		cli.sendCommand("data;");
@@ -50,15 +54,16 @@ public class JAMPL {
 
 	public void loadModel(File file) {
 		cli.sendCommand("model " + file.getAbsolutePath() + ";");
-	}	
-	
+	}
+
 	public void loadModel(String amplModel) {
-		cli.sendCommand("reset model;");
+		cli.sendCommand("reset;");
 		cli.sendCommand("model;");
 		cli.sendCommand(amplModel);
 	}
 
 	public void setSolver(String solverName) {
+		this.solver = solverName;
 		cli.sendCommand("option solver " + solverName + ";");
 	}
 
@@ -87,7 +92,7 @@ public class JAMPL {
 			if (line != null) {
 				Matcher matcher = pattern.matcher(line);
 				if (matcher.matches()) {
-						result = SolveResult.Failure;
+					result = SolveResult.Failure;
 					if (matcher.group(1).contains("solved")) {
 						result = SolveResult.Solved;
 					}
@@ -117,7 +122,8 @@ public class JAMPL {
 		skipOutput();
 		Double result = null;
 		cli.sendCommand("display " + varName + ";");
-		Pattern p = Pattern.compile("^(" + varName + ")\\s=\\s(-?\\d+\\.?\\d*)$");
+		Pattern p = Pattern.compile("^(" + varName
+				+ ")\\s=\\s(-?\\d+\\.?\\d*)$");
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m = p.matcher(line);
@@ -131,29 +137,36 @@ public class JAMPL {
 
 	public List<Double> getVariable(String varName) {
 		skipOutput();
+		SortedMap<Integer, Double> map = new TreeMap<Integer, Double>();
 		List<Double> result = null;
 		cli.sendCommand("display " + varName + ";");
-		Pattern p = Pattern.compile("^(" + varName + ")\\s\\[\\*\\]\\s:=\\s*$");
+		Pattern p1 = Pattern
+				.compile("^(" + varName + ")\\s\\[\\*\\]\\s:=\\s*$");
 		while (result == null) {
 			String line = cli.readLine();
-			Matcher m = p.matcher(line);
+			Matcher m1 = p1.matcher(line);
 			System.out.println(line);
-			if (m.matches()) {
-				result = new ArrayList<Double>();
-			}
-		}
-		p = Pattern.compile("^\\s*\\d+\\s+((-?\\d+\\.?\\d*)|NaN)");
-		while (true) {
-			String line = cli.readLine();
-			Matcher m = p.matcher(line);
-			System.out.println(line);
-			if (m.matches()){
-				if (m.group(1).equals("NaN")){
-					result.add(Double.NaN);
-				}else{
-					result.add(Double.parseDouble(m.group(1)));
+			if (m1.matches()) {
+				// Read complete trace of the Variable
+				Pattern p2 = Pattern
+						.compile("\\s*(\\d+)\\s+((-?\\d+\\.?\\d*)|NaN)");
+				boolean reading = true;
+				while (reading) {
+					line = cli.readLine();
+					Matcher m = p2.matcher(line);
+					System.out.println(line);
+					reading = false;
+					while (m.find()) {
+						map.put(Integer.decode(m.group(1)),
+								Double.valueOf(m.group(2)));
+						reading = true;
+					}
 				}
-			}else break;
+				result = new ArrayList<Double>(map.size());
+				for(Double d:map.values()){
+					result.add(d);
+				}
+			}
 		}
 		return result;
 	}

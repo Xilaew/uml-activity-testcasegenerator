@@ -15,5 +15,12 @@
             name="Artisan Studio XMI Import">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            class="org.eclipse.uml2.uml.internal.resource.XMI2UMLResourceFactoryImpl"
+            contentTypeIdentifier="http://schema.omg.org/spec/XMI/2.1">
+      </parser>
+   </extension>
 
 </plugin>

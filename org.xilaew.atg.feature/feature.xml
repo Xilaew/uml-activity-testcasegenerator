@@ -25,13 +25,20 @@
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.ocl.examples.pivot"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui"/>
+      <import plugin="net.sf.parteg.input.statemachine"/>
+      <import plugin="org.xilaew.atg.base" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.xilaew.atg.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.xilaew.atg.model.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.xilaew.atg.model.editor" version="1.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

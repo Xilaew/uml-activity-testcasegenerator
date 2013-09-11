@@ -32,20 +32,25 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.uml2.conversion.artisan.ArtisanXMI2UML;
 
+import tools.AbstractTool;
 
 public class ImportWizardPage extends WizardNewFileCreationPage {
-	
+
 	protected FileFieldEditor editor;
 
 	public ImportWizardPage(String pageName, IStructuredSelection selection) {
 		super(pageName, selection);
-		setTitle(pageName); //NON-NLS-1
-		setDescription("Import a file from the local file system into the workspace"); //NON-NLS-1
+		setTitle(pageName); // NON-NLS-1
+		setDescription("Import a file from the local file system into the workspace"); // NON-NLS-1
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#createAdvancedControls(org.eclipse.swt.widgets.Composite)
-	 */	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.ui.dialogs.WizardNewFileCreationPage#createAdvancedControls
+	 * (org.eclipse.swt.widgets.Composite)
+	 */
 	protected void createAdvancedControls(Composite parent) {
 		Composite fileSelectionArea = new Composite(parent, SWT.NONE);
 		GridData fileSelectionData = new GridData(GridData.GRAB_HORIZONTAL
@@ -58,52 +63,70 @@ public class ImportWizardPage extends WizardNewFileCreationPage {
 		fileSelectionLayout.marginWidth = 0;
 		fileSelectionLayout.marginHeight = 0;
 		fileSelectionArea.setLayout(fileSelectionLayout);
-		
-		editor = new FileFieldEditor("fileSelect","Select File: ",fileSelectionArea); //NON-NLS-1 //NON-NLS-2
-		editor.getTextControl(fileSelectionArea).addModifyListener(new ModifyListener(){
-			public void modifyText(ModifyEvent e) {
-				IPath path = new Path(ImportWizardPage.this.editor.getStringValue());
-				setFileName(path.lastSegment());
-			}
-		});
-		String[] extensions = new String[] { "*.*" }; //NON-NLS-1
+
+		editor = new FileFieldEditor("fileSelect", "Select File: ",
+				fileSelectionArea); // NON-NLS-1 //NON-NLS-2
+		editor.getTextControl(fileSelectionArea).addModifyListener(
+				new ModifyListener() {
+					public void modifyText(ModifyEvent e) {
+						IPath path = new Path(ImportWizardPage.this.editor
+								.getStringValue());
+						setFileName(path.lastSegment());
+					}
+				});
+		String[] extensions = new String[] { "*.*" }; // NON-NLS-1
 		editor.setFileExtensions(extensions);
 		fileSelectionArea.moveAbove(null);
 
 	}
-	
-	 /* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#createLinkTarget()
 	 */
 	protected void createLinkTarget() {
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#getInitialContents()
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.ui.dialogs.WizardNewFileCreationPage#getInitialContents()
 	 */
 	protected InputStream getInitialContents() {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
-try {
-		ArtisanXMI2UML.convert(new FileInputStream(new File(editor.getStringValue())), out);
-		out.close();
-} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-}
-return new ByteArrayInputStream(out.toByteArray());
+		try {
+			AbstractTool.DEBUG=false;
+			ArtisanXMI2UML
+					.convert(
+							new FileInputStream(new File(editor
+									.getStringValue())), out);
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return new ByteArrayInputStream(out.toByteArray());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#getNewFileLabel()
 	 */
 	protected String getNewFileLabel() {
-		return "New File Name:"; //NON-NLS-1
+		return "New File Name:"; // NON-NLS-1
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#validateLinkedResource()
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.ui.dialogs.WizardNewFileCreationPage#validateLinkedResource()
 	 */
 	protected IStatus validateLinkedResource() {
-		return new Status(IStatus.OK, "new_filedialog", IStatus.OK, "", null); //NON-NLS-1 //NON-NLS-2
+		return new Status(IStatus.OK, "new_filedialog", IStatus.OK, "", null); // NON-NLS-1
+																				// //NON-NLS-2
 	}
 }

@@ -25,11 +25,10 @@ public class UMLActivity2TCGActivitConverterTool extends UMLPathsearch {
 		// select one activity
 		Activity activity = selectActivity(model);
 
-		UML2TCGActivity converter = new UML2TCGActivity();
 		ActivityTestCaseGraphResourceFactoryImpl resFactory = new ActivityTestCaseGraphResourceFactoryImpl();
 		Resource res = resFactory.createResource(URI.createFileURI(outFile));
 		try {
-			TCGActivity tcgActivity = converter.transform(activity);
+			TCGActivity tcgActivity = UML2TCGActivity.transform(activity);
 			ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
 			res.getContents().add(tcgActivity);
 		} catch (YouShallNotDoThisException e2) {

@@ -9,6 +9,11 @@
             categoryId="net.sf.parteg.commandCathegory"
             id="org.xilaew.atg.model.input.activity.commands.Activity2AMPL">
       </command>
+      <command
+            categoryId="net.sf.parteg.commandCathegory"
+            id="org.xilaew.atg.model.input.activity.commands.Activity2BoostUnitTest"
+            name="Generate Boost Unit Tests from Activity">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -21,15 +26,15 @@
             </reference>
          </enabledWhen>
       </handler>
-   </extension>
-   <extension
-         point="org.eclipse.ui.bindings">
-      <key
-            commandId="org.xilaew.atg.model.input.activity.commands.Activity2AMPL"
-            contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+6"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
-      </key>
+      <handler
+            class="org.xilaew.atg.model.input.activity.handlers.CPPTestGenerationHandler"
+            commandId="org.xilaew.atg.model.input.activity.commands.Activity2BoostUnitTest">
+         <enabledWhen>
+            <reference
+                  definitionId="org.xilaew.atg.handlerEnabled">
+            </reference>
+         </enabledWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -38,7 +43,13 @@
          <command
                commandId="org.xilaew.atg.model.input.activity.commands.Activity2AMPL"
                icon="icons/atg.gif"
-               id="org.xilaew.atg.model.input.activity.menus.sampleCommand"
+               id="org.xilaew.atg.model.input.activity.menus.Activity2AMPLCommand"
+               mnemonic="S">
+         </command>
+         <command
+               commandId="org.xilaew.atg.model.input.activity.commands.Activity2BoostUnitTest"
+               icon="icons/atg.gif"
+               id="org.xilaew.atg.model.input.activity.menus.Activity2BoostUnitTestCommand"
                mnemonic="S">
          </command>
       </menuContribution>
