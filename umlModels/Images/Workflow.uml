@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_vwoDAPNvEeK6iMIFjUA6jQ" name="model">
   <packagedElement xmi:type="uml:Activity" xmi:id="_wAttcPNvEeK6iMIFjUA6jQ" name="Generating Testcases Overview" group="_8FV88PNvEeK6iMIFjUA6jQ _3WMl4PNyEeK6iMIFjUA6jQ _lDXOEPN6EeK6iMIFjUA6jQ _tArp8PN6EeK6iMIFjUA6jQ" node="_AcSvEPNwEeK6iMIFjUA6jQ _O9aZsPNxEeK6iMIFjUA6jQ _cwAm4PNxEeK6iMIFjUA6jQ _DpZSUPNyEeK6iMIFjUA6jQ _OIsiwPNyEeK6iMIFjUA6jQ _kq0r4PNyEeK6iMIFjUA6jQ _vM9N4PNyEeK6iMIFjUA6jQ _zA4ygPNyEeK6iMIFjUA6jQ _AvKgYPNzEeK6iMIFjUA6jQ _OKzmIPNzEeK6iMIFjUA6jQ _dA53sPNzEeK6iMIFjUA6jQ _7vHRcPNzEeK6iMIFjUA6jQ _WuvKgPN9EeK6iMIFjUA6jQ">
-    <ownedParameter xmi:type="uml:Parameter" xmi:id="_r9nO8PNwEeK6iMIFjUA6jQ" name="Model" type="_1KEXcPNwEeK6iMIFjUA6jQ"/>
+    <ownedParameter xmi:id="_r9nO8PNwEeK6iMIFjUA6jQ" name="Model" type="_1KEXcPNwEeK6iMIFjUA6jQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_ZvCJMPNxEeK6iMIFjUA6jQ" name="ControlFlow1" source="_AcSvEPNwEeK6iMIFjUA6jQ" target="_O9aZsPNxEeK6iMIFjUA6jQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_v_IuMPNxEeK6iMIFjUA6jQ" name="activity2Check" source="_O9aZsPNxEeK6iMIFjUA6jQ" target="_cwAm4PNxEeK6iMIFjUA6jQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_Knc-sPN0EeK6iMIFjUA6jQ" name="ControlFlow2" source="_cwAm4PNxEeK6iMIFjUA6jQ" target="_DpZSUPNyEeK6iMIFjUA6jQ"/>

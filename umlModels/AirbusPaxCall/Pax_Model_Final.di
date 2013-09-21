@@ -2,20 +2,26 @@
 <di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi">
   <pageList>
     <availablePage>
-      <emfPageIdentifier href="SomeActivityDiagrams.notation#_nrrVkO4TEeKhs5T3phCz4g"/>
+      <emfPageIdentifier href="Pax_Model_Final.notation#_qE5egBusEeOe6LZm1sIOMg"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="SomeActivityDiagrams.notation#__NFpoPXjEeKKdLJ-ACT7aQ"/>
+      <emfPageIdentifier href="Pax_Model_Final.notation#_092voButEeOe6LZm1sIOMg"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="Pax_Model_Final.notation#_Ky00kBxuEeOKrIjfKFDs7A"/>
     </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="SomeActivityDiagrams.notation#_nrrVkO4TEeKhs5T3phCz4g"/>
+          <emfPageIdentifier href="Pax_Model_Final.notation#_qE5egBusEeOe6LZm1sIOMg"/>
         </children>
         <children>
-          <emfPageIdentifier href="SomeActivityDiagrams.notation#__NFpoPXjEeKKdLJ-ACT7aQ"/>
+          <emfPageIdentifier href="Pax_Model_Final.notation#_092voButEeOe6LZm1sIOMg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="Pax_Model_Final.notation#_Ky00kBxuEeOKrIjfKFDs7A"/>
         </children>
       </children>
     </windows>
