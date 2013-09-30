@@ -43,7 +43,10 @@ public class Path2AMPLData {
 		sb.append("param Pathlength := " + i + ";\n");
 		for (Entry<AbstractTCGElement, Set<Integer>> entry : amplPath
 				.entrySet()) {
-			sb.append("set " + entry.getKey().getName().replaceAll("\\s", "_")
+			AbstractTCGElement e = entry.getKey();
+			String s = e.getName();
+			String substitute = s.replaceAll("\\s", "_");
+			sb.append("set " + substitute
 					+ ":=");
 			for (Integer j : entry.getValue()) {
 				sb.append(" " + j);

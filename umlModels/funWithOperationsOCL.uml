@@ -1,20 +1,2 @@
-package Model
-{
-	class MyComponent
-	{
-		operation operation1(_'in' : Boolean)
-		{
-			postcondition postcondition2: not(switcher@pre=switcher);
-			postcondition postcondition: bool=_'in';
-		}
-		attribute bool : Boolean;
-		property switcher : Boolean;
-	}
-	class IMyComponent { interface }
-	{
-	}
-	class Class1
-	{
-		operation CopyOf_operation1_1(myParameter);
-	}
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701"/>

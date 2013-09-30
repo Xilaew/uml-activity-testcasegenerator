@@ -111,7 +111,9 @@ public class ArtisanXMI2UML extends AbstractTool {
 						"(<ownedLiteral xmi:type=\"uml:EnumerationLiteral\".*?)classifier=\".*?\"(>)",
 						"$1$2");
 				s = s.replace("visibility=\"Private\"",
-						"visibility=\"private\"");
+						"visibility=\"private\"");				
+				s = s.replace("xmi:type=\"uml:DatastoreNode\"",
+								"xmi:type=\"uml:DataStoreNode\"");
 				// fix UML Namespace
 				s = s.replace(
 						"http://www.omg.org/spec/UML/20090901",

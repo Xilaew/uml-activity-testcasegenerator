@@ -1,0 +1,24 @@
+\chapter{evaluation}
+\section{Example Models and Case Study}
+\subsection{Different Constraint Types and their Handling}
+Every of the following problem types can have only floating point variables or be a mixed-integer problem
+Many solvers have the ability to solve a given problem also as mixed integer problem. For the pure constraint satisfaction this should be no problem. But i will become a problem, when also a boundary Value is demanded.
+\subsubsection{Linear}
+\paragraph{Pure Floating Point Variables}
+\paragraph{Mixed Integer}
+solve with cplex up to 100000 Variables possible
+\subsubsection{Non linear convex}
+solvable with every Solver implementing some version of Newton Algorithm on Sparse Matrices like Minos, Knitro or Quadratic programming approaches like in CPLEX.
+\subsubsection{Non Convex}
+in general undecidable couenne finds solutions sometimes.
+The Example Model here is the Exploding Tyre Model
+\subsubsection{Constraint Programming}
+ILOGCP, Gecode or transformation possible
+\paragraph{Integer arithmetic only} Gecode
+\paragraph{linear mixed Integer arithmetic} IlogCP
+\paragraph{nonlinear mixed Integer arithmetic}
+really really really problematic. Currently the only way is to transform the Activity Test Case Graph to remove the Logical Operations in favour of parallel or sequential Control Flows with guards. Use COUENNE.
+\subsection{Case Study PAX Model}
+I could do a case study with the Airbus PAX call model from Atego.
+\section{Limitations}
+

@@ -1,0 +1,100 @@
+%% Creator: Inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'completeMetamodelforSlideshow.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{630.83999023bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.51049394)%
+    \put(0,0){\includegraphics[width=\unitlength]{completeMetamodelforSlideshow.pdf}}%
+    \put(0.36465665,0.37283621){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGActivity}}}%
+    \put(0.30378543,0.03677635){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGAction}}}%
+    \put(0.46864499,0.13822838){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGControlFlow}}}%
+    \put(0.03113309,0.03677635){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGControlNode}}}%
+    \put(0.71212987,0.13822838){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGVariable}}}%
+    \put(0.67154905,0.11540168){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{isParameter : EBoolean}}}%
+    \put(0.65886755,0.0431171){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGObjectVariable}}}%
+    \put(0.85669901,0.06213936){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGBasicVariable}}}%
+    \put(0.84909011,0.03931265){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{variableType : TCGBasicVariableType}}}%
+    \put(0.84909011,0.01521779){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{getAbsoluteName()}}}%
+    \put(0.81738635,0.24602117){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{TCGOCLExpression}}}%
+    \put(0.62970009,0.3474732){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGConstraint}}}%
+    \put(0.59672818,0.32718279){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCaseGr...}}}%
+    \put(0.26574092,0.13822838){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGRealNode}}}%
+    \put(0.22896456,0.11793798){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCaseGr...}}}%
+    \put(0.06917761,0.26504342){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGNode}}}%
+    \put(0.03240124,0.24475302){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCa...}}}%
+    \put(0.40523747,0.26504342){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGEdge}}}%
+    \put(0.37480186,0.24475302){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestC...}}}%
+    \put(0.5041532,0.4933105){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGElement}}}%
+    \put(0.45723163,0.47302009){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCaseGraph)}}}%
+    \put(0.48766724,0.45019338){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{name : EString}}}%
+    \put(0.06790946,0.38551771){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGContainer}}}%
+    \put(0.02606049,0.36522731){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCaseGraph)}}}%
+    \put(0.02732864,0.13822838){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{AbstractTCGPseudoNode}}}%
+    \put(0.00069748,0.11793798){\color[rgb]{0.50196078,0.50196078,0.50196078}\makebox(0,0)[lb]{\smash{(from abstractTestCaseGr...}}}%
+    \put(0.6499905,0.1914907){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{variables}}}%
+    \put(0.65886755,0.1762729){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.64872235,0.07735716){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{fields}}}%
+    \put(0.70198466,0.07608901){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{1..*}}}%
+    \put(0.60940968,0.27138418){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{localPostconditions}}}%
+    \put(0.60940968,0.25236192){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.31139434,0.20797666){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{outgoing}}}%
+    \put(0.3430981,0.18261365){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.30505358,0.26504342){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{incoming}}}%
+    \put(0.3430981,0.28406568){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.15287553,0.29674718){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{nodes}}}%
+    \put(0.15287553,0.28406568){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.2099423,0.20544035){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{source}}}%
+    \put(0.21121045,0.18261365){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.2099423,0.26504342){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{target}}}%
+    \put(0.21628305,0.28787013){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.39889671,0.30308794){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{edges}}}%
+    \put(0.41665082,0.28533383){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..*}}}%
+    \put(0.54346586,0.33859615){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{guard}}}%
+    \put(0.57643777,0.31323314){\color[rgb]{0.25098039,0.25098039,0.25098039}\makebox(0,0)[lb]{\smash{0..1}}}%
+  \end{picture}%
+\endgroup%

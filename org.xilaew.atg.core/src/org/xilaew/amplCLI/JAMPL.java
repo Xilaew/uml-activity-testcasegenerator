@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
  */
 public class JAMPL {
 
+	protected String getSolver() {
+		return solver;
+	}
+
 	public CLI getCli() {
 		return cli;
 	}
@@ -30,7 +34,7 @@ public class JAMPL {
 	}
 
 	public enum SolveResult {
-		Solved, Infeasable, Failure, Unbounded;
+		Solved, Infeasible, Failure, Unbounded;
 	}
 
 	CLI cli;
@@ -97,7 +101,7 @@ public class JAMPL {
 						result = SolveResult.Solved;
 					}
 					if (matcher.group(1).contains("infeasible")) {
-						result = SolveResult.Infeasable;
+						result = SolveResult.Infeasible;
 					}
 					if (matcher.group(1).contains("unbounded")) {
 						result = SolveResult.Unbounded;

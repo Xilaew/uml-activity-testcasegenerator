@@ -137,14 +137,14 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_y8MT-OV1EeKaPs8U9gcP2w" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_y8MT-eV1EeKaPs8U9gcP2w" type="5167">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_y8MT-uV1EeKaPs8U9gcP2w" y="5"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_y8MT-uV1EeKaPs8U9gcP2w" y="44"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_y8MT--V1EeKaPs8U9gcP2w" type="5168">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_y8MT_OV1EeKaPs8U9gcP2w" y="5"/>
             </children>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_y8MT8eV1EeKaPs8U9gcP2w"/>
             <element xmi:type="uml:InputPin" href="model.uml#_y6tGMOV1EeKaPs8U9gcP2w"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y8MT8uV1EeKaPs8U9gcP2w" x="-15" y="1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y8MT8uV1EeKaPs8U9gcP2w" x="-15" y="30"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_y8MT_eV1EeKaPs8U9gcP2w" type="3101" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_y8MUAOV1EeKaPs8U9gcP2w" source="ShadowFigure">
@@ -164,7 +164,7 @@
             </children>
             <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_y8MT_uV1EeKaPs8U9gcP2w"/>
             <element xmi:type="uml:InputPin" href="model.uml#_y6j8QOV1EeKaPs8U9gcP2w"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y8MT_-V1EeKaPs8U9gcP2w" x="60" y="-15"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y8MT_-V1EeKaPs8U9gcP2w" x="80" y="-15"/>
           </children>
           <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_y7ABIeV1EeKaPs8U9gcP2w"/>
           <element xmi:type="uml:AddVariableValueAction" href="model.uml#_y6HQUOV1EeKaPs8U9gcP2w"/>

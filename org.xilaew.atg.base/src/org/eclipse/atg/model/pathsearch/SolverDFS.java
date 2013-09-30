@@ -26,6 +26,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		Deque<Pair> stack = new ArrayDeque<Pair>();
 		ampl.setSolver(solver);
 		ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
+		int passedDecisions = 0;
 		for (AbstractTCGEdge edge : atcg.getInitialNode().getOutgoing()) {
 			stack.add(new Pair(edge, new Integer(0)));
 		}
@@ -35,23 +36,28 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		while (!stack.isEmpty()
 				&& (result.size() <= maxNoPaths || maxNoPaths == -1)) {
 			currentEdge = stack.removeFirst();
+			// backtrack
 			while (currentEdge.getSecond() != currentPath.getEdges().size()) {
 				EList<AbstractTCGEdge> l = currentPath.getEdges();
 				AbstractTCGEdge e = l.remove(l.size() - 1);
-				// retreat
 				currentNode = e.getSource();
+				passedDecisions = 0;
 			}
 			currentNode = currentEdge.getFirst().getTarget();
 			currentPath.getEdges().add(currentEdge.getFirst());
-			if (currentPath.getEdges().size() % 3 == 0) {
-				ampl.loadData(Path2AMPLData.transform(currentPath));
-				SolveResult solved = ampl.solve();
-				if (solved == SolveResult.Failure
-						|| solved == SolveResult.Infeasable) {
-					continue;
+			// check every 3 or 4 decisions whether the path is still feasible
+			if (currentNode.getOutgoing().size() >= 2) {
+				passedDecisions++;
+				if (passedDecisions > 3) {
+					passedDecisions = 0;
+					ampl.loadData(Path2AMPLData.transform(currentPath));
+					SolveResult solved = ampl.solve();
+					if (solved == SolveResult.Infeasible) {
+						continue;
+					}
 				}
 			}
-			if (currentPath.getEdges().size() <= maxDepth) {
+			if (currentPath.getEdges().size() <= maxDepth || maxDepth == -1) {
 				// add child nodes to Stack
 				for (AbstractTCGEdge outgoing : currentNode.getOutgoing()) {
 					stack.addFirst(new Pair(outgoing, new Integer(currentPath
@@ -88,7 +94,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		ampl.loadData(Path2AMPLData.transform(currentPath));
 		Witness result = new Witness();
 		SolveResult solved = ampl.solve();
-		if (solved == SolveResult.Failure || solved == SolveResult.Infeasable) {
+		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
 			return null;
 		}
 		for (TCGVariable var : atcg.getVariables()) {

@@ -1,0 +1,36 @@
+\chapter{Generting Unit Tests from a UML Activity}
+in this Chapter I am going to describe everything I Implemented in the tool as well as some Features I wanted to implement but did not have enough time for.
+\section{Generel Overwiew over the Workflow}
+1.Normalize Model, 2.Make model mathematical Rigurous, 3. Search for Control flow Paths. 4 Solve Mathematical Program for the found Control flow Paths to generate specific Input and output Data. 5. Generate Unit Tests
+\section{Normalisation}
+\subsection{Design Rules for UML Model}
+\subsection{ActivityTestCaseGraph Metamodel}
+\subsection{Transforming UML to ActivityTestCaseGraph}
+\subsection{Further Model 2 Model Transformations}
+\subsubsection{Removing logical operations}
+\subsubsection{Handling Structured Activity Nodes}
+\subsubsection{Mapping self defined Datatypes to standard Types}
+Explain the ActivityTestCaseGraph Metamodel and the transformation from UML with embedded OCL to it. 
+suggest a few further M2M transformations to make the model easier to digest for the actual test generation.
+\section{AMPL Modeling}
+Tell about the AMPL Modelling i.e. variables are becoming arrays to hold one initial Value and for each TCGAction on the Path one that makes its postconditions and general Invariants valid. One specific control flow Path is encoded in the AMPL data, so we can take advantage of the interactive solving capabilities of AMPL and the connected solvers.
+By adding an objective Function to the AMPL Model after any solution has been found it is extremely easy to get boundary Values for testing.
+\subsection{Transforming Variables and Parameters}
+\subsection{Transforming LocalPostConditions, Guards and Invariants}
+\subsection{Specifying Control Flow Paths in the AMPL Data}
+\subsection{Generate Boundary Values}
+\section{Pathsearch}
+Bounded BFS, and Bounded DFS, and DFS with early infeasible Path elimination.
+Suggest to extend the search algorithms to work with test goals as explained by Stephan Weißleder.
+\subsection{Depth First Search}
+\subsection{Breadth First Search}
+\subsection{Early Infeasible Path Elimination}
+This feature can also be used to specify for loops an upper bound of iterations as well as a lower bound of loop iterations to test. You just need to add some guard conditions in front of the loop referencing the loop variant.
+\section{Implementation}
+say a few words about EMF and Eclipse Plugin. Tell that I used Eclipse org.eclipse.ocl.uml and eclipse org.eclipse.uml2.uml packages. //Could potentially also move to preliminaries
+\subsection{Importing Models from Atego Artisan Studio}
+\subsection{Eclipse Modelling Framework}
+\subsubsection{Model transformations}
+\subsubsection{Parsing OCL Expressions}
+\subsection{Using the resulting Plugin}
+\subsection{Missing in the Implementation}

@@ -13,7 +13,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EMap;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
@@ -23,6 +22,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.uml2.uml.Activity;
+import org.xilaew.atg.dialogs.ActTCGPropertyDialog;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.tests.TestSuite;
@@ -75,25 +75,32 @@ public class CPPTestGenerationHandler extends AbstractHandler {
 		ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
 
 		// Ask user for parameters
-		InputDialog dialogPathDepth = new InputDialog(null,
-				"Geben sie die Maximale Pfadtiefe an",
-				"Geben sie die Maximale Pfadtiefe an", "100", null);
-		dialogPathDepth.create();
-		dialogPathDepth.open();
-		InputDialog dialogNoPaths = new InputDialog(null,
-				"Wie viele Testfälle sollen es maximal sein?",
-				"Geben sie die Maximale Anzahl an Testfällen an", "20", null);
-		dialogNoPaths.create();
-		dialogNoPaths.open();
-		InputDialog dialogSolver = new InputDialog(null,
-				"Welcher Solver soll verwendet werden?",
-				"Welcher Solver soll verwendet werden?", "couenne", null);
-		dialogSolver.create();
-		dialogSolver.open();
+		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
+		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
+		ActTCGPropertyDialog dialog = new ActTCGPropertyDialog(null, "Activity Test Case Generation", "Set Properties for Testgeneration", properties);
+		dialog.create();
+		dialog.open();
+//		InputDialog dialogPathDepth = new InputDialog(null,
+//				"Geben sie die Maximale Pfadtiefe an",
+//				"Geben sie die Maximale Pfadtiefe an", "100", null);
+//		dialogPathDepth.create();
+//		dialogPathDepth.open();
+//		InputDialog dialogNoPaths = new InputDialog(null,
+//				"Wie viele Testfälle sollen es maximal sein?",
+//				"Geben sie die Maximale Anzahl an Testfällen an", "20", null);
+//		dialogNoPaths.create();
+//		dialogNoPaths.open();
+//		InputDialog dialogSolver = new InputDialog(null,
+//				"Welcher Solver soll verwendet werden?",
+//				"Welcher Solver soll verwendet werden?", "couenne", null);
+//		dialogSolver.create();
+//		dialogSolver.open();
 		SatisfiablePathSearch search = SatisfiablePathSearch.SOLVER_DFS;
-		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, dialogPathDepth.getValue());
-		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, dialogNoPaths.getValue());
-		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, dialogSolver.getValue());
+		properties = dialog.getValue();
+//		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, dialogPathDepth.getValue());
+//		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, dialogNoPaths.getValue());
+//		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, dialogSolver.getValue());
 		search.setProperties( properties );
 		EMap<Path,Witness> paths = search.findAllSatisfiablePaths(tcgActivity);
 
@@ -105,7 +112,11 @@ public class CPPTestGenerationHandler extends AbstractHandler {
 
 		// Output everything into the Files
 		try {
-			boostfile.create(new ByteArrayInputStream(unitTest.getBytes()), false, null);
+			if (boostfile.exists()){
+				boostfile.setContents(new ByteArrayInputStream(unitTest.getBytes()), true, true, null);
+			}else{
+				boostfile.create(new ByteArrayInputStream(unitTest.getBytes()), true, null);
+			}
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -408,17 +408,15 @@ public class UML2TCGActivity {
 
 	protected AbstractTCGEdge handleControlFlow(ControlFlow umlControlFlow,
 			AbstractTCGEdge tcgEdge) {
-		String name;
-		if (umlControlFlow.getQualifiedName() == null) {
+		String name = umlControlFlow.getQualifiedName();
+		if (name == null) {
 			name = randomString() + "ControlFlow";
-		} else {
-			name = umlControlFlow.getQualifiedName().replace("\\s", "_");
 		}
 		Output.debug(
 				"Handle ControlFlow: Name := "
 						+ umlControlFlow.getQualifiedName() + " -> " + name,
 				this);
-		tcgEdge.setName(umlControlFlow.getQualifiedName());
+		tcgEdge.setName(name);
 		tcgEdge.setSource((AbstractTCGNode) transformElement(umlControlFlow
 				.getSource()));
 		tcgEdge.setTarget((AbstractTCGNode) transformElement(umlControlFlow

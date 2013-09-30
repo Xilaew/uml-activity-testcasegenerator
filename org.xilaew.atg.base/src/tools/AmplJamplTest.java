@@ -27,7 +27,7 @@ public class AmplJamplTest {
 		case Failure:
 			System.out.println("failure");
 			break;
-		case Infeasable:
+		case Infeasible:
 			System.out.println("infeasable");
 			break;
 		case Solved:

@@ -1,0 +1,132 @@
+\documentclass[twoside, english,numbers=noenddot, abstracton, headsepline, openright]{scrreprt}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{graphicx}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{nomencl}
+
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
+
+\makeatletter
+
+\providecommand{\tabularnewline}{\\}
+
+\usepackage{textcomp}
+\usepackage{textpos}
+\setlength{\TPHorizModule}{10mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\usepackage{type1cm}
+
+\usepackage{ellipsis, fixltx2e, mparhack,  
+            booktabs, longtable,           
+            wrapfig
+}  
+\usepackage[svgnames,table,hyperref]{xcolor}
+
+\definecolor{cyan}{RGB}{88, 190, 184}
+
+\selectlanguage{english}
+\newcommand{\UMLType}[1]{\textbf{#1}}
+\newcommand{\UMLReference}[1]{\emph{#1}} 
+
+%Metadata
+\usepackage[pdftex,
+            pdfauthor={Felix Kurth},
+            pdftitle={Automated Generation of Unit Tests from UML Activities using the AMPL Interface for Constraint Solvers},
+            pdfsubject={Unit Test, Model Based Engineering, Activity, UML, AMPL, Constraint Solver, Automated Generation of Test Cases},
+            pdfkeywords={UML,AMPL},
+            pdfproducer={Latex with hyperref},
+            pdfcreator={pdflatex}]{hyperref}
+            
+\author{Felix Kurth}
+\title{Automatic Generation of Teststimuli from UML Activity Diagram by solving OCL constraints}
+\usepackage{hyperref}
+\pdfinfo{
+   /Author (Felix Kurth)
+   /Title  (Automatic Generation of Teststimuli from UML Activity Diagram by solving OCL constraints)
+   /CreationDate (D:20040502195600)
+   /Subject (PDFLaTeX)
+   /Keywords (PDF;LaTeX)
+}
+
+
+
+\begin{document}
+\titlepage
+
+\setlength{\parskip}{1pt}
+
+\noindent \begin{flushright}
+\includegraphics[width=55mm,height=16mm]{pics/tuhh_logo}
+\par\end{flushright}
+
+\textcolor{cyan}{\rule[0.5ex]{1\columnwidth}{0.5pt}}
+
+\textsf{\textcolor{cyan}{\Large Master Thesis}}{\Large \par}
+
+\textcolor{cyan}{\rule[0.5ex]{1\columnwidth}{0.5pt}}
+
+\vspace{32mm}
+
+
+\noindent \begin{flushright}
+\textsf{\Large  Felix Kurth}\textsf{\textbf{\Large }}\\
+\textsf{\vspace{1.2cm}
+}
+\par\end{flushright}
+
+\noindent \begin{flushright}
+\textsf{\huge Automated Generation of Unit Tests from UML \UMLType{Activity}s using the AMPL Interface for Constraint Solvers}\\
+\par\end{flushright}{\huge \par}
+
+\vspace{45mm}
+
+
+\noindent \begin{flushright}
+\textsf{\Large \today}
+\par\end{flushright}{\Large \par}
+
+\noindent \begin{flushleft}
+\textsf{\vspace{16mm}
+}\textcolor{cyan}{\rule[0.5ex]{1\columnwidth}{0.5pt}}\\
+\textsf{\textcolor{cyan}{\large supervised by:}}\textsf{}\\
+\textsf{Prof. Dr. Sibylle Schupp}\\
+\textsf{Prof. Dr. N.N.}\textcolor{cyan}{}\\
+\textcolor{cyan}{\rule[0.5ex]{1\columnwidth}{0.5pt}\begin{textblock}{3}(12.7,0.2)\includegraphics[width=23mm,height=23mm]{pics/STS-Logo}\end{textblock}}\textsf{\textcolor{cyan}{Hamburg University of Technology (TUHH)}}\\
+\textsf{\textcolor{cyan}{\textit{Technische Universit{\"a}t Hamburg-Harburg}}}\\
+\textsf{\textcolor{cyan}{Institute for Software Systems}}\\
+%\textsf{\textcolor{cyan}{Schwarzenbergstr.~95}}\\
+\textsf{\textcolor{cyan}{21073 Hamburg}}
+\par\end{flushleft}
+
+
+%\newpage
+%-----------------------------------------
+% add your second logo here along with the description, it will appear on the second page
+%----------------------------------------
+
+\abstract{Testing is one out of many ways to verify the behaviour of software artefacts. With the upcoming Model Based Engineering there is a need to ensure that the embedded code running on some device is behaving the same way as its Model. In this Thesis we concentrate on UML Activity diagrams used to model C-Components. We transform an Activity with embedded OCL constraints into a rigorous Mathematical program expressed in AMPL and solve it using state-of-the art constraint solvers. The generated tests will comply to control flow based coverage criteria and we can specify to explicitly use boundary values for testing. A special focus is on non linear mixed integer arithmetic constraints.}
+\pagenumbering{Roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\input{motivation}
+\input{preliminaries}
+\input{tcgenerator}
+\input{evaluation}
+
+\appendix
+\bibliographystyle{plain}
+\bibliography{./bibtex}
+
+
+\end{document}

@@ -13,5 +13,6 @@ Require-Bundle: org.eclipse.ui,
  org.xilaew.atg.model.editor;bundle-version="1.0.0",
  org.eclipse.core.runtime,
  org.eclipse.jface,
- org.eclipse.emf.common
+ org.eclipse.emf.common,
+ org.eclipse.papyrus.editor;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

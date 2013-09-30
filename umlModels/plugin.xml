@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated model -->
-      <package
-            uri="http:///model.ecore"
-            class="model.ModelPackage"
-            genModel="model.genmodel"/>
+      <package uri="http:///model.ecore" class="model.ModelPackage" genModel="model.genmodel"></package>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated model -->
-      <package
-            uri="http:///model/package1.ecore"
-            class="model.package1.Package1Package"
-            genModel="model.genmodel"/>
+      <package uri="http:///model/package1.ecore" class="model.package1.Package1Package" genModel="model.genmodel"></package>
    </extension>
 
 </plugin>
