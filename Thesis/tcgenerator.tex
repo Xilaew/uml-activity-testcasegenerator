@@ -1,6 +1,7 @@
 \chapter{Generting Unit Tests from a UML Activity}
 in this Chapter I am going to describe everything I Implemented in the tool as well as some Features I wanted to implement but did not have enough time for.
 \section{Generel Overwiew over the Workflow}
+\includegraphics[width=\textwidth]{pics/workflow.pdf}
 1.Normalize Model, 2.Make model mathematical Rigurous, 3. Search for Control flow Paths. 4 Solve Mathematical Program for the found Control flow Paths to generate specific Input and output Data. 5. Generate Unit Tests
 \section{Normalisation}
 \subsection{Design Rules for UML Model}
@@ -28,9 +29,9 @@ Suggest to extend the search algorithms to work with test goals as explained by 
 This feature can also be used to specify for loops an upper bound of iterations as well as a lower bound of loop iterations to test. You just need to add some guard conditions in front of the loop referencing the loop variant.
 \section{Implementation}
 say a few words about EMF and Eclipse Plugin. Tell that I used Eclipse org.eclipse.ocl.uml and eclipse org.eclipse.uml2.uml packages. //Could potentially also move to preliminaries
-\subsection{Importing Models from Atego Artisan Studio}
-\subsection{Eclipse Modelling Framework}
+\subsection{The Eclipse Modelling Framework}
+\cite{EMF}
+\subsubsection{Importing Models from Atego Artisan Studio}
 \subsubsection{Model transformations}
 \subsubsection{Parsing OCL Expressions}
 \subsection{Using the resulting Plugin}
-\subsection{Missing in the Implementation}

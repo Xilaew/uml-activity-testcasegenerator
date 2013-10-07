@@ -1,12 +1,104 @@
 \chapter{Theoretical Foundations}
-\section{Foundations of Constraint Solving}
+\section{Foundations of Constraint Solving and Constrained Optimisation}
+In a \emph{constraint satisfaction problem} the task is to assign values $v(x_i)$ to a set of Variables $X = (x_1, \dots , x_n) $ from a search space $S=D_1\times \dots \times D_n$ such that relations $c_1,\dots,c_k$ between the variables are true. $D_i$ is called the domain of $x_i$. Mathematically we can formalise this as shown in equations \ref{CSP}ff \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
+\begin{eqnarray} 
+\label{CSP}
+\end{eqnarray} 
+We call those relations $c_1,\dots,c_k$ \emph{constraints}. Any point in $S$ within all constraints is called a \emph{feasible solution}. The set of all feasible solutions is called \emph{feasible set}. The feasible set is the intersection of all constraints.
+There is in general no restriction on the search space. It could be continuous, discrete, finite and infinite. Also the constraints can have arbitrary properties. For the following work some special cases of this very general Problem are relevant.
+
+A \emph{constrained optimization} problem is a constraint satisfaction problem with a real valued objective function $f:S\mapsto \mathbb{R}$. The task is to find a feasible point that minimizes the objective function $f$.
+\begin{eqnarray}
+\max f(X)\\
+v(x_i) \in D_i \qquad\forall i \in \left[ 1 \dots n \right] \\
+(v(x_1),\dots , v(x_n)) \in c_j\qquad\forall j \in \left[1 \dots k\right]
+\end{eqnarray}
+\begin{definition}[local optimum]
+A local optimum is a feasible solution that minimizes the objective function within a neighbouring set of feasible solutions.
+\end{definition}
+\begin{definition}[global optimum]
+A global optimum is a feasible solution that gives the minimal value for the objective function among all feasible solutions.
+\end{definition}
+For this thesis only linear objective functions are considered. For linear objective functions any optimum can be found on the boundaries of the feasible set. That is why we will use the word \emph{boundary value} as an equivalent for local optimum.
+
 \subsection{Different Problem Types}
-\subsubsection{Linear}
-\subsubsection{Mixed Integer}
-\subsubsection{non Linear}
-\subsubsection{Constraint Programming}
-\subsection{the thing with undecidablility}
-non linear integer arithmetic is especially interesting because I find linear arithmetic boring.
+\subsubsection{linear programmes}
+The probably most efficiently solvable special case of constraint satisfaction and constrained optimization are \emph{linear programmes}. In a linear programs every constraint can be represented as linear inequation and the objective function is an affine function. 
+The canonical form of a linear program consists of a matrix $\mathrm{A}$ and two vectors $\vec{c}$ and $\vec{b}$ such that \ref{linDef} formalizes the linear constrained optimization problem. The $\leq$ and $\geq$ are evaluated component wise.
+\begin{eqnarray}
+\label{linDef}
+\text{minimize} \vec{c}^TX \\
+\text{subject to} AX\leq\vec{b}
+\end{eqnarray}
+
+By removing the objective function or setting $\vec{c}=\vec{0}$ the problem is relaxed to a linear constraint satisfaction problem. Formulations containing also equations in the constraints on some components of $X$ can be transformed to an equivalent problem in the canonical form. Also a $\max$ instead of $\min$ and a $\geq$ instead of $\leq$ can be used. In practice we will use many possible formulations.
+
+An example is given in equations \ref{linExample}f.
+\begin{eqnarray}
+\label{linExample}
+\begin{pmatrix}
+1 & -2 & 3 \\
+4 & 5 & 6 
+\end{pmatrix}\times\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix} = \begin{pmatrix}
+1 \\ 4
+\end{pmatrix}\\
+\begin{pmatrix}
+0&-1&0
+\end{pmatrix}\times\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}\leq \vec{0}
+\end{eqnarray}
+
+For constraint satisfaction and constrained optimization with linear constraints and objective function usually an implementation of the simplex algorithm\cite{dantzig63Simplex} is used to solve it very efficiently. Although its worst case runtime is exponential the average runtime grows linear with the number of equations and inequations.
+
+\subsubsection{convex}
+Still very efficient solvable are convex constrained optimization problems. Linear programming is a special kind of convex programming. In a convex program the set of feasible solutions as well as the objective function need to be convex.
+\begin{definition}[convex set]
+A set $C$ in a vector space $S$ is said to be convex if, for all points $x$ and $y$ in $C$ and all $t\in\left[0,1\right]$, the point
+$(1 − t ) x + t y$ is in $C$.
+\end{definition}
+A convex optimization problem is usually represented by functions $g_1,\dots,g_m$ and $h_1,\dots,h_k$ and an objective function $f$ that is convex on the search space inequations.
+\begin{eqnarray}
+g_i(x_1,\dots,x_n)=0 i\in\left[1\dots \right]\\
+h_j(x_1,\dots,x_n)<=0
+\end{eqnarray}
+to be a convex optimization problem the objecive  and the constraint functions need to fulfil the inequality\ref{conIneq}.\cite{Boyd04ConOpt}
+\begin{eqnarray}
+\label{conIneq}
+f(\alpha x + \beta y)\leq \alpha f(x)+ \beta f(y)
+\end{eqnarray}
+for convex problems the every local optimum is a global optimum. This property makes it particularly efficient to solve with descend methods like quasi newton or Interior point methods.
+\subsubsection{non linear}
+non linear optimization is a generalization of convex optimization. In non linear optimization the constraint and objective functions do not need to fulfil any special requirements except that they are defined on the search space $S$.
+A non linear optimization problem has the form
+\begin{eqnarray}
+minimize f(X)\\
+subject to g_i(X)\leq 0, \quad i=1,\dots , m
+\end{eqnarray} consists of an objective function $f:S\mapsto\mathbb{R}$ and constraint functions $g_1,\dots ,g_m$
+
+\subsubsection{SAT problems}
+In a classic boolean satisfyablility problem all variables are within the boolean domain and can take the values $true$ and $false$ or $0$ and $1$ respectively. The constraint relations are expressed by a boolean formula. The task is to find assignments to the variables, that makes the formula true. A simple example for a boolean formula is given in \ref{boolFormula}.
+\begin{eqnarray}
+x_1 \and \neg{x_2} \or \neg{x_1} \and x_2 
+\label{boolFormula}
+\end{eqnarray}
+Any boolean formula can be normalized to the disjunctive normal form (DNF).
+
+\subsubsection{Mixed Integer Problems}
+A constraint Satisfaction problem or constrained optimization problem where at least one of the domains $D_i$ is discrete is a mixed integer problem. While all linear and most convex optimization problems with only continuous domains can be solved in polynomial time, the introduction of variables with discrete domains makes the problem much more complex. 
+An example of an mixed integer convex problem can be given
+\begin{eqnarray}
+minimize x_3 
+x_1^2 + x_2^2 - 10.5 + x_3 \leq 0 
+x_3 \leq 0
+x_1,x_2\in \mathbb{Z} x_3\in \mathbb{R}
+\end{eqnarray}
+one possible solution to this problem is $x_1=1$ and $x_2=3$ and the optimal value for $x_3$ is $0.5$. Without the constraint $x_1$ and $x_2$ being Integers it would be easy to find assignments for those variables such that $x_3$ is $0$.
+
+\subsubsection{finite Models and undecidability}
+In general CSPs with infinite domains and nonlinear algebraic constraints are undecidable. There are some heuristic algorithms capable of solving many instances of those problems.
 
 \section{UML}
 Tell about the relevant Elements that are used for Test generation
@@ -21,5 +113,4 @@ tell about other test generating tools (commercial, published in Papers) and Par
 
 \section{The AMPL Modelling System}
 \cite{AMPL}
-\section{The Eclipse Modelling Framework}
-\cite{EMF}
+
