@@ -11,6 +11,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="localPostconditions" upperBound="-1"
         eType="ecore:EClass AbstractTestCaseGraph.ecore#//AbstractTCGConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EAttribute0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlFlow" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGEdge"/>
   <eClassifiers xsi:type="ecore:EClass" name="TCGControlNode" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGPseudoNode"/>
