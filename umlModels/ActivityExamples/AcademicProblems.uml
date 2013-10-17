@@ -3,10 +3,10 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_2sjD4ADDEeO2NIcdi9-HYg" name="triangleClassificator">
     <packagedElement xmi:type="uml:Class" xmi:id="_4ss9wADDEeO2NIcdi9-HYg" name="TriangleClassificator">
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_yeKF8ADFEeO2NIcdi9-HYg" name="classify" specification="__1bT8ADDEeO2NIcdi9-HYg" node="_C7hQQADGEeO2NIcdi9-HYg _EdIM8ADGEeO2NIcdi9-HYg _GgGxUADGEeO2NIcdi9-HYg _NOvzkADGEeO2NIcdi9-HYg _-azMMADHEeO2NIcdi9-HYg _JTInsADIEeO2NIcdi9-HYg _TQmWYADIEeO2NIcdi9-HYg _4BMwYADIEeO2NIcdi9-HYg _-FQIEADJEeO2NIcdi9-HYg _CnFUgADKEeO2NIcdi9-HYg _R4wHwADKEeO2NIcdi9-HYg _wuSvMADjEeO2NIcdi9-HYg _aHazgADkEeO2NIcdi9-HYg">
-        <ownedParameter xmi:id="_4XmlkADFEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_4XwWkADFEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_4X5ggADFEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_4YDRgADFEeO2NIcdi9-HYg" name="classification" visibility="public" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return" effect="create">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4XmlkADFEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4XwWkADFEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4X5ggADFEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_4YDRgADFEeO2NIcdi9-HYg" name="classification" visibility="public" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return" effect="create">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yEdncBPoEeOxIsGY537Kjg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yFW_UBPoEeOxIsGY537Kjg" value="1"/>
         </ownedParameter>
@@ -44,22 +44,22 @@
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_Exo20ADmEeO2NIcdi9-HYg" name="ControlFlow8" source="_aHazgADkEeO2NIcdi9-HYg" target="_-FQIEADJEeO2NIcdi9-HYg"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_C7hQQADGEeO2NIcdi9-HYg" name="invalid" outgoing="_GtyrMADKEeO2NIcdi9-HYg" incoming="_tNfWMADIEeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_DTk5AADIEeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_DTk5AADIEeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_DUUf4ADIEeO2NIcdi9-HYg" name="constraintSpec" value="classification=-1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_EdIM8ADGEeO2NIcdi9-HYg" name="scalane" outgoing="__Q9GMADJEeO2NIcdi9-HYg" incoming="_cIdeMADkEeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_3RfAIADHEeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_3RfAIADHEeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_3SE2AADHEeO2NIcdi9-HYg" name="constraintSpec" value="classification=1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GgGxUADGEeO2NIcdi9-HYg" name="isosceles" outgoing="__zhnwADJEeO2NIcdi9-HYg" incoming="__7GE0ADIEeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_n9bnQADHEeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_n9bnQADHEeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_n-CEMADHEeO2NIcdi9-HYg" name="constraintSpec" value="classification=2"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_NOvzkADGEeO2NIcdi9-HYg" name="eqilateral" outgoing="_AdGJMADKEeO2NIcdi9-HYg" incoming="_9X69cADIEeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_50UlwADGEeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_50UlwADGEeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:OpaqueExpression" xmi:id="_kGE7MADHEeO2NIcdi9-HYg" name="post">
               <language>OCL</language>
               <body>classification=3</body>
@@ -77,10 +77,10 @@
         <node xmi:type="uml:MergeNode" xmi:id="_aHazgADkEeO2NIcdi9-HYg" name="MergeNode3" outgoing="_Exo20ADmEeO2NIcdi9-HYg" incoming="__Q9GMADJEeO2NIcdi9-HYg __zhnwADJEeO2NIcdi9-HYg"/>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_U2cnIAD6EeO2NIcdi9-HYg" name="classifyNoLogic" node="_U2cnOgD6EeO2NIcdi9-HYg _U2cnPQD6EeO2NIcdi9-HYg _U2cnQAD6EeO2NIcdi9-HYg _U2cnQwD6EeO2NIcdi9-HYg _U2cnRgD6EeO2NIcdi9-HYg _U2cnRwD6EeO2NIcdi9-HYg _U2cnSAD6EeO2NIcdi9-HYg _U2cnSQD6EeO2NIcdi9-HYg _U2cnSgD6EeO2NIcdi9-HYg _U2cnSwD6EeO2NIcdi9-HYg _U2cnTAD6EeO2NIcdi9-HYg _U2cnTQD6EeO2NIcdi9-HYg _U2cnTgD6EeO2NIcdi9-HYg">
-        <ownedParameter xmi:id="_U2cnIQD6EeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_U2cnIgD6EeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_U2cnIwD6EeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_U2cnJAD6EeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIQD6EeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIgD6EeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnIwD6EeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U2cnJAD6EeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnJQD6EeO2NIcdi9-HYg" name="ininit2check" source="_U2cnRgD6EeO2NIcdi9-HYg" target="_U2cnRwD6EeO2NIcdi9-HYg"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_U2cnJgD6EeO2NIcdi9-HYg" name="check2unknown" source="_U2cnRwD6EeO2NIcdi9-HYg" target="_U2cnSAD6EeO2NIcdi9-HYg">
           <guard xmi:type="uml:OpaqueExpression" xmi:id="_U2cnJwD6EeO2NIcdi9-HYg">
@@ -127,22 +127,22 @@
           </guard>
         </edge>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnOgD6EeO2NIcdi9-HYg" name="invalid" outgoing="_U2cnNQD6EeO2NIcdi9-HYg" incoming="_U2cnKAD6EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_U2cnOwD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnOwD6EeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPAD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=-1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnPQD6EeO2NIcdi9-HYg" name="scalane" outgoing="_U2cnMQD6EeO2NIcdi9-HYg" incoming="_U2cnNwD6EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_U2cnPgD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnPgD6EeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPwD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQAD6EeO2NIcdi9-HYg" name="isosceles" outgoing="_U2cnMgD6EeO2NIcdi9-HYg" incoming="_U2cnLQD6EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_U2cnQQD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnQQD6EeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnQgD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=2"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQwD6EeO2NIcdi9-HYg" name="eqilateral" outgoing="_U2cnMwD6EeO2NIcdi9-HYg" incoming="_U2cnKwD6EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_U2cnRAD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnRAD6EeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:OpaqueExpression" xmi:id="_U2cnRQD6EeO2NIcdi9-HYg" name="post">
               <language>OCL</language>
               <body>classification=3</body>
@@ -159,27 +159,27 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_U2cnTQD6EeO2NIcdi9-HYg" name="DecisionNode3" outgoing="_U2cnLQD6EeO2NIcdi9-HYg _U2cnNwD6EeO2NIcdi9-HYg" incoming="_U2cnLwD6EeO2NIcdi9-HYg"/>
         <node xmi:type="uml:MergeNode" xmi:id="_U2cnTgD6EeO2NIcdi9-HYg" name="MergeNode3" outgoing="_U2cnOQD6EeO2NIcdi9-HYg" incoming="_U2cnMQD6EeO2NIcdi9-HYg _U2cnMgD6EeO2NIcdi9-HYg"/>
       </ownedBehavior>
-      <ownedOperation xmi:id="__1bT8ADDEeO2NIcdi9-HYg" name="classify" method="_yeKF8ADFEeO2NIcdi9-HYg">
-        <ownedParameter xmi:id="_m_8ysADEEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_pVaOMADEEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_rQCu4ADEEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_ZCgK8ADFEeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__1bT8ADDEeO2NIcdi9-HYg" name="classify" method="_yeKF8ADFEeO2NIcdi9-HYg">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_m_8ysADEEeO2NIcdi9-HYg" name="x" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pVaOMADEEeO2NIcdi9-HYg" name="y" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rQCu4ADEEeO2NIcdi9-HYg" name="z" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZCgK8ADFEeO2NIcdi9-HYg" name="classification" type="_hcfNgADtEeO2NIcdi9-HYg" direction="return"/>
       </ownedOperation>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_xo2NoBrnEeOgRMa4rhXY8w" name="tyrePump">
     <packagedElement xmi:type="uml:Class" xmi:id="_H5rZQAD7EeO2NIcdi9-HYg" name="TyrePump">
-      <ownedAttribute xmi:id="_XzubIAD7EeO2NIcdi9-HYg" name="pressure" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-      <ownedAttribute xmi:id="_jvHPEAD7EeO2NIcdi9-HYg" name="temp" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-      <ownedAttribute xmi:id="_x66xAAD8EeO2NIcdi9-HYg" name="counter" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-      <ownedAttribute xmi:id="_8VEJwAD-EeO2NIcdi9-HYg" name="varMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
-      <ownedAttribute xmi:id="_GnjGMAD_EeO2NIcdi9-HYg" name="varBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
-      <ownedAttribute xmi:id="_0_B2sAEGEeO2NIcdi9-HYg" name="n" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XzubIAD7EeO2NIcdi9-HYg" name="pressure" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jvHPEAD7EeO2NIcdi9-HYg" name="temp" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_x66xAAD8EeO2NIcdi9-HYg" name="counter" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8VEJwAD-EeO2NIcdi9-HYg" name="varMelted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GnjGMAD_EeO2NIcdi9-HYg" name="varBursted" type="_oNhccADtEeO2NIcdi9-HYg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0_B2sAEGEeO2NIcdi9-HYg" name="n" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_Q3N8AAD7EeO2NIcdi9-HYg" name="pump" specification="_MXCVYAD7EeO2NIcdi9-HYg" node="_mYASAAD9EeO2NIcdi9-HYg _oLMG4AD9EeO2NIcdi9-HYg _qEfK0AD9EeO2NIcdi9-HYg _GOVKYAD-EeO2NIcdi9-HYg _KAB6YAD-EeO2NIcdi9-HYg _L2fswAD-EeO2NIcdi9-HYg _x8azkAEBEeO2NIcdi9-HYg">
-        <ownedParameter xmi:id="_f4G2YAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_SD2RwAD8EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_Ynm5sAD8EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
-        <ownedParameter xmi:id="_gVSXEAD8EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_f4G2YAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_SD2RwAD8EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ynm5sAD8EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gVSXEAD8EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_2VxWQAD9EeO2NIcdi9-HYg" name="ControlFlow1" source="_mYASAAD9EeO2NIcdi9-HYg" target="_qEfK0AD9EeO2NIcdi9-HYg">
           <guard xmi:type="uml:OpaqueExpression" xmi:id="_9DqxoAD9EeO2NIcdi9-HYg">
             <language>OCL</language>
@@ -201,50 +201,50 @@
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_mYASAAD9EeO2NIcdi9-HYg" name="InitialNode1" outgoing="_2VxWQAD9EeO2NIcdi9-HYg"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_oLMG4AD9EeO2NIcdi9-HYg" name="doPump" outgoing="_UbAEcAD-EeO2NIcdi9-HYg" incoming="_TrUT8AD-EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_ZYBGIAEAEeO2NIcdi9-HYg" name="idealGas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_ZYBGIAEAEeO2NIcdi9-HYg" name="idealGas">
             <specification xmi:type="uml:LiteralString" xmi:id="_ZcogYAEAEeO2NIcdi9-HYg" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_hiL1wAEBEeO2NIcdi9-HYg" name="Adiabatic">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_hiL1wAEBEeO2NIcdi9-HYg" name="Adiabatic">
             <specification xmi:type="uml:LiteralString" xmi:id="_hnP78AEBEeO2NIcdi9-HYg" name="constraintSpec" value="pressure@pre*((volume+pumpVolume)*(volume+pumpVolume))=pressure*volume*volume"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_I7GnsAHEEeOyK_U3qRzfXA" name="increasAirAmount">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_I7GnsAHEEeOyK_U3qRzfXA" name="increasAirAmount">
             <specification xmi:type="uml:LiteralString" xmi:id="_I7ZioAHEEeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre+(pressure@pre*pumpVolume/(temp@pre*0.287058))"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_qEfK0AD9EeO2NIcdi9-HYg" name="initialze" outgoing="_QcV2gAD-EeO2NIcdi9-HYg" incoming="_2VxWQAD9EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_vPIqwAD9EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_vPIqwAD9EeO2NIcdi9-HYg" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_vVi0wAD9EeO2NIcdi9-HYg" name="constraintSpec" value="counter=pumps"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_PzahIAG1EeOyK_U3qRzfXA" name="idealGas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_PzahIAG1EeOyK_U3qRzfXA" name="idealGas">
             <specification xmi:type="uml:LiteralString" xmi:id="_Pz2mAAG1EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_Z9sj0AG1EeOyK_U3qRzfXA" name="Volumen in m^3">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Z9sj0AG1EeOyK_U3qRzfXA" name="Volumen in m^3">
             <specification xmi:type="uml:LiteralString" xmi:id="_Z9_ewAG1EeOyK_U3qRzfXA" name="constraintSpec" value="pumpVolume>=0.001"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_oHr9UAG1EeOyK_U3qRzfXA" name="Constraint8">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_oHr9UAG1EeOyK_U3qRzfXA" name="Constraint8">
             <specification xmi:type="uml:LiteralString" xmi:id="_oH-4QAG1EeOyK_U3qRzfXA" name="constraintSpec" value="temp>=300"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_z4DNAAG1EeOyK_U3qRzfXA" name="Constraint10">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_z4DNAAG1EeOyK_U3qRzfXA" name="Constraint10">
             <specification xmi:type="uml:LiteralString" xmi:id="_z5Pf0AG1EeOyK_U3qRzfXA" name="constraintSpec" value="volume>=2"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_PkuS8AG3EeOyK_U3qRzfXA" name="LuftmengeInGramm">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_PkuS8AG3EeOyK_U3qRzfXA" name="LuftmengeInGramm">
             <specification xmi:type="uml:LiteralString" xmi:id="_PlBN4AG3EeOyK_U3qRzfXA" name="constraintSpec" value="n>=0.5"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_ViVg4AG3EeOyK_U3qRzfXA" name="Druck in AT">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_ViVg4AG3EeOyK_U3qRzfXA" name="Druck in AT">
             <specification xmi:type="uml:LiteralString" xmi:id="_VjO4wAG3EeOyK_U3qRzfXA" name="constraintSpec" value="pressure>=1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GOVKYAD-EeO2NIcdi9-HYg" name="coolAlittle" outgoing="_VOQtYAD-EeO2NIcdi9-HYg" incoming="_UbAEcAD-EeO2NIcdi9-HYg">
-          <localPostcondition xmi:id="_Ori1AAEDEeO2NIcdi9-HYg" name="10PercentCooldown">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Ori1AAEDEeO2NIcdi9-HYg" name="10PercentCooldown">
             <specification xmi:type="uml:LiteralString" xmi:id="_Ov37YAEDEeO2NIcdi9-HYg" name="10PercentCooldown" value="11*temp=10*temp@pre+300"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_QqFv4AEEEeO2NIcdi9-HYg" name="reduceCounter">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_QqFv4AEEEeO2NIcdi9-HYg" name="reduceCounter">
             <specification xmi:type="uml:LiteralString" xmi:id="_QwDN8AEEEeO2NIcdi9-HYg" name="constraintSpec" value="counter=counter@pre-1"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_AlEGoAHAEeOyK_U3qRzfXA" name="ideal Gas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_AlEGoAHAEeOyK_U3qRzfXA" name="ideal Gas">
             <specification xmi:type="uml:LiteralString" xmi:id="_AlgykAHAEeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_FOV-4AHAEeOyK_U3qRzfXA" name="there is no leck in tyre">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_FOV-4AHAEeOyK_U3qRzfXA" name="there is no leck in tyre">
             <specification xmi:type="uml:LiteralString" xmi:id="_FOyq0AHAEeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre"/>
           </localPostcondition>
         </node>
@@ -253,11 +253,11 @@
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_x8azkAEBEeO2NIcdi9-HYg" name="ActivityFinalNode1" incoming="_y8DEkAEBEeO2NIcdi9-HYg"/>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_GgSKQAH0EeOyK_U3qRzfXA" name="pumpExtended" specification="_MXCVYAD7EeO2NIcdi9-HYg" node="_GgSKUAH0EeOyK_U3qRzfXA _GgSKUQH0EeOyK_U3qRzfXA _GgSKWAH0EeOyK_U3qRzfXA _GgSKZwH0EeOyK_U3qRzfXA _GgSKcAH0EeOyK_U3qRzfXA _GgSKcQH0EeOyK_U3qRzfXA _GgSKcgH0EeOyK_U3qRzfXA _MIS7oAH0EeOyK_U3qRzfXA _N0ohoAH0EeOyK_U3qRzfXA _O8mPQAH0EeOyK_U3qRzfXA _RCQ7QAH0EeOyK_U3qRzfXA _Cg6VMAH1EeOyK_U3qRzfXA _Dn_SAAH1EeOyK_U3qRzfXA _3TJm0AH1EeOyK_U3qRzfXA _37p40A5MEeOLJ7_the77gQ _AJzmAA5NEeOLJ7_the77gQ _M_vWoA5NEeOLJ7_the77gQ _V2RScA5NEeOLJ7_the77gQ _rnC3IA5NEeOLJ7_the77gQ">
-        <ownedParameter xmi:id="_GgSKRQH0EeOyK_U3qRzfXA" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_uvrr8Al_EeOCSpHmMRM-3A" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_GgSKQgH0EeOyK_U3qRzfXA" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_GgSKQwH0EeOyK_U3qRzfXA" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
-        <ownedParameter xmi:id="_GgSKRAH0EeOyK_U3qRzfXA" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKRQH0EeOyK_U3qRzfXA" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uvrr8Al_EeOCSpHmMRM-3A" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKQgH0EeOyK_U3qRzfXA" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKQwH0EeOyK_U3qRzfXA" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GgSKRAH0EeOyK_U3qRzfXA" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_GgSKRgH0EeOyK_U3qRzfXA" name="ControlFlow1" source="_GgSKUAH0EeOyK_U3qRzfXA" target="_37p40A5MEeOLJ7_the77gQ">
           <guard xmi:type="uml:OpaqueExpression" xmi:id="_0p_60A5MEeOLJ7_the77gQ">
             <language>OCL</language>
@@ -282,7 +282,7 @@
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_bD5_UAH0EeOyK_U3qRzfXA" name="ControlFlow8" source="_O8mPQAH0EeOyK_U3qRzfXA" target="_N0ohoAH0EeOyK_U3qRzfXA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_cdBHUAH0EeOyK_U3qRzfXA" name="ControlFlow9" source="_MIS7oAH0EeOyK_U3qRzfXA" target="_N0ohoAH0EeOyK_U3qRzfXA">
-          <guard xmi:type="uml:LiteralString" xmi:id="_ftL3kAH0EeOyK_U3qRzfXA" value="temp&lt;=399.99999999"/>
+          <guard xmi:type="uml:LiteralString" xmi:id="_ftL3kAH0EeOyK_U3qRzfXA" value="temp&lt;=399.9"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_m5CaQAH0EeOyK_U3qRzfXA" name="ControlFlow10" source="_RCQ7QAH0EeOyK_U3qRzfXA" target="_Cg6VMAH1EeOyK_U3qRzfXA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_KrDFEAH1EeOyK_U3qRzfXA" name="ControlFlow11" source="_N0ohoAH0EeOyK_U3qRzfXA" target="_Dn_SAAH1EeOyK_U3qRzfXA"/>
@@ -290,7 +290,7 @@
           <guard xmi:type="uml:LiteralString" xmi:id="_P6eXUAH1EeOyK_U3qRzfXA" value="pressure>=15"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_MWCnQAH1EeOyK_U3qRzfXA" name="ControlFlow13" source="_Dn_SAAH1EeOyK_U3qRzfXA" target="_Cg6VMAH1EeOyK_U3qRzfXA">
-          <guard xmi:type="uml:LiteralString" xmi:id="_Tx-0YAH1EeOyK_U3qRzfXA" value="pressure&lt;=14.9999999999999999"/>
+          <guard xmi:type="uml:LiteralString" xmi:id="_Tx-0YAH1EeOyK_U3qRzfXA" value="pressure&lt;=14.9"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_UqmecAH1EeOyK_U3qRzfXA" name="ControlFlow14" source="_Cg6VMAH1EeOyK_U3qRzfXA" target="_GgSKZwH0EeOyK_U3qRzfXA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4tAVsAH1EeOyK_U3qRzfXA" name="ControlFlow15" source="_3TJm0AH1EeOyK_U3qRzfXA" target="_GgSKcgH0EeOyK_U3qRzfXA"/>
@@ -311,38 +311,38 @@
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_GgSKUAH0EeOyK_U3qRzfXA" name="InitialNode1" outgoing="_GgSKRgH0EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKUQH0EeOyK_U3qRzfXA" name="doPump" outgoing="_GgSKTAH0EeOyK_U3qRzfXA" incoming="_GgSKSwH0EeOyK_U3qRzfXA">
-          <localPostcondition xmi:id="_GgSKUgH0EeOyK_U3qRzfXA" name="idealGas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKUgH0EeOyK_U3qRzfXA" name="idealGas">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKUwH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_GgSKVAH0EeOyK_U3qRzfXA" name="Adiabatic">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKVAH0EeOyK_U3qRzfXA" name="Adiabatic">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKVQH0EeOyK_U3qRzfXA" name="constraintSpec" value="pressure@pre*((volume+pumpVolume)*(volume+pumpVolume))=pressure*volume*volume"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_GgSKVgH0EeOyK_U3qRzfXA" name="increasAirAmount">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKVgH0EeOyK_U3qRzfXA" name="increasAirAmount">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKVwH0EeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre+(pressure@pre*pumpVolume/(temp@pre*0.287058))"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKWAH0EeOyK_U3qRzfXA" name="initialze" outgoing="_GgSKSAH0EeOyK_U3qRzfXA" incoming="_3wbDwA5NEeOLJ7_the77gQ">
-          <localPostcondition xmi:id="_GgSKWQH0EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKWQH0EeOyK_U3qRzfXA" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKWgH0EeOyK_U3qRzfXA" name="constraintSpec" value="counter=pumps"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_u9Pr0AH1EeOyK_U3qRzfXA" name="Constraint12">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_u9Pr0AH1EeOyK_U3qRzfXA" name="Constraint12">
             <specification xmi:type="uml:LiteralString" xmi:id="_vAOHUAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted=false"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_DsFkgA5OEeOLJ7_the77gQ" name="Constraint14">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_DsFkgA5OEeOLJ7_the77gQ" name="Constraint14">
             <specification xmi:type="uml:LiteralString" xmi:id="_DtujQA5OEeOLJ7_the77gQ" name="constraintSpec" value="varMelted=false"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKZwH0EeOyK_U3qRzfXA" name="coolAlittle" outgoing="_GgSKTQH0EeOyK_U3qRzfXA" incoming="_UqmecAH1EeOyK_U3qRzfXA">
-          <localPostcondition xmi:id="_GgSKaAH0EeOyK_U3qRzfXA" name="10PercentCooldown">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKaAH0EeOyK_U3qRzfXA" name="10PercentCooldown">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKaQH0EeOyK_U3qRzfXA" name="10PercentCooldown" value="11*temp=10*temp@pre+300"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_GgSKagH0EeOyK_U3qRzfXA" name="reduceCounter">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKagH0EeOyK_U3qRzfXA" name="reduceCounter">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKawH0EeOyK_U3qRzfXA" name="constraintSpec" value="counter=counter@pre-1"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_GgSKbAH0EeOyK_U3qRzfXA" name="ideal Gas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbAH0EeOyK_U3qRzfXA" name="ideal Gas">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbQH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_GgSKbgH0EeOyK_U3qRzfXA" name="there is no leck in tyre">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbgH0EeOyK_U3qRzfXA" name="there is no leck in tyre">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbwH0EeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre"/>
           </localPostcondition>
         </node>
@@ -352,22 +352,22 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_MIS7oAH0EeOyK_U3qRzfXA" name="DecisionNode2" outgoing="_UmsrUAH0EeOyK_U3qRzfXA _cdBHUAH0EeOyK_U3qRzfXA" incoming="_GgSKTAH0EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:MergeNode" xmi:id="_N0ohoAH0EeOyK_U3qRzfXA" name="MergeNode2" outgoing="_KrDFEAH1EeOyK_U3qRzfXA" incoming="_bD5_UAH0EeOyK_U3qRzfXA _cdBHUAH0EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_O8mPQAH0EeOyK_U3qRzfXA" name="TyreMelted" outgoing="_bD5_UAH0EeOyK_U3qRzfXA" incoming="_UmsrUAH0EeOyK_U3qRzfXA">
-          <localPostcondition xmi:id="_sNtjcAH1EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_sNtjcAH1EeOyK_U3qRzfXA" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_sQZEAAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_RCQ7QAH0EeOyK_U3qRzfXA" name="TyreBurs" outgoing="_m5CaQAH0EeOyK_U3qRzfXA" incoming="_Lv5NQAH1EeOyK_U3qRzfXA">
-          <localPostcondition xmi:id="_kJrbkAH1EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_kJrbkAH1EeOyK_U3qRzfXA" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_kN2w8AH1EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:MergeNode" xmi:id="_Cg6VMAH1EeOyK_U3qRzfXA" name="MergeNode3" outgoing="_UqmecAH1EeOyK_U3qRzfXA" incoming="_m5CaQAH0EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_Dn_SAAH1EeOyK_U3qRzfXA" name="DecisionNode3" outgoing="_Lv5NQAH1EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA" incoming="_KrDFEAH1EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_3TJm0AH1EeOyK_U3qRzfXA" name="return" outgoing="_4tAVsAH1EeOyK_U3qRzfXA" incoming="_GgSKTgH0EeOyK_U3qRzfXA">
-          <localPostcondition xmi:id="_6wScEAH1EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_6wScEAH1EeOyK_U3qRzfXA" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_6zHtoAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted@pre=tyreMelted"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_Cyh0MAH2EeOyK_U3qRzfXA" name="Constraint4">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Cyh0MAH2EeOyK_U3qRzfXA" name="Constraint4">
             <specification xmi:type="uml:LiteralString" xmi:id="_C1gPsAH2EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted@pre=tyreBursted"/>
           </localPostcondition>
         </node>
@@ -378,11 +378,11 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_rnC3IA5NEeOLJ7_the77gQ" name="DecisionNode9" outgoing="_3wbDwA5NEeOLJ7_the77gQ" incoming="_sXBikA5NEeOLJ7_the77gQ"/>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_o6P_gBobEeO9s-R3-Uc7Iw" name="pumpInfeasiblePaths" specification="_MXCVYAD7EeO2NIcdi9-HYg" node="_o6P_pxobEeO9s-R3-Uc7Iw _o6P_qBobEeO9s-R3-Uc7Iw _o6P_rxobEeO9s-R3-Uc7Iw _o6P_thobEeO9s-R3-Uc7Iw _o6P_vxobEeO9s-R3-Uc7Iw _o6P_wBobEeO9s-R3-Uc7Iw _o6P_wRobEeO9s-R3-Uc7Iw _o6P_whobEeO9s-R3-Uc7Iw _o6P_wxobEeO9s-R3-Uc7Iw _o6P_xBobEeO9s-R3-Uc7Iw _o6P_xxobEeO9s-R3-Uc7Iw _o6P_yhobEeO9s-R3-Uc7Iw _o6P_yxobEeO9s-R3-Uc7Iw _o6P_zBobEeO9s-R3-Uc7Iw _o6P_0RobEeO9s-R3-Uc7Iw _o6P_0hobEeO9s-R3-Uc7Iw _o6P_0xobEeO9s-R3-Uc7Iw _o6P_1BobEeO9s-R3-Uc7Iw _o6P_1RobEeO9s-R3-Uc7Iw">
-        <ownedParameter xmi:id="_o6P_gRobEeO9s-R3-Uc7Iw" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_o6P_ghobEeO9s-R3-Uc7Iw" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_o6P_gxobEeO9s-R3-Uc7Iw" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_o6P_hBobEeO9s-R3-Uc7Iw" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
-        <ownedParameter xmi:id="_o6P_hRobEeO9s-R3-Uc7Iw" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o6P_gRobEeO9s-R3-Uc7Iw" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o6P_ghobEeO9s-R3-Uc7Iw" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o6P_gxobEeO9s-R3-Uc7Iw" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o6P_hBobEeO9s-R3-Uc7Iw" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_o6P_hRobEeO9s-R3-Uc7Iw" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_o6P_hhobEeO9s-R3-Uc7Iw" name="ControlFlow1" source="_o6P_pxobEeO9s-R3-Uc7Iw" target="_o6P_0RobEeO9s-R3-Uc7Iw">
           <guard xmi:type="uml:OpaqueExpression" xmi:id="_o6P_hxobEeO9s-R3-Uc7Iw">
             <language>OCL</language>
@@ -441,38 +441,38 @@
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_o6P_pxobEeO9s-R3-Uc7Iw" name="InitialNode1" outgoing="_o6P_hhobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_qBobEeO9s-R3-Uc7Iw" name="doPump" outgoing="_o6P_jBobEeO9s-R3-Uc7Iw" incoming="_o6P_ixobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_qRobEeO9s-R3-Uc7Iw" name="idealGas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_qRobEeO9s-R3-Uc7Iw" name="idealGas">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_qhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_qxobEeO9s-R3-Uc7Iw" name="Adiabatic">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_qxobEeO9s-R3-Uc7Iw" name="Adiabatic">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_rBobEeO9s-R3-Uc7Iw" name="constraintSpec" value="pressure@pre*((volume+pumpVolume)*(volume+pumpVolume))=pressure*volume*volume"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_rRobEeO9s-R3-Uc7Iw" name="increasAirAmount">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_rRobEeO9s-R3-Uc7Iw" name="increasAirAmount">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_rhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="n=n@pre+(pressure@pre*pumpVolume/(temp@pre*0.287058))"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_rxobEeO9s-R3-Uc7Iw" name="initialze" outgoing="_o6P_iBobEeO9s-R3-Uc7Iw" incoming="_o6P_pRobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_sBobEeO9s-R3-Uc7Iw" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_sBobEeO9s-R3-Uc7Iw" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_sRobEeO9s-R3-Uc7Iw" name="constraintSpec" value="counter=pumps"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_shobEeO9s-R3-Uc7Iw" name="Constraint12">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_shobEeO9s-R3-Uc7Iw" name="Constraint12">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_sxobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varBursted=false"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_tBobEeO9s-R3-Uc7Iw" name="Constraint14">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_tBobEeO9s-R3-Uc7Iw" name="Constraint14">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_tRobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varMelted=false"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_thobEeO9s-R3-Uc7Iw" name="coolAlittle" outgoing="_o6P_jRobEeO9s-R3-Uc7Iw" incoming="_o6P_mxobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_txobEeO9s-R3-Uc7Iw" name="10PercentCooldown">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_txobEeO9s-R3-Uc7Iw" name="10PercentCooldown">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_uBobEeO9s-R3-Uc7Iw" name="10PercentCooldown" value="11*temp=10*temp@pre+300"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_uRobEeO9s-R3-Uc7Iw" name="reduceCounter">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_uRobEeO9s-R3-Uc7Iw" name="reduceCounter">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_uhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="counter=counter@pre-1"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_uxobEeO9s-R3-Uc7Iw" name="ideal Gas">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_uxobEeO9s-R3-Uc7Iw" name="ideal Gas">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_vBobEeO9s-R3-Uc7Iw" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_vRobEeO9s-R3-Uc7Iw" name="there is no leck in tyre">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_vRobEeO9s-R3-Uc7Iw" name="there is no leck in tyre">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_vhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="n=n@pre"/>
           </localPostcondition>
         </node>
@@ -482,22 +482,22 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_o6P_whobEeO9s-R3-Uc7Iw" name="DecisionNode2" outgoing="_o6P_kBobEeO9s-R3-Uc7Iw _o6P_kxobEeO9s-R3-Uc7Iw" incoming="_o6P_jBobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:MergeNode" xmi:id="_o6P_wxobEeO9s-R3-Uc7Iw" name="MergeNode2" outgoing="_o6P_lhobEeO9s-R3-Uc7Iw" incoming="_o6P_khobEeO9s-R3-Uc7Iw _o6P_kxobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_xBobEeO9s-R3-Uc7Iw" name="TyreMelted" outgoing="_o6P_khobEeO9s-R3-Uc7Iw" incoming="_o6P_kBobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_xRobEeO9s-R3-Uc7Iw" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_xRobEeO9s-R3-Uc7Iw" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_xhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varMelted=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_xxobEeO9s-R3-Uc7Iw" name="TyreBurs" outgoing="_o6P_lRobEeO9s-R3-Uc7Iw" incoming="_o6P_lxobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_yBobEeO9s-R3-Uc7Iw" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_yBobEeO9s-R3-Uc7Iw" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_yRobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varBursted=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:MergeNode" xmi:id="_o6P_yhobEeO9s-R3-Uc7Iw" name="MergeNode3" outgoing="_o6P_mxobEeO9s-R3-Uc7Iw" incoming="_o6P_lRobEeO9s-R3-Uc7Iw _o6P_mRobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_o6P_yxobEeO9s-R3-Uc7Iw" name="DecisionNode3" outgoing="_o6P_lxobEeO9s-R3-Uc7Iw _o6P_mRobEeO9s-R3-Uc7Iw" incoming="_o6P_lhobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_o6P_zBobEeO9s-R3-Uc7Iw" name="return" outgoing="_o6P_nBobEeO9s-R3-Uc7Iw" incoming="_o6P_jhobEeO9s-R3-Uc7Iw">
-          <localPostcondition xmi:id="_o6P_zRobEeO9s-R3-Uc7Iw" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_zRobEeO9s-R3-Uc7Iw" name="Constraint2">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_zhobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varMelted@pre=tyreMelted"/>
           </localPostcondition>
-          <localPostcondition xmi:id="_o6P_zxobEeO9s-R3-Uc7Iw" name="Constraint4">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_o6P_zxobEeO9s-R3-Uc7Iw" name="Constraint4">
             <specification xmi:type="uml:LiteralString" xmi:id="_o6P_0BobEeO9s-R3-Uc7Iw" name="constraintSpec" value="varBursted@pre=tyreBursted"/>
           </localPostcondition>
         </node>
@@ -507,22 +507,22 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_o6P_1BobEeO9s-R3-Uc7Iw" name="DecisionNode8" outgoing="_o6P_oxobEeO9s-R3-Uc7Iw" incoming="_o6P_oRobEeO9s-R3-Uc7Iw"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_o6P_1RobEeO9s-R3-Uc7Iw" name="DecisionNode9" outgoing="_o6P_pRobEeO9s-R3-Uc7Iw" incoming="_o6P_oxobEeO9s-R3-Uc7Iw"/>
       </ownedBehavior>
-      <ownedOperation xmi:id="_MXCVYAD7EeO2NIcdi9-HYg" name="pump" method="_GgSKQAH0EeOyK_U3qRzfXA _Q3N8AAD7EeO2NIcdi9-HYg _o6P_gBobEeO9s-R3-Uc7Iw">
-        <ownedParameter xmi:id="_chh8IAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_-CPjoAEGEeO2NIcdi9-HYg" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_Nen9oAD9EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
-        <ownedParameter xmi:id="_NiDFEAD9EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
-        <ownedParameter xmi:id="_NhJtMAD9EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MXCVYAD7EeO2NIcdi9-HYg" name="pump" method="_GgSKQAH0EeOyK_U3qRzfXA _Q3N8AAD7EeO2NIcdi9-HYg _o6P_gBobEeO9s-R3-Uc7Iw">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_chh8IAD9EeO2NIcdi9-HYg" name="pumps" type="_hcfNgADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-CPjoAEGEeO2NIcdi9-HYg" name="volume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Nen9oAD9EeO2NIcdi9-HYg" name="pumpVolume" type="_ql8kAAD7EeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NiDFEAD9EeO2NIcdi9-HYg" name="tyreMelted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NhJtMAD9EeO2NIcdi9-HYg" name="tyreBursted" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
       </ownedOperation>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ql8kAAD7EeO2NIcdi9-HYg" name="Real"/>
   <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hcfNgADtEeO2NIcdi9-HYg" name="Integer" isLeaf="true"/>
   <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_oNhccADtEeO2NIcdi9-HYg" name="Boolean"/>
-  <profileApplication xmi:id="_profileApplication0">
-    <eAnnotations xmi:id="_dxsIAADzEeO2NIcdi9-HYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_profileApplication0">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dxsIAADzEeO2NIcdi9-HYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
     </eAnnotations>
-    <appliedProfile href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
   </profileApplication>
 </uml:Model>

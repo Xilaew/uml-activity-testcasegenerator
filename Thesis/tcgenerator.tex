@@ -42,7 +42,7 @@ LogicalOperation: Bool LogicalOpSymbol Bool \\
 
 \subsection{A Meta Model suitable for automated Unit Test Generation}
 The developed unit test generation algorithm does not work directly on an UML Model but on an ActivityTestCaseGraph. The ActivityTestCaseGraph contains only those details from the UML Metamodel that are really necessary for the test generation. Since it only contains ready parsed OCL Expressions as abstract syntax trees it is much more suitable for the transformation into a mathematical program. \\
-The ActivityTestCaseGraph is defined as an extension of a more general AbstractTestCaseGraph model. The AbstractTestCaseGraph meta model was taylored to fit Activities as well as UML \UMLType{Statemachines} in order to be able to apply algorithms not only to Activities but also to \UMLType{StateMachines} as well as to be able to reuse existing Algorithms from ParTeG for \UMLType{StateMachines} for \UMLType{Activities}. \\
+The ActivityTestCaseGraph is defined as an extension of a more general AbstractTestCaseGraph model. The AbstractTestCaseGraph meta model was taylored to fit Activities as well as UML \UMLType{Statemachines} in order to be able to apply algorithms not only to Activities but also to \UMLType{StateMachines} as well as to be able to reuse existing Algorithms from ParTeG for \UMLType{StateMachines} for \UMLType{Activities}.
 
 %????
 %Figure \ref{fig:ATCGMetamodel} shows the complete meta model of the ActivityTestCaseGraph including all components from the AbstractTestCaseGraph.
@@ -53,28 +53,35 @@ The ActivityTestCaseGraph is defined as an extension of a more general AbstractT
 %\end{figure}
 %????
 
-\subsubsection{AbstractTestCaseGraph}
+\subsubsection{Abstract Test Case Graph}
+
 \begin{figure}
 \label{fig:AbstractTCGMetaModel}
 \includegraphics[width=0.5\textwidth]{./pics/AbstractTestCaseGraph.pdf}
 \caption{Meta model of the AbstractTestCaseGraph}
 \end{figure}
-An ActivityTestCaseGraph is a directed graph consisting of nodes (AbstractTCGNode) and edges (AbstractTCGEdge). Each edge has source and a target node. Each node can have multiple outgoing and multiple incoming edges.
-A node can either be a pseudo node (AbstractTCGPseudoNode) or a real node (AbstractTCGRealNode). A pseudo node is a node that you can insert in the middle of an edge without changing any of the semantics of the test model. Edges do have a guard condition. Such a graph is contained by a Container (AbstractTCGContainer). The container has a singular reference to one of its owned nodes declaring this as the initial node. \\
-The semantics of the Activity Test Case Graph is Petri Net like. When executing a test case graph we have at the beginning a token in the initial node that can move along the edges. The token can only move along an edge, when its guard condition is true. When an token resides in a node we say that the node is executed.
+An Abstract Test Case Graph is a directed graph consisting of nodes (AbstractTCGNode) and edges (AbstractTCGEdge). Each edge has source and a target node. Each node can have multiple outgoing and multiple incoming edges.
+A node can either be a pseudo node (AbstractTCGPseudoNode) or a real node (AbstractTCGRealNode). A pseudo node is a node that you can insert in the middle of an edge without changing any of the semantics of the test model. Edges can have a guard condition of type AbstractTCGConstraint. Such a graph is contained by a Container (AbstractTCGContainer). The container has a singular reference to one of its owned nodes declaring this as the initial node. \\
+The semantics of the activity test case graph is Petri net like. When executing a test case graph we have at the beginning a token in the initial node that can move along the edges. The token can only move along an edge, when its guard condition is true. When an token resides in a node we say that the node is executed.
 
-\subsubsection{ActivityTestCaseGraph}
+\subsubsection{Activity Test Case Graph}
 \begin{figure}
 \label{fig:ActivityTCGMetaModel}
 \includegraphics[width=\textwidth]{./pics/ActivityTestCaseGraph.pdf}
 \caption{Meta model of the ActivityTestCaseGraph}
 \end{figure}
 An activity test case graph is an extension to the very simple abstract test case graph especially tailored for test generation from Activities. Its Metamodel is shown in figure\ref{fig:ActivityTCGMetaModel}.\\
-The main extensions to the abstract meta model are the Variables and the elements of an abstract syntax tree to express constraints.
-
-A TCGAction is a real node and can have a localPostcondition a local Postcondition has the semantic, that the 
+The TCGActivity is an extension of the AbstractTCGContainer. As well as TCGAction, TCGControlNode and TCGControlFlow do refine the types AbstractTCGRealNode, AbstractTCGPseudoNode and AbstractTCGEdge respectively. 
+The main extensions to the abstract meta model are the Variables and the elements of an abstract syntax tree to express constraints and the TCGAction.
+\paragraph{TCGAction} A TCGAction can in addition to its supertye contain arbitrary many localPostconditions of the type AbstractTCGConstraint. A local Postcondition has the semantic, that it has to be true after the execution of the action. This implies changing some variables throughout the execution of the action.
+\paragraph{OCL Abstract Syntax Tree}
+TCGOCLExpression is a subtype of AbstractTCGConstraint. A TCGOCLexpression can either be an Operatiton call with a source and  arguments or a TCGOCLLiteralExpression holding a literal value and its data type or a TCGOCLVariableCallExp referencing a TCGVariable. The isPre attribute of TCGOCLVariableCallExp denotes whether in the original OCL expression has been an "@pre" with the token. TCGOCLExpression and its subtypes do form a simplified OCL abstract syntax tree.
+\paragraph{Variables}
+A TCGVariable can be one of two subtypes either a TCGBasicVariable or a TCGObjectVariable. An object variable is put together by one or more other variables. A basic variable has one of the three variableTypes that can be handled by our approach: Integer, Real, Boolean. A TCGVariable is a place holder for a value. When the isParameter field is true it can only hold one Value throughout the execution of the TCGActivity otherwise it can change its value during each execution of an TCGAction.
 
 \subsection{Transforming UML to ActivityTestCaseGraph}
+The activity test case graph serves as a normalized input model. We use a model to model transformation to transform an Activity from a UML Model into an activity test case graph. 
+
 \subsection{Further Model 2 Model Transformations}
 \subsubsection{Removing logical operations}
 \subsubsection{Handling Structured Activity Nodes}

@@ -10,12 +10,22 @@ solve with cplex up to 100000 Variables possible
 \subsubsection{Non linear convex}
 solvable with every Solver implementing some version of Newton Algorithm on Sparse Matrices like Minos, Knitro or Quadratic programming approaches like in CPLEX.
 \subsubsection{Non Convex}
+\begin{figure}
+\label{fig:pumpTyre}
+\includegraphics[width=\textwidth]{./pics/pumpTyre.pdf}
+\caption{Activity Diagram with non convex mixed integer constraints}
+\end{figure}
 in general undecidable couenne finds solutions sometimes.
 The Example Model here is the Exploding Tyre Model
 \subsubsection{Constraint Programming}
 ILOGCP, Gecode or transformation possible
 \paragraph{Integer arithmetic only} Gecode
 \paragraph{linear mixed Integer arithmetic} IlogCP
+\begin{figure}
+\label{fig:classifyTriangle}
+\includegraphics[width=\textwidth]{./pics/TriangleClassificator.pdf}
+\caption{Activity Diagram with non convex mixed integer constraints}
+\end{figure}
 \paragraph{nonlinear mixed Integer arithmetic}
 really really really problematic. Currently the only way is to transform the Activity Test Case Graph to remove the Logical Operations in favour of parallel or sequential Control Flows with guards. Use COUENNE.
 \subsection{Case Study PAX Model}
@@ -27,5 +37,7 @@ undecidability of nonlinear arithmetic over infite sets and Exponential runtime 
 no structured activity nodes, no invariants, not completely implemented test goal management.
 \subsection{Limitations of used Tools}
 XMI interchange format does not work always LOTS OF BUGS!!!!
+\section{further Ideas}
+There is no good reason for using OCL as the specification language in order to ease the constraint solving prolog could directly be used as language to specify constraints in a UML Model.
 
 

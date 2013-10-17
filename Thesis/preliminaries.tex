@@ -2,30 +2,30 @@
 \section{Mathematical Foundations}
 When modelling we always need ways to express facts in mathematical terms. E.g from physic we know a lot of equations that express the relations between different physical values. We are often modelling in order to derive an answer to some particular question. If we are lucky there exists an algorithm and even a software implementation that can compute the answer to our question. In the following we will introduce a variety of different ways to state problems and shortly mention their implications for solvability.
 \subsection{Constraint Programming}
-In a \emph{constraint satisfaction problem} (CSP) the task is to assign values $v(x_i)$ to a set of variables $X = (x_1, \dots , x_n)$ from a free search space $S=D_1\times \dots \times D_n$ such that all relations $c_1,\dots,c_k$ between the variables hold. We call those relations $c_1,\dots,c_k$ \emph{constraints}. $D_i$ is called the domain of $x_i$. $n$ is the number of variables and $k$ the number of constraints.  Mathematically we can formalise this as shown in equations \ref{CSP}ff. \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
-\begin{eqnarray} 
-\label{CSP}
-c_i \subset S \qquad\forall i \in \left[ 1 \dots k \right]\\
-find: \quad v(x_i) \in D_i \qquad\forall i \in \left[ 1 \dots n \right]| \\
-subject to: \quad (v(x_1),\dots , v(x_n)) \in R_j\qquad\forall j \in \left[1 \dots k\right]
-\end{eqnarray} 
-Any point in $S$ within all constraints is called a \emph{feasible solution}. The set of all feasible solutions is called \emph{feasible set}. The feasible set is the intersection of all constraints. If the feasible set is the empty set we call the problem infeasible. Solving a constraint satisfaction problem means finding one feasible solution. Solving the corresponding decision problem means just to tell whether a solution exists or not. \\
-
-Practically constraints are often specified as boolean terms over a subset of $X$ e.g. $x_1=x_2$ or even just one variable $0\leq x_1 \leq 1$. It is possible to extend any relation between $x_1$ and $x_2$ to a n-ary relation between $x_1,\dots,x_n$ by admitting all possible values for the variables not contained in the term specifying a relation.\\
-Note also that there are in general no restrictions on the domains of the variables and the search space. It could be continuous, discrete, finite and infinite. Well known domains are integer, real, boolean but also city names or all triangles similar to an equilateral triangle could form a domain. In other literature about constraint programming often finite discrete search spaces are assumed. In fact on a computer an unlimited real number is stored in IEEE 754 floating point format, which is a finite discretization of the real numbers. Also the constraints can have arbitrary properties. Even a fractal set would be acceptable as constraint.\\
 \begin{figure}
 \label{fig:CSPExample}
 \includegraphics[width=0.5\textwidth]{./pics/SetIntersection.pdf}
+\caption{Two dimensional search space and three different subsets forming a constraint satisfaction problem}
 \end{figure}
-In figure\ref{fig:CSPExample} we can see a two dimensional continuous search space and 3 sets. One that could be assembled by a union of intersections of halfspaces, another that has an arbitrary shape and the last set consists of discrete points marked by the crosses. Any of the points within the intersection of those three sets would be a solution to the corresponding CSP.
-\\There is no way to handle all possible ways to describe the constraints by one single algorithm. Additionally this general form includes also a lot of problems that are known to be undecidable or just infeasible to compute. Consequently we need to look at several specializations.
+In a \emph{constraint satisfaction problem} (CSP) the task is to assign values $v(x_i)$ to a set of variables $X = (x_1, \dots , x_n)$ from a free search space $S=D_1\times \dots \times D_n$ such that all relations $c_1,\dots,c_k$ between the variables hold. We call those relations $c_1,\dots,c_k$ \emph{constraints}. $D_i$ is called the domain of $x_i$, $n$ is the number of variables and $k$ the number of constraints. Mathematically we can formalise this as shown in equations \ref{CSP}ff. \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
+\begin{eqnarray} 
+\label{CSP}
+c_i \subseteq S \qquad\forall i \in \left[ 1 \dots k \right]\\
+\text{find:} \quad v(x_i) \in D_i \qquad\forall i \in \left[ 1 \dots n \right]| \\
+\text{subject to:} \quad (v(x_1),\dots , v(x_n)) \in c_j\qquad\forall j \in \left[1 \dots k\right]
+\end{eqnarray} 
+Any point in $S$ within all constraints is called a \emph{feasible solution}. The set of all feasible solutions is called \emph{feasible set}. The feasible set is the intersection of all constraints. If the feasible set is the empty set we call the problem infeasible. Solving a constraint satisfaction problem means finding one feasible solution. Solving the corresponding decision problem means just to tell whether a solution exists or not. \\
+Practically constraints are often specified as boolean terms over a subset of $X$ e.g. $x_1=x_2$ or even just one variable e.g. $0\leq x_1 \leq 1$. It is possible to extend any relation between $x_1$ and $x_2$ to a n-ary relation between $x_1,\dots,x_n$. In the extended relation all possible values for the variables not contained in the term specifying a relation are admitted.\\
+Note also that there are in general no restrictions on the domains of the variables and the search space. It could be continuous, discrete, finite and infinite. Well known domains are integer, real, boolean but also city names or all triangles similar to an equilateral triangle could form a domain. In other literature about constraint programming often finite discrete search spaces are assumed \cite{Citation Needed}. In fact on a computer an unlimited real number is stored in IEEE 754 floating point format, which is a finite discretization of the real numbers. Also the constraints can have arbitrary properties. Even a fractal set would be acceptable as constraint.\\
+In figure \ref{fig:CSPExample} we can see a two dimensional continuous search space and three sets. One that could be assembled by a union of intersections of halfspaces, another that has an arbitrary shape and the last set consists of discrete points marked by the crosses. Any of the points within the intersection of those three sets would be a solution to the corresponding CSP.\\
+There is no way to handle all possible ways to describe the constraints by one single algorithm. Additionally this general form includes also a lot of problems that are known to be undecidable or just infeasible to compute. Consequently we need to look at several specializations.
 %A constraint $c_j$ is a pair $<t_j,R_j>$ of a set of variables $t_j$ and a relation $R_j$. $t_j$ is a subset of X and R is defined over those variables.
 
 \subsection{Mathematical Programming}
-A \emph{Mathematical Program} or \emph{Optimization Problem} is a constraint satisfaction problem with a real valued objective function $f:S\mapsto \mathbb{R}$ and its constraints are specified in terms of functions $g_1,\dots,g_k:S\mapsto\mathbb{R}$. We call those functions constraint functions. The search space is $mathbb{R}^n$. The task is to find any feasible point that minimizes the objective function $f$.
+A \emph{Mathematical Program} or \emph{Optimization Problem} is a constraint satisfaction problem with a real valued objective function $f:S\mapsto \mathbb{R}$ and its constraints are specified in terms of functions $g_1,\dots,g_k:S\mapsto\mathbb{R}$. We call those functions constraint functions. The search space is $\mathbb{R}^n$. The task is to find any feasible point that minimizes the objective function $f$.
 \begin{eqnarray}
-minimize: \quad f(X)\\
-subject to: \quad g_i(X)\leq 0 \qquad \forall i\in\left[1,\dots ,k\right] 
+\text{minimize:} \quad f(X)\\
+\text{subject to:} \quad g_i(X)\leq 0 \qquad \forall i\in\left[1,\dots ,k\right] 
 \end{eqnarray}
 \begin{definition}[local optimum]
 A local optimum is a feasible solution that minimizes the objective function within a neighbouring set of feasible solutions.
@@ -33,32 +33,29 @@ A local optimum is a feasible solution that minimizes the objective function wit
 \begin{definition}[global optimum]
 A global optimum is a feasible solution that gives the minimal value for the objective function among all feasible solutions.
 \end{definition}
-In practice often also equations are used or for some constraints, a $\geq$ is used instead of $leq$ or the right hand side is not necessarily $0$ but an arbitrary constant. All those alternative formulations are equivalent to the given formulation.
-For this thesis only linear objective functions are considered. For linear objective functions that are not constant any optimum can be found on the boundaries of the feasible set. That is why we will use the word \emph{boundary value} as an equivalent for local optimum.\\
-This problem formulation still includes a lot of pathological cases, but there are algorithms as well as software implementations that try to solve problems of this kind. Algorithms trying to solve this problem include heuristic search and divide and conquer methods trying to break the problem down in smaller sub problems or they just assume some smoothness of the functions but get stuck when this assumption does not hold. The corresponding decision problem whether a solution exists or not is known to be undecidable for this class of problems consequently there can not be a deterministic algorithm always finding a solution or reporting that the problem is infeasible.
-
+In practice also equations are used as constraints. A $\geq$ can be replaced by $\leq$ or the right hand side is not necessarily $0$ but an arbitrary constant. All those alternative formulations are equivalent to the given formulation.
+In this thesis only linear objective functions are considered. For linear objective functions that are not constant any optimum can be found on the boundaries of the feasible set. That is why we will use the word \emph{boundary value} as an equivalent for local optimum.\\
+This problem formulation still includes a lot of pathological cases, but there are algorithms as well as software implementations that try to solve problems of this kind. Algorithms trying to solve this problem include heuristic search and convex approximation. The corresponding decision problem whether a solution exists or not is known to be undecidable for this class of problems consequently there can not be a deterministic algorithm always finding a solution or reporting that the problem is infeasible.
 \subsection{Convex Optimization}
 While there are no efficient algorithms for all optimization problems there do exist very successful methods for solving convex optimization problems\cite{Boyd04ConOpt}.
 \begin{definition}[convex set]
 A set $C$ in a vector space $S$ is said to be convex if, for all points $x$ and $y$ in $C$ and all $t\in\left[0,1\right]$, the point $(1-t)x+ty$ is in $C$.
 \end{definition}
 \begin{definition}[convex function]
-We call a function f convex $\iff$ for any two values $x$ and $y$ the inequation $ f(\theta x + (1-\theta) y)\leq \theta f(x)+(1-\theta) f(y)$ for $\theta\in \left[0,1\right] $
+We call a function f convex iff for any two values $x$ and $y$ the in-equation $ f(\theta x + (1-\theta) y)\leq \theta f(x)+(1-\theta) f(y)$ for $\theta\in \left[0,1\right] $
 \end{definition}
 A convex optimization problem is a mathematical program with a convex objective function and convex constraint functions. The intersection of convex sets is a convex set itself and the set ${x\in\mathbb{R}^n|g_i(x)\leq 0}$ is a convex set. Consequently the feasible set is also convex. For convex problems every local optimum is a global optimum.\\
-
-convex optimization problems are particularly efficient to solve with iterative descend methods like quasi newton or interior point methods.\\
-
-\subsection{Linear Programmes}
-Within the the class of convex problems there do exist a lot of special cases we will only consider one special case within the convex programs those are linear programs (LP).
+Convex optimization problems are particularly efficient to solve with iterative descend methods like quasi newton or interior point methods.
+\subsection{Linear Programs}
+Within the class of convex problems there are a lot of special cases. We will only consider one special case within the convex programs, those are \emph{linear programs} (LP).
 In linear programs every constraint can be represented as linear inequation and the objective function is an affine function. 
-The canonical form of a linear program consists of a matrix $\mathrm{A}$ and two vectors $\vec{c}$ and $\vec{b}$ such that \ref{linDef} formalizes the LP. The $\leq$ and $\geq$ are evaluated component wise.
+The canonical form of a linear program consists of a matrix $\mathbf{A}$ and two vectors ${c}$ and ${b}$ such that the equations \ref{linDef}f formalize the LP. The $\leq$ is evaluated component wise.
 \begin{eqnarray}
 \label{linDef}
-\text{minimize:}\quad \vec{c}^TX \\
-\text{subject to:}\quad AX\leq\vec{b}
+\text{minimize:}\quad {c}^TX \\
+\text{subject to:}\quad AX\leq{b}
 \end{eqnarray}
-By removing the objective function or setting $\vec{c}=\vec{0}$ the problem is relaxed to a linear constraint satisfaction problem. Formulations containing also equations in the constraints on some components of $X$ can be transformed to an equivalent problem in the canonical form. Also a $\max$ instead of $\min$ and a $\geq$ instead of $\leq$ can be used. In practice we will use many possible formulations.\\
+By removing the objective function or setting ${c}={0}$ the problem is relaxed to a linear constraint satisfaction problem. Formulations containing also equations in the constraints on some components of $X$ can be transformed to an equivalent problem in the canonical form. Also a $\max$ instead of $\min$ and a $\geq$ instead of $\leq$ can be used. In practice we will use many possible formulations.\\
 
 An example for a linear program is given in equations \ref{linExample}f.
 \begin{eqnarray}
@@ -80,7 +77,7 @@ x_1 \\ x_2 \\ x_3
 
 For constraint satisfaction and constrained optimization with linear constraints and objective function usually an implementation of the simplex algorithm\cite{dantzig63Simplex} is used to solve it very efficiently. Although its worst case runtime is exponential the average runtime grows linear with the number of constraints.
 
-\subsection{boolean Satisfiability problems}
+\subsection{Boolean Satisfiability Problems}
 In a classic boolean satisfiability problem (SAT) all variables are within the boolean domain and can take the values $true$ and $false$ or $0$ and $1$ respectively. The constraint relations are expressed by a boolean formula. The variables in a SAT problem are also called literals. The task is to find an assignment to the literals, that makes the formula true. A simple example for a boolean formula is given in \ref{boolFormula}.
 \begin{eqnarray}
 x_1 \land \neg x_2  \lor \neg x_1 \land {x_2}
@@ -97,26 +94,28 @@ The practicality of SMT problem formulations depend on the used background theor
 
 \subsection{Properties of the Search Space}
 \subsubsection{Integer Programming}
-When all variables in a CSP are from a discrete domain such as finite sets or natural numbers we call it an Integer Program IP. most Integer programs are NP-complete famous instances are the discrete logarithm problem or factorization of numbers with only two prime factors. A constraint Satisfaction problem or constrained optimization problem where at least one of the domains $D_i$
-is discrete among other continuous domains is called a mixed integer problem (MIP). While all linear and most convex optimization problems with only continuous domains can be solved in polynomial time, the introduction of variables with discrete domains often makes the problem much more complex. Depending on the rest of the problem formulation we can either have a linear Integer Program (LIP) or a mixed linear Integer program (MILP). We will consider an IP or MIP whose continuous relaxation is a convex problem a convex mixed integer program. The continous relaxation of a mixed inter program is the mathematical program where all discrete
-domains are replaced by corresponding continous domains e.g. the set of integers 
+When all variables in a CSP are from a discrete domain such as finite sets or natural numbers we call it an \emph{integer program} IP. Most integer programs are NP-complete. Famous instances are the discrete logarithm problem or factorization of numbers with only two prime factors. A constraint satisfaction problem or constrained optimization problem where at least one of the domains $D_i$ is discrete among other continuous domains is called a mixed integer problem (MIP). While all linear and most convex optimization problems with only continuous domains can be solved in polynomial time, the introduction of variables with discrete domains often makes the problem much more complex. A linear program with only discrete domains is called \emph{linear integer program} (LIP) and it is a \emph{mixed linear integer program} (MILP) when it has both discrete and continuous domains. We will consider an IP or MIP whose continuous relaxation is a convex problem a \emph{convex mixed integer program}. The continuous relaxation of a mixed inter program is the mathematical program where all discrete
+domains are replaced by corresponding continuous domains e.g. the set 
 $\left\lbrace 1,2,3 \right\rbrace $
  is replaced by the interval 
  $\left[ 1,3 \right] $
  .\\
-An example of an mixed integer convex problem can be given
+An example of an convex mixed integer problem can be given
 \begin{eqnarray}
-minimize x_3 \\
-x_1^2 + x_2^2 - 10.5 + x_3 \leq 0 \\
-x_3 \leq 0\\
-x_1,x_2\in \mathbb{Z} x_3\in \mathbb{R}
+x_1,x_2\in \mathbb{Z} x_3\in \mathbb{R}\\
+\text{minimize:}\quad x_3 \\
+\text{subject to:}\quad x_1^2 + x_2^2 - 10.5 + x_3 \leq 0 \\
+\text{subject to:}\quad x_3 \geq 0
 \end{eqnarray}
 one possible solution to this problem is $x_1=1$ and $x_2=3$ and the optimal value for $x_3$ is $0.5$. Without the constraint $x_1$ and $x_2$ being Integers it would be easy to find assignments for those variables such that $x_3$ is $0$.\\
-Strategies to solve mixed integer program include solving its continuous relaxation and do some sort of backtracking as e.g in branch and bound or branch and cut.
-\subsubsection{Finite search spaces}
-When each domain is a finite set then the search space is also finite. In this case at least theoretically one can always find a solution or deny the existence of a solution after exhaustive search. 
-The class of mathematical programs contains instances whose decision problems are undecidable.
-In general CSPs with infinite domains and nonlinear algebraic constraints are undecidable. There are some heuristic algorithms capable of solving many instances of those problems. There exist problem instances for which algorithms tend to run forever. One option to break such problems down is to reduce the search space to a finite discrete set of possible values. This excludes the largest portion of the search space but makes the problem handleable. This technique is called bounded model checking. It is suitable to find a solution if there is one but if it does not find a solution it is not a guarantee that the original problem does not have a solution.
+Strategies to solve mixed integer programmes include solving its continuous relaxation and do some sort of backtracking as e.g in branch and bound or branch and cut.
+\subsubsection{Finite Search Spaces}
+When each domain is a finite set then the search space is also finite. In this case at least theoretically one can always find a solution or deny the existence of a solution after exhaustive search. In practice it can still happen that the search space is finite but too large for exhaustive search.\\
+%The class of mathematical programs contains instances whose decision problems are undecidable.
+%In general CSPs with infinite domains and nonlinear algebraic constraints are undecidable. 
+%There are some heuristic algorithms capable of solving many instances of those problems. There exist problem instances for which algorithms tend to run forever. 
+One option to break down problems with continuous or infinite search space is reducing its search space to a finite discrete set of possible values. This excludes the largest portion of the search space but makes the problem handleable with existing constraint programming systems. This technique is called \emph{bounded model checking}. This concept matches pretty well with the fact that a computer can only encode finite sets. It is suitable to find a solution if there is one but if it does not find a solution it is not a guarantee that the original problem does not have a solution.\\
+Finite constraint programs are usually solved by reducing the domains of variables by constraint propagation and backtracking. Examples for working constraint programming systems are B-Prolog and SWI-Prolog\cite{citation needed}. A famous bounded Model Checker is SMV\cite{citation needed}. 
 
 
 \input{uml.tex}
