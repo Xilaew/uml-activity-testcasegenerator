@@ -115,11 +115,12 @@ When each domain is a finite set then the search space is also finite. In this c
 %In general CSPs with infinite domains and nonlinear algebraic constraints are undecidable. 
 %There are some heuristic algorithms capable of solving many instances of those problems. There exist problem instances for which algorithms tend to run forever. 
 One option to break down problems with continuous or infinite search space is reducing its search space to a finite discrete set of possible values. This excludes the largest portion of the search space but makes the problem handleable with existing constraint programming systems. This technique is called \emph{bounded model checking}. This concept matches pretty well with the fact that a computer can only encode finite sets. It is suitable to find a solution if there is one but if it does not find a solution it is not a guarantee that the original problem does not have a solution.\\
-Finite constraint programs are usually solved by reducing the domains of variables by constraint propagation and backtracking. Examples for working constraint programming systems are B-Prolog and SWI-Prolog\cite{citation needed}. A famous bounded Model Checker is SMV\cite{citation needed}. 
+Finite constraint programs are usually solved by reducing the domains of variables by constraint propagation and backtracking. Examples for working constraint programming systems are B-Prolog and SWI-Prolog\cite{citation needed}. A well known bounded model checker is SMV\cite{citation needed}. 
 
 
 \input{uml.tex}
 
+\section{Coverage Criteria}
 \section{taxonomy of Model Based Testing}
 Test Model,
 Unit Test,
@@ -131,7 +132,9 @@ declarative specification
 
 \section{Preliminary Work}
 \subsection{executing OCL}
-A lot of research in the area of OCL and executing UML/OCL specifications has been performed by Matthias P. Krieger\cite{krieger2008executing}. Also Alloy and Dresden OCL or Eclipse OCL are projects that aim at executing and evaluating OCL specifications. But solving OCL constraints as a CSP is only one part of generating test data from a UML Behaviour.
+A lot of research in the area of OCL and executing UML/OCL specifications has been performed by Matthias P. Krieger\cite{krieger2008executing}. Also Alloy and Dresden OCL or Eclipse OCL are projects that aim at executing and evaluating OCL specifications. 
+\\
+But solving OCL constraints as a CSP is only one part of generating test data from a UML Behaviour.
 It is very common to use statemachines as the testmodel less papers are handling the generation of unit tests from UML Activities\cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod}
 \cite{Patel12TestCaseFormationUsigUMLActivityDiagram}
 \cite{Pechtanun12GeneratingTestCaseFromUMLActivityDiagramBasedOnACGrammar}

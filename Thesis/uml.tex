@@ -1,5 +1,5 @@
 \section{UML}
-The Unified Modelling Language (UML \texttrademark ) is a graphical modelling language defining 13 different diagrams that can be used to describe the architecture, behaviour and interaction of a software systems. Modelling Elements of the UML are defined via the Meta Object Facility (MOF). Any Diagram is internally stored in a Machine readable fashion; this makes it suitable for more than just documentation purpose. With precise modelling a UML Model can also be executed or otherwise automatically analysed. In our case we want to use it to derive necessary test code for C-functions from their corresponding UML Activity Model. \\ We are using only a verry small subset of the complete UML here for this thesis. The figure \ref{relevantUMLClassDiagram} shows an overview of all relevant UML modelling elements and their associations in a UML class diagram. We need to understand those elements and their relationships with each other.
+The Unified Modelling Language (UML \texttrademark ) is a graphical modelling language defining 13 different diagrams that can be used to describe the architecture, behaviour and interaction of a software systems. Modelling Elements of the UML are defined via the Meta Object Facility (MOF). Any Diagram is internally stored in a Machine readable fashion; this makes it suitable for more than just documentation purpose. With precise modelling a UML Model can also be executed or otherwise automatically analysed. In our case we want to use it to derive necessary test code for C-functions from their corresponding UML Activity Model. \\ We are using only a small subset of the complete UML here for this thesis. The figure \ref{relevantUMLClassDiagram} shows an overview of the most relevant UML modelling elements and their associations in a UML class diagram. We need to understand those elements and their relationships with each other. In the next chapters whenever referring to an element of the UML it will be printed in a special font such as \UMLType{Class}. When we refer to a reference element in UML we will put it into another special font for Example: \UMLReference{ownedOperations}.
 \begin{figure}\label{relevantUMLClassDiagram}
 \includegraphics[width=\textwidth]{./pics/relevantUML.pdf}
 \caption{Class Diagram of UML Elements used for Modelling}
@@ -43,30 +43,42 @@ type and multiplicity of this parameter is the same as the type and multiplicity
 \end{quotation}
 
 \subsubsection{Constraint}
-
+\label{sec:Constraint}
+Constraints and operation contracts are modelled in UML via the modelling element \UMLType{Constraint}.
 \begin{quotation}
 A constraint is a condition or restriction expressed in natural language text or in a machine readable language for the
-purpose of declaring some of the semantics of an element.
-\\
-Constraint contains a ValueSpecification that specifies additional semantics for one or more elements. 
-%Certain kinds of
-%constraints (such as an association “xor” constraint) are predefined in UML, others may be user-defined. 
-... A user-defined
-Constraint is described using a specified language, whose syntax and interpretation is a tool responsibility. One
-predefined language for writing constraints is OCL. 
-%In some situations, a programming language such as Java may be
-%appropriate for expressing a constraint. In other situations natural language may be used.
-Constraint is a condition (a Boolean expression) that restricts the extension of the associated element beyond what is
-imposed by the other language constructs applied to that element.\\
+purpose of declaring some of the semantics of an element.\cite{UML23Superstructure} § 7.3.10
+\end{quotation}
+We exclusively consider \UMLType{Constraints} containing a textual OCL expression. How textual OCL expressions are embedded inside of a \UMLType{Constraint} is depending on the tool that is used for editing the model and modelling conventions applied by the modeller. In order not to be to restrictive we will support as many variants as possible.\\ The \UMLReference{specification} of a \UMLType{Constraint} can contain a \UMLType{LiteralString} or an \UMLType{OpaqueExpression}. How those Elements can contain textual OCL Expressions will be explained in the next two paragraphs. The OCL Language will be explained in the section \ref{sec:OCL}.
+\paragraph{LiteralString}
+One way to represent textual OCL in a UML Model is the model element \UMLType{LiteralString}. A \UMLType{LiteralString} contains an arbitrary string in its \UMLReference{value} attribute. Depending on the modelling convention this arbitrary string can be textual OCL.
+\paragraph{OpaqueExpression}The more sophisticated way to embed textual OCL is the model element \UMLType{OpaqueExpression}. An \UMLType{OpaqueExpression} has a \UMLReference{body} and a \UMLReference{language} attribute. \UMLReference{Body} and \UMLReference{language} are multivalued string attributes. It is tool dependent how textual OCL is placed inside an \UMLType{OpaqueExpression}.\\One UML modelling tool for the Eclipse integrated development platform is Papyrus. Papyrus requires the user to put one value into the multivalued \UMLReference{language} attribute for each value specified for the multivalued \UMLReference{body}. So when the $n$-th \UMLReference{language} value is "OCL" then the $n$-th \UMLReference{body} will be a textual OCL expression.\\
+The commercial tool Artisan Studio\textregistered from Atego\texttrademark will split the user supplied text for a \UMLType{Constraint} after each white-space. Each of those substrings separated by white spaces is represented as a \UMLReference{body} value of an \UMLType{OpaqueExpression}. The \UMLReference{language} attribute will be left empty.
 
-A Constraint represents additional semantic information attached to the constrained elements. A constraint is an assertion
-that indicates a restriction that must be satisfied by a correct design of the system. The constrained elements are those
-elements required to evaluate the constraint specification. In addition, the context of the Constraint may be accessed, and
-may be used as the namespace for interpreting names used in the specification. For example, in OCL ‘self’ is used to refer
-to the context element.
-\\
-The owner of the Constraint will determine when the constraint specification is evaluated. For example, this allows an
-Operation to specify if a Constraint represents a precondition or a postcondition.\cite{UML23Superstructure}\end{quotation}
+
+%\begin{quotation}
+%A constraint is a condition or restriction expressed in natural language text or in a machine readable language for the
+%purpose of declaring some of the semantics of an element.
+%\\
+%Constraint contains a ValueSpecification that specifies additional semantics for one or more elements. 
+%%Certain kinds of
+%%constraints (such as an association “xor” constraint) are predefined in UML, others may be user-defined. 
+%... A user-defined
+%Constraint is described using a specified language, whose syntax and interpretation is a tool responsibility. One
+%predefined language for writing constraints is OCL. 
+%%In some situations, a programming language such as Java may be
+%%appropriate for expressing a constraint. In other situations natural language may be used.
+%Constraint is a condition (a Boolean expression) that restricts the extension of the associated element beyond what is
+%imposed by the other language constructs applied to that element.\\
+%
+%A Constraint represents additional semantic information attached to the constrained elements. A constraint is an assertion
+%that indicates a restriction that must be satisfied by a correct design of the system. The constrained elements are those
+%elements required to evaluate the constraint specification. In addition, the context of the Constraint may be accessed, and
+%may be used as the namespace for interpreting names used in the specification. For example, in OCL ‘self’ is used to refer
+%to the context element.
+%\\
+%The owner of the Constraint will determine when the constraint specification is evaluated. For example, this allows an
+%Operation to specify if a Constraint represents a precondition or a postcondition.\cite{UML23Superstructure}\end{quotation}
 
 \subsection{Behavioral Modelling}
 \subsubsection{Activities}
@@ -90,8 +102,8 @@ classes. Activities may be applied to organizational modeling for business proce
 context, events often originate from inside the system, such as the finishing of a task, but also from outside the system,
 such as a customer call. Activities can also be used for information system modeling to specify system level processes.
 Activities may contain actions of various kinds:
-• Occurrences of primitive functions, such as arithmetic functions.
-• Invocations of behavior, such as activities.
+ Occurrences of primitive functions, such as arithmetic functions.
+ Invocations of behavior, such as activities.
 • Communication actions, such as sending of signals.
 • Manipulations of objects, such as reading or writing attributes or associations.
 324
@@ -394,3 +406,4 @@ Figure 12.96 - Initial node notation
 \includegraphics[scale=1]{./pics/local_postconditionsDiagram.PNG}
 \end{figure}
 \subsection{OCL}
+\label{sec:OCL}
