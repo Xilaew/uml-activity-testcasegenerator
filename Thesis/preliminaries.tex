@@ -1,25 +1,27 @@
 \chapter{Theoretical Foundations}
+Throughout this thesis we will devolop a complicated algorithm. We will relay on existing technology and knowledge throughout the third and the fourth chapter. Thus in this chapter we are going to present a minimal mindset that is helpfull to understand the presented algorithm and reproduce our argumentation. The first thing we need is a little background knowledge on the computability of mathematical problems and the algorithms that are applied to the considered problems. The second technology we need prior knowledge about is the \textbf{U}nified \textbf{M}odelling \textbf{L}anguage (UML) and the \textbf{O}bject \textbf{C}onstraint \textbf{L}anguage, since those are the input languages for the presented algorithm. \textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage (AMPL) is used throughout the presented algorithm thus we will explain the basic concepts of AMPL in this chapter. Further it is also necessary to shortly elaborate on the taxonomy in the field of Model--Based Testing to avoid confusions. Finally, we will present in the section \nameref{sec:RelatedWork} what others did in order to solve similar problems as the one we are going to solve.
 \label{chap:preliminaries}
 \section{Mathematical Foundations}
 \label{sec:Maths}
 \begin{figure}
 \label{fig:problemLatice}
 \includegraphics[width=\textwidth]{./pics/ProblemLatice.pdf}
-\caption{Generalization and specialisation dependencies between different problems}
+\caption{Generalisation and specialisation dependencies between different problems}
 \end{figure}
-When modelling we always need ways to express facts in mathematical terms. E.g from physic we know equations that express the relations between different physical values. We are often modelling in order to derive an answer to some particular question. If we are lucky there exists an algorithm and even a software implementation that can compute the answer to our question. In section \ref{sec:atcg2Ampl} we will transform an activity into a mathematical program. Depending on the input model the resulting program will be an instance of one of the problems presented in this section. Currently existing solvers are always specialized on a few problems. When selecting a solver to use with a model one needs to understand of which problem this model is an instance.\\
-For some problems like the linear program (\ref{sec:MathLinearProgram}) there exist polynomial time algorithms that can solve every instance of that problem. An algorithm with polynomial worst case runtime is considered a \emph{feasible} algorithm. For other problems there can be instances that are NP-complete for example the boolean satisfiability (SAT) presented in section \ref{sec:MathBooleanSat}. Consequently an algorithm solving all instances of an NP-complete problem is \emph{infeasible}. We consider an algorithm feasible when its worst case runtime is polynomial and infeasible when its worst case runtime is exponential.\\
-Not every problem presented here will be \emph{decidable}. When a problem is \emph{undecidable} that means there can never be an algorithm solving all instances of this problem. Still there exist heuristic algorithms that are trying to handle undecidable problems, but they may find a solution if they are lucky, or just terminate without finding a solution although one exists, or they might run forever, or even just return a wrong solution. Those heuristics may be feasible or infeasible.\\
-One needs to understand those two properties in order to know what one can expect from a solver when trying to solve an instance of a problem. If the used algorithm is feasible, we know that we can expect an answer from the used algorithm even for large problems after a moderate amount of time. For infeasible algorithms the runtime for larger problem instances might grow exponentially.\\
-When the problem is decidable we can assume that the used solver is exact and will only tell that the problem has no solution if there really is no solution, and if it returns a solution we assume it is correct. For instances of undecidable problems an algorithm telling that there is no solution just means, that this particular search was not lucky, and potentially returned solutions might not be correct solutions. If a heuristic was not lucky one could start again with different parameters for the search algorithm as for example another starting point, or use another solver and algorithm. In practice one will run a mathematical search until a certain time limit is up or one is no more interested in the solution.\\
-In the following we will introduce a variety of different problems and shortly mention their implications for solvability. In figure \ref{fig:problemLatice} we see an overview of the problems and visualized which problems are generalizations or specialisations of each other. An arrow from A to B means that B is a generalization of A. In green are those problems that are decidable and have at least one feasible algorithm solving all instances. Those are the nice problems in practice.
+%When modelling we always need ways to express facts in mathematical terms. E.g from physic we know equations that express the relations between different physical values. 
+We are often modelling in order to derive an answer to some particular question. If we are lucky there exists an algorithm and even a software implementation that can compute the answer to our question. A major task in this thesis is to transform an activity diagram to a mathematical program, that is, a constraint satisfaction problem, and to apply a constraint solver. Currently existing solvers are always specialized on a few problems. When selecting a solver one needs to understand of which problem this model is an instance. Depending on the input model the resulting mathematical program will be an instance of one of the problems presented in this section.\\
+For some problems like the linear program (\ref{sec:MathLinearProgram}) there exist polynomial time algorithms. An algorithm with polynomial worst case runtime is considered a \emph{tractable} algorithm. For other problems there can be instances that are NP-complete for example the boolean satisfiability (SAT) presented in section \ref{sec:MathBooleanSat}. Any algorithm solving an NP--complete problem will be \emph{intractable}. We consider an algorithm tractable when its worst case runtime is polynomial and intractable when its worst case runtime is exponential.\\
+Not every problem presented here will be \emph{decidable}. When a problem is \emph{undecidable} that means there can never be an algorithm solving all instances of this problem. Still there exist heuristic algorithms that try to handle undecidable problems. They may find a solution if they are lucky, or just terminate without finding a solution although one exists, or they might run forever, or even just return a wrong answer. Those heuristics may be tractable or intractable.\\
+One needs to understand those two properties, tractability and decidability, in order to know what one can expect from a solver when trying to solve an instance of a problem. If the used algorithm is tractable, we know that we can expect an answer even for large problems after a moderate amount of time. For intractable algorithms the runtime might grow exponentially and thus make it practically infeasible to compute an answer to the problem.\\
+When the problem is decidable we can assume that the used solver is exact and will tell that the problem has no solution only if there really is no solution, if it returns a solution we assume it is correct. For instances of undecidable problems a heuristic telling that there is no solution just means, that this particular search was not lucky, and potentially returned answers might not be correct solutions of the given problem. If a heuristic was not lucky and did not find any potetial solution one could start again with different parameters for the search algorithm, for example, another starting point, or could use another solver. Typically we are asking for an optimal solution and a heuristic will either find the true optimum, or return a good and practically usefull but sub optimal and thus incorrect answer, or it reports that no possible answer could be found. In practice one will run a mathematical search until a certain time limit is up.\\
+In the following we will introduce those constraint satisfaction problems that we think are relevant to generate test data from activity diagrams in practice. We will shortly mention their implications for solvability. In Figure \ref{fig:problemLatice} we give an overview of the problems and visualize which problems are generalizations or specialisations of each other. An arrow from A to B means that B is a generalization of A. In green are those problems that are decidable and have at least one tractable algorithm. Those are the easy--to--solve--problems in practice. All the other problems listet are challenging.
 \subsection{Constraint Programming}
 \begin{figure}
 \label{fig:CSPExample}
 \includegraphics[width=0.5\textwidth]{./pics/SetIntersection.pdf}
 \caption{Two dimensional search space and three different subsets forming a constraint satisfaction problem}
 \end{figure}
-In a \emph{constraint satisfaction problem} (CSP) the task is to assign values $v(x_i)$ to a set of variables $X = (x_1, \dots , x_n)$ from a free search space $S=D_1\times \dots \times D_n$ such that all relations $c_1,\dots,c_k$ between the variables hold. We call those relations $c_1,\dots,c_k$ \emph{constraints}. $D_i$ is called the domain of $x_i$, $n$ is the number of variables, and $k$ the number of constraints. Mathematically we can formalise a constraint satisfaction problem as shown in equations (\ref{CSP})-(\ref{CSPEnd}). \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
+In a \emph{constraint satisfaction problem} (CSP) the task is to assign values $v(x_i)$ to a set of variables $X = (x_1, \dots , x_n)$ from a space $S=D_1\times \dots \times D_n$ such that all relations $c_1,\dots,c_k$ between the variables hold. We call those relations $c_1,\dots,c_k$ \emph{constraints}. $D_i$ is called the domain of $x_i$, $n$ is the number of variables, and $k$ the number of constraints. We can formalise a constraint satisfaction problem as shown in equations (\ref{CSP})--(\ref{CSPEnd}) \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
 \begin{eqnarray} 
 \label{CSP}
 c_i \subseteq S \qquad\forall i \in \left[ 1 \dots k \right]\\
@@ -28,10 +30,10 @@ c_i \subseteq S \qquad\forall i \in \left[ 1 \dots k \right]\\
 \text{subject to:} \quad (v(x_1),\dots , v(x_n)) \in c_j\qquad\forall j \in \left[1 \dots k\right]
 \end{eqnarray} 
 Any point in $S$ fulfilling all constraints is called a \emph{feasible solution}. The set of all feasible solutions is called the \emph{feasible set}. The feasible set is the intersection of all constraints. If the feasible set is the empty set we call the problem infeasible. Solving a constraint satisfaction problem means finding one feasible solution.\\
-Practically, constraints are often specified as boolean terms over a subset of $X$. For example $x_1=x_2$ specifies a constraint. A constraint can also be specified by only one variable as in $0\leq x_1 \leq 1$. It is possible to extend any relation between $x_1$ and $x_2$ to a n-ary relation between $x_1,\dots,x_n$. In the extended relation all possible values for the variables not contained in the term specifying a relation are admitted.\\
+Practically, constraints are often specified as boolean terms over a subset of $X$. For example $x_1=x_2$ specifies a constraint. A constraint can also be specified by only one variable as in $0\leq x_1 \leq 1$. It is possible to extend any relation between $x_1$ and $x_2$ to a n-ary relation between $x_1,\dots,x_n$. In the extended relation all possible values are permitted for the variables not contained in the term.\\
 In general, there are no restrictions on the domains of the variables and the search space. It could be continuous, discrete, finite and infinite. Well known domains are integer, real, boolean but city names or all triangles similar to an equilateral triangle could also form a domain. Also the constraints can have arbitrary properties. Even a fractal set would be acceptable as constraint. In literature about constraint programming often finite discrete search spaces are assumed \cite{Citation Needed}. In fact, on a computer, a real number is stored in IEEE 754 floating point format, which is a finite discretization of the real numbers. \\
 In figure \ref{fig:CSPExample} we can see a two-dimensional continuous search space and three sets. One that could be assembled by a union of intersections of halfspaces, another that has an arbitrary shape, and the last set that consists of discrete points marked by the crosses. Any of the points within the intersection of those three sets is a solution to the corresponding CSP.\\
-The CSP is undecidable and there do only exist heuristics for some special cases. It is an utopical wish to have a solver implementation that handles all instances of the CSP. Consequently we need to reduce our expectations a bit and define specializations of the CSP for which algorithms exist, that have in average a polynomial runtime. It is not necessary that the algorithms are feasible. A solver is still useful in practice if the worst case runtime is exponential but only for some specially crafted problem instances the worst case happens. Also in practice we will not restrict our selves to problems that are decidable, since even for undecidable problems we can build heuristics that by chance can find useful solutions to a given problem instance.
+The CSP is undecidable and there do only exist heuristics for some special cases. It is an utopical wish to have a solver implementation that handles all instances of the CSP. Consequently we need to reduce our expectations a bit and define specializations of the CSP for which algorithms exist, that have in average a polynomial runtime. It is not necessary that the algorithms are tractable. A solver is still useful in practice if the worst case runtime is exponential but only for some specially crafted problem instances the worst case happens. Also in practice we will not restrict our selves to problems that are decidable, since even for undecidable problems we can build heuristics that by chance can find useful solutions to a given problem instance.
 %There is no way to handle all possible ways to describe the constraints by one single algorithm. Additionally this general form includes also a lot of problems that are known to be undecidable or just infeasible to compute. Consequently we need to look at several specializations. //BULLSHITT!!!!
 %A constraint $c_j$ is a pair $<t_j,R_j>$ of a set of variables $t_j$ and a relation $R_j$. $t_j$ is a subset of X and R is defined over those variables.
 
@@ -101,7 +103,7 @@ In a classic boolean satisfiability problem (SAT) all variables are within the b
 x_1 \land \neg x_2  \lor \neg x_1 \land {x_2}
 \label{boolFormula}
 \end{eqnarray}
-Any boolean formula can be normalized to a conjunction of disjunctive clauses the so called \emph{conjunctive normal form} (CNF). The boolean satisfiability problem is decidable, but belongs to the class of NP-complete problems. Thus algorithms solving this problem are infeasible. Of course there are specialisations of the SAT problem for which a solution can be computed in polynomial time for example the 2-SAT where each disjunctive clause in the CNF consists of at most 2 literals. \\
+Any boolean formula can be normalized to a conjunction of disjunctive clauses the so called \emph{conjunctive normal form} (CNF). The boolean satisfiability problem is decidable, but belongs to the class of NP-complete problems. Thus algorithms solving this problem are intractable. Of course there are specialisations of the SAT problem for which a solution can be computed in polynomial time for example the 2-SAT where each disjunctive clause in the CNF consists of at most 2 literals. \\
 An important generalisation of the SAT problem is the \emph{satisfiability modulo theories} (SMT) problem. Here instead of literals also sentences can appear that evaluate to true or false in some other theory. Common background theories used for SMT are the free theory, linear arithmetic or the theory of bit vectors. In the equations (\ref{eqn:SMTExample})-(\ref{eqn:SMTExampleEnd}) we see an example formula containing propositions in linear arithmetic, integer arithmetic, and one boolean literal.
 \begin{eqnarray}
 \label{eqn:SMTExample}
@@ -140,10 +142,13 @@ When each domain is a finite set then the search space is also finite. We consid
 Finite constraint programs can be solved by reducing the domains of variables by constraint propagation, and local consistency checks, and backtracking \cite{ConstraintPropagation}. Constraint propagation is a kind of logical inference and based on rules for reasoning. For example from the two constraints $x\leq 5$ and $y \leq x$ one can conclude that $y\leq 5$, thus the domain of y has been reduced. Examples for working constraint programming systems are B-Prolog and SWI-Prolog \cite{citation needed}. %A well known bounded model checker is SMV \cite{citation needed}. 
 A different approach is stating the problem as an integer program and solving it with a combination of branch and bound and cutting planes algorithm.
 
-%\input{uml.tex}
+\input{uml.tex}
+\section{The AMPL Modelling System}
+\label{sec:AMPL}
+\cite{AMPL}
 
 \section{Coverage Criteria}
-\section{taxonomy of Model Based Testing}
+\section{Taxonomy of Model Based Testing}
 Test Model,
 Unit Test,
 verdict,
@@ -154,7 +159,7 @@ declarative specification
 
 \section{Preliminary Work}
 \label{sec:RelatedWork}
-\subsection{executing OCL}
+\subsection{Executing OCL}
 A lot of research in the area of OCL and executing UML/OCL specifications has been performed by Matthias P. Krieger \cite{krieger2008executingUnderspecifiedOCL}. Also Alloy and Dresden OCL or Eclipse OCL are projects that aim at executing and evaluating OCL specifications. 
 \\
 But solving OCL constraints as a CSP is only one part of generating test data from a UML Behaviour.
@@ -165,6 +170,7 @@ It is very common to use statemachines as the testmodel less papers are handling
 
 
 \subsection{Coverage Criteria}
+
 
 
 \subsection{Generating Unit Tests}
@@ -178,6 +184,3 @@ The only tool direktly targeted at generating Unit Tests form A UML specificatio
 
 tell about other test generating tools (commercial, published in Papers) and ParTeG as the only one where the source code is available.\cite{ParTeG}
 
-\section{The AMPL Modelling System}
-\label{sec:AMPL}
-\cite{AMPL}
