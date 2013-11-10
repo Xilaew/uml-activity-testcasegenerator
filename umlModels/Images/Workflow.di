@@ -4,12 +4,15 @@
     <availablePage>
       <emfPageIdentifier href="Workflow.notation#_wObZUPNvEeK6iMIFjUA6jQ"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="Workflow.notation#_ThJ4MEjEEeOCDLdl6pESxw"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="Workflow.notation#_wObZUPNvEeK6iMIFjUA6jQ"/>
+          <emfPageIdentifier href="Workflow.notation#_ThJ4MEjEEeOCDLdl6pESxw"/>
         </children>
       </children>
     </windows>

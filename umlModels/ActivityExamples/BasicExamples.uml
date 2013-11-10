@@ -16,6 +16,7 @@
         </specification>
       </ownedRule>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_02d2fb85-4294-44cb-a4ff-aaff3731fe83" name="x" visibility="public" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6vvKwEIlEeOTmfIU7iF-UA" name="y" visibility="public" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_20448964-8165-41bb-bbd3-58cbbabe7d5d" name="simpleDecision" isReentrant="false" specification="_88800fff-8f52-4529-9bed-ec819f29005fop">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_46b07cdc-cf4a-4629-92cd-ffb555b9ae27" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_20448964-8165-41bb-bbd3-58cbbabe7d5dreturn" name="result" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return"/>
@@ -153,6 +154,40 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </node>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_w3esMEIlEeOTmfIU7iF-UA" name="simpleDecision_1" isReentrant="false" specification="_fYA5wEInEeOK28aYEUTBcQ" node="_w3esPEIlEeOTmfIU7iF-UA _w3esPUIlEeOTmfIU7iF-UA _w3esPkIlEeOTmfIU7iF-UA _w3esQkIlEeOTmfIU7iF-UA _w3esRUIlEeOTmfIU7iF-UA _w3esRkIlEeOTmfIU7iF-UA">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esM0IlEeOTmfIU7iF-UA" name="_then" source="_w3esPUIlEeOTmfIU7iF-UA" target="_w3esQkIlEeOTmfIU7iF-UA">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_w3esNEIlEeOTmfIU7iF-UA" name="">
+            <language>OCL</language>
+            <body>x&lt;=5</body>
+          </guard>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esNUIlEeOTmfIU7iF-UA" name="merge2final" source="_w3esRUIlEeOTmfIU7iF-UA" target="_w3esRkIlEeOTmfIU7iF-UA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esN0IlEeOTmfIU7iF-UA" name="returntrue2merge" source="_w3esPkIlEeOTmfIU7iF-UA" target="_w3esRUIlEeOTmfIU7iF-UA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esOEIlEeOTmfIU7iF-UA" name="returnfalse2merge" source="_w3esQkIlEeOTmfIU7iF-UA" target="_w3esRUIlEeOTmfIU7iF-UA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esOUIlEeOTmfIU7iF-UA" name="start2decision" source="_w3esPEIlEeOTmfIU7iF-UA" target="_w3esPUIlEeOTmfIU7iF-UA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_w3esOkIlEeOTmfIU7iF-UA" name="_else" source="_w3esPUIlEeOTmfIU7iF-UA" target="_w3esPkIlEeOTmfIU7iF-UA">
+          <guard xmi:type="uml:OpaqueExpression" xmi:id="_w3esO0IlEeOTmfIU7iF-UA" language="">
+            <body>x>=6</body>
+          </guard>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_w3esPEIlEeOTmfIU7iF-UA" name="Start" visibility="public" outgoing="_w3esOUIlEeOTmfIU7iF-UA"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_w3esPUIlEeOTmfIU7iF-UA" name="decision" visibility="public" outgoing="_w3esM0IlEeOTmfIU7iF-UA _w3esOkIlEeOTmfIU7iF-UA" incoming="_w3esOUIlEeOTmfIU7iF-UA"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_w3esPkIlEeOTmfIU7iF-UA" name="else_Action" visibility="public" outgoing="_w3esN0IlEeOTmfIU7iF-UA" incoming="_w3esOkIlEeOTmfIU7iF-UA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_w3esP0IlEeOTmfIU7iF-UA" annotatedElement="_w3esPkIlEeOTmfIU7iF-UA">
+            <body>blablabla</body>
+          </ownedComment>
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_w3esQEIlEeOTmfIU7iF-UA" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_w3esQUIlEeOTmfIU7iF-UA" value="y=x@pre-100"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_w3esQkIlEeOTmfIU7iF-UA" name="then_Action" visibility="public" outgoing="_w3esOEIlEeOTmfIU7iF-UA" incoming="_w3esM0IlEeOTmfIU7iF-UA">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_w3esQ0IlEeOTmfIU7iF-UA" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_w3esREIlEeOTmfIU7iF-UA" value="y=x@pre"/>
+          </localPostcondition>
+        </node>
+        <node xmi:type="uml:MergeNode" xmi:id="_w3esRUIlEeOTmfIU7iF-UA" name="Merge" visibility="public" outgoing="_w3esNUIlEeOTmfIU7iF-UA" incoming="_w3esN0IlEeOTmfIU7iF-UA _w3esOEIlEeOTmfIU7iF-UA"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_w3esRkIlEeOTmfIU7iF-UA" name="Final" visibility="public" incoming="_w3esNUIlEeOTmfIU7iF-UA"/>
+      </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_88800fff-8f52-4529-9bed-ec819f29005fop" name="simpleDecision" visibility="public" method="_20448964-8165-41bb-bbd3-58cbbabe7d5d _bf91084e-921c-4b36-986e-ed761ece9f55">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7b9134fc-fc09-4445-8e2c-b80e8460d000" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_wdVjAO4UEeKhs5T3phCz4g" name="result" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return" effect="create"/>
@@ -162,6 +197,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_939a0c52-a909-48dc-af5f-a6aaf47f2747" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fuc40ADwEeO2NIcdi9-HYg" name="y" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fYA5wEInEeOK28aYEUTBcQ" name="simpleDecision_1" visibility="public" method="_w3esMEIlEeOTmfIU7iF-UA"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_1568a18f-acdd-43b8-9c13-cc8ac3b87632" name="Party">
