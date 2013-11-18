@@ -68,6 +68,10 @@ public class ActTCGPropertyDialog extends Dialog {
      * Input text widget.
      */
     private Text solver_name;
+    
+    private Label solver_label;
+    private Label max_depth_paths_label;
+    private Label max_no_paths_label;
 
     /**
      * Error message label widget.

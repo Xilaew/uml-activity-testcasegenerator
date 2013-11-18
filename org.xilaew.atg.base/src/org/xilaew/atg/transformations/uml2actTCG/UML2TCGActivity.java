@@ -356,7 +356,11 @@ public class UML2TCGActivity {
 	 * @return
 	 */
 	protected AbstractTCGNode handleAction(Action umlAction, TCGAction tcgAction) {
-		tcgAction.setName(umlAction.getQualifiedName());
+		String name = umlAction.getQualifiedName().replace("\\s", "_").trim().concat(randomString());
+		if (name == null) {
+			name = randomString() + "Action";
+		}
+		tcgAction.setName(name);
 		for (Constraint umlConstraint : umlAction.getLocalPostconditions()) {
 			TCGOCLExpression tcgOCLExp = (TCGOCLExpression) transformElement(umlConstraint);
 			if (tcgOCLExp != null) {

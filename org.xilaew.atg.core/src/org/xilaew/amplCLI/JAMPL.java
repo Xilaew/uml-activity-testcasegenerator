@@ -85,14 +85,8 @@ public class JAMPL {
 		SolveResult result = null;
 		Pattern pattern = Pattern.compile("solve_result\\s*=\\s*(.*)");
 		while (result == null) {
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			line = cli.readLine();
-			System.out.println(line);
+			//System.out.println(line);
 			if (line != null) {
 				Matcher matcher = pattern.matcher(line);
 				if (matcher.matches()) {
@@ -131,7 +125,7 @@ public class JAMPL {
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m = p.matcher(line);
-			System.out.println(line);
+			//System.out.println(line);
 			if (m.matches()) {
 				result = Double.parseDouble(m.group(2));
 			}
@@ -149,7 +143,7 @@ public class JAMPL {
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m1 = p1.matcher(line);
-			System.out.println(line);
+			//System.out.println(line);
 			if (m1.matches()) {
 				// Read complete trace of the Variable
 				Pattern p2 = Pattern
@@ -158,7 +152,7 @@ public class JAMPL {
 				while (reading) {
 					line = cli.readLine();
 					Matcher m = p2.matcher(line);
-					System.out.println(line);
+					//System.out.println(line);
 					reading = false;
 					while (m.find()) {
 						map.put(Integer.decode(m.group(1)),

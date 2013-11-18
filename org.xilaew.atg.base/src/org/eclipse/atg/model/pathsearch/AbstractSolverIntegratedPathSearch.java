@@ -29,6 +29,7 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 	String solver = DEFAULT_SOLVER;
 	int maxDepth = -1;
 	int maxNoPaths = -1;
+	int uncheckedSteps = 1;
 	
 	
 
@@ -47,6 +48,11 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 			solver = p.getProperty(PROPERTY_SOLVER);
 		} catch (Exception e) {
 			solver = DEFAULT_SOLVER;
+		}		
+		try {
+			uncheckedSteps = Integer.parseInt(p.getProperty(PROPERTY_UNCHECKED_STEPS));
+		} catch (Exception e) {
+			uncheckedSteps = 1;
 		}
 		if (solver == null)
 			solver = DEFAULT_SOLVER;

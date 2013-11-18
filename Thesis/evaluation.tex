@@ -1,10 +1,15 @@
 \chapter{Evaluation}
 \label{chap:evaluation}
+We implemented the algorithm explained in Chapter \ref{chap:testgeneration} in an Eclipse plug--in and successfully tested it for a set of academic problems and performed a case study with a real world model from Airbus. We will point out that the transparent interchangeability of solvers is indeed one of the biggest advantages of the approach presented in this thesis. Also the limitations as well as missing but easily implementable features will be discussed in Section \ref{sec:evaluationLimitations}.
 \section{Example Models and Case Study}
+In order to demonstrate the strength of our approach we built a set of test models. Each test model corresponds to one of the mathematical programming problems presented in the \nameref{chap:preliminaries} Section \ref{sec:Maths}. For each model we selected a suitable solver to generate the necessary test data. 
+
+We also build a C-implementation for each academic test model and 
 \subsection{Different Constraint Types and their Handling}
 \label{sec:evaluationAcademicModels}
-Every of the following problem types can have only floating point variables or be a mixed-integer problem
-Many solvers have the ability to solve a given problem also as mixed integer problem. For the pure constraint satisfaction this should be no problem. But i will become a problem, when also a boundary Value is demanded.
+We will start with models, which require easy problems to be solved in order to obtain test data. By easy we mean decidable problems with a tractable algorithm. Then we will explain how we generated test data for problems, which require either non trivial problems to be solved. We consider problems with intractable algorithms as non trivial. Finally we will also present models, which require an instance of an undecidable problem to be solved in order to obtain test data. That means we can only generate test data for them with tractable or intractable heuristic methods.\\
+Each solver is suitable for another problem class and for several problem classes there are multiple solvers that could be used. We performed some comparisons of different solvers in terms of runtime and the test data produced. For each presented test model we produced test data for all paths up to some maximum length and examined how much more effort in terms of runtime it is to generate boundary values as test data.\\
+Finally we built a C implementation of the function modelled by the input to our algorithm and execute the generated test suite against this implementation. We also manually introduced some errors into the implementation and verified, that the produced test suite contains test cases that fail on those errors and that all test pass when the implementation is correct.
 \subsubsection{Linear}
 \paragraph{Pure Floating Point Variables}
 \paragraph{Mixed Integer}
@@ -33,7 +38,110 @@ ILOGCP, Gecode or transformation possible
 really really really problematic. Currently the only way is to transform the Activity Test Case Graph to remove the Logical Operations in favour of parallel or sequential Control Flows with guards. Use COUENNE.
 \subsection{Case Study PAX Model}
 \label{sec:evaluationCaseStudy}
-I could do a case study with the Airbus PAX call model from Atego.
+We tested our implementation on a model modelling the PAX call system from Airbus. Out of the model of the complete product we selected an activity diagram modelling the interaction of the PAX call system with the \textbf{I}n \textbf{F}light \textbf{E}ntertainment (IFE) system. The selected \UMLType{Activity} contains 21 \UMLType{Actions}, 24 \UMLType{ControllNodes}, and two \UMLType{LoopNodes}. Furthermore there are eight \UMLType{DataStoreNodes} representing function local variables. The model was originally created with Artisan Studio, and used to generate a C-implementation from it with a proprietary code generator from Atego\textsuperscript{\textregistered}. The branching conditions and the code body of each \UMLType{Action} is given in C--syntax. All assignments and conditions consist of linear equations and inequalities only; thus the constraint satisfaction problem to be solved for test data generation is a linear program.\\
+The described algorithm has several parameters, which mainly influence the \nameref{sec:pathsearch}. We use this case study to evaluate the influence of those parameters on the runtime of the Algorithm. The examined parameters are the maximum length of control flow paths to be tested, the maximum amount of test cases to be generated, and the frequency at which the early infeasible path check is performed during the path search.
+\subsubsection{Manual Adaptation}
+In order to generate C++ unit test code with our Eclipse plug-in from the described model several pre-processing steps need to be performed manually. Those manually to perform steps are the conversion of the Model from Atego\textsuperscript{\textregistered } Artisan Studio into Eclipse UML, adding all constraints in OCL syntax, the guards and the local post--conditions, flattening the \UMLType{LoopNodes}, and replacing the \UMLType{DataStoreNodes} by \UMLType{Properties}.\\
+Atego\textsuperscript{\textregistered} does not store models natively in xmi format but has an option for exporting models in xmi format. The Eclipse Modelling Framework natively uses the xmi format to store models. Each modelling tool uses its own implementation of the UML meta model and there are slight differences in the implementations making the created models incompatible with each other. In order to import the model from Artisan in Eclipse we manually need to remove some objects not recognised by Eclipse and correct some typing errors in the xmi file. Then we can load the XMI and browse the model with the Eclipse Modelling Framework.\\
+Every \UMLType{Action} is associated with a C-code snippet that is used for code generation. There are not yet \UMLType{Constraints} specifying the pre and post--conditions of each \UMLType{Action} in OCL. Also the \UMLReference{guards} do not contain OCL queries. We make an educated guess to add \UMLReference{guards} and \UMLReference{localPostconditions} reproducing the semantics of the C-code snippets contained in the original model. The original model used local C-struct variables modelled by the \UMLType{DataStoreNodes} contained by the \UMLType{Activity}. Our implementation can handle primitive data type variables modelled by \UMLType{Properties}, consequently we created one \UMLType{Property} per field of a struct variable. The original model also used arrays. We emulated the behaviour of an indexed collection by allowing all variables depending on an index to change to an arbitrary value whenever the index is changed. This may produce wrong behaviour but seemed fair enough to evaluate our algorithm. The \UMLType{DataStoreNodes} will be ignored by our algorithm.\\
+The \UMLType{LoopNodes} contain further model elements in their \UMLReference{bodyPart} reference. Those elements from the \UMLReference{bodyPart} are directly included into the parent \UMLType{Activity} the \UMLType{InitialNode} and \UMLType{FinalNodes} of the loop body are replaced by decision nodes and directly connected to every element that was connected to the \UMLType{LoopNode}. In order to preserve the loop semantic a control flow from every final node of the body to the initial node of the body is added and decorated with a \UMLReference{guard}.\\
+The function specifying which control flow to take after each \UMLType{Action} is \emph{well--defined} and \emph{defined} over the complete domain. Well--defined means there is no possible state in which more than one guard evaluates to true, and defined over the complete domain means that there is no value assignment for which all guards of the outgoing \UMLType{ControlFlows} evaluate to false.
+\subsubsection{Runtime Experiments}
+\begin{figure}
+%\begin{center}
+%\vspace{1cm}
+% \begin{tikzpicture}
+% \begin{loglogaxis}[
+% width= 0.49\textwidth,
+% xlabel={\tt NO\_BITS},
+% ylabel={$\frac{\text{exponentiations}}{\text{second}}$},
+% no markers,
+% xtick={128,256,512,1024,2048,4096},
+% xticklabels={128,256,512,1024,2048,4096},
+% legend style={legend columns=3,overlay,at={(1,1.02)},
+% anchor=south},
+% xmajorgrids=true,
+% ymajorgrids=true,
+% yminorgrids=true,
+% ]
+% \addplot table[x=NO_BITS,y=GPU_Throughput]{graph/best.csv};
+% \addlegendentry{Overall best results found}
+% 
+% \addplot table[x=NO_BITS,y=GPU_Throughput]{graph/newFIOSGTX285O2NOPTX.txt};
+% \addlegendentry{Basic impl. on GTX285}
+% 
+% \addplot table[x=Bits,y=Throughput_GPU]{graph/peterDataMAX.csv};
+% \addlegendentry{FIOS on GTX285 \cite{bib:PetersThesis}}
+% 
+% \addplot[color=black, style=solid]table[x=NO_BITS,y=MPIR_Throughput]{graph/config2.txt};
+% \addlegendentry{MPIR}
+% 
+% \addplot[color=black, style=dashed] expression[no markers, domain=8e2:2e3]{(3e11) * x^(-3)};
+% \addlegendentry{$A\times u^{-3}$}
+% 
+% \end{loglogaxis}
+% \end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+% xlabel near ticks,
+% ylabel near ticks,
+%xlabel={\tt NO\_BITS},
+%ylabel={speedup},
+%xtick={1024,2048,3072,4096},
+%xticklabels={1024,2048,3072,4096},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+no markers,
+]
+\addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy.txt};
+%\addplot table[x=Bits,y=speedup]{graph/peterDataMAX.csv};
+\end{axis}
+\end{tikzpicture}%
+%\end{center}
+\caption{GPU computing is fast finally}
+\label{fig:MaxPlot}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+% xlabel near ticks,
+% ylabel near ticks,
+%xlabel={\tt NO\_BITS},
+%ylabel={speedup},
+%xtick={1024,2048,3072,4096},
+%xticklabels={1024,2048,3072,4096},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+no markers,
+]
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths.txt};
+\addlegendentry{Max_Pathlength = 40}
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
+\addlegendentry{Max_Pathlength = 50}
+%\addplot table[x=Bits,y=speedup]{graph/peterDataMAX.csv};
+\end{axis}
+\end{tikzpicture}%
+%\end{center}
+\caption{Runtime of Test Generation }
+\label{fig:MaxPlot}
+\end{figure}
+
+
+
+%Complex data types we added one \UMLType{Property} per field in a variable.
+
+%When the Model was correctly imported we need to add to each \UMLType{Action} those local post--conditions that describes the assignments done in the C-code associated with that \UMLType{Action}
+
+
+
+I could do a case study with the Airbus PAX call model from Atego\textsuperscript{\textregistered }.
+\section{Verification of the Implementation}
+We claim that the Eclipse plug--in built aside this thesis implements the algorithm explained in \nameref{chap:testgeneration}. This claim is validated manually by checking each step separately. We use the Academic Example models presented in Section \ref{sec:evaluationAcademicModels} as test cases to verify each transformation described in \nameref{chap:testgeneration}. From each input model we created manually the intermediate artefacts that should have been created according to the specification and compared them to the intermediate artefacts produced by the plug-in.
 \section{Limitations}
 \label{sec:evaluationLimitations}
 \subsection{Theoretical Limitations}

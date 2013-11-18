@@ -38,6 +38,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 			currentEdge = stack.removeFirst();
 			// backtrack
 			while (currentEdge.getSecond() != currentPath.getEdges().size()) {
+				// System.out.println("BACKTRACK");
 				EList<AbstractTCGEdge> l = currentPath.getEdges();
 				AbstractTCGEdge e = l.remove(l.size() - 1);
 				currentNode = e.getSource();
@@ -45,19 +46,22 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 			}
 			currentNode = currentEdge.getFirst().getTarget();
 			currentPath.getEdges().add(currentEdge.getFirst());
-			// check every 3 or 4 decisions whether the path is still feasible
-			if (currentNode.getOutgoing().size() >= 2) {
-				passedDecisions++;
-				if (passedDecisions > 3) {
-					passedDecisions = 0;
-					ampl.loadData(Path2AMPLData.transform(currentPath));
-					SolveResult solved = ampl.solve();
-					if (solved == SolveResult.Infeasible) {
-						continue;
-					}
-				}
-			}
+
 			if (currentPath.getEdges().size() <= maxDepth || maxDepth == -1) {
+				// check every 3 or 4 decisions whether the path is still
+				// feasible
+				if (currentNode.getOutgoing().size() >= 2) {
+					passedDecisions++;
+					if (passedDecisions > uncheckedSteps) {
+						passedDecisions = 0;
+						ampl.loadData(Path2AMPLData.transform(currentPath));
+						SolveResult solved = ampl.solve();
+						if (solved == SolveResult.Infeasible) {
+							System.out.println("Infeasible Path Detected");
+							continue;
+						}
+					}
+				} // System.out.println("Adding Next STEP");
 				// add child nodes to Stack
 				for (AbstractTCGEdge outgoing : currentNode.getOutgoing()) {
 					stack.addFirst(new Pair(outgoing, new Integer(currentPath

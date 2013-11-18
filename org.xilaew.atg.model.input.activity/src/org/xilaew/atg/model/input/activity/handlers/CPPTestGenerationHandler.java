@@ -23,6 +23,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.uml2.uml.Activity;
 import org.xilaew.atg.dialogs.ActTCGPropertyDialog;
+import org.xilaew.atg.dialogs.ActivityTestGenUserDialog;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.tests.TestSuite;
@@ -78,29 +79,12 @@ public class CPPTestGenerationHandler extends AbstractHandler {
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
 		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
 		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
-		ActTCGPropertyDialog dialog = new ActTCGPropertyDialog(null, "Activity Test Case Generation", "Set Properties for Testgeneration", properties);
-		dialog.create();
+		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,properties);
+//		dialog.create();
 		dialog.open();
-//		InputDialog dialogPathDepth = new InputDialog(null,
-//				"Geben sie die Maximale Pfadtiefe an",
-//				"Geben sie die Maximale Pfadtiefe an", "100", null);
-//		dialogPathDepth.create();
-//		dialogPathDepth.open();
-//		InputDialog dialogNoPaths = new InputDialog(null,
-//				"Wie viele Testfälle sollen es maximal sein?",
-//				"Geben sie die Maximale Anzahl an Testfällen an", "20", null);
-//		dialogNoPaths.create();
-//		dialogNoPaths.open();
-//		InputDialog dialogSolver = new InputDialog(null,
-//				"Welcher Solver soll verwendet werden?",
-//				"Welcher Solver soll verwendet werden?", "couenne", null);
-//		dialogSolver.create();
-//		dialogSolver.open();
+		properties = dialog.getActivityTestGenProperties();
+
 		SatisfiablePathSearch search = SatisfiablePathSearch.SOLVER_DFS;
-		properties = dialog.getValue();
-//		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, dialogPathDepth.getValue());
-//		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, dialogNoPaths.getValue());
-//		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, dialogSolver.getValue());
 		search.setProperties( properties );
 		EMap<Path,Witness> paths = search.findAllSatisfiablePaths(tcgActivity);
 
