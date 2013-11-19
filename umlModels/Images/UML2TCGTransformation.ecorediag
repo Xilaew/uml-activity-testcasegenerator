@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_H4I_MDcUEeOagJ482Ljtww" type="EcoreTools" name="UML2TCGTransformation" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_Z9NuMDcUEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Z-GfADcUEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Z-GfATcUEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_Z9W4IDcUEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_Z9W4ITcUEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Z9W4IjcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Z9W4IzcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Z9W4JDcUEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Z9W4JTcUEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Z9W4JjcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Z9W4JzcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Z9W4KDcUEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Z9NuMTcUEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.xilaew.atg.model/model/ActivityTestCaseGraph.ecore#//TCGActivity"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9NuMjcUEeOagJ482Ljtww" x="255" y="65"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_tR3OsDcUEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tWB9ADcUEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tWB9ATcUEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_tR3OszcUEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_tR3OtDcUEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_tR3OtTcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tR3OtjcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tR3OtzcUEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_tR3OuDcUEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_tR3OuTcUEeOagJ482Ljtww" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tR3OujcUEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tR3OuzcUEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_tR3OsTcUEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Activity"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tR3OsjcUEeOagJ482Ljtww" x="15" y="65" width="188" height="83"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_CAgoADcVEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CAzi8DcVEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CAzi8TcVEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_CAgoAzcVEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_CAgoBDcVEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_CAgoBTcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CAgoBjcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CAgoBzcVEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_CAgoCDcVEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_CAgoCTcVEeOagJ482Ljtww" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CAgoCjcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CAgoCzcVEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_CAgoATcVEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Action"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CAgoAjcVEeOagJ482Ljtww" x="10" y="155"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_LASmcDcVEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LAcXcDcVEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LAcXcTcVEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_LASmczcVEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_LASmdDcVEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LASmdTcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LASmdjcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LASmdzcVEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LASmeDcVEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LASmeTcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LASmejcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LASmezcVEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_LASmcTcVEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//ControlNode"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LASmcjcVEeOagJ482Ljtww" x="100" y="225"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_cvAq8DcVEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cvUM8DcVEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cvUM8TcVEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_cvAq8zcVEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_cvAq9DcVEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_cvAq9TcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cvAq9jcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cvAq9zcVEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_cvAq-DcVEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_cvAq-TcVEeOagJ482Ljtww" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_cvAq-jcVEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_cvAq-zcVEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_cvAq8TcVEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//ControlFlow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvAq8jcVEeOagJ482Ljtww" x="100" y="290"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_docicDcXEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dovdYDcXEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dovdYTcXEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_dociczcXEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_docidDcXEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_docidTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_docidjcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_docidzcXEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_docieDcXEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_docieTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dociejcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dociezcXEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_docicTcXEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.xilaew.atg.model/model/ActivityTestCaseGraph.ecore#//TCGAction"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_docicjcXEeOagJ482Ljtww" x="255" y="155"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_fOONcDcXEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fPHlUDcXEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fPHlUTcXEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_fOONczcXEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_fOONdDcXEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fOONdTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fOONdjcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fOONdzcXEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fOONeDcXEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fOONeTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fOONejcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fOONezcXEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_fOONcTcXEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.xilaew.atg.model/model/ActivityTestCaseGraph.ecore#//TCGControlFlow"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fOONcjcXEeOagJ482Ljtww" x="255" y="290"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_haScYDcXEeOagJ482Ljtww" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ha45UDcXEeOagJ482Ljtww" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ha45UTcXEeOagJ482Ljtww" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_haScYzcXEeOagJ482Ljtww" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_haScZDcXEeOagJ482Ljtww" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_haScZTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_haScZjcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_haScZzcXEeOagJ482Ljtww"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_haScaDcXEeOagJ482Ljtww" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_haScaTcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_haScajcXEeOagJ482Ljtww"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_haScazcXEeOagJ482Ljtww"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_haScYTcXEeOagJ482Ljtww" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.xilaew.atg.model/model/ActivityTestCaseGraph.ecore#//TCGControlNode"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_haScYjcXEeOagJ482Ljtww" x="255" y="220"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_H4I_MTcUEeOagJ482Ljtww"/>
+  <element xmi:type="ecore:EPackage" href="UML2TCGTransformation.ecore#/"/>
+</notation:Diagram>
