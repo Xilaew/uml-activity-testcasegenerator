@@ -13,6 +13,8 @@ public interface SatisfiablePathSearch extends PathSearch {
 	public static final SatisfiablePathSearch SOLVER_DFS = new SolverDFS();
 	public static final String PROPERTY_SOLVER = "PATHSEARCH_SOLVER";
 	public static final String PROPERTY_UNCHECKED_STEPS = "PATHSEARCH_UNCHECKED_STEPS";
+	public static final String STAT_TOTAL_SOLVER_RUNS = "PATHSEARCH_TOTAL_SOLVER_RUNS";
+	public static final String STAT_INFEASIBLE_PATHS_ELIMINATED = "PATHSEARCH_INFEASIBLE_PATHS_ELIMINATED";
 
 	public EMap<Path, Witness> findAllSatisfiablePaths(
 			AbstractTCGContainer atcg);

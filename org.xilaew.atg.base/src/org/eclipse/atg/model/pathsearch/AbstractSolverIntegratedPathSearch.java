@@ -30,10 +30,17 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 	int maxDepth = -1;
 	int maxNoPaths = -1;
 	int uncheckedSteps = 1;
-	
-	
+	int totalSolves = 0;
+	int infeasibleSolves = 0;
+	Properties p;
 
+	/**
+	 * The Properties object should contain a set of properties as name value
+	 * pairs. setProperties will try to configure the algorithm accordingly. If
+	 * invalid values are given it will set default values.
+	 */
 	public void setProperties(Properties p) {
+		this.p = p;
 		try {
 			maxDepth = Integer.parseInt(p.getProperty(PROPERTY_MAX_PATHLENGTH));
 		} catch (NumberFormatException e) {
@@ -48,15 +55,33 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 			solver = p.getProperty(PROPERTY_SOLVER);
 		} catch (Exception e) {
 			solver = DEFAULT_SOLVER;
-		}		
+		}
 		try {
-			uncheckedSteps = Integer.parseInt(p.getProperty(PROPERTY_UNCHECKED_STEPS));
+			uncheckedSteps = Integer.parseInt(p
+					.getProperty(PROPERTY_UNCHECKED_STEPS));
 		} catch (Exception e) {
 			uncheckedSteps = 1;
 		}
 		if (solver == null)
 			solver = DEFAULT_SOLVER;
+	}
 
+	/**
+	 * Returns those properties that have in fact been used for the execution of
+	 * the algorithm. Aditionally after execution the Properties will also
+	 * contain some statistical values.
+	 * 
+	 * @param p
+	 *            Properties actually used for the last run.
+	 */
+	public void getProperties(Properties p) {
+		p.setProperty(PROPERTY_MAX_PATHLENGTH, Integer.toString(maxDepth));
+		p.setProperty(PROPERTY_MAX_NO_PATHS, Integer.toString(maxNoPaths));
+		p.setProperty(PROPERTY_SOLVER, solver);
+		p.setProperty(PROPERTY_UNCHECKED_STEPS,
+				Integer.toString(uncheckedSteps));
+		p.setProperty(STAT_INFEASIBLE_PATHS_ELIMINATED, Integer.toString(infeasibleSolves));
+		p.setProperty(STAT_TOTAL_SOLVER_RUNS, Integer.toString(totalSolves));
 	}
 
 	public EList<Path> findAllPaths(AbstractTCGContainer atcg) {
@@ -65,11 +90,12 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 		result.addAll(paths);
 		return result;
 	}
-	
+
 	public EMap<Path, Witness> findAllSatisfiablePaths(AbstractTCGContainer atcg) {
 		TCGActivity actTCG = (TCGActivity) atcg;
 		return findAllSatisfiableActivityPaths(actTCG);
 	}
 
-	protected abstract EMap<Path, Witness> findAllSatisfiableActivityPaths(TCGActivity atcg) ;
+	protected abstract EMap<Path, Witness> findAllSatisfiableActivityPaths(
+			TCGActivity atcg);
 }

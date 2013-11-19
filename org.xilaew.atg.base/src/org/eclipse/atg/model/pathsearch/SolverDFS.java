@@ -56,7 +56,9 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 						passedDecisions = 0;
 						ampl.loadData(Path2AMPLData.transform(currentPath));
 						SolveResult solved = ampl.solve();
-						if (solved == SolveResult.Infeasible) {
+						totalSolves++;
+						if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
+							infeasibleSolves++;
 							System.out.println("Infeasible Path Detected");
 							continue;
 						}
@@ -98,7 +100,9 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		ampl.loadData(Path2AMPLData.transform(currentPath));
 		Witness result = new Witness();
 		SolveResult solved = ampl.solve();
+		totalSolves++;
 		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
+			infeasibleSolves++;
 			return null;
 		}
 		for (TCGVariable var : atcg.getVariables()) {

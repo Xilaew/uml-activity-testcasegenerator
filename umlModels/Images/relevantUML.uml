@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_RnpjADDVEeOEa5hroYbzJw" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_whoH4DDVEeOEa5hroYbzJw" name="Classifier"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6dnP4DDVEeOEa5hroYbzJw" name="Property">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8Y8agDDdEeOEa5hroYbzJw" name="Type" visibility="public">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9N_MIDDdEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9OI9IDDdEeOEa5hroYbzJw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_9Ob4EDDdEeOEa5hroYbzJw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HMsxozDWEeOEa5hroYbzJw" name="operation_activity_1" memberEnd="_HMsxpDDWEeOEa5hroYbzJw _HMsxoDDWEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HMsxpDDWEeOEa5hroYbzJw" name="specification" type="_2vfYUDDVEeOEa5hroYbzJw" association="_HMsxozDWEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HMsxpTDWEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HMsxpjDWEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HMsxoDDWEeOEa5hroYbzJw" name="method" type="_4CyMMDDVEeOEa5hroYbzJw" association="_HMsxozDWEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HMsxoTDWEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HMsxojDWEeOEa5hroYbzJw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dJnfczDXEeOEa5hroYbzJw" name="operation_parameter_1" memberEnd="_dJnfdDDXEeOEa5hroYbzJw _dJnfcDDXEeOEa5hroYbzJw" navigableOwnedEnd="_dJnfcDDXEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dJnfdDDXEeOEa5hroYbzJw" name="operation" type="_2vfYUDDVEeOEa5hroYbzJw" association="_dJnfczDXEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dJnfdTDXEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dJnfdjDXEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dJnfcDDXEeOEa5hroYbzJw" name="parameter" aggregation="composite" association="_dJnfczDXEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dJnfcTDXEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dJnfcjDXEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qV6hoDDXEeOEa5hroYbzJw" name="activity_parameter_1" memberEnd="_qV6hoTDXEeOEa5hroYbzJw _qVxXsDDXEeOEa5hroYbzJw" navigableOwnedEnd="_qVxXsDDXEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qV6hoTDXEeOEa5hroYbzJw" name="activity" type="_4CyMMDDVEeOEa5hroYbzJw" association="_qV6hoDDXEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qV6hojDXEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qV6hozDXEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qVxXsDDXEeOEa5hroYbzJw" name="parameter" aggregation="composite" association="_qV6hoDDXEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qVxXsTDXEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qVxXsjDXEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2vfYUDDVEeOEa5hroYbzJw" name="Operation"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_4CyMMDDVEeOEa5hroYbzJw" name="Activity"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VfZwUzDYEeOEa5hroYbzJw" name="classifier_operation_1" memberEnd="_VfZwVDDYEeOEa5hroYbzJw _VfZwUDDYEeOEa5hroYbzJw" navigableOwnedEnd="_VfZwUDDYEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VfZwVDDYEeOEa5hroYbzJw" name="classifier" type="_whoH4DDVEeOEa5hroYbzJw" association="_VfZwUzDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VfZwVTDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VfZwVjDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_VfZwUDDYEeOEa5hroYbzJw" name="operation" type="_2vfYUDDVEeOEa5hroYbzJw" aggregation="composite" association="_VfZwUzDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VfZwUTDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VfZwUjDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WJa9szDYEeOEa5hroYbzJw" name="classifier_activity_1" memberEnd="_WJa9tDDYEeOEa5hroYbzJw _WJa9sDDYEeOEa5hroYbzJw" navigableOwnedEnd="_WJa9sDDYEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WJa9tDDYEeOEa5hroYbzJw" name="classifier" type="_whoH4DDVEeOEa5hroYbzJw" association="_WJa9szDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WJa9tTDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WJa9tjDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WJa9sDDYEeOEa5hroYbzJw" name="activity" type="_4CyMMDDVEeOEa5hroYbzJw" aggregation="composite" association="_WJa9szDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WJa9sTDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WJa9sjDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fw1j4DDYEeOEa5hroYbzJw" name="classifier_property_1" memberEnd="_fw1j4TDYEeOEa5hroYbzJw _fwsZ8DDYEeOEa5hroYbzJw" navigableOwnedEnd="_fwsZ8DDYEeOEa5hroYbzJw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fw1j4TDYEeOEa5hroYbzJw" name="classifier" type="_whoH4DDVEeOEa5hroYbzJw" association="_fw1j4DDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fw1j4jDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fw1j4zDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fwsZ8DDYEeOEa5hroYbzJw" name="property" type="_6dnP4DDVEeOEa5hroYbzJw" aggregation="composite" association="_fw1j4DDYEeOEa5hroYbzJw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fwsZ8TDYEeOEa5hroYbzJw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fwsZ8jDYEeOEa5hroYbzJw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
