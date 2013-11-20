@@ -16,6 +16,12 @@
     <availablePage>
       <emfPageIdentifier href="AcademicProblems.notation#_o6i6cBobEeO9s-R3-Uc7Iw"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="AcademicProblems.notation#_GUrSQFH4EeOcPIkF2qgdeQ"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="AcademicProblems.notation#_Vcr5kFIAEeOcPIkF2qgdeQ"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -28,6 +34,12 @@
         </children>
         <children>
           <emfPageIdentifier href="AcademicProblems.notation#_o6i6cBobEeO9s-R3-Uc7Iw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="AcademicProblems.notation#_GUrSQFH4EeOcPIkF2qgdeQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="AcademicProblems.notation#_Vcr5kFIAEeOcPIkF2qgdeQ"/>
         </children>
       </children>
     </windows>

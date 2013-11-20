@@ -48,90 +48,43 @@ The \UMLType{LoopNodes} contain further model elements in their \UMLReference{bo
 The function specifying which control flow to take after each \UMLType{Action} is \emph{well--defined} and \emph{defined} over the complete domain. Well--defined means there is no possible state in which more than one guard evaluates to true, and defined over the complete domain means that there is no value assignment for which all guards of the outgoing \UMLType{ControlFlows} evaluate to false.
 \subsubsection{Runtime Experiments}
 \begin{figure}
-%\begin{center}
-%\vspace{1cm}
-% \begin{tikzpicture}
-% \begin{loglogaxis}[
-% width= 0.49\textwidth,
-% xlabel={\tt NO\_BITS},
-% ylabel={$\frac{\text{exponentiations}}{\text{second}}$},
-% no markers,
-% xtick={128,256,512,1024,2048,4096},
-% xticklabels={128,256,512,1024,2048,4096},
-% legend style={legend columns=3,overlay,at={(1,1.02)},
-% anchor=south},
-% xmajorgrids=true,
-% ymajorgrids=true,
-% yminorgrids=true,
-% ]
-% \addplot table[x=NO_BITS,y=GPU_Throughput]{graph/best.csv};
-% \addlegendentry{Overall best results found}
-% 
-% \addplot table[x=NO_BITS,y=GPU_Throughput]{graph/newFIOSGTX285O2NOPTX.txt};
-% \addlegendentry{Basic impl. on GTX285}
-% 
-% \addplot table[x=Bits,y=Throughput_GPU]{graph/peterDataMAX.csv};
-% \addlegendentry{FIOS on GTX285 \cite{bib:PetersThesis}}
-% 
-% \addplot[color=black, style=solid]table[x=NO_BITS,y=MPIR_Throughput]{graph/config2.txt};
-% \addlegendentry{MPIR}
-% 
-% \addplot[color=black, style=dashed] expression[no markers, domain=8e2:2e3]{(3e11) * x^(-3)};
-% \addlegendentry{$A\times u^{-3}$}
-% 
-% \end{loglogaxis}
-% \end{tikzpicture}%
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
-% xlabel near ticks,
-% ylabel near ticks,
-%xlabel={\tt NO\_BITS},
-%ylabel={speedup},
-%xtick={1024,2048,3072,4096},
-%xticklabels={1024,2048,3072,4096},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
 ]
 \addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy.txt};
-%\addplot table[x=Bits,y=speedup]{graph/peterDataMAX.csv};
 \end{axis}
 \end{tikzpicture}%
-%\end{center}
-\caption{GPU computing is fast finally}
-\label{fig:MaxPlot}
-\end{figure}
-
-\begin{figure}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
-% xlabel near ticks,
-% ylabel near ticks,
-%xlabel={\tt NO\_BITS},
-%ylabel={speedup},
-%xtick={1024,2048,3072,4096},
-%xticklabels={1024,2048,3072,4096},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
 ]
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths.txt};
-\addlegendentry{Max_Pathlength = 40}
+%\addlegendentry{Max_Pathlength = 40}
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
-\addlegendentry{Max_Pathlength = 50}
-%\addplot table[x=Bits,y=speedup]{graph/peterDataMAX.csv};
+%\addlegendentry{Max_Pathlength = 50}
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
+%\addlegendentry{Max_Pathlength = 50}
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength60.txt};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength70.txt};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength80.txt};
+%\addlegendentry{Max_Pathlength = 60}
 \end{axis}
 \end{tikzpicture}%
 %\end{center}
 \caption{Runtime of Test Generation }
-\label{fig:MaxPlot}
+\label{fig:RuntimeExperiments}
 \end{figure}
-
-
+The implemented algorithm has several properties influencing the exact execution of the \nameref{sec:pathsearch}. In this section we will examine the influence of these parameters on the number of unit tests generated and the runtime of the algorithm. As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal pathlength and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume, that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linarly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
+There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is verry expensive in terms of runtime. To check wheather the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check everytime one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unecessaryly often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^10$ control flow paths wheather they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interrest to the influence of the number of unchecked decissions before control flow paths are checked for feasiblility. We assume, that there will be a minimum of runtime for some number of unchecked decissions.
 
 %Complex data types we added one \UMLType{Property} per field in a variable.
 
