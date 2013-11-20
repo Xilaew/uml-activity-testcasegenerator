@@ -23,6 +23,7 @@ public interface PathSearch {
 	public static final String PROPERTY_MAX_NO_PATHS = "PATHSEARCH_MAX_NO_PATHS";
 	
 	public void setProperties(Properties p);
+	public Properties getProperties();
 	public EList<Path> findAllPaths(AbstractTCGContainer atcg);
 
 }

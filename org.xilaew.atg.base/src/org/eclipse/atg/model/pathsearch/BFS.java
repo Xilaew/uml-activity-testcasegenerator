@@ -12,7 +12,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 
-public class BFS implements PathSearch {
+public class BFS extends AbstractPathSearch implements PathSearch {
 
 	public EList<Path> findAllPaths(AbstractTCGContainer atcg) {
 		EList<Path> result = new BasicEList<Path>();
