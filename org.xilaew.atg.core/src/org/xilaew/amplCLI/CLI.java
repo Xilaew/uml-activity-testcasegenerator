@@ -48,7 +48,6 @@ public class CLI {
 		bin = new BufferedReader(new InputStreamReader(ampl.getInputStream()));
 		pout = new PrintWriter(ampl.getOutputStream());
 		berr = new BufferedReader(new InputStreamReader(ampl.getErrorStream()));
-
 	}
 
 	/**

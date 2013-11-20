@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.eclipse.atg.model.pathsearch.PathSearch;
 import org.eclipse.atg.model.pathsearch.SatisfiablePathSearch;
+import org.eclipse.atg.model.pathsearch.SolverDFS;
 import org.eclipse.atg.model.pathsearch.Witness;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -71,18 +72,10 @@ public class Experiment extends AbstractHandler {
 		IProject project = umlFile.getProject();
 		// The Input Activity
 		Activity activity = prepareTestGeneration();
-		// TestCaseGraph OutputFile
-		IFile actTCGFile = project
-				.getFile("PluginOutput.activitytestcasegraph");
 		IFile experimentResults = project
 				.getFile("PluginOutputExpreriment.txt");
-		// AMPL Model File
-		IFile amplFile = project.getFile("PluginOutput.mod");
-		// AMPL Command File
-		IFile amplCommands = project.getFile("PluginOutput.run");
 		TCGActivity tcgActivity = null;
-		String amplModel = null;
-		String timeMessurement = PathSearch.PROPERTY_MAX_PATHLENGTH +"\t"+PathSearch.PROPERTY_MAX_NO_PATHS+"\t"+SatisfiablePathSearch.PROPERTY_SOLVER +"\t"+SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS+"\tPathsFound\ttime(ns);\n";
+		String timeMessurement = PathSearch.PROPERTY_MAX_PATHLENGTH +"\t"+PathSearch.PROPERTY_MAX_NO_PATHS+"\t"+SatisfiablePathSearch.PROPERTY_SOLVER +"\t"+SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS+"\tPathsFound\ttime(ns)\t"+SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS+"\t"+SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED+"\n";
 		try {
 			// ActivityTestCaseGraphResourceFactoryImpl resFactory = new
 			// ActivityTestCaseGraphResourceFactoryImpl();
@@ -110,11 +103,11 @@ public class Experiment extends AbstractHandler {
 //		dialog.create();
 		dialog.open();
 		properties = dialog.getActivityTestGenProperties();
-		for (int i = 0; i < 20; i++) {
-			properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*Iterate through Property*/
-					Integer.toString(i));
-			
+		for (int i = 1; i < 12; i++) {
+			properties.setProperty(SatisfiablePathSearch.PROPERTY_MAX_PATHLENGTH, /*Iterate through Property*/
+					Integer.toString(i*10));
 			long start = System.nanoTime();
+			
 			// convert (UML) Activity to ActivityTestCaseGraph
 			try {
 				tcgActivity = UML2TCGActivity.transform(activity);
@@ -124,64 +117,27 @@ public class Experiment extends AbstractHandler {
 			// Perform Transformations on Activity Test Case Graph
 			ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
 
-			// Transform Model to AMPL
-			amplModel = ActTCG2AMPLModel.transform(tcgActivity);
+			ActTCG2AMPLModel.transform(tcgActivity);
 
 			// create PathData
-			SatisfiablePathSearch search = SatisfiablePathSearch.SOLVER_DFS;
-			// properties = dialog.getValue();
-			// properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH,
-			// dialogPathDepth.getValue());
-			// properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS,
-			// dialogNoPaths.getValue());
-			// properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER,
-			// dialogSolver.getValue());
+			SatisfiablePathSearch search = new SolverDFS();
 			search.setProperties(properties);
 			EMap<Path, Witness> paths = search
 					.findAllSatisfiablePaths(tcgActivity);
-			search.setProperties(properties);
-			// EList<Path> paths = search.findAllPaths(tcgActivity);
-			// int pathnum = 0;
-			// for (Path p : paths) {
-			// String data = Path2AMPLData.transform(p);
-			// try {
-			// project.getFile("PluginOutput" + pathnum++ + ".dat")
-			// .create(new ByteArrayInputStream(data.getBytes()),
-			// false, null);
-			// } catch (CoreException e) {
-			// e.printStackTrace();
-			// }
-			// }
+			properties = search.getProperties();
+
+
 			TestSuite suite = TestsGeneratorHelper.generateTests(tcgActivity,
 					paths);
-			// create Boost Test sourceCode
-			String unitTest = Tests2BoostUnitTest.generateUnitTest(suite);
+			Tests2BoostUnitTest.generateUnitTest(suite);
 			start = System.nanoTime() - start;
-			timeMessurement = properties.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH) +"\t"+properties.getProperty(PathSearch.PROPERTY_MAX_NO_PATHS)+"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER) +"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS)+"\t" + suite.getTests().size() + "\t"+ start + "\n";
+			timeMessurement = properties.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH) +"\t"+properties.getProperty(PathSearch.PROPERTY_MAX_NO_PATHS)+"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER) +"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS)+"\t" + suite.getTests().size() + "\t"+ start + "\t"+properties.getProperty(SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS)+"\t"+properties.getProperty(SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED)+"\n";
 			try {
 				experimentResults.appendContents(new ByteArrayInputStream(timeMessurement.getBytes()), 0, null);
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-		// Output everything into the Files
-		try {
-			// ActivityTestCaseGraphResourceFactoryImpl resFactory = new
-			// ActivityTestCaseGraphResourceFactoryImpl();
-			// Resource res = resFactory.createResource(URI
-			// .createFileURI(actTCGFile.getLocationURI().getPath()));
-			// res.getContents().add(tcgActivity);
-			// ByteArrayOutputStream out = new ByteArrayOutputStream();
-			// res.save(out, null);
-			experimentResults.create(
-					new ByteArrayInputStream(timeMessurement.getBytes()),
-					false, null);
-			// amplFile.create(new ByteArrayInputStream(amplModel.getBytes()),
-			// false, null);
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		return null;
 	}

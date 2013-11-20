@@ -15,6 +15,8 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import util.Output;
+
 /**
  * @author TH51E0
  * 
@@ -78,16 +80,20 @@ public class JAMPL {
 	 * @return
 	 */
 	public SolveResult solve() {
+		String lastLines[] = new String[10];
+		int i = 0;
 		cli.sendCommand("solve;");
 		skipOutput();
 		cli.sendCommand("display solve_result;");
 		String line = null;
 		SolveResult result = null;
+		int errorCounter = 0;
 		Pattern pattern = Pattern.compile("solve_result\\s*=\\s*(.*)");
 		while (result == null) {
 			line = cli.readLine();
-			//System.out.println(line);
 			if (line != null) {
+				// System.out.println(line);
+				lastLines[i++ % 10] = line;
 				Matcher matcher = pattern.matcher(line);
 				if (matcher.matches()) {
 					result = SolveResult.Failure;
@@ -101,6 +107,23 @@ public class JAMPL {
 						result = SolveResult.Unbounded;
 					}
 				}
+			} else {
+//				if (errorCounter++ < 5) {
+//					try {
+//						wait(100);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					continue;
+//				}
+				Output.debug("End of AMPL output Stream reached", this);
+				result = SolveResult.Failure;
+			}
+		}
+		if (result == SolveResult.Failure) {
+			for (String l : lastLines) {
+				Output.debug(l, this);
 			}
 		}
 		return result;
@@ -125,7 +148,7 @@ public class JAMPL {
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m = p.matcher(line);
-			//System.out.println(line);
+			// System.out.println(line);
 			if (m.matches()) {
 				result = Double.parseDouble(m.group(2));
 			}
@@ -143,7 +166,7 @@ public class JAMPL {
 		while (result == null) {
 			String line = cli.readLine();
 			Matcher m1 = p1.matcher(line);
-			//System.out.println(line);
+			// System.out.println(line);
 			if (m1.matches()) {
 				// Read complete trace of the Variable
 				Pattern p2 = Pattern
@@ -152,7 +175,7 @@ public class JAMPL {
 				while (reading) {
 					line = cli.readLine();
 					Matcher m = p2.matcher(line);
-					//System.out.println(line);
+					// System.out.println(line);
 					reading = false;
 					while (m.find()) {
 						map.put(Integer.decode(m.group(1)),
@@ -161,7 +184,7 @@ public class JAMPL {
 					}
 				}
 				result = new ArrayList<Double>(map.size());
-				for(Double d:map.values()){
+				for (Double d : map.values()) {
 					result.add(d);
 				}
 			}

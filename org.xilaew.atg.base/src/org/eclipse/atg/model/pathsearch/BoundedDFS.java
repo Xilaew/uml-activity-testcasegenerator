@@ -2,7 +2,6 @@ package org.eclipse.atg.model.pathsearch;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Properties;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -14,10 +13,7 @@ import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 
 import data.YouShallNotDoThisException;
 
-public class BoundedDFS implements PathSearch {
-	int maxDepth = -1;
-	int maxNoPaths = -1;
-
+public class BoundedDFS extends AbstractPathSearch implements PathSearch {
 	public EList<Path> findAllPaths(AbstractTCGContainer atcg) {
 		EList<Path> result = new BasicEList<Path>();
 		Deque<Pair> stack = new ArrayDeque<Pair>();
@@ -66,20 +62,6 @@ public class BoundedDFS implements PathSearch {
 			}
 		}
 		return result;
-	}
-
-	@Override
-	public void setProperties(Properties p) {
-		try {
-			maxDepth = Integer.parseInt(p.getProperty(PROPERTY_MAX_PATHLENGTH));
-		} catch (NumberFormatException e) {
-			maxDepth = -1;
-		}
-		try {
-			maxNoPaths = Integer.parseInt(p.getProperty(PROPERTY_MAX_NO_PATHS));
-		} catch (NumberFormatException e) {
-			maxNoPaths = -1;
-		}
 	}
 
 }

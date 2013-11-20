@@ -1,6 +1,7 @@
 package org.eclipse.atg.model.pathsearch;
 
 import java.util.ArrayDeque;
+import java.util.Date;
 import java.util.Deque;
 
 import org.eclipse.emf.common.util.BasicEList;
@@ -57,10 +58,14 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 						ampl.loadData(Path2AMPLData.transform(currentPath));
 						SolveResult solved = ampl.solve();
 						totalSolves++;
-						if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
+						if (solved == SolveResult.Infeasible) {
 							infeasibleSolves++;
-							System.out.println("Infeasible Path Detected");
+							System.out.print(".");
 							continue;
+						}
+						if (solved == SolveResult.Failure) {
+							System.out.println("FAILURE!!!!!!!");
+							break;
 						}
 					}
 				} // System.out.println("Adding Next STEP");
@@ -76,6 +81,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 				Witness witness = generateWitness(currentPath, atcg);
 				if (witness != null) {
 					result.put(currentPath, witness);
+					System.out.println("found test case "+new Date());
 					Path newCurrentPath = TestCaseGraphRuntimeFactory.eINSTANCE
 							.createPath();
 					for (AbstractTCGEdge e : currentPath.getEdges()) {

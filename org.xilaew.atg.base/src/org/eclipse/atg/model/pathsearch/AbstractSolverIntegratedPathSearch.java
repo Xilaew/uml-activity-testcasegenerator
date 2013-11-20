@@ -74,7 +74,7 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 	 * @param p
 	 *            Properties actually used for the last run.
 	 */
-	public void getProperties(Properties p) {
+	public Properties getProperties() {
 		p.setProperty(PROPERTY_MAX_PATHLENGTH, Integer.toString(maxDepth));
 		p.setProperty(PROPERTY_MAX_NO_PATHS, Integer.toString(maxNoPaths));
 		p.setProperty(PROPERTY_SOLVER, solver);
@@ -82,6 +82,7 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 				Integer.toString(uncheckedSteps));
 		p.setProperty(STAT_INFEASIBLE_PATHS_ELIMINATED, Integer.toString(infeasibleSolves));
 		p.setProperty(STAT_TOTAL_SOLVER_RUNS, Integer.toString(totalSolves));
+		return p;
 	}
 
 	public EList<Path> findAllPaths(AbstractTCGContainer atcg) {

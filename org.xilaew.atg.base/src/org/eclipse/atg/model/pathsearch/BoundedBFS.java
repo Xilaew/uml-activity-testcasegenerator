@@ -12,7 +12,7 @@ import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 
-public class BoundedBFS implements PathSearch {
+public class BoundedBFS extends AbstractPathSearch implements PathSearch {
 
 	int maxDepth = -1;
 	int maxNoPaths = -1;
