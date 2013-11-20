@@ -1,5 +1,6 @@
 package org.xilaew.atg.unitTestOutput;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map.Entry;
@@ -52,8 +53,22 @@ public class TestsGeneratorHelper {
 				ampl.setSolver(solver);
 			}
 			// Solve the Model and Data to get Input data
-			SolveResult solved = ampl.solve();
-
+			SolveResult solved;
+			try {
+				solved = ampl.solve();
+			} catch (IOException e) {
+				ampl = new JAMPL();
+				ampl.setSolver(solver);
+				ampl.loadModel(ActTCG2AMPLModel.transform(tcgActivity));
+				System.out.println("RESET!!!");
+				ampl.loadData(Path2AMPLData.transform(p));
+				try {
+					solved = ampl.solve();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+					break;
+				}
+			}
 			// Read Values from Solver and store in Model
 			if (solved == SolveResult.Solved) {
 				TestCase tc = factory.createTestCase();
@@ -67,7 +82,14 @@ public class TestsGeneratorHelper {
 					v.setName(var.getName());
 					v.setVariable(var);
 					if (var.isIsParameter()) {
-						Double value = ampl.getParameter(var.getName());
+						Double value = null;
+						try {
+							value = ampl.getParameter(var.getName());
+						} catch (IOException e) {
+							
+							e.printStackTrace();
+							continue;
+						}
 						v.setValue(value);
 						switch (var.getUsage()) {
 						case IN_PARAMETER:
@@ -91,7 +113,14 @@ public class TestsGeneratorHelper {
 							break;
 						}
 					} else {
-						List<Double> trace = ampl.getVariable(var.getName());
+						List<Double> trace = null;
+						try {
+							trace = ampl.getVariable(var.getName());
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+							continue;
+						}
 						v.setValue(trace.get(0));
 						tc.getInitValues().add(v);
 						Value vout = factory.createValue();

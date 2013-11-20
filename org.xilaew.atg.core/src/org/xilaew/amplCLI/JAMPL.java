@@ -78,8 +78,9 @@ public class JAMPL {
 	 * result is returned.
 	 * 
 	 * @return
+	 * @throws IOException
 	 */
-	public SolveResult solve() {
+	public SolveResult solve() throws IOException {
 		String lastLines[] = new String[10];
 		int i = 0;
 		cli.sendCommand("solve;");
@@ -87,7 +88,6 @@ public class JAMPL {
 		cli.sendCommand("display solve_result;");
 		String line = null;
 		SolveResult result = null;
-		int errorCounter = 0;
 		Pattern pattern = Pattern.compile("solve_result\\s*=\\s*(.*)");
 		while (result == null) {
 			line = cli.readLine();
@@ -108,22 +108,11 @@ public class JAMPL {
 					}
 				}
 			} else {
-//				if (errorCounter++ < 5) {
-//					try {
-//						wait(100);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					continue;
-//				}
+				for (String l : lastLines) {
+					Output.debug(l, this);
+				}
 				Output.debug("End of AMPL output Stream reached", this);
-				result = SolveResult.Failure;
-			}
-		}
-		if (result == SolveResult.Failure) {
-			for (String l : lastLines) {
-				Output.debug(l, this);
+				throw new IOException("NULL line read from AMPL");
 			}
 		}
 		return result;
@@ -139,7 +128,7 @@ public class JAMPL {
 		}
 	}
 
-	public Double getParameter(String varName) {
+	public Double getParameter(String varName) throws IOException {
 		skipOutput();
 		Double result = null;
 		cli.sendCommand("display " + varName + ";");
@@ -156,7 +145,7 @@ public class JAMPL {
 		return result;
 	}
 
-	public List<Double> getVariable(String varName) {
+	public List<Double> getVariable(String varName) throws IOException {
 		skipOutput();
 		SortedMap<Integer, Double> map = new TreeMap<Integer, Double>();
 		List<Double> result = null;

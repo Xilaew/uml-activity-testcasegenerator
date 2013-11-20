@@ -120,14 +120,10 @@ public class CLI {
 	 * terminated null will be returned.
 	 * 
 	 * @return one line of console output from AMPL
+	 * @throws IOException 
 	 */
-	public String readLine() {
-		try {
-			return bin.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
+	public String readLine() throws IOException {
+		return bin.readLine();
 	}
 
 	public void sendCommand(String command) {

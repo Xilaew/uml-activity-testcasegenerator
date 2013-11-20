@@ -1,12 +1,14 @@
 package tools;
 
+import java.io.IOException;
+
 import org.xilaew.amplCLI.AmplFactory;
 import org.xilaew.amplCLI.JAMPL;
 import org.xilaew.amplCLI.JAMPL.SolveResult;
 
 public class AmplJamplTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		JAMPL jampl = AmplFactory.createJAMPL();
 		jampl.setSolver("cplex");
 		jampl.loadModel("output/assignment.mod");
