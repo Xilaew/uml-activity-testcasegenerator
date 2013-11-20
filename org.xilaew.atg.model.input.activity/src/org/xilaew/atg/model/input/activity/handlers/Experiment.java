@@ -1,8 +1,6 @@
 package org.xilaew.atg.model.input.activity.handlers;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 import org.eclipse.atg.model.pathsearch.PathSearch;
@@ -15,11 +13,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
@@ -31,12 +25,9 @@ import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.uml2.uml.Activity;
 import org.xilaew.atg.dialogs.ActivityTestGenUserDialog;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
-import org.xilaew.atg.model.activityTestCaseGraph.util.ActivityTestCaseGraphResourceFactoryImpl;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.tests.TestSuite;
 import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
-import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
-import org.xilaew.atg.transformations.actTCG2ampl.Paths2AMPLRun;
 import org.xilaew.atg.transformations.uml2actTCG.ActTCGContinuityHelper;
 import org.xilaew.atg.transformations.uml2actTCG.UML2TCGActivity;
 import org.xilaew.atg.unitTestOutput.Tests2BoostUnitTest;
@@ -70,25 +61,31 @@ public class Experiment extends AbstractHandler {
 		// The original UML File
 		IFile umlFile = ResourceUtil.getFile(editor.getEditorInput());
 		IProject project = umlFile.getProject();
+		try {
+			project.refreshLocal(IProject.DEPTH_ONE, null);
+		} catch (CoreException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// The Input Activity
 		Activity activity = prepareTestGeneration();
 		IFile experimentResults = project
 				.getFile("PluginOutputExpreriment.txt");
+		if (experimentResults.exists()){
+			experimentResults = project.getFile("PluginOutputExperiment"+Math.random()+".txt");
+		}
 		TCGActivity tcgActivity = null;
-		String timeMessurement = PathSearch.PROPERTY_MAX_PATHLENGTH +"\t"+PathSearch.PROPERTY_MAX_NO_PATHS+"\t"+SatisfiablePathSearch.PROPERTY_SOLVER +"\t"+SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS+"\tPathsFound\ttime(ns)\t"+SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS+"\t"+SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED+"\n";
+		String timeMessurement = PathSearch.PROPERTY_MAX_PATHLENGTH + "\t"
+				+ PathSearch.PROPERTY_MAX_NO_PATHS + "\t"
+				+ SatisfiablePathSearch.PROPERTY_SOLVER + "\t"
+				+ SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS
+				+ "\tPathsFound\ttime(ns)\t"
+				+ SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS + "\t"
+				+ SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED + "\n";
 		try {
-			// ActivityTestCaseGraphResourceFactoryImpl resFactory = new
-			// ActivityTestCaseGraphResourceFactoryImpl();
-			// Resource res = resFactory.createResource(URI
-			// .createFileURI(actTCGFile.getLocationURI().getPath()));
-			// res.getContents().add(tcgActivity);
-			// ByteArrayOutputStream out = new ByteArrayOutputStream();
-			// res.save(out, null);
 			experimentResults.create(
 					new ByteArrayInputStream(timeMessurement.getBytes()),
 					false, null);
-			// amplFile.create(new ByteArrayInputStream(amplModel.getBytes()),
-			// false, null);
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,46 +94,76 @@ public class Experiment extends AbstractHandler {
 		// Ask user for parameters
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
 		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
-		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
-		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, "2");
-		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,properties);
-//		dialog.create();
-		dialog.open();
-		properties = dialog.getActivityTestGenProperties();
-		for (int i = 1; i < 12; i++) {
-			properties.setProperty(SatisfiablePathSearch.PROPERTY_MAX_PATHLENGTH, /*Iterate through Property*/
-					Integer.toString(i*10));
-			long start = System.nanoTime();
-			
-			// convert (UML) Activity to ActivityTestCaseGraph
-			try {
-				tcgActivity = UML2TCGActivity.transform(activity);
-			} catch (YouShallNotDoThisException e1) {
-				e1.printStackTrace();
-			}
-			// Perform Transformations on Activity Test Case Graph
-			ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
+		properties
+				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS,
+				"2");
+		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,
+				properties);
+		// dialog.create();
+		if (dialog.open() == dialog.OK) {
+			properties = dialog.getActivityTestGenProperties();
+			for (int i = 1; i < 12; i++) {
+				properties.setProperty(
+						SatisfiablePathSearch.PROPERTY_MAX_PATHLENGTH, /*
+																		 * Iterate
+																		 * through
+																		 * Property
+																		 */
+						Integer.toString(i * 10));
+				long start = System.nanoTime();
 
-			ActTCG2AMPLModel.transform(tcgActivity);
+				// convert (UML) Activity to ActivityTestCaseGraph
+				try {
+					tcgActivity = UML2TCGActivity.transform(activity);
+				} catch (YouShallNotDoThisException e1) {
+					e1.printStackTrace();
+				}
+				// Perform Transformations on Activity Test Case Graph
+				ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
 
-			// create PathData
-			SatisfiablePathSearch search = new SolverDFS();
-			search.setProperties(properties);
-			EMap<Path, Witness> paths = search
-					.findAllSatisfiablePaths(tcgActivity);
-			properties = search.getProperties();
+				ActTCG2AMPLModel.transform(tcgActivity);
 
+				// create PathData
+				SatisfiablePathSearch search = new SolverDFS();
+				search.setProperties(properties);
+				EMap<Path, Witness> paths = search
+						.findAllSatisfiablePaths(tcgActivity);
+				properties = search.getProperties();
 
-			TestSuite suite = TestsGeneratorHelper.generateTests(tcgActivity,
-					paths);
-			Tests2BoostUnitTest.generateUnitTest(suite);
-			start = System.nanoTime() - start;
-			timeMessurement = properties.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH) +"\t"+properties.getProperty(PathSearch.PROPERTY_MAX_NO_PATHS)+"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER) +"\t"+properties.getProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS)+"\t" + suite.getTests().size() + "\t"+ start + "\t"+properties.getProperty(SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS)+"\t"+properties.getProperty(SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED)+"\n";
-			try {
-				experimentResults.appendContents(new ByteArrayInputStream(timeMessurement.getBytes()), 0, null);
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				TestSuite suite = TestsGeneratorHelper.generateTests(
+						tcgActivity, paths);
+				Tests2BoostUnitTest.generateUnitTest(suite);
+				start = System.nanoTime() - start;
+				timeMessurement = properties
+						.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH)
+						+ "\t"
+						+ properties
+								.getProperty(PathSearch.PROPERTY_MAX_NO_PATHS)
+						+ "\t"
+						+ properties
+								.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER)
+						+ "\t"
+						+ properties
+								.getProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS)
+						+ "\t"
+						+ suite.getTests().size()
+						+ "\t"
+						+ start
+						+ "\t"
+						+ properties
+								.getProperty(SatisfiablePathSearch.STAT_TOTAL_SOLVER_RUNS)
+						+ "\t"
+						+ properties
+								.getProperty(SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED)
+						+ "\n";
+				try {
+					experimentResults.appendContents(new ByteArrayInputStream(
+							timeMessurement.getBytes()), 0, null);
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		return null;

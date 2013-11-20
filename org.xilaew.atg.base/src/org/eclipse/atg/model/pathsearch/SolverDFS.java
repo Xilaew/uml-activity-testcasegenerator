@@ -1,5 +1,6 @@
 package org.eclipse.atg.model.pathsearch;
 
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
@@ -8,6 +9,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
+import org.xilaew.amplCLI.JAMPL;
 import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
@@ -27,6 +29,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		Deque<Pair> stack = new ArrayDeque<Pair>();
 		ampl.setSolver(solver);
 		ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
+		int resetCounter = 0;
 		int passedDecisions = 0;
 		for (AbstractTCGEdge edge : atcg.getInitialNode().getOutgoing()) {
 			stack.add(new Pair(edge, new Integer(0)));
@@ -56,7 +59,23 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 					if (passedDecisions > uncheckedSteps) {
 						passedDecisions = 0;
 						ampl.loadData(Path2AMPLData.transform(currentPath));
-						SolveResult solved = ampl.solve();
+						SolveResult solved = SolveResult.Solved;
+						try {
+							solved = ampl.solve();
+						} catch (IOException e) {
+							ampl = new JAMPL();
+							ampl.setSolver(solver);
+							ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
+							resetCounter++;
+							System.out.println("RESET!!!");
+							ampl.loadData(Path2AMPLData.transform(currentPath));
+							try {
+								solved = ampl.solve();
+							} catch (IOException e1) {
+								e1.printStackTrace();
+								break;
+							}
+						}
 						totalSolves++;
 						if (solved == SolveResult.Infeasible) {
 							infeasibleSolves++;
@@ -65,11 +84,12 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 						}
 						if (solved == SolveResult.Failure) {
 							System.out.println("FAILURE!!!!!!!");
-							break;
+							infeasibleSolves++;
+							continue;
 						}
 					}
 				} // System.out.println("Adding Next STEP");
-				// add child nodes to Stack
+					// add child nodes to Stack
 				for (AbstractTCGEdge outgoing : currentNode.getOutgoing()) {
 					stack.addFirst(new Pair(outgoing, new Integer(currentPath
 							.getEdges().size())));
@@ -81,7 +101,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 				Witness witness = generateWitness(currentPath, atcg);
 				if (witness != null) {
 					result.put(currentPath, witness);
-					System.out.println("found test case "+new Date());
+					System.out.println("found test case " + new Date());
 					Path newCurrentPath = TestCaseGraphRuntimeFactory.eINSTANCE
 							.createPath();
 					for (AbstractTCGEdge e : currentPath.getEdges()) {
@@ -105,7 +125,22 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 	private Witness generateWitness(Path currentPath, TCGActivity atcg) {
 		ampl.loadData(Path2AMPLData.transform(currentPath));
 		Witness result = new Witness();
-		SolveResult solved = ampl.solve();
+		SolveResult solved;
+		try {
+			solved = ampl.solve();
+		} catch (IOException e) {
+			ampl = new JAMPL();
+			ampl.setSolver(solver);
+			ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
+			System.out.println("RESET!!!");
+			ampl.loadData(Path2AMPLData.transform(currentPath));
+			try {
+				solved = ampl.solve();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				return null;
+			}
+		}
 		totalSolves++;
 		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
 			infeasibleSolves++;
@@ -116,10 +151,20 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 				TCGBasicVariable basicVar = (TCGBasicVariable) var;
 				if (basicVar.isIsParameter()) {
 					EList<Double> par = new BasicEList<Double>();
-					par.add(ampl.getParameter(basicVar.getName()));
+					try {
+						par.add(ampl.getParameter(basicVar.getName()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					result.put(basicVar, par);
 				} else {
-					result.put(basicVar, ampl.getVariable(basicVar.getName()));
+					try {
+						result.put(basicVar, ampl.getVariable(basicVar.getName()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}

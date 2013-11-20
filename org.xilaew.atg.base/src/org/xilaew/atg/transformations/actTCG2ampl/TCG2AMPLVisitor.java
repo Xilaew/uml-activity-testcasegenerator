@@ -163,7 +163,7 @@ class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		if (object.getVariableType().equals(TCGBasicVariableType.INTEGER))
 			typeSpec = " : integer >=-10000, <= 10000";
 		if (object.getVariableType().equals(TCGBasicVariableType.BOOLEAN))
-			typeSpec = " in 0..1";
+			typeSpec = " : integer >=0, <= 1";
 		if (object.getVariableType().equals(TCGBasicVariableType.REAL))
 			typeSpec = ">=-10000, <= 10000";
 		String result = "var " + object.getName()
