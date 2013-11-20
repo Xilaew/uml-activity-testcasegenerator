@@ -55,8 +55,12 @@ ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
+ymode=log,
 ]
 \addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy.txt};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns);]{Experiment-DATA/Runtime10-100.txt};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/Runtime210-80.txt};
+\addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy2.txt};
 \end{axis}
 \end{tikzpicture}%
 \begin{tikzpicture}
@@ -66,7 +70,8 @@ ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
-]
+ymode=log,
+] 
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths.txt};
 %\addlegendentry{Max_Pathlength = 40}
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};

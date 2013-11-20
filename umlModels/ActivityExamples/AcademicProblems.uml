@@ -593,7 +593,6 @@
           <guard xmi:type="uml:LiteralString" xmi:id="_TynvAFIBEeOcPIkF2qgdeQ" value="a0=true and a1=true"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_qAvMcFIAEeOcPIkF2qgdeQ" name="ControlFlow6" source="_hKMpkFIAEeOcPIkF2qgdeQ" target="_d5twQFIAEeOcPIkF2qgdeQ"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_rFLE8FIAEeOcPIkF2qgdeQ" name="ControlFlow7" source="_WBwVgFIAEeOcPIkF2qgdeQ"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_Dn0e4FICEeOcPIkF2qgdeQ" name="ControlFlow8" source="_c-YJYFIAEeOcPIkF2qgdeQ" target="__ziU8FIBEeOcPIkF2qgdeQ">
           <guard xmi:type="uml:LiteralString" xmi:id="_H8W2MFICEeOcPIkF2qgdeQ" value="a0=false and a1=false"/>
         </edge>
@@ -601,31 +600,30 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_NTItoFICEeOcPIkF2qgdeQ" name="ControlFlow10" source="_h-1LgFIAEeOcPIkF2qgdeQ" target="_d5twQFIAEeOcPIkF2qgdeQ"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_N2sGoFICEeOcPIkF2qgdeQ" name="ControlFlow11" source="__ziU8FIBEeOcPIkF2qgdeQ" target="_d5twQFIAEeOcPIkF2qgdeQ"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_hVpZsFICEeOcPIkF2qgdeQ" name="ControlFlow12" source="_d5twQFIAEeOcPIkF2qgdeQ" target="_PlZEIFICEeOcPIkF2qgdeQ"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_uOG54FICEeOcPIkF2qgdeQ" name="ControlFlow13" target="_c-YJYFIAEeOcPIkF2qgdeQ"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_0XGRYFICEeOcPIkF2qgdeQ" name="ControlFlow14" source="_WBwVgFIAEeOcPIkF2qgdeQ" target="_c-YJYFIAEeOcPIkF2qgdeQ">
-          <guard xmi:type="uml:LiteralString" xmi:id="_3928sFICEeOcPIkF2qgdeQ" value="s0=false and s1=false and s2=false and s3=false"/>
+          <guard xmi:type="uml:LiteralString" xmi:id="_3928sFICEeOcPIkF2qgdeQ" value="o0=false and o1=false and o2=false and o3=false"/>
         </edge>
-        <node xmi:type="uml:InitialNode" xmi:id="_WBwVgFIAEeOcPIkF2qgdeQ" name="InitialNode1" outgoing="_rFLE8FIAEeOcPIkF2qgdeQ _0XGRYFICEeOcPIkF2qgdeQ"/>
-        <node xmi:type="uml:DecisionNode" xmi:id="_c-YJYFIAEeOcPIkF2qgdeQ" name="DecisionNode1" outgoing="_n6tUEFIAEeOcPIkF2qgdeQ _nQ47AFIAEeOcPIkF2qgdeQ _mka2kFIAEeOcPIkF2qgdeQ _Dn0e4FICEeOcPIkF2qgdeQ" incoming="_uOG54FICEeOcPIkF2qgdeQ _0XGRYFICEeOcPIkF2qgdeQ"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_WBwVgFIAEeOcPIkF2qgdeQ" name="InitialNode1" outgoing="_0XGRYFICEeOcPIkF2qgdeQ"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_c-YJYFIAEeOcPIkF2qgdeQ" name="DecisionNode1" outgoing="_n6tUEFIAEeOcPIkF2qgdeQ _nQ47AFIAEeOcPIkF2qgdeQ _mka2kFIAEeOcPIkF2qgdeQ _Dn0e4FICEeOcPIkF2qgdeQ" incoming="_0XGRYFICEeOcPIkF2qgdeQ"/>
         <node xmi:type="uml:MergeNode" xmi:id="_d5twQFIAEeOcPIkF2qgdeQ" name="MergeNode1" outgoing="_hVpZsFICEeOcPIkF2qgdeQ" incoming="_qAvMcFIAEeOcPIkF2qgdeQ _Mu5YIFICEeOcPIkF2qgdeQ _NTItoFICEeOcPIkF2qgdeQ _N2sGoFICEeOcPIkF2qgdeQ"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_hKMpkFIAEeOcPIkF2qgdeQ" name="1" outgoing="_qAvMcFIAEeOcPIkF2qgdeQ" incoming="_mka2kFIAEeOcPIkF2qgdeQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_SQD6oFICEeOcPIkF2qgdeQ" name="Constraint2">
-            <specification xmi:type="uml:LiteralString" xmi:id="_SQrlsFICEeOcPIkF2qgdeQ" name="constraintSpec" value="s1=true"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_SQrlsFICEeOcPIkF2qgdeQ" name="constraintSpec" value="o1=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_hl6VMFIAEeOcPIkF2qgdeQ" name="2" outgoing="_Mu5YIFICEeOcPIkF2qgdeQ" incoming="_nQ47AFIAEeOcPIkF2qgdeQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_RwUqoFICEeOcPIkF2qgdeQ" name="Constraint2">
-            <specification xmi:type="uml:LiteralString" xmi:id="_RwseEFICEeOcPIkF2qgdeQ" name="constraintSpec" value="s2=true"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_RwseEFICEeOcPIkF2qgdeQ" name="constraintSpec" value="o2=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_h-1LgFIAEeOcPIkF2qgdeQ" name="3" outgoing="_NTItoFICEeOcPIkF2qgdeQ" incoming="_n6tUEFIAEeOcPIkF2qgdeQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_RYmuMFICEeOcPIkF2qgdeQ" name="Constraint2">
-            <specification xmi:type="uml:LiteralString" xmi:id="_RZNLIFICEeOcPIkF2qgdeQ" name="constraintSpec" value="s3=true"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_RZNLIFICEeOcPIkF2qgdeQ" name="constraintSpec" value="o3=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="__ziU8FIBEeOcPIkF2qgdeQ" name="0" outgoing="_N2sGoFICEeOcPIkF2qgdeQ" incoming="_Dn0e4FICEeOcPIkF2qgdeQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_Sn82MFICEeOcPIkF2qgdeQ" name="Constraint2">
-            <specification xmi:type="uml:LiteralString" xmi:id="_SoUCkFICEeOcPIkF2qgdeQ" name="constraintSpec" value="s0=true"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_SoUCkFICEeOcPIkF2qgdeQ" name="constraintSpec" value="o0=true"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_PlZEIFICEeOcPIkF2qgdeQ" name="ActivityFinalNode1" incoming="_hVpZsFICEeOcPIkF2qgdeQ"/>
@@ -637,6 +635,10 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="__Tj-8FICEeOcPIkF2qgdeQ" name="binaryDecoder" method="_RXhbAFIAEeOcPIkF2qgdeQ">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_E6GwsFIDEeOcPIkF2qgdeQ" name="a0" type="_oNhccADtEeO2NIcdi9-HYg"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GVJLUFIDEeOcPIkF2qgdeQ" name="a1" type="_oNhccADtEeO2NIcdi9-HYg"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t0LQwFIfEeOVNeiqKXVtAw" name="o0" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t7CtwFIfEeOVNeiqKXVtAw" name="o1" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uAyJYFIfEeOVNeiqKXVtAw" name="o2" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uXxGAFIfEeOVNeiqKXVtAw" name="o3" type="_oNhccADtEeO2NIcdi9-HYg" direction="out"/>
       </ownedOperation>
     </packagedElement>
   </packagedElement>
