@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
+import org.xilaew.amplCLI.AmplFactory;
 import org.xilaew.amplCLI.JAMPL;
 import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
@@ -63,7 +64,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 						try {
 							solved = ampl.solve();
 						} catch (IOException e) {
-							ampl = new JAMPL();
+							ampl = AmplFactory.createJAMPL();
 							ampl.setSolver(solver);
 							ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
 							resetCounter++;
@@ -129,7 +130,7 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 		try {
 			solved = ampl.solve();
 		} catch (IOException e) {
-			ampl = new JAMPL();
+			ampl = AmplFactory.createJAMPL();
 			ampl.setSolver(solver);
 			ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
 			System.out.println("RESET!!!");
