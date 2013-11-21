@@ -5,11 +5,35 @@ We implemented the algorithm explained in Chapter \ref{chap:testgeneration} in a
 In order to demonstrate the strength of our approach we built a set of test models. Each test model corresponds to one of the mathematical programming problems presented in the \nameref{chap:preliminaries} Section \ref{sec:Maths}. For each model we selected a suitable solver to generate the necessary test data. 
 
 We also build a C-implementation for each academic test model and 
-\subsection{Different Constraint Types and their Handling}
+\subsection{Academic Examples}
 \label{sec:evaluationAcademicModels}
 We will start with models, which require easy problems to be solved in order to obtain test data. By easy we mean decidable problems with a tractable algorithm. Then we will explain how we generated test data for problems, which require either non trivial problems to be solved. We consider problems with intractable algorithms as non trivial. Finally we will also present models, which require an instance of an undecidable problem to be solved in order to obtain test data. That means we can only generate test data for them with tractable or intractable heuristic methods.\\
 Each solver is suitable for another problem class and for several problem classes there are multiple solvers that could be used. We performed some comparisons of different solvers in terms of runtime and the test data produced. For each presented test model we produced test data for all paths up to some maximum length and examined how much more effort in terms of runtime it is to generate boundary values as test data.\\
 Finally we built a C implementation of the function modelled by the input to our algorithm and execute the generated test suite against this implementation. We also manually introduced some errors into the implementation and verified, that the produced test suite contains test cases that fail on those errors and that all test pass when the implementation is correct.
+\subsection{Binary Counter}
+\begin{figure}
+\includegraphics[width=\textwidth]{./pics/BinaryCounter.pdf}
+\caption{Activity diagram of a binary counter incrementing a 4 bit register}
+\label{fig:BinaryCounter}
+\end{figure}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+no markers,
+ymode=log,
+]
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/SATGecode.txt};
+\addlegendentry{gecode};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/SATJacop.txt};
+\addlegendentry{JaCoP};
+\end{axis}
+\end{tikzpicture}%
+\end{figure}
+In Figure \ref{fig:BinaryCounter} we depict the activity diagram of a binary counter. The variables s0 to s3 hold the current state of the counter. The activity models a function with four input arguments o0 to o3 denoting the target counter state.
 \subsubsection{Linear}
 \paragraph{Pure Floating Point Variables}
 \paragraph{Mixed Integer}
@@ -73,15 +97,15 @@ no markers,
 ymode=log,
 ] 
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths.txt};
-%\addlegendentry{Max_Pathlength = 40}
+\addlegendentry{Max\_Pathlength = 40};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
-%\addlegendentry{Max_Pathlength = 50}
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
-%\addlegendentry{Max_Pathlength = 50}
+\addlegendentry{Max\_Pathlength = 50};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength60.txt};
+\addlegendentry{Max\_Pathlength = 60};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength70.txt};
+\addlegendentry{Max\_Pathlength = 70};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength80.txt};
-%\addlegendentry{Max_Pathlength = 60}
+\addlegendentry{Max\_Pathlength = 80};
 \end{axis}
 \end{tikzpicture}%
 %\end{center}

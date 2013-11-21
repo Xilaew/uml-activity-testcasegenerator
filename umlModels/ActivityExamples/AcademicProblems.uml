@@ -648,12 +648,12 @@
         <node xmi:type="uml:OpaqueAction" xmi:id="_gKhn8FKSEeOjF94ApGP4lQ" name="Sequence2" incoming="_Lmqs4FKTEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_iMtiIFKSEeOjF94ApGP4lQ" name="Sequence3" incoming="_MQno0FKTEeOjF94ApGP4lQ"/>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_qbjWYFKTEeOjF94ApGP4lQ" name="couter" specification="_aQD30FKWEeOjF94ApGP4lQ" node="_xP5_EFKTEeOjF94ApGP4lQ _2ckRMFKTEeOjF94ApGP4lQ _31rZMFKTEeOjF94ApGP4lQ _5Q4L4FKTEeOjF94ApGP4lQ _-vYb8FKTEeOjF94ApGP4lQ _W2wroFKUEeOjF94ApGP4lQ _mW708FKUEeOjF94ApGP4lQ _oJySoFKUEeOjF94ApGP4lQ _qlaAgFKUEeOjF94ApGP4lQ _53u7EFKUEeOjF94ApGP4lQ _8rC6wFKVEeOjF94ApGP4lQ _7hTPAFKWEeOjF94ApGP4lQ _8teuQFKWEeOjF94ApGP4lQ">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_qbjWYFKTEeOjF94ApGP4lQ" name="couter" specification="_aQD30FKWEeOjF94ApGP4lQ" node="_xP5_EFKTEeOjF94ApGP4lQ _2ckRMFKTEeOjF94ApGP4lQ _31rZMFKTEeOjF94ApGP4lQ _5Q4L4FKTEeOjF94ApGP4lQ _-vYb8FKTEeOjF94ApGP4lQ _W2wroFKUEeOjF94ApGP4lQ _mW708FKUEeOjF94ApGP4lQ _oJySoFKUEeOjF94ApGP4lQ _qlaAgFKUEeOjF94ApGP4lQ _53u7EFKUEeOjF94ApGP4lQ _8rC6wFKVEeOjF94ApGP4lQ _7hTPAFKWEeOjF94ApGP4lQ _8teuQFKWEeOjF94ApGP4lQ _8EjdUFKnEeO_gJK5ARim5Q">
         <edge xmi:type="uml:ControlFlow" xmi:id="_A0GFsFKUEeOjF94ApGP4lQ" name="ControlFlow1" source="_-vYb8FKTEeOjF94ApGP4lQ" target="_xP5_EFKTEeOjF94ApGP4lQ"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_HSRqEFKUEeOjF94ApGP4lQ" name="ControlFlow2" source="_xP5_EFKTEeOjF94ApGP4lQ" target="_2ckRMFKTEeOjF94ApGP4lQ">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_HSRqEFKUEeOjF94ApGP4lQ" name="ControlFlow2" source="_8EjdUFKnEeO_gJK5ARim5Q" target="_2ckRMFKTEeOjF94ApGP4lQ">
           <guard xmi:type="uml:LiteralString" xmi:id="_K6XLEFKUEeOjF94ApGP4lQ" value="s0=false"/>
         </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_Y8NVMFKUEeOjF94ApGP4lQ" name="ControlFlow3" source="_xP5_EFKTEeOjF94ApGP4lQ" target="_W2wroFKUEeOjF94ApGP4lQ">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Y8NVMFKUEeOjF94ApGP4lQ" name="ControlFlow3" source="_8EjdUFKnEeO_gJK5ARim5Q" target="_W2wroFKUEeOjF94ApGP4lQ">
           <guard xmi:type="uml:LiteralString" xmi:id="_d-m4EFKUEeOjF94ApGP4lQ" value="s0=true"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_rrxLoFKUEeOjF94ApGP4lQ" name="ControlFlow4" source="_W2wroFKUEeOjF94ApGP4lQ" target="_qlaAgFKUEeOjF94ApGP4lQ"/>
@@ -681,18 +681,19 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_-2fpMFKWEeOjF94ApGP4lQ" name="ControlFlow16" source="_8rC6wFKVEeOjF94ApGP4lQ" target="_8teuQFKWEeOjF94ApGP4lQ">
           <guard xmi:type="uml:LiteralString" xmi:id="_GiV6kFKXEeOjF94ApGP4lQ" value="s0=o0 and s1=o1 and s2=o2 and s3=o3"/>
         </edge>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_xP5_EFKTEeOjF94ApGP4lQ" name="togles0" outgoing="_HSRqEFKUEeOjF94ApGP4lQ _Y8NVMFKUEeOjF94ApGP4lQ" incoming="_A0GFsFKUEeOjF94ApGP4lQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_NalsIFKUEeOjF94ApGP4lQ" name="Constraint2">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_-n6K4FKnEeO_gJK5ARim5Q" name="ControlFlow17" source="_xP5_EFKTEeOjF94ApGP4lQ" target="_8EjdUFKnEeO_gJK5ARim5Q"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_xP5_EFKTEeOjF94ApGP4lQ" name="togles0" outgoing="_-n6K4FKnEeO_gJK5ARim5Q" incoming="_A0GFsFKUEeOjF94ApGP4lQ">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_NalsIFKUEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_NbMJEFKUEeOjF94ApGP4lQ" name="constraintSpec" value="not (s0=s0@pre)"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_2ckRMFKTEeOjF94ApGP4lQ" name="togles1" outgoing="_sTMYAFKUEeOjF94ApGP4lQ" incoming="_HSRqEFKUEeOjF94ApGP4lQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="__pCV4FKVEeOjF94ApGP4lQ" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="__pCV4FKVEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="__p7GsFKVEeOjF94ApGP4lQ" name="constraintSpec" value="not (s1=s1@pre)"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_31rZMFKTEeOjF94ApGP4lQ" name="togles3" outgoing="_9WymcFKVEeOjF94ApGP4lQ" incoming="_DD1eQFKVEeOjF94ApGP4lQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_H7abwFKWEeOjF94ApGP4lQ" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_H7abwFKWEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_H8TMkFKWEeOjF94ApGP4lQ" name="constraintSpec" value="not (s3=s3@pre)"/>
           </localPostcondition>
         </node>
@@ -700,7 +701,7 @@
         <node xmi:type="uml:DecisionNode" xmi:id="_-vYb8FKTEeOjF94ApGP4lQ" name="DecisionNode1" outgoing="_A0GFsFKUEeOjF94ApGP4lQ" incoming="_OK4OsFKWEeOjF94ApGP4lQ _94dToFKWEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_W2wroFKUEeOjF94ApGP4lQ" name="notogles1" outgoing="_rrxLoFKUEeOjF94ApGP4lQ" incoming="_Y8NVMFKUEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_mW708FKUEeOjF94ApGP4lQ" name="togles2" outgoing="_8DJCsFKUEeOjF94ApGP4lQ" incoming="_uI4HQFKUEeOjF94ApGP4lQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_EKiyMFKWEeOjF94ApGP4lQ" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_EKiyMFKWEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_ELSZEFKWEeOjF94ApGP4lQ" name="constraintSpec" value="not (s2=s2@pre)"/>
           </localPostcondition>
         </node>
@@ -710,6 +711,7 @@
         <node xmi:type="uml:MergeNode" xmi:id="_8rC6wFKVEeOjF94ApGP4lQ" name="MergeNode1" outgoing="_OK4OsFKWEeOjF94ApGP4lQ _-2fpMFKWEeOjF94ApGP4lQ" incoming="_9WymcFKVEeOjF94ApGP4lQ _971NMFKVEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:InitialNode" xmi:id="_7hTPAFKWEeOjF94ApGP4lQ" name="InitialNode1" outgoing="_94dToFKWEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_8teuQFKWEeOjF94ApGP4lQ" name="ActivityFinalNode1" incoming="_-2fpMFKWEeOjF94ApGP4lQ"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_8EjdUFKnEeO_gJK5ARim5Q" name="DecisionNode4" outgoing="_Y8NVMFKUEeOjF94ApGP4lQ _HSRqEFKUEeOjF94ApGP4lQ" incoming="_-n6K4FKnEeO_gJK5ARim5Q"/>
       </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_EwvLkFH-EeOcPIkF2qgdeQ" name="FullAdder">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_MN9yIFH-EeOcPIkF2qgdeQ" name="i00" type="_oNhccADtEeO2NIcdi9-HYg"/>
