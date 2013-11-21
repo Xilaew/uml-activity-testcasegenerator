@@ -1,5 +1,5 @@
-//unchecked steps =10 (CaseStudy) SolverDFS
-//nach der bearbeitung des Algorithmus, und Anpassung des Modells.
+#//unchecked steps =10 (CaseStudy) SolverDFS
+#//nach der bearbeitung des Algorithmus, und Anpassung des Modells.
 Max_PATHLENGTH	NO_PATHS	ElapsedTime(ns)
 20	4	820506796
 40	104	3980181839
