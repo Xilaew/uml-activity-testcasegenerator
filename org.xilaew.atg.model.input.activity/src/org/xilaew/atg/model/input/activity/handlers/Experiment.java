@@ -103,14 +103,14 @@ public class Experiment extends AbstractHandler {
 		// dialog.create();
 		if (dialog.open() == dialog.OK) {
 			properties = dialog.getActivityTestGenProperties();
-			for (int i = 1; i < 12; i++) {
+			for (int i = 0; i < 20; i++) {
 				properties.setProperty(
-						SatisfiablePathSearch.PROPERTY_MAX_PATHLENGTH, /*
+						SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*
 																		 * Iterate
 																		 * through
 																		 * Property
 																		 */
-						Integer.toString(i * 10));
+						Integer.toString(i));
 				long start = System.nanoTime();
 
 				// convert (UML) Activity to ActivityTestCaseGraph

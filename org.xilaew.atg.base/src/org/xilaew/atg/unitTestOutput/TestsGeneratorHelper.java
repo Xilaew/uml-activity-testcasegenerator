@@ -57,7 +57,7 @@ public class TestsGeneratorHelper {
 			try {
 				solved = ampl.solve();
 			} catch (IOException e) {
-				ampl = new JAMPL();
+				ampl = AmplFactory.createJAMPL();
 				ampl.setSolver(solver);
 				ampl.loadModel(ActTCG2AMPLModel.transform(tcgActivity));
 				System.out.println("RESET!!!");

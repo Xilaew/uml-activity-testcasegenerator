@@ -22,6 +22,10 @@ import util.Output;
  * 
  */
 public class JAMPL {
+	
+	JAMPL(){
+		
+	};
 
 	protected String getSolver() {
 		return solver;
