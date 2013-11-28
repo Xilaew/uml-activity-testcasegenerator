@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xilaew.atg.model/src" modelPluginID="org.xilaew.atg.model"
+    modelName="ActivityTestCaseGraph2" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" reflectiveDelegation="true"
+    importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ActivityTestCaseGraph.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="ActivityTestCaseGraph" disposableProviderFactory="true" ecorePackage="ActivityTestCaseGraph.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityTestCaseGraph.ecore#//TCGBasicVariableType">
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Real"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGBasicVariableType/Boolean"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityTestCaseGraph.ecore#//TCGOCLOperationType">
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/multiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/addition"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/division"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/subtraction"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/size"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/equals"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/unequal"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/lessThan"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/greaterEquals"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/lessEquals"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/and"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/or"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/not"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/xor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ActivityTestCaseGraph.ecore#//TCGVariableUsage">
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/inParameter"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/outParameter"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/inoutParameter"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/returnParameter"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/field"/>
+      <genEnumLiterals ecoreEnumLiteral="ActivityTestCaseGraph.ecore#//TCGVariableUsage/localVariable"/>
+    </genEnums>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGActivity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGActivity/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGActivity/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGActivity/packageName"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGAction/localPostconditions"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGControlFlow"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGControlNode"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGVariable/referencedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGVariable/isParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGVariable/usage"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGObjectVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGObjectVariable/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGBasicVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGBasicVariable/variableType"/>
+      <genOperations ecoreOperation="ActivityTestCaseGraph.ecore#//TCGBasicVariable/getAbsoluteName"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLExpression"/>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLOperationCallExp/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLVariableCallExp/isPre"/>
+    </genClasses>
+    <genClasses ecoreClass="ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ActivityTestCaseGraph.ecore#//TCGOCLLiteralExp/value"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="AbstractTestCaseGraph" disposableProviderFactory="true" ecorePackage="AbstractTestCaseGraph.ecore#/">
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AbstractTestCaseGraph.ecore#//AbstractTCGElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGContainer/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGContainer/edges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGContainer/initialNode"/>
+    </genClasses>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGNode/outgoing"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGNode/incoming"/>
+    </genClasses>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGEdge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGEdge/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AbstractTestCaseGraph.ecore#//AbstractTCGEdge/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode"/>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGPseudoNode"/>
+    <genClasses ecoreClass="AbstractTestCaseGraph.ecore#//AbstractTCGConstraint"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -183,8 +183,8 @@ ymode=log,
 width=0.49\textwidth,
 xlabel={unchecked steps},
 ylabel={time},
-ytick={10000000000,60000000000,600000000000,3600000000000},
-yticklabels={10s,1m,10m,1h},
+ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
+yticklabels={10s,1m,10m,1h,1d},
 no markers,
 legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
 ymajorgrids=true,
@@ -204,6 +204,8 @@ ymode=log,
 \addlegendentry{70};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
 \addlegendentry{80};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
+\addlegendentry{90};
 \end{axis}
 \end{tikzpicture}%
 %\end{center}
