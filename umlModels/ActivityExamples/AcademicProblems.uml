@@ -164,22 +164,22 @@
         <edge xmi:type="uml:ControlFlow" xmi:id="_S5cfYFajEeOuxYA0qGrabQ" name="ControlFlow34" source="_yVfW4FagEeOuxYA0qGrabQ" target="_U2cnQAD6EeO2NIcdi9-HYg"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_zLOLYFaoEeOuxYA0qGrabQ" name="" source="_U2cnTQD6EeO2NIcdi9-HYg" target="_U2cnPQD6EeO2NIcdi9-HYg"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnOgD6EeO2NIcdi9-HYg" name="invalid" outgoing="_U2cnNQD6EeO2NIcdi9-HYg" incoming="_nHB-kFaZEeOuxYA0qGrabQ _wxLvsFaZEeOuxYA0qGrabQ _2QlXoFaZEeOuxYA0qGrabQ _AffboFaaEeOuxYA0qGrabQ _RSrE8FaaEeOuxYA0qGrabQ _T7YzoFaaEeOuxYA0qGrabQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnOwD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnOwD6EeO2NIcdi9-HYg" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPAD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=-1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnPQD6EeO2NIcdi9-HYg" name="scalane" outgoing="_U2cnMQD6EeO2NIcdi9-HYg" incoming="_zLOLYFaoEeOuxYA0qGrabQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnPgD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnPgD6EeO2NIcdi9-HYg" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnPwD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=1"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQAD6EeO2NIcdi9-HYg" name="isosceles" outgoing="_U2cnMgD6EeO2NIcdi9-HYg" incoming="_S5cfYFajEeOuxYA0qGrabQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnQQD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnQQD6EeO2NIcdi9-HYg" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_U2cnQgD6EeO2NIcdi9-HYg" name="constraintSpec" value="classification=2"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_U2cnQwD6EeO2NIcdi9-HYg" name="eqilateral" outgoing="_U2cnMwD6EeO2NIcdi9-HYg" incoming="__Ep7sFahEeOuxYA0qGrabQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnRAD6EeO2NIcdi9-HYg" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_U2cnRAD6EeO2NIcdi9-HYg" name="">
             <specification xmi:type="uml:OpaqueExpression" xmi:id="_U2cnRQD6EeO2NIcdi9-HYg" name="post">
               <language>OCL</language>
               <body>classification=3</body>
