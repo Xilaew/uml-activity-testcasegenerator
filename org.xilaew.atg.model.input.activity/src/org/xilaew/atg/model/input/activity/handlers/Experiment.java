@@ -97,9 +97,9 @@ public class Experiment extends AbstractHandler {
 
 		// Ask user for parameters
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
-		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "-1");
+		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
 		properties
-				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "cplex");
+				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
 		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS,
 				"2");
 		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,
@@ -107,7 +107,7 @@ public class Experiment extends AbstractHandler {
 		// dialog.create();
 		if (dialog.open() == dialog.OK) {
 			properties = dialog.getActivityTestGenProperties();
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 20; i++) {
 				properties.setProperty(
 						SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*
 																		 * Iterate
