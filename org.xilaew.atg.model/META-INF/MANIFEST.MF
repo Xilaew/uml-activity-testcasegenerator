@@ -8,6 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.xilaew.atg.model.abstractTestCaseGraph,
+ org.xilaew.atg.model.abstractTestCaseGraph.impl,
  org.xilaew.atg.model.abstractTestCaseGraph.util,
  org.xilaew.atg.model.activityTestCaseGraph,
  org.xilaew.atg.model.activityTestCaseGraph.impl,

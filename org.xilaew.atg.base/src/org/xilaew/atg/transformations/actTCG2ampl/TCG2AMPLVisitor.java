@@ -87,6 +87,9 @@ class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		case TCGOCLOperationType.LESS_THAN_VALUE:
 			function = "<";
 			break;
+		case TCGOCLOperationType.UNEQUAL_VALUE:
+			function = "<>";
+			break;
 		default:
 			function = " " + object.getOperation().getLiteral() + " ";
 		}
@@ -94,7 +97,7 @@ class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 				+ ")";
 		// for Unary functions the function symbol is in front of its source
 		if (object.getArguments().isEmpty()) {
-			result = "(" + function + source + ")";
+			result = function + "(" + source + ")" ;
 		}
 		return result;
 	}

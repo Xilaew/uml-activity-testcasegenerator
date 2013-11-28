@@ -79,6 +79,14 @@ public enum TCGOCLOperationType implements Enumerator {
 	EQUALS(5, "equals", "="),
 
 	/**
+	 * The '<em><b>Unequal</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNEQUAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNEQUAL(14, "unequal", "<>"), /**
 	 * The '<em><b>Greater Than</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +249,21 @@ public enum TCGOCLOperationType implements Enumerator {
 	public static final int EQUALS_VALUE = 5;
 
 	/**
+	 * The '<em><b>Unequal</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Unequal</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNEQUAL
+	 * @model name="unequal" literal="<>"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNEQUAL_VALUE = 14;
+
+	/**
 	 * The '<em><b>Greater Than</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -374,6 +397,7 @@ public enum TCGOCLOperationType implements Enumerator {
 			SUBTRACTION,
 			SIZE,
 			EQUALS,
+			UNEQUAL,
 			GREATER_THAN,
 			LESS_THAN,
 			GREATER_EQUALS,
@@ -438,6 +462,7 @@ public enum TCGOCLOperationType implements Enumerator {
 			case SUBTRACTION_VALUE: return SUBTRACTION;
 			case SIZE_VALUE: return SIZE;
 			case EQUALS_VALUE: return EQUALS;
+			case UNEQUAL_VALUE: return UNEQUAL;
 			case GREATER_THAN_VALUE: return GREATER_THAN;
 			case LESS_THAN_VALUE: return LESS_THAN;
 			case GREATER_EQUALS_VALUE: return GREATER_EQUALS;

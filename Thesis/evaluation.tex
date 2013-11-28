@@ -1,52 +1,138 @@
 \chapter{Evaluation}
 \label{chap:evaluation}
-We implemented the algorithm explained in Chapter \ref{chap:testgeneration} in an Eclipse plug--in and successfully tested it for a set of academic problems and performed a case study with a real world model from Airbus. We will point out that the transparent interchangeability of solvers is indeed one of the biggest advantages of the approach presented in this thesis. Also the limitations as well as missing but easily implementable features will be discussed in Section \ref{sec:evaluationLimitations}.
+We implemented the algorithm explained in Chapter \ref{chap:testgeneration} as Eclipse plug--in and successfully tested it for a set of academic problems and performed a case study with a real world model from Airbus. We will point out that the transparent interchangeability of solvers is indeed one of the biggest advantages of the approach presented in this thesis. Also the limitations as well as missing but easily implementable features increasing the usability will be discussed in Section \ref{sec:evaluationLimitations}.\\
 \section{Example Models and Case Study}
-In order to demonstrate the strength of our approach we built a set of test models. Each test model corresponds to one of the mathematical programming problems presented in the \nameref{chap:preliminaries} Section \ref{sec:Maths}. For each model we selected a suitable solver to generate the necessary test data. 
+In order to demonstrate the strength of our approach we built a set of test models. Each test model requires an instance of another mathematical programming problems presented in the \nameref{sec:Maths} to be solved in order to generate test data. For each test model we generated test cases with the depth first search explained in Section \ref{sec:pathsearchDFS} using the early infeasible path eliminiation explained in Section \ref{sec:EarlyInfeasiblePathRecognition}. We explain which problem the mathematical program generated for each test model is an instance of and justify which solvers are suitable to solve it. With each selected solver we generated test cases for the test model using different parameters for the depth first search and early infeasible path recognition. We measured the total runtime of our algororithm and plotted the runtime for differnt parameters graphically.\\
+We also build a C-implementation for each academic test model and compiled and ran the generated unit tests against them and manually introduced some errors and checked wheather they are detected by the generated test suite.
+\subsection{Experiment Description}
+\subsubsection{Runtime Measurement}
+The total runtime of our algorith is mainly influenced by two factors: The time necessary to solve one instance of the mathematical problem and the total count of problems to be solved during unit test generation. The total count of problems beeing solved depends on the model and the parameters used for the \nameref{sec:pathsearch}. For an acyclic activity diagram there is a finite number of control flow paths and abstract test cases. Assuming an activity diagram showing a tree like control flow graph of depth 10 and a fanout of two in each node we get a total of $2^{10}$ abstract test cases. With normal breadth first or depth first path seach we will have to solve one mathematical program for each control flow path in order to obtain test data, or find out that it is an infeasible control flow path. In general we can say the number of control flow paths in an activity diagram grows exponentially with the number of decisions in the activity diagram; so does the number of problems beeing solved.\\
+For the \nameref{sec:pathsearch} we examine the influence of three parameters on the overall runtime. That is the maximum path length, the maximum number of test cases, and the number of unchecked steps. The maximum path length bounds the path search in depth and ensures the termination of the algorithm. For an activty diagram containing at least two different cycles the number of abstract test cases grows exponentially with the maximum path length. %Assume an activity diagram showing a loop, where in each iteration there is one decision with two possible control flows to take. Not after each node there are multiple outgoing edges, that means not every control flow in the control flow path has been choosen among several options, but the number of coises is linearly related to the maximum path length. Assume for the cyclic activity the cycle with the decision in it has the length of three no matter wich path had been taken inside the loop. 
+The total ammount of control flow paths found in a graph with two alternative cycles can be calculated as shown in Equation \ref{eqn:MaxPathLength} where $l_{MAX}$ denotes the maximum path length and $a$ the cycle length
+\begin{equation}\sum_{n=1}^{max path length/a}{2^n}\label{eqn:MaxPathLength}\end{equation}
+The parameter maximum number of test cases obviously linearly with the number of abstract test cases that need to be checked wheather valid test data can be obtained for them. The count of mathematical problems to be solved is the maximum number of test cases divided by the chance that any abstract test case found is an infeasible path. 
+The parameter unchecked steps plays a role, when the early infeasible path recognition is activated. The early infeasible path elimination will cut off a huge amount of abstract test cases when a some sub-path is found to be infeasilbe, but it will also slightly increase the count of problems to be solved in the worst case. We again consider the tree like control flow graph with a fanout of two and a depth of ten. We have to solve one mathematical program for each abstract test case to obtain the test data and during the path search we will solve several a mathematical program for several sub--paths. Assuming all $2^{10}$ abstract test cases are feasible paths the number of problems to be solved is approximately given in Equation (\ref{eqn:infeasiblePathRecognitionWorstCase}). $l_{UNCHCK}$ is the number of unchecked steps.
+\begin{equation}
+2^{10}+\sum_{n=l_{UNCHCK}+1, \Delta n=l_{UNCHCK}+1}^{10}{2^n}
+\label{eqn:infeasiblePathRecognitionWorstCase}
+\end{equation}
+When we determine already after the third decision one of the $2^3$ control flow sub--paths to be infeasible that will reduce the total number of mathematical programs beeing solved by $\frac{1}{8}$. The less unchecked steps we use the more mathematical problems will be solved in vain if all paths are feasible, but the earlyer we get the chance to eliminate infeasible paths the larger is the fraction of the search space we can directly cut off when an infeasible path is recognized. The optimal value for the unchecked steps parameter is a tradeof between solving unecessarily many mathematical problems and not beeing able to cut of large portions of infeasible abstract test cases early enough.
+\\
+The runtime of a single solver run for models that require decidable problems with a tractable algorithm to be solved is usually below $0.01$ seconds. Also for problems with intractable algorithms the runtime stays below one second. A slight advantage in terms of solving speed has a large impact on the overall runtime since that is the part that consumes more than 99\% of the overall runtime. For undecidable problems we get the problem, that the heuristig might run forever and we need a good time limit for that. 
+We meassured the overall runtime of our algorithm transforming a UML \UMLType{Activity} into a compilable unit test varying the maximum path length, the maximum number of test cases, the number of unchecked steps, the used solver and its options and plottet the graphs for each of the academic example models and the case study.
+\subsubsection{Mutation Testing}
 
-We also build a C-implementation for each academic test model and 
+
+
 \subsection{Academic Examples}
 \label{sec:evaluationAcademicModels}
-We will start with models, which require easy problems to be solved in order to obtain test data. By easy we mean decidable problems with a tractable algorithm. Then we will explain how we generated test data for problems, which require either non trivial problems to be solved. We consider problems with intractable algorithms as non trivial. Finally we will also present models, which require an instance of an undecidable problem to be solved in order to obtain test data. That means we can only generate test data for them with tractable or intractable heuristic methods.\\
+We will start with models, which require easy problems to be solved in order to obtain test data. By easy we mean decidable problems with a tractable algorithm. Then we will explain how we generated test data for problems, which require NP-hard problems to be solved. Finally we will also present models, which require an instance of an undecidable problem to be solved in order to obtain test data. That means we can only generate test data for them with heuristic methods.\\
 Each solver is suitable for another problem class and for several problem classes there are multiple solvers that could be used. We performed some comparisons of different solvers in terms of runtime and the test data produced. For each presented test model we produced test data for all paths up to some maximum length and examined how much more effort in terms of runtime it is to generate boundary values as test data.\\
 Finally we built a C implementation of the function modelled by the input to our algorithm and execute the generated test suite against this implementation. We also manually introduced some errors into the implementation and verified, that the produced test suite contains test cases that fail on those errors and that all test pass when the implementation is correct.
-\subsection{Binary Counter}
+
+\subsubsection{Linear}
+\paragraph{Pure Floating Point Variables}
+\paragraph{Mixed Integer}
+solve with cplex up to 100000 Variables possible
+\subsubsection{Triangle Classificator}
+We start with a model that contains only linear equalities and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating wheather the input variables could possibly be the side lenthes of an equilateral, isoscales, or scalane triangle.
+\subsubsection{Binary Counter}
 \begin{figure}
 \includegraphics[width=\textwidth]{./pics/BinaryCounter.pdf}
 \caption{Activity diagram of a binary counter incrementing a 4 bit register}
 \label{fig:BinaryCounter}
 \end{figure}
+In Figure \ref{fig:BinaryCounter} we depict the activity diagram of a binary counter. The variables $s0$ to $s3$ hold the current state of the counter. The activity models a function with four input arguments $o0$ to $o3$ denoting the target counter state. During execution the the function will increment the binary counter stepwise until the current state of the counter is the same as the target counter state. Then the function returns.\\
+All used variables are in $\mathbb{B}$ and we use logical operations in the formulation of constraints. In addition to the basic logical operations we also used the equality and inequality relation for boolean variables. The equality of two boolean variables x and y could easily have been expressed as $x \land y \lor \neg x \land \neg y$ and the inequality as $\neg x \land y \lor x \land \neg y$. We consider the problem to solve in order to find test data for this activity an instance of the Boolean Satisfiybility Problem (SAT) although the contained equalities and inequalities could be considered as expressions in a theory defining equality and inequality over boolean variables and thus the formulation could also be seen as a SMT instance.\\
+\paragraph{Experiments}
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.49\textwidth,
+width=0.498\textwidth,
+legend style={legend columns=2,at={(0.5,1.02)},
+anchor=south},
+xtick={10,20,30,40,50,60,70,80,90},
+ytick={1e9,1e10,1e11,1e12,1e13},
+yticklabels={1s,10s,100s,1000s,10000s},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
+xminorgrids=true,
+xlabel={max path length},
+ylabel={time},
+xmin=5,
+xmax=95,
 no markers,
 ymode=log,
 ]
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/SATGecode.txt};
-\addlegendentry{gecode};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/SATJacop.txt};
-\addlegendentry{JaCoP};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSAT.csv};
+\addlegendentry{gecode SAT};
+\label{leg:gecodeSAT};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSMT.csv};
+\addlegendentry{gecode SMT};
+\label{leg:gecodeSMT};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacopSAT.csv};
+\addlegendentry{JaCoP SAT};
+\label{leg:jacop};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\addlegendentry{gecode+presolve};
+\label{leg:gecode+presolve};
 \end{axis}
 \end{tikzpicture}%
+\hspace{0.04\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+%nodes near coords,
+xmin=5,
+xmax=95,
+xtick={10,20,30,40,50,60,70,80,90},
+%y label style={at={1,0.5},anchor=west},
+xlabel={max path length},
+ylabel={total number of test cases},
+axis y line*=left,
+]
+\addplot+[mark=circle,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\end{axis}
+\begin{axis}[
+width=0.498\textwidth,
+nodes near coords,
+xmin=5,
+xmax=95,
+xtick={10,20,30,40,50,60,70,80.90},
+axis y line*=right,
+axis x line=none,
+ylabel near ticks,
+ylabel={total number of problems solved},
+ymode=log,
+]
+\addplot+[mark=x,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PATHSEARCH_TOTAL_SOLVER_RUNS,nodes=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{comparison of runtimes to generate one test case per feasible control flow path}
+\label{fig:BinaryCounterRuntime}
 \end{figure}
-In Figure \ref{fig:BinaryCounter} we depict the activity diagram of a binary counter. The variables s0 to s3 hold the current state of the counter. The activity models a function with four input arguments o0 to o3 denoting the target counter state.
-\subsubsection{Linear}
-\paragraph{Pure Floating Point Variables}
-\paragraph{Mixed Integer}
-solve with cplex up to 100000 Variables possible
+We performed several experiments with this example. First we transformed the the UML Activity into an activity test case graph and then into an AMPL model. We verified by hand, that the constraints in the AMPL model indeed expresses the same semantic as the OCL guard conditions and OCL local post--conditions in the UML model, and that every embedded OCL constraint contained in the input model shows up in the AMPL model. We implemented the C function, that is modelled by this activity diagram in order to run the generated unit tests against it later. Then we generated test cases for the model using two differnt solvers. Currently there are three solvers available for AMPL that can handle logical constraints: ilogcp, gecode, and jacop. Since for ilogcp a license is needed we performed our experiments with gecode and jacop. We used the depth first search algorithm with early infeasible path recognition as explained in Section \ref{sec:pathsearchDFS} to find test cases for this activity diagram. We generated all testcases up to a control flow path length of 80. In the right graph in Figure \ref{fig:BinaryCounterRuntime} we see the total number of test cases found depending on the maximum path length and the amount of SAT instances that had to be solved to find those test cases. We also meassured the overall runtime of the unit test generation process. On the left hand side of Figure \ref{fig:BinaryCounterRuntime} we see the total runtime needed by our algorithm to find all test cases up to a given maximum path length using different configurations beeing explained in the following paragraphs.
+\paragraph{Alternative Formulation of Constraints}
+As we see the embedded OCL constraints contain equalities and inequalities over boolean variables in addition to the basic boolean operations. We replaced the equalities and inequalities with the equivalent boolean formula. Not all embeded OCL constraints were given in conjunctive normal form. Moreover the produced AMPL model will nevertheless still contain equalities, due to the continuity constraints that will be added automaticaly as explained in Section \ref{sec:addingContinuityConstraints}. We considered it a too high manual effort to turn every OCL constraint into a perfect conjunctive normal form and explicitly stating all continuity constraints in conjunctive normal form within the UML model. Nevertheless we performed the runtime test also for the sligthly modified model. The result is shown in the left graph in Figure \ref{fig:BinaryCounterRuntime}. \ref{leg:gecodeSMT} shows the runtime of the algorithm on the activity diagram as it is depicted in Figure \ref{fig:BinaryCounter} and \ref{leg:gecodeSAT} indicates the runtime of our algorithm for the modified activity diagram as explained above. There is no mentionable difference in performance. The divergence for maximum path lengths is not reproducable and is due to some random effects like java vm running its garbage collector.
+\paragraph{Effect of AMPL's Pre--Solve Phase}
+AMPL tries to tighten the bounds of variables, eliminate some variables, and also eliminate some constraints not having any effect on the feasible set before passing the problem to the solver. This feature is called pre-solve phase. When causing trouble this pre--solve phase can be deactiviated. For the binary counter example we had to deactivate the presolve phase in order to generate test data for paths beyond a length of 60 since it caused AMPL to consume huge amounts of memory; and AMPL crashed when trying to allocate more than 2Gb. By deactivating the pre--solve phase the runtime of our algorithm increases by a factor of at least 100. This is due to the fact, that most problem instances can already be identified as infeasible by the pre--solve phase after a few microseconds while solving the problem by a solver at least takes the time to start the solver in an external process. We fixed this problem by just spawning a new AMPL process after it had crashed. As we can see in Figure \ref{fig:BinaryCounterRuntime} the algorithm with the pre--solve phase of AMPL enabled is much faster, than without it. \ref{leg:gecode+presolve} is the graph for the runtime of our algorithm with gecode as solver and AMPL's pre--solve Phase enabled.
+\paragraph{Discussion}
+As already explained in Section \ref{sec:MathBooleanSat} the SAT is decidable but there is no tractable algorithm for it. Anyway our problem size will stay below the threshold where the solver needs more than a second to solve it. Less than a second does not sound much, but to generate all test data for all control flow paths up to a given length many similar problems need to be solved. The number of solver invocations grows exponentially with the maximum path length when generating one test case per feasible control flow path through the activity diagram. In order to find the 49 possible test cases with a control flow path length of up to 70 our implementation solved 421901 SAT instances. Thus any slight advantage of one solver over the other or the way to formulate a constraint in terms of solving speed has an enormous impact on the overall runtime of the algorithm. As we saw during the experiment of replacing equalities and inequalities with boolean formulas it is much better in terms of runtime to use the more readible form of the constraints, since the solvers obviously can handle them quite efficiently.
+
 \subsubsection{Non linear convex}
 solvable with every Solver implementing some version of Newton Algorithm on Sparse Matrices like Minos, Knitro or Quadratic programming approaches like in CPLEX.
-\subsubsection{Non Convex}
+\subsubsection{Exploding Tyres}
 \label{sec:exampleModelNonConvex}
 \begin{figure}
 \label{fig:pumpTyre}
 \includegraphics[width=\textwidth]{./pics/pumpTyre.pdf}
 \caption{Activity Diagram with non convex mixed integer constraints}
 \end{figure}
+Figure \ref{fig:pumpTyre} shows an activity modelling the physical process of pumping air into a tyre. The realations between volume, amount of air, pessure, and temperature are described by the ideal gas equation. The equations for adiabatic compression of air during one pump strocke states a non-convex relation between these physical meassures. Aditionaly we introducesd the boolean Variables tyreExploded and tyreMelted, which will be set when the preassure or temperature inside the tyre rised above a certain threshold. Moreover we introduce an integer loop counter that determines how many pump strokes will be executed.\\
+This model requires non-convex mixed integer problems to be solved in order to generate test data. The solver couenne from the coin-OR project is suitable for this task. We have implemented the modelled function in C and successfully ran the generated test cases against it. In Figure \ref{fig:ExplosionRuntime} we see the result of our experiment measuring the runtime of the testgeneration depending on the maximum length of control flow paths.\\
+Non--convex mixed integer programs are in general undecidable consequently it may happen that a solver trying to solve an instance of an MIP runs infinitelly long. Couenne ususall uses less than one minute to generate 
+
 in general undecidable couenne finds solutions sometimes.
 The Example Model here is the Exploding Tyre Model
 \subsubsection{Constraint Programming}
@@ -75,37 +161,49 @@ The function specifying which control flow to take after each \UMLType{Action} i
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
+legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={time},
+xlabel={max path length},
+ytick={10000000000,60000000000,600000000000,3600000000000},
+yticklabels={10s,1m,10m,1h},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
 ymode=log,
 ]
-\addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy.txt};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns);]{Experiment-DATA/Runtime10-100.txt};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/Runtime210-80.txt};
-\addplot table[x=Max_PATHLENGTH,y=ElapsedTime(ns)]{Experiment-DATA/RuntimeExperimentCaseStudy2.txt};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addlegendentry{Cplex};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addlegendentry{lpSolve};
 \end{axis}
 \end{tikzpicture}%
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
+xlabel={unchecked steps},
+ylabel={time},
+ytick={10000000000,60000000000,600000000000,3600000000000},
+yticklabels={10s,1m,10m,1h},
+no markers,
+legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
+xminorgrids=true,
 no markers,
 ymode=log,
 ] 
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths.txt};
-\addlegendentry{Max\_Pathlength = 40};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExperimentUncheckedPaths2.txt};
-\addlegendentry{Max\_Pathlength = 50};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength60.txt};
-\addlegendentry{Max\_Pathlength = 60};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength70.txt};
-\addlegendentry{Max\_Pathlength = 70};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/RuntimeExpPathlength80.txt};
-\addlegendentry{Max\_Pathlength = 80};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
+\addlegendentry{40};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps50.csv};
+\addlegendentry{50};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps60.csv};
+\addlegendentry{60};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
+\addlegendentry{70};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addlegendentry{80};
 \end{axis}
 \end{tikzpicture}%
 %\end{center}

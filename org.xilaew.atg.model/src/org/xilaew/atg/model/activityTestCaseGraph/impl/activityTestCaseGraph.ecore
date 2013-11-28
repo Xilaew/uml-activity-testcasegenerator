@@ -57,6 +57,7 @@
     <eLiterals name="subtraction" value="3" literal="-"/>
     <eLiterals name="size" value="4"/>
     <eLiterals name="equals" value="5" literal="="/>
+    <eLiterals name="unequal" value="14" literal="&lt;>"/>
     <eLiterals name="greaterThan" value="6" literal=">"/>
     <eLiterals name="lessThan" value="7" literal="&lt;"/>
     <eLiterals name="greaterEquals" value="8" literal=">="/>

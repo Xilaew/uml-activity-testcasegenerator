@@ -22,7 +22,7 @@ import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
 
-public class SolverDFS extends AbstractSolverIntegratedPathSearch {
+public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 
 	@Override
 	public EMap<Path, Witness> findAllSatisfiableActivityPaths(TCGActivity atcg) {
@@ -47,8 +47,11 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 				EList<AbstractTCGEdge> l = currentPath.getEdges();
 				AbstractTCGEdge e = l.remove(l.size() - 1);
 				currentNode = e.getSource();
-				passedDecisions = 0;
+				if(currentNode.getOutgoing().size()>=2){
+					passedDecisions--;
+				}
 			}
+			passedDecisions = (passedDecisions<0?0:passedDecisions);
 			currentNode = currentEdge.getFirst().getTarget();
 			currentPath.getEdges().add(currentEdge.getFirst());
 

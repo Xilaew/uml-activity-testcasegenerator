@@ -218,6 +218,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/equals"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Fkh0weyMEeKpbf_aWYxoPQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_23oR8FNWEeOuxYA0qGrabQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/unequal"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_23oR8VNWEeOuxYA0qGrabQ"/>
+      </children>
       <children xmi:type="notation:Node" xmi:id="_GgcDYOyMEeKpbf_aWYxoPQ" type="2006">
         <element xmi:type="ecore:EEnumLiteral" href="ActivityTestCaseGraph.ecore#//TCGOCLOperationType/greaterThan"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GgcDYeyMEeKpbf_aWYxoPQ"/>

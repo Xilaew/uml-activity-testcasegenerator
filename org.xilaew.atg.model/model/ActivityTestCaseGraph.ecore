@@ -7,9 +7,6 @@
         eType="#//TCGVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" upperBound="0"
-        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Activity"
-        changeable="false" volatile="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCGAction" eSuperTypes="AbstractTestCaseGraph.ecore#//AbstractTCGRealNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="localPostconditions" upperBound="-1"
@@ -72,6 +69,7 @@
     <eLiterals name="subtraction" value="3" literal="-"/>
     <eLiterals name="size" value="4"/>
     <eLiterals name="equals" value="5" literal="="/>
+    <eLiterals name="unequal" value="14" literal="&lt;>"/>
     <eLiterals name="greaterThan" value="6" literal=">"/>
     <eLiterals name="lessThan" value="7" literal="&lt;"/>
     <eLiterals name="greaterEquals" value="8" literal=">="/>

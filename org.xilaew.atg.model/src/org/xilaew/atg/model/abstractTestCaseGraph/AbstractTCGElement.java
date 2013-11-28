@@ -3,6 +3,7 @@
 package org.xilaew.atg.model.abstractTestCaseGraph;
 
 import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,7 @@ import org.eclipse.emf.ecore.EModelElement;
  * @model
  * @generated
  */
-public interface AbstractTCGElement extends EModelElement {
+public interface AbstractTCGElement extends EObject, EModelElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>""</code>.

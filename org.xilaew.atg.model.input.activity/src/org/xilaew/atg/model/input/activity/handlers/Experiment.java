@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.eclipse.atg.model.pathsearch.PathSearch;
 import org.eclipse.atg.model.pathsearch.SatisfiablePathSearch;
 import org.eclipse.atg.model.pathsearch.SolverDFS;
+import org.eclipse.atg.model.pathsearch.SolverDFS2;
 import org.eclipse.atg.model.pathsearch.Witness;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -71,11 +72,14 @@ public class Experiment extends AbstractHandler {
 		Activity activity = prepareTestGeneration();
 		IFile experimentResults = project
 				.getFile("PluginOutputExpreriment.txt");
+		IFile tests;
+		double id = Math.random();
 		if (experimentResults.exists()){
-			experimentResults = project.getFile("PluginOutputExperiment"+Math.random()+".txt");
+			experimentResults = project.getFile("PluginOutputExperiment"+id+".txt");
 		}
 		TCGActivity tcgActivity = null;
-		String timeMessurement = PathSearch.PROPERTY_MAX_PATHLENGTH + "\t"
+		String timeMessurement = "#" + "Activity: " + activity.getQualifiedName()+ "\n"
+				+ PathSearch.PROPERTY_MAX_PATHLENGTH + "\t"
 				+ PathSearch.PROPERTY_MAX_NO_PATHS + "\t"
 				+ SatisfiablePathSearch.PROPERTY_SOLVER + "\t"
 				+ SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS
@@ -103,7 +107,7 @@ public class Experiment extends AbstractHandler {
 		// dialog.create();
 		if (dialog.open() == dialog.OK) {
 			properties = dialog.getActivityTestGenProperties();
-			for (int i = 0; i < 20; i++) {
+			for (int i = 0; i < 10; i++) {
 				properties.setProperty(
 						SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*
 																		 * Iterate
@@ -133,7 +137,7 @@ public class Experiment extends AbstractHandler {
 
 				TestSuite suite = TestsGeneratorHelper.generateTests(
 						tcgActivity, paths);
-				Tests2BoostUnitTest.generateUnitTest(suite);
+				String testString = Tests2BoostUnitTest.generateUnitTest(suite);
 				start = System.nanoTime() - start;
 				timeMessurement = properties
 						.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH)
@@ -160,6 +164,9 @@ public class Experiment extends AbstractHandler {
 				try {
 					experimentResults.appendContents(new ByteArrayInputStream(
 							timeMessurement.getBytes()), 0, null);
+					tests = project.getFile("tests" + i + "_" + id +".cpp");
+					tests.create(new ByteArrayInputStream(
+							testString.getBytes()), 0, null);
 				} catch (CoreException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
