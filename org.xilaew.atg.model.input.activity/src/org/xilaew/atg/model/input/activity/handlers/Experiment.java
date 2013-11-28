@@ -97,9 +97,9 @@ public class Experiment extends AbstractHandler {
 
 		// Ask user for parameters
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
-		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
+		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "-1");
 		properties
-				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
+				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "cplex");
 		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS,
 				"2");
 		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,
