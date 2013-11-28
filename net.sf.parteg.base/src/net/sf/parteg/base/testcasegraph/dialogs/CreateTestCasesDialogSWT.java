@@ -146,11 +146,9 @@ implements MouseListener {
 		return m_bPressedOk;
 	}
 
-	@Override
 	public void mouseDoubleClick(MouseEvent e) {
 	}
 
-	@Override
 	public void mouseDown(MouseEvent arg0) {
 		if(arg0.getSource().equals(buttonOk))
 		{
@@ -167,7 +165,6 @@ implements MouseListener {
 		}
 	}
 
-	@Override
 	public void mouseUp(MouseEvent e) {
 	}
 }

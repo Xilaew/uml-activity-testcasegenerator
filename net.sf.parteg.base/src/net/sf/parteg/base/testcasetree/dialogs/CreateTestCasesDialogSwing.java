@@ -81,7 +81,7 @@ implements ActionListener, ConfigurationSetter, ItemListener {
 	private JTextField jFieldSMHandleFunction = null;
 
 	private JPanel jComboBoxPanel = null;
-	private JComboBox<String> jComboBoxRegions = null;
+	private JComboBox jComboBoxRegions = null;
 	private JComboBox jComboBoxClasses = null;
 	
 	private JLabel jFrameBorderToButtons = null;
@@ -241,10 +241,10 @@ implements ActionListener, ConfigurationSetter, ItemListener {
 		return jFieldSMHandleFunction;		
 	}
 	
-	private JComboBox<String> getJComboBoxRegions()
+	private JComboBox getJComboBoxRegions()
 	{
 		if (jComboBoxRegions == null) {
-			jComboBoxRegions = new JComboBox<String>();
+			jComboBoxRegions = new JComboBox();
 
 			jComboBoxRegions.addActionListener(this);
 			jComboBoxRegions.addItemListener(this);

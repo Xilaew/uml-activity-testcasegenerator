@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Vertex;
 public class Configuration {
 
 	public static String getProgramVersion() {
-		return "1.3.3";
+		return "1.4";
 	}
 	
 	public enum OUTPUTFORMAT
