@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_MjC94P3WEeKKiu6deZ20Tg" name="cppTestModels">
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_MjC94P3WEeKKiu6deZ20Tg" name="AcademicProblems">
   <packagedElement xmi:type="uml:Package" xmi:id="_2sjD4ADDEeO2NIcdi9-HYg" name="triangleClassificator">
     <packagedElement xmi:type="uml:Class" xmi:id="_4ss9wADDEeO2NIcdi9-HYg" name="TriangleClassificator">
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_yeKF8ADFEeO2NIcdi9-HYg" name="classify" specification="__1bT8ADDEeO2NIcdi9-HYg" node="_C7hQQADGEeO2NIcdi9-HYg _EdIM8ADGEeO2NIcdi9-HYg _GgGxUADGEeO2NIcdi9-HYg _NOvzkADGEeO2NIcdi9-HYg _-azMMADHEeO2NIcdi9-HYg _JTInsADIEeO2NIcdi9-HYg _TQmWYADIEeO2NIcdi9-HYg _4BMwYADIEeO2NIcdi9-HYg _-FQIEADJEeO2NIcdi9-HYg _CnFUgADKEeO2NIcdi9-HYg _R4wHwADKEeO2NIcdi9-HYg _wuSvMADjEeO2NIcdi9-HYg _aHazgADkEeO2NIcdi9-HYg">

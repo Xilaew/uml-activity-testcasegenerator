@@ -25,7 +25,7 @@ public class Tests2BoostUnitTest {
 		for (SUT sut : suite.getSut()) {
 			sb.append("#include \""
 					+ sut.getPackageName().replaceAll(":+", "/") + "/"
-					+ sut.getName() + ".h\"\n");
+					+ sut.getName() + ".c\"\n");
 		}
 		int i = 0;
 		for (TestCase t : suite.getTests()) {

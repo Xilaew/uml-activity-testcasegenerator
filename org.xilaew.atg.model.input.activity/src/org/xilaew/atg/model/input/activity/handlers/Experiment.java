@@ -107,7 +107,7 @@ public class Experiment extends AbstractHandler {
 		// dialog.create();
 		if (dialog.open() == dialog.OK) {
 			properties = dialog.getActivityTestGenProperties();
-			for (int i = 0; i < 10; i++) {
+			for (int i = 2; i < 10; i++) {
 				properties.setProperty(
 						SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*
 																		 * Iterate
