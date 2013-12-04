@@ -18,6 +18,7 @@ extern "C"{
 #endif
 
 int classify(const int* const x, const int* const y, const int* const z);
+float classifyNoLogic(const float* const x, const float* const y, const float* const z);
 
 #ifdef __cplusplus
 }

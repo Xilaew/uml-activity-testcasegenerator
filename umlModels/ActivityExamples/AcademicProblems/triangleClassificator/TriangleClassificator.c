@@ -7,27 +7,54 @@
 #include "TriangleClassificator.h"
 #include "stdio.h"
 
-int classify(const int* const x, const int* const y, const int* const z){
+int classify(const int* const x, const int* const y, const int* const z) {
 	//lengths greater 0?
-	if (*x>0 && *y>0 && *z>0){
+	if (*x > 0 && *y > 0 && *z > 0) {
 		//Triangle inequality
-		if (*x<*y+*z&&*y<*x+*z&&*z<*y+*x){
+		if (*x < *y + *z && *y < *x + *z && *z < *y + *x) {
 			//valid triangle
-			if(*x==*y&&*y==*z){
+			if (*x == *y && *y == *z) {
 				//Equilateral
 				return 3;
-			} else if(*x==*y || *y==*z || *z==*x){
+			} else if (*x == *y || *y == *z || *z == *x) {
 				//Isoscalane
 				return 2;
-			}else {
+			} else {
 				//Scalane
 				return 1;
 			}
-		}else{
+		} else {
 			//invalid triangle
 			return -1;
 		}
-	}else{
+	} else {
+		//invalid triangle
+		return -1;
+	}
+}
+
+float classifyNoLogic(const float* const x, const float* const y,
+		const float* const z) {
+	//lengths greater 0?
+	if (*x > 0 && *y > 0 && *z > 0) {
+		//Triangle inequality
+		if (*x < *y + *z && *y < *x + *z && *z < *y + *x) {
+			//valid triangle
+			if (*x == *y && *y == *z) {
+				//Equilateral
+				return 3;
+			} else if (*x == *y || *y == *z || *z == *x) {
+				//Isoscalane
+				return 2;
+			} else {
+				//Scalane
+				return 1;
+			}
+		} else {
+			//invalid triangle
+			return -1;
+		}
+	} else {
 		//invalid triangle
 		return -1;
 	}
