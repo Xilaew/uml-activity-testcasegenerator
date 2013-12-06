@@ -37,26 +37,29 @@ Finally we built a C implementation of the function modelled by the input to our
 \begin{figure}
 \begin{tikzpicture} 
 \begin{axis}[ ybar,
+width=\textwidth,
+height=6cm,
 ylabel={time (ms)},
 xlabel={used solver},
-symbolic x coords={{cplex}, {lpSolve}, {couenne}, {minos}, {gurobi}},
+xtick={0,1,2,3,4,5},
+xticklabels={{cplex}, {lpSolve}, {couenne}, {minos}, {gurobi}, {gecode}},
 ]
-\addplot coordinates {(cplex,350) (lpSolve,300) (couenne,680) (minos,310) (gurobi,390)}; 
+\addplot coordinates {(0,350) (1,300) (2,680) (3,310) (4,390)}; 
+\addplot coordinates {(5,100)}; 
 \end{axis}
 \end{tikzpicture}
 \caption{Runtime of unit test generation using different solvers}
 \label{fig:TriangleLinRuntime}
 \end{figure}
-We start with a model that contains only linear equalities and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating whether the input variables could possibly be the side lengths of an equilateral, isosceles, or scalene triangle. The mathematical problem to solve for this model is a linear program and can be solved with the simplex method as implemented in cplex and lp\_solve or an interior point method as implemented by minos and gurobi. And there are many more Solvers available to solve this kind of problem. Generating test data for for every feasible abstract test case takes fore every tested solver less than one second. There are in total 19 possible test cases resulting from this model. Figure \ref{fig:TriangleLinRuntime} shows the average runtime consumed for test generation using different solvers.\\
-We manually performed the mutation testing for this model. As mutation operators we exchanged several operators by the opposite operator. The following replacements have been done:
-
+We start with a model that contains only linear equalities and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating whether the input variables could possibly be the side lengths of an equilateral, isosceles, or scalene triangle. The mathematical problem to solve for this model is a linear program and can be solved with the simplex method as implemented in cplex and lp\_solve or an interior point method as implemented by couenne, minos and gurobi. Generating test data for for every feasible abstract test case takes for every tested solver less than one second. There are in total 19 possible test cases resulting from this model. Figure \ref{fig:TriangleLinRuntime} shows the average runtime consumed for test generation from this model using the mentioned solvers.\\
+We manually performed the mutation testing for this model. The following operator replacements have been made in the C-code: \verb=&&=$\rightarrow$\verb=||=, \verb=>=$\rightarrow$\verb§<=§, \verb=+=$\rightarrow$\verb=-=, \verb=||=$\rightarrow$\verb=&&=, \verb$==$$\rightarrow$\verb§!=§. This resulted in $20$ mutants of which 16 have been detected by our automatically generated test cases. That means 80\% of all mutants have been detected sucessfully.
 \subsubsection{Triangle Classificator with Logical Constraints}
 \begin{figure}
 \includegraphics[width=\textwidth]{./pics/TriangleSMT.pdf}
 \caption{Activity diagram of a triangle classificator using logical operations}
 \label{fig:TriangleSMT}
 \end{figure}
-Since the formulation of the constraints by means of non-strict inequalities only is not very efficient we reformulated the model and used logical operations as well as strict inequalities in the guards and local post--conditions and yield the model depicted in Figure \ref{fig:TriangleSMT}. The variables are now all in the domain of integers. This model will be transformed into an instance of an satisfiable modulo theories problem. Suitable solvers to solve instances of SMT are geode, ilogcp and jacop. In total there are 4 possible test cases to be found and any of the solver needs less than a second to generate test data for all of them.
+Since the formulation of the constraints by means of non-strict inequalities only is cumbersome we reformulated the model and used logical operations as well as strict inequalities in the guards and local post--conditions and yield the much more intuitive model depicted in Figure \ref{fig:TriangleSMT}. The variables are now all in the domain of integers and we used logical operations, thus this model will be transformed into an instance of an satisfiable modulo theories problem. Suitable solvers to solve instances of SMT are geode, ilogcp and jacop. In total there are 4 possible test cases to be found and our algorithm took 110ms to generate all of them using gecode. This time also shows up in the Figure \ref{fig:TriangleLinRuntime}.
 \subsubsection{Binary Counter}
 \begin{figure}
 \includegraphics[width=\textwidth]{./pics/BinaryCounter.pdf}
@@ -64,7 +67,7 @@ Since the formulation of the constraints by means of non-strict inequalities onl
 \label{fig:BinaryCounter}
 \end{figure}
 In Figure \ref{fig:BinaryCounter} we depict the activity diagram of a binary counter. The variables $s0$ to $s3$ hold the current state of the counter. The activity models a function with four input arguments $o0$ to $o3$ denoting the target counter state. During execution the the function will increment the binary counter stepwise until the current state of the counter is the same as the target counter state. Then the function returns. In contrast to the models presented so far this activity diagram is contains a cycle and consequently there are infinitely many abstract test cases and we need to bound the search.\\
-All used variables are in $\mathbb{B}$ and we use logical operations in the formulation of constraints. In addition to the basic logical operations we also used the equality and inequality relation for boolean variables. The equality of two boolean variables x and y could easily have been expressed as $x \land y \lor \neg x \land \neg y$ and the inequality as $\neg x \land y \lor x \land \neg y$. We consider the problem to solve in order to find test data for this activity an instance of the Boolean Satisfiybility Problem (SAT) although the contained equalities and inequalities could be considered as expressions in a theory defining equality and inequality over boolean variables and thus the formulation could also be seen as a SMT instance.\\
+All used variables are in $\mathbb{B}$ and we use logical operations in the formulation of constraints. In addition to the basic logical operations we also used the equality and inequality relation for boolean variables. The equality of two boolean variables x and y can be expressed as $x \land y \lor \neg x \land \neg y$ and the inequality as $\neg x \land y \lor x \land \neg y$. We consider the problem to solve in order to find test data for this activity an instance of the Boolean Satisfiability Problem (SAT) although the contained equalities and inequalities could be considered as expressions in a theory defining equality and inequality over boolean variables and thus the formulation could also be seen as SMT instance.\\
 \paragraph{Experiments}
 \begin{figure}
 \begin{tikzpicture}
@@ -83,69 +86,75 @@ xlabel={max path length},
 ylabel={time},
 xmin=5,
 xmax=95,
-no markers,
+%no markers,
 ymode=log,
 ]
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSAT.csv};
+\addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacopSAT.csv};
+\addlegendentry{JaCoP SAT};
+\label{leg:jacopSAT};
+\addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSAT.csv};
 \addlegendentry{gecode SAT};
 \label{leg:gecodeSAT};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSMT.csv};
+\addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecodeSMT.csv};
 \addlegendentry{gecode SMT};
 \label{leg:gecodeSMT};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacopSAT.csv};
-\addlegendentry{JaCoP SAT};
-\label{leg:jacop};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
 \addlegendentry{gecode+presolve};
-\label{leg:gecode+presolve};
+\label{leg:gecode+Presolve};
+\addplot[solid,mark=+] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacop+presolveSMT.csv};
+\addlegendentry{jacop+presolve};
+\label{leg:jacop+Presolve};
 \end{axis}
 \end{tikzpicture}%
 \hspace{0.04\textwidth}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
-%nodes near coords,
+nodes near coords,
 xmin=5,
 xmax=95,
 xtick={10,20,30,40,50,60,70,80,90},
 %y label style={at={1,0.5},anchor=west},
 xlabel={max path length},
 ylabel={total number of test cases},
-axis y line*=left,
+%axis y line*=left,
 ]
-\addplot+[mark=circle,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\addplot+[mark=x,only marks,color=blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
 \end{axis}
-\begin{axis}[
-width=0.498\textwidth,
-nodes near coords,
-xmin=5,
-xmax=95,
-xtick={10,20,30,40,50,60,70,80.90},
-axis y line*=right,
-axis x line=none,
-ylabel near ticks,
-ylabel={total number of problems solved},
-ymode=log,
-]
-\addplot+[mark=x,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PATHSEARCH_TOTAL_SOLVER_RUNS,nodes=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
-\end{axis}
+% \begin{axis}[
+% width=0.498\textwidth,
+% %nodes near coords,
+% xmin=5,
+% xmax=95,
+% xtick={10,20,30,40,50,60,70,80.90},
+% axis y line*=right,
+% axis x line=none,
+% ylabel near ticks,
+% ylabel={total number of problems solved},
+% ymode=log,
+% ]
+% \addplot+[mark=x,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PATHSEARCH_TOTAL_SOLVER_RUNS,nodes=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+% \end{axis}
 \end{tikzpicture}
-\caption{comparison of runtimes to generate one test case per feasible control flow path}
+\caption{comparison of runtime to generate one test case per feasible control flow path}
 \label{fig:BinaryCounterRuntime}
 \end{figure}
-We performed several experiments with this example. First we transformed the the UML Activity into an activity test case graph and then into an AMPL model. We verified by hand, that the constraints in the AMPL model indeed expresses the same semantic as the OCL guard conditions and OCL local post--conditions in the UML model, and that every embedded OCL constraint contained in the input model shows up in the AMPL model. We implemented the C function, that is modelled by this activity diagram in order to run the generated unit tests against it later. Then we generated test cases for the model using two differnt solvers. Currently there are three solvers available for AMPL that can handle logical constraints: ilogcp, gecode, and jacop. Since for ilogcp a license is needed we performed our experiments with gecode and jacop. We used the depth first search algorithm with early infeasible path recognition as explained in Section \ref{sec:pathsearchDFS} to find test cases for this activity diagram. We generated all testcases up to a control flow path length of 80. In the right graph in Figure \ref{fig:BinaryCounterRuntime} we see the total number of test cases found depending on the maximum path length% and the amount of SAT instances that had to be solved to find those test cases
-. We also meassured the overall runtime of the unit test generation process. On the left hand side of Figure \ref{fig:BinaryCounterRuntime} we see the total runtime needed by our algorithm to find all test cases up to a given maximum path length using different configurations beeing explained in the following paragraphs.
-\paragraph{Alternative Formulation of Constraints}
-As we see the embedded OCL constraints contain equalities and inequalities over boolean variables in addition to the basic boolean operations. We replaced the equalities and inequalities with the equivalent boolean formula. Not all embeded OCL constraints were given in conjunctive normal form. Moreover the produced AMPL model will nevertheless still contain equalities, due to the continuity constraints that will be added automaticaly as explained in Section \ref{sec:addingContinuityConstraints}.% We considered it a too high manual effort to turn every OCL constraint into a perfect conjunctive normal form and explicitly stating all continuity constraints in conjunctive normal form within the UML model. Nevertheless 
-We performed the runtime test also for the sligthly modified model. The result is shown in the left graph in Figure \ref{fig:BinaryCounterRuntime}. \ref{leg:gecodeSMT} shows the runtime of the algorithm on the activity diagram as it is depicted in Figure \ref{fig:BinaryCounter} and \ref{leg:gecodeSAT} indicates the runtime of our algorithm for the modified activity diagram as explained above. There is no mentionable difference in performance.% The divergence for maximum path lengths is not reproducable and is due to some random effects like java vm running its garbage collector.
+We performed several experiments with this example. First we transformed the the UML Activity into an activity test case graph and then into an AMPL model. We verified by hand, that the constraints in the AMPL model indeed expresses the same semantic as the OCL guard conditions and OCL local post--conditions in the UML model, and that every embedded OCL constraint contained in the input model shows up in the AMPL model. We implemented the C function, that is modelled by this activity diagram in order to run the generated unit tests against it later. Then we generated test cases for the model using two different solvers. Currently there are three solvers available for AMPL that can handle logical constraints: ilogcp, gecode, and jacop. Since for ilogcp a license is needed we performed our experiments with gecode and jacop. We used the depth first search algorithm with early infeasible path recognition as explained in Section \ref{sec:pathsearchDFS} to find test cases for this activity diagram. We generated all test--cases up to a control flow path length of 80. In the right graph in Figure \ref{fig:BinaryCounterRuntime} we see the total number of test cases found depending on the maximum path length.% and the amount of SAT instances that had to be solved to find those test cases
+We also measured the overall runtime of the unit--test generation process. On the left hand side of Figure \ref{fig:BinaryCounterRuntime} we see the total runtime needed by our algorithm to find all test cases up to a given maximum path length using different configurations as explained in the following paragraphs. \ref{leg:gecode+Presolve} and \ref{leg:jacop+Presolve} show the runtime of of our algorithm using gecode and jacop for the model depicted in Figure \ref{fig:BinaryCounter}.
 \paragraph{Effect of AMPL's Pre--Solve Phase}
-AMPL tries to tighten the bounds of variables, eliminate some variables, and also eliminate some constraints not having any effect on the feasible set before passing the problem to the solver. This feature is called pre-solve phase. %When causing trouble this pre--solve phase can be deactiviated. For the binary counter example we had to deactivate the presolve phase in order to generate test data for paths beyond a length of 60 since it caused AMPL to consume huge amounts of memory; and AMPL crashed when trying to allocate more than 2Gb. 
+AMPL tries to tighten the bounds of variables, eliminate some variables, and also eliminate some constraints not having any effect on the feasible set before passing the problem to the solver. This feature is called pre-solve phase and is activated by default. When causing trouble this pre--solve phase can be deactivated.% For the binary counter example we had to deactivate the presolve phase in order to generate test data for paths beyond a length of 60 since it caused AMPL to consume huge amounts of memory; and AMPL crashed when trying to allocate more than 2Gb. 
 By deactivating the pre--solve phase the runtime of our algorithm increases by a factor of at least $100$. This is due to the fact, that most problem instances can already be identified as infeasible by the pre--solve phase after a few microseconds while solving the problem by a solver at least takes the time to start the solver in an external process. %We fixed this problem by just spawning a new AMPL process after it had crashed. 
-As we can see in Figure \ref{fig:BinaryCounterRuntime} the algorithm with the pre--solve phase of AMPL enabled is much faster, than without it. \ref{leg:gecode+presolve} is the graph for the runtime of our algorithm with gecode as solver and AMPL's pre--solve Phase enabled.
+In Figure \ref{fig:BinaryCounterRuntime} the \ref{leg:gecode+Presolve} plot denotes the runtime of the algorithm using gecode as solver with the pre--solve phase enabled and \ref{leg:gecodeSMT} plots the runtime with AMPL's pre--solve phase disabled. As we can see our algorithm is much faster with AMPL's pre--solve phase enabled.
+\paragraph{Alternative Formulation of Constraints}
+As we see the embedded OCL constraints contain equalities and inequalities over boolean variables in addition to the basic boolean operations. We replaced the equalities and inequalities with the equivalent boolean formula. Not all embedded OCL constraints were given in conjunctive normal form. Moreover the produced AMPL model will nevertheless still contain equalities, due to the continuity constraints that will be added automatically as explained in Section \ref{sec:addingContinuityConstraints}.% We considered it a too high manual effort to turn every OCL constraint into a perfect conjunctive normal form and explicitly stating all continuity constraints in conjunctive normal form within the UML model. Nevertheless 
+We performed the runtime test also for the slightly modified model. Unfortunately we had to disable the pre--solve phase for this. The result is shown in the left graph in Figure \ref{fig:BinaryCounterRuntime}. \ref{leg:gecodeSAT} and \ref{leg:jacopSAT} indicate the runtime of our algorithm using gecode and jacop as solvers for the activity diagram modified as explained above. \ref{leg:gecodeSMT} depicts the runtime of our algorithm for the activity diagram as depicted in Figure \ref{fig:BinaryCounter} using gecode as solver and with AMPL's pre--solve phase disabled as well. When comparing \ref{leg:gecodeSAT} and \ref{leg:gecodeSMT} we see that for the solver it does not matter how the logical constraints are formulated. Those two plots are almost identical. % The divergence for maximum path lengths is not reproducable and is due to some random effects like java vm running its garbage collector.
+\paragraph{Mutation Testing}
+Also for this model we performed a manual mutation testing with the resulting test suite. We generated the test suite for all paths up to a maximum length of 40 using gecode as solver. The test suite contains 25 test cases. The C implementation of the binary counter is straight forward consisting of a do while loop and the bit flipping is done in the loop body. We applied the following mutations to the predicate of the do while loop in our source code: \verb=||=$\rightarrow$\verb=&&=, \verb$!=$$\rightarrow$\verb§==§, \verb$!=$$\rightarrow$\verb§<§, \verb$!=$$\rightarrow$\verb§>§. This results in 15 different mutants out of which 10 have been detected by the generated test suite. $66.\bar{6}\%$ of the generated mutants have been detected.
 \paragraph{Discussion}
-As already explained in Section \ref{sec:MathBooleanSat} the SAT is decidable but there is no tractable algorithm for it. Anyway our problem size will stay below the threshold where the solver needs more than a second to solve it. Less than a second does not sound much, but to generate all test data for all control flow paths up to a given length many similar problems need to be solved. The number of solver invocations grows exponentially with the maximum path length when generating one test case per feasible control flow path through the activity diagram. In order to find the 49 possible test cases with a control flow path length of up to 70 our implementation solved 421901 SAT instances. Thus any slight advantage of one solver over the other or the way to formulate a constraint in terms of solving speed has an enormous impact on the overall runtime of the algorithm. As we saw during the experiment replacing equalities and inequalities with boolean formulas has no impact on the runtime. 
-\subsubsection{Non linear convex}
-solvable with every Solver implementing some version of Newton Algorithm on Sparse Matrices like Minos, Knitro or Quadratic programming approaches like in CPLEX.
+As already explained in Section \ref{sec:MathBooleanSat} the SAT is decidable but there is no tractable algorithm for it. Anyway our problem size will stay below the threshold where the solver needs more than a second to solve it. %Less than a second does not sound much, but to generate all test data for all control flow paths up to a given length many similar problems need to be solved. 
+The number of solver invocations grows exponentially with the maximum path length when generating one test case per feasible control flow path through the activity diagram. In order to find the 49 possible test cases with a control flow path length of up to 70 our implementation solved 421901 SAT instances. Thus any slight advantage of one solver over the other or the way to formulate a constraint in terms of solving speed has an enormous impact on the overall runtime of the algorithm. As we saw during the experiment replacing equalities and inequalities with boolean formulas has no impact on the runtime but disabling AMPL's pre--solve phase had a negative influence on the overall runtime of our algorithm. Further more we can see a super exponential growth of the runtime of our implementation although we actually expected only exponential growth of runtime for our algorithm.
+% \subsubsection{Non linear convex}
+% solvable with every Solver implementing some version of Newton Algorithm on Sparse Matrices like Minos, Knitro or Quadratic programming approaches like in CPLEX.
 \subsubsection{Exploding Tyres}
 \label{sec:exampleModelNonConvex}
 \begin{figure}
@@ -153,10 +162,71 @@ solvable with every Solver implementing some version of Newton Algorithm on Spar
 \includegraphics[width=\textwidth]{./pics/pumpTyre.pdf}
 \caption{Activity Diagram with non convex mixed integer constraints}
 \end{figure}
-Figure \ref{fig:pumpTyre} shows an activity modelling the physical process of pumping air into a tyre. The realations between volume, amount of air ($n$), pessure, and temperature are described by the ideal gas equation. The equations for adiabatic compression of air during one pump strocke states a non-convex relation between these physical meassures. Aditionaly we introducesd the boolean Variables tyreExploded and tyreMelted, which will be set when the preassure or temperature inside the tyre rised above a certain threshold. Moreover we introduce an integer loop counter that determines how many pump strokes will be executed.\\
-This model requires non-convex mixed integer problems to be solved in order to generate test data. The solver couenne from the coin-OR project is suitable for this task. We have implemented the modelled function in C and successfully ran the generated test cases against it. In Figure \ref{fig:ExplosionRuntime} we see the result of our experiment measuring the runtime of the testgeneration depending on the maximum length of control flow paths.\\
-Non--convex mixed integer programs are in general undecidable consequently it may happen that a solver trying to solve an instance of an MIP runs infinitelly long. Couenne is the only solver we tested for non convex mixed integer constraint formulations. It ususally uses less than one minute to generate a feasible solution for one problem instance. But it also might run for a very long time or even infinitely long. Consequently we need to set a suitable time limit after which the solver shall terminate and we assume the currently examined control flow path as infeasible. When the timelimit is choosen verry small the test generation is faster but on the other hand we will also consider several paths as infeasible although there would be a solution for the corresponding problem instance. When setting a larger time limit to we will certainly find a solution more often and thus generate more Test cases but the overall runtime will grow. In Figure \ref{fig:ExplodingTyresRuntime} we decpict the overall runtime of the test generation for this model using couenne varying the the maximum path length and the time limit for one problem instance. On the right hand side of the Figure we depict the amount of test case found depending on the time limit and the maximum path length.
-
+Figure \ref{fig:pumpTyre} shows an activity modelling the physical process of pumping air into a tyre. The relations between volume, amount of air ($n$), pressure, and temperature are described by the ideal gas equation. The equations for adiabatic compression of air during one pump stroke states a non-convex relation between these physical measures. Additionally we introduced the boolean variables tyreExploded and tyreMelted, which will be set when the pressure or temperature inside the tyre raised above a certain threshold. Moreover we introduce an integer loop counter that determines how many pump strokes will be executed.
+\paragraph{Runtime Measurement}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+legend style={legend columns=2,at={(0.02,0.98)},
+anchor=north west},
+%xtick={10,20,30,40,50,60,70,80,90},
+ytick={1e8,1e10,1e12,1e14},
+yticklabels={0.1s,10s,{1,000s},{100,000s}},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+xlabel={max path length},
+ylabel={time},
+xmin=5,
+xmax=65,
+%no markers,
+ymode=log,
+]
+\addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_20sec.csv};
+\addlegendentry{20sec};
+\addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_60sec.csv};
+\addlegendentry{60sec};
+\addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_10min.csv};
+\addlegendentry{10min};
+\addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_2h.csv};
+\addlegendentry{2h};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+legend style={legend columns=2,at={(0.02,0.98)},
+anchor=north west},
+%xtick={10,20,30,40,50,60,70,80,90},
+%ytick={1e8,1e10,1e12,1e14},
+%yticklabels={0.1s,10s,{1,000s},{100,000s}},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+xlabel={max path length},
+ylabel={number of test cases generated},
+xmin=35,
+xmax=65,
+%no markers,
+%ymode=log,
+]
+\addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_20sec.csv};
+\addlegendentry{20sec};
+\addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_60sec.csv};
+\addlegendentry{60sec};
+\addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10min.csv};
+\addlegendentry{10min};
+\end{axis}
+\end{tikzpicture}
+\caption{measured runtime and number of generated test cases for different solver time limits}
+\label{fig:ExplodingTyresRuntime}
+\end{figure}
+This model requires non--convex mixed integer problems to be solved in order to generate test data. The solver couenne from the COIN-OR project is suitable for this task. We have implemented the modelled function in C and successfully ran the generated test cases against it. Non--convex mixed integer programs are in general undecidable consequently it may happen that a solver trying to solve an instance of an MIP runs infinitely long. Couenne is the only solver we tested for non convex mixed integer constraint formulations. It usually uses less than one minute to generate a feasible solution for one problem instance. But it also might run for a very long time or even infinitely long. Consequently we need to set a suitable time limit after which the solver shall terminate and we assume the currently examined control flow path as infeasible. When the time limit is chosen very small the test generation is faster but on the other hand we will also consider several paths as infeasible although there would be a solution for the corresponding problem instance. When setting a larger time limit to we will certainly find a solution more often and thus generate more Test cases but the overall runtime will grow. In Figure \ref{fig:ExplodingTyresRuntime} we depict the overall runtime of the test generation for this model using couenne. For each plot we used the time limit for the solver printed in the legend. On the right hand side of the Figure we depict the amount of test cases found depending on the time limit and the maximum path length. Up to a path length of 30 the time limit does not make a difference in the runtime as well as for the number of test cases found.
+\paragraph{Generating Boundary Values}
+using the naive approach explodes solving time and two step boundary value generation using local search is good.
 % \subsubsection{Constraint Programming}
 % ILOGCP, Gecode or transformation possible
 % \paragraph{Integer arithmetic only} Gecode
@@ -198,12 +268,15 @@ ymode=log,
 \addlegendentry{Cplex};
 \addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
 \addlegendentry{lpSolve};
+\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+\addlegendentry{couenne};
 \end{axis}
 \end{tikzpicture}%
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
 xlabel={unchecked steps},
+xmax=15,
 ylabel={time},
 ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
 yticklabels={10s,1m,10m,1h,1d},
@@ -224,7 +297,7 @@ ymode=log,
 \addlegendentry{60};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
 \addlegendentry{70};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
 \addlegendentry{80};
 \addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
 \addlegendentry{90};
@@ -234,8 +307,8 @@ ymode=log,
 \caption{Runtime of Test Generation }
 \label{fig:RuntimeExperiments}
 \end{figure}
-The implemented algorithm has several properties influencing the exact execution of the \nameref{sec:pathsearch}. In this section we will examine the influence of these parameters on the number of unit tests generated and the runtime of the algorithm. As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal pathlength and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume, that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linarly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
-There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is verry expensive in terms of runtime. To check wheather the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check everytime one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unecessaryly often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^10$ control flow paths wheather they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interrest to the influence of the number of unchecked decissions before control flow paths are checked for feasiblility. We assume, that there will be a minimum of runtime for some number of unchecked decissions.
+The implemented algorithm has several properties influencing the exact execution of the \nameref{sec:pathsearch}. In this section we will examine the influence of these parameters on the number of unit tests generated and the runtime of the algorithm. As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal path length and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume, that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linearly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
+There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is very expensive in terms of runtime. To check whether the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check every time one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unnecessarily often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^10$ control flow paths whether they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interest to the influence of the number of unchecked decisions before control flow paths are checked for feasibility. We assume, that there will be a minimum of runtime for some number of unchecked decisions.
 
 %Complex data types we added one \UMLType{Property} per field in a variable.
 
@@ -249,7 +322,7 @@ We claim that the Eclipse plug--in built aside this thesis implements the algori
 \section{Limitations}
 \label{sec:evaluationLimitations}
 \subsection{Theoretical Limitations}
-undecidability of nonlinear arithmetic over infite sets and Exponential runtime for Constraint solving algorithms for some formulations
+undecidability of non--linear arithmetic over invite sets and Exponential runtime for Constraint solving algorithms for some formulations
 \subsection{Limitations of the Implementation}
 no structured activity nodes, no invariants, not completely implemented test goal management.
 \subsection{Limitations of used Tools}
