@@ -48,15 +48,6 @@
           <emfPageIdentifier href="AcademicProblems.notation#_o6i6cBobEeO9s-R3-Uc7Iw"/>
         </children>
         <children>
-          <emfPageIdentifier href="AcademicProblems.notation#_GUrSQFH4EeOcPIkF2qgdeQ"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="AcademicProblems.notation#_Vcr5kFIAEeOcPIkF2qgdeQ"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="AcademicProblems.notation#_b-lzAFKSEeOjF94ApGP4lQ"/>
-        </children>
-        <children>
           <emfPageIdentifier href="AcademicProblems.notation#_vcv_YFKTEeOjF94ApGP4lQ"/>
         </children>
         <children>
