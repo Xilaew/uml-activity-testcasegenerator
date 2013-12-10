@@ -182,10 +182,14 @@ xminorgrids=true,
 xlabel={max path length},
 ylabel={time},
 xmin=5,
-xmax=65,
+xmax=75,
 %no markers,
 ymode=log,
 ]
+\addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_5sec.csv};
+\addlegendentry{5sec};
+\addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_10s.csv};
+\addlegendentry{10sec};
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_20sec.csv};
 \addlegendentry{20sec};
 \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_60sec.csv};
@@ -211,10 +215,14 @@ xminorgrids=true,
 xlabel={max path length},
 ylabel={number of test cases generated},
 xmin=35,
-xmax=65,
+xmax=75,
 %no markers,
 %ymode=log,
 ]
+\addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_5sec.csv};
+\addlegendentry{5sec};
+\addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
+\addlegendentry{10sec};
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_20sec.csv};
 \addlegendentry{20sec};
 \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_60sec.csv};
