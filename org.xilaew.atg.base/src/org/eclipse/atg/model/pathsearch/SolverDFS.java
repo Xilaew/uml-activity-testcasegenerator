@@ -5,22 +5,18 @@ import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
 
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.xilaew.amplCLI.AmplFactory;
-import org.xilaew.amplCLI.JAMPL;
 import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
-import org.xilaew.atg.model.activityTestCaseGraph.TCGBasicVariable;
-import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
-import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
+import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 
 public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 
@@ -112,63 +108,6 @@ public class SolverDFS extends AbstractSolverIntegratedPathSearch {
 						newCurrentPath.getEdges().add(e);
 					}
 					currentPath = newCurrentPath;
-				}
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * solves the constraint system for a given Path and returns a Witness
-	 * containing a complete execution trace for the given Path. The returned
-	 * Witness can directly be used as test data.
-	 * 
-	 * @param currentPath
-	 * @return Witness of the satisfiability of the given Path
-	 */
-	private Witness generateWitness(Path currentPath, TCGActivity atcg) {
-		ampl.loadData(Path2AMPLData.transform(currentPath));
-		Witness result = new Witness();
-		SolveResult solved;
-		try {
-			solved = ampl.solve();
-		} catch (IOException e) {
-			ampl = AmplFactory.createJAMPL();
-			ampl.setSolver(solver);
-			ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
-			System.out.println("RESET!!!");
-			ampl.loadData(Path2AMPLData.transform(currentPath));
-			try {
-				solved = ampl.solve();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-				return null;
-			}
-		}
-		totalSolves++;
-		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
-			infeasibleSolves++;
-			return null;
-		}
-		for (TCGVariable var : atcg.getVariables()) {
-			if (var instanceof TCGBasicVariable) {
-				TCGBasicVariable basicVar = (TCGBasicVariable) var;
-				if (basicVar.isIsParameter()) {
-					EList<Double> par = new BasicEList<Double>();
-					try {
-						par.add(ampl.getParameter(basicVar.getName()));
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					result.put(basicVar, par);
-				} else {
-					try {
-						result.put(basicVar, ampl.getVariable(basicVar.getName()));
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
 				}
 			}
 		}

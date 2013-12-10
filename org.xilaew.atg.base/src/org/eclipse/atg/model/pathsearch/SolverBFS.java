@@ -5,6 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
@@ -14,52 +15,44 @@ import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGBasicVariable;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
 import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
 
-public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
+public class SolverBFS extends AbstractSolverIntegratedPathSearch {
 
 	@Override
 	public EMap<Path, Witness> findAllSatisfiableActivityPaths(TCGActivity atcg) {
 		EMap<Path, Witness> result = new BasicEMap<Path, Witness>();
-		Deque<Pair> stack = new ArrayDeque<Pair>();
+		Deque<SearchTree> stack = new ArrayDeque<SearchTree>();
 		ampl.setSolver(solver);
 		ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
 		int resetCounter = 0;
 		int passedDecisions = 0;
-		for (AbstractTCGEdge edge : atcg.getInitialNode().getOutgoing()) {
-			stack.add(new Pair(edge, new Integer(0)));
+		for (AbstractTCGEdge e : atcg.getInitialNode().getOutgoing()) {
+			stack.addLast(new SearchTree(e, null, 0));
 		}
 		AbstractTCGNode currentNode = atcg.getInitialNode();
-		Pair currentEdge;
-		Path currentPath = TestCaseGraphRuntimeFactory.eINSTANCE.createPath();
+		AbstractTCGEdge currentEdge;
+		SearchTree currentElement;
 		while (!stack.isEmpty()
-				&& (result.size() <= maxNoPaths || maxNoPaths == -1)) {
-			currentEdge = stack.removeFirst();
-			// backtrack
-			while (currentEdge.getSecond() != currentPath.getEdges().size()) {
-				// System.out.println("BACKTRACK");
-				EList<AbstractTCGEdge> l = currentPath.getEdges();
-				AbstractTCGEdge e = l.remove(l.size() - 1);
-				currentNode = e.getSource();
-				if(currentNode.getOutgoing().size()>=2){
-					passedDecisions--;
-				}
-			}
-			passedDecisions = (passedDecisions<0?0:passedDecisions);
-			currentNode = currentEdge.getFirst().getTarget();
-			currentPath.getEdges().add(currentEdge.getFirst());
+				&& (result.size() < maxNoPaths || maxNoPaths == -1)) {
+			currentElement = stack.removeFirst();
+			currentEdge = currentElement.edge;
+			currentNode = currentEdge.getTarget();
 
-			if (currentPath.getEdges().size() <= maxDepth || maxDepth == -1) {
+			if (currentElement.depth <= maxDepth || maxDepth == -1) {
 				// check every 3 or 4 decisions whether the path is still
 				// feasible
 				if (currentNode.getOutgoing().size() >= 2) {
 					passedDecisions++;
 					if (passedDecisions > uncheckedSteps) {
 						passedDecisions = 0;
-						ampl.loadData(Path2AMPLData.transform(currentPath));
+						ampl.loadData(Path2AMPLData.transform(SearchTree2Path
+								.searchTree2Path(currentElement)));
 						SolveResult solved = SolveResult.Solved;
 						try {
 							solved = ampl.solve();
@@ -69,7 +62,9 @@ public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 							ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
 							resetCounter++;
 							System.out.println("RESET!!!");
-							ampl.loadData(Path2AMPLData.transform(currentPath));
+							ampl.loadData(Path2AMPLData
+									.transform(SearchTree2Path
+											.searchTree2Path(currentElement)));
 							try {
 								solved = ampl.solve();
 							} catch (IOException e1) {
@@ -78,7 +73,7 @@ public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 							}
 						}
 						totalSolves++;
-						if (solved == SolveResult.Solved){
+						if (solved == SolveResult.Solved) {
 							System.out.print(",");
 						}
 						if (solved == SolveResult.Infeasible) {
@@ -94,14 +89,16 @@ public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 					}
 				} // System.out.println("Adding Next STEP");
 					// add child nodes to Stack
+
 				for (AbstractTCGEdge outgoing : currentNode.getOutgoing()) {
-					stack.addFirst(new Pair(outgoing, new Integer(currentPath
-							.getEdges().size())));
+					stack.addLast(new SearchTree(outgoing, currentElement,
+							currentElement.depth + 1));
 				}
 			}
 			if (currentNode.getOutgoing().size() == 0) {
 				// found final node -> Add path to result
 				// fill witness with data.
+				Path currentPath=SearchTree2Path.searchTree2Path(currentElement);
 				Witness witness = generateWitness(currentPath, atcg);
 				if (witness != null) {
 					result.put(currentPath, witness);
@@ -117,5 +114,19 @@ public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 		}
 		return result;
 	}
+
+	// @Override
+	// public void setProperties(Properties p) {
+	// try {
+	// maxDepth = Integer.parseInt(p.getProperty(PROPERTY_MAX_PATHLENGTH));
+	// } catch (NumberFormatException e) {
+	// maxDepth=-1;
+	// }
+	// try {
+	// maxNoPaths = Integer.parseInt(p.getProperty(PROPERTY_MAX_NO_PATHS));
+	// } catch (NumberFormatException e) {
+	// maxNoPaths=-1;
+	// }
+	// }
 
 }

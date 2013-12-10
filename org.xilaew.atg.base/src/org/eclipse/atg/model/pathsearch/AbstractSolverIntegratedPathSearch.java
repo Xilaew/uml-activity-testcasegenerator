@@ -4,6 +4,7 @@
  */
 package org.eclipse.atg.model.pathsearch;
 
+import java.io.IOException;
 import java.util.Properties;
 import java.util.Set;
 
@@ -12,9 +13,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.xilaew.amplCLI.AmplFactory;
 import org.xilaew.amplCLI.JAMPL;
+import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGContainer;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGBasicVariable;
+import org.xilaew.atg.model.activityTestCaseGraph.TCGVariable;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
+import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
+import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 
 /**
  * @author th51e0
@@ -99,4 +105,61 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 
 	protected abstract EMap<Path, Witness> findAllSatisfiableActivityPaths(
 			TCGActivity atcg);
+
+	/**
+	 * solves the constraint system for a given Path and returns a Witness
+	 * containing a complete execution trace for the given Path. The returned
+	 * Witness can directly be used as test data.
+	 * 
+	 * @param currentPath
+	 * @return Witness of the satisfiability of the given Path
+	 */
+	protected Witness generateWitness(Path currentPath, TCGActivity atcg) {
+		ampl.loadData(Path2AMPLData.transform(currentPath));
+		Witness result = new Witness();
+		SolveResult solved;
+		try {
+			solved = ampl.solve();
+		} catch (IOException e) {
+			ampl = AmplFactory.createJAMPL();
+			ampl.setSolver(solver);
+			ampl.loadModel(ActTCG2AMPLModel.transform(atcg));
+			System.out.println("RESET!!!");
+			ampl.loadData(Path2AMPLData.transform(currentPath));
+			try {
+				solved = ampl.solve();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				return null;
+			}
+		}
+		totalSolves++;
+		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
+			infeasibleSolves++;
+			return null;
+		}
+		for (TCGVariable var : atcg.getVariables()) {
+			if (var instanceof TCGBasicVariable) {
+				TCGBasicVariable basicVar = (TCGBasicVariable) var;
+				if (basicVar.isIsParameter()) {
+					EList<Double> par = new BasicEList<Double>();
+					try {
+						par.add(ampl.getParameter(basicVar.getName()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					result.put(basicVar, par);
+				} else {
+					try {
+						result.put(basicVar, ampl.getVariable(basicVar.getName()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		return result;
+	}
 }

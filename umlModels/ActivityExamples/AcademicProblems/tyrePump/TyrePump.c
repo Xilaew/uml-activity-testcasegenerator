@@ -19,27 +19,32 @@ void pump(const int* const in_pumps, const double* const in_volume,
 		bool* out_tyreBursted) {
 	*out_tyreMelted = false;
 	*out_tyreBursted = false;
-	for (counter = *in_pumps; counter >= 1; counter--) {
+	varBursted = false;
+	varMelted = false;
+	counter = *in_pumps;
+	do {
 		//do pump
-		n = n + (pressure * (*in_pumpvolume)) / (temp * 0.287058);
-		pressure = ((*in_volume + *in_pumpvolume)
-				* (*in_volume + *in_pumpvolume) * pressure)
+		n = n + (pressure * (*in_pumpvolume)) / (temp * 0.287058); //Correct
+		pressure = (pressure * (*in_volume + *in_pumpvolume) * (*in_volume + *in_pumpvolume))
 				/ ((*in_volume) * (*in_volume));
-		temp = (pressure * (*in_volume)) / (0.287058 * n);
+		temp = (pressure * *in_volume) / (0.287058 * n);
 		printf("pressure: %f\n", pressure);
 
 		//tyre Melted
 		if (temp >= 400) {
 			*out_tyreMelted = true;
+			varMelted = true;
 		}
 		//Tyre Bursted
 		if (pressure >= 15) {
 			*out_tyreBursted = true;
+			varBursted=true;
 		}
 		//Cool a little
-		temp = 0.9 * temp + 0.1 * (300 - temp);
-		pressure = 0.287058 * n * temp / (*in_volume);
-	}
+		temp = (10 * temp + 300) / 11 ;
+		pressure = (0.287058 * n * temp) / (*in_volume);
+		counter--;
+	}while( counter >= 1 ) ;
 }
 
 void pumpExtended(const int* const in_pumps, const double* const in_volume,
