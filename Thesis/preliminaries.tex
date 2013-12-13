@@ -143,8 +143,9 @@ A different approach for solving finite constraint programs is stating the probl
 \input{uml.tex}
 \section{The AMPL Modelling System}
 \label{sec:AMPL}
-\cite{AMPL}
-\section{Coverage Criteria}
+A Mathematical Programming Language (AMPL) from Bob Fourer \cite{AMPL} is a The AMPL 
+
+
 \section{Taxonomy of Model Based Testing}
 Test Model,
 Unit Test,
@@ -156,28 +157,56 @@ declarative specification
 
 \section{Preliminary Work}
 \label{sec:RelatedWork}
-\subsection{Executing OCL}
-A lot of research in the area of OCL and executing UML/OCL specifications has been performed by Matthias P. Krieger \cite{krieger2008executingUnderspecifiedOCL}. Also Alloy and Dresden OCL or Eclipse OCL are projects that aim at executing and evaluating OCL specifications. \\
-But solving OCL constraints as a CSP is only one part of generating test data from a UML Behaviour.
-It is very common to use state machines as the test model less papers are handling the generation of unit tests from UML Activities\cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod}
-\cite{Patel12TestCaseFormationUsigUMLActivityDiagram}
-\cite{Pechtanun12GeneratingTestCaseFromUMLActivityDiagramBasedOnACGrammar}
-\cite{Xu09ModelCheckingUMLActivities}\cite{Xu09ModelCheckingUMLActivityDiagramsFDR}. 
-
-
-\subsection{Coverage Criteria}
-
-
-
-\subsection{Generating Unit Tests}
-Mark Uttig
-
-Jeff Offut
-
-Many papers suppose the use of state of the art SMT solvers such as HOL or CVC to solve OCL post--conditions, pre--conditions and of operations and invariants embedded to get possible input values for functions that can be used as 
-The only tool directly targeted at generating Unit Tests form A UML specification with OCL constraints that was freely available was ParTeG by Stephan Wei\ss leder. In his PhD thesis Stephan Wei\ss leder describes a framework for applying different control flow based as well as partition based coverage criteria to state machines. He also develops a theory how all those coverage criteria are interconnected and can be simulated by each other and a transformed version of the original Test Model\cite{ParTeG}.
-
-
-tell about other test generating tools (commercial, published in Papers) and ParTeG as the only one where the source code is available.\cite{ParTeG}
-
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{./pics/taxonomyOfMBT.pdf}
+\caption{Overview of the Taxonomy of Model-Based Testing by Mark Utting \cite{utting2006taxonomy}}
+\label{fig:UttingTaxonomy}
+\end{figure}
+ Model--Based Testing came up in the 1990s. A variety of different modelling paradigms and languages as well as test generation methods have been proposed since then. Model based testing has also been applied on different scopes i.e. unit test or system testing. Mark Utting offers in \cite{utting2006taxonomy} a possible classification of approaches to Model--Based Testing in seven orthogonal dimensions. In Figure \ref{fig:UttingTaxonomy} we see an overview of possible categorisations of Model--Based Testing approaches. Any proposal on Model-Based Testing roughly consists of three important steps: Specifying what the input model is, generating some abstract representation of test cases, refining the abstract test cases into concrete executable test cases by determining the necessary input data and potentially also providing an oracle value for the expected output. The rest of this section is structured according to those three steps and in each subsection we will shortly present the propositions made in different publications and use Mark Uttings taxonomy to classify them and to position our own thesis relative to them.
+%in we will present  refer to several other publications and position our own thesis. The rest of this section is organized just 
+% 
+%  that means telling whether it models the behaviour of the SUT or whether it models its environment e.g. typical use cases. Usually a system is build according to a specification the specification can be formalized in a model from which can serve as a common source for implementation and test generation or there is a separate model for both purposes. and also the tests are derived from the specification.  with the help of the taxonomy proposed by M. Utting.
+\subsection{Test Models}
+In \cite{lackner2012modeling} Lackner and Schlingloff propose to build a test model formalising the requirements independent from the implementation and to generate test cases from it. They present three transition based modelling paradigms suitable for automated test case generation. They propose Abstract State Machines, UML2 StateMashines and Timed Automata. Also early research on Model--Based Testing performed by A. Abdurazik and Jeff Offutt \cite{Offutt:1999:GeneratingTestsFromUmlSpec} proposed using UML state charts as test model to generate system level test cases from them. The same authors proposed in \cite{Abdurazik00usingumlCollaborationTestGeneration} UML collaboration diagrams as test model. Stefan Wei{\ss}leder and Dehla Sokenou propose in \cite{weissleder2008automatic} using UML state models together with UML class models and OCL pre- and post--conditions as test models.\\
+It is very common to use state machines as the test model less research is performed on generating unit tests from UML Activities. Wang Linzhang et al. propose in \cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod} Using UML Activities. They propose to generate test cases from an Activity modelling an Operation in the design model. They also claim to have implemented a proof--of--concept tool called UMLTGF which unfortunately was unavailable for review. Another proposal using UML Activities as test model comes from Chen Minsong et al. \cite{mingsong2006automatic}. They propose using an activity diagram to automate the selection of a subset from a set of randomly generated unit tests for a set of Java classes and methods. In \cite{kundu2009novel} Debasish Kundu and Debasis Samanta consider UML Activities specifying use cases of the system under test. Further work on generating test cases from activity diagrams has been performed by \cite{Patel12TestCaseFormationUsigUMLActivityDiagram}\\
+Achim D. Bruckner and Burkhard Wolff propose in \cite{brucker2012theoremProverBasedTesting} a fully theorem proofer and constraint solver based approach to test generation. Thus their input models are entered by means of a functional programming paradigm. They consider models of the system under test as well as additional information about how the system shall be tested as input.\\
+For our own work we use as input some details from the UML Class model and an UML Activity modelling the inner workings of the system under test. System under test is in our case one operation. The model we use for test generation shares its control flow structure with the model used to generate the implementation similar to \cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod}. The information needed to be able to derive test data is added separately to the test model, not shared with the development model, in the form of OCL pre- and post--conditions and guards. The use of OCL constraints is similar to the work of Stefan Wei{\ss}leder and Dehla Sokenou \cite{weissleder2008automatic}. We consider our input models deterministic, untimed and discrete.% Then they select among the randomly generated unit tests a set of unit tests whose execution traces correspond to a certain set of control flow paths from an activity diagram.
+%\
+% Our test models model one function of the SUT and we use a common model for development and test generation. thus the scope of our approach is unit testing  And 
+\subsection{Test Generation}
+In the test generation coverage criteria are a widely accepted means to measure the quality of a test suite and steer the test generation. Aynur Abdurazik and Jeff Offutt proposed in \cite{Offutt:1999:GeneratingTestsFromUmlSpec} a hand full of coverage criteria concerned with the structure of the test model. By structure we mean the nodes and the arcs of the state chart they used as input. They present path search algorithms to find transitions sequences fulfilling the proposed coverage criteria.
+%Further 3 mor sophisticated covera
+%Among others they proposed transition coverage, that means the set of generated test cases should at least trigger each transition in the test model once. They also presented full sequence coverage, which basically means that every possible transition sequence in a state chart shall be satisfied by one test case which is in general impossible, since a state chart with loops contains infinitely many 
+Puneet E. Patel and Nitin N. Patil compare in \cite{Patel12TestCaseFormationUsigUMLActivityDiagram} two different path finding algorithm selecting control flow paths within an activity diagram as abstract test cases.\\
+%finding a paths to select test cases in a way that they fulfil some coverage of arcs or arc sequences and nodes in an activity diagram. This is also a structural coverage criterion. 
+%The coverage criterion of 
+Stefan Wei{\ss}leder and Dehla Sokenou presented in \cite{weissleder2008automatic} is data oriented approach to select test cases. They propose to use abstract interpretation to derive partitions of the domain of input values. They then propose to select values at the boundaries of the computed partitions as test data.
+In Stefan Wei{\ss}leders Ph.D Thesis \cite{ParTeG} we found the most detailed and complete collection of different model structure and data oriented coverage criteria. The source code of ParTeG, the proof--of--concept tool associated with this thesis, is freely available at \cite{sf.parteg} and we were able to test it. It uses graph search in combination with abstract interpretation and a comprehensive framework allowing the user to steer which coverage criteria the generated test cases will adhere to.\\
+A comprehensive approach to automated test generation based on automated theorem proofing and constraint solving is presented by Achim D. Brucker and Burkhart Wolff in \cite{brucker2012theoremProverBasedTesting}. They generate test cases by applying natural deduction to a %a theorem prover rewriting rules to a 
+test case specification given in the input language of a theorem prover. The so called test theorem resulting from the natural deduction is a sequence of executable statements which serves as abstract test case. With a constraint solver concrete test data is computed for each abstract test case.\\
+In our thesis we use an easy to implement path search algorithm to generate abstract test cases.
+%Among other all those publications presented the model structure oriented full sequence/path coverage, which basically means that every possible arc sequence in a graph shall be satisfied by one test case. We use a slight relaxation of this coverage criterion for our thesis. Further more we will also hint how we can satisfy data oriented coverage criteria.\\
+% As the technology for finding suitable test cases \cite{Patel12TestCaseFormationUsigUMLActivityDiagram}, \cite{kundu2009novel}, \cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod} and \cite{Offutt:1999:GeneratingTestsFromUmlSpec} propose mainly some kind of graph search.
+\subsection{Test Data Generation}
+Chen Minsong et al. \cite{mingsong2006automatic} combine random test case and data generation with graph structure oriented coverage criteria. Their approach is to randomly generate unit tests for a Java implementation and matching the execution traces of the randomly generated unit tests with the control flow paths found in an activity diagram. They then select a subset from the randomly generated test cases which covers all simple paths in the test model. A simple path is basically a control flow path executing each activity at most once. This is obviously a randomised approach to test data generation combined with a structural model coverage criterion.
+Jan Peleska et al. \cite{peleska2011automated} describe a combination of abstract interpretation with constraint solving using an SMT solver in order to generate test data. They consider the execution of a test model as consecutive execution of a state transition function, which changes the state of the system. They have the concatenated state transition function and some further predicates solved by an SMT solver and support the solver by providing it with bounds for some variables deduced via abstract interpretation. 
+Using OCL as input and trying to obtain test data by solving OCL constraints there have been several proposals on how exactly to find models making an OCL formula true. Shaukat Ali et al. proposed in \cite{ali2011search} using evolutionary or genetic algorithms to search for potential solutions of OCL constraints. Matthias P. Krieger and Alexander Knapp proposed in \cite{krieger2008executingUnderspecifiedOCL} using a SAT solver to find instantiations of variables fulfilling OCL constraints. They suppose to transform OCL formulas into boolean formulas with bounded quantifiers and uninterpreted functions. Consequently they use a model finder, based on a SAT solver, capable of handling those formulas to find assignments to the variables.\\
+In \cite{malburg2011combining} Jan Malburg and Gordon Fraser propose a hybrid approach. On the top level they use a genetic algorithm evolving a population of candidate test data internally they provide guidance to the genetic algorithm by providing a special mutation operator performing dynamic symbolic execution. Also Microsofts tool PEX \cite{pex} is based on dynamic symbolic execution. Both publications propose to execute the implementation with random input values and generate new input values by collecting all path conditions along the executed control flow. Then they negate one of the path conditions and use a constraint solver to find a solution for the new constraint system. The generated solution is possible input data which is guaranteed to take another control flow path in the program.\\
+Our own test data generation approach is based on symbolic execution of control flow paths in an activity diagram. We collect all the constraints along a control flow path and represent them in a constraint satisfaction problem. The result of symbolic execution is a set of constraints that can be solved by a constraint solver or search based method.
+%Alloy \cite{jackson2002alloy} and Dresden OCL or Eclipse OCL are other projects that aim at executing or at least evaluating OCL specifications over a given model.
+% performs 
+%Many papers suppose the use of state of the art SMT solvers such as HOL or CVC to solve OCL post--conditions, pre--conditions and of operations and invariants embedded to get possible input values for functions that can be used as 
+%But solving OCL constraints as a CSP is only one part of generating test data from a UML Behaviour.
+%Technology Model Checking. \cite{Xu09ModelCheckingUMLActivityDiagramsFDR}. 
+% \subsection{Further Readings}
+% Can intuition become rigorous \cite{Aleman00CanIntuitionBecomeRigorous?}
+% RoclET \cite{jeanneret2006roclet}
+% OCL Modularisation \cite{akehurst2007ocl}
+% 
+% \subsection{Existing Tools for Automated Test Generation}
+% The only tool directly targeted at generating Unit Tests form A UML specification with OCL constraints that was freely available was ParTeG by Stephan Wei{\ss}leder. In his PhD thesis Stephan Wei{\ss}leder describes a framework for applying different control flow based as well as partition based coverage criteria to state machines. He also develops a theory how all those coverage criteria are interconnected and can be simulated by each other and a transformed version of the original Test Model\cite{ParTeG}.
+% 
+% Spex
+% 
+% tell about other test generating tools (commercial, published in Papers) and ParTeG as the only one where the source code is available.\cite{ParTeG}
 
