@@ -37,6 +37,7 @@ Finally we built a C implementation of the function modelled by the input to our
 \label{fig:TriangleLin}
 \end{figure}
 \begin{figure}
+\begin{center}
 \begin{tikzpicture} 
 \begin{axis}[ ybar,
 width=\textwidth,
@@ -50,6 +51,7 @@ xticklabels={{cplex}, {lpSolve}, {couenne}, {minos}, {gurobi}, {gecode}},
 \addplot coordinates {(5,100)}; 
 \end{axis}
 \end{tikzpicture}
+\end{center}
 \caption{Runtime of unit test generation using different solvers}
 \label{fig:TriangleLinRuntime}
 \end{figure}
@@ -72,24 +74,28 @@ In Figure \ref{fig:BinaryCounter} we depict the activity diagram of a binary cou
 All used variables are in $\mathbb{B}$ and we use logical operations in the formulation of constraints. In addition to the basic logical operations we also used the equality and inequality relation for boolean variables. The equality of two boolean variables x and y can be expressed as $x \land y \lor \neg x \land \neg y$ and the inequality as $\neg x \land y \lor x \land \neg y$. We consider the problem to solve in order to find test data for this activity an instance of the Boolean Satisfiability Problem (SAT) although the contained equalities and inequalities could be considered as expressions in a theory defining equality and inequality over boolean variables and thus the formulation could also be seen as SMT instance.\\
 \subsubsection{Experiments}
 \begin{figure}
+%\begin{center}
 \begin{tikzpicture}
-\begin{axis}[
+\begin{semilogyaxis}[
+ymode=log,
+%scaled ticks=true,
 width=0.498\textwidth,
-legend style={legend columns=2,at={(0.5,1.02)},
-anchor=south},
+legend style={legend columns=2,at={(0.5,1.02)},anchor=south},
 xtick={10,20,30,40,50,60,70,80,90},
-ytick={1e9,1e10,1e11,1e12,1e13},
-yticklabels={1s,10s,100s,1000s,10000s},
+%scaled y ticks=base 10:9,
+%minor tick num=4,
+%ytick scale label code/.code={},
+ytick={1e8,1e10,1e12,1e14},
+yticklabels={{$0.1$},{$10$},{$10^3$},{$10^{5}$}},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
-xminorgrids=true,
-xlabel={max path length},
-ylabel={time},
+xminorgrids=false,
+xlabel={maximum path length},
+ylabel={time {[s]}},
 xmin=5,
 xmax=95,
 %no markers,
-ymode=log,
 ]
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacopSAT.csv};
 \addlegendentry{JaCoP SAT};
@@ -106,7 +112,7 @@ ymode=log,
 \addplot[solid,mark=+] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacop+presolveSMT.csv};
 \addlegendentry{jacop+presolve};
 \label{leg:jacop+Presolve};
-\end{axis}
+\end{semilogyaxis}
 \end{tikzpicture}%
 \hspace{0.04\textwidth}
 \begin{tikzpicture}
@@ -121,7 +127,7 @@ xlabel={max path length},
 ylabel={total number of test cases},
 %axis y line*=left,
 ]
-\addplot+[mark=x,only marks,color=blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\addplot+[black,mark=x,only marks] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
 \end{axis}
 % \begin{axis}[
 % width=0.498\textwidth,
@@ -138,6 +144,7 @@ ylabel={total number of test cases},
 % \addplot+[mark=x,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PATHSEARCH_TOTAL_SOLVER_RUNS,nodes=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
 % \end{axis}
 \end{tikzpicture}
+%\end{center}
 \caption{comparison of runtime to generate one test case per feasible control flow path}
 \label{fig:BinaryCounterRuntime}
 \end{figure}
@@ -167,26 +174,31 @@ The number of solver invocations grows exponentially with the maximum path lengt
 Figure \ref{fig:pumpTyre} shows an activity modelling the physical process of pumping air into a tyre. The relations between volume, amount of air ($n$), pressure, and temperature are described by the ideal gas equation. The equations for adiabatic compression of air during one pump stroke states a non-convex relation between these physical measures. Additionally we introduced the boolean variables tyreExploded and tyreMelted, which will be set when the pressure or temperature inside the tyre raised above a certain threshold. Moreover we introduce an integer loop counter that determines how many pump strokes will be executed. This model requires non--convex mixed integer problems to be solved in order to generate test data. The solver couenne from the COIN-OR project is suitable for this task. Couenne is the only solver we tested for non convex mixed integer constraint formulations.
 \subsubsection{Runtime Measurement}
 \begin{figure}
+\begin{center}
+\ref{myLegend}
+\end{center}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
-legend style={legend columns=2,at={(0.02,0.98)},
-anchor=north west},
+legend columns=-1,
+%legend entries={$(x+0)^k$;,$(x+1)^k$;,$(x+2)^k$;,$(x+3)^k$},
+legend to name=myLegend,
+%legend style={legend columns=2,at={(0.02,0.98)},anchor=north west},
 %xtick={10,20,30,40,50,60,70,80,90},
 ytick={1e8,1e10,1e12,1e14},
-yticklabels={0.1s,10s,{1,000s},{100,000s}},
+yticklabels={0.1,10,{$10^3$},{$10^5$}},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-xlabel={max path length},
-ylabel={time},
+xlabel={maximum path length},
+ylabel={time [s]},
 xmin=5,
 xmax=75,
 %no markers,
 ymode=log,
 ]
-\addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_5sec.csv};
+\addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_5sec.csv};
 \addlegendentry{5sec};
 \addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_10s.csv};
 \addlegendentry{10sec};
@@ -212,23 +224,23 @@ ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-xlabel={max path length},
+xlabel={maximum path length},
 ylabel={number of test cases generated},
 xmin=35,
 xmax=75,
 %no markers,
 %ymode=log,
 ]
-\addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_5sec.csv};
-\addlegendentry{5sec};
+\addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_5sec.csv};
+%\addlegendentry{5sec};
 \addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
-\addlegendentry{10sec};
+%\addlegendentry{10sec};
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_20sec.csv};
-\addlegendentry{20sec};
+%\addlegendentry{20sec};
 \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_60sec.csv};
-\addlegendentry{60sec};
+%\addlegendentry{60sec};
 \addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10min.csv};
-\addlegendentry{10min};
+%\addlegendentry{10min};
 \end{axis}
 \end{tikzpicture}
 \caption{measured runtime and number of generated test cases for different solver time limits}
@@ -269,21 +281,26 @@ The function specifying which control flow to take after each \UMLType{Action} i
 \begin{axis}[
 width=0.49\textwidth,
 legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={time},
+ylabel={time[s]},
 xlabel={max path length},
-ytick={10000000000,60000000000,600000000000,3600000000000},
-yticklabels={10s,1m,10m,1h},
+extra y ticks={3600000000000},
+extra y tick labels={1h},
+%yticklabel={\tick/400},
+%ytick={10000000000,60000000000,600000000000,3600000000000},
+%5yticklabels={10s,1m,10m,1h},
+ytick={1e8,1e10,1e12,1e14},
+yticklabels={0.1,10,{$10^3$},{$10^5$}},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 no markers,
 ymode=log,
 ]
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
-\addlegendentry{Cplex};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
-\addlegendentry{lpSolve};
-\addplot table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+\addplot[solid] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addlegendentry{cplex};
+\addplot[loosely dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addlegendentry{lpsolve};
+\addplot[densely dotted] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
 \addlegendentry{couenne};
 \end{axis}
 \end{tikzpicture}%
@@ -292,9 +309,13 @@ ymode=log,
 width=0.49\textwidth,
 xlabel={unchecked steps},
 xmax=15,
-ylabel={time},
-ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
-yticklabels={10s,1m,10m,1h,1d},
+ylabel={time [s]},
+ytick={1e8,1e10,1e12,1e14},
+yticklabels={0.1,10,{$10^3$},{$10^5$}},
+extra y ticks={3.6e12,259200e9},
+extra y tick labels={1h,3d},
+%ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
+%yticklabels={10s,1m,10m,1h,1d},
 no markers,
 legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
 ymajorgrids=true,
@@ -304,17 +325,17 @@ xminorgrids=true,
 no markers,
 ymode=log,
 ] 
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
+\addplot[solid] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
 \addlegendentry{40};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps50.csv};
+\addplot[loosely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps50.csv};
 \addlegendentry{50};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps60.csv};
+\addplot[densely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps60.csv};
 \addlegendentry{60};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
+\addplot[loosely dotted] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
 \addlegendentry{70};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addplot[densely dotted] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
 \addlegendentry{80};
-\addplot table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
+\addplot[dash pattern=on 4pt off 2pt on 2pt off 2pt] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
 \addlegendentry{90};
 \end{axis}
 \end{tikzpicture}%

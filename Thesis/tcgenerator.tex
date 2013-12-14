@@ -6,7 +6,7 @@ Our approach for automated generation of test data is based on mathematical prog
 \section{General Overview of the Workflow} %BAM DIGGER DIE EINLEITUNG IST GUT!!!
 \label{sec:testgenerationOverview}
 \begin{figure}
-\includegraphics[width=\textheight,angle=270]{pics/workflow3.pdf}
+\includegraphics[width=\textheight,height=\textwidth,angle=270]{pics/workflow3.pdf}
 \label{fig:workflowOverview}
 \caption{Overview of the workflow for unit test generation}
 \end{figure}
@@ -21,9 +21,11 @@ The UML specifies round about 250 modelling elements each having several referen
 \subsection{Design Rules for UML Model} %Structural Design rules
 \subsubsection{Structural Design Rules}
 \begin{figure}
-\label{fig:StructureExample}
+\begin{center}
 \includegraphics[width=0.5\textwidth]{./pics/ModelTreeView2.pdf}
+\end{center}
 \caption{Example of a valid structured model}
+\label{fig:StructureExample}
 \end{figure}
 For our test generation we assume the models to comply to certain design rules. The input \UMLType{Activity} is an \UMLReference{ownedActivity} of a \UMLType{Class}. The \UMLType{Class} containing the \UMLType{Activity} itself is contained by a \UMLType{Package}. There is an \UMLType{Operation} specifying the \UMLType{Activity}. This \emph{specifying Operation} is either a direct sibling in the UML tree structure and has the same name as the \UMLType{Activity} or is explicitly specified by the \UMLReference{specification} reference of the \UMLType{Activity}. The specifying \UMLType{Operation} will be needed when parsing OCL constraints in Section \ref{sec:OCLParsing}. In Figure \ref{fig:StructureExample} we see a tree view of an UML model where those requirements are met.
 \subsubsection{OCL design rules}
@@ -64,18 +66,20 @@ The activity test case graph is defined as an extension of a more general \emph{
 %????
 \subsubsection{Abstract Test Case Graph}
 \begin{figure}
-\label{fig:AbstractTCGMetaModel}
+\begin{center}
 \includegraphics[width=0.5\textwidth]{./pics/AbstractTestCaseGraph.pdf}
+\end{center}
 \caption{Meta model of the AbstractTestCaseGraph}
+\label{fig:AbstractTCGMetaModel}
 \end{figure}
 An abstract test case graph is a directed graph consisting of nodes (AbstractTCGNode) and edges (AbstractTCGEdge). Each edge has source and a target node. Each node can have multiple outgoing and multiple incoming edges.
 A node can either be a pseudo node (AbstractTCGPseudoNode) or a real node (AbstractTCGRealNode). A pseudo node is a node that can be inserted in the middle of an edge without changing the semantics of the test model. Edges can have a guard condition of type AbstractTCGConstraint. Such a graph is contained by a container (AbstractTCGContainer). The container has a singular reference to one of its nodes exposing this as the initial node. The class diagram of the abstract test case graph meta model is shown in Figure \ref{fig:AbstractTCGMetaModel}.\\
 The semantic of the activity test case graph is Petri net like. When executing a test case graph we have at the beginning a token in the initial node that can move along the edges. The token can only move along an edge, when its guard condition is true. When a token resides in a node we say that the node is being executed.
 \subsubsection{Activity Test Case Graph}
 \begin{figure}
-\label{fig:ActivityTCGMetaModel}
 \includegraphics[width=\textwidth]{./pics/ActivityTestCaseGraph.pdf}
 \caption{Meta model of the activity test case graph}
+\label{fig:ActivityTCGMetaModel}
 \end{figure}
 An activity test case graph is an extension to the abstract test case graph especially tailored for test generation from \UMLType{Activities}. The activity test case graph models control flow and constraints on variables. The constraints are required to hold at different points during execution of the activity test case graph. Its meta model is shown in Figure \ref{fig:ActivityTCGMetaModel}.\\
 The TCGActivity is an extension of the AbstractTCGContainer. As well as TCGAction, TCGControlNode and TCGControlFlow do refine the types AbstractTCGRealNode, AbstractTCGPseudoNode and AbstractTCGEdge respectively. 
@@ -88,9 +92,11 @@ A TCGVariable can be one of two subtypes either a TCGBasicVariable or a TCGObjec
 \subsection{Transforming an UML Activity to Activity Test Case Graph}
 \label{sec:uml2atcg}
 \begin{figure}
-\label{fig:UML2TCGTranformation}
+\begin{center}
 \includegraphics[width=0.6\textwidth]{./pics/UML2TCGTransformation.pdf}
+\end{center}
 \caption{UML elements being mapped straight forward to activity test case graph elements}
+\label{fig:UML2TCGTranformation}
 \end{figure}
 An instance of the activity test case graph meta model serves as a normalised input model. We use a model--to--model transformation to transform an \UMLType{Activity} from a UML model into an activity test case graph. In many cases the transformation is straight forward: for one Element in the UML model the corresponding element in the activity test case graph is produced. When one element of the UML model is mapped to one element of the activity test case graph model we call the UML element \emph{source element} and the created element in the activity test case graph model \emph{target element}. The types being mapped straight forward from a source element to a target element are shown in Figure \ref{fig:UML2TCGTranformation}.
 \subsubsection{Mapping UML Elements to Activity Test Case Graph Elements}
@@ -178,7 +184,9 @@ In Section \ref{sec:AMPLIntroductoryExample} we will present a small example, wh
 During the execution of an activity test case graph we have an initial state where every variable has a specified value. A state is specified by the complete value assignment for all variables. After each execution of an action this state might change according to the rules given in the actions post--conditions. Post--conditions can specify a relation between the value assignment in the current state and a value assignment in the previous state. The states are interconnected with each other via post--conditions. The set of all post--conditions can be seen as a state transition function. In order to traverse a control flow edge its guard needs to evaluate to true in the current state. Guard conditions can only specify relations between the value assignments within a single state.\\ 
 The AMPL program models the execution of an activity as a series of states. All post--conditions and guards are contained in the model as constraints, that can be switched on and off for each state within the series of states. 
 \begin{figure}
-\includegraphics[width=\textwidth]{./pics/BasicExamples.pdf}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{./pics/BasicExamples.pdf}
+\end{center}
 \caption{Example of a simple activity with two actions and one decision}
 \label{fig:ActivityExample}
 \end{figure}
@@ -233,7 +241,7 @@ The built AMPL model will be synthesised as specified in algorithm \ref{alg:TCGA
 \caption{Model to text transformation from TCGVariable to AMPL model}
 \label{alg:TCGVariable2AMPL}
 \end{algorithm}
-The MOF Model to Text Transformation (MOFM2T) template to transform a TCGVariable into an AMPL variable declaration is printed in Algorithm \ref{alg:TCGVariable2AMPL}. Every variable has one out of three possible types: Integer, Real and Boolean. In AMPL if nothing else is specified an AMPL variable is in the domain of real numbers. AMPL also supports variables in the domain of integers. For integers and real numbers we always need an upper and a lower bound that will be set to $+10000$ and $-10000$ by default. Without these bounds we have experienced some problems with AMPL and its solvers this will be explained more detailed in Section \ref{sec:LimitationsAMPL}. The boolean domain is modelled as the set $ \left[ 0 .. 1 \right] $, where 0 corresponds to false.\\
+The MOF Model to Text Transformation (MOFM2T) template to transform a TCGVariable into an AMPL variable declaration is printed in Algorithm \ref{alg:TCGVariable2AMPL}. Every variable has one out of three possible types: Integer, Real and Boolean. In AMPL if nothing else is specified an AMPL variable is in the domain of real numbers. AMPL also supports variables in the domain of integers. For integers and real numbers we always need an upper and a lower bound that will be set to $+10000$ and $-10000$ by default. Without any bounds at all some solvers where unable to produce correct results. The boolean domain is modelled as the set $ \left[ 0 .. 1 \right] $, where 0 corresponds to false.\\
 Since a variable can have different values in each state of the execution each variable will be modelled in AMPL as a variable array of fixed size. The size of the array is defined by the \texttt{pathlength}. When the isParameter attribute of the TCGVariable is true then the variable is constant and cannot change its value from one state to another, thus we can model those variables as a single AMPL variable.
 \subsection{Transforming LocalPostConditions}
 \label{sec:Postconditions2AMPL}
@@ -263,7 +271,7 @@ Since a variable can have different values in each state of the execution each v
 \label{alg:TCGAction2AMPL}
 \end{algorithm}
 For each TCGAction the activation set is declared as a subset of $\left[0..\texttt{pathlength}\right]$ in the AMPL model. The name of the activation set is the name of the TCGAction. The name of each TCGAction is guaranteed to be unique within one activity test case graph model, so name-clashes in the AMPL model are prevented (see Section \ref{sec:uml2atcg}). Each local post--condition of an action is transformed into an indexed collection of constraints over the activation set.\\
-In Algorithm \ref{alg:TCGAction2AMPL} the transformation of a TCGAction into AMPL code is specified in MOFM2T language. The ActionToAMPL template first generates the declaration of the activation set as we see it in line \ref{lst:activationSet}. If no entries are added in the data section it is by default an empty set. In a for--loop the constraint sets are generated for each of the local post--conditions of the current action. In AMPL every constraint needs a name and the name has to be unique. For this reason we are composing the name from the actions name and the index of the current constraint in the ordered list of local post--conditions in line \ref{lst:constraints}.\\
+In Algorithm \ref{alg:TCGAction2AMPL} the MOFM2T language specification of the transformation of a TCGAction into AMPL code is given. The ActionToAMPL template first generates the declaration of the activation set as we see it in line \ref{lst:activationSet}. If no entries are added in the data section it is by default an empty set. In a for--loop the constraint sets are generated for each of the local post--conditions of the current action. In AMPL every constraint needs a name and the name has to be unique. For this reason we are composing the name from the actions name and the index of the current constraint in the ordered list of local post--conditions in line \ref{lst:constraints}.\\
 The called \verb=Constraint2AMPL= template does the actual re--serialisation of the OCL constraint, that was parsed in Section \ref{sec:OCLParsing}, in AMPL syntax. As explained in Section \ref{sec:Variables2AMPL} the variables are represented as an array containing one value for each state during the execution. Consequently when a constraint accesses a variable we need to specify in which state that variable is accessed. That is the point where the index from the activation set is used. If the variable reference was marked with "@pre" we are accessing the variable in the previous state and thus need to subtract one from the index otherwise we access the variable at the index from the activation set. This is shown in line \ref{lst:varCall}. The serialisation of function calls and literals is straight forward as shown in line \ref{lst:opCall2AMPL} and line \ref{lst:literal2AMPL}. The function toOpSymbol() called in line \ref{lst:opCall2AMPL} will generate the appropriate operation symbol representing the TCGOCLOperationType literal it is called on.
 \subsection{Transforming Guards}
 \label{sec:Guards2AMPL}
@@ -343,8 +351,8 @@ In order to generate a test suite with good test coverage we need to select a se
 The rest of this section is organized as follows: In Section \ref{sec:pathserachPathTree} we introduce basic concepts and data structures the path search algorithms presented in Sections \ref{sec:pathsearchDFS} and \ref{sec:pathsearchBFS} use. The details of the early infeasible path recognition are explained in Section \ref{sec:EarlyInfeasiblePathRecognition}. %Its length is determined by counting the TCGControlFlows in the control flow 
 \subsection{Path Tree}
 \label{sec:pathserachPathTree}
-For the algorithms presented in the following sections we need some definitions. 
-A \emph{control flow path} is represented as a sequence of control flows. An \emph{abstract test case} is a control flow path starting at the initial node of the activity and ending at a \emph{final node}. Any node with no outgoing control flow is a final node. For two subsequent control flows, a and b, in a control flow path the OCL expression $a.target = b.source$ is true. \\
+For the algorithms presented in the following sections we need some definitions.
+A control flow path is represented as a sequence of control flows. An \emph{abstract test case} is a control flow path starting at the initial node of the activity and ending at a \emph{final node}. Any node with no outgoing control flow is a final node. For two subsequent control flows, a and b, in a control flow path the OCL expression $a.target = b.source$ is true. \\
 We will need the concept of a \emph{path tree} to explain the presented algorithms. We define the \emph{path tree node} as a triple of an edge, the depth, and the predecessor. The edge is a reference to a TCGControlFlow within the examined activity test case graph. The depth is a natural number and predecessor is a reference to another path tree node. The depth of a path tree node is always one more than the depth of its predecessor. A root node does not have a predecessor and its depth is $0$.\\
 %A path tree is a tree holding all control flow paths starting at the initial node of an activity. The root \emph{path tree node} is a control flow path of length 0 starting at the initial node of the activity. Each child path tree node of a path tree node p holds a control flow path extending the control flow held by p by one control flow. Thus a path tree node at depth 1 in the path tree is representing a control flow path consisting of one control flow. Every leaf path tree node holds a control flow path from the initial node to a final node of the activity, an abstract test case graph. The path tree for a cyclic activity test case graph is infinite. During the path search we will only construct a partial path tree.\\
 %path. A control flow path may contain a single TCGControlFlow multiple times and it will be counted each time.
@@ -498,27 +506,27 @@ The root element of a test case model is a TestSuite. We will create one TestSui
 \subsection{Solvers}
 \label{sec:testgenSolvers}
 A central point of our approach for unit test generation is the application of state-of-the-art constraint solvers to the constraint satisfaction problem that we have generated from a UML \UMLType{Activity}. As we have explained in Section \ref{sec:Maths} there are several specializations of the constraint satisfaction problem for which algorithms or heuristics exist. Every available solver implements one or more algorithms or heuristics. Thus a solver is suitable for instances of one or more of the presented problems. Table \ref{tab:solvers} contains in each row the name of solver and a check mark for each problem we have successfully tested it for. 
-\begin{table}
+\begin{table}\begin{center}
 \begin{tabular}{l r r r r r r r r}
 Solver & LP & MILP & COP & MOP & SAT & SMT & IP & MIP\\
 \hline
 cplex & \checkmark & \checkmark & & & & & &\\
-ilogcp & & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
+ilogcp & \checkmark & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
 gecode & & & & &\checkmark & \checkmark & \checkmark &\\
 couenne & \checkmark & \checkmark & \checkmark & \checkmark & & & \checkmark & \checkmark\\
-gurobi & & & & & & & &\\
-lpsolve & & & & & & & &\\
-minos & & & & & & & &\\
-conopt & & & & & & & &\\
-knitro & & & & & & & &\\
-snopt & & & & & & & &\\
-xpress & & & & & & & &\\
-bonmin & & & & & & & &\\
-cbc & & & & & & & &\\
-ipopt & & & & & & & &\\
-
+gurobi & \checkmark & & \checkmark & & & & &\\
+lpsolve & \checkmark &\checkmark  & & & & & &\\
+minos &\checkmark & &\checkmark & & & & &\\
+% conopt & & & & & & & &\\
+% knitro & & & & & & & &\\
+% snopt & & & & & & & &\\
+% xpress & & & & & & & &\\
+% bonmin & & & & & & & &\\
+% cbc & & & & & & & &\\
+% ipopt & & & & & & & &\\
 \hline
 \end{tabular}
+\end{center}
 \caption{List of solvers and their capabilities}
 \label{tab:solvers}
 \end{table}
@@ -526,7 +534,9 @@ ipopt & & & & & & & &\\
 \label{sec:AMPLWarmStartCapabilities}
 To speed up the computation of we are using the warm start capabilities of AMPL and most of its solvers. A warm start means that we are solving the same constraint satisfaction problem multiple times in a row but each time with different data. In subsequent runs the solver can reuse knowledge it has gained throughout previous runs and thus generate solutions faster. Using the warm start capabilities requires all problems being solved in the same process and keeping the AMPL model constant. Keeping the AMPL model constant is achieved by the transformation of a TCGActivity to an AMPL model, which allows specifying control flow paths in the data.\\
 \begin{figure}
-\includegraphics[width=\textwidth]{./pics/VennTree.pdf}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{./pics/VennTree.pdf}
+\end{center}
 \caption{Venn diagrams for different paths and their ordering}
 \label{fig:VennTree}
 \end{figure}

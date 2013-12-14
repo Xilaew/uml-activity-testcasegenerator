@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="70.354332"
-   height="55.354332"
+   width="69.866982"
+   height="55.063183"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -20,11 +20,39 @@
      id="title8409">setIntersection</title>
   <defs
      id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3896"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3899"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
     <pattern
        inkscape:collect="always"
        xlink:href="#Strips1_1"
        id="pattern8407"
-       patternTransform="matrix(0.48340569,-0.01555934,0.03318862,1.0311213,354.82283,394.54719)" />
+       patternTransform="matrix(0.48340569,-0.01555934,0.03318862,1.0311213,357.82283,394.54651)" />
     <pattern
        inkscape:stockid="Stripes 1:1"
        id="Strips1_1"
@@ -68,9 +96,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="45.254834"
-     inkscape:cx="30.909141"
-     inkscape:cy="26.806988"
+     inkscape:zoom="11.313709"
+     inkscape:cx="23.154485"
+     inkscape:cy="24.244277"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -79,9 +107,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1033"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -90,8 +118,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="-189.82283px"
-       originy="-794.82284px" />
+       originx="-190.19604px"
+       originy="-795px" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -109,10 +137,10 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-189.82283,-202.18501)">
+     transform="translate(-190.19604,-202.299)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.35433072;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 260,257.36218 -70,0 0,-55"
+       style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 260.00053,254.37934 -67.01293,0 0,-52.01784"
        id="path2987"
        inkscape:connector-curvature="0" />
     <path
@@ -415,12 +443,12 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6062-9-0"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 220.88229,227.48824 -1.48023,1.47953 m 0,-1.47953 1.48023,1.47953"
        inkscape:connector-curvature="0" />
     <path
        id="path6062-1-4-28"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 222.80803,224.21205 -1.48024,1.47953 m 0,-1.47953 1.48024,1.47953"
        inkscape:connector-curvature="0" />
     <path
@@ -435,7 +463,7 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6062-0-2-2"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 230.5109,228.58024 -1.48024,1.47954 m 0,-1.47954 1.48024,1.47954"
        inkscape:connector-curvature="0" />
     <path
@@ -470,7 +498,7 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6062-1-2-0"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 225.21517,233.31248 -1.48023,1.47954 m 0,-1.47954 1.48023,1.47954"
        inkscape:connector-curvature="0" />
     <path
@@ -485,7 +513,7 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6062-0-14-8"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 227.62232,232.94843 -1.48023,1.47954 m 0,-1.47954 1.48023,1.47954"
        inkscape:connector-curvature="0" />
     <path
@@ -550,7 +578,7 @@
        inkscape:connector-curvature="0" />
     <path
        id="path6062-1-4-7"
-       style="fill:none;stroke:#020002;stroke-width:0.395;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#020002;stroke-width:0.39500001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 223.77088,233.6765 -1.48023,1.47953 m 0,-1.47953 1.48023,1.47953"
        inkscape:connector-curvature="0" />
     <path
@@ -773,5 +801,27 @@
        style="fill:none;stroke:#020002;stroke-width:0.19499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.5999999;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 255.79211,252.11177 -1.01112,1.01063 m 0,-1.01063 1.01112,1.01063"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Code Pro;-inkscape-font-specification:Source Code Pro"
+       x="257"
+       y="257.36218"
+       id="text4704"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4706"
+         x="257"
+         y="257.36218">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Code Pro;-inkscape-font-specification:Source Code Pro"
+       x="190"
+       y="207.36218"
+       id="text4704-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4706-7"
+         x="190"
+         y="207.36218">y</tspan></text>
   </g>
 </svg>

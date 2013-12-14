@@ -9,15 +9,14 @@ import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.xilaew.amplCLI.AmplFactory;
-import org.xilaew.amplCLI.JAMPL;
 import org.xilaew.amplCLI.JAMPL.SolveResult;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGEdge;
 import org.xilaew.atg.model.abstractTestCaseGraph.AbstractTCGNode;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
 import org.xilaew.atg.model.testCaseGraphRuntime.TestCaseGraphRuntimeFactory;
-import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 import org.xilaew.atg.transformations.actTCG2ampl.ActTCG2AMPLModel;
+import org.xilaew.atg.transformations.actTCG2ampl.Path2AMPLData;
 
 public class SolverDFS2 extends AbstractSolverIntegratedPathSearch {
 

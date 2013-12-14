@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.eclipse.atg.model.pathsearch.PathSearch;
 import org.eclipse.atg.model.pathsearch.SatisfiablePathSearch;
+import org.eclipse.atg.model.pathsearch.SolverBFS;
 import org.eclipse.atg.model.pathsearch.SolverDFS;
 import org.eclipse.atg.model.pathsearch.SolverDFS2;
 import org.eclipse.atg.model.pathsearch.Witness;
@@ -107,14 +108,14 @@ public class Experiment extends AbstractHandler {
 		// dialog.create();
 		if (dialog.open() == dialog.OK) {
 			properties = dialog.getActivityTestGenProperties();
-			for (int i = 0; i < 10; i++) {
+			for (int i = 1; i < 100; i++) {
 				properties.setProperty(
-						SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, /*
+						SatisfiablePathSearch.PROPERTY_MAX_NO_PATHS, /*
 																		 * Iterate
 																		 * through
 																		 * Property
 																		 */
-						Integer.toString(i));
+						Integer.toString(i*500));
 				long start = System.nanoTime();
 
 				// convert (UML) Activity to ActivityTestCaseGraph
@@ -129,7 +130,7 @@ public class Experiment extends AbstractHandler {
 				ActTCG2AMPLModel.transform(tcgActivity);
 
 				// create PathData
-				SatisfiablePathSearch search = new SolverDFS();
+				SatisfiablePathSearch search = new SolverBFS();
 				search.setProperties(properties);
 				EMap<Path, Witness> paths = search
 						.findAllSatisfiablePaths(tcgActivity);
