@@ -4,9 +4,11 @@ Throughout this thesis we will develop a complicated algorithm. We will relay on
 \section{Mathematical Foundations}
 \label{sec:Maths}
 \begin{figure}
-\label{fig:problemLatice}
-\includegraphics[width=\textwidth]{./pics/ProblemLatice.pdf}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./pics/ProblemLatice.pdf}
+\end{center}
 \caption{Generalisation and specialization dependencies between different problems}
+\label{fig:problemLatice}
 \end{figure}
 %When modelling we always need ways to express facts in mathematical terms. E.g from physic we know equations that express the relations between different physical values. 
 We are often modelling in order to derive an answer to some particular question. If we are lucky there exists an algorithm and even a software implementation that can compute the answer to our question. A major task in this thesis is to transform an activity diagram to a mathematical program, that is, a constraint satisfaction problem, and to apply a constraint solver. Currently existing solvers are always specialized on a few problems. When selecting a solver one needs to understand of which problem this model is an instance. Depending on the input model the resulting mathematical program will be an instance of one of the problems presented in this section.\\
@@ -17,9 +19,11 @@ When the problem is decidable we can assume that the used solver is exact and wi
 In the following we will introduce those constraint satisfaction problems that we think are relevant to generate test data from activity diagrams in practice. We will shortly mention their implications for solvability. In Figure \ref{fig:problemLatice} we give an overview of the problems and visualise which problems are generalisations or specializations of each other. An arrow from A to B means that B is a generalisation of A. In green are those problems that are decidable and have at least one tractable algorithm. Those are the easy--to--solve--problems in practice. All the other problems listed are challenging.
 \subsection{Constraint Programming}
 \begin{figure}
-\label{fig:CSPExample}
+\begin{center}
 \includegraphics[width=0.5\textwidth]{./pics/SetIntersection.pdf}
+\end{center}
 \caption{Two--dimensional search space and three different subsets forming a constraint satisfaction problem}
+\label{fig:CSPExample}
 \end{figure}
 In a \emph{constraint satisfaction problem} (CSP) the task is to assign values $v(x_i)$ to a set of variables $X = (x_1, \dots , x_n)$ from a search space $S=D_1\times \dots \times D_n$ such that all relations $c_1,\dots,c_k$ between the variables hold. We call those relations $c_1,\dots,c_k$ \emph{constraints}. $D_i$ is called the domain of $x_i$, $n$ is the number of variables, and $k$ the number of constraints. We can formalise a constraint satisfaction problem as shown in equations (\ref{CSP})--(\ref{CSPEnd}) \cite{Eiben97constraintsatisfaction}\cite{wiki:CSP}.
 \begin{eqnarray} 
@@ -163,7 +167,7 @@ We assume the used literals x,a,b and c to be names of declared variables or par
 \subsubsection{Sets}
 A set is a container holding a collection of values. It is declared with the keyword \verb=set= it has a name and potentially some attributes. A set can have several dimensions, be ordered or unordered and the default contents can be specified. The contents of the set can be required to be a subset of some set expression. A set expression is used to specify the elements contained in a set. The content of a set can be directly specified in the model or data section. When the content of a certain set is specified in the data then the model only contains a declaration of the set.\\
 The simplest set declaration would be: set A; just declaring a one dimensional set named A whose contents have to be specified in the data section. 
-A set declared as \verb&set A within 0..4 default 1 3& declares a set whose contents need to be a subset of $\lbrace 0,1,2,3,4\rbrace$ and by default, when nothing else is specified in the data the set will hold the elements 1 and 3.
+\verb&set A within 0..4 default 1 3& declares the set $A$ whose content need to be a subset of $\lbrace 0,1,2,3,4\rbrace$ and by default, when nothing else is specified in the data, the set will hold the elements 1 and 3.
 % The syntax of a set declaration is 
 % \begin{algorithm}
 % \begin{description}
@@ -197,7 +201,9 @@ declarative specification
 \section{Preliminary Work}
 \label{sec:RelatedWork}
 \begin{figure}
+\begin{center}
 \includegraphics[width=0.6\textwidth]{./pics/taxonomyOfMBT.pdf}
+\end{center}
 \caption{Overview of the Taxonomy of Model-Based Testing by Mark Utting \cite{utting2006taxonomy}}
 \label{fig:UttingTaxonomy}
 \end{figure}
