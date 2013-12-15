@@ -362,6 +362,64 @@ On the right hand side of Figure \ref{fig:RuntimeExperiments} we plotted the ove
 % \addplot[green,domain=1:5] {((1-x^3)*2^(2*3)-2^3)/2^(2*3)};
 % \addplot[blue,domain=1:5] {((1-x^4)*2^(2*4)-2^4)/2^(2*4)}; \addplot[red,domain=1:5] {((1-x^5)*2^(2*5)-2^5)/2^(2*5)}; 
 % \end{axis} \end{tikzpicture}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+%legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={PathsFound},
+xlabel={maximum path length},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+% \addplot[solid] table[x=foundPaths,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+% \addlegendentry{cplex};
+\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[color=black, style=dashed] expression[no markers, domain=30:100]{1.1 ^ (x)} 
+%node[pin=315:{$4x^2-5$}] at (axis cs:60,300) {}
+%node [sloped,midway] {X} 
+node[pos=0.5,sloped,fill=white, opacity=0.5,text opacity=1] {$1.1 ^ {x}$}
+%node[pos=0.1,orange, fill=white, opacity=1,text opacity=1, sloped] {Sloped}
+;
+
+;
+% \addlegendentry{lpsolve};
+% \addplot[densely dotted] table[x=foundPaths,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+% \addlegendentry{couenne};
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+xlabel={paths found},
+ylabel={time [s]},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+xmode=log,
+] 
+\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(2e7) * x}
+node [pos=0.7,below,sloped,fill=white,opacity=0.85,text opacity=1] {$x^1$} 
+%node[sloped] {$1.1 ^ {x}$}
+;
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(4e6) * x ^ (1.45)} 
+node [pos=0.9,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{1.45}$} 
+;
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e4]{(6e5) * x ^ (2)} 
+node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$} 
+;
+\end{axis}
+\end{tikzpicture}%
+\caption{Runtime of Test Generation }
+\label{fig:RuntimeExperiments}
+\end{figure}
+
 % As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal path length and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume, that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linearly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
 %There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is very expensive in terms of runtime. To check whether the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check every time one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unnecessarily often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^{10}$ control flow paths whether they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interest to the influence of the number of unchecked decisions before control flow paths are checked for feasibility. We assume, that there will be a minimum of runtime for some number of unchecked decisions.
 %Complex data types we added one \UMLType{Property} per field in a variable.
