@@ -18,7 +18,7 @@ Another feature of the specified algorithm is that it generates boundary values 
 \section{Normalisation}
 The UML specifies round about 250 modelling elements each having several references and attributes. An algorithm interpreting every element that is defined in the UML becomes overly complex. We interpret only a subset of the UML consisting of 16 different modelling elements that have been described in Section \ref{sec:UML}. In industrial applications a model will usually contain the complete specification for a product consisting of thousands of objects and containing elements our algorithm cannot interpret. Through the references of any object within a model we can navigate to any other object within the model. In order to not get lost in such a model when generating unit tests from it we need to slice out the relevant sub-model and perform some pre--processing to ensure our algorithm does not run into error conditions. Especially the contained OCL expressions need to be parsed and checked for conformity with the subset of OCL our algorithm is able to handle correctly. The input of the normalisation is an \UMLType{Activity} from which we traverse all relevant attributes and references and store each bit of information needed in consequent steps in our own unambiguous intermediate representation. The input model can be discarded after this step.
 \label{sec:Normalisation}
-\subsection{Design Rules for UML Model} %Structural Design rules
+\subsection{Design Rules for the Test Model} %Structural Design rules
 \subsubsection{Structural Design Rules}
 \begin{figure}
 \begin{center}
@@ -52,10 +52,12 @@ Further we assume that the embedded textual OCL constraints are either contained
 \caption{EBNF of supported OCL subset}
 \label{alg:OCLEBNF}
 \end{algorithm}
-\subsection{A Meta Model suitable for automated Unit Test Generation}
+\subsection{A Meta Model Suitable for Automated Unit Test Generation}
 \label{sec:TestCaseGraph}
 The developed unit test generation algorithm does not work directly on an UML model but on an \emph{activity test case graph}. The activity test case graph contains only those details from the UML meta model that are really necessary for the unit test generation. Since it contains only ready parsed OCL expressions as abstract syntax trees it is much more suitable for the transformation into a mathematical program.\\
-The activity test case graph is defined as an extension of a more general \emph{abstract test case graph} model. The abstract test case graph meta model was tailored to fit \UMLType{Activities} as well as UML \UMLType{StateMachines} in order to be able to apply algorithms not only to \UMLType{Activities} but also to \UMLType{StateMachines}. This common abstract meta model also allows to reuse existing algorithms from ParTeG \cite{ParTeG} for \UMLType{Activities}.
+The activity test case graph is defined as an extension of a more general \emph{abstract test case graph} model. The abstract test case graph meta model was tailored to fit activity diagrams as well as UML state machine diagrams in order to be able to apply algorithms not only to activity diagrams but also to state machine diagrams.
+% XXX no reference to ParTeG before
+% This common abstract meta model also allows to reuse existing algorithms from ParTeG \cite{ParTeG} for \UMLType{Activities}.
 %????
 %Figure \ref{fig:ATCGMetamodel} shows the complete meta model of the activity test case graph including all components from the AbstractTestCaseGraph.
 %\begin{figure}
@@ -89,7 +91,7 @@ The main extensions to the abstract test case graph meta model are the variables
 TCGOCLExpression is a subtype of AbstractTCGConstraint. A TCGOCLExpression can either be a TCGOCLOperation call with a source and arguments, or a TCGOCLLiteralExpression holding a literal value and its data type, or a TCGOCLVariableCallExp referencing a TCGVariable. The isPre attribute of TCGOCLVariableCallExp denotes whether in the original OCL expression has been an "@pre" with the token. TCGOCLExpression and its subtypes do form a simplified OCL abstract syntax tree.
 \paragraph{TCGVariable}
 A TCGVariable can be one of two subtypes either a TCGBasicVariable or a TCGObjectVariable. An object variable is put together by one or more other variables. A basic variable has a variableType attribute holding a TCGBasicVariableType literal. The TCGBasicVariable Type literal represents one of the types that can be handled by our algorithm: Integer, Real, and Boolean. A TCGVariable is a place holder for a value. When the isParameter attribute is true it can only hold one Value throughout the execution of the TCGActivity otherwise it can change its value during each execution of a TCGAction.
-\subsection{Transforming an UML Activity to Activity Test Case Graph}
+\subsection{Transforming an UML Activity Diagram into an Activity Test Case Graph}
 \label{sec:uml2atcg}
 \begin{figure}
 \begin{center}
@@ -200,7 +202,7 @@ Let's assume we want to generate test data for the \verb=_then= path. In this ca
 \end{eqnarray}
 %Any variable can be either an integer, a real number or a boolean. Each postcondition, guard condition and invariant will show up as constraint in the AMPL model. In the data to the model we will specify which constraints are activated for which states.  We can also see the set of postconditions as a state transition function. \\
 %\subsection{How to Transform an Activity Test Case Graph into a Mathematical Program}
-\subsection{Transforming a TCGActivity to an AMPL model}
+\subsection{Transforming a TCGActivity to an AMPL Model}
 \label{sec:atcg2AMPLModel}
 Each AMPL model has one parameter called \texttt{pathlength} representing the number of actions on a path. 
 For each action with post--conditions and each control flow with a guard there is one \emph{activation set}. An activation set is required to be a subset of $[1..pathlength]$ and specifies those states, in which a post--condition or guard condition is active. 
@@ -503,7 +505,7 @@ If the solver indicates ``solved'' or ``solved?'' we will use the values stored 
 \end{algorithm}
 When a solver successfully computed an answer for a given constraint satisfaction problem we read the assigned values and store them in a test case model. In Algorithm \ref{alg:TestCaseModelGen} we see the pseudo code of the algorithm creating a TestCase object from the values computed by the constraint solver. We assume that the function AMPL(``x'') returns the content of the AMPL variable or variable array x as array. And the function createValue(var : TCGVariable) creates a new Value object with its name attribute set to var.name and its variable reference pointing to var.\\
 The root element of a test case model is a TestSuite. We will create one TestSuite element for a TCGActivity. For each abstract test case on that TCGActivity that has been successfully solved we will create one TestCase and add it to the TestSuite. For each TCGVariable with its isParameter attribute set to false in the TCGActivity we will retrieve an array of values from the AMPL process. The first value in this array is stored in a Value element. The name of this Value element is set to the name of the TCGVariable and it is added to the initValues reference of the TestCase. Analogue the last element from the array retrieved from AMPL will be stored in a Value element and stored in the testForValue reference. A FunctionCall with the same name as the TCGActivity will be created. For each TCGVariable with its isParameter attribute set to true a single value will be retrieved from AMPL, and depending on the usage property of the TCGVariable the produced Value element will be stored either in the parameters reference of the FunctionCall or the testForValue reference of the TestCase. For out parameters and return parameters the Value elements are stored in the testForValue set. For in parameters the Value element is stored in the parameters set of the FunctionCall element.
-\subsection{Solvers}
+\subsection{Review of Available Solvers}
 \label{sec:testgenSolvers}
 A central point of our approach for unit test generation is the application of state-of-the-art constraint solvers to the constraint satisfaction problem that we have generated from a UML \UMLType{Activity}. As we have explained in Section \ref{sec:Maths} there are several specializations of the constraint satisfaction problem for which algorithms or heuristics exist. Every available solver implements one or more algorithms or heuristics. Thus a solver is suitable for instances of one or more of the presented problems. Table \ref{tab:solvers} contains in each row the name of solver and a check mark for each problem we have successfully tested it for. 
 \begin{table}\begin{center}
@@ -541,7 +543,7 @@ To speed up the computation of we are using the warm start capabilities of AMPL 
 \label{fig:VennTree}
 \end{figure}
 Even if the solver is changed between two runs or the solver does not build internal knowledge about the given problem AMPL will store the last answer computed. Many algorithms need a starting point and they will use the last answer computed. In Figure \ref{fig:VennTree} we show a path tree. Each leaf node represents an abstract test case; each intermediate node represents a sub--path from the initial node to some node in the activity test case graph. At each node in the path tree there is a Venn diagram visualising the feasible set of input data for that sub--path. Adding a constraint will never increase the feasible set consequently the feasible set of a path extending another path will always be smaller than the feasible set of its predecessor. The feasible set of a sub--paths will always be exactly the union of the feasible set of its successors and the intersection of feasible sets of siblings in the path tree will always be empty. If that were not the case there would be input data for which the control flow is unspecified or non deterministic. The number on the left of each leaf node gives the order in which the leaf nodes are found by a depth first search and the number on the right of each leaf node gives the order in which they are found by a breadth first search.\\ Usually it is easier to solve a constraint satisfaction problem if we know a starting point that fulfils all constraints except one instead of a starting point violating the majority of the constraints. If we have a solution for a sub--path it is certainly already a feasible solution for one of its successors. If we have a solution for a leaf node especially for mathematical programs we have a high chance to move into the feasible region of its nearest sibling by applying a simple local steepest descent search on the objective function augmented by quadratic penalty terms. In the order produced by depth first search abstract test cases sharing a long common sub--path are next to each other and will consequently be solved right after each other. In depth first order we can see that the fourth abstract test case will use a starting point not fulfilling any constraint for this path. Especially when we solve the constraint satisfaction problems for the intermediate nodes in the path tree as it is done for the early infeasible path recognition explained in Section \ref{sec:EarlyInfeasiblePathRecognition} we should memorise the solutions found and set the starting points accordingly before we solve the constraint satisfaction problem for a subsequent path tree node.
-\subsection{Generate Boundary Values}
+\subsection{Generating Boundary Values}
 \label{sec:boundaryValueSelection}
 As already motivated a solution at the boundary of the feasible set for a certain abstract test case is more valuable than other solutions within the feasible set. For linear problems the simplex algorithm will automatically generate only boundary values since it is the nature of the simplex algorithm to move along the exposed points of a polyeder. For all other problems it is a bit more complicated.\\
 So far the solved constraint satisfaction problems do not contain an optimisation constraint. Thus all algorithms are done as soon as they found any feasible point. In AMPL we can interactively add an objective function before launching the solver for a certain problem. We add an objective function that way, that the optimal point is somewhere at the boundary of the feasible set. Any linear objective function will serve this purpose. After the addition of a linear objective function three things can happen, either the the solver returns a boundary value in the next run, or the solver reports that the problem is unbounded, or the solving time for the problem suddenly increases enormously. In the first case everything went fine, that will especially happen for convex optimisation problems. The second case indicates, that the direction of the objective function points into a direction, where the feasible set is open. In this case we can change the direction of the objective function and try again to hit a boundary. The last case is especially a problem of integer and mixed integer programs and non convex mathematical programs. It is not too hard to find a feasible solution for one of these problems, when there are enough solutions to find. Finding an optimal solution for an integer, mixed integer or non--convex program is much harder. In the worst case we need to find all feasible or locally optimal solutions and compare all of them with each other. In such a case we can first solve the problem without objective and when a feasible starting point is available we can apply a local search on the problem with objective and we will not necessarily obtain the global maximum but a local maximum that is at the boundary of the feasible set. We suggest using the last explained procedure to find as many boundary values for each abstract test case as the user demands. The used objective functions shall also be provided by the user. We have successfully tested this procedure for non-convex mixed integer programs with the solvers couenne to find a feasible point and minos to perform the local search (Section \ref{sec:exampleModelNonConvex}).
@@ -591,14 +593,14 @@ So far the solved constraint satisfaction problems do not contain an optimisatio
 \end{algorithm}
 From a unit test model and the corresponding activity test case graph model we are able to write compilable unit test in any language, using any unit test framework we want. In this Section we will explain an example MOFM2T template (Algorithm \ref{alg:boostTemplate}) that generates C++ unit tests suitable to test C functions. We use the boost test library as unit test framework. \\
 First we need to include the boost header and the headers for the system under test. For each TestCase in the TestSuite we print one test case. What is printed for each TestCase can be found in the lines \ref{line:forEachTestCase}--\ref{line:forEachTestCaseEnd}. The central element of each test case is a call to the function under test (lines \ref{line:callFuncUnderTest}--\ref{line:callFuncUnderTestEnd}). Every time data is needed either for initialisation or to verify the results of the function call we will use a value stored inside a Value element of the unit test model. Before the function call we initialise the fields of the system under test and create local variables to pass as input arguments into the function. We also declare uninitialized local variables to receive the output parameters and the return value from the function call. After the function call every variable holding a value that needs to be checked will be checked. For variables in a discrete domain we check for equalities and for floating point variables we check for similarity. Thus a test will not fail due to a small rounding error, but we will generate a warning if a small rounding error occurred (line \ref{line:BoostWarn}). 
-\section{Implementation}
-\label{sec:testgenerationImplementation}
-say a few words about EMF and Eclipse plug--in. Tell that I used Eclipse org.eclipse.ocl.uml and eclipse org.eclipse.uml2.uml packages. 
-\subsection{The Eclipse Modelling Framework}
-\cite{EMF}
-\subsubsection{Importing Models from Atego Artisan Studio}
-\subsubsection{Model transformations}
-\subsubsection{Parsing OCL Expressions}
-\subsection{Using the Resulting Plug--in}
-
+% \section{Implementation}
+% \label{sec:testgenerationImplementation}
+% say a few words about EMF and Eclipse plug--in. Tell that I used Eclipse org.eclipse.ocl.uml and eclipse org.eclipse.uml2.uml packages. 
+% \subsection{The Eclipse Modelling Framework}
+% \cite{EMF}
+% \subsubsection{Importing Models from Atego Artisan Studio}
+% \subsubsection{Model transformations}
+% \subsubsection{Parsing OCL Expressions}
+% \subsection{Using the Resulting Plug--in}
+% 
 

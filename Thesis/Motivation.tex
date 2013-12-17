@@ -33,7 +33,7 @@ When building the AMPL model from the activity diagram care needs to be taken th
 A great advantage of a commonly used mathematical programming language is that there are industrial--strength solvers available. By running a state--of--the--art solver the AMPL program corresponding to a possible control flow path in the activity diagram will be solved. From the results of the constraint solver we obtain test data. The generated test data includes possible input arguments for the C function implementing the activity diagram. Also, all expected return values as well as values for class properties before and after the execution of the activity diagram are included.\\
 Depending on the problem formulation a suitable solver needs to be selected. Not every solver can solve every AMPL program, and not every AMPL program is an instance of an easy--to--solve problem. An overview of the problems that are considered throughout this thesis can be found in Section \ref{sec:Maths}.
 \subsection{Results}
-A practical result of this thesis is an Eclipse plug-in automatically generating unit tests from activity diagrams. The plug-in comes with a set of example models. Each example is an instance of a different mathematical problem and thus needs another solver to be solved successfully. Moreover, we performed an industrial case study using a model of the PAX-Call system in Airbus. We added the missing OCL constraints and successfully generated test cases for the largest activity diagram within the model.
+A practical result of this thesis is an Eclipse plug-in automatically generating unit tests from activity diagrams. The plug-in comes with a set of example models. Each example is an instance of a different mathematical problem and thus needs another solver to be solved successfully. Moreover, we performed an industrial case study using a model of the PAX-Call system in Airbus. We added the missing OCL constraints and successfully generated test cases for the largest activity diagram within the model. Finally we experimentally determined the scalability of the implementation.
 %To be precice at airbus the decicion was to use UML Activities for modelling behavior and controll flow of C functions for embedded Systems. 
 %Basically we want to harvest the benefits from Model Based Engineering by building tool support to generate a test suite for a C function. 
 %The generated Test Suite should of course be complete according to some coverage criteria to be selected by the user. 
@@ -44,7 +44,6 @@ A practical result of this thesis is an Eclipse plug-in automatically generating
 %\subsection{Generating Unit Tests from Behavioural Model}
 %Explain Model Based engineering at Airbus Buxtehude with Component structure of the software and code generation as well as Test generation from a Model.
 %Give the short overview over the complete thesis
-
 \section{Organization}
 The rest of this thesis is organized in three chapters. In the chapter \nameref{chap:preliminaries} we will refer to related work (Section \ref{sec:RelatedWork}),%explain the assumed input language (Section \ref{sec:UML}),
 give an overview of the theory of mathematical programming and constraint programming (Section \ref{sec:Maths}), and explain the mathematical programming language AMPL.\\
