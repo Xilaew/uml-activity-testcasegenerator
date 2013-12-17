@@ -129,7 +129,11 @@
 % add your second logo here along with the description, it will appear on the second page
 %----------------------------------------
 
-\abstract{Testing is one out of many ways to verify the behaviour of software artefacts. With the upcoming Model Based Engineering there is a need to ensure that the embedded code running on some device is behaving the same way as its Model. In this Thesis we concentrate on UML Activity diagrams used to model C-Components. We transform an Activity with embedded OCL constraints into a rigorous Mathematical program expressed in AMPL and solve it using state-of-the art constraint solvers. The generated tests will comply to control flow based coverage criteria and we can specify to explicitly use boundary values for testing. A special focus is on non linear mixed integer arithmetic constraints.}
+\abstract{Testing is an important method to validate the behaviour of software artefacts. With the upcoming paradigm of Model--Based Engineering there is a need to ensure that the embedded code running on some device is behaving the same way as its model.\\
+In this thesis we concentrate on generating unit tests from UML activity diagrams used to model functions of C components. 
+We use a graph search to identify control flow paths in the activity diagram that we want to test. With symbolic execution we transform embedded OCL constraints along a given control flow path into a rigorous mathematical program expressed in \textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage (AMPL) and derive test data by having it solved by state--of--the--art constraint solvers.
+% each control flow path to test vity diagram with . 
+The generated tests comply to control flow based coverage criteria. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults we support the generation of boundary values as test data. A special focus is on allowing non linear mixed integer arithmetic formulations as well as logical formulas in OCL constraints, since we want to put as little restrictions as possible on the user specifying test models.}
 \pagenumbering{Roman}
 \tableofcontents
 \clearpage
