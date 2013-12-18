@@ -47,20 +47,21 @@ The rest of this section is organized as follows: we will start Section \ref{sec
 width=\textwidth,
 height=6cm,
 ylabel={time (ms)},
-xlabel={used solver},
+xlabel={solver},
 xtick={0,1,2,3,4,5},
 xticklabels={{cplex}, {lpSolve}, {couenne}, {minos}, {gurobi}, {gecode}},
 ]
-\addplot coordinates {(0,350) (1,300) (2,680) (3,310) (4,390)}; 
-\addplot coordinates {(5,100)}; 
+\addplot[pattern=dots] coordinates {(0,350) (1,300) (2,680) (3,310) (4,390)}; 
+\addplot[draw=black, pattern=dots] coordinates {(5,100)}; 
 \end{axis}
 \end{tikzpicture}
 \end{center}
 \caption{Runtime of unit test generation using different solvers}
 \label{fig:TriangleLinRuntime}
 \end{figure}
-We start with a model that contains only linear equalities and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating whether the input variables could possibly be the side lengths of an equilateral, isosceles, or scalene triangle. The mathematical problem to solve for this model is a linear program and can be solved with the simplex method as implemented in cplex and lp\_solve or an interior point method as implemented by couenne, minos and gurobi. Generating test data for for every feasible abstract test case takes for every tested solver less than one second. There are in total 19 possible test cases resulting from this model. Figure \ref{fig:TriangleLinRuntime} shows the average runtime consumed for test generation from this model using the mentioned solvers.\\
-We manually performed the mutation testing for this model. The following operator replacements have been made in the C-code: \verb=&&=$\rightarrow$\verb=||=, \verb=>=$\rightarrow$\verb§<=§, \verb=+=$\rightarrow$\verb=-=, \verb=||=$\rightarrow$\verb=&&=, \verb$==$$\rightarrow$\verb§!=§. This resulted in $20$ mutants of which 16 have been detected by our automatically generated test cases. That means 80\% of all mutants have been detected sucessfully.
+We start with a model that contains only linear equalities and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating whether the input variables could possibly be the side lengths of an equilateral, isosceles, or scalene triangle. The mathematical problem to solve for this model is a linear program and can be solved with the simplex method as implemented in Cplex and LPsolve or an interior point method as implemented by Couenne, Minos and Gurobi.\\
+Generating test data for every feasible abstract test case takes for every tested solver less than one second. There are in total 19 possible test cases resulting from this model. Figure \ref{fig:TriangleLinRuntime} shows the average runtime consumed for test generation from this model using the mentioned solvers. Couenne is actually targeted at the much more general problem of mixed integer non linear programming and thus performs unnecessary overhead when used for solving a simple linear programming. Minos and Gurobi implement an interior point method suitable to solve convex optimisation problems which is almost as fast as the simplex implementations of LPsolve and Cplex that are specialized for linear programming and mixed integer linear programming.\\
+We manually performed the mutation testing as described in Section \ref{sec:evaluationMutationTesting} for this test model. The following operator replacements have been made in the C-code: \verb=&&=$\rightarrow$\verb=||=, \verb=>=$\rightarrow$\verb§<=§, \verb=+=$\rightarrow$\verb=-=, \verb=||=$\rightarrow$\verb=&&=, \verb$==$$\rightarrow$\verb§!=§. This resulted in $20$ mutants of which 16 have been detected by our automatically generated test cases. We have checked the remaining 4 undetected mutants all resulting from the mutation operator \verb=&&=$\rightarrow$\verb=||= and found them equivalent, they therefore can not be detected. That means 100\% of the detectable mutants have been detected sucessfully.
 \subsection{Triangle Classificator with Logical Constraints (SMT)}
 \label{sec:TriangleClassificatorSMT}
 \begin{figure}
@@ -70,6 +71,7 @@ We manually performed the mutation testing for this model. The following operato
 \end{figure}
 Since the formulation of the constraints by means of non-strict inequalities only is cumbersome we reformulated the model and used logical operations as well as strict inequalities in the guards and local post--conditions and yield the much more intuitive model depicted in Figure \ref{fig:TriangleSMT}. The variables are now all in the domain of integers and we used logical operations, thus this model will be transformed into an instance of an satisfiable modulo theories problem. Suitable solvers to solve instances of SMT are geode, ilogcp and jacop. In total there are 4 possible test cases to be found and our algorithm took 110ms to generate all of them using gecode. This time also shows up in the Figure \ref{fig:TriangleLinRuntime}.
 \subsection{Binary Counter (SAT)}
+\label{sec:BinaryCounter}
 \begin{figure}
 \includegraphics[width=\textwidth]{./pics/BinaryCounter.pdf}
 \caption{Activity diagram of a binary counter incrementing a 4 bit register}
