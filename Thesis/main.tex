@@ -130,11 +130,11 @@
 % add your second logo here along with the description, it will appear on the second page
 %----------------------------------------
 
-\abstract{Testing is an important method to validate the behaviour of software artefacts. With the upcoming paradigm of Model--Based Engineering there is a need to ensure that the embedded code running on some device is behaving the same way as its model.\\
-In this thesis we concentrate on generating unit tests from UML activity diagrams used to model functions of C components. 
-We use a graph search to identify control flow paths in the activity diagram that we want to test. With symbolic execution we transform embedded OCL constraints along a given control flow path into a rigorous mathematical program expressed in \textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage (AMPL) and derive test data by having it solved by state--of--the--art constraint solvers.
+\abstract{Testing is one important way of validating and verifying the behaviour of software artefacts. With the use of Model--Based Engineering comes the need to ensure that the implementation derived from models actually behaves like specified in the corresponding models. \\
+In this thesis we generate unit tests from UML activity diagrams modelling C components. 
+We use symbolic execution to transform embedded OCL constraints along a control flow path into a rigorous mathematical program expressed in ``\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage'' (AMPL) and derive test data by having it solved with state--of--the--art constraint solvers.
 % each control flow path to test vity diagram with . 
-The generated tests comply to control flow based coverage criteria. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults we support the generation of boundary values as test data. A special focus is on allowing non linear mixed integer arithmetic formulations as well as logical formulas in OCL constraints, since we want to put as little restrictions as possible on the user specifying test models.}
+The generated tests comply to control flow based coverage criteria. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults, we also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints, since we want to put as little restrictions as possible on the used test models.}
 \pagenumbering{Roman}
 \tableofcontents
 \clearpage
