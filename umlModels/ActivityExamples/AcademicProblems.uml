@@ -373,13 +373,13 @@
           </localPostcondition>
         </node>
         <node xmi:type="uml:OpaqueAction" xmi:id="_GgSKWAH0EeOyK_U3qRzfXA" name="initialze" outgoing="_GgSKSAH0EeOyK_U3qRzfXA" incoming="_3wbDwA5NEeOLJ7_the77gQ">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKWQH0EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKWQH0EeOyK_U3qRzfXA" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKWgH0EeOyK_U3qRzfXA" name="constraintSpec" value="counter=pumps"/>
           </localPostcondition>
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_u9Pr0AH1EeOyK_U3qRzfXA" name="Constraint12">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_u9Pr0AH1EeOyK_U3qRzfXA" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_vAOHUAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted=false"/>
           </localPostcondition>
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_DsFkgA5OEeOLJ7_the77gQ" name="Constraint14">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_DsFkgA5OEeOLJ7_the77gQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_DtujQA5OEeOLJ7_the77gQ" name="constraintSpec" value="varMelted=false"/>
           </localPostcondition>
         </node>
@@ -393,7 +393,7 @@
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbAH0EeOyK_U3qRzfXA" name="ideal Gas">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbQH0EeOyK_U3qRzfXA" name="constraintSpec" value="(pressure*volume)=0.287058*n*temp"/>
           </localPostcondition>
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbgH0EeOyK_U3qRzfXA" name="there is no leck in tyre">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_GgSKbgH0EeOyK_U3qRzfXA" name="there is no leak in tyre">
             <specification xmi:type="uml:LiteralString" xmi:id="_GgSKbwH0EeOyK_U3qRzfXA" name="constraintSpec" value="n=n@pre"/>
           </localPostcondition>
         </node>
@@ -415,10 +415,10 @@
         <node xmi:type="uml:MergeNode" xmi:id="_Cg6VMAH1EeOyK_U3qRzfXA" name="MergeNode3" outgoing="_UqmecAH1EeOyK_U3qRzfXA" incoming="_m5CaQAH0EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_Dn_SAAH1EeOyK_U3qRzfXA" name="DecisionNode3" outgoing="_Lv5NQAH1EeOyK_U3qRzfXA _MWCnQAH1EeOyK_U3qRzfXA" incoming="_KrDFEAH1EeOyK_U3qRzfXA"/>
         <node xmi:type="uml:OpaqueAction" xmi:id="_3TJm0AH1EeOyK_U3qRzfXA" name="return" outgoing="_4tAVsAH1EeOyK_U3qRzfXA" incoming="_GgSKTgH0EeOyK_U3qRzfXA">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_6wScEAH1EeOyK_U3qRzfXA" name="Constraint2">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_6wScEAH1EeOyK_U3qRzfXA" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_6zHtoAH1EeOyK_U3qRzfXA" name="constraintSpec" value="varMelted@pre=tyreMelted"/>
           </localPostcondition>
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Cyh0MAH2EeOyK_U3qRzfXA" name="Constraint4">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_Cyh0MAH2EeOyK_U3qRzfXA" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_C1gPsAH2EeOyK_U3qRzfXA" name="constraintSpec" value="varBursted@pre=tyreBursted"/>
           </localPostcondition>
         </node>
@@ -739,30 +739,30 @@
           <guard xmi:type="uml:LiteralString" xmi:id="_GiV6kFKXEeOjF94ApGP4lQ" value="(s0 and o0 or not s0 and not o0) and (s1 and o1 or not s1 and not o1) and (s2 and o2 or not s2 and not o2) and (s3 and o3 or not s3 and not o3)"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_-n6K4FKnEeO_gJK5ARim5Q" name="ControlFlow17" source="_xP5_EFKTEeOjF94ApGP4lQ" target="_8EjdUFKnEeO_gJK5ARim5Q"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_xP5_EFKTEeOjF94ApGP4lQ" name="togles0" outgoing="_-n6K4FKnEeO_gJK5ARim5Q" incoming="_A0GFsFKUEeOjF94ApGP4lQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_xP5_EFKTEeOjF94ApGP4lQ" name="toggle_s0" outgoing="_-n6K4FKnEeO_gJK5ARim5Q" incoming="_A0GFsFKUEeOjF94ApGP4lQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_NalsIFKUEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_NbMJEFKUEeOjF94ApGP4lQ" name="constraintSpec" value="s0 and not s0@pre or not s0 and s0@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_2ckRMFKTEeOjF94ApGP4lQ" name="togles1" outgoing="_sTMYAFKUEeOjF94ApGP4lQ" incoming="_HSRqEFKUEeOjF94ApGP4lQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_2ckRMFKTEeOjF94ApGP4lQ" name="toggle_s1" outgoing="_sTMYAFKUEeOjF94ApGP4lQ" incoming="_HSRqEFKUEeOjF94ApGP4lQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="__pCV4FKVEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="__p7GsFKVEeOjF94ApGP4lQ" name="constraintSpec" value="s1 and not s1@pre or not s1 and s1@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_31rZMFKTEeOjF94ApGP4lQ" name="togles3" outgoing="_9WymcFKVEeOjF94ApGP4lQ" incoming="_DD1eQFKVEeOjF94ApGP4lQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_31rZMFKTEeOjF94ApGP4lQ" name="toggle_s3" outgoing="_9WymcFKVEeOjF94ApGP4lQ" incoming="_DD1eQFKVEeOjF94ApGP4lQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_H7abwFKWEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_H8TMkFKWEeOjF94ApGP4lQ" name="constraintSpec" value="(s3 and not s3@pre) or (not s3 and s3@pre)"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_5Q4L4FKTEeOjF94ApGP4lQ" name="notogles3" outgoing="_971NMFKVEeOjF94ApGP4lQ" incoming="_Dqz-sFKVEeOjF94ApGP4lQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_5Q4L4FKTEeOjF94ApGP4lQ" name="noToggle_s3" outgoing="_971NMFKVEeOjF94ApGP4lQ" incoming="_Dqz-sFKVEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_-vYb8FKTEeOjF94ApGP4lQ" name="DecisionNode1" outgoing="_A0GFsFKUEeOjF94ApGP4lQ" incoming="_OK4OsFKWEeOjF94ApGP4lQ _94dToFKWEeOjF94ApGP4lQ"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_W2wroFKUEeOjF94ApGP4lQ" name="notogles1" outgoing="_rrxLoFKUEeOjF94ApGP4lQ" incoming="_Y8NVMFKUEeOjF94ApGP4lQ"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_mW708FKUEeOjF94ApGP4lQ" name="togles2" outgoing="_8DJCsFKUEeOjF94ApGP4lQ" incoming="_uI4HQFKUEeOjF94ApGP4lQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_W2wroFKUEeOjF94ApGP4lQ" name="noToggle_s1" outgoing="_rrxLoFKUEeOjF94ApGP4lQ" incoming="_Y8NVMFKUEeOjF94ApGP4lQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_mW708FKUEeOjF94ApGP4lQ" name="toggle_s2" outgoing="_8DJCsFKUEeOjF94ApGP4lQ" incoming="_uI4HQFKUEeOjF94ApGP4lQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_EKiyMFKWEeOjF94ApGP4lQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_ELSZEFKWEeOjF94ApGP4lQ" name="constraintSpec" value="s2 and not s2@pre or not s2 and s2@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_oJySoFKUEeOjF94ApGP4lQ" name="noTogles2" outgoing="_8ncCkFKUEeOjF94ApGP4lQ" incoming="_u4MEUFKUEeOjF94ApGP4lQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_oJySoFKUEeOjF94ApGP4lQ" name="noToggle_s2" outgoing="_8ncCkFKUEeOjF94ApGP4lQ" incoming="_u4MEUFKUEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_qlaAgFKUEeOjF94ApGP4lQ" name="DecisionNode2" outgoing="_uI4HQFKUEeOjF94ApGP4lQ _u4MEUFKUEeOjF94ApGP4lQ" incoming="_rrxLoFKUEeOjF94ApGP4lQ _sTMYAFKUEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_53u7EFKUEeOjF94ApGP4lQ" name="DecisionNode3" outgoing="_DD1eQFKVEeOjF94ApGP4lQ _Dqz-sFKVEeOjF94ApGP4lQ" incoming="_8DJCsFKUEeOjF94ApGP4lQ _8ncCkFKUEeOjF94ApGP4lQ"/>
         <node xmi:type="uml:MergeNode" xmi:id="_8rC6wFKVEeOjF94ApGP4lQ" name="MergeNode1" outgoing="_OK4OsFKWEeOjF94ApGP4lQ _-2fpMFKWEeOjF94ApGP4lQ" incoming="_9WymcFKVEeOjF94ApGP4lQ _971NMFKVEeOjF94ApGP4lQ"/>
@@ -804,30 +804,30 @@
           <guard xmi:type="uml:LiteralString" xmi:id="_suTqiFMHEeOuxYA0qGrabQ" value="s0=o0 and s1=o1 and s2=o2 and s3=o3"/>
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_suTqiVMHEeOuxYA0qGrabQ" name="ControlFlow17" source="_suTqilMHEeOuxYA0qGrabQ" target="_suTqn1MHEeOuxYA0qGrabQ"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqilMHEeOuxYA0qGrabQ" name="togles0" outgoing="_suTqiVMHEeOuxYA0qGrabQ" incoming="_suTqcVMHEeOuxYA0qGrabQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqilMHEeOuxYA0qGrabQ" name="toggle_s0" outgoing="_suTqiVMHEeOuxYA0qGrabQ" incoming="_suTqcVMHEeOuxYA0qGrabQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_suTqi1MHEeOuxYA0qGrabQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_suTqjFMHEeOuxYA0qGrabQ" name="constraintSpec" value="s0&lt;>s0@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqjVMHEeOuxYA0qGrabQ" name="togles1" outgoing="_suTqd1MHEeOuxYA0qGrabQ" incoming="_suTqclMHEeOuxYA0qGrabQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqjVMHEeOuxYA0qGrabQ" name="toggle_s1" outgoing="_suTqd1MHEeOuxYA0qGrabQ" incoming="_suTqclMHEeOuxYA0qGrabQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_suTqjlMHEeOuxYA0qGrabQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_suTqj1MHEeOuxYA0qGrabQ" name="constraintSpec" value="s1&lt;>s1@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqkFMHEeOuxYA0qGrabQ" name="togles3" outgoing="_suTqglMHEeOuxYA0qGrabQ" incoming="_suTqflMHEeOuxYA0qGrabQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqkFMHEeOuxYA0qGrabQ" name="toggle_s3" outgoing="_suTqglMHEeOuxYA0qGrabQ" incoming="_suTqflMHEeOuxYA0qGrabQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_suTqkVMHEeOuxYA0qGrabQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_suTqklMHEeOuxYA0qGrabQ" name="constraintSpec" value="s3&lt;>s3@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqk1MHEeOuxYA0qGrabQ" name="notogles3" outgoing="_suTqg1MHEeOuxYA0qGrabQ" incoming="_suTqgFMHEeOuxYA0qGrabQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqk1MHEeOuxYA0qGrabQ" name="noToggle_s3" outgoing="_suTqg1MHEeOuxYA0qGrabQ" incoming="_suTqgFMHEeOuxYA0qGrabQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_suTqlFMHEeOuxYA0qGrabQ" name="DecisionNode1" outgoing="_suTqcVMHEeOuxYA0qGrabQ" incoming="_suTqhFMHEeOuxYA0qGrabQ _suTqhlMHEeOuxYA0qGrabQ"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqlVMHEeOuxYA0qGrabQ" name="notogles1" outgoing="_suTqdlMHEeOuxYA0qGrabQ" incoming="_suTqdFMHEeOuxYA0qGrabQ"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqllMHEeOuxYA0qGrabQ" name="togles2" outgoing="_suTqfFMHEeOuxYA0qGrabQ" incoming="_suTqeFMHEeOuxYA0qGrabQ">
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqlVMHEeOuxYA0qGrabQ" name="noToggle_s1" outgoing="_suTqdlMHEeOuxYA0qGrabQ" incoming="_suTqdFMHEeOuxYA0qGrabQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqllMHEeOuxYA0qGrabQ" name="toggle_s2" outgoing="_suTqfFMHEeOuxYA0qGrabQ" incoming="_suTqeFMHEeOuxYA0qGrabQ">
           <localPostcondition xmi:type="uml:Constraint" xmi:id="_suTql1MHEeOuxYA0qGrabQ" name="">
             <specification xmi:type="uml:LiteralString" xmi:id="_suTqmFMHEeOuxYA0qGrabQ" name="constraintSpec" value="s2&lt;>s2@pre"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqmVMHEeOuxYA0qGrabQ" name="noTogles2" outgoing="_suTqfVMHEeOuxYA0qGrabQ" incoming="_suTqelMHEeOuxYA0qGrabQ"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_suTqmVMHEeOuxYA0qGrabQ" name="noToggle_s2" outgoing="_suTqfVMHEeOuxYA0qGrabQ" incoming="_suTqelMHEeOuxYA0qGrabQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_suTqmlMHEeOuxYA0qGrabQ" name="DecisionNode2" outgoing="_suTqeFMHEeOuxYA0qGrabQ _suTqelMHEeOuxYA0qGrabQ" incoming="_suTqdlMHEeOuxYA0qGrabQ _suTqd1MHEeOuxYA0qGrabQ"/>
         <node xmi:type="uml:DecisionNode" xmi:id="_suTqm1MHEeOuxYA0qGrabQ" name="DecisionNode3" outgoing="_suTqflMHEeOuxYA0qGrabQ _suTqgFMHEeOuxYA0qGrabQ" incoming="_suTqfFMHEeOuxYA0qGrabQ _suTqfVMHEeOuxYA0qGrabQ"/>
         <node xmi:type="uml:MergeNode" xmi:id="_suTqnFMHEeOuxYA0qGrabQ" name="MergeNode1" outgoing="_suTqhFMHEeOuxYA0qGrabQ _suTqh1MHEeOuxYA0qGrabQ" incoming="_suTqglMHEeOuxYA0qGrabQ _suTqg1MHEeOuxYA0qGrabQ"/>
