@@ -15,14 +15,14 @@
    color-rendering="auto"
    preserveAspectRatio="xMidYMid meet"
    font-size="12"
-   viewBox="0 0 772.09998 176.55"
+   viewBox="0 0 772.09998 161.16456"
    image-rendering="auto"
    stroke-miterlimit="10"
    zoomAndPan="magnify"
    version="1.0"
    contentStyleType="text/css"
    font-style="normal"
-   height="176.55"
+   height="161.16457"
    font-weight="normal"
    id="svg2"
    inkscape:version="0.48.4 r9939"
@@ -36,7 +36,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -49,16 +49,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1033"
+     inkscape:window-width="1511"
+     inkscape:window-height="637"
      id="namedview509"
      showgrid="false"
      inkscape:zoom="1.5909091"
-     inkscape:cx="395.40378"
-     inkscape:cy="107.48301"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
-     inkscape:window-maximized="1"
+     inkscape:cx="365.45216"
+     inkscape:cy="92.033005"
+     inkscape:window-x="423"
+     inkscape:window-y="187"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -110,27 +110,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath6"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path24"
-           d="m 354,166 44,0 0,15 -44,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath7"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path27"
            d="m 165,160 58,0 0,27 -58,0 0,-27 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath8"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path30"
-           d="m 170,166 47,0 0,15 -47,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -142,22 +126,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath10"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path36"
-           d="m 16,161 114,0 0,15 -114,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath11"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path39"
-           d="m 16,177 87,0 0,15 -87,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath12"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -166,43 +134,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath13"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path45"
-           d="m 236,171 92,0 0,15 -92,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath14"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path48"
-           d="m 236,187 87,0 0,15 -87,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath15"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path51"
            d="m 670,155 112,0 0,42 -112,0 0,-42 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath16"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path54"
-           d="m 676,161 91,0 0,15 -91,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath17"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path57"
-           d="m 676,176 87,0 0,15 -87,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -222,22 +158,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath20"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path66"
-           d="m 676,111 92,0 0,15 -92,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath21"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path69"
-           d="m 676,127 91,0 0,15 -91,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath22"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -251,14 +171,6 @@
         <path
            id="path75"
            d="m 55,115 53,0 0,28 -53,0 0,-28 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath24"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path78"
-           d="m 58,121 46,0 0,15 -46,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -342,14 +254,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath35"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path111"
-           d="m 170,72 327,0 0,15 -327,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath36"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -371,14 +275,6 @@
         <path
            id="path120"
            d="m 585,127 13,0 0,11 -13,0 0,-11 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath39"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path123"
-           d="m 390,115 195,0 0,15 -195,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -406,14 +302,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath43"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path135"
-           d="m 380,145 143,0 0,15 -143,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath44"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -435,14 +323,6 @@
         <path
            id="path144"
            d="m 189,150 11,0 0,13 -11,0 0,-13 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath47"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path147"
-           d="m 200,145 102,0 0,15 -102,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -470,14 +350,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath51"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path159"
-           d="m 80,100 325,0 0,15 -325,0 0,-15 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath52"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -499,14 +371,6 @@
         <path
            id="path168"
            d="m 356,125 13,0 0,11 -13,0 0,-11 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath55"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path171"
-           d="m 223,115 120,0 0,15 -120,0 0,-15 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -569,7 +433,7 @@
      height="25"
      id="rect193"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="645"
      y="93"
@@ -577,7 +441,7 @@
      xml:space="preserve"
      id="text195"
      style="font-size:11px;fill:#000000;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">invalid</text>
+     transform="translate(-10.45,-74.385439)">invalid</text>
   <rect
      x="641"
      y="76"
@@ -588,7 +452,7 @@
      height="24"
      id="rect199"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <rect
      x="596"
      y="116"
@@ -599,7 +463,7 @@
      height="30"
      id="rect201"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
      x="603"
@@ -607,7 +471,7 @@
      clip-path="url(#clipPath4)"
      id="text203"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">scalane</text>
+     transform="translate(-10.45,-74.385439)">scalane</text>
   <rect
      x="596"
      y="116"
@@ -618,7 +482,7 @@
      height="29"
      id="rect205"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <rect
      x="351"
      y="161"
@@ -629,15 +493,14 @@
      height="25"
      id="rect207"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="355"
-     y="178"
-     clip-path="url(#clipPath6)"
+     x="344.54999"
+     y="103.61456"
+     clip-path="none"
      id="text209"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">isosceles</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">isosceles</text>
   <rect
      x="351"
      y="161"
@@ -648,7 +511,7 @@
      height="24"
      id="rect211"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <rect
      x="166"
      y="161"
@@ -659,15 +522,14 @@
      height="25"
      id="rect213"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="171"
-     y="178"
-     clip-path="url(#clipPath8)"
+     x="160.55"
+     y="103.61456"
+     clip-path="none"
      id="text215"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">eqilateral</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">eqilateral</text>
   <rect
      x="166"
      y="161"
@@ -678,30 +540,28 @@
      height="24"
      id="rect217"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <path
      d="m 11,156 0,0 120,0 12,12 0,28 -132,0 0,-40 z"
      clip-path="url(#clipPath9)"
      id="path219"
      inkscape:connector-curvature="0"
      style="font-size:11px;fill:#ffffff;fill-rule:evenodd;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="23"
-     y="173"
-     clip-path="url(#clipPath10)"
+     x="12.55"
+     y="98.614563"
+     clip-path="none"
      id="text221"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">«LocalPostCondtion»</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">«LocalPostCondtion»</text>
   <text
      xml:space="preserve"
-     x="17"
-     y="189"
-     clip-path="url(#clipPath11)"
+     x="6.5500002"
+     y="114.61456"
+     clip-path="none"
      id="text223"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">classification=3</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">classification=3</text>
   <line
      clip-path="url(#clipPath9)"
      x1="11"
@@ -710,7 +570,7 @@
      y2="156"
      id="line225"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="131"
@@ -719,7 +579,7 @@
      y2="168"
      id="line227"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="143"
@@ -728,7 +588,7 @@
      y2="196"
      id="line229"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="143"
@@ -737,7 +597,7 @@
      y2="196"
      id="line231"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="11"
@@ -746,7 +606,7 @@
      y2="156"
      id="line233"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="11"
@@ -755,7 +615,7 @@
      y2="156"
      id="line235"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="131"
@@ -764,7 +624,7 @@
      y2="168"
      id="line237"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath9)"
      x1="131"
@@ -773,30 +633,28 @@
      y2="168"
      id="line239"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <path
      d="m 231,166 0,0 98,0 12,12 0,28 -110,0 0,-40 z"
      clip-path="url(#clipPath12)"
      id="path241"
      inkscape:connector-curvature="0"
      style="font-size:11px;fill:#ffffff;fill-rule:evenodd;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="238"
-     y="183"
-     clip-path="url(#clipPath13)"
+     x="227.55"
+     y="108.61456"
+     clip-path="none"
      id="text243"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">«LocalPostCond...</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">«LocalPostCond...</text>
   <text
      xml:space="preserve"
-     x="237"
-     y="199"
-     clip-path="url(#clipPath14)"
+     x="226.55"
+     y="124.61456"
+     clip-path="none"
      id="text245"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">classification=2</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">classification=2</text>
   <line
      clip-path="url(#clipPath12)"
      x1="231"
@@ -805,7 +663,7 @@
      y2="166"
      id="line247"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="329"
@@ -814,7 +672,7 @@
      y2="178"
      id="line249"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="341"
@@ -823,7 +681,7 @@
      y2="206"
      id="line251"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="341"
@@ -832,7 +690,7 @@
      y2="206"
      id="line253"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="231"
@@ -841,7 +699,7 @@
      y2="166"
      id="line255"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="231"
@@ -850,7 +708,7 @@
      y2="166"
      id="line257"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="329"
@@ -859,7 +717,7 @@
      y2="178"
      id="line259"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath12)"
      x1="329"
@@ -868,30 +726,28 @@
      y2="178"
      id="line261"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <path
      d="m 671,156 0,0 97,0 12,12 0,27 -109,0 0,-39 z"
      clip-path="url(#clipPath15)"
      id="path263"
      inkscape:connector-curvature="0"
      style="font-size:11px;fill:#ffffff;fill-rule:evenodd;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="677"
-     y="173"
-     clip-path="url(#clipPath16)"
+     x="666.54999"
+     y="98.614563"
+     clip-path="none"
      id="text265"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">«LocalPostCond...</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">«LocalPostCond...</text>
   <text
      xml:space="preserve"
-     x="677"
-     y="188"
-     clip-path="url(#clipPath17)"
+     x="666.54999"
+     y="113.61456"
+     clip-path="none"
      id="text267"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">classification=1</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">classification=1</text>
   <line
      clip-path="url(#clipPath15)"
      x1="671"
@@ -900,7 +756,7 @@
      y2="156"
      id="line269"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="768"
@@ -909,7 +765,7 @@
      y2="168"
      id="line271"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="780"
@@ -918,7 +774,7 @@
      y2="195"
      id="line273"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="780"
@@ -927,7 +783,7 @@
      y2="195"
      id="line275"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="671"
@@ -936,7 +792,7 @@
      y2="156"
      id="line277"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="671"
@@ -945,7 +801,7 @@
      y2="156"
      id="line279"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="768"
@@ -954,7 +810,7 @@
      y2="168"
      id="line281"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath15)"
      x1="768"
@@ -963,7 +819,7 @@
      y2="168"
      id="line283"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath18)"
      r="9.5"
@@ -975,7 +831,7 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath18)"
      r="9.5"
@@ -987,7 +843,7 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath18)"
      r="9.5"
@@ -999,30 +855,28 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <path
      clip-path="url(#clipPath19)"
      d="m 671,106 0,0 98,0 12,12 0,28 -110,0 0,-40 z"
      id="path291"
      inkscape:connector-curvature="0"
      style="font-size:11px;fill:#ffffff;fill-rule:evenodd;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="678"
-     y="123"
-     clip-path="url(#clipPath20)"
+     x="667.54999"
+     y="48.614563"
+     clip-path="none"
      xml:space="preserve"
      id="text293"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">«LocalPostCond...</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">«LocalPostCond...</text>
   <text
-     x="677"
-     y="139"
-     clip-path="url(#clipPath21)"
+     x="666.54999"
+     y="64.614563"
+     clip-path="none"
      xml:space="preserve"
      id="text295"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">classification=-1</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">classification=-1</text>
   <line
      clip-path="url(#clipPath19)"
      x1="671"
@@ -1031,7 +885,7 @@
      y2="106"
      id="line297"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="769"
@@ -1040,7 +894,7 @@
      y2="118"
      id="line299"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="781"
@@ -1049,7 +903,7 @@
      y2="146"
      id="line301"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="781"
@@ -1058,7 +912,7 @@
      y2="146"
      id="line303"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="671"
@@ -1067,7 +921,7 @@
      y2="106"
      id="line305"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="671"
@@ -1076,7 +930,7 @@
      y2="106"
      id="line307"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="769"
@@ -1085,7 +939,7 @@
      y2="118"
      id="line309"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath19)"
      x1="769"
@@ -1094,31 +948,31 @@
      y2="118"
      id="line311"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="71,89 80,75 90,89 80,104 "
+     points="80,75 90,89 80,104 71,89 "
      id="polygon313"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="71,89 80,75 90,89 80,104 "
+     points="80,75 90,89 80,104 71,89 "
      id="polygon315"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="71,89 80,75 90,89 80,104 "
+     points="80,75 90,89 80,104 71,89 "
      id="polygon317"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="71,89 80,75 90,89 80,104 "
+     points="80,75 90,89 80,104 71,89 "
      id="polygon319"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <rect
      x="56"
      y="116"
@@ -1129,15 +983,14 @@
      height="26"
      id="rect321"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      xml:space="preserve"
-     x="59"
-     y="133"
-     clip-path="url(#clipPath24)"
+     x="48.549999"
+     y="58.614563"
+     clip-path="none"
      id="text323"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">unknown</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">unknown</text>
   <rect
      x="56"
      y="116"
@@ -1148,79 +1001,79 @@
      height="25"
      id="rect325"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath25)"
-     points="186,131 195,117 205,131 195,146 "
+     points="195,117 205,131 195,146 186,131 "
      id="polygon327"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath25)"
-     points="186,131 195,117 205,131 195,146 "
+     points="195,117 205,131 195,146 186,131 "
      id="polygon329"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath25)"
-     points="186,131 195,117 205,131 195,146 "
+     points="195,117 205,131 195,146 186,131 "
      id="polygon331"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath25)"
-     points="186,131 195,117 205,131 195,146 "
+     points="195,117 205,131 195,146 186,131 "
      id="polygon333"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath26)"
-     points="611,220 620,206 630,220 620,235 "
+     points="620,206 630,220 620,235 611,220 "
      id="polygon335"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath26)"
-     points="611,220 620,206 630,220 620,235 "
+     points="620,206 630,220 620,235 611,220 "
      id="polygon337"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath26)"
-     points="611,220 620,206 630,220 620,235 "
+     points="620,206 630,220 620,235 611,220 "
      id="polygon339"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath26)"
-     points="611,220 620,206 630,220 620,235 "
+     points="620,206 630,220 620,235 611,220 "
      id="polygon341"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath27)"
-     points="651,220 660,206 670,220 660,235 "
+     points="660,206 670,220 660,235 651,220 "
      id="polygon343"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath27)"
-     points="651,220 660,206 670,220 660,235 "
+     points="660,206 670,220 660,235 651,220 "
      id="polygon345"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath27)"
-     points="651,220 660,206 670,220 660,235 "
+     points="660,206 670,220 660,235 651,220 "
      id="polygon347"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath27)"
-     points="651,220 660,206 670,220 660,235 "
+     points="660,206 670,220 660,235 651,220 "
      id="polygon349"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath28)"
      r="9.5"
@@ -1232,7 +1085,7 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath28)"
      r="9.5"
@@ -1244,7 +1097,7 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath28)"
      r="9.5"
@@ -1256,7 +1109,7 @@
      sodipodi:rx="9.5"
      sodipodi:ry="9.5"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <circle
      clip-path="url(#clipPath28)"
      r="4"
@@ -1268,55 +1121,55 @@
      sodipodi:rx="4"
      sodipodi:ry="4"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath29)"
-     points="366,131 375,117 385,131 375,146 "
+     points="375,117 385,131 375,146 366,131 "
      id="polygon359"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath29)"
-     points="366,131 375,117 385,131 375,146 "
+     points="375,117 385,131 375,146 366,131 "
      id="polygon361"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath29)"
-     points="366,131 375,117 385,131 375,146 "
+     points="375,117 385,131 375,146 366,131 "
      id="polygon363"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath29)"
-     points="366,131 375,117 385,131 375,146 "
+     points="375,117 385,131 375,146 366,131 "
      id="polygon365"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath30)"
-     points="611,175 620,161 630,175 620,190 "
+     points="620,161 630,175 620,190 611,175 "
      id="polygon367"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath30)"
-     points="611,175 620,161 630,175 620,190 "
+     points="620,161 630,175 620,190 611,175 "
      id="polygon369"
      style="font-size:11px;fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath30)"
-     points="611,175 620,161 630,175 620,190 "
+     points="620,161 630,175 620,190 611,175 "
      id="polygon371"
      style="font-size:11px;fill:#ffffff;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <polygon
      clip-path="url(#clipPath30)"
-     points="611,175 620,161 630,175 620,190 "
+     points="620,161 630,175 620,190 611,175 "
      id="polygon373"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      x1="681"
@@ -1325,7 +1178,7 @@
      y2="106"
      id="line375"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-dasharray:6.6, 3.3;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1335,7 +1188,7 @@
      y2="206"
      id="line377"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath32)"
      text-rendering="optimizeLegibility"
@@ -1345,7 +1198,7 @@
      y2="206"
      id="line379"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath32)"
      text-rendering="optimizeLegibility"
@@ -1355,7 +1208,7 @@
      y2="196"
      id="line381"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="639"
      y="122"
@@ -1364,7 +1217,7 @@
      xml:space="preserve"
      id="text383"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1374,7 +1227,7 @@
      y2="88"
      id="line385"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath34)"
      text-rendering="optimizeLegibility"
@@ -1384,7 +1237,7 @@
      y2="88"
      id="line387"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath34)"
      text-rendering="optimizeLegibility"
@@ -1394,16 +1247,15 @@
      y2="84"
      id="line389"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="171"
-     y="84"
-     clip-path="url(#clipPath35)"
+     x="161.17856"
+     y="8.3574181"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text391"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">[(x&gt;=z+y) or (y&gt;=x+z) or (z&gt;=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[(x&gt;=z+y) or (y&gt;=x+z) or (z&gt;=x+y)or(x&lt;=0)or(y&lt;=0)or(z&lt;=0)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1413,7 +1265,7 @@
      y2="156"
      id="line393"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-dasharray:6.6, 3.3;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1423,7 +1275,7 @@
      y2="161"
      id="line395"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath36)"
      text-rendering="optimizeLegibility"
@@ -1433,7 +1285,7 @@
      y2="161"
      id="line397"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath36)"
      text-rendering="optimizeLegibility"
@@ -1443,7 +1295,7 @@
      y2="151"
      id="line399"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="599"
      y="153"
@@ -1452,7 +1304,7 @@
      xml:space="preserve"
      id="text401"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1462,7 +1314,7 @@
      y2="132"
      id="line403"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath38)"
      text-rendering="optimizeLegibility"
@@ -1472,7 +1324,7 @@
      y2="132"
      id="line405"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath38)"
      text-rendering="optimizeLegibility"
@@ -1482,16 +1334,15 @@
      y2="128"
      id="line407"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="391"
-     y="127"
-     clip-path="url(#clipPath39)"
+     x="380.54999"
+     y="52.614563"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text409"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-72.45)">[not(x=y) and not( y=z) and not (x=z)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[not(x=y) and not( y=z) and not (x=z)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1501,7 +1352,7 @@
      y2="177"
      id="line411"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-dasharray:6.6, 3.3;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1511,7 +1362,7 @@
      y2="176"
      id="line413"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1521,7 +1372,7 @@
      y2="176"
      id="line415"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath40)"
      text-rendering="optimizeLegibility"
@@ -1531,7 +1382,7 @@
      y2="176"
      id="line417"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath40)"
      text-rendering="optimizeLegibility"
@@ -1541,7 +1392,7 @@
      y2="172"
      id="line419"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="431"
      y="201"
@@ -1550,7 +1401,7 @@
      xml:space="preserve"
      id="text421"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1560,7 +1411,7 @@
      y2="161"
      id="line423"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath42)"
      text-rendering="optimizeLegibility"
@@ -1570,7 +1421,7 @@
      y2="161"
      id="line425"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath42)"
      text-rendering="optimizeLegibility"
@@ -1580,16 +1431,15 @@
      y2="151"
      id="line427"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="381"
-     y="157"
-     clip-path="url(#clipPath43)"
+     x="370.54999"
+     y="78.614563"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text429"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">[(x = y) or (x = z) or (y = z)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[(x = y) or (x = z) or (y = z)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1599,7 +1449,7 @@
      y2="176"
      id="line431"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-dasharray:6.6, 3.3;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1609,7 +1459,7 @@
      y2="221"
      id="line433"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1619,7 +1469,7 @@
      y2="221"
      id="line435"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
@@ -1629,7 +1479,7 @@
      y2="221"
      id="line437"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
@@ -1639,16 +1489,7 @@
      y2="217"
      id="line439"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
-  <text
-     x="225"
-     y="246"
-     clip-path="url(#clipPath45)"
-     text-rendering="optimizeLegibility"
-     xml:space="preserve"
-     id="text441"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1658,7 +1499,7 @@
      y2="161"
      id="line443"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath46)"
      text-rendering="optimizeLegibility"
@@ -1668,7 +1509,7 @@
      y2="161"
      id="line445"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath46)"
      text-rendering="optimizeLegibility"
@@ -1678,16 +1519,15 @@
      y2="151"
      id="line447"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="201"
-     y="157"
-     clip-path="url(#clipPath47)"
+     x="188.55"
+     y="78.614563"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text449"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">[(x = y) and (y = z)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[(x = y) and (y = z)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1697,7 +1537,7 @@
      y2="90"
      id="line451"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath48)"
      text-rendering="optimizeLegibility"
@@ -1707,7 +1547,7 @@
      y2="90"
      id="line453"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath48)"
      text-rendering="optimizeLegibility"
@@ -1717,7 +1557,7 @@
      y2="86"
      id="line455"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="44"
      y="115"
@@ -1726,7 +1566,7 @@
      xml:space="preserve"
      id="text457"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1736,7 +1576,7 @@
      y2="116"
      id="line459"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath50)"
      text-rendering="optimizeLegibility"
@@ -1746,7 +1586,7 @@
      y2="116"
      id="line461"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath50)"
      text-rendering="optimizeLegibility"
@@ -1756,16 +1596,15 @@
      y2="106"
      id="line463"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="81"
-     y="112"
-     clip-path="url(#clipPath51)"
+     x="74.550003"
+     y="35.614563"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text465"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-6.45,-76.45)">[(x&lt;y+z) and (y&lt;x+z) and (z&lt;x+y)and(x&gt;0) and (y&gt;0)and(z&gt;0)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[(x&lt;y+z) and (y&lt;x+z) and (z&lt;x+y)and(x&gt;0) and (y&gt;0)and(z&gt;0)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1775,7 +1614,7 @@
      y2="132"
      id="line467"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath52)"
      text-rendering="optimizeLegibility"
@@ -1785,7 +1624,7 @@
      y2="132"
      id="line469"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath52)"
      text-rendering="optimizeLegibility"
@@ -1795,7 +1634,7 @@
      y2="128"
      id="line471"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="117"
      y="157"
@@ -1804,7 +1643,7 @@
      xml:space="preserve"
      id="text473"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1814,7 +1653,7 @@
      y2="130"
      id="line475"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath54)"
      text-rendering="optimizeLegibility"
@@ -1824,7 +1663,7 @@
      y2="130"
      id="line477"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath54)"
      text-rendering="optimizeLegibility"
@@ -1834,16 +1673,15 @@
      y2="126"
      id="line479"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
-     x="224"
-     y="127"
-     clip-path="url(#clipPath55)"
+     x="213.55"
+     y="50.614563"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text481"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)">[not (x=y) or not (y=z)]</text>
+     style="font-size:11px;stroke:none;font-family:Tahoma">[not (x=y) or not (y=z)]</text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1853,7 +1691,7 @@
      y2="221"
      id="line483"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath56)"
      text-rendering="optimizeLegibility"
@@ -1863,7 +1701,7 @@
      y2="221"
      id="line485"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath56)"
      text-rendering="optimizeLegibility"
@@ -1873,16 +1711,7 @@
      y2="217"
      id="line487"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
-  <text
-     x="632"
-     y="246"
-     clip-path="url(#clipPath57)"
-     text-rendering="optimizeLegibility"
-     xml:space="preserve"
-     id="text489"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1892,7 +1721,7 @@
      y2="198"
      id="line491"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1902,7 +1731,7 @@
      y2="206"
      id="line493"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath58)"
      text-rendering="optimizeLegibility"
@@ -1912,7 +1741,7 @@
      y2="206"
      id="line495"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath58)"
      text-rendering="optimizeLegibility"
@@ -1922,7 +1751,7 @@
      y2="196"
      id="line497"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <text
      x="599"
      y="198"
@@ -1931,7 +1760,7 @@
      xml:space="preserve"
      id="text499"
      style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)"> </text>
   <line
      clip-path="url(#clipPath31)"
      text-rendering="optimizeLegibility"
@@ -1941,7 +1770,7 @@
      y2="226"
      id="line501"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath60)"
      text-rendering="optimizeLegibility"
@@ -1951,7 +1780,7 @@
      y2="226"
      id="line503"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
+     transform="translate(-10.45,-74.385439)" />
   <line
      clip-path="url(#clipPath60)"
      text-rendering="optimizeLegibility"
@@ -1961,14 +1790,5 @@
      y2="222"
      id="line505"
      style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)" />
-  <text
-     x="674"
-     y="251"
-     clip-path="url(#clipPath61)"
-     text-rendering="optimizeLegibility"
-     xml:space="preserve"
-     id="text507"
-     style="font-size:11px;stroke:none;font-family:Tahoma"
-     transform="translate(-10.45,-74.45)"> </text>
+     transform="translate(-10.45,-74.385439)" />
 </svg>

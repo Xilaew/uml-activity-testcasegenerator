@@ -9,21 +9,21 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    shape-rendering="auto"
-   width="414.54999"
+   width="714.12994"
    text-rendering="auto"
    contentScriptType="text/ecmascript"
    color-interpolation="auto"
    color-rendering="auto"
    preserveAspectRatio="xMidYMid meet"
    font-size="12"
-   viewBox="0 0 414.54999 283.54999"
+   viewBox="0 0 714.12995 133.09071"
    image-rendering="auto"
    stroke-miterlimit="10"
    zoomAndPan="magnify"
    version="1.0"
    contentStyleType="text/css"
    font-style="normal"
-   height="283.54999"
+   height="133.09071"
    font-weight="normal"
    id="svg2"
    inkscape:version="0.48.4 r9939"
@@ -50,16 +50,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1033"
+     inkscape:window-width="1869"
+     inkscape:window-height="932"
      id="namedview433"
      showgrid="false"
-     inkscape:zoom="2.0528907"
-     inkscape:cx="185.54107"
-     inkscape:cy="132.1384"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
-     inkscape:window-maximized="1"
+     inkscape:zoom="1.4516129"
+     inkscape:cx="340.02529"
+     inkscape:cy="75.18114"
+     inkscape:window-x="149"
+     inkscape:window-y="77"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -318,35 +318,11 @@
            stop-opacity="1" />
       </linearGradient>
       <clipPath
-         id="clipPath1"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path49"
-           d="m 254,9 169,0 0,81 -169,0 0,-81 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath2"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path52"
            d="m 254,9 169,0 0,18 -169,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath3"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path55"
-           d="m 314,9 67,0 0,18 -67,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath4"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path58"
-           d="m 254,25 169,0 0,18 -169,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -358,43 +334,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath6"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path64"
-           d="m 278,43 118,0 0,18 -118,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath7"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path67"
            d="m 259,59 156,0 0,18 -156,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath8"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path70"
-           d="m 278,59 137,0 0,18 -137,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath9"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path73"
-           d="m 254,41 169,0 0,37 -169,0 0,-37 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath10"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path76"
-           d="m 254,76 169,0 0,14 -169,0 0,-14 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -414,35 +358,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath13"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path85"
-           d="M 14,9 202,9 202,92 14,92 14,9 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath14"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path88"
            d="M 14,9 202,9 202,27 14,27 14,9 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath15"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path91"
-           d="m 96,9 43,0 0,18 -43,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath16"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path94"
-           d="m 76,25 64,0 0,18 -64,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -502,35 +422,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath24"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path118"
-           d="m 9,99 193,0 0,65 -193,0 0,-65 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath25"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path121"
            d="m 9,99 193,0 0,18 -193,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath26"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path124"
-           d="m 94,99 41,0 0,18 -41,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath27"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path127"
-           d="m 73,115 64,0 0,18 -64,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -574,35 +470,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath33"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path145"
-           d="m 99,169 102,0 0,58 -102,0 0,-58 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath34"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path148"
            d="m 99,169 102,0 0,18 -102,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath35"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path151"
-           d="m 122,169 75,0 0,18 -75,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath36"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path154"
-           d="m 118,185 64,0 0,18 -64,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -630,35 +502,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath40"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path166"
-           d="m 99,234 102,0 0,58 -102,0 0,-58 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath41"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path169"
            d="m 99,234 102,0 0,18 -102,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath42"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path172"
-           d="m 124,234 70,0 0,18 -70,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath43"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path175"
-           d="m 118,250 64,0 0,18 -64,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -686,35 +534,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath47"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path187"
-           d="m 254,99 169,0 0,58 -169,0 0,-58 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath48"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path190"
            d="m 254,99 169,0 0,18 -169,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath49"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path193"
-           d="m 317,99 62,0 0,18 -62,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath50"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path196"
-           d="m 254,115 169,0 0,18 -169,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -742,35 +566,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath54"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path208"
-           d="m 254,234 169,0 0,58 -169,0 0,-58 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath55"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path211"
            d="m 254,234 169,0 0,18 -169,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath56"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path214"
-           d="m 301,234 94,0 0,18 -94,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath57"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path217"
-           d="m 254,250 169,0 0,18 -169,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -798,35 +598,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath61"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path229"
-           d="m 254,164 169,0 0,58 -169,0 0,-58 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath62"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path232"
            d="m 254,164 169,0 0,18 -169,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath63"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path235"
-           d="m 300,164 96,0 0,18 -96,0 0,-18 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath64"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path238"
-           d="m 254,180 169,0 0,18 -169,0 0,-18 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -924,1037 +700,253 @@
        y1="165"
        x2="255"
        y2="221" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient2"
-       id="linearGradient5762"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="15"
-       y1="10"
-       x2="15"
-       y2="91"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3"
-       id="linearGradient5764"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="10"
-       y1="100"
-       x2="10"
-       y2="163"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4"
-       id="linearGradient5766"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="100"
-       y1="170"
-       x2="100"
-       y2="226"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5"
-       id="linearGradient5768"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="100"
-       y1="235"
-       x2="100"
-       y2="291"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient6"
-       id="linearGradient5770"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="255"
-       y1="100"
-       x2="255"
-       y2="156"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient7"
-       id="linearGradient5772"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="255"
-       y1="235"
-       x2="255"
-       y2="291"
-       gradientTransform="translate(9.45,9.45)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient8"
-       id="linearGradient5774"
-       gradientUnits="userSpaceOnUse"
-       spreadMethod="pad"
-       x1="255"
-       y1="165"
-       x2="255"
-       y2="221"
-       gradientTransform="translate(9.45,9.45)" />
   </defs>
-  <g
-     style="font-size:13px;fill:#837a85;stroke:#837a85;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:0;font-family:Tahoma"
-     id="g249"
-     stroke-miterlimit="0"
-     font-size="13"
-     transform="translate(-9.45,-9.45)">
-    <polygon
-       style="opacity:0.25489999;stroke:none"
-       id="polygon251"
-       points="256,11 423,11 423,90 256,90 256,11 " />
-    <polygon
-       style="opacity:0.25489999;stroke:none"
-       id="polygon253"
-       points="257,12 424,12 424,91 257,91 257,12 " />
-    <rect
-       style="fill:url(#linearGradient1);stroke:none"
-       id="rect255"
-       height="79"
-       width="167"
-       clip-path="url(#clipPath1)"
-       y="10"
-       x="255" />
-  </g>
   <rect
-     x="255"
-     y="10"
-     clip-path="url(#clipPath1)"
-     width="166"
+     x="0.54999948"
+     y="54.540718"
+     clip-path="none"
+     width="169.40982"
      height="78"
      id="rect259"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="296"
-     y="10"
-     clip-path="url(#clipPath2)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image261"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="315"
-     y="23"
-     clip-path="url(#clipPath3)"
+     x="60.549999"
+     y="67.540718"
+     clip-path="none"
      xml:space="preserve"
      id="text263"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">TCGActivity</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">TCGActivity</text>
   <text
      xml:space="preserve"
-     x="255"
-     y="39"
-     clip-path="url(#clipPath4)"
+     x="0.54999948"
+     y="81.540718"
+     clip-path="none"
      id="text265"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from activityTestCaseGraph)</text>
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="260"
-     y="44"
-     clip-path="url(#clipPath5)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42mNgGAUD
-DxjRBebW6P8npCm55SJcHwu65I8/TAzJjQtwap5bn4DCZ0JX8PUXC17b0eUxVH8G
-Kvj/nxXiP5hD/0M9+x8ij9cAkA3FWZk4XcDBwjKacqgNALytGBsVIOzJAAAAAElF
-TkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image267"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
   <text
-     x="279"
-     y="57"
-     clip-path="url(#clipPath6)"
+     x="24.549997"
+     y="101.54072"
+     clip-path="none"
      xml:space="preserve"
      id="text269"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">className : EString</text>
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath7)"
-     preserveAspectRatio="none"
-     height="16"
-     x="260"
-     y="60"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42mNgGAUD
-DxjRBebW6P8npCm55SJcHwu65I8/TAzJjQtwap5bn4DCZ0JX8PUXC17b0eUxVH8G
-Kvj/nxXiP5hD/0M9+x8ij9cAkA3FWZk4XcDBwjKacqgNALytGBsVIOzJAAAAAElF
-TkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image271"
-     style="font-size:13px;fill:#404040;stroke:#404040;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">className : String</text>
   <text
-     x="279"
-     y="73"
-     clip-path="url(#clipPath8)"
+     x="24.549997"
+     y="117.54072"
+     clip-path="none"
      xml:space="preserve"
      id="text273"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">packageName : EString</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">packageName : String</text>
   <line
-     clip-path="url(#clipPath9)"
-     x1="255"
-     x2="422"
-     y1="42"
-     y2="42"
+     clip-path="none"
+     x1="0.55479455"
+     x2="169.00659"
+     y1="86.297157"
+     y2="86.297157"
      id="line275"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <line
-     clip-path="url(#clipPath10)"
-     x1="255"
-     x2="422"
-     y1="77"
-     y2="77"
+     clip-path="none"
+     x1="0.55636621"
+     x2="169.49208"
+     y1="122.02784"
+     y2="122.02784"
      id="line277"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath11)"
-     preserveAspectRatio="none"
-     height="16"
-     x="405"
-     y="11"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image279"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="202,92 16,92 16,11 16,11 202,11 "
-     id="polygon281"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="203,93 17,93 17,12 17,12 203,12 "
-     id="polygon283"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <rect
-     x="15"
-     y="10"
-     clip-path="url(#clipPath13)"
-     width="186"
-     height="81"
-     id="rect285"
-     style="font-size:13px;fill:url(#linearGradient5762);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="15"
-     y="10"
-     clip-path="url(#clipPath13)"
-     width="185"
-     height="80"
+     x="32.698582"
+     y="1.0488003"
+     clip-path="none"
+     width="105.11265"
+     height="33.236671"
      id="rect287"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="78"
-     y="10"
-     clip-path="url(#clipPath14)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image289"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="97"
-     y="23"
-     clip-path="url(#clipPath15)"
+     x="67.935257"
+     y="14.0488"
+     clip-path="none"
      xml:space="preserve"
      id="text291"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">Activity</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">Activity</text>
   <text
      xml:space="preserve"
-     x="77"
-     y="39"
-     clip-path="url(#clipPath16)"
+     x="47.935253"
+     y="28.048801"
+     clip-path="none"
      id="text293"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from uml)</text>
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="20"
-     y="44"
-     clip-path="url(#clipPath17)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM
-6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8
-/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/
-2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image295"
-     transform="translate(-9.45,-9.45)" />
-  <text
-     x="39"
-     y="57"
-     clip-path="url(#clipPath18)"
-     xml:space="preserve"
-     id="text297"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">isReadOnly : Boolean</text>
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath19)"
-     preserveAspectRatio="none"
-     height="16"
-     x="20"
-     y="60"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM
-6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8
-/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/
-2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image299"
-     style="font-size:13px;fill:#404040;stroke:#404040;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <text
-     x="39"
-     y="73"
-     clip-path="url(#clipPath20)"
-     xml:space="preserve"
-     id="text301"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">isSingleExecution : Boolean</text>
-  <line
-     clip-path="url(#clipPath21)"
-     x1="15"
-     x2="201"
-     y1="42"
-     y2="42"
-     id="line303"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath22)"
-     x1="15"
-     x2="201"
-     y1="77"
-     y2="77"
-     id="line305"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath23)"
-     preserveAspectRatio="none"
-     height="16"
-     x="184"
-     y="11"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image307"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="202,164 11,164 11,101 11,101 202,101 "
-     id="polygon309"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="203,165 12,165 12,102 12,102 203,102 "
-     id="polygon311"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
   <rect
-     x="10"
-     y="100"
-     clip-path="url(#clipPath24)"
-     width="191"
-     height="63"
-     id="rect313"
-     style="font-size:13px;fill:url(#linearGradient5764);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="10"
-     y="100"
-     clip-path="url(#clipPath24)"
-     width="190"
-     height="62"
+     x="217.39146"
+     y="0.55000001"
+     clip-path="none"
+     width="98.421814"
+     height="34.234276"
      id="rect315"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath25)"
-     preserveAspectRatio="none"
-     height="16"
-     font-style="italic"
-     x="76"
-     y="100"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image317"
-     style="font-size:13px;font-style:italic;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="95"
-     y="113"
-     clip-path="url(#clipPath26)"
+     x="254.6539"
+     y="13.549999"
+     clip-path="none"
      font-style="italic"
      xml:space="preserve"
      id="text319"
-     style="font-size:13px;font-style:italic;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">Action</text>
+     style="font-size:13px;font-style:italic;fill:#404040;stroke:none;font-family:Tahoma">Action</text>
   <text
      xml:space="preserve"
-     x="74"
-     y="129"
-     clip-path="url(#clipPath27)"
+     x="233.6539"
+     y="27.549999"
+     clip-path="none"
      id="text321"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from uml)</text>
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="15"
-     y="134"
-     clip-path="url(#clipPath28)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM
-6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8
-/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/
-2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image323"
-     transform="translate(-9.45,-9.45)" />
-  <text
-     x="34"
-     y="147"
-     clip-path="url(#clipPath29)"
-     xml:space="preserve"
-     id="text325"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">isLocallyReentrant : Boolean</text>
-  <line
-     clip-path="url(#clipPath30)"
-     x1="10"
-     x2="201"
-     y1="132"
-     y2="132"
-     id="line327"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath31)"
-     x1="10"
-     x2="201"
-     y1="151"
-     y2="151"
-     id="line329"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath32)"
-     preserveAspectRatio="none"
-     height="16"
-     x="184"
-     y="101"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image331"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="201,227 101,227 101,171 101,171 201,171 "
-     id="polygon333"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="202,228 102,228 102,172 102,172 202,172 "
-     id="polygon335"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
   <rect
-     x="100"
-     y="170"
-     clip-path="url(#clipPath33)"
-     width="100"
-     height="56"
-     id="rect337"
-     style="font-size:13px;fill:url(#linearGradient5766);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="100"
-     y="170"
-     clip-path="url(#clipPath33)"
+     x="398.44983"
+     y="1.1272937"
+     clip-path="none"
      width="99"
-     height="55"
+     height="33.079689"
      id="rect339"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath34)"
-     preserveAspectRatio="none"
-     height="16"
-     font-style="italic"
-     x="104"
-     y="170"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image341"
-     style="font-size:13px;font-style:italic;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="123"
-     y="183"
-     clip-path="url(#clipPath35)"
+     x="421.44983"
+     y="14.127299"
+     clip-path="none"
      font-style="italic"
      xml:space="preserve"
      id="text343"
-     style="font-size:13px;font-style:italic;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">ControlNode</text>
+     style="font-size:13px;font-style:italic;fill:#404040;stroke:none;font-family:Tahoma">ControlNode</text>
   <text
      xml:space="preserve"
-     x="119"
-     y="199"
-     clip-path="url(#clipPath36)"
+     x="417.44983"
+     y="28.1273"
+     clip-path="none"
      id="text345"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from uml)</text>
-  <line
-     clip-path="url(#clipPath37)"
-     x1="100"
-     x2="200"
-     y1="202"
-     y2="202"
-     id="line347"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath38)"
-     x1="100"
-     x2="200"
-     y1="214"
-     y2="214"
-     id="line349"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath39)"
-     preserveAspectRatio="none"
-     height="16"
-     x="183"
-     y="171"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image351"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="201,292 101,292 101,236 101,236 201,236 "
-     id="polygon353"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="202,293 102,293 102,237 102,237 202,237 "
-     id="polygon355"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
   <rect
-     x="100"
-     y="235"
-     clip-path="url(#clipPath40)"
-     width="100"
-     height="56"
-     id="rect357"
-     style="font-size:13px;fill:url(#linearGradient5768);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="100"
-     y="235"
-     clip-path="url(#clipPath40)"
+     x="579.7973"
+     y="1.3708507"
+     clip-path="none"
      width="99"
-     height="55"
+     height="32.592571"
      id="rect359"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="106"
-     y="235"
-     clip-path="url(#clipPath41)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image361"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="125"
-     y="248"
-     clip-path="url(#clipPath42)"
+     x="604.7973"
+     y="14.370849"
+     clip-path="none"
      xml:space="preserve"
      id="text363"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">ControlFlow</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">ControlFlow</text>
   <text
      xml:space="preserve"
-     x="119"
-     y="264"
-     clip-path="url(#clipPath43)"
+     x="598.7973"
+     y="28.37085"
+     clip-path="none"
      id="text365"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from uml)</text>
-  <line
-     clip-path="url(#clipPath44)"
-     x1="100"
-     x2="200"
-     y1="267"
-     y2="267"
-     id="line367"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath45)"
-     x1="100"
-     x2="200"
-     y1="279"
-     y2="279"
-     id="line369"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath46)"
-     preserveAspectRatio="none"
-     height="16"
-     x="183"
-     y="236"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image371"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="423,157 256,157 256,101 256,101 423,101 "
-     id="polygon373"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="424,158 257,158 257,102 257,102 424,102 "
-     id="polygon375"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
   <rect
-     x="255"
-     y="100"
-     clip-path="url(#clipPath47)"
-     width="167"
-     height="56"
-     id="rect377"
-     style="font-size:13px;fill:url(#linearGradient5770);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="255"
-     y="100"
-     clip-path="url(#clipPath47)"
-     width="166"
-     height="55"
+     x="182.05981"
+     y="75.539513"
+     clip-path="none"
+     width="169.40982"
+     height="36.002399"
      id="rect379"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="299"
-     y="100"
-     clip-path="url(#clipPath48)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image381"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="318"
-     y="113"
-     clip-path="url(#clipPath49)"
+     x="245.05983"
+     y="88.539513"
+     clip-path="none"
      xml:space="preserve"
      id="text383"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">TCGAction</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">TCGAction</text>
   <text
      xml:space="preserve"
-     x="255"
-     y="129"
-     clip-path="url(#clipPath50)"
+     x="182.05983"
+     y="102.53951"
+     clip-path="none"
      id="text385"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from activityTestCaseGraph)</text>
-  <line
-     clip-path="url(#clipPath51)"
-     x1="255"
-     x2="422"
-     y1="132"
-     y2="132"
-     id="line387"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath52)"
-     x1="255"
-     x2="422"
-     y1="144"
-     y2="144"
-     id="line389"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath53)"
-     preserveAspectRatio="none"
-     height="16"
-     x="405"
-     y="101"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image391"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="423,292 256,292 256,236 256,236 423,236 "
-     id="polygon393"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="424,293 257,293 257,237 257,237 424,237 "
-     id="polygon395"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
   <rect
-     x="255"
-     y="235"
-     clip-path="url(#clipPath54)"
-     width="167"
-     height="56"
-     id="rect397"
-     style="font-size:13px;fill:url(#linearGradient5772);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="255"
-     y="235"
-     clip-path="url(#clipPath54)"
-     width="166"
-     height="55"
+     x="363.56964"
+     y="76.757309"
+     clip-path="none"
+     width="168.92271"
+     height="33.566807"
      id="rect399"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="283"
-     y="235"
-     clip-path="url(#clipPath55)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image401"
-     transform="translate(-9.45,-9.45)" />
-  <text
-     x="302"
-     y="248"
-     clip-path="url(#clipPath56)"
-     xml:space="preserve"
-     id="text403"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">TCGControlFlow</text>
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      xml:space="preserve"
-     x="255"
-     y="264"
-     clip-path="url(#clipPath57)"
+     x="363.56964"
+     y="103.75732"
+     clip-path="none"
      id="text405"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from activityTestCaseGraph)</text>
-  <line
-     clip-path="url(#clipPath58)"
-     x1="255"
-     x2="422"
-     y1="267"
-     y2="267"
-     id="line407"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath59)"
-     x1="255"
-     x2="422"
-     y1="279"
-     y2="279"
-     id="line409"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath60)"
-     preserveAspectRatio="none"
-     height="16"
-     x="405"
-     y="236"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image411"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="423,222 256,222 256,166 256,166 423,166 "
-     id="polygon413"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <polygon
-     clip-path="url(#clipPath12)"
-     points="424,223 257,223 257,167 257,167 424,167 "
-     id="polygon415"
-     style="font-size:13px;opacity:0.25489999;fill:#837a85;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
   <rect
-     x="255"
-     y="165"
-     clip-path="url(#clipPath61)"
-     width="167"
-     height="56"
-     id="rect417"
-     style="font-size:13px;fill:url(#linearGradient5774);stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <rect
-     x="255"
-     y="165"
-     clip-path="url(#clipPath61)"
-     width="166"
-     height="55"
+     x="544.17017"
+     y="77.446205"
+     clip-path="none"
+     width="169.40982"
+     height="33.566807"
      id="rect419"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     style="font-size:13px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     x="282"
-     y="165"
-     clip-path="url(#clipPath62)"
-     width="16"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR42mNgGGjA
-iC4wt0b/PyFNyS0X4fpYsCmIrl2EU/PS5jgUPhO6gn//GfHaji6P4YI/fxkY/v9n
-hfgPpvY/1LP/IfL4DfjPxLBqwTQGXAEBksdrwO9/TAzhiak4vTCt5gT+MPj9lwlv
-GKDLY7jg119GvGEAksfvBaCC7r7VDLgC4Q9BA4BhUFUcgNMLjYU7CYTBPwJh8I+J
-UDpgJJAOCHjhLzCei7MycbqAmYmJurkRAGS/RaNk4/qhAAAAAElFTkSuQmCC"
-     xlink:type="simple"
-     xlink:actuate="onLoad"
-     height="16"
-     preserveAspectRatio="none"
-     xlink:show="embed"
-     id="image421"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
-     x="301"
-     y="178"
-     clip-path="url(#clipPath63)"
+     x="401.41461"
+     y="90.446205"
+     clip-path="none"
      xml:space="preserve"
      id="text423"
-     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">TCGControlNode</text>
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">TCGControlNode</text>
   <text
      xml:space="preserve"
-     x="255"
-     y="194"
-     clip-path="url(#clipPath64)"
+     x="544.17017"
+     y="104.44621"
+     clip-path="none"
      id="text425"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)">(from activityTestCaseGraph)</text>
-  <line
-     clip-path="url(#clipPath65)"
-     x1="255"
-     x2="422"
-     y1="197"
-     y2="197"
-     id="line427"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <line
-     clip-path="url(#clipPath66)"
-     x1="255"
-     x2="422"
-     y1="209"
-     y2="209"
-     id="line429"
-     style="font-size:13px;fill:none;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
-  <image
-     width="16"
-     xlink:show="embed"
-     xlink:type="simple"
-     clip-path="url(#clipPath67)"
-     preserveAspectRatio="none"
-     height="16"
-     x="405"
-     y="166"
-     font-size="11"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42sWTwQ7A
-IAhDqfG/gS9nejBxbjoMMesJDm1eKsLMKKJEQeU2qKoLRUSoUOMRUMXMroBXglEA
-bvusq2kH3nKTl2AroDd/kSyfsZlXIWc6qOZQBzsEuT+Q8Ug8wu+fKRxwAVOoKxID
-plpUAAAAAElFTkSuQmCC"
-     xlink:actuate="onLoad"
-     id="image431"
-     style="font-size:11px;fill:#808080;stroke:#808080;stroke-width:1.10000002;stroke-linecap:butt;font-family:Tahoma"
-     transform="translate(-9.45,-9.45)" />
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:1.29999995;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
-     d="m 191.24262,48.529643 53.09586,0"
-     id="path3412"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
+     d="m 629.20743,33.963422 -0.2398,43.482783"
+     id="path4288"
+     inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     inkscape:connection-start="#rect359"
+     inkscape:connection-start-point="d4"
+     inkscape:connection-end="#rect419"
+     inkscape:connection-end-point="d4" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:1.29999995;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
-     d="m 191.48618,121.11023 53.09586,0"
-     id="path3412-4"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
+     d="m 447.96752,34.206983 0.0455,42.550326"
+     id="path4290"
+     inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     inkscape:connection-start="#rect339"
+     inkscape:connection-start-point="d4"
+     inkscape:connection-end="#rect399"
+     inkscape:connection-end-point="d4" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:1.29999995;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
-     d="m 190.51194,187.35828 53.09586,0"
-     id="path3412-48"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
+     d="m 266.639,34.784276 0.0872,40.755237"
+     id="path4292"
+     inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     inkscape:connection-start="#rect315"
+     inkscape:connection-start-point="d4"
+     inkscape:connection-end="#rect379"
+     inkscape:connection-end-point="d4" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.29999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:1.29999995;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
-     d="m 190.51194,250.68362 53.09586,0"
-     id="path3412-45"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
+     d="m 85.254907,34.285472 10e-7,20.255246"
+     id="path4296"
+     inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     inkscape:connection-start="#rect287"
+     inkscape:connection-start-point="d4"
+     inkscape:connection-end="#rect259"
+     inkscape:connection-end-point="d4" />
+  <text
+     x="584.85852"
+     y="90.446205"
+     clip-path="none"
+     xml:space="preserve"
+     id="text403"
+     style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">TCGControlFlow</text>
 </svg>

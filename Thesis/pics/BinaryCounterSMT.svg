@@ -27,7 +27,7 @@
    font-weight="normal"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="BinaryCounterSMT.pdf"
+   sodipodi:docname="BinaryCounterSMT.svg"
    style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
   <metadata
      id="metadata880">
@@ -58,9 +58,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.1466596"
-     inkscape:cx="192.24459"
-     inkscape:cy="237.73091"
+     inkscape:zoom="2.2933192"
+     inkscape:cx="327.06003"
+     inkscape:cy="71.367407"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -359,35 +359,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath4"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path78"
-           d="m 185,104 53,0 0,17 -53,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath5"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path81"
            d="m 294,124 55,0 0,27 -55,0 0,-27 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath6"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path84"
-           d="m 295,129 53,0 0,17 -53,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath7"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path87"
-           d="m 619,124 55,0 0,27 -55,0 0,-27 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -407,14 +383,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath10"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path96"
-           d="m 605,89 70,0 0,17 -70,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath11"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -428,22 +396,6 @@
         <path
            id="path102"
            d="m 155,165 0,40 95,0 0,-28 -12,-12 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath13"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path105"
-           d="m 160,170 77,0 0,17 -77,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath14"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path108"
-           d="m 160,185 76,0 0,16 -76,0 0,-16 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -463,14 +415,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath17"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path117"
-           d="m 280,89 70,0 0,17 -70,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath18"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -479,27 +423,11 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath19"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path123"
-           d="m 430,129 53,0 0,17 -53,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath20"
          clipPathUnits="userSpaceOnUse">
         <path
            id="path126"
            d="m 414,84 72,0 0,27 -72,0 0,-27 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath21"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path129"
-           d="m 415,89 70,0 0,17 -70,0 0,-17 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -543,14 +471,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath27"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path147"
-           d="m 290,195 76,0 0,17 -76,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath28"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -575,14 +495,6 @@
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
-         id="clipPath31"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path159"
-           d="m 415,191 76,0 0,17 -76,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
          id="clipPath32"
          clipPathUnits="userSpaceOnUse">
         <path
@@ -596,22 +508,6 @@
         <path
            id="path165"
            d="m 606,170 0,40 99,0 0,-28 -12,-12 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath34"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path168"
-           d="m 611,175 81,0 0,17 -81,0 0,-17 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath35"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path171"
-           d="m 611,190 76,0 0,16 -76,0 0,-16 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -748,14 +644,6 @@
         <path
            id="path225"
            d="m 404,85 13,0 0,11 -13,0 0,-11 z"
-           inkscape:connector-curvature="0" />
-      </clipPath>
-      <clipPath
-         id="clipPath54"
-         clipPathUnits="userSpaceOnUse">
-        <path
-           id="path228"
-           d="m 360,75 49,0 0,17 -49,0 0,-17 z"
            inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
@@ -1049,13 +937,12 @@
        y2="118" />
   </defs>
   <text
-     x="186"
-     y="118"
-     clip-path="url(#clipPath4)"
+     x="76.0625"
+     y="64.589844"
+     clip-path="none"
      xml:space="preserve"
      id="text318"
-     style="fill:#000000;stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">toggle_s0</text>
+     style="fill:#000000;stroke:none;font-family:Segoe UI">toggle_s0</text>
   <rect
      x="185"
      y="100"
@@ -1069,12 +956,11 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="296"
-     y="143"
-     clip-path="url(#clipPath6)"
+     x="186.0625"
+     y="89.589844"
+     clip-path="none"
      id="text330"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">toggle_s1</text>
+     style="stroke:none;font-family:Segoe UI">toggle_s1</text>
   <rect
      x="295"
      y="125"
@@ -1095,24 +981,22 @@
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)">toggle_s3</text>
   <rect
-     x="620"
-     y="125"
-     clip-path="url(#clipPath7)"
+     x="510.0625"
+     y="71.589844"
+     clip-path="none"
      width="52"
      rx="7.5"
      ry="7.5"
      height="24"
      id="rect342"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI" />
   <text
      xml:space="preserve"
-     x="606"
-     y="103"
-     clip-path="url(#clipPath10)"
+     x="515.40039"
+     y="45.28027"
+     clip-path="none"
      id="text350"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">noToggle_s3</text>
+     style="stroke:none;font-family:Segoe UI">noop</text>
   <rect
      x="605"
      y="85"
@@ -1126,44 +1010,42 @@
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath11)"
-     points="159,129 150,114 159,100 169,114 "
+     points="169,114 159,129 150,114 159,100 "
      id="polygon354"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath11)"
-     points="159,129 150,114 159,100 169,114 "
+     points="169,114 159,129 150,114 159,100 "
      id="polygon356"
      style="fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath11)"
-     points="159,129 150,114 159,100 169,114 "
+     points="169,114 159,129 150,114 159,100 "
      id="polygon358"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath11)"
-     points="159,129 150,114 159,100 169,114 "
+     points="169,114 159,129 150,114 159,100 "
      id="polygon360"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="161"
-     y="184"
-     clip-path="url(#clipPath13)"
+     x="51.0625"
+     y="130.58984"
+     clip-path="none"
      id="text364"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">«LocalPostC...</text>
+     style="stroke:none;font-family:Segoe UI">«LocalPostC...</text>
   <text
      xml:space="preserve"
-     x="161"
-     y="199"
-     clip-path="url(#clipPath14)"
+     x="51.0625"
+     y="145.58984"
+     clip-path="none"
      id="text366"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">{s0&lt;&gt;s0@pre}</text>
+     style="stroke:none;font-family:Segoe UI">{s0&lt;&gt;s0@pre}</text>
   <line
      clip-path="url(#clipPath15)"
      x1="155"
@@ -1238,12 +1120,11 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="281"
-     y="103"
-     clip-path="url(#clipPath17)"
+     x="190.40039"
+     y="45.28027"
+     clip-path="none"
      id="text390"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">noToggle_s1</text>
+     style="stroke:none;font-family:Segoe UI">noop</text>
   <rect
      x="280"
      y="85"
@@ -1257,12 +1138,11 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="431"
-     y="143"
-     clip-path="url(#clipPath19)"
+     x="321.0625"
+     y="89.589844"
+     clip-path="none"
      id="text400"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">toggle_s2</text>
+     style="stroke:none;font-family:Segoe UI">toggle_s2</text>
   <rect
      x="430"
      y="125"
@@ -1276,12 +1156,11 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="416"
-     y="103"
-     clip-path="url(#clipPath21)"
+     x="325.40039"
+     y="45.28027"
+     clip-path="none"
      id="text410"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">noToggle_s2</text>
+     style="stroke:none;font-family:Segoe UI">noop</text>
   <rect
      x="415"
      y="85"
@@ -1295,73 +1174,73 @@
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="364,130 355,115 364,101 374,115 "
+     points="374,115 364,130 355,115 364,101 "
      id="polygon414"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="364,130 355,115 364,101 374,115 "
+     points="374,115 364,130 355,115 364,101 "
      id="polygon416"
      style="fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="364,130 355,115 364,101 374,115 "
+     points="374,115 364,130 355,115 364,101 "
      id="polygon418"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath22)"
-     points="364,130 355,115 364,101 374,115 "
+     points="374,115 364,130 355,115 364,101 "
      id="polygon420"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath23)"
-     points="504,130 495,115 504,101 514,115 "
+     points="514,115 504,130 495,115 504,101 "
      id="polygon422"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath23)"
-     points="504,130 495,115 504,101 514,115 "
+     points="514,115 504,130 495,115 504,101 "
      id="polygon424"
      style="fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath23)"
-     points="504,130 495,115 504,101 514,115 "
+     points="514,115 504,130 495,115 504,101 "
      id="polygon426"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath23)"
-     points="504,130 495,115 504,101 514,115 "
+     points="514,115 504,130 495,115 504,101 "
      id="polygon428"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath24)"
-     points="694,130 685,115 694,101 704,115 "
+     points="704,115 694,130 685,115 694,101 "
      id="polygon430"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath24)"
-     points="694,130 685,115 694,101 704,115 "
+     points="704,115 694,130 685,115 694,101 "
      id="polygon432"
      style="fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath24)"
-     points="694,130 685,115 694,101 704,115 "
+     points="704,115 694,130 685,115 694,101 "
      id="polygon434"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath24)"
-     points="694,130 685,115 694,101 704,115 "
+     points="704,115 694,130 685,115 694,101 "
      id="polygon436"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
@@ -1375,12 +1254,11 @@
      transform="translate(-109.9375,-53.410158)">«LocalPostC...</text>
   <text
      xml:space="preserve"
-     x="291"
-     y="209"
-     clip-path="url(#clipPath27)"
+     x="181.0625"
+     y="155.58984"
+     clip-path="none"
      id="text442"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">{s1&lt;&gt;s1@pre}</text>
+     style="stroke:none;font-family:Segoe UI">{s1&lt;&gt;s1@pre}</text>
   <line
      clip-path="url(#clipPath28)"
      x1="285"
@@ -1463,12 +1341,11 @@
      transform="translate(-109.9375,-53.410158)">«LocalPostC...</text>
   <text
      xml:space="preserve"
-     x="416"
-     y="205"
-     clip-path="url(#clipPath31)"
+     x="306.0625"
+     y="151.58984"
+     clip-path="none"
      id="text464"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">{s2&lt;&gt;s2@pre}</text>
+     style="stroke:none;font-family:Segoe UI">{s2&lt;&gt;s2@pre}</text>
   <line
      clip-path="url(#clipPath32)"
      x1="410"
@@ -1543,20 +1420,18 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      xml:space="preserve"
-     x="614"
-     y="189"
-     clip-path="url(#clipPath34)"
+     x="504.0625"
+     y="135.58984"
+     clip-path="none"
      id="text484"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">«LocalPostC...</text>
+     style="stroke:none;font-family:Segoe UI">«LocalPostC...</text>
   <text
      xml:space="preserve"
-     x="612"
-     y="204"
-     clip-path="url(#clipPath35)"
+     x="502.0625"
+     y="150.58984"
+     clip-path="none"
      id="text486"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">{s3&lt;&gt;s3@pre}</text>
+     style="stroke:none;font-family:Segoe UI">{s3&lt;&gt;s3@pre}</text>
   <line
      clip-path="url(#clipPath36)"
      x1="606"
@@ -1715,25 +1590,25 @@
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath39)"
-     points="260,130 251,115 260,101 270,115 "
+     points="270,115 260,130 251,115 260,101 "
      id="polygon518"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath39)"
-     points="260,130 251,115 260,101 270,115 "
+     points="270,115 260,130 251,115 260,101 "
      id="polygon520"
      style="fill:none;stroke-width:0.1;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath39)"
-     points="260,130 251,115 260,101 270,115 "
+     points="270,115 260,130 251,115 260,101 "
      id="polygon522"
      style="fill:#ffffff;stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <polygon
      clip-path="url(#clipPath39)"
-     points="260,130 251,115 260,101 270,115 "
+     points="270,115 260,130 251,115 260,101 "
      id="polygon524"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
@@ -1908,7 +1783,7 @@
      xml:space="preserve"
      id="text576"
      style="stroke:none;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)">[s0]</text>
+     transform="translate(-111.9375,-55.410158)">[s0]</text>
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
@@ -1999,14 +1874,13 @@
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <text
-     x="361"
-     y="89"
-     clip-path="url(#clipPath54)"
+     x="253.0625"
+     y="29.589842"
+     clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
      id="text596"
-     style="stroke:none;font-family:Segoe UI"
-     transform="translate(-107.9375,-59.410158)">[s0 or s1]</text>
+     style="stroke:none;font-family:Segoe UI">[s0 or s1]</text>
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
@@ -2284,7 +2158,7 @@
      transform="translate(-109.9375,-53.410158)" />
   <text
      x="396.0625"
-     y="170.58984"
+     y="172.58984"
      clip-path="none"
      text-rendering="optimizeLegibility"
      xml:space="preserve"
@@ -2614,72 +2488,12 @@
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
-     x1="258"
-     x2="258"
-     y1="126"
-     y2="142"
-     id="line722"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="258"
-     x2="295"
-     y1="142"
-     y2="142"
-     id="line724"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath67)"
-     text-rendering="optimizeLegibility"
-     x1="285"
-     x2="295"
-     y1="146"
-     y2="142"
-     id="line726"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath67)"
-     text-rendering="optimizeLegibility"
-     x1="295"
-     x2="285"
-     y1="142"
-     y2="138"
-     id="line728"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
      x1="203"
      x2="203"
      y1="126"
      y2="165"
      id="line732"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-dasharray:6.6, 3.3;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="254"
-     x2="254"
-     y1="111"
-     y2="89"
-     id="line734"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="254"
-     x2="280"
-     y1="89"
-     y2="89"
-     id="line736"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
   <line
      clip-path="url(#clipPath49)"
@@ -2691,46 +2505,6 @@
      id="line738"
      style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath49)"
-     text-rendering="optimizeLegibility"
-     x1="280"
-     x2="270"
-     y1="89"
-     y2="85"
-     id="line740"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="350"
-     x2="360"
-     y1="107"
-     y2="107"
-     id="line744"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath47)"
-     text-rendering="optimizeLegibility"
-     x1="350"
-     x2="360"
-     y1="111"
-     y2="107"
-     id="line746"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath47)"
-     text-rendering="optimizeLegibility"
-     x1="360"
-     x2="350"
-     y1="107"
-     y2="103"
-     id="line748"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="350"
      y="133"
@@ -2740,36 +2514,6 @@
      id="text750"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="346"
-     x2="361"
-     y1="125"
-     y2="125"
-     id="line752"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath63)"
-     text-rendering="optimizeLegibility"
-     x1="351"
-     x2="361"
-     y1="129"
-     y2="125"
-     id="line754"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath63)"
-     text-rendering="optimizeLegibility"
-     x1="361"
-     x2="351"
-     y1="125"
-     y2="121"
-     id="line756"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="346"
      y="151"
@@ -2779,116 +2523,6 @@
      id="text758"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="365"
-     x2="365"
-     y1="131"
-     y2="144"
-     id="line760"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="365"
-     x2="430"
-     y1="144"
-     y2="144"
-     id="line762"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath61)"
-     text-rendering="optimizeLegibility"
-     x1="420"
-     x2="430"
-     y1="148"
-     y2="144"
-     id="line764"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath61)"
-     text-rendering="optimizeLegibility"
-     x1="430"
-     x2="420"
-     y1="144"
-     y2="140"
-     id="line766"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="365"
-     x2="365"
-     y1="101"
-     y2="90"
-     id="line770"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="365"
-     x2="415"
-     y1="90"
-     y2="90"
-     id="line772"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath53)"
-     text-rendering="optimizeLegibility"
-     x1="405"
-     x2="415"
-     y1="94"
-     y2="90"
-     id="line774"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath53)"
-     text-rendering="optimizeLegibility"
-     x1="415"
-     x2="405"
-     y1="90"
-     y2="86"
-     id="line776"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="483"
-     x2="501"
-     y1="125"
-     y2="125"
-     id="line780"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath55)"
-     text-rendering="optimizeLegibility"
-     x1="491"
-     x2="501"
-     y1="129"
-     y2="125"
-     id="line782"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath55)"
-     text-rendering="optimizeLegibility"
-     x1="501"
-     x2="491"
-     y1="125"
-     y2="121"
-     id="line784"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="484"
      y="151"
@@ -2898,36 +2532,6 @@
      id="text786"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="485"
-     x2="499"
-     y1="109"
-     y2="109"
-     id="line788"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath59)"
-     text-rendering="optimizeLegibility"
-     x1="489"
-     x2="499"
-     y1="113"
-     y2="109"
-     id="line790"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath59)"
-     text-rendering="optimizeLegibility"
-     x1="499"
-     x2="489"
-     y1="109"
-     y2="105"
-     id="line792"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="485"
      y="135"
@@ -2937,116 +2541,6 @@
      id="text794"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="505"
-     x2="505"
-     y1="131"
-     y2="145"
-     id="line796"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="505"
-     x2="620"
-     y1="145"
-     y2="145"
-     id="line798"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath69)"
-     text-rendering="optimizeLegibility"
-     x1="610"
-     x2="620"
-     y1="149"
-     y2="145"
-     id="line800"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath69)"
-     text-rendering="optimizeLegibility"
-     x1="620"
-     x2="610"
-     y1="145"
-     y2="141"
-     id="line802"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="505"
-     x2="505"
-     y1="101"
-     y2="91"
-     id="line806"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="505"
-     x2="605"
-     y1="91"
-     y2="91"
-     id="line808"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath45)"
-     text-rendering="optimizeLegibility"
-     x1="595"
-     x2="605"
-     y1="95"
-     y2="91"
-     id="line810"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath45)"
-     text-rendering="optimizeLegibility"
-     x1="605"
-     x2="595"
-     y1="91"
-     y2="87"
-     id="line812"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="673"
-     x2="691"
-     y1="125"
-     y2="125"
-     id="line816"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath57)"
-     text-rendering="optimizeLegibility"
-     x1="681"
-     x2="691"
-     y1="129"
-     y2="125"
-     id="line818"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath57)"
-     text-rendering="optimizeLegibility"
-     x1="691"
-     x2="681"
-     y1="125"
-     y2="121"
-     id="line820"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="674"
      y="151"
@@ -3056,36 +2550,6 @@
      id="text822"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="675"
-     x2="690"
-     y1="108"
-     y2="108"
-     id="line824"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath73)"
-     text-rendering="optimizeLegibility"
-     x1="680"
-     x2="690"
-     y1="112"
-     y2="108"
-     id="line826"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath73)"
-     text-rendering="optimizeLegibility"
-     x1="690"
-     x2="680"
-     y1="108"
-     y2="104"
-     id="line828"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <text
      x="675"
      y="134"
@@ -3128,56 +2592,6 @@
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"
-     x1="695"
-     x2="695"
-     y1="101"
-     y2="64"
-     id="line838"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="695"
-     x2="160"
-     y1="64"
-     y2="64"
-     id="line840"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="160"
-     x2="160"
-     y1="64"
-     y2="100"
-     id="line842"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath71)"
-     text-rendering="optimizeLegibility"
-     x1="156"
-     x2="160"
-     y1="90"
-     y2="100"
-     id="line844"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath71)"
-     text-rendering="optimizeLegibility"
-     x1="160"
-     x2="164"
-     y1="100"
-     y2="90"
-     id="line846"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
      x1="130"
      x2="150"
      y1="115"
@@ -3214,56 +2628,6 @@
      id="text856"
      style="stroke:none;font-family:Segoe UI"
      transform="translate(-109.9375,-53.410158)"> </text>
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="704"
-     x2="730"
-     y1="115"
-     y2="115"
-     id="line858"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="730"
-     x2="730"
-     y1="115"
-     y2="230"
-     id="line860"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath44)"
-     text-rendering="optimizeLegibility"
-     x1="730"
-     x2="495"
-     y1="230"
-     y2="230"
-     id="line862"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath65)"
-     text-rendering="optimizeLegibility"
-     x1="505"
-     x2="495"
-     y1="226"
-     y2="230"
-     id="line864"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
-  <line
-     clip-path="url(#clipPath65)"
-     text-rendering="optimizeLegibility"
-     x1="495"
-     x2="505"
-     y1="230"
-     y2="234"
-     id="line866"
-     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
-     transform="translate(-109.9375,-53.410158)" />
   <line
      clip-path="url(#clipPath44)"
      text-rendering="optimizeLegibility"

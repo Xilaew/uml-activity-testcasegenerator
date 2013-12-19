@@ -197,7 +197,7 @@
       <inputValue xmi:type="uml:InputPin" xmi:id="_62Qw8EixEeOCDLdl6pESxw" name="atcg" incoming="_LqobIEi0EeOCDLdl6pESxw">
         <upperBound xmi:type="uml:LiteralInteger" xmi:id="_62ah8EixEeOCDLdl6pESxw" value="1"/>
       </inputValue>
-      <outputValue xmi:type="uml:OutputPin" xmi:id="_xmJlkEizEeOCDLdl6pESxw" name="path" outgoing="_KkvxIEi0EeOCDLdl6pESxw">
+      <outputValue xmi:type="uml:OutputPin" xmi:id="_xmJlkEizEeOCDLdl6pESxw" name="paths" outgoing="_KkvxIEi0EeOCDLdl6pESxw">
         <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xmTWkEizEeOCDLdl6pESxw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fibt0Ei0EeOCDLdl6pESxw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_File0Ei0EeOCDLdl6pESxw" value="*"/>
@@ -269,7 +269,7 @@
       <inputValue xmi:type="uml:InputPin" xmi:id="_iUvlIEjAEeOCDLdl6pESxw" name="atcg" incoming="__2Ne8EjAEeOCDLdl6pESxw">
         <upperBound xmi:type="uml:LiteralInteger" xmi:id="_iU5WIEjAEeOCDLdl6pESxw" value="1"/>
       </inputValue>
-      <inputValue xmi:type="uml:InputPin" xmi:id="_i36joEjAEeOCDLdl6pESxw" name="pats" incoming="_Wc9pYEjBEeOCDLdl6pESxw">
+      <inputValue xmi:type="uml:InputPin" xmi:id="_i36joEjAEeOCDLdl6pESxw" name="paths" incoming="_Wc9pYEjBEeOCDLdl6pESxw">
         <upperBound xmi:type="uml:LiteralInteger" xmi:id="_i36joUjAEeOCDLdl6pESxw" value="1"/>
       </inputValue>
       <outputValue xmi:type="uml:OutputPin" xmi:id="_0H758EjAEeOCDLdl6pESxw" name="tests" outgoing="_XWyNUEjBEeOCDLdl6pESxw">
@@ -284,7 +284,7 @@
     <node xmi:type="uml:MergeNode" xmi:id="_WcTvYElAEeOCDLdl6pESxw" name="MergeNode2" outgoing="_b0hxQElAEeOCDLdl6pESxw" incoming="_X4sN0ElAEeOCDLdl6pESxw _aOmVQElAEeOCDLdl6pESxw"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_zfhm8ElAEeOCDLdl6pESxw" name="ActivityFinalNode2" incoming="_2i4DMElAEeOCDLdl6pESxw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_1KEXcPNwEeK6iMIFjUA6jQ" name="UML_Activity"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_1KEXcPNwEeK6iMIFjUA6jQ" name="Activity"/>
   <packagedElement xmi:type="uml:DataType" xmi:id="_-R7jYEitEeOCDLdl6pESxw" name="Activity Test Case Graph" isAbstract="true"/>
   <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_OBGK8EiuEeOCDLdl6pESxw" name="String"/>
   <packagedElement xmi:type="uml:DataType" xmi:id="_blsmIEizEeOCDLdl6pESxw" name="Abstract Test Case"/>
