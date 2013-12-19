@@ -9,14 +9,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    shape-rendering="auto"
-   width="714.12994"
+   width="717.5744"
    text-rendering="auto"
    contentScriptType="text/ecmascript"
    color-interpolation="auto"
    color-rendering="auto"
    preserveAspectRatio="xMidYMid meet"
    font-size="12"
-   viewBox="0 0 714.12995 133.09071"
+   viewBox="0 0 717.57441 133.09071"
    image-rendering="auto"
    stroke-miterlimit="10"
    zoomAndPan="magnify"
@@ -27,7 +27,7 @@
    font-weight="normal"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="UML2TCGTransformation.pdf"
+   sodipodi:docname="UML2TCGTransformation.svg"
    style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
   <metadata
      id="metadata435">
@@ -37,7 +37,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      showgrid="false"
      inkscape:zoom="1.4516129"
      inkscape:cx="340.02529"
-     inkscape:cy="75.18114"
+     inkscape:cy="75.181146"
      inkscape:window-x="149"
      inkscape:window-y="77"
      inkscape:window-maximized="0"
@@ -702,13 +702,13 @@
        y2="221" />
   </defs>
   <rect
-     x="0.54999948"
-     y="54.540718"
+     x="0.55000001"
+     y="54.540714"
      clip-path="none"
-     width="169.40982"
+     width="173.54315"
      height="78"
      id="rect259"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="60.549999"
      y="67.540718"
@@ -718,11 +718,11 @@
      style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">TCGActivity</text>
   <text
      xml:space="preserve"
-     x="0.54999948"
+     x="0.55000001"
      y="81.540718"
      clip-path="none"
      id="text265"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activity test case graph)</text>
   <text
      x="24.549997"
      y="101.54072"
@@ -739,31 +739,31 @@
      style="font-size:13px;fill:#404040;stroke:none;font-family:Tahoma">packageName : String</text>
   <line
      clip-path="none"
-     x1="0.55479455"
-     x2="169.00659"
+     x1="0.55491209"
+     x2="173.11667"
      y1="86.297157"
      y2="86.297157"
      id="line275"
      style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <line
      clip-path="none"
-     x1="0.55636621"
-     x2="169.49208"
+     x1="0.55652207"
+     x2="173.614"
      y1="122.02784"
      y2="122.02784"
      id="line277"
      style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <rect
      x="32.698582"
-     y="1.0488003"
+     y="1.0487981"
      clip-path="none"
      width="105.11265"
      height="33.236671"
      id="rect287"
-     style="font-size:13px;fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="67.935257"
-     y="14.0488"
+     y="14.048799"
      clip-path="none"
      xml:space="preserve"
      id="text291"
@@ -771,21 +771,21 @@
   <text
      xml:space="preserve"
      x="47.935253"
-     y="28.048801"
+     y="28.0488"
      clip-path="none"
      id="text293"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from UML)</text>
   <rect
      x="217.39146"
-     y="0.55000001"
+     y="0.54999769"
      clip-path="none"
      width="98.421814"
      height="34.234276"
      id="rect315"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="254.6539"
-     y="13.549999"
+     y="13.549997"
      clip-path="none"
      font-style="italic"
      xml:space="preserve"
@@ -794,21 +794,21 @@
   <text
      xml:space="preserve"
      x="233.6539"
-     y="27.549999"
+     y="27.549997"
      clip-path="none"
      id="text321"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from UML)</text>
   <rect
      x="398.44983"
-     y="1.1272937"
+     y="1.1272914"
      clip-path="none"
      width="99"
      height="33.079689"
      id="rect339"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="421.44983"
-     y="14.127299"
+     y="14.127297"
      clip-path="none"
      font-style="italic"
      xml:space="preserve"
@@ -817,21 +817,21 @@
   <text
      xml:space="preserve"
      x="417.44983"
-     y="28.1273"
+     y="28.127298"
      clip-path="none"
      id="text345"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from UML)</text>
   <rect
      x="579.7973"
-     y="1.3708507"
+     y="1.3708484"
      clip-path="none"
      width="99"
      height="32.592571"
      id="rect359"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="604.7973"
-     y="14.370849"
+     y="14.370847"
      clip-path="none"
      xml:space="preserve"
      id="text363"
@@ -839,18 +839,18 @@
   <text
      xml:space="preserve"
      x="598.7973"
-     y="28.37085"
+     y="28.370848"
      clip-path="none"
      id="text365"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from uml)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from UML)</text>
   <rect
      x="182.05981"
      y="75.539513"
      clip-path="none"
-     width="169.40982"
+     width="174.23204"
      height="36.002399"
      id="rect379"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="245.05983"
      y="88.539513"
@@ -864,30 +864,30 @@
      y="102.53951"
      clip-path="none"
      id="text385"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activity test case graph)</text>
   <rect
      x="363.56964"
      y="76.757309"
      clip-path="none"
-     width="168.92271"
+     width="173.74493"
      height="33.566807"
      id="rect399"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      xml:space="preserve"
      x="363.56964"
      y="103.75732"
      clip-path="none"
      id="text405"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activity test case graph)</text>
   <rect
      x="544.17017"
      y="77.446205"
      clip-path="none"
-     width="169.40982"
+     width="172.85426"
      height="33.566807"
      id="rect419"
-     style="font-size:13px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma" />
   <text
      x="401.41461"
      y="90.446205"
@@ -901,10 +901,10 @@
      y="104.44621"
      clip-path="none"
      id="text425"
-     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activityTestCaseGraph)</text>
+     style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma">(from activity test case graph)</text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
-     d="m 629.20743,33.963422 -0.2398,43.482783"
+     d="m 629.57401,33.96342 0.73831,43.482785"
      id="path4288"
      inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
@@ -914,7 +914,7 @@
      inkscape:connection-end-point="d4" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
-     d="m 447.96752,34.206983 0.0455,42.550326"
+     d="m 448.49313,34.20698 1.39768,42.550329"
      id="path4290"
      inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
@@ -924,7 +924,7 @@
      inkscape:connection-end-point="d4" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
-     d="m 266.639,34.784276 0.0872,40.755237"
+     d="m 267.18295,34.784274 1.38232,40.755239"
      id="path4292"
      inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
@@ -934,7 +934,7 @@
      inkscape:connection-end-point="d4" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend-8)"
-     d="m 85.254907,34.285472 10e-7,20.255246"
+     d="m 85.707562,34.28547 0.551719,20.255244"
      id="path4296"
      inkscape:connector-type="polyline"
      inkscape:connector-curvature="0"
