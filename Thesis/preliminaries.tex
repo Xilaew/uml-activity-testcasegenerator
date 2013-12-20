@@ -314,7 +314,7 @@ A constraint in AMPL has a name and an expression evaluating to either true or f
 An objective can either be the maximisation or the minimisation of an objective function. The objective in AMPL has a name and an expression evaluating to a numerical value and specifies whether to minimise or maximise the given expression. The declaration \verb&minimize totalCost: a + b + c;& specifies that the totalCost has to be minimised and tells us that the totalCost composes from the values a, b and c which can be either variables or parameters. 
 \subsection{Entering Data}
 Although it is possible to specify the values of parameters as well as the elements contained in the declared sets directly in the AMPL model it is often desirable to enter them separately as data. Data can be entered in two ways either by reading them from a file or by switching into the data mode and entering it on the console. We assume that in the model the parameter \verb=b= and the set \verb=A= has been declared. Entering \verb&param b := 5;& and \verb&set A := 0 2 5;& in the data mode would set \verb=b= to 5 and set the content of \verb=A= to $\lbrace 0,2,5\rbrace$.
-\input{uml.tex}
+%\input{uml.tex}
 
 % \section{Taxonomy of Model Based Testing}
 % Test Model,

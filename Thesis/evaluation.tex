@@ -8,7 +8,7 @@ All experiments have been performed on a standard laptop with an Intel\textsuper
 \label{sec:evaluationRuntimeMeasurement}
 The total runtime of our algorithm is mainly influenced by two factors: The time necessary to solve one instance of the mathematical problem and the total count of problems to be solved during unit test generation. The total count of problems being solved depends on the model and the parameters used for the \nameref{sec:pathsearch} explained in Section \ref{sec:pathsearch}. For an acyclic activity diagram there is a finite number of control flow paths and abstract test cases. Assuming an activity diagram with a tree--like control flow graph of depth 10 and a fanout of two in each node we get a total of $2^{10}$ abstract test cases. With normal breadth first or depth first path search we will have to solve one mathematical program for each abstract test case in order to obtain test data, or find out that the control flow path is infeasible. In general, we can say the number of control flow paths in an activity diagram grows exponentially with the number of decisions in the activity diagram; so does the number of problems being solved.\\
 For the \nameref{sec:pathsearch} we examine the influence of three parameters on the overall runtime. That is the maximum path length, the maximum number of test cases, and the number of unchecked steps. All three of those parameters directly influence the amount of problems being solved in total and therefore influence the runtime. The maximum path length bounds the path search in depth and ensures the termination of the presented algorithm. The effect of this parameter has been explained in detail in Section \ref{sec:pathsearchDFS}. For an activity diagram containing at least two different cycles the number of abstract test cases grows exponentially with the maximum path length. %Assume an activity diagram showing a loop, where in each iteration there is one decision with two possible control flows to take. Not after each node there are multiple outgoing edges that means not every control flow in the control flow path has been choosen among several options, but the number of coises is linearly related to the maximum path length. Assume for the cyclic activity the cycle with the decision in it has the length of three no matter wich path had been taken inside the loop
-The total amount of control flow paths found in a graph consisting of two alternative cycles of length $a$ can be calculated with equation (\ref{eqn:MaxPathLength}) where $l_{\mbox{MAX}}$ denotes the maximum path length.
+The total amount of control flow paths in a graph consisting of two alternative cycles of length $a$ can be calculated with equation (\ref{eqn:MaxPathLength}) where $l_{\mbox{MAX}}$ denotes the maximum path length.
 \begin{equation}\sum_{n=1}^{\lfloor l_{\mbox{MAX}}/a\rfloor}{2^n}\label{eqn:MaxPathLength}
 \end{equation}
 We expect the number of abstract test cases that need to be checked whether valid test data can be obtained for them to grow linearly with the parameter maximum number of test cases. The count of mathematical problems to be solved is expectedly the maximum number of test cases divided by the chance that any abstract test case found is an infeasible path. Consequently the overall runtime should depend linearly on the maximum number of test cases.\\
@@ -360,8 +360,99 @@ ymode=log,
 \end{figure}
 %The implemented algorithm has several properties influencing the exact execution of the \nameref{sec:pathsearch}. 
 We examine the influence of the used solver, the maximum path length, and the maximum number of test cases on the runtime of our algorithm. The expected effects of those parameters on the overall runtime have already been discussed in Section \ref{sec:evaluationRuntimeMeasurement}.\\
-We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperiments}. We performed this experiment with different solvers. For \nameref{sec:pathsearch} the depth first search with early infeasible path elimination and two unchecked steps has been used. As we see, LPsolve produced the fastest results directly followed by Cplex. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime cosumed with Cplex. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming and thus is not perfectly specialized for mixed integer linear programming. The runtime grows almost perfectly exponential with the maximum path length. With a closer look at the graph, we can see that it is slightly super--exponential. This might be caused by effects that are inherent to the computing architecture executing the implementation of our algorithm.\\
-On the right hand side of Figure \ref{fig:RuntimeExperiments}, we plotted the overall runtime of our algorithm depending on the unchecked steps parameter of the early infeasible path elimination. We used Cplex as solver for this experiment and repeated the experiment for different maximum path lengths. As we can see from the plots, up to a maximum path length of 50 it is not beneficial to use early infeasible path elimination when generating test cases for the case study model. With longer maximum path lengths the impact of a well configured early infeasible path elimination grows. For a maximum path length of 90 our algorithm configured with the optimal value for the unchecked steps parameter takes less than one hour to generate all test cases, while it takes several days when unchecked steps is set to 5 or 6. 
+\subsubsection{Different Solvers}
+We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperiments}. We performed this experiment with different solvers. For \nameref{sec:pathsearch} the depth first search with early infeasible path elimination and two unchecked steps has been used. As we see, LPsolve produced the fastest results directly followed by Cplex. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming and thus is not perfectly specialized for mixed integer linear programming. To evaluate the slope of the exponential growth we also plotted the function $A*1.1^x$. The runtime grows almost perfectly exponential with the maximum path length and the runtime doubles when the maximum path length increases by $6$-$7$. With a closer look at the graph, we can see that it is slightly super--exponential. This might be caused by effects that are inherent to the computing architecture executing the implementation of our algorithm.\\
+\subsubsection{Unchecked Steps}
+On the right hand side of Figure \ref{fig:RuntimeExperiments}, we plotted the overall runtime of our algorithm depending on the unchecked steps parameter of the early infeasible path elimination. We used Cplex as solver for this experiment and repeated the experiment for different maximum path lengths. As we can see from the plots, up to a maximum path length of 50 it is not beneficial to use early infeasible path elimination when generating test cases for the case study model. With longer maximum path lengths the impact of a well configured early infeasible path elimination grows. For a maximum path length of 90 our algorithm configured with the optimal value for the unchecked steps parameter takes less than one hour to generate all test cases, while it takes several days when unchecked steps is set to 5 or 6.
+\subsubsection{Test Cases}
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+%legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={number of test cases},
+xlabel={maximum path length},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[color=black, style=dashed] expression[no markers, domain=30:100]{1.1 ^ (x)} 
+node[pos=0.5,sloped,fill=white, opacity=0.5,text opacity=1] {$1.1 ^ {x}$}
+;
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+xlabel={number of test cases},
+ylabel={time [s]},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+xmode=log,
+] 
+\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(2e7) * x}
+node [pos=0.7,below,sloped,fill=white,opacity=0.85,text opacity=1] {$x^1$} 
+;
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(4e6) * x ^ (1.45)} 
+node [pos=0.9,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{1.45}$} 
+;
+\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e4]{(6e5) * x ^ (2)} 
+node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$} 
+;
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+xlabel={number of test cases},
+ylabel={time [s]},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+xmin=500,
+xmax=5000,
+%ymode=log,
+%xmode=log,
+] 
+\addplot[loosely dotted,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeBFS.csv};
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.49\textwidth,
+title={Influence of boundary value analysis},
+%legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={PathsFound},
+xlabel={maximum path length},
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
+\addlegendentry{on};
+\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
+\addlegendentry{off}
+\end{axis}
+\end{tikzpicture}%
+\caption{Runtime of Test Generation }
+\label{fig:RuntimeExperimentsData}
+\end{figure}
+The runtime of our algorithm is not the only thing that grows exponentially with the maximum path length. Also the number of control flow paths in the activity diagram shorter than the maximum path length grows exponentially. We show this effect in the left hand side of Figure \ref{fig:RuntimeExperimentsData}. As we can see, the number of test cases grows exponentially with respect to almost the same basis as the runtime and the quotient of runtime and generated test cases grows polynomial. 
+For that reason, we plotted the runtime of our algorithm against the number of test cases in Figure \ref{fig:RuntimeExperimentsData}. For the plot on the right we used the same data as for the LPsolve plot in Figure \ref{fig:RuntimeExperiments}. The plot is logarithmic on both axis and we can see that the runtime grows not linear with the number of test cases that can be generated up to the given path length, but it grows with an exponent of $1.45$.\\
+It would not produce useful test cases to use depth first search and no limit on the maximum path length but a limit on the test cases to find. All generated test cases would over and over share very long common sub--paths and other control flows would not be checked at all. Since this would not be desired in practice, we used the breadth first search explained in Section \ref{sec:pathsearchBFS} to evaluate the effect of the maximum amount of test cases on the runtime.\\
+In Figure \ref{fig:RuntimeExperimentsMaxTestCases+boundary}, we plot on the left the runtime of our algorithm with depth first search, early infeasible path elimination, and Cplex as solver. The dotted line shows a small section of the second plot where the previous data had been reused. 
+
 %It is perfectly plausible when we assume p to be the conditional probability that by appending one control flow to a feasible path the new path is also feasible. In every step we can select one of two control flows to be appended to the current path. Now when we check after $\Delta$ steps we will have in total $2^{\Delta}$ paths that need to be checked for feasibility and each of them will have a chance of $p^{\Delta}$ of being feasible. Consequently after another $\Delta$ control flows being appended to each feasible path there will be on average another $p^{\Delta}*2^{2\Delta}$ paths that need to be checked for feasibility. The total amount of mathematical programs solved performing an ifeasible path check every $\Delta$ steps and 
 % \begin{tikzpicture} \begin{axis}[%ymode=log,
 % ] 
@@ -378,63 +469,6 @@ On the right hand side of Figure \ref{fig:RuntimeExperiments}, we plotted the ov
 % \addplot[blue,domain=1:5] {((1-x^4)*2^(2*4)-2^4)/2^(2*4)}; \addplot[red,domain=1:5] {((1-x^5)*2^(2*5)-2^5)/2^(2*5)}; 
 % \end{axis} \end{tikzpicture}
 % TODO describe this figure
-\begin{figure}
-\begin{tikzpicture}
-\begin{axis}[
-width=0.49\textwidth,
-%legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={PathsFound},
-xlabel={maximum path length},
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-]
-% \addplot[solid] table[x=foundPaths,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
-% \addlegendentry{Cplex};
-\addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
-\addplot[color=black, style=dashed] expression[no markers, domain=30:100]{1.1 ^ (x)} 
-%node[pin=315:{$4x^2-5$}] at (axis cs:60,300) {}
-%node [sloped,midway] {X} 
-node[pos=0.5,sloped,fill=white, opacity=0.5,text opacity=1] {$1.1 ^ {x}$}
-%node[pos=0.1,orange, fill=white, opacity=1,text opacity=1, sloped] {Sloped}
-;
-
-;
-% \addlegendentry{LPsolve};
-% \addplot[densely dotted] table[x=foundPaths,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
-% \addlegendentry{Couenne};
-\end{axis}
-\end{tikzpicture}%
-\begin{tikzpicture}
-\begin{axis}[
-width=0.49\textwidth,
-xlabel={paths found},
-ylabel={time [s]},
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-xmode=log,
-] 
-\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
-\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(2e7) * x}
-node [pos=0.7,below,sloped,fill=white,opacity=0.85,text opacity=1] {$x^1$} 
-%node[sloped] {$1.1 ^ {x}$}
-;
-\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(4e6) * x ^ (1.45)} 
-node [pos=0.9,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{1.45}$} 
-;
-\addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e4]{(6e5) * x ^ (2)} 
-node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$} 
-;
-\end{axis}
-\end{tikzpicture}%
-\caption{Runtime of Test Generation }
-\label{fig:RuntimeExperimentsData}
-\end{figure}
 % As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal path length and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linearly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
 %There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is very expensive in terms of runtime. To check whether the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check every time one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unnecessarily often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^{10}$ control flow paths whether they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interest to the influence of the number of unchecked decisions before control flow paths are checked for feasibility. We assume that there will be a minimum of runtime for some number of unchecked decisions.
 %Complex data types we added one \UMLType{Property} per field in a variable.
