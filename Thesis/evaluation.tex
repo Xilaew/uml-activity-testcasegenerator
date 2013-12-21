@@ -28,10 +28,8 @@ A selected expression could be the predicate of a control flow statement or an a
 \section{Academic Examples}
 \label{sec:evaluationAcademicModels}
 In order to demonstrate the strength of our approach we built a set of test models. Each test model requires a different instance of the mathematical programming problems presented in the \nameref{sec:Maths} to be solved in order to generate test data. Each solver is suitable for a set of problems, and for several problems there are multiple solvers that can be used. We explain of which problem the mathematical program generated for each test model is an instance and justify which solvers are suitable to solve it.\\
-For each test model we generated test cases with the depth first search explained in Section \ref{sec:pathsearchDFS} using the early infeasible path elimination explained in Section \ref{sec:EarlyInfeasiblePathRecognition}. With each selected solver we generated test cases for the test model using different parameters for the depth first search and early infeasible path recognition. We measured the total runtime of our algorithm and plot the results of the performed runtime measurement experiments that have been explained in detail in Section \ref{sec:evaluationRuntimeMeasurement}.\\
+For each test model we generated test cases with the depth first search explained in Section \ref{sec:pathsearchDFS} using the early infeasible path elimination explained in Section \ref{sec:EarlyInfeasiblePathRecognition}. With each selected solver we generated test cases for the test model using different parameters for the depth first search and early infeasible path recognition. We measured the total runtime of our algorithm and plot the results of the performed runtime measurement experiments that have been explained in detail in Section \ref{sec:evaluationRuntimeMeasurement}. For the case study we also demonstrate that it is no additional effort to generate boundary values as test data.\\
 Finally, we built a C implementation of the function modelled by the test model and execute the generated test suite against this implementation. We also manually introduced some errors into the implementation and verified that the produced test suite contains test cases that fail on those errors and that all test pass when the implementation is correct. The manual mutation testing procedure is explained in more detail in Section \ref{sec:evaluationMutationTesting}.\\
-% TODO Hier Fehlt noch die umsetzung der Ankündigung
-%For some models we show how much more effort in terms of runtime it is to generate boundary values as test data.\\
 The rest of this section is organized as follows: we will start Section \ref{sec:TriangleClassificator} with a test model that requires instances of an easy problem to be solved in order to obtain test data. By easy we mean decidable problems with a tractable algorithm. Then we will explain in Sections \ref{sec:TriangleClassificatorSMT}--\ref{sec:BinaryCounter} how we generated test data for problems that require NP--hard problems to be solved. Finally, we will also present in Section \ref{sec:exampleModelNonConvex} a test model that require an instance of an undecidable problem to be solved in order to obtain test data. That means we can only generate test data with heuristic methods.
 \subsection{Triangle Classificator (LP)}
 \label{sec:TriangleClassificator}
@@ -44,9 +42,9 @@ The rest of this section is organized as follows: we will start Section \ref{sec
 \begin{center}
 \begin{tikzpicture} 
 \begin{axis}[ ybar,
-width=\textwidth,
+width=0.7\textwidth,
 height=6cm,
-ylabel={time [ms]},
+ylabel={time $[ms]$},
 xlabel={solver},
 xtick={0,1,2,3,4,5},
 xticklabels={{Cplex}, {LPsolve}, {Couenne}, {Minos}, {Gurobi}, {GeCoDE}},
@@ -85,26 +83,28 @@ All variables used are in $\mathbb{B}$ and we use logical operations in the form
 \begin{figure}
 %\begin{center}
 \begin{tikzpicture}
-\begin{semilogyaxis}[
-ymode=log,
-%scaled ticks=true,
-width=0.498\textwidth,
-legend style={legend columns=2,at={(0.5,1.02)},anchor=south},
-xtick={10,20,30,40,50,60,70,80,90},
-%scaled y ticks=base 10:9,
-%minor tick num=4,
-%ytick scale label code/.code={},
-ytick={1e8,1e10,1e12,1e14},
-yticklabels={{$0.1$},{$10$},{$10^3$},{$10^{5}$}},
+\begin{axis}[
+width=0.598\textwidth,
+height=8cm,
+xlabel={maximum path length},
+ylabel={time $[s]$},
+legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
+%yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
-xminorgrids=false,
-xlabel={maximum path length},
-ylabel={time {[s]}},
+xminorgrids=true,
+ymode=log,
 xmin=5,
 xmax=95,
-%no markers,
 ]
 \addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacopSAT.csv};
 \addlegendentry{JaCoP SAT};
@@ -121,37 +121,21 @@ xmax=95,
 \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/BinaryCounterJacop+presolveSMT.csv};
 \addlegendentry{JaCoP+pre--solve};
 \label{leg:jacop+Presolve};
-\end{semilogyaxis}
+\end{axis}
 \end{tikzpicture}%
-\hspace{0.004\textwidth}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.498\textwidth,
+width=0.398\textwidth,
+height=8cm,
 nodes near coords,
 xmin=5,
 xmax=95,
 xtick={10,20,30,40,50,60,70,80,90},
-%y label style={at={1,0.5},anchor=west},
 xlabel={maximum path length},
 ylabel={total number of test cases},
-%axis y line*=left,
 ]
 \addplot+[black,mark=x,only marks] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
 \end{axis}
-% \begin{axis}[
-% width=0.498\textwidth,
-% %nodes near coords,
-% xmin=5,
-% xmax=95,
-% xtick={10,20,30,40,50,60,70,80.90},
-% axis y line*=right,
-% axis x line=none,
-% ylabel near ticks,
-% ylabel={total number of problems solved},
-% ymode=log,
-% ]
-% \addplot+[mark=x,only marks,color=black] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PATHSEARCH_TOTAL_SOLVER_RUNS,nodes=PathsFound]{Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
-% \end{axis}
 \end{tikzpicture}
 %\end{center}
 \caption{Comparison of runtime to generate one test case per feasible control flow path}
@@ -191,27 +175,31 @@ Figure \ref{fig:pumpTyre} shows an activity modelling the physical process of pu
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
+height=8cm,
 legend columns=-1,
-%legend entries={$(x+0)^k$;,$(x+1)^k$;,$(x+2)^k$;,$(x+3)^k$},
 legend to name=myLegend,
-%legend style={legend columns=2,at={(0.02,0.98)},anchor=north west},
-%xtick={10,20,30,40,50,60,70,80,90},
-ytick={1e8,1e10,1e12,1e14},
-yticklabels={{0.1},{10},{$10^3$},{$10^5$}},
+ylabel={time $[s]$},
+xlabel={maximum path length},
+yticklabels={{0},{$0.1$},{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-xlabel={maximum path length},
-ylabel={time [s]},
+ymode=log,
 xmin=5,
 xmax=75,
-%no markers,
-ymode=log,
 ]
 \addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_5sec.csv};
 \addlegendentry{5sec};
-\addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_10s.csv};
+\addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_10s.csv};
 \addlegendentry{10sec};
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/ExplodingTyres_20sec.csv};
 \addlegendentry{20sec};
@@ -226,25 +214,21 @@ ymode=log,
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
-legend style={legend columns=2,at={(0.02,0.98)},
-anchor=north west},
-%xtick={10,20,30,40,50,60,70,80,90},
-%ytick={1e8,1e10,1e12,1e14},
-%yticklabels={0.1s,10s,{1,000s},{100,000s}},
+height=8cm,
+xlabel={maximum path length},
+ylabel={number of test cases found},
+minor x tick num=1,
+minor y tick num=4,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-xlabel={maximum path length},
-ylabel={number of test cases generated},
 xmin=35,
 xmax=75,
-%no markers,
-%ymode=log,
 ]
 \addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_5sec.csv};
 %\addlegendentry{5sec};
-\addplot[loosely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
+\addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
 %\addlegendentry{10sec};
 \addplot[densely dotted,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_20sec.csv};
 %\addlegendentry{20sec};
@@ -294,61 +278,44 @@ We examine the influence of the used solver, the maximum path length, and the ma
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.49\textwidth,
-xlabel={unchecked steps},
-xmax=15,
-ylabel={time [s]},
-%ytick={1e8,1e10,1e12,1e14},
-ytickmin=0.1,
-ytickmax=1e5,
-yticklabels={{0.1},{10},{$10^3$},{$10^5$}},
-extra y ticks={3.6e12,259200e9},
+width=0.59\textwidth,
+height=8cm,
+%legend columns=-1,
+%legend to name=solvers,
+legend style={at={(0.02,0.98)},anchor=north west},
+xlabel={maximum path length},
+ylabel={time $[s]$},
+yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
 extra y tick labels={{1h},{3d}},
-%ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
-%yticklabels={10s,1m,10m,1h,1d},
-no markers,
-legend style={legend columns=3, overlay, at={(0.5,1.02)}, anchor=south},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-no markers,
-ymode=log,]
-%width=0.49\textwidth,
-%legend style={at={(0.02,0.98)},anchor=north west},
-%xlabel={maximum path length},
-%ylabel={time [s]},
-%extra y ticks={3600000000000},
-%extra y tick labels={1h},
-%ytick={1e8,1e10,1e12,1e14},
-%yticklabels={{0.1},{10},{$10^3$},{$10^5$}},
-%minor tick num=1,
-%ymajorgrids=true,
-%yminorgrids=true,
-%xmajorgrids=true,
-%xminorgrids=true,
-%ymode=log,
-%ymin=1e8,
-%ymax=1e14,
-%xmin=5,
-%xmax=115,
-\addplot[solid] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+ymode=log,
+]
+\addplot[solid] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCplex.csv};
 \addlegendentry{Cplex};
-\addplot[loosely dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[dash pattern=on 7pt off 3pt] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
 \addlegendentry{LPsolve};
-\addplot[dotted] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+\addplot[dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCouenne.csv};
 \addlegendentry{Couenne};
-\addplot[dash pattern=on 4pt off 2pt on 1pt off 3pt] expression[no markers, domain=30:110]{2e7*1.12 ^ (x)} 
-node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.12 ^ {x}$}
-;
+\addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt] expression[no markers, domain=30:110]{2e7*1.12^(x)} node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.12 ^ {x}$} ;
 \end{axis}
-\end{tikzpicture}%
+\end{tikzpicture}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.49\textwidth,
-%legend style={at={(0.02,0.98)},anchor=north west},
+width=0.39\textwidth,
+height=8cm,
 ylabel={number of test cases},
 xlabel={maximum path length},
+minor x tick num=4,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
@@ -357,12 +324,12 @@ ymode=log,
 ]
 \addplot[solid,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
 \addplot[color=black, style=dashed] expression[no markers, domain=30:100]{1.1 ^ (x)} 
-node[pos=0.5,sloped,fill=white, opacity=0.5,text opacity=1] {$1.1 ^ {x}$}
+node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.1 ^ {x}$}
 ;
 \end{axis}
-\end{tikzpicture}%
+\end{tikzpicture}
 %\end{center}
-\caption{Runtime of our algorithm applied to the case study. We measured the runtime with different solvers and varied maximum path length. The runtime as well as the number of test cases grow exponentially with the maximum path length.}
+\caption{Runtime of our algorithm applied to the case study. We measured the runtime with different solvers and varied maximum path length. The runtime as well as the number of test cases grows exponentially with the maximum path length.}
 \label{fig:RuntimeExperimentsSolvers}
 \end{figure}
 We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperimentsSolvers}. We performed this experiment with different solvers. For \nameref{sec:pathsearch} the depth first search with early infeasible path elimination and two unchecked steps has been used. As we see, LPsolve produced the fastest results directly followed by Cplex. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. Keep in mind that the plot is logarithmic. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming and thus is not perfectly specialized for mixed integer linear programming. To evaluate the slope of the exponential growth we also plotted the function $A*1.1^x$. The runtime grows almost perfectly exponential with the maximum path length and the runtime doubles when the maximum path length increases by $6$-$7$. With a closer look at the graph, we can see that it is slightly super--exponential. This might be caused by effects that are inherent to the computing architecture executing the implementation of our algorithm.\\
@@ -372,35 +339,40 @@ The case study model contains only constraints that are instances of MILP and, t
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.49\textwidth,
-legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
+width=0.6\textwidth,
+height=7cm,
+legend style={legend columns=1,at={(1.02,0.98)},anchor=north west},
 xlabel={unchecked steps},
-ylabel={time [s]},
-extra y ticks={3.6e12, 259200e9},
-extra y tick labels={1h, 3d},
 xmax=15,
-%ytick={1e8,1e10,1e12,1e14},
-yticklabels={{0.1},{1},{10},{100},{$10^3$},{10^4},{$10^5$}},
-%ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
-%yticklabels={10s,1m,10m,1h,1d},
+ylabel={time $[s]$},
+yticklabels={{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-ymode=log
-] 
-\addplot[solid] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
-\addlegendentry{40};
-\addplot[loosely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps50.csv};
-\addlegendentry{50};
-\addplot[densely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps60.csv};
-\addlegendentry{60};
-\addplot[loosely dotted] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
-\addlegendentry{70};
-\addplot[densely dotted] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
-\addlegendentry{80};
+ymode=log,
+]
+\addlegendimage{empty legend}
+\addlegendentry{maximum path length}
 \addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
 \addlegendentry{90};
+\addplot[dash pattern=on 7pt off 2 on 1 off 2] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addlegendentry{80};
+\addplot[dash pattern=on 7pt off 3pt] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps70.csv};
+\addlegendentry{70};
+\addplot[densely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps60.csv};
+\addlegendentry{60};
+\addplot[loosely dashed] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps50.csv};
+\addlegendentry{50};\addplot[solid] table[x=PATHSEARCH_UNCHECKED_STEPS,y={time(ns);}]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
+\addlegendentry{40};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -413,8 +385,20 @@ In Figure \ref{fig:RuntimeUncheckedSteps}, we plotted the overall runtime of our
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
+height=9cm,
 xlabel={number of test cases},
-ylabel={time [s]},
+ylabel={time $[s]$},
+scaled y ticks = false,
+% xtick scale label code/.code={\xdef\xtickscale{#1}}, 
+yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
@@ -422,7 +406,7 @@ xminorgrids=true,
 ymode=log,
 xmode=log,
 ] 
-\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
+\addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
 \addplot[color=black, style=dashed] expression[no markers, domain=1e2:1e5]{(2e7) * x}
 node [pos=0.7,below,sloped,fill=white,opacity=0.85,text opacity=1] {$x^1$} 
 ;
@@ -437,22 +421,35 @@ node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
+height=9cm,
 xlabel={number of test cases},
-ylabel={time [s]},
+ylabel={time $[s]$},
+scaled y ticks = false,
+% xtick scale label code/.code={\xdef\xtickscale{#1}}, 
+%xtick scale label code/.code={$10^3$}, 
+%xtick scale label code/.code={\xdef\xtickscale{#1}},
+yticklabels={{0},{0},{$2\cdot 10^{3}$},{ },{$6\cdot 10^{3}$},{$8\cdot 10^{3}$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+minor y tick num=4,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
 xmin=500,
 xmax=9500,
-%ymode=log,
-%xmode=log,
 ] 
-\addplot[loosely dotted,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addplot[dotted,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
 \addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeBFS.csv};
 \end{axis}
 \end{tikzpicture}%
-\caption{Runtime of depending on the number of test cases.}
+\caption{Runtime of our implementation depending on the number of test cases. Left: depth first search. Right: breadth first search}
 \label{fig:RuntimeExperimentsData}
 \end{figure}
 The runtime of our algorithm is not the only thing that grows exponentially with the maximum path length. Also the number of control flow paths in the activity diagram shorter than the maximum path length grows exponentially. We show this effect in Figure \ref{fig:RuntimeExperimentsSolvers}. As we can see, the number of test cases grows exponentially with respect to almost the same basis as the runtime and the quotient of runtime and generated test cases grows polynomial. 
@@ -464,13 +461,21 @@ In Figure \ref{fig:RuntimeExperimentsData}, we plot on the right the runtime of 
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-width=0.49\textwidth,
+width=0.59\textwidth,
+height=7cm,
 %title={Influence of boundary value analysis},
 legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={time [s]},
+ylabel={time $[s]$},
 xlabel={maximum path length},
 %ytick={1e8,1e10,1e12,1e14},
 yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
@@ -478,9 +483,9 @@ xminorgrids=true,
 ymode=log,
 ]
 \addplot[dotted,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
-\addlegendentry{on};
+\addlegendentry{with};
 \addplot[dashed,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
-\addlegendentry{off}
+\addlegendentry{without}
 \end{axis}
 \end{tikzpicture}%
 \end{center}
@@ -507,8 +512,7 @@ Finally, we also analysed the impact of the boundary value analysis on the runti
 % As already explained in Section \ref{sec:pathsearch} and Section \ref{sec:EarlyInfeasiblePathRecognition} there are two parameters that ensure the termination of the \nameref{sec:pathsearch}. Those are the maximal path length and the maximum amount of test cases generated. It is quite obvious that the number of test cases found may depend exponentially on the maximal control flow path length. We assume that the path search algorithm described in Section \ref{sec:pathsearchDFS} will find abstract test cases at a constant rate. According to this assumption the runtime of the algorithm should linearly depend on the amount of test cases generated. Thus the maximal number of test cases to be found should be correlated linearly to the overall runtime of the algorithm, and we expect the maximum control flow path length to be exponentially correlated to the runtime of the test generation algorithm. \\
 %There is also one parameter steering the early infeasible path elimination. That is the amount of unchecked steps. Calling the solver is very expensive in terms of runtime. To check whether the current control flow path is infeasible we need to solve the corresponding constraint satisfaction problem. If we check every time one control flow has been added to a control flow path we will eliminate infeasible paths as soon as possible, but will also call the solver unnecessarily often to find out that one constraint added did not make the path infeasible. If we perform a check for infeasible control flow paths after every tenth decision passed we will have to check at least $2^{10}$ control flow paths whether they are feasible or not, where several of them could have been eliminated much earlier by computing much less constraint satisfaction problems. We pay special interest to the influence of the number of unchecked decisions before control flow paths are checked for feasibility. We assume that there will be a minimum of runtime for some number of unchecked decisions.
 %Complex data types we added one \UMLType{Property} per field in a variable.
-%When the Model was correctly imported we need to add to each \UMLType{Action} those local post--conditions that describes the assignments done in the C code associated with that \UMLType{Action}
-%I could do a case study with the Airbus PAX call model from Atego\textsuperscript{\textregistered }.
+%When the Model was correctly imported we need to add to each \UMLType{Action} those local post--conditions that describes the assignments done in the C code associated with that 
 \section{Verification of the Implementation}
 We claim that the Eclipse plug--in built aside this thesis implements the algorithm explained in \nameref{chap:testgeneration}. This claim is validated manually by checking each step separately. We use the academic example models presented in Section \ref{sec:evaluationAcademicModels} as test cases to verify each transformation described in \nameref{chap:testgeneration}. From each test model we created manually the intermediate artefacts that should have been created according to the specification and compared them to the intermediate artefacts produced by the plug-in.
 \section{Limitations}
