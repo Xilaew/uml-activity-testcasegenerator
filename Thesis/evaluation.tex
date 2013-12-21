@@ -123,7 +123,7 @@ xmax=95,
 \label{leg:jacop+Presolve};
 \end{semilogyaxis}
 \end{tikzpicture}%
-\hspace{0.04\textwidth}
+\hspace{0.004\textwidth}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
@@ -301,20 +301,19 @@ ylabel={time [s]},
 %ytick={1e8,1e10,1e12,1e14},
 ytickmin=0.1,
 ytickmax=1e5,
-yticklabels={0.1,10,{$10^3$},{$10^5$}},
+yticklabels={{0.1},{10},{$10^3$},{$10^5$}},
 extra y ticks={3.6e12,259200e9},
-extra y tick labels={1h,3d},
+extra y tick labels={{1h},{3d}},
 %ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
 %yticklabels={10s,1m,10m,1h,1d},
 no markers,
-legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
+legend style={legend columns=3, overlay, at={(0.5,1.02)}, anchor=south},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
 no markers,
-ymode=log,
-
+ymode=log,]
 %width=0.49\textwidth,
 %legend style={at={(0.02,0.98)},anchor=north west},
 %xlabel={maximum path length},
@@ -333,7 +332,6 @@ ymode=log,
 %ymax=1e14,
 %xmin=5,
 %xmax=115,
-]
 \addplot[solid] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeCplex.csv};
 \addlegendentry{Cplex};
 \addplot[loosely dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
@@ -375,23 +373,21 @@ The case study model contains only constraints that are instances of MILP and, t
 \begin{tikzpicture}
 \begin{axis}[
 width=0.49\textwidth,
+legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
 xlabel={unchecked steps},
-xmax=15,
 ylabel={time [s]},
+extra y ticks={3.6e12, 259200e9},
+extra y tick labels={1h, 3d},
+xmax=15,
 %ytick={1e8,1e10,1e12,1e14},
-yticklabels={0.1,1,10,100,{$10^3$},{10^4},{$10^5$}},
-extra y ticks={3.6e12,259200e9},
-extra y tick labels={1h,3d},
+yticklabels={{0.1},{1},{10},{100},{$10^3$},{10^4},{$10^5$}},
 %ytick={10000000000,60000000000,600000000000,3600000000000,864e11},
 %yticklabels={10s,1m,10m,1h,1d},
-no markers,
-legend style={legend columns=3,overlay,at={(0.5,1.02)},anchor=south},
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
-no markers,
-ymode=log,
+ymode=log
 ] 
 \addplot[solid] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{Experiment-DATA/CaseStudyUncheckedSteps40.csv};
 \addlegendentry{40};
@@ -406,7 +402,7 @@ ymode=log,
 \addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{Experiment-DATA/CaseStudyUncheckedSteps90.csv};
 \addlegendentry{90};
 \end{axis}
-\end{tikzpicture}%
+\end{tikzpicture}
 \end{center}
 \caption{Runtime of our implementation depending on the unchecked steps. The experiment has been performed with depth first search and Cplex as solver for different maximum path lengths}
 \label{fig:RuntimeUncheckedSteps}
