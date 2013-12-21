@@ -160,7 +160,7 @@ A local optimum is a feasible solution that minimises the objective function wit
 \begin{definition}[global optimum]
 A global optimum is a feasible solution that gives the minimal value for the objective function among all feasible solutions.
 \end{definition}
-In practice equations are also used as constraints. In Equation (\ref{eqn:MOPs.t.}), $\geq$ is permitted as well as an arbitrary constant on the right--hand side. \\
+In practice equations are also used as constraints. In equation (\ref{eqn:MOPs.t.}), $\geq$ is permitted as well as an arbitrary constant on the right--hand side. \\
 In this thesis only linear objective functions are considered. For linear objective functions that are not constant any optimum can be found on the boundaries of the feasible set. That is why the word \emph{boundary value} will be used as an equivalent for local optimum. Using a constant objective function relaxes the problem, since with a constant objective function every feasible point is a global optimum.\\
 The OP is undecidable, but there are very successful heuristics available. One way to tackle an OP is to add quadratic penalty terms to the objective function, which are growing when a constraint is violated. Then one selects an arbitrary starting point and applies a descend method such as Newton's method to find a local minimum of the augmented objective function. One can try this local search with a descend method multiple times from different starting points and then select among the points found the one that gives the lowest value for the objective function. With a high likelihood, this algorithm will find a feasible point, and the global optimum could have been among the computed local optima.
 \subsection{Convex Optimisation Problem}
