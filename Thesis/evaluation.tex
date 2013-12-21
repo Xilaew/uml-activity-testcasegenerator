@@ -24,7 +24,7 @@ We measured the overall runtime of our algorithm transforming a UML \UMLType{Act
 \subsection{Mutation Testing}
 \label{sec:evaluationMutationTesting}
 For a selection of the academic test models presented in Section \ref{sec:evaluationAcademicModels} we manually performed mutation tests. Therefore we selected a set of expressions from the implementation and defined mutation operators and applied them systematically to the selected expressions. For each manually generated mutant we ran the automatically generated test suite and counted the failed tests.\\
-A selected expression could be the predicate of a control flow statement or an assignment. As mutation operators we used the replacement of a single operation within the set of selected expressions. For example we replaced != by == or >= by <=. In every resulting mutant exactly one operation has been replaced. Since we produced one test case for every possible control flow path in the activity diagram we expect the generated test to find most errors.
+A selected expression could be the predicate of a control flow statement or an assignment. As mutation operators we used the replacement of a single operation within the set of selected expressions. For example we replaced \verb§!=§ by \verb§==§ or \verb§>=§ by \verb§<=§. In every resulting mutant exactly one operation has been replaced. Since we produced one test case for every possible control flow path in the activity diagram we expect the generated test to find most errors.
 \section{Academic Examples}
 \label{sec:evaluationAcademicModels}
 In order to demonstrate the strength of our approach we built a set of test models. Each test model requires a different instance of the mathematical programming problems presented in the \nameref{sec:Maths} to be solved in order to generate test data. Each solver is suitable for a set of problems, and for several problems there are multiple solvers that can be used. We explain of which problem the mathematical program generated for each test model is an instance and justify which solvers are suitable to solve it.\\
@@ -35,7 +35,7 @@ The rest of this section is organized as follows: we will start Section \ref{sec
 \label{sec:TriangleClassificator}
 \begin{figure}
 \includegraphics[width=\textwidth]{./pics/TriangleLin.pdf}
-\caption{Triangle classificator}
+\caption{Activity diagram of a triangle classificator using only linear arithmetic constraints}
 \label{fig:TriangleLin}
 \end{figure}
 \begin{figure}
@@ -56,7 +56,7 @@ xticklabels={{Cplex}, {LPsolve}, {Couenne}, {Minos}, {Gurobi}, {GeCoDE}},
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Runtime of unit test generation using different solvers}
+\caption{Runtime of unit test generation for the triangle classificator model using different solvers}
 \label{fig:TriangleLinRuntime}
 \end{figure}
 We start with a model that contains only linear equations and inequalities and variables in $\mathbb{R}$. Figure \ref{fig:TriangleLin} shows the activity diagram of a function taking three floating point values as input and returning a floating point value indicating whether the input variables could possibly be the side lengths of an equilateral, isosceles, or scalene triangle. The mathematical problem to solve for this model is a linear program and can be solved with the simplex method as implemented in Cplex and LPsolve or an interior point method as implemented by Couenne, Minos and Gurobi.\\
@@ -138,7 +138,7 @@ ylabel={total number of test cases},
 \end{axis}
 \end{tikzpicture}
 %\end{center}
-\caption{Comparison of runtime to generate one test case per feasible control flow path}
+\caption{Runtime consumed by our implementation to generate all test cases for the binary counter model depending on the maximum path length. We used depth first search and different solvers as well as two alternative model formulations.}
 \label{fig:BinaryCounterRuntime}
 \end{figure}
 We performed several experiments with this example. First, we transformed the the UML activity diagram into an activity test case graph and then into an AMPL model. We verified by hand that the constraints in the AMPL model indeed express the same semantic as the OCL guard conditions and OCL local post--conditions in the UML model, and that every embedded OCL constraint contained in the test model shows up in the AMPL model. We implemented the C function that is modelled by this activity diagram in order to run the generated unit tests against it later. Then we generated test cases for the model using GeCoDE and JaCoP. We used the depth first search algorithm with early infeasible path recognition as explained in Section \ref{sec:pathsearchDFS} to find test cases for this activity diagram. We generated all test cases up to a control flow path length of 80. In the right graph in Figure \ref{fig:BinaryCounterRuntime}, we show the total number of test cases depending on the maximum path length.% and the amount of SAT instances that had to be solved to find those test cases
@@ -238,7 +238,7 @@ xmax=75,
 %\addlegendentry{10min};
 \end{axis}
 \end{tikzpicture}
-\caption{Measured runtime and number of generated test cases for different solver time limits}
+\caption{Runtime consumed and test cases found by our implementation for the tryre pump model. We used depth first search and Couenne and varied the maximum path length and the solver time limit.}
 \label{fig:ExplodingTyresRuntime}
 \end{figure}
 Mixed integer non--linear programs are in general undecidable. Consequently it may happen that a solver trying to solve an instance of an MINLP runs infinitely long. It usually uses less than one minute to generate a feasible solution for one problem instance. But it also might run for a very long time or even infinitely long.\\
