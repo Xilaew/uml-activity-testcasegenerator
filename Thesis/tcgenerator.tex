@@ -24,7 +24,7 @@ The \textbf{U}nified \textbf{M}odeling \textbf{L}anguage\textsuperscript{\texttr
 \begin{center}
 \includegraphics[width=0.5\textwidth]{./pics/ModelTreeView2.pdf}
 \end{center}
-\caption{Example of a valid structured model}
+\caption{Screenshot of a valid model in the model browser of Atego\textsuperscript{\textregistered} Artisan Studio}
 \label{fig:StructureExample}
 \end{figure}
 For our test generation we assume the models to comply to certain design rules. The input \UMLType{Activity} is an \UMLReference{ownedActivity} of a \UMLType{Class}. The \UMLType{Class} containing the \UMLType{Activity} itself is contained by a \UMLType{Package}. There is an \UMLType{Operation} specifying the \UMLType{Activity}. This specifying \UMLType{Operation} is either a sibling in the UML tree structure and has the same name as the \UMLType{Activity} or is explicitly specified by the \UMLReference{specification} reference of the \UMLType{Activity}. The specifying \UMLType{Operation} will be needed when parsing OCL constraints in Section \ref{sec:OCLParsing}. In Figure \ref{fig:StructureExample} we see a tree view of an UML model where those requirements are met.
