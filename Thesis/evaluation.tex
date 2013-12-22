@@ -279,7 +279,7 @@ We examine the influence of the used solver, the maximum path length, and the ma
 \begin{tikzpicture}
 \begin{axis}[
 width=0.59\textwidth,
-height=8cm,
+height=10cm,
 %legend columns=-1,
 %legend to name=solvers,
 legend style={at={(0.02,0.98)},anchor=north west},
@@ -294,19 +294,24 @@ extra tick style={
         tick style=black
     },
 minor x tick num=1,
+xmin=15,
+xmax=115,
+ymax=1e14,
 ymajorgrids=true,
 yminorgrids=true,
 xmajorgrids=true,
 xminorgrids=true,
 ymode=log,
 ]
-\addplot[solid] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addplot[loosely dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCplex.csv};
 \addlegendentry{Cplex};
-\addplot[dash pattern=on 7pt off 3pt] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[dash pattern=on 7pt off 4pt] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
 \addlegendentry{LPsolve};
-\addplot[dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+\addplot[densely dashed] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeCouenne.csv};
 \addlegendentry{Couenne};
-\addplot[dash pattern=on 4pt off 2pt on 1pt off 2pt] expression[no markers, domain=30:110]{2e7*1.12^(x)} node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.12 ^ {x}$} ;
+\addplot[densely dotted] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {Experiment-DATA/CaseStudyRuntimeGecode.csv};
+\addlegendentry{GeCoDE};
+\addplot[solid] expression[no markers, domain=30:110]{2e7*1.12^(x)} node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.12 ^ {x}$} ;
 \end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -332,7 +337,7 @@ node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.1 ^ {x}$}
 \caption{Runtime of our algorithm applied to the case study. We measured the runtime with different solvers and varied maximum path length. The runtime as well as the number of test cases grows exponentially with the maximum path length.}
 \label{fig:RuntimeExperimentsSolvers}
 \end{figure}
-We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperimentsSolvers}. We performed this experiment with different solvers. For \nameref{sec:pathsearch} the depth first search with early infeasible path elimination and two unchecked steps has been used. As we see, LPsolve produced the fastest results directly followed by Cplex. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. Keep in mind that the plot is logarithmic. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming and thus is not perfectly specialized for mixed integer linear programming. To evaluate the slope of the exponential growth we also plotted the function $A*1.1^x$. The runtime grows almost perfectly exponential with the maximum path length and the runtime doubles when the maximum path length increases by $6$-$7$. With a closer look at the graph, we can see that it is slightly super--exponential. This might be caused by effects that are inherent to the computing architecture executing the implementation of our algorithm.\\
+We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperimentsSolvers}. We performed this experiment with different solvers. For \nameref{sec:pathsearch} the depth first search with early infeasible path elimination and two unchecked steps has been used. As we see, LPsolve Cplex and GeCoDE are equally fast. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. Keep in mind that the plot is logarithmic. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming and thus is not perfectly specialized for mixed integer linear programming. To evaluate the slope of the exponential growth we also plotted the function $A*1.1^x$. The runtime grows almost perfectly exponential with the maximum path length and the runtime doubles when the maximum path length increases by $6$-$7$. With a closer look at the graph, we can see that it is slightly super--exponential. This might be caused by effects that are inherent to the computing architecture executing the implementation of our algorithm.\\
 The case study model contains only constraints that are instances of MILP and, therefore, the solvers always succeed to find the solution when a there exists suitable test data for a certain path. Consequently our algorithm will produce all test cases up to the given path length no matter which solver is used. The number of test cases grows equally exponential with the maximum path length as the runtime. We plotted the number of test cases depending on the maximum path length on the right of Figure \ref{fig:RuntimeExperimentsSolvers}. This plot is also logarithmically scaled. 
 \subsubsection{Unchecked Steps}
 \begin{figure}
@@ -536,7 +541,7 @@ Finally, it might not be in the interest of the industrial user that for larger 
 \label{sec:evaluationToolLimitations}
 AMPL's normal use case is mathematical optimisation and throughout the years several additional features have been added to the language. Unfortunately we do not know about a single solver capable of handling every constraint that can be expressed with AMPL. Especially support for SMT formulations using convex optimisation and mixed integer non--linear programming as background theory is missing. With the commercial solver IlogCP it is possible to delegate the solution of sentences in a background theory to Cplex, which is capable of solving mixed integer linear programs and mixed integer quadratic programs, yet another specialization of mixed integer non--linear programming.\\
 The used Eclipse OCL parser by default supports a minimal set of arithmetic operations. Consequently it is not possible to support arbitrary arithmetic without modifying the Eclipse OCL parser.\\
-In theory, the XMI interchange format should enable the exchange of UML models between different modelling tools. Unfortunately, the import of UML models into Eclipse exported by Artisan Studios does not yet work flawlessly. Thus our implementation is restricted to models generated by Papyrus, a modelling plug--in for Eclipse, unless one is willing to spend some manual work to make the exported UML model of third party tools compliant to Eclipse UML. 
+In theory, the XMI interchange format should enable the exchange of UML models between different modelling tools. Unfortunately, the import of UML models into Eclipse exported by Artisan Studios does not yet work flawlessly. Thus our implementation is restricted to models generated by Papyrus, a modelling plug--in for Eclipse, unless one is willing to spend some manual work to make the exported UML model of third party tools compliant to Eclipse UML.
 % tool for buissness use
 % XMI interchange format does not work always LOTS OF BUGS!!!!
 % \section{Further Ideas}
