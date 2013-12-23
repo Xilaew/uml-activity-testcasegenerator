@@ -54,7 +54,7 @@
      id="namedview635"
      showgrid="false"
      inkscape:zoom="1.6849817"
-     inkscape:cx="273.04491"
+     inkscape:cx="390.33185"
      inkscape:cy="163.86485"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -379,7 +379,7 @@
      xml:space="preserve"
      id="text381"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">name : EString</text>
+     mask="none">name : String</text>
   <line
      clip-path="none"
      x1="465.54999"
@@ -422,7 +422,7 @@
      xml:space="preserve"
      id="text401"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">name : EString</text>
+     mask="none">name : String</text>
   <text
      x="574.54999"
      y="48.876953"
@@ -430,7 +430,7 @@
      xml:space="preserve"
      id="text405"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">packageName : EString</text>
+     mask="none">packageName : String</text>
   <line
      clip-path="none"
      x1="550.54999"
@@ -473,7 +473,7 @@
      xml:space="preserve"
      id="text425"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">name : EString</text>
+     mask="none">name : String</text>
   <text
      x="259.54999"
      y="138.87695"
@@ -481,7 +481,7 @@
      xml:space="preserve"
      id="text429"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">value : EDouble</text>
+     mask="none">value : double</text>
   <line
      clip-path="none"
      x1="235.55"
@@ -532,7 +532,7 @@
      xml:space="preserve"
      id="text473"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">className : EString</text>
+     mask="none">className : String</text>
   <text
      x="654.54999"
      y="134.87695"
@@ -540,7 +540,7 @@
      xml:space="preserve"
      id="text477"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">packageName : EString</text>
+     mask="none">packageName : String</text>
   <line
      clip-path="none"
      x1="630.55383"
@@ -591,7 +591,7 @@
      xml:space="preserve"
      id="text501"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
-     mask="none">isParameter : EBoolean</text>
+     mask="none">isParameter : boolean</text>
   <text
      x="24.549999"
      y="99.876953"
@@ -889,7 +889,7 @@
      mask="none" />
   <text
      x="199.9413"
-     y="82.096519"
+     y="80.096519"
      clip-path="none"
      xml:space="preserve"
      id="text579"
@@ -1031,8 +1031,8 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <text
-     x="185.04565"
-     y="93.885651"
+     x="187.04565"
+     y="91.885651"
      clip-path="none"
      xml:space="preserve"
      id="text613"
@@ -1044,7 +1044,7 @@
      clip-path="none"
      xml:space="preserve"
      id="text615"
-     style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
+     style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1;font-family:Tahoma"
      mask="none">1</text>
   <line
      clip-path="none"

@@ -13,7 +13,7 @@ Then we will provide a little background knowledge on the computability of diffe
 \begin{center}
 \includegraphics[width=0.6\textwidth]{./pics/taxonomyOfMBT.pdf}
 \end{center}
-\caption{Overview of the Taxonomy of Model-Based Testing by Mark Utting \cite{utting2006taxonomy}}
+\caption{Overview of the taxonomy of Model-Based Testing approaches \cite{utting2006taxonomy}}
 \label{fig:UttingTaxonomy}
 \end{figure}
 Model--Based Testing emerged in the 1990s. A variety of different modelling paradigms and languages as well as test generation methods have been proposed since then. Model--Based Testing has also been applied in different scopes, such as, for unit testing or system testing. Mark Utting offers in \cite{utting2006taxonomy} a possible classification of approaches to Model--Based Testing in seven orthogonal dimensions. In Figure \ref{fig:UttingTaxonomy}, we see an overview of possible categorisations of Model--Based Testing approaches. Any work on Model--Based Testing roughly consists of three important steps: Specifying what the test model is, generating some abstract representation of test cases, and refining the abstract test cases into concrete executable test cases by determining the necessary input data and potentially also providing an oracle value for the expected output. The rest of this section is structured according to those three steps and in each subsection we will shortly present the propositions made in different publications and use Mark Utting's taxonomy to classify them and to position our own thesis relative to them.
@@ -64,7 +64,6 @@ Our own test data generation approach is based on symbolic execution of control 
 % Spex
 % 
 % tell about other test generating tools (commercial, published in Papers) and ParTeG as the only one where the source code is available.\cite{ParTeG}
-
 \section{Mathematical Foundations}
 \label{sec:Maths}
 \begin{figure}
@@ -75,8 +74,7 @@ Our own test data generation approach is based on symbolic execution of control 
 \label{fig:problemLatice}
 \end{figure}
 %When modelling we always need ways to express facts in mathematical terms. E.g from physic we know equations that express the relations between different physical values. 
-Constraint solving is a common technique to derive answers to particular questions. Depending on the constraint satisfaction problem instance there might exist an algorithm and even a software implementation that can compute the answer to our question. A major task in this thesis is to transform a control flow path in an activity diagram into a mathematical program, that is, a constraint satisfaction problem, and to apply a constraint solver. 
-\\
+Constraint solving is a common technique to derive answers to particular questions. Depending on the constraint satisfaction problem instance there might exist an algorithm and even a software implementation that can compute the answer to our question. A major task in this thesis is to transform a control flow path in an activity diagram into a mathematical program, that is, a constraint satisfaction problem, and to apply a constraint solver.\\
 Depending on the used test model the resulting mathematical program will be an instance of one of the problems presented in this section. Since currently existing solvers are always specialized on particular problems one needs to understand of which problem this mathematical program is an instance. Certain problems are a specialization of more general problems. In Figure \ref{fig:problemLatice}, we give an overview of the problems presented in this Section and visualise which problems are generalisations or specializations of each other. An arrow from \textsf{A} to \textsf{B} means that \textsf{B} is a generalisation of \textsf{A}.\\
 Some mathematical programs are harder to solve than others. Instances of more general problems are usually harder to solve than instances of a specialized problem. More specialized problems restrict the expressiveness of constraints that are allowed in its instances. We are especially interested in problems that allow our test models to be most expressive and are just specialized enough that we can find a useful solver for the resulting mathematical program. Those are the user--friendly problems. When we do not need the expressiveness of a general problem we can use specialized solvers computing solutions of the mathematical programs very quick. Those are the easy--to--solve problems.\\
 In \nameref{sec:computability} we introduce definitions that will be used to characterise problems and methods and explain the implications of those characteristics for constraint solving. For every presented problem we will mention their characteristics. In Sections \ref{sec:MathConstraintProgramming}--\ref{sec:MathSMT} we present different means to express constraints and introduce a variety of problems. In \nameref{sec:MathSearchSpaceProperties} we will present properties of variables and introduce further problems.
@@ -111,7 +109,6 @@ Restricting the expressiveness of constraints to decidable problems can be a str
 % For practical problems it is often the case that an intractable algorithm has a non--exponential average runtime. 
 % 
 % that we can find a solver that 
-
 \subsection{Constraint Satisfaction Problem}
 \label{sec:MathConstraintProgramming}
 \begin{figure}
@@ -142,10 +139,8 @@ It is possible to extend any relation between $x_1$ and $x_2$ to a n-ary relatio
 In general, there are no restrictions on the domains of the variables. They could be continuous, discrete, finite, and infinite. Well--known domains are integer, real, boolean but city names or all triangles similar to an equilateral triangle could also form a domain. Similarly, the constraints can have arbitrary properties. Even a fractal set would be acceptable as constraint.\\
 In Figure \ref{fig:CSPExample}, we can see a two--dimensional continuous search space and three sets. One that could be assembled by a union of intersections of half--spaces, another that has an arbitrary shape, and the last set that consists of discrete points marked by the crosses. Any of the points within the intersection of those three sets is a solution to the corresponding CSP.\\
 The CSP in its general form is undecidable but there are decidable specializations with a few restrictions on the kind of constraints and domains. For example a CSP with all variables in $\mathbb{B}$ is decidable.
-
 %There is no way to handle all possible ways to describe the constraints by one single algorithm. Additionally this general form includes also a lot of problems that are known to be undecidable or just infeasible to compute. Consequently we need to look at several specializations. //BULLSHITT!!!!
 %A constraint $c_j$ is a pair $<t_j,R_j>$ of a set of variables $t_j$ and a relation $R_j$. $t_j$ is a subset of X and R is defined over those variables.
-
 \subsection{Optimisation Problem}
 An \emph{optimisation problem} (OP) is a constraint satisfaction problem with a real--valued \emph{objective function} $f:S\mapsto \mathbb{R}$ where constraints are specified in terms of real--valued functions $g_1,\dots,g_k:S\mapsto\mathbb{R}$. We call those functions \emph{constraint functions}. The search space is $\mathbb{R}^n$. The task is to find a feasible point that minimises the objective function $f$.
 \begin{eqnarray}
@@ -232,7 +227,6 @@ Domains can either be continuous or discrete. The optimisation problem as well a
 \emph{Mixed integer linear programming} (MILP) is a generalisation of linear programming allowing variables in the integer domain. While linear programming can be solved in polynomial time, the introduction of variables with discrete domains makes the problem NP-complete. A famous instance of this problem is the knapsack problem. In the knapsack problem it is the objective to maximise the value of undividable objects in a container where each object has a value and a weight. The sum of the weights must stay below a threshold. Mixed integer linear programming is decidable.\\
 \emph{Mixed integer non--linear programming} (MINLP) is a generalisation of the optimisation problem allowing variables in the integer domain as well as the real domain. This problem contains many instances that are known to be infeasible to solve. A well--known instance is the factorisation of a number with two prime factors. Mixed integer non--linear programming is just as the optimisation problem undecidable. But while to the optimisation problem tractable heuristics similar to the algorithms for the convex optimisation problem can be applied the introduction of discrete variables also makes intractable heuristics necessary to solve mixed integer non--linear programs.
 % The mixed integer linear programming contains instances that are NP complete A linear program with only discrete domains is called \emph{linear integer program} (LIP) and it is called a \emph{mixed linear integer program} (MILP) when it has both discrete and continuous domains. We call an IP or MIP whose \emph{continuous relaxation} is a convex problem a \emph{convex mixed integer program}. The continuous relaxation of a mixed integer program is the mathematical program where all discrete domains are replaced by corresponding continuous domains. For example, the set 
-
 % \emph{Mixed}
 % 
 % 
@@ -269,14 +263,12 @@ Instances of the finite constraint satisfaction problem can be solved by reducin
 \label{sec:AMPL}
 `\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage' (AMPL) from Robert Fourer \cite{AMPL} is a mathematical programming language language and also a software system interfacing different solvers capable of finding valid assignments for variables in an AMPL program, that is, an instance of the constraint satisfaction problem or one of its specializations presented in Section \ref{sec:Maths}.
 An AMPL program consists of two parts: the AMPL model and the AMPL data. The AMPL software system additionally provides a command language allowing the user to interact with the solver.\\
-% The AMPL system accepts three kinds of input: first there is a command language telling AMPL what to do and
- 
-%Then AMPL has a modelling language in which different kinds of mathematical programs can be formalised. And last but not least AMPL offers a possibility to enter data for parameterised mathematical programs. 
 In this section we will shortly explain the standard work flow with the command language and the concepts of the AMPL model language and the AMPL data language that are needed in this thesis.
 \subsection{Command Language}
 \label{sec:AMPLcommandLanguage}
 When AMPL is started in interactive mode it shows a command prompt requiring the user to either enter commands or directly modify the AMPL model. When AMPL is started with an AMPL script in the command line arguments it operates in batch mode.
-The normal workflow using AMPL is to load an AMPL model from a file or to enter the AMPL model directly in the console. Then one switches into the data entering mode and inputs specific values for every parameter of the loaded AMPL model or directly loads the data from a file. Now the AMPL program is ready to be solved by one of the solvers interfacing with AMPL. Therefore, we need to tell AMPL which solver shall be used and possibly set some further options. Then the \verb=solve= command is issued and AMPL will return as soon as either a solution is found, or an error has occurred, or the AMPL program has been found to be infeasible. When AMPL returns from the solve process reporting that a solution has been found, one will use the \verb=show= command to print the satisfying variable assignments.
+The normal workflow using AMPL is to load an AMPL model from a file or to enter the AMPL model directly in the console. Then one switches into the data entering mode and inputs specific values for every parameter of the loaded AMPL model or directly loads the data from a file. 
+Now the AMPL program is ready to be solved by one of the solvers interfacing with AMPL. Therefore, we need to tell AMPL which solver shall be used and possibly set some further options. Then the \verb=solve= command is issued and AMPL will return as soon as either a solution is found, or an error has occurred, or the AMPL program has been found to be infeasible. When AMPL returns from the solve process reporting that a solution has been found, one will use the \verb=show= command to print the satisfying variable assignments.
 Furthermore, AMPL provides commands to reset the currently loaded data or data and model. Commands for making on the fly modifications to the AMPL model and data without a complete reset are also available. For detailed reference of the commands the AMPL system supports, we refer to the AMPL reference manual in the appendix of \cite{AMPL}.
 \subsection{Modelling Language}
 The AMPL modelling language is the means used to formalise parameterised constraint satisfaction problems. 
@@ -314,7 +306,6 @@ An objective can either be the maximisation or the minimisation of an objective 
 \subsection{Entering Data}
 Although it is possible to specify the values of parameters as well as the elements contained in the declared sets directly in the AMPL model it is often desirable to enter them separately as data. Data can be entered in two ways either by reading them from a file or by switching into the data mode and entering it on the console. We assume that in the model the parameter \verb=b= and the set \verb=A= have been declared. Entering \verb&param b := 5;& and \verb&set A := 0 2 5;& in the data mode would set \verb=b= to 5 and set the content of \verb=A= to $\lbrace 0,2,5\rbrace$.
 %\input{uml.tex}
-
 % \section{Taxonomy of Model Based Testing}
 % Test Model,
 % Unit Test,
@@ -323,4 +314,3 @@ Although it is possible to specify the values of parameters as well as the eleme
 % SUT,
 % Harness/ stubs,
 % declarative specification
-

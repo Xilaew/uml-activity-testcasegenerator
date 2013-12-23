@@ -38,6 +38,7 @@
 
 \selectlanguage{english}
 \newcommand{\UMLType}[1]{\textsf{\textit{#1}}}
+\newcommand{\TCGType}[1]{#1}
 \newcommand{\UMLReference}[1]{\textsf{\textit{#1}}} 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -135,7 +136,7 @@
 In this thesis, we generate unit tests from UML activity diagrams modelling C components. 
 We use symbolic execution to transform embedded OCL constraints along a control flow path into a rigorous mathematical program expressed in `\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage' (AMPL). We derive test data from the mathematical program by having it solved with state--of--the--art constraint solvers.
 % each control flow path to test vity diagram with . 
-The generated tests will satisfy control flow--based coverage criteria on the used models. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults, we also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints, since we want to put as little restrictions as possible on the used test models.}
+The generated tests will satisfy control flow--based coverage criteria on the used models. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults, we also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints because we want to put as little restrictions as possible on the used test models.}
 \pagenumbering{Roman}
 \tableofcontents
 \clearpage
