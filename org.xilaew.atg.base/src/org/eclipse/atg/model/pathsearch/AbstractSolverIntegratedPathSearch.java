@@ -116,6 +116,7 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 	 */
 	protected Witness generateWitness(Path currentPath, TCGActivity atcg) {
 		ampl.loadData(Path2AMPLData.transform(currentPath));
+//		ampl.getCli().sendCommand("minimize x: pIndicRequest_areaCode[0] + pIndicRequest_areaType[0] + isIndicOn + iSeat[0] + iLoc[0] + isValidSeatInfo[0] + paxSeatInfo_deckArea[0] + paxSeatInfo_deckPart[0] + pSeatGroup_numberOfSeats[0] + pIndicRequest_srCounter[0];");
 		Witness result = new Witness();
 		SolveResult solved;
 		try {
@@ -133,7 +134,8 @@ public abstract class AbstractSolverIntegratedPathSearch implements
 				return null;
 			}
 		}
-		totalSolves++;
+//		ampl.getCli().sendCommand("delete x;");
+		System.out.println(solved);
 		if (solved == SolveResult.Failure || solved == SolveResult.Infeasible) {
 			infeasibleSolves++;
 			return null;
