@@ -9,14 +9,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    shape-rendering="auto"
-   width="800.66089"
+   width="806.00214"
    text-rendering="auto"
    contentScriptType="text/ecmascript"
    color-interpolation="auto"
    color-rendering="auto"
    preserveAspectRatio="xMidYMid meet"
    font-size="12"
-   viewBox="0 0 800.66089 157.42696"
+   viewBox="0 0 806.00214 157.42696"
    image-rendering="auto"
    stroke-miterlimit="10"
    zoomAndPan="magnify"
@@ -54,8 +54,8 @@
      id="namedview635"
      showgrid="false"
      inkscape:zoom="1.6849817"
-     inkscape:cx="390.33185"
-     inkscape:cy="163.86485"
+     inkscape:cx="390.33184"
+     inkscape:cy="163.86484"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -321,7 +321,7 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <rect
-     x="235.55"
+     x="235.54999"
      y="1.8769531"
      clip-path="none"
      width="110"
@@ -335,11 +335,11 @@
      clip-path="none"
      xml:space="preserve"
      id="text361"
-     style="font-size:13px;fill:#000000;stroke:none;font-family:Tahoma;fill-opacity:1"
+     style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
      mask="none">TestCase</text>
   <line
      clip-path="none"
-     x1="235.55"
+     x1="235.54999"
      x2="346.54999"
      y1="17.876953"
      y2="17.876953"
@@ -348,7 +348,7 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="235.55"
+     x1="235.54999"
      x2="346.54999"
      y1="29.876953"
      y2="29.876953"
@@ -450,7 +450,7 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <rect
-     x="235.55"
+     x="235.54999"
      y="91.876953"
      clip-path="none"
      width="145"
@@ -484,7 +484,7 @@
      mask="none">value : double</text>
   <line
      clip-path="none"
-     x1="235.55"
+     x1="235.54999"
      x2="381.54999"
      y1="107.87695"
      y2="107.87695"
@@ -493,7 +493,7 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="235.55"
+     x1="235.54999"
      x2="381.54999"
      y1="140.87695"
      y2="140.87695"
@@ -504,7 +504,7 @@
      x="630.54999"
      y="71.876953"
      clip-path="none"
-     width="169.56087"
+     width="174.90218"
      height="78"
      id="rect463"
      style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
@@ -519,12 +519,12 @@
      mask="none">TCGActivity</text>
   <text
      xml:space="preserve"
-     x="630.54999"
+     x="631.14349"
      y="100.87695"
      clip-path="none"
      id="text469"
      style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     mask="none">(from activityTestCaseGraph)</text>
+     mask="none">(from activity test case graph)</text>
   <text
      x="654.54999"
      y="118.87695"
@@ -543,8 +543,8 @@
      mask="none">packageName : String</text>
   <line
      clip-path="none"
-     x1="630.55383"
-     x2="798.73303"
+     x1="630.55579"
+     x2="804.62256"
      y1="103.87695"
      y2="103.87695"
      id="line479"
@@ -552,24 +552,24 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="630.55774"
-     x2="799.91614"
+     x1="630.55798"
+     x2="805.25128"
      y1="138.87695"
      y2="138.87695"
      id="line481"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <rect
-     x="0.55000001"
+     x="0.54999095"
      y="36.876953"
      clip-path="none"
      width="181"
      height="78"
      id="rect491"
-     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002000000000;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
+     style="font-size:13px;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <text
-     x="65.550003"
+     x="65.549995"
      y="49.876953"
      clip-path="none"
      xml:space="preserve"
@@ -578,14 +578,14 @@
      mask="none">TCGVariable</text>
   <text
      xml:space="preserve"
-     x="7.5500002"
+     x="3.5499911"
      y="65.876953"
      clip-path="none"
      id="text497"
      style="font-size:13px;fill:#808080;stroke:none;font-family:Tahoma"
-     mask="none">(from activityTestCaseGraph)</text>
+     mask="none">(from activity test case graph)</text>
   <text
-     x="24.549999"
+     x="24.54999"
      y="83.876953"
      clip-path="none"
      xml:space="preserve"
@@ -593,7 +593,7 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
      mask="none">isParameter : boolean</text>
   <text
-     x="24.549999"
+     x="24.54999"
      y="99.876953"
      clip-path="none"
      xml:space="preserve"
@@ -602,8 +602,8 @@
      mask="none">usage : TCGVariableUsage</text>
   <line
      clip-path="none"
-     x1="0.55000001"
-     x2="182.55"
+     x1="0.54999095"
+     x2="182.54999"
      y1="68.876953"
      y2="68.876953"
      id="line507"
@@ -611,8 +611,8 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="0.55000001"
-     x2="182.55"
+     x1="0.54999095"
+     x2="182.54999"
      y1="103.87695"
      y2="103.87695"
      id="line509"
@@ -629,18 +629,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="398,38 391,41 398,44 398,44 405,41 "
+     points="398,44 405,41 398,38 391,41 398,44 "
      id="polygon515"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <polygon
      clip-path="none"
-     points="398,38 391,41 398,44 398,44 405,41 "
+     points="398,44 405,41 398,38 391,41 398,44 "
      id="polygon517"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <line
      clip-path="none"
      x1="353.54999"
@@ -686,18 +686,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="512,46 519,43 512,40 512,40 505,43 "
+     points="512,40 505,43 512,46 519,43 512,40 "
      id="polygon529"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <polygon
      clip-path="none"
-     points="512,46 519,43 512,40 512,40 505,43 "
+     points="512,40 505,43 512,46 519,43 512,40 "
      id="polygon531"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <line
      clip-path="none"
      x1="543.54999"
@@ -743,18 +743,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="333,76 333,76 330,69 327,76 330,83 "
+     points="327,76 330,83 333,76 333,76 330,69 "
      id="polygon543"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(4.55,-26.123047)" />
+     transform="translate(4.5499909,-26.123047)" />
   <polygon
      clip-path="none"
-     points="333,76 333,76 330,69 327,76 330,83 "
+     points="327,76 330,83 333,76 333,76 330,69 "
      id="polygon545"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(4.55,-26.123047)" />
+     transform="translate(4.5499909,-26.123047)" />
   <line
      clip-path="none"
      x1="331.54999"
@@ -800,18 +800,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="361,74 369,74 364,68 364,68 356,68 "
+     points="364,68 356,68 361,74 369,74 364,68 "
      id="polygon557"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <polygon
      clip-path="none"
-     points="361,74 369,74 364,68 364,68 356,68 "
+     points="364,68 356,68 361,74 369,74 364,68 "
      id="polygon559"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <line
      clip-path="none"
      x1="457.54999"
@@ -857,18 +857,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="316,76 319,83 322,76 322,76 319,69 "
+     points="322,76 319,69 316,76 319,83 322,76 "
      id="polygon571"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-45.45,-26.123047)" />
+     transform="translate(-45.450009,-26.123047)" />
   <polygon
      clip-path="none"
-     points="316,76 319,83 322,76 322,76 319,69 "
+     points="322,76 319,69 316,76 319,83 322,76 "
      id="polygon573"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-45.45,-26.123047)" />
+     transform="translate(-45.450009,-26.123047)" />
   <line
      clip-path="none"
      x1="270.54999"
@@ -888,7 +888,7 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <text
-     x="199.9413"
+     x="199.94128"
      y="80.096519"
      clip-path="none"
      xml:space="preserve"
@@ -914,18 +914,18 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="468,161 461,164 468,167 468,167 475,164 "
+     points="468,167 475,164 468,161 461,164 468,167 "
      id="polygon585"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <polygon
      clip-path="none"
-     points="468,161 461,164 468,167 468,167 475,164 "
+     points="468,167 475,164 468,161 461,164 468,167 "
      id="polygon587"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <line
      clip-path="none"
      x1="388.54999"
@@ -1005,8 +1005,8 @@
      mask="none">0..1</text>
   <line
      clip-path="none"
-     x1="235.55"
-     x2="182.55"
+     x1="235.54999"
+     x2="182.54999"
      y1="106.87695"
      y2="94.876953"
      id="line607"
@@ -1014,8 +1014,8 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="189.55"
-     x2="182.55"
+     x1="189.54999"
+     x2="182.54999"
      y1="93.876953"
      y2="94.876953"
      id="line609"
@@ -1023,15 +1023,15 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="182.55"
-     x2="188.55"
+     x1="182.54999"
+     x2="188.54999"
      y1="94.876953"
      y2="98.876953"
      id="line611"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <text
-     x="187.04565"
+     x="187.04564"
      y="91.885651"
      clip-path="none"
      xml:space="preserve"
@@ -1039,12 +1039,12 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
      mask="none">variable</text>
   <text
-     x="187.26521"
+     x="187.2652"
      y="108.6813"
      clip-path="none"
      xml:space="preserve"
      id="text615"
-     style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1;font-family:Tahoma"
+     style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
      mask="none">1</text>
   <line
      clip-path="none"
@@ -1058,7 +1058,7 @@
   <line
      clip-path="none"
      x1="600.54999"
-     x2="91.550003"
+     x2="91.549995"
      y1="156.87695"
      y2="156.87695"
      id="line619"
@@ -1066,8 +1066,8 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="91.550003"
-     x2="91.550003"
+     x1="91.549995"
+     x2="91.549995"
      y1="156.87695"
      y2="115.87695"
      id="line621"
@@ -1075,22 +1075,22 @@
      mask="none" />
   <polygon
      clip-path="none"
-     points="632,170 627,176 635,176 635,176 640,170 "
+     points="635,176 640,170 632,170 627,176 635,176 "
      id="polygon623"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <polygon
      clip-path="none"
-     points="632,170 627,176 635,176 635,176 640,170 "
+     points="635,176 640,170 632,170 627,176 635,176 "
      id="polygon625"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none"
-     transform="translate(-9.45,-26.123047)" />
+     transform="translate(-9.4500091,-26.123047)" />
   <line
      clip-path="none"
-     x1="94.550003"
-     x2="91.550003"
+     x1="94.549995"
+     x2="91.549995"
      y1="122.87695"
      y2="115.87695"
      id="line627"
@@ -1098,15 +1098,15 @@
      mask="none" />
   <line
      clip-path="none"
-     x1="91.550003"
-     x2="88.550003"
+     x1="91.549995"
+     x2="88.549995"
      y1="115.87695"
      y2="122.87695"
      id="line629"
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-opacity:1;font-family:Tahoma"
      mask="none" />
   <text
-     x="93.550003"
+     x="93.549995"
      y="130.87695"
      clip-path="none"
      xml:space="preserve"
@@ -1114,7 +1114,7 @@
      style="font-size:13px;fill:#000000;fill-opacity:1;stroke:none;font-family:Tahoma"
      mask="none">variables</text>
   <text
-     x="67.036957"
+     x="67.036949"
      y="134.35739"
      clip-path="none"
      xml:space="preserve"

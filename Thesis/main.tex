@@ -16,7 +16,7 @@
 
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
-\makenomenclature
+%\makenomenclature
 
 \makeatletter
 
@@ -127,17 +127,30 @@
 \par\end{flushleft}
 
 
-%\newpage
+\cleardoublepage
 %-----------------------------------------
-% add your second logo here along with the description, it will appear on the second page
-%----------------------------------------
+\pagenumbering{Roman}\chapter*{Statutory Declaration}
+I, Felix Kurth, declare that I have authored this thesis independently, that I
+have not used other than the declared sources / resources, and that I have
+explicitly marked all material which has been quoted either literally or by
+content from the used sources. Neither this thesis nor any other similar
+work has been previously submitted to any examination board.
+\hspace{3cm}
+\begin{flushright}
+Hamburg, January 1, 2014 \\ 
+\vspace{0.5cm}
+ \dotuline{\hspace{5cm}}
+ \\ 
+Felix Kurth
+\end{flushright}
+\cleardoublepage%----------------------------------------
 
 \abstract{Testing is one important way of validating and verifying the behaviour of software artefacts. With the use of Model--Based Engineering comes the need to ensure that the implementation derived from models actually behaves like specified in the corresponding models. \\
 In this thesis, we generate unit tests from UML activity diagrams modelling C components. 
 We use symbolic execution to transform embedded OCL constraints along a control flow path into a rigorous mathematical program expressed in `\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage' (AMPL). We derive test data from the mathematical program by having it solved with state--of--the--art constraint solvers.
 % each control flow path to test vity diagram with . 
 The generated tests will satisfy control flow--based coverage criteria on the used models. Since unit tests using test data at the bounds of path constraints do have a higher probability to detect faults, we also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints because we want to put as little restrictions as possible on the used test models.}
-\pagenumbering{Roman}
+%\printnomenclature
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -148,7 +161,7 @@ The generated tests will satisfy control flow--based coverage criteria on the us
 \input{conclusion}
 
 \appendix
-\bibliographystyle{plain}
+\bibliographystyle{IEEEtran}
 \bibliography{./bibtex}
 
 

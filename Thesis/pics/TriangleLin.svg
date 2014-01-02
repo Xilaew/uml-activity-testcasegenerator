@@ -27,7 +27,7 @@
    font-weight="normal"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="TriangleLin.pdf"
+   sodipodi:docname="TriangleLin.svg"
    style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
   <metadata
      id="metadata1009">
@@ -37,7 +37,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,9 +58,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.6788321"
-     inkscape:cx="382.93741"
-     inkscape:cy="83.39855"
+     inkscape:zoom="3.3576642"
+     inkscape:cx="223.15413"
+     inkscape:cy="104.68955"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -6535,8 +6535,9 @@
      clip-path="url(#clipPath53)"
      xml:space="preserve"
      id="text715"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[y&gt;=z+0.1]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-160.04565,-109.85435)"
+     sodipodi:linespacing="125%">[y&gt;=z+0.1]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="275"
@@ -6615,7 +6616,7 @@
      clip-path="url(#clipPath57)"
      xml:space="preserve"
      id="text733"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
+     style="font-size:12px;stroke:none;font-family:Segoe UI"
      transform="translate(-163.45,-74.45)">[y+0.1&lt;=x+z]</text>
   <line
      clip-path="url(#clipPath49)"
@@ -6686,8 +6687,9 @@
      clip-path="url(#clipPath61)"
      xml:space="preserve"
      id="text749"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[x+0.1&lt;=z]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-161.06739,-78.619565)"
+     sodipodi:linespacing="125%">[x+0.1&lt;=z]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="312"
@@ -6731,8 +6733,9 @@
      clip-path="url(#clipPath63)"
      xml:space="preserve"
      id="text759"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[z&gt;=x+0.1]</text>
+     style="font-size:10.00000004px;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+     transform="translate(-161.45,-76.45)"
+     sodipodi:linespacing="125%">[z&gt;=x+0.1]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="445"
@@ -6802,8 +6805,8 @@
      clip-path="url(#clipPath67)"
      xml:space="preserve"
      id="text775"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[x&gt;=0+0.01]</text>
+     style="font-size:12px;stroke:none;font-family:Segoe UI"
+     transform="translate(-165.45,-78.45)">[x&gt;=0+0.01]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="256"
@@ -6847,8 +6850,9 @@
      clip-path="url(#clipPath69)"
      xml:space="preserve"
      id="text785"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[y+0.1&lt;=z]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-165.45,-45.556522)"
+     sodipodi:linespacing="125%">[y+0.1&lt;=z]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="445"
@@ -7152,8 +7156,9 @@
      clip-path="url(#clipPath83)"
      xml:space="preserve"
      id="text853"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[x+0.1&lt;=y]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-159.45,-76.45)"
+     sodipodi:linespacing="125%">[x+0.1&lt;=y]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="688"
@@ -7197,8 +7202,9 @@
      clip-path="url(#clipPath85)"
      xml:space="preserve"
      id="text863"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-166.42826,-79.215217)">[x=z]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-162.25869,-80.704347)"
+     sodipodi:linespacing="125%">[x=z]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="465"
@@ -7359,8 +7365,9 @@
      clip-path="url(#clipPath93)"
      xml:space="preserve"
      id="text899"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[x&gt;=y+0.1]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-161.45,-78.45)"
+     sodipodi:linespacing="125%">[x&gt;=y+0.1]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="200"
@@ -7404,8 +7411,9 @@
      clip-path="url(#clipPath95)"
      xml:space="preserve"
      id="text909"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[x&gt;=z+0.1]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-160.68478,-81.258696)"
+     sodipodi:linespacing="125%">[x&gt;=z+0.1]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="368"
@@ -7566,8 +7574,9 @@
      clip-path="url(#clipPath103)"
      xml:space="preserve"
      id="text945"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[z+0.1&lt;=x]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-158.85435,-78.619565)"
+     sodipodi:linespacing="125%">[z+0.1&lt;=x]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="465"
@@ -7692,8 +7701,9 @@
      clip-path="url(#clipPath109)"
      xml:space="preserve"
      id="text973"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)">[y=z]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-163.15217,-79.81087)"
+     sodipodi:linespacing="125%">[y=z]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="455"
@@ -7763,17 +7773,17 @@
      clip-path="url(#clipPath113)"
      xml:space="preserve"
      id="text989"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-166.42826,-79.215217)">[x=y]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-161.87609,-81.002174)"
+     sodipodi:linespacing="125%">[x=y]</text>
   <line
-     clip-path="url(#clipPath49)"
-     x1="295"
-     x2="251"
-     y1="185"
-     y2="229"
+     clip-path="none"
+     x1="228.04565"
+     x2="184.04565"
+     y1="321.41086"
+     y2="365.41086"
      id="line991"
-     style="font-size:11px;fill:none;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)" />
+     style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI" />
   <line
      clip-path="url(#clipPath114)"
      x1="255"
@@ -7781,8 +7791,8 @@
      y1="219"
      y2="229"
      id="line993"
-     style="font-size:11px;fill:none;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)" />
+     style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="matrix(0.91865298,0.39506545,-0.39506545,0.91865298,-49.863301,-150.09895)" />
   <line
      clip-path="url(#clipPath114)"
      x1="251"
@@ -7790,8 +7800,8 @@
      y1="229"
      y2="225"
      id="line995"
-     style="font-size:11px;fill:none;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;"
-     transform="translate(-163.45,-74.45)" />
+     style="font-size:11px;fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="matrix(0.91865298,0.39506545,-0.39506545,0.91865298,-49.863301,-150.09895)" />
   <text
      font-size="12"
      x="261"
@@ -7799,8 +7809,9 @@
      clip-path="url(#clipPath115)"
      xml:space="preserve"
      id="text997"
-     style="font-size:12px;stroke:none;font-family:Segoe UI;"
-     transform="translate(-157.45,-74.45)">[z=x]</text>
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     transform="translate(-146.13261,-80.704348)"
+     sodipodi:linespacing="125%">[z=x]</text>
   <line
      clip-path="url(#clipPath49)"
      x1="402"
@@ -7837,4 +7848,9 @@
      id="text1005"
      style="font-size:12px;stroke:none;font-family:Segoe UI;"
      transform="translate(-163.45,-74.45)">[y&gt;=0+0.01]</text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 137,118.25 0,26.80435 -45.865214,13.7 0,0"
+     id="path4085"
+     inkscape:connector-curvature="0" />
 </svg>
