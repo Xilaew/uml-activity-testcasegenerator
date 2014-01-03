@@ -1,0 +1,154 @@
+\documentclass{beamer} 
+%\documentclass[handout]{beamer}
+%\includeonlylecture{week12}
+
+\mode<presentation>
+{
+  \usetheme{sts}
+  \setbeamercovered{transparent}
+  \newcommand{\notroublewithincludeonly}[1]{#1}
+}
+
+\mode<article>
+{
+   \usepackage{hyperref}
+
+}
+\mode<handout>
+{
+   \usetheme{sts}
+   \renewcommand{\notroublewithincludeonly}[1]{}
+   %\setbeamertemplate{navigation symbols}{}
+   \setbeamertemplate{footline}
+   {
+  \pgfuseshading{footshading}\vskip-3.25ex%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.55\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,ignorebg,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertpagenumber{}\hspace*{2ex} %
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}}
+\input{header.tex}
+
+%\usepackage[english]{babel}
+% or whatever
+
+%\usepackage[latin1]{inputenc}
+% or whatever
+
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+
+
+
+\title[Short title]{Long Title} 
+\subtitle[Short Subtitle]{Long Subtitle} 
+\author[Short Name]{Long name} 
+\date[Short Date]{\today} 
+
+
+
+\pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
+\logo{\pgfuseimage{STS-logo}}
+ 
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline} 
+\tableofcontents  
+\end{frame}
+
+
+\section{Section One Name}
+
+\begin{frame}
+\frametitle{Slide Three} 
+Body text / code of the frame goes here. 
+\end{frame} 
+
+
+\subsection{Subsection Name}
+
+\begin{frame}
+\frametitle{List Example One}
+\begin{itemize} 
+\item The first item.
+\item The second item.
+\item The third item.
+\item The fourth item.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{List Example Two}
+\begin{enumerate} 
+\item The first item.
+\item The second item.
+\item The third item.
+\item The fourth item.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{List Example Three}
+\begin{description}[Second Item] 
+\item[First Item] Description of first item.
+\item[Second Item] Description of second item.
+\item[Third Item] Description of third item.
+\item[Forth Item] Description of forth item.
+\end{description}
+\end{frame}
+
+
+
+
+
+
+\section{Section Two Name}
+\begin{frame} 
+\frametitle{Outline} \tableofcontents[currentsection]
+\end{frame}
+
+\section{Section Two Name} 
+
+\begin{frame}
+\frametitle{Block Example One}
+\begin{block}{Block Header}
+	Block Body
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Block Example Two}
+\begin{columns}
+ \column{.45\textwidth} \ 
+	\begin{block}{Block One Header} 
+		Block One Body 
+	\end{block} 
+\column{.45\textwidth} \ 
+	\begin{block}{Block Two Header} 
+		Block Two Body
+	\end{block} 
+\end{columns}
+\end{frame}
+
+\end{document}
