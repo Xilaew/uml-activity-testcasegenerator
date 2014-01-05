@@ -15,15 +15,6 @@
 
 \pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
 \logo{\pgfuseimage{STS-logo}}
-\AtBeginSection[] % Do nothing for \section*
-{
-\begin{frame} 
-\frametitle{Outline} \tableofcontents[currentsection]
-\end{frame}
-}
-
-\newcommand{\UMLType}[1]{\textbf{#1}}
-\newcommand{\UMLReference}[1]{\emph{#1}} 
 
 \begin{document}
 
@@ -44,7 +35,7 @@
 \begin{frame}
 \frametitle{Generating C-Component Code and Unit test Code from the same Model}
 %\def\svgwidth{300pt} \import{../pics/}{Activity2Code+Testsfaster.pdf_tex}
-\includegraphics{../pics/Activity2Code+Tests.png}
+\includegraphics{/pics/Activity2Code+Tests.png}
 %\import{{Activity2Code+Tests.pdf_tex}}
 \end{frame}
 
@@ -224,7 +215,7 @@ return = 0
 
 \begin{frame}
 \frametitle{The Activity Test Case Graph Class Model}
-	\includegraphics[width=\textwidth]{../pics/completeMetamodelforSlideshowN.pdf}
+	\includegraphics[width=\textwidth]{pics/completeMetamodelforSlideshowN.pdf}
 \end{frame}
 
 %\begin{frame}
@@ -316,7 +307,7 @@ Logical: $(a<=5) and (a>=0)$ \hspace{1cm} Arithmetic: $a<=5$; $a>=0$
 Logical: $(a<=5) or (a>=10)$ \\Arithmetic: $z1*a>=z1*5$; $ z2*a>=z2*10$; $z1+z2>=1$;
 \end{block}
 \begin{block}{Graph Transformation}
-\includegraphics[width=\textwidth]{../pics/transformLocigGuards.pdf}
+\includegraphics[width=\textwidth]{pics/transformLocigGuards.pdf}
 \end{block}
 \end{frame}
 
@@ -379,7 +370,7 @@ Logical: $(a<=5) or (a>=10)$ \\Arithmetic: $z1*a>=z1*5$; $ z2*a>=z2*10$; $z1+z2>
 \frametitle{Bibliography}
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{plain}
-\bibliography{../bibtex}
+\bibliography{../Thesis/bibtex}
 
 
 \end{document}

@@ -47,18 +47,51 @@
 
 
 \section{The Algorithm}
+\begin{frame}
+\frametitle{Overview of the Algorithm}
+\begin{block}{Normalisation}
+Map UML/OCL to simplified intermediate representation
+\end{block}
+\begin{block}{Rigorous Mathematical Programming}
+Transform activity diagram into an AMPL model
+\end{block}
+\begin{block}{Abstract Test Case Generation}
+Find control flow paths using depth first and breadth first search
+\end{block}
+\begin{block}{Specific Test Data Generation}
+Solve constraint satisfaction problem for each control flow path
+\end{block}
+\begin{block}{Unit Test Synthesis}
+Output test cases as C++ unit tests using the boost test library
+\end{block}
+\end{frame}
+\subsection{Normalisation}
+\begin{frame}
+\frametitle{The Activity Test Case Graph Model}
+	\includegraphics[width=\textwidth]{../IntermediatePresentation/pics/completeMetamodelforSlideshowN.pdf}
+\end{frame}
+\begin{frame}
+\frametitle{Goals of Normalisation}
+\begin{itemize}
+  \item Ensure uniqueness of element names
+  \item Slice relevant parts out of a huge UML model
+  \item Parse embedded OCL constraints and ensure that they comply to the handled OCL subset
+  \item Add continuity constraints 
+\end{itemize}
+\end{frame}
+
 \subsection{AMPL Modelling}
 \begin{frame}[fragile]
 \frametitle{Introductory Example}
 \begin{columns}
- \column{.35\textwidth} \ 
-	\begin{block}{Specifying a Path} 
+ \column{.39\textwidth} \ 
+	\begin{block}{Activity Diagram} 
 	\def\svgwidth{\textwidth}
 	\scriptsize
 	\import{pics/}{BasicExamples.pdf_tex}
 	\end{block} 
-\column{.6\textwidth} \ 
-	\begin{block}{AMPL} 
+\column{.56\textwidth} \ 
+	\begin{block}{AMPL Model} 
 		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
 param l; #Pathlength
 
@@ -71,12 +104,12 @@ set t within {0..l} default {};
 s.t. t_post0{i in t} : (y)=(x[i-1]);
 s.t. t_post1{i in t} : (x[i])=(x[i-1]);
 set e within {0..l} default {};
-s.t. e_post0{i in f} : (y)=(x[i-1]-100);
-s.t. e_post0{i in f} : (x[i])=(x[i-1]);
+s.t. e_post0{i in e} : (y)=(x[i-1]-100);
+s.t. e_post0{i in e} : (x[i])=(x[i-1]);
 
 # Guards
 set d2e within {0..l} default {};
-s.t. d2e_g{i in d2f} : (x[i])>=(6.0);
+s.t. d2e_g{i in d2e} : (x[i])>=(6.0);
 set d2t within {0..l} default {};
 s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
 \end{lstlisting}
@@ -94,7 +127,7 @@ set f:= 1; # post condition
 		\end{lstlisting}
 	\end{block} 
 	\begin{block}{Result} 
-		\begin{lstlisting}[basicstyle=\ttfamily\small,language=ampl]
+		\begin{lstlisting}[basicstyle=\ttfamily\small]
 Solution determined by presolve.
 a = 5
 return = 0
