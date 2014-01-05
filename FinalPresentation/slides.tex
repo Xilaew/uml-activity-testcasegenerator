@@ -1,70 +1,20 @@
-\documentclass{beamer} 
+\nonstopmode
+\documentclass{beamer}
 %\documentclass[handout]{beamer}
 %\includeonlylecture{week12}
 
-\mode<presentation>
-{
-  \usetheme{sts}
-  \setbeamercovered{transparent}
-  \newcommand{\notroublewithincludeonly}[1]{#1}
-}
-
-\mode<article>
-{
-   \usepackage{hyperref}
-
-}
-\mode<handout>
-{
-   \usetheme{sts}
-   \renewcommand{\notroublewithincludeonly}[1]{}
-   %\setbeamertemplate{navigation symbols}{}
-   \setbeamertemplate{footline}
-   {
-  \pgfuseshading{footshading}\vskip-3.25ex%
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.55\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,ignorebg,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertpagenumber{}\hspace*{2ex} %
-  \end{beamercolorbox}}%
-  \vskip0pt%
-}}
 \input{header.tex}
 
-%\usepackage[english]{babel}
-% or whatever
-
-%\usepackage[latin1]{inputenc}
-% or whatever
-
-%\usepackage{times}
-%\usepackage[T1]{fontenc}
-
-
-% Or whatever. Note that the encoding and the font should match. If T1
-% does not look nice, try deleting the line with the fontenc.
-
-
-
-
-
-\title[Short title]{Long Title} 
-\subtitle[Short Subtitle]{Long Subtitle} 
-\author[Short Name]{Long name} 
-\date[Short Date]{\today} 
-
-
+\title[Automated Generation of Unit Tests]{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers} 
+\subtitle[M.Sc. Thesis]{A Master Thesis} 
+\author[F. Kurth]{Felix Kurth} 
+\day=27
+\month=1
+\year=2014
+\date[Jan 2014]{\today} 
 
 \pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
 \logo{\pgfuseimage{STS-logo}}
- 
 
 \begin{document}
 
@@ -78,7 +28,79 @@
 \end{frame}
 
 
-\section{Section One Name}
+\section{Introduction}
+\subsection{Motivation}
+\begin{frame}
+\frametitle{Model--Based Engineering at Airbus Buxtehude}
+\includegraphics[width=\textwidth]{../Thesis/pics/BasicExamplesSimpleDecision.pdf}
+\end{frame}
+\subsection{Overview of our Solution}
+\begin{frame}
+\frametitle{Overview of our Solution}
+\begin{description}
+\item[Test Model:] A UML activity diagram with embedded OCL constraints modelling an operation/function is used as test model.
+\item[Symbolic Execution:] Control flow paths within the activity diagram are executed and stored as constraint satisfaction problem.
+\item[Constraint Solving:] A variety of state--of--the--art constraint solvers can be used to generate test data for an executed control flow path.
+\item[Language Independent:] Test model and test cases and are stored as an instance of our own intermediate meta models.
+\end{description}
+\end{frame}
+
+
+\section{The Algorithm}
+\subsection{AMPL Modelling}
+\begin{frame}[fragile]
+\frametitle{Introductory Example}
+\begin{columns}
+ \column{.35\textwidth} \ 
+	\begin{block}{Specifying a Path} 
+	\def\svgwidth{\textwidth}
+	\scriptsize
+	\import{pics/}{BasicExamples.pdf_tex}
+	\end{block} 
+\column{.6\textwidth} \ 
+	\begin{block}{AMPL} 
+		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
+param l; #Pathlength
+
+# Variables (Property or Parameter)
+var x{0..l} : integer := 1;
+var y : integer := 1;
+
+# Postconditions
+set t within {0..l} default {};
+s.t. t_post0{i in t} : (y)=(x[i-1]);
+s.t. t_post1{i in t} : (x[i])=(x[i-1]);
+set e within {0..l} default {};
+s.t. e_post0{i in f} : (y)=(x[i-1]-100);
+s.t. e_post0{i in f} : (x[i])=(x[i-1]);
+
+# Guards
+set d2e within {0..l} default {};
+s.t. d2e_g{i in d2f} : (x[i])>=(6.0);
+set d2t within {0..l} default {};
+s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
+\end{lstlisting}
+	\end{block} 
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Introductory Example}
+	\begin{block}{Specify Path} 
+		\begin{lstlisting}[basicstyle=\ttfamily\small,language=ampl]
+param l := 1;
+set d2f:= 0; # guard 
+set f:= 1; # post condition
+		\end{lstlisting}
+	\end{block} 
+	\begin{block}{Result} 
+		\begin{lstlisting}[basicstyle=\ttfamily\small,language=ampl]
+Solution determined by presolve.
+a = 5
+return = 0
+		\end{lstlisting}
+	\end{block}
+\end{frame}
 
 \begin{frame}
 \frametitle{Slide Three} 
@@ -123,7 +145,7 @@ Body text / code of the frame goes here.
 
 
 
-\section{Section Two Name}
+\section{Case Study}
 \begin{frame} 
 \frametitle{Outline} \tableofcontents[currentsection]
 \end{frame}

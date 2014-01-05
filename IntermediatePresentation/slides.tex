@@ -1,11 +1,9 @@
 \nonstopmode
-\documentclass{beamer} 
+\documentclass{beamer}
 %\documentclass[handout]{beamer}
 \includeonlylecture{intro}
 
-\usetheme{sts}
 \input{header.tex}
-\usepackage{ctable}
 
 \title[Automated Unit Test Generation]{Automated generation of Unit Tests from UML \UMLType{Activity}s using the AMPL interface for Constraint Solvers } 
 %\subtitle[Airbus Model Based Engineering]{An Airbus Project on Model Based Engineering} 
@@ -105,13 +103,13 @@ Output test cases as JUnit or CPP-Unit test suite
 \begin{frame}[fragile]
 \frametitle{Introductory Example}
 \begin{columns}
- \column{.45\textwidth} \ 
+ \column{.4\textwidth} \ 
 	\begin{block}{Specifying a Path} 
 	\def\svgwidth{\textwidth}
-	\scriptsize
-	\import{../pics/}{SomeActivityDiagramsSimpleDecision.pdf_tex}
+	%\scriptsize
+	\import{../FinalPresentation/pics/}{BasicExamples.pdf_tex}
 	\end{block} 
-\column{.5\textwidth} \ 
+\column{.55\textwidth} \ 
 	\begin{block}{AMPL} 
 		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
 param l; #Pathlength
@@ -129,9 +127,9 @@ s.t. f_post0{i in f} : (r)=(0.0);
 
 # Guards
 set d2f within {0..l} default {};
-s.t. d2f_g{i in d2f} : (a)>=(5.0);
+s.t. d2f_g{i in d2f} : (a)>=(6.0);
 set d2t within {0..l} default {};
-s.t. d2t_g{i in d2t} : (a)<=(4.0);
+s.t. d2t_g{i in d2t} : (a)<=(5.0);
 \end{lstlisting}
 	\end{block} 
 \end{columns}
