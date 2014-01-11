@@ -79,6 +79,7 @@ public class CPPTestGenerationHandler extends AbstractHandler {
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
 		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
 		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, "2");
 		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,properties);
 //		dialog.create();
 		dialog.open();

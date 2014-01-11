@@ -1,0 +1,81 @@
+%% Creator: Inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'TriangleClasivicator.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{412.45bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.49284762)%
+    \put(0,0){\includegraphics[width=\unitlength]{TriangleClasivicator.pdf}}%
+    \put(0.92823373,0.38798642){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{invalid}}}%
+    \put(0.62371197,0.29100497){\makebox(0,0)[lb]{\smash{scalane}}}%
+    \put(0.61401382,0.1397139){\makebox(0,0)[lb]{\smash{isosceles}}}%
+    \put(0.00303067,0.08152503){\makebox(0,0)[lb]{\smash{eqilateral}}}%
+    \put(0.13298582,0.0795854){\makebox(0,0)[lb]{\smash{«LocalPostCondtion»}}}%
+    \put(0.1388047,0.05437023){\makebox(0,0)[lb]{\smash{classification=3}}}%
+    \put(0.1388047,0.04079282){\makebox(0,0)[lb]{\smash{classification=3}}}}%
+    \put(0.43944721,0.05630986){\makebox(0,0)[lb]{\smash{{classification=2}}}}%
+    \put(0.74590859,0.18044611){\makebox(0,0)[lb]{\smash{classification=1}}}%
+    \put(0.73451327,0.29536914){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{{classification=-1}}}}%
+    \put(0.00303067,0.29488423){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{unknown}}}%
+    \put(0.05734028,0.14553279){\makebox(0,0)[lb]{\smash{[(x = y) and (y = z)]}}}%
+    \put(0.05927991,0.34531458){\makebox(0,0)[lb]{\smash{[(x<y+z) and (y<x+z) and (z<x+y)and(x>0) and (y>0)and(z>0)]}}}%
+    \put(0.21251061,0.28518608){\makebox(0,0)[lb]{\smash{[not(x=y) and not( y=z) and not (x=z)]}}}%
+    \put(0.00690993,0.25997091){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.96896594,0.0524306){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.61789308,0.25609165){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.66056492,0.21341981){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.06897806,0.2192387){\makebox(0,0)[lb]{\smash{[not (x=y) or not (y=z)]}}}%
+    \put(0.00690993,0.43841678){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.13104619,0.4132016){\makebox(0,0)[lb]{\smash{[(x>=z+y) or (y>=x+z) or (z>=x+y)or(x<=0)or(y<=0)or(z<=0)]}}}%
+    \put(0.28144895,0.14538099){\makebox(0,0)[lb]{\smash{[(x = y) or (x = z) or (y = z)]}}}%
+    \put(0.69547824,0.16686871){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.91853558,0.30264274){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.43149359,0.07957215){\makebox(0,0)[lb]{\smash{«LocalPostCondtion»}}}%
+    \put(0.72049832,0.20467822){\makebox(0,0)[lb]{\smash{«LocalPostCondtion»}}}%
+    \put(0.72146813,0.32566258){\makebox(0,0)[lb]{\smash{«LocalPostCondtion»}}}%
+  \end{picture}%
+\endgroup%
