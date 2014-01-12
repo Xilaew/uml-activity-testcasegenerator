@@ -2,7 +2,7 @@
 <feature
       id="org.xilaew.atg.feature"
       label="ActivityTestGenerator"
-      version="1.0.0"
+      version="0.1.0"
       provider-name="Felix Kurth">
 
    <description url="http://www.example.com/description">

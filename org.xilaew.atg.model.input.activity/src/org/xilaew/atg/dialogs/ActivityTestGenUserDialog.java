@@ -32,8 +32,6 @@ public class ActivityTestGenUserDialog extends Dialog {
 	private Text text_MAX_PATH_LENGTH;
 	private Label lbMAX_PATH_LENGTH;
 	private Label lblUncheckedSteps;
-	private Combo combo_PATHSEARCH_ALGORITHM;
-	private Label lblPathsearch;
 	private Combo combo_PATHSEARCH_SOLVER;
 	private Label lblSolver;
     /**
@@ -89,13 +87,6 @@ public class ActivityTestGenUserDialog extends Dialog {
 		text = text!=null?text:"";
 		text_PATHSEARCH_UNCHECKED_STEPS.setText(text);
 		
-		lblPathsearch = new Label(container, SWT.NONE);
-		lblPathsearch.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblPathsearch.setText("Pathsearch");
-		
-		combo_PATHSEARCH_ALGORITHM = new Combo(container, SWT.NONE);
-		combo_PATHSEARCH_ALGORITHM.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
-		
 		lblSolver = new Label(container, SWT.NONE);
 		lblSolver.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblSolver.setText("Solver");
@@ -104,7 +95,8 @@ public class ActivityTestGenUserDialog extends Dialog {
 		combo_PATHSEARCH_SOLVER.setItems(new String[] {"ilogcp", "cplex", "minos", "gecode", "couenne", "lpsolve", "gurobi"});
 		combo_PATHSEARCH_SOLVER.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 		combo_PATHSEARCH_SOLVER.setText(activityTestGenProperties.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER));
-
+		parent.pack();
+		container.pack();
 
 		return container;
 	}
@@ -121,13 +113,13 @@ public class ActivityTestGenUserDialog extends Dialog {
 				IDialogConstants.CANCEL_LABEL, false);
 	}
 
-	/**
-	 * Return the initial size of the dialog.
-	 */
-	@Override
-	protected Point getInitialSize() {
-		return new Point(251, 210);
-	}
+//	/**
+//	 * Return the initial size of the dialog.
+//	 */
+//	@Override
+//	protected Point getInitialSize() {
+//		return new Point(251, 210);
+//	}
 
 	public Properties getActivityTestGenProperties() {
 		return activityTestGenProperties;
