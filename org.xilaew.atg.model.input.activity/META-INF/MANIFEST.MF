@@ -2,15 +2,15 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Activity
 Bundle-SymbolicName: org.xilaew.atg.model.input.activity;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.2.0
 Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml,
  net.sf.parteg.input.statemachine,
  org.xilaew.atg.model,
- org.xilaew.atg.base;bundle-version="1.0.0",
- org.xilaew.atg.core;bundle-version="1.0.0",
- org.xilaew.atg.model.edit;bundle-version="1.0.0",
- org.xilaew.atg.model.editor;bundle-version="1.0.0",
+ org.xilaew.atg.base,
+ org.xilaew.atg.core,
+ org.xilaew.atg.model.edit,
+ org.xilaew.atg.model.editor,
  org.eclipse.core.runtime,
  org.eclipse.jface,
  org.eclipse.emf.common,

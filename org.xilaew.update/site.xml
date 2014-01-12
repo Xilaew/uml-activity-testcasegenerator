@@ -6,7 +6,7 @@
    <feature url="features/org.eclipse.uml2.import.artisan.feature_1.0.0.jar" id="org.eclipse.uml2.import.artisan.feature" version="1.0.0">
       <category name="org.xilaew.atg.cathegory"/>
    </feature>
-   <feature url="features/org.xilaew.atg.feature_0.1.0.jar" id="org.xilaew.atg.feature" version="0.1.0">
+   <feature url="features/org.xilaew.atg.feature_0.1.0.jar" id="org.xilaew.atg.feature" version="0.2.1">
       <category name="org.xilaew.atg.cathegory"/>
    </feature>
    <category-def name="net.sf.parteg.cathegory" label="Partition Test Generator"/>
