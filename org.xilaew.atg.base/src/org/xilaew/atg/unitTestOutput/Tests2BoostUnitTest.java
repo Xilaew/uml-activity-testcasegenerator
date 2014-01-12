@@ -20,8 +20,8 @@ public class Tests2BoostUnitTest {
 
 	public static String generateUnitTest(TestSuite suite) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("#define BOOST_TEST_MAIN MyTest\n"
-				+ "#include <boost/test/included/unit_test.hpp>\n");
+		sb.append(//"#define BOOST_TEST_MAIN MyTest\n" + 
+				"#include <boost/test/unit_test.hpp>\n");
 		for (SUT sut : suite.getSut()) {
 			sb.append("#include \""
 					+ sut.getPackageName().replaceAll(":+", "/") + "/"

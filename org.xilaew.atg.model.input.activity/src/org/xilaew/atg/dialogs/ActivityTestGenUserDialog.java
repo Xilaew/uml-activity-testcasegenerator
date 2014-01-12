@@ -95,8 +95,6 @@ public class ActivityTestGenUserDialog extends Dialog {
 		combo_PATHSEARCH_SOLVER.setItems(new String[] {"ilogcp", "cplex", "minos", "gecode", "couenne", "lpsolve", "gurobi"});
 		combo_PATHSEARCH_SOLVER.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
 		combo_PATHSEARCH_SOLVER.setText(activityTestGenProperties.getProperty(SatisfiablePathSearch.PROPERTY_SOLVER));
-		parent.pack();
-		container.pack();
 
 		return container;
 	}
@@ -124,5 +122,4 @@ public class ActivityTestGenUserDialog extends Dialog {
 	public Properties getActivityTestGenProperties() {
 		return activityTestGenProperties;
 	}
-	
 }

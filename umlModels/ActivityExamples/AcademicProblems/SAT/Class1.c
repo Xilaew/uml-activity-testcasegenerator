@@ -18,7 +18,7 @@ void count(const bool* const o0, const bool* const o1,
 		s1 = s0? s1:~s1;
 		s2 = s0||s1? s2:~s2;
 		s3 = s0||s1||s2? s3:~s3;
-	} while (*o0!=s0 && *o1!=s1 && *o2!=s2 && *o3!=s3)
+	} while (*o0!=s0 && *o1!=s1 && *o2!=s2 && *o3!=s3);
 }
 
 
