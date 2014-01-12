@@ -24,6 +24,10 @@ extern bool s3;
 
 void count(const bool* const o0, const bool* const o1, const bool* const o2,
 		const bool* const o3);
+void counter(const bool* const o0, const bool* const o1, const bool* const o2,
+		const bool* const o3);
+void counterSAT(const bool* const o0, const bool* const o1, const bool* const o2,
+		const bool* const o3);
 
 #ifdef __cplusplus
 }

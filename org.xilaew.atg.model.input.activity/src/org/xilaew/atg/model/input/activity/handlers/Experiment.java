@@ -6,8 +6,6 @@ import java.util.Properties;
 import org.eclipse.atg.model.pathsearch.PathSearch;
 import org.eclipse.atg.model.pathsearch.SatisfiablePathSearch;
 import org.eclipse.atg.model.pathsearch.SolverBFS;
-import org.eclipse.atg.model.pathsearch.SolverDFS;
-import org.eclipse.atg.model.pathsearch.SolverDFS2;
 import org.eclipse.atg.model.pathsearch.Witness;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -63,6 +61,7 @@ public class Experiment extends AbstractHandler {
 		// The original UML File
 		IFile umlFile = ResourceUtil.getFile(editor.getEditorInput());
 		IProject project = umlFile.getProject();
+		// Synchronize project folder with file System
 		try {
 			project.refreshLocal(IProject.DEPTH_ONE, null);
 		} catch (CoreException e2) {
@@ -71,14 +70,18 @@ public class Experiment extends AbstractHandler {
 		}
 		// The Input Activity
 		Activity activity = prepareTestGeneration();
+		
+		// The Activity Test Case Graph
+		TCGActivity tcgActivity = null;
+		
+		// Create Experiment Result File
 		IFile experimentResults = project
 				.getFile("PluginOutputExpreriment.txt");
-		IFile tests;
+		IFile boostfile;
 		double id = Math.random();
 		if (experimentResults.exists()){
 			experimentResults = project.getFile("PluginOutputExperiment"+id+".txt");
 		}
-		TCGActivity tcgActivity = null;
 		String timeMessurement = "#" + "Activity: " + activity.getQualifiedName()+ "\n"
 				+ PathSearch.PROPERTY_MAX_PATHLENGTH + "\t"
 				+ PathSearch.PROPERTY_MAX_NO_PATHS + "\t"
@@ -99,10 +102,8 @@ public class Experiment extends AbstractHandler {
 		// Ask user for parameters
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
 		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "-1");
-		properties
-				.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "cplex");
-		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS,
-				"2");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "cplex");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, "2");
 		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,
 				properties);
 		// dialog.create();
@@ -129,16 +130,21 @@ public class Experiment extends AbstractHandler {
 
 				ActTCG2AMPLModel.transform(tcgActivity);
 
-				// create PathData
+			// create PathData
 				SatisfiablePathSearch search = new SolverBFS();
 				search.setProperties(properties);
 				EMap<Path, Witness> paths = search
 						.findAllSatisfiablePaths(tcgActivity);
 				properties = search.getProperties();
 
+			// create UnitTests Model with specific data
 				TestSuite suite = TestsGeneratorHelper.generateTests(
 						tcgActivity, paths);
+
+			// create Boost unit test source code
 				String testString = Tests2BoostUnitTest.generateUnitTest(suite);
+
+			// Take time measurment
 				start = System.nanoTime() - start;
 				timeMessurement = properties
 						.getProperty(PathSearch.PROPERTY_MAX_PATHLENGTH)
@@ -162,11 +168,13 @@ public class Experiment extends AbstractHandler {
 						+ properties
 								.getProperty(SatisfiablePathSearch.STAT_INFEASIBLE_PATHS_ELIMINATED)
 						+ "\n";
+
+			// Output everything into the Files
 				try {
 					experimentResults.appendContents(new ByteArrayInputStream(
 							timeMessurement.getBytes()), 0, null);
-					tests = project.getFile("tests" + i + "_" + id +".cpp");
-					tests.create(new ByteArrayInputStream(
+					boostfile = project.getFile("tests" + i + "_" + id +".cpp");
+					boostfile.create(new ByteArrayInputStream(
 							testString.getBytes()), 0, null);
 				} catch (CoreException e) {
 					// TODO Auto-generated catch block
@@ -187,16 +195,9 @@ public class Experiment extends AbstractHandler {
 		if (sel instanceof IStructuredSelection) {
 			IStructuredSelection oSelection = (IStructuredSelection) sel;
 
-			// derive state machine from 2 different sources ...
-
-			// state machine itself in emf tree view
+			// Get Activity selected from UML Treevwiew
 			if (oSelection.getFirstElement() instanceof Activity) {
 				oActivity = (Activity) (oSelection.getFirstElement());
-				// }
-				// // state machine from a state machine diagram file
-				// else if (oSelection.getFirstElement() instanceof IFile) {
-				// IFile oFile = (IFile) oSelection.getFirstElement();
-				// oActivity = getReferencedStateMachineFromDiagram(oFile);
 			} else {
 				System.err.println("Context: "
 						+ oSelection.getFirstElement().getClass().getPackage()

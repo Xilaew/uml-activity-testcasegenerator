@@ -5,6 +5,8 @@ import java.util.Properties;
 
 import org.eclipse.atg.model.pathsearch.PathSearch;
 import org.eclipse.atg.model.pathsearch.SatisfiablePathSearch;
+import org.eclipse.atg.model.pathsearch.SolverBFS;
+import org.eclipse.atg.model.pathsearch.SolverDFS;
 import org.eclipse.atg.model.pathsearch.Witness;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -22,7 +24,6 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.uml2.uml.Activity;
-import org.xilaew.atg.dialogs.ActTCGPropertyDialog;
 import org.xilaew.atg.dialogs.ActivityTestGenUserDialog;
 import org.xilaew.atg.model.activityTestCaseGraph.TCGActivity;
 import org.xilaew.atg.model.testCaseGraphRuntime.Path;
@@ -60,51 +61,73 @@ public class CPPTestGenerationHandler extends AbstractHandler {
 		// The original UML File
 		IFile umlFile = ResourceUtil.getFile(editor.getEditorInput());
 		IProject project = umlFile.getProject();
+		// Synchronize project folder with file System
+		try {
+			project.refreshLocal(IProject.DEPTH_ONE, null);
+		} catch (CoreException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		// The Input Activity
 		Activity activity = prepareTestGeneration();
+		
+		// The Activity Test Case Graph
+		TCGActivity tcgActivity = null;
+		
 		// Boost UnitTest
 		IFile boostfile = project.getFile("PluginOutput.cpp");
-
-		// convert (UML) Activity to ActivityTestCaseGraph
-		TCGActivity tcgActivity = null;
-		try {
-			tcgActivity = UML2TCGActivity.transform(activity);
-		} catch (YouShallNotDoThisException e1) {
-			e1.printStackTrace();
-		}
-		// Perform Transformations on Activity Test Case Graph
-		ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
+		
 
 		// Ask user for parameters
 		properties.setProperty(PathSearch.PROPERTY_MAX_PATHLENGTH, "40");
-		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "20");
-		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "couenne");
+		properties.setProperty(PathSearch.PROPERTY_MAX_NO_PATHS, "-1");
+		properties.setProperty(SatisfiablePathSearch.PROPERTY_SOLVER, "cplex");
 		properties.setProperty(SatisfiablePathSearch.PROPERTY_UNCHECKED_STEPS, "2");
-		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,properties);
-//		dialog.create();
-		dialog.open();
-		properties = dialog.getActivityTestGenProperties();
+		ActivityTestGenUserDialog dialog = new ActivityTestGenUserDialog(null,
+				properties);
+		// dialog.create();
+		if (dialog.open() == dialog.OK) {
+			properties = dialog.getActivityTestGenProperties();
 
-		SatisfiablePathSearch search = SatisfiablePathSearch.SOLVER_DFS;
-		search.setProperties( properties );
-		EMap<Path,Witness> paths = search.findAllSatisfiablePaths(tcgActivity);
-
-		// create UnitTests Model with specific data
-		TestSuite suite = TestsGeneratorHelper
-				.generateTests(tcgActivity, paths);
-		// create Boost Test sourceCode
-		String unitTest = Tests2BoostUnitTest.generateUnitTest(suite);
-
-		// Output everything into the Files
-		try {
-			if (boostfile.exists()){
-				boostfile.setContents(new ByteArrayInputStream(unitTest.getBytes()), true, true, null);
-			}else{
-				boostfile.create(new ByteArrayInputStream(unitTest.getBytes()), true, null);
+			// convert (UML) Activity to ActivityTestCaseGraph
+			try {
+				tcgActivity = UML2TCGActivity.transform(activity);
+			} catch (YouShallNotDoThisException e1) {
+				e1.printStackTrace();
 			}
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// Perform Transformations on Activity Test Case Graph
+			ActTCGContinuityHelper.addContinuityConstraints(tcgActivity);
+
+
+			// create PathData
+			SatisfiablePathSearch search = new SolverDFS();
+			search.setProperties(properties);
+			EMap<Path, Witness> paths = search
+					.findAllSatisfiablePaths(tcgActivity);
+			properties = search.getProperties();
+
+			// create UnitTests Model with specific data
+			TestSuite suite = TestsGeneratorHelper.generateTests(tcgActivity,
+					paths);
+
+			// create Boost unit test source code
+			String testString = Tests2BoostUnitTest.generateUnitTest(suite);
+
+			// Output everything into the Files
+			try {
+				if (boostfile.exists()) {
+					boostfile.setContents(
+							new ByteArrayInputStream(testString.getBytes()),
+							true, true, null);
+				} else {
+					boostfile.create(
+							new ByteArrayInputStream(testString.getBytes()),
+							true, null);
+				}
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
