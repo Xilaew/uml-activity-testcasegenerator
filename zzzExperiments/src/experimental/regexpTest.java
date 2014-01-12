@@ -7,8 +7,9 @@ public class regexpTest {
 
 	public static void main(String[] argv) throws Exception {
 
-		CharSequence inputStr = " 0  NaN";
-		String patternStr = "\\s*(\\d+)\\s+((-?\\d+\\.?\\d*)|NaN)";
+		CharSequence inputStr = "jacop 3.2: exit code 1";
+		String patternStr = "\\s+exit\\s+code\\s+(\\-?\\d+)";
+//		String patternStr = "\\s*(\\d+)\\s+((-?\\d+\\.?\\d*)|NaN)";
 
 		Pattern pattern = Pattern.compile(patternStr);
 		Matcher matcher = pattern.matcher(inputStr);

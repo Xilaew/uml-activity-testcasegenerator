@@ -22,9 +22,9 @@ import util.Output;
  * 
  */
 public class JAMPL {
-	
-	JAMPL(){
-		
+
+	JAMPL() {
+
 	};
 
 	protected String getSolver() {
@@ -93,6 +93,7 @@ public class JAMPL {
 		String line = null;
 		SolveResult result = null;
 		Pattern pattern = Pattern.compile("solve_result\\s*=\\s*(.*)");
+		Pattern exitpattern = Pattern.compile(".*:\\s+exit\\s+code\\s+(\\-?\\d+)");
 		while (result == null) {
 			line = cli.readLine();
 			if (line != null) {
@@ -100,15 +101,23 @@ public class JAMPL {
 				lastLines[i++ % 10] = line;
 				Matcher matcher = pattern.matcher(line);
 				if (matcher.matches()) {
+					//System.out.println("Solver returned := " + line);
 					result = SolveResult.Failure;
 					if (matcher.group(1).contains("solved")) {
 						result = SolveResult.Solved;
-					}
+					}					
 					if (matcher.group(1).contains("infeasible")) {
 						result = SolveResult.Infeasible;
 					}
 					if (matcher.group(1).contains("unbounded")) {
 						result = SolveResult.Unbounded;
+					}
+				}
+				Matcher exitmatch = exitpattern.matcher(line);
+				if (exitmatch.matches()) {
+					System.out.println("Solver crashed := " + line);
+					if (!exitmatch.group(1).contains("0")) {
+						result = SolveResult.Failure;
 					}
 				}
 			} else {
