@@ -164,11 +164,11 @@ class TCG2AMPLVisitor extends ActivityTestCaseGraphSwitch<String> {
 		// XXX here is some type Handling Code. Maybe it is better centralized
 		String typeSpec = null;
 		if (object.getVariableType().equals(TCGBasicVariableType.INTEGER))
-			typeSpec = " : integer >=-100000, <= 100000";
+			typeSpec = " : integer >=-10000, <= 10000";
 		if (object.getVariableType().equals(TCGBasicVariableType.BOOLEAN))
 			typeSpec = " : integer >=0, <= 1";
 		if (object.getVariableType().equals(TCGBasicVariableType.REAL))
-			typeSpec = ">=-100000, <= 100000";
+			typeSpec = ">=-10000, <= 10000";
 		String result = "var " + object.getName()
 				+ (object.isIsParameter() ? "" : "{0..Pathlength}") + typeSpec
 				+ " := 1;\n";

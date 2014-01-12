@@ -137,10 +137,12 @@ public class JAMPL {
 		Double result = null;
 		cli.sendCommand("display " + varName + ";");
 		Pattern p = Pattern.compile("^(" + varName
-				+ ")\\s=\\s(-?\\d+\\.?\\d*)$");
+				+ ")\\s=\\s(-?\\d+\\.?\\d*e?\\+?\\d*)$");
+		String line;
+		Matcher m;
 		while (result == null) {
-			String line = cli.readLine();
-			Matcher m = p.matcher(line);
+			line = cli.readLine();
+			m = p.matcher(line);
 			// System.out.println(line);
 			if (m.matches()) {
 				result = Double.parseDouble(m.group(2));
