@@ -131,18 +131,14 @@ DER LIZENZGEBER HAFTET IHNEN GEGENÜBER IN BEZUG AUF SCHÄDEN AUS DER VERLETZUNG
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="net.sf.parteg.input.statemachine"/>
-      <import plugin="org.xilaew.atg.base" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.xilaew.atg.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.xilaew.atg.model.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.xilaew.atg.model.editor" version="1.0.0" match="greaterOrEqual"/>
-      <import feature="net.sf.parteg.feature" version="1.4.0"/>
-      <import feature="org.eclipse.emf" version="2.9.0.v20130610-0406"/>
       <import plugin="org.eclipse.core.databinding"/>
       <import plugin="org.eclipse.core.databinding.beans"/>
       <import plugin="org.eclipse.core.databinding.observable"/>
       <import plugin="org.eclipse.core.databinding.property"/>
       <import plugin="org.eclipse.jface.databinding"/>
       <import plugin="com.ibm.icu"/>
+      <import feature="net.sf.parteg.feature" version="1.4.0"/>
+      <import feature="org.eclipse.emf" version="2.9.0.v20130610-0406"/>
    </requires>
 
    <plugin
