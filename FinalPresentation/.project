@@ -14,4 +14,11 @@
 	<natures>
 		<nature>net.sourceforge.texlipse.builder.TexlipseNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>bibtex.bib</name>
+			<type>1</type>
+			<location>C:/Users/xilaew/git/uml-activity-testcasegenerator/Thesis/bibtex.bib</location>
+		</link>
+	</linkedResources>
 </projectDescription>

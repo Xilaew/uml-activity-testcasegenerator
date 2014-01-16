@@ -34,14 +34,14 @@
 \frametitle{Model--Based Engineering at Airbus Buxtehude}
 \includegraphics[width=\textwidth]{../Thesis/pics/BasicExamplesSimpleDecision.pdf}
 \end{frame}
-\subsection{Overview of our Solution}
+\subsection{Overview of the Solution}
 \begin{frame}
-\frametitle{Overview of our Solution}
+\frametitle{Overview of the Solution}
 \begin{description}
-\item[Test Model:] A UML activity diagram with embedded OCL constraints modelling an operation/function is used as test model.
-\item[Symbolic Execution:] Control flow paths within the activity diagram are executed and stored as constraint satisfaction problem.
-\item[Constraint Solving:] A variety of state--of--the--art constraint solvers can be used to generate test data for an executed control flow path.
-\item[Language Independent:] Test model and test cases and are stored as an instance of our own intermediate meta models.
+\item[Test Model:] UML activity diagram with embedded OCL constraints modelling an operation/function
+\item[Symbolic Execution:] Control flow paths within the activity diagram are converted into a constraint satisfaction problem
+\item[Constraint Solving:] A variety of state--of--the--art constraint solvers is used to generate test data
+\item[Language Independent:] Test model and test cases are stored as an instance of intermediate meta models
 \end{description}
 \end{frame}
 
@@ -49,50 +49,65 @@
 \section{The Algorithm}
 \begin{frame}
 \frametitle{Overview of the Algorithm}
-\begin{block}{Normalisation}
+\begin{block}{}
 Map UML/OCL to simplified intermediate representation
 \end{block}
-\begin{block}{Rigorous Mathematical Programming}
+\begin{block}{}
 Transform activity diagram into an AMPL model
 \end{block}
-\begin{block}{Abstract Test Case Generation}
+\begin{block}{}
 Find control flow paths using depth first and breadth first search
 \end{block}
-\begin{block}{Specific Test Data Generation}
+\begin{block}{}
 Solve constraint satisfaction problem for each control flow path
 \end{block}
-\begin{block}{Unit Test Synthesis}
+\begin{block}{}
 Output test cases as C++ unit tests using the Boost test library
 \end{block}
 \end{frame}
+% \begin{frame}
+% \frametitle{Overview of the Algorithm}
+% \begin{block}{Normalisation}
+% Map UML/OCL to simplified intermediate representation
+% \end{block}
+% \begin{block}{Rigorous Mathematical Programming}
+% Transform activity diagram into an AMPL model
+% \end{block}
+% \begin{block}{Abstract Test Case Generation}
+% Find control flow paths using depth first and breadth first search
+% \end{block}
+% \begin{block}{Specific Test Data Generation}
+% Solve constraint satisfaction problem for each control flow path
+% \end{block}
+% \begin{block}{Unit Test Synthesis}
+% Output test cases as C++ unit tests using the Boost test library
+% \end{block}
+% \end{frame}
+% \begin{frame}
+% \frametitle{Overview of the Algorithm}
+% \includegraphics[width=\textwidth]{../Thesis/pics/Workflow.pdf}
+% \end{frame}
 \subsection{Normalisation}
 \begin{frame}
 \frametitle{Goals of Normalisation}
 \begin{itemize}
-  \item Ensure that our algorithm does not run into error conditions
+  \item Ensure that the algorithm does not run into error conditions
   \item Slice relevant parts out of a huge UML model
   \item Parse embedded OCL constraints and ensure that they comply to the handled OCL subset
-  \item Make implicit constraints explicit automatically
+  \item Make implicit constraints automatically explicit
 \end{itemize}
 \begin{block}{}
 Subsequent steps are completely independent from the UML/OCL model
 \end{block}
 \end{frame}
-\begin{frame}
-\frametitle{The Activity Test Case Graph Model}
-	\includegraphics[width=\textwidth]{../IntermediatePresentation/pics/completeMetamodelforSlideshowN.pdf}
-\end{frame}
 
 \subsection{Rigorous Mathematical Programming}
 \begin{frame}
-\frametitle{AMPL Modelling}
+\frametitle{AMPL Modelling \cite{AMPL}}
 \begin{itemize}
   \item Represent activity diagram in a form that is understood by constraint solvers
-\end{itemize}
-\vspace{0.3cm}
-\begin{itemize}
-  \item AMPL modelling language\cite{AMPL} allows for transparent exchange of solvers depending on the formulation of constraints
-  \item Enable easy encoding of a control flow path as constraint satisfaction problem whose solution is suitable test data
+  \item Solution of an AMPL program is a sequence of variable assignments
+  \item Control flow path is specified as AMPL data
 \end{itemize}
 % \begin{block}{}
 % Represent activity diagram in a form that is understood by constraint solvers
@@ -157,12 +172,8 @@ s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
 \frametitle{Abstract Test Case Generation}
 \begin{itemize} 
 \item Determine appropriate test scenarios fulfilling model structure based coverage criteria
-\item Detect infeasible control flow paths as early as possible
-\end{itemize}
-\vspace{0.3cm}
-\begin{itemize} 
 \item Simple breadth first or depth first search used to find control flow paths
-\item Maximum path length or a fixed number of control flow paths can be given as parameter to ensure termination of the algorithm
+\item Maximum path length or number of control flow paths parameter ensures termination of the algorithm
 \item Infeasible paths are eliminated by solving all constraints along a path
 \item How often infeasible path elimination is performed can be controlled by the parameter unchecked steps
 %\item Infeasible paths elimination is performed whenever search is currently examining a real decision node and unchecked steps decision nodes have already been passed without a check
@@ -176,40 +187,11 @@ s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
 \frametitle{Specific Test Data Generation}
 \begin{itemize} 
 \item For each test scenario input data and oracle values need to be computed
-\item Values at the boundaries of path constraints are known to trigger bugs with a higher likelihood
-\end{itemize}
-\vspace{0.3cm}
-\begin{itemize} 
 \item Control flow path is symbolically executed and encoded in AMPL data
 \item State--of--the--art constraint solver generates test input and the oracle value from the AMPL program
 \item Boundary value analysis is possible by adding an objective function to the AMPL model
 \item All generated test data is stored in a language independent unit test model
 \end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Tested Solvers}
-\begin{center}
-\begin{tabular}{l r r r r r r r r}
-Solver & LP & MILP & COP & OP & SAT & SMT & FCSP & MINLP\\
-\hline
-Cplex & \checkmark & \checkmark & & & & & &\\
-IlogCP\cite{ilogcp} & \checkmark & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
-GeCoDE\cite{gecode} & & & & &\checkmark & \checkmark & \checkmark &\\
-JaCoP & & & & &\checkmark & & \checkmark &\\
-Couenne\cite{Belotti09couenne} & \checkmark & \checkmark & \checkmark & \checkmark & & & & \checkmark\\
-Gurobi & \checkmark & & \checkmark & & & & &\\
-LPsolve\cite{lpsolve} & \checkmark &\checkmark  & & & & & &\\
-Minos &\checkmark & &\checkmark & & & & &\\
-% conopt & & & & & & & &\\
-% knitro & & & & & & & &\\
-% snopt & & & & & & & &\\
-% xpress & & & & & & & &\\
-% bonmin & & & & & & & &\\
-% cbc & & & & & & & &\\
-% ipopt & & & & & & & &\\
-\hline
-\end{tabular}\end{center}
 \end{frame}
 
 \subsection{Unit Test Synthesis}
@@ -218,9 +200,6 @@ Minos &\checkmark & &\checkmark & & & & &\\
 \begin{itemize} 
 \item Output compileable unit test code
 \item Support state--of--the--art testing framework
-\end{itemize}
-\vspace{0.3cm}
-\begin{itemize} 
 \item Model-to-Text transformation from unit test model and activity test case graph
 \item Currently C++ unit tests using the Boost test library are generated
 \end{itemize}
@@ -243,61 +222,6 @@ Minos &\checkmark & &\checkmark & & & & &\\
 % \input{./pics/TriangleClasificator.pdf_tex}
 \includegraphics[width=\textwidth]{./pics/TriangleClasivicator.pdf}
 \end{frame}
-\begin{frame}
-\frametitle{Binary Counter}
-% \def\svgwidth{\textwidth}
-% \scriptsize
-% \input{./pics/TriangleClasificator.pdf_tex}
-\includegraphics[width=\textwidth]{./pics/BinaryCounderSMT.pdf}
-\end{frame}
-\begin{frame}
-\frametitle{Runtime Measurement for Different Solvers}
-\begin{tikzpicture}
-\begin{axis}[
-width=0.598\textwidth,
-height=7.5cm,
-xlabel={maximum path length},
-ylabel={time $[s]$},
-legend style={legend columns=1,at={(0.02,0.98)},anchor=north west},
-%yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
-extra tick style={
-        major grid style=black,
-        tick align=outside,
-        tick style=black
-    },
-minor x tick num=1,
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-xmin=5,
-xmax=95,
-]
-\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
-\addlegendentry{GeCoDE};
-\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/BinaryCounterJacop+presolveSMT.csv};
-\addlegendentry{JaCoP};
-\end{axis}
-\end{tikzpicture}%
-\begin{tikzpicture}
-\begin{axis}[
-width=0.398\textwidth,
-height=7.5cm,
-nodes near coords,
-xmin=5,
-xmax=95,
-% xtick={10,20,30,40,50,60,70,80,90},
-xlabel={maximum path length},
-ylabel={total number of test cases},
-]
-\addplot+[black,mark=x,only marks] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
-\end{axis}
-\end{tikzpicture}
-\end{frame}
-
 \begin{frame}
 \frametitle{Exploding Tyres}
 % \def\svgwidth{\textwidth}
@@ -395,6 +319,198 @@ The resulting constraint satisfaction problem is a mixed integer linear program
 \end{block}
 \end{frame}
 \begin{frame}
+\frametitle{Runtime Depending on the Unchecked Steps}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.6\textwidth,
+height=7.5cm,
+legend style={legend columns=1,at={(1.02,0.98)},anchor=north west},
+xlabel={unchecked steps},
+xmax=15,
+ylabel={time $[s]$},
+yticklabels={{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addlegendimage{empty legend}
+\addlegendentry{maximum path length}
+\addplot[densely dashed, blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps90.csv};
+\addlegendentry{90};
+\addplot[densely dashed, green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addlegendentry{80};
+\addplot[densely dashed, red] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps70.csv};
+\addlegendentry{70};
+\addplot[blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps60.csv};
+\addlegendentry{60};
+\addplot[green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps50.csv};
+\addlegendentry{50};
+\addplot[red] table[x=PATHSEARCH_UNCHECKED_STEPS,y={time(ns)}]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps40.csv};
+\addlegendentry{40};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Runtime with and without Boundary Value Analysis}
+\begin{tikzpicture}
+\begin{axis}[
+width=\textwidth,
+height=7.5cm,
+%title={Influence of boundary value analysis},
+legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={time $[s]$},
+xlabel={maximum path length},
+%ytick={1e8,1e10,1e12,1e14},
+yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
+\addlegendentry{with};
+\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
+\addlegendentry{without}
+\end{axis}
+\end{tikzpicture}%
+\end{frame}
+\begin{frame}
+\frametitle{Experiments Summary}
+\begin{itemize}
+  \item Runtime measurements varying solvers and parameters
+  \item Mutation testing
+  \item Runtime grows exponentially with maximum path length
+  \item Early infeasible path recognition drastically reduces the runtime
+  \item Sub--optimal execution plans are detected as error
+\end{itemize}
+\end{frame}
+
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+  \item mixed integer linear programming can be handled especially efficiently
+  \item All control flow paths is not a feasible coverage criterion
+  \vspace{0.2cm}
+  \item Abstract Test Case Generation will reuse ideas from \cite{ParTeG}
+  \item Add support for further UML/OCL modelling elements and features
+  \item Add support for other languages and frameworks
+  \vspace{0.2cm}
+  \item Current constraint solvers can efficiently generate test data for industry scale applications
+  \item A fully working proof-of-concept tool (soon available at \cite{PartegWebsite})
+\end{itemize}
+\end{frame}
+
+
+\section*{Appendix}
+\begin{frame}
+\frametitle{The Activity Test Case Graph Model}
+	\includegraphics[width=\textwidth]{../IntermediatePresentation/pics/completeMetamodelforSlideshowN.pdf}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tested Solvers}
+\begin{center}
+\begin{tabular}{l r r r r r r r r}
+Solver & LP & MILP & COP & OP & SAT & SMT & FCSP & MINLP\\
+\hline
+Cplex & \checkmark & \checkmark & & & & & &\\
+IlogCP\cite{ilogcp} & \checkmark & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
+GeCoDE\cite{gecode} & & & & &\checkmark & \checkmark & \checkmark &\\
+JaCoP & & & & &\checkmark & & \checkmark &\\
+Couenne\cite{Belotti09couenne} & \checkmark & \checkmark & \checkmark & \checkmark & & & & \checkmark\\
+Gurobi & \checkmark & & \checkmark & & & & &\\
+LPsolve\cite{lpsolve} & \checkmark &\checkmark  & & & & & &\\
+Minos &\checkmark & &\checkmark & & & & &\\
+% conopt & & & & & & & &\\
+% knitro & & & & & & & &\\
+% snopt & & & & & & & &\\
+% xpress & & & & & & & &\\
+% bonmin & & & & & & & &\\
+% cbc & & & & & & & &\\
+% ipopt & & & & & & & &\\
+\hline
+\end{tabular}\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Binary Counter}
+% \def\svgwidth{\textwidth}
+% \scriptsize
+% \input{./pics/TriangleClasificator.pdf_tex}
+\includegraphics[width=\textwidth]{./pics/BinaryCounderSMT.pdf}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Runtime Measurement for Different Solvers}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.598\textwidth,
+height=7.5cm,
+xlabel={maximum path length},
+ylabel={time $[s]$},
+legend style={legend columns=1,at={(0.02,0.98)},anchor=north west},
+%yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+xmin=5,
+xmax=95,
+]
+\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\addlegendentry{GeCoDE};
+\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/BinaryCounterJacop+presolveSMT.csv};
+\addlegendentry{JaCoP};
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.398\textwidth,
+height=7.5cm,
+nodes near coords,
+xmin=5,
+xmax=95,
+% xtick={10,20,30,40,50,60,70,80,90},
+xlabel={maximum path length},
+ylabel={total number of test cases},
+]
+\addplot+[black,mark=x,only marks] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/BinaryCounterGecode+presolveSMT.csv};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
 \frametitle{Runtime Depending on the Maximum Path Length}
 \begin{tikzpicture}
 \begin{axis}[
@@ -454,48 +570,7 @@ node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.1 ^ {x}$}
 \end{axis}
 \end{tikzpicture}
 \end{frame}
-\begin{frame}
-\frametitle{Runtime Depending on the Unchecked Steps}
-\begin{tikzpicture}
-\begin{axis}[
-width=0.6\textwidth,
-height=7.5cm,
-legend style={legend columns=1,at={(1.02,0.98)},anchor=north west},
-xlabel={unchecked steps},
-xmax=15,
-ylabel={time $[s]$},
-yticklabels={{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
-extra tick style={
-        major grid style=black,
-        tick align=outside,
-        tick style=black
-    },
-minor x tick num=1,
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-]
-\addlegendimage{empty legend}
-\addlegendentry{maximum path length}
-\addplot[densely dashed, blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps90.csv};
-\addlegendentry{90};
-\addplot[densely dashed, green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps80.csv};
-\addlegendentry{80};
-\addplot[densely dashed, red] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps70.csv};
-\addlegendentry{70};
-\addplot[blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps60.csv};
-\addlegendentry{60};
-\addplot[green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps50.csv};
-\addlegendentry{50};
-\addplot[red] table[x=PATHSEARCH_UNCHECKED_STEPS,y={time(ns)}]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps40.csv};
-\addlegendentry{40};
-\end{axis}
-\end{tikzpicture}
-\end{frame}
+
 \begin{frame}
 \frametitle{Runtime Depending on the Number of Test Cases}
 \begin{tikzpicture}
@@ -574,57 +649,16 @@ node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$}
 % \end{axis}
 % \end{tikzpicture}%
 \end{frame}
-\begin{frame}
-\frametitle{Runtime with and without Boundary Value Analysis}
-\begin{tikzpicture}
-\begin{axis}[
-width=\textwidth,
-height=7.5cm,
-%title={Influence of boundary value analysis},
-legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={time $[s]$},
-xlabel={maximum path length},
-%ytick={1e8,1e10,1e12,1e14},
-yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
-extra tick style={
-        major grid style=black,
-        tick align=outside,
-        tick style=black
-    },
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-]
-\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
-\addlegendentry{with};
-\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
-\addlegendentry{without}
-\end{axis}
-\end{tikzpicture}%
-\end{frame}
 
-\section{Summary}
-\begin{frame}
-\frametitle{Summary}
-\begin{itemize}
-  \item In general there are very little restrictions on the formulation of constraints, but mixed integer linear programming can be handled especially efficiently
-  \item All control flow paths is not a feasible coverage criterion, the Abstract Test Case Generation should be improved accordingly
-  \item This approach can easily be adapted to other input models (other UML Tools) and other output languages due to its internal model representation
-\end{itemize}
-\end{frame}
 
-\section*{Appendix}
-\begin{frame}
-\begin{block}{Thank you!}
-\begin{center}
-\Huge{Questions?}
-\end{center}
-\end{block}
-\end{frame}
+
+% \begin{frame}
+% \begin{block}{Thank you!}
+% \begin{center}
+% \Huge{Questions?}
+% \end{center}
+% \end{block}
+% \end{frame}
 \frametitle{Bibliography}
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{plain}
