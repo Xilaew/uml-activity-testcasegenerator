@@ -8,13 +8,15 @@
 \title[Automated Generation of Unit Tests]{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers} 
 \subtitle[M.Sc. Thesis]{A Master Thesis} 
 \author[F. Kurth]{Felix Kurth} 
-\day=14
+\day=17
 \month=1
 \year=2014
 \date[Jan 2014]{\today} 
 
 \pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
 \logo{\pgfuseimage{STS-logo}}
+\subject{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers}
+%\titlegraphic{\includegraphics[height=1cm]{./pics/Airbus.jpg}}
 
 \begin{document}
 
@@ -34,6 +36,11 @@
 \frametitle{Model--Based Engineering at Airbus Buxtehude}
 \includegraphics[width=\textwidth]{../Thesis/pics/BasicExamplesSimpleDecision.pdf}
 \end{frame}
+\begin{frame}
+\frametitle{Placement in the V-Model}
+\includegraphics[width=\textwidth,height=0.8\textheight]{./pics/V-model.jpg}
+\end{frame}
+
 \subsection{Overview of the Solution}
 \begin{frame}
 \frametitle{Overview of the Solution}
@@ -109,44 +116,12 @@ Subsequent steps are completely independent from the UML/OCL model
   \item Solution of an AMPL program is a sequence of variable assignments
   \item Control flow path is specified as AMPL data
 \end{itemize}
+\begin{block}{}
+The centrepiece of the test generation
+\end{block}
 % \begin{block}{}
 % Represent activity diagram in a form that is understood by constraint solvers
 % \end{block}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Basic Example}
-\begin{columns}
- \column{.39\textwidth} \ 
-	\begin{block}{Activity Diagram} 
-	\def\svgwidth{\textwidth}
-	\scriptsize
-	\import{pics/}{BasicExamples.pdf_tex}
-	\end{block} 
-\column{.56\textwidth} \ 
-	\begin{block}{AMPL Model} 
-		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
-param l; #Pathlength
-
-# Variables (Property or Parameter)
-var x{0..l} : integer := 1;
-var y : integer := 1;
-
-# Postconditions
-set t within {0..l} default {};
-s.t. t_post0{i in t} : (y)=(x[i-1]);
-s.t. t_post1{i in t} : (x[i])=(x[i-1]);
-set e within {0..l} default {};
-s.t. e_post0{i in e} : (y)=(x[i-1]-100);
-s.t. e_post0{i in e} : (x[i])=(x[i-1]);
-
-# Guards
-set d2e within {0..l} default {};
-s.t. d2e_g{i in d2e} : (x[i])>=(6.0);
-set d2t within {0..l} default {};
-s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
-\end{lstlisting}
-	\end{block} 
-\end{columns}
 \end{frame}
 
 % \begin{frame}[fragile]
@@ -214,9 +189,15 @@ s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
 % \end{center}
 % \end{block}
 % \end{frame}
-
 \begin{frame}
 \frametitle{Triangle Classificator}
+% \def\svgwidth{\textwidth}
+% \scriptsize
+% \input{./pics/TriangleClasificator.pdf_tex}
+\includegraphics[width=\textwidth]{./pics/TriangleLin.pdf}
+\end{frame}
+\begin{frame}
+\frametitle{Triangle Classificator with Logical Operations}
 % \def\svgwidth{\textwidth}
 % \scriptsize
 % \input{./pics/TriangleClasificator.pdf_tex}
@@ -319,6 +300,16 @@ The resulting constraint satisfaction problem is a mixed integer linear program
 \end{block}
 \end{frame}
 \begin{frame}
+\frametitle{Atego\textsuperscript{\textregistered} Artisan Studio Integration}
+\begin{itemize}
+  \item XMI format exported from Artisan Studio can be imported in Eclipse Modelling Framework
+\end{itemize}
+\includegraphics[width=\textwidth]{./pics/AtegoATCGConversion.pdf}
+\begin{block}{}
+Better let the Normalisation directly access the Atego\textsuperscript{\textregistered} Model API
+\end{block}
+\end{frame}
+\begin{frame}
 \frametitle{Runtime Depending on the Unchecked Steps}
 \begin{tikzpicture}
 \begin{axis}[
@@ -362,38 +353,6 @@ ymode=log,
 \end{frame}
 
 \begin{frame}
-\frametitle{Runtime with and without Boundary Value Analysis}
-\begin{tikzpicture}
-\begin{axis}[
-width=\textwidth,
-height=7.5cm,
-%title={Influence of boundary value analysis},
-legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={time $[s]$},
-xlabel={maximum path length},
-%ytick={1e8,1e10,1e12,1e14},
-yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
-extra tick style={
-        major grid style=black,
-        tick align=outside,
-        tick style=black
-    },
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-]
-\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
-\addlegendentry{with};
-\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
-\addlegendentry{without}
-\end{axis}
-\end{tikzpicture}%
-\end{frame}
-\begin{frame}
 \frametitle{Experiments Summary}
 \begin{itemize}
   \item Runtime measurements varying solvers and parameters
@@ -411,7 +370,8 @@ ymode=log,
   \item mixed integer linear programming can be handled especially efficiently
   \item All control flow paths is not a feasible coverage criterion
   \vspace{0.2cm}
-  \item Abstract Test Case Generation will reuse ideas from \cite{ParTeG}
+%  \item Abstract Test Case Generation will reuse ideas from \cite{ParTeG}
+  \item Access Atego\textsuperscript{\textregistered} Artisan model API directly
   \item Add support for further UML/OCL modelling elements and features
   \item Add support for other languages and frameworks
   \vspace{0.2cm}
@@ -422,11 +382,47 @@ ymode=log,
 
 
 \section*{Appendix}
+
 \begin{frame}
 \frametitle{The Activity Test Case Graph Model}
 	\includegraphics[width=\textwidth]{../IntermediatePresentation/pics/completeMetamodelforSlideshowN.pdf}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Basic Example}
+\begin{columns}
+ \column{.39\textwidth} \ 
+	\begin{block}{Activity Diagram} 
+	\def\svgwidth{\textwidth}
+	\scriptsize
+	\import{pics/}{BasicExamples.pdf_tex}
+	\end{block} 
+\column{.56\textwidth} \ 
+	\begin{block}{AMPL Model} 
+		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
+param l; #Pathlength
+
+# Variables (Property or Parameter)
+var x{0..l} : integer := 1;
+var y : integer := 1;
+
+# Postconditions
+set t within {0..l} default {};
+s.t. t_post0{i in t} : (y)=(x[i-1]);
+s.t. t_post1{i in t} : (x[i])=(x[i-1]);
+set e within {0..l} default {};
+s.t. e_post0{i in e} : (y)=(x[i-1]-100);
+s.t. e_post0{i in e} : (x[i])=(x[i-1]);
+
+# Guards
+set d2e within {0..l} default {};
+s.t. d2e_g{i in d2e} : (x[i])>=(6.0);
+set d2t within {0..l} default {};
+s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
+\end{lstlisting}
+	\end{block} 
+\end{columns}
+\end{frame}
 
 \begin{frame}
 \frametitle{Tested Solvers}
@@ -648,6 +644,38 @@ node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$}
 % \addlegendentry{breadth first search}
 % \end{axis}
 % \end{tikzpicture}%
+\end{frame}
+\begin{frame}
+\frametitle{Runtime with and without Boundary Value Analysis}
+\begin{tikzpicture}
+\begin{axis}[
+width=\textwidth,
+height=7.5cm,
+%title={Influence of boundary value analysis},
+legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={time $[s]$},
+xlabel={maximum path length},
+%ytick={1e8,1e10,1e12,1e14},
+yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
+\addlegendentry{with};
+\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
+\addlegendentry{without}
+\end{axis}
+\end{tikzpicture}%
 \end{frame}
 
 
