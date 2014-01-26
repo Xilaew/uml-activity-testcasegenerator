@@ -1,87 +1,150 @@
-\documentclass[runningheads,a4paper]{llncs}
-
-\usepackage{amssymb}
-\setcounter{tocdepth}{3}
-\usepackage{graphicx}
-
-\usepackage{url}
-\urldef{\mailsa}\path|{felix.kurth, schupp}@tu-harburg.de|
-\newcommand{\keywords}[1]{\par\addvspace\baselineskip
-\noindent\keywordname\enspace\ignorespaces#1}
-\newcommand{\UMLType}[1]{\textsf{\textit{#1}}}
-\newcommand{\TCGType}[1]{#1}
-\newcommand{\UMLReference}[1]{\textsf{\textit{#1}}} 
-
-\begin{document}
-
-\mainmatter  % start of an individual contribution
-
-% first the title is needed
-\title{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers}
-
-% a short form should be given in case it is too long for the running head
-\titlerunning{Automated Generation of Unit Tests}
-
-% the name(s) of the author(s) follow(s) next
+\documentclass[runningheads,a4paper]{llncs}%
+%\documentclass[runningheads,a4paper]{article}%
 %
-% NB: Chinese authors should write their first names(s) in front of
-% their surnames. This ensures that the names appear correctly in
-% the running heads and the author index.
+\usepackage{amssymb}%
+\setcounter{tocdepth}{3}%
+\usepackage{graphicx}%
+%
+\usepackage{url}%
+\urldef{\mailsa}\path|{felix.kurth, schupp}@tu-harburg.de|%
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip%
+\noindent\keywordname\enspace\ignorespaces#1}%
+%
+% My user defined inclues%
+\usepackage{color} %Makes incscape pdf_tex work%
+\usepackage[T1]{fontenc} % makes Guillemont available%
+\newcommand{\UMLType}[1]{\textsf{\textit{#1}}} %
+\newcommand{\TCGType}[1]{#1}%
+\newcommand{\UMLReference}[1]{\textsf{\textit{#1}}} %
+%
+\begin{document}%
+%
+\mainmatter  % start of an individual contribution%
+%
+% first the title is needed%
+\title{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers}%
+%
+% a short form should be given in case it is too long for the running head%
+\titlerunning{Automated Generation of Unit Tests}%
+%
+% the name(s) of the author(s) follow(s) next%
+%
+% NB: Chinese authors should write their first names(s) in front of%
+% their surnames. This ensures that the names appear correctly in%
+% the running heads and the author index.%
 %
 \author{Felix Kurth%
-% \thanks{Please note that the LNCS Editorial assumes that all authors have used
-% the western naming convention, with given names preceding surnames. This determines
+% \thanks{Please note that the LNCS Editorial assumes that all authors have used%
+% the western naming convention, with given names preceding surnames. This determines%
 % the structure of the names in the running heads and the author index.}%
-\and Sibylle Schupp}
+\and Sibylle Schupp}%
 %
-%\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}
-% (feature abused for this document to repeat the title also on left hand pages)
-
-% the affiliations are given next; don't give your e-mail address
-% unless you accept that it will be published
-\institute{Hamburg University of Technology, Institute for Software Systems,\\
-Schwarzenbergstr. 95, 21073 Hamburg, Germany\\
-\mailsa\\
-\url{http://sts.tu-harburg.de}}
-
+%\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}%
+% (feature abused for this document to repeat the title also on left hand pages)%
 %
-% NB: a more complex sample for affiliations and the mapping to the
-% corresponding authors can be found in the file "llncs.dem"
-% (search for the string "\mainmatter" where a contribution starts).
-% "llncs.dem" accompanies the document class "llncs.cls".
+% the affiliations are given next; don't give your e-mail address%
+% unless you accept that it will be published%
+\institute{Hamburg University of Technology, Institute for Software Systems,\\%
+Schwarzenbergstr. 95, 21073 Hamburg, Germany\\%
+\mailsa\\%
+\url{http://sts.tu-harburg.de}}%
 %
-
-%\toctitle{Lecture Notes in Computer Science}
-%\tocauthor{Authors' Instructions}
+%
+% NB: a more complex sample for affiliations and the mapping to the%
+% corresponding authors can be found in the file "llncs.dem"%
+% (search for the string "\mainmatter" where a contribution starts).%
+% "llncs.dem" accompanies the document class "llncs.cls".%
+%
+%
+%\toctitle{Lecture Notes in Computer Science}%
+%\tocauthor{Authors' Instructions}%
 \maketitle%
+%
+\begin{abstract}%
+The task of Model-Based Testing is to ensure that the implementation behaves as specified in its model. We present a method to generate test data from UML activity diagrams. Our method uses symbolic execution to collect embedded OCL constraints along a control flow path and transforms them into `\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage' (AMPL). We derive test data from the mathematical program by having it solved with state--of--the--art constraint solvers. The generated tests will satisfy control flow--based coverage criteria on the used models. We also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in the collected OCL constraints. The presented method has been implemented in a demo Eclipse plug-in that generates fully automatically compilable C++ unit tests from activity diagrams.%
+% The abstract should summarise the contents of the paper and should%
+% contain at least 70 and at most 150 words. It should be written using the%
+% \emph{abstract} environment.%
+\keywords{Model-Based Testing, Activity Diagram, Constraint Solving, Symbolic Execution, Boundary Value Analysis, Eclipse Plug-In}%
+\end{abstract}%
+\section{Introduction}%
+Model--Based Engineering is a recent technology in the domain of electrical and software engineering. In Model--Based Engineering, the specification of a system is developed as a model. The Unified Modelling Language\textsuperscript{\texttrademark} (UML) is the quasi standard way to develop a specification. UML can be used to give a quick and intuitive overview of a system. At the same time it can be used as a formal modelling language to express details of the design. The activity diagram is one of the behavioural diagrams specified in the UML. It can be used to describe a use case at the system level as well as to visualise the detailed control flow and data flow of a function. Activity diagrams also support hierarchical modelling whereby it is possible to start with a vague description of the intended use of a system and add more and more details until one is at the level of a function.\\%
+Modelling is not an end unto itself. One way to get a benefit from Model-Based Engineering is to use the design model to automate other tasks in software development. One important task is testing.
+In this paper we present a transformation from an activity diagram into an `A Mathematical Programming Language' (AMPL) program. We symbolically execute control flow paths in the activity diagram and encode each of them as AMPL program. The solution of the resulting AMPL program contains input values and corresponding oracle values to test the implementation. We used depth first search to find control flow paths for which we generate test data. We also implemented early infeasible path elimination to reduce the runtime of our algorithm. %
+The presented transformation is implemented in a proof--of--concept fully automated test generation tool. It is available as Eclipse plug-in at \cite{PartegWebsite}.\\%
+\subsection{Literature Review}%
+While it is very common to use state machines as the test model, less research is performed on generating tests from UML activity diagrams. Wang Linzhang et al. propose in \cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod} a path search based method to find test scenarios in an activity diagram. They also claim to have implemented a proof--of--concept tool called UMLTGF, which, unfortunately, was unavailable for review. Another proposal using UML Activities as test model comes from Chen Minsong et al. \cite{mingsong2006automatic}. Their approach is to generate random executable unit tests for a Java implementation and matching the execution traces of the randomly generated unit tests with the control flow paths found in an activity diagram. They then select a subset from the test cases, which covers all simple paths in the test model.%
+% They propose using an activity diagram to automate the selection of a subset from a set of randomly generated unit tests for a set of Java classes and methods.
+\\%
+Stephan Wei{\ss}leder and Dehla Sokenou presented in \cite{weissleder2008automatic} a data oriented approach to select test cases. They propose to use abstract interpretation to derive partitions of the domain of input values. They then propose to select values at the boundaries of the computed partitions as test data.%
+In Stephan Wei{\ss}leders Ph.D Thesis \cite{ParTeG} we found the most detailed and complete collection of different model--structure and data--oriented coverage criteria. Furthermore, a formal definition of the coverage criteria is given. The source code of ParTeG, the proof--of--concept tool associated with this thesis, is freely available. It uses graph search in combination with abstract interpretation and a comprehensive framework allowing the user to steer which coverage criteria the generated test cases will adhere to.\\
+Using OCL as input and trying to obtain test data by solving OCL constraints there have been several proposals on how exactly to find models making an OCL formula true. Shaukat Ali et al. proposed in \cite{ali2011search} using evolutionary or genetic algorithms to search for potential solutions of OCL constraints. Matthias P. Krieger and Alexander Knapp proposed in \cite{krieger2008executingUnderspecifiedOCL} using a SAT solver to find instantiations of variables fulfilling OCL constraints. They suppose to transform OCL formulas into boolean formulas with bounded quantifiers and uninterpreted functions. Consequently they use a model finder, based on a SAT solver, capable of handling those formulas to find assignments to the variables.\\%
+In \cite{malburg2011combining} Jan Malburg and Gordon Fraser propose a hybrid approach. On the top level they use a genetic algorithm evolving a population of candidate test data internally they provide guidance to the genetic algorithm by providing a special mutation operator performing dynamic symbolic execution. Also the white--box unit test tool PEX \cite{pex} from Microsoft\textsuperscript{\textregistered} research is based on dynamic symbolic execution. Both publications, \cite{malburg2011combining} and \cite{pex}, propose to execute the implementation with random input values and generate new input values by collecting all path conditions along the executed control flow. Then they negate one of the path conditions and use a constraint solver to find a solution for the new constraint system. The generated solution is new input data which is guaranteed to take another control flow path in the program.\\%
+\subsection{Overview}%
+\subsubsection{Symbolic Execution}
+In order to make UML activity diagrams executable for test data generation we will transform all relevant constraints embedded in the UML model into a mathematical program. Executing a certain control flow path in the activity diagram means generating the corresponding mathematical program. The mathematical program will be stated in AMPL syntax. A mathematical program in AMPL consists of an AMPL model and AMPL data. One activity diagram will be transformed into one AMPL model and the currently executed control flow path can be specified in the AMPL data.\\
+%In order to compute test data for the system under test we will use AMPL (\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage). The activity diagram will be represented by arrays of variables and indexed collections of arithmetic constraints. In a data section for the model we can specify which control flow path within the activity diagram we are interested in. From the computed solution to the mathematical program we obtain the test data for the unit tests. 
+When building the AMPL model from the activity diagram, we have to be careful that the semantics of the resulting AMPL model corresponds with the semantics the modeller originally had in mind. We support the user by automatically adding constraints that would be cumbersome to make explicit manually.
+\subsection{State--Of--The--Art Constraint Solver Implementations} 
+%We generate test data for a control flow path in an activity diagram to be tested by having the corresponding AMPL program solved by a constraint solver. 
+A great advantage of a commonly used mathematical programming language is that industrial--strength solvers are available. The AMPL program corresponding to a possible control flow path in the activity diagram will be solved with a state--of--the--art solver. Then we obtain test data from the results of the constraint solver. The generated test data includes possible input arguments for the C function that implements the activity diagram. Also, all expected return values as well as values for class properties before and after the execution of the activity diagram are included.\\
+A suitable solver needs to be selected depending on the problem formulation. Not every solver can solve every AMPL program, and not every AMPL program is an instance of an easy--to--solve problem. An overview of the problems that are considered throughout this thesis can be found in Section \ref{sec:Maths}.
+\subsection{Results}
+A practical result of this thesis is an Eclipse plug-in that automatically generates unit tests from activity diagrams. The plug-in comes with a set of example models. Each example is an instance of a different mathematical problem and thus needs an appropriate solver to be solved successfully. Moreover, we performed an industrial case study using a model of the PAX--Call system, which is part of an Airbus product. We added the missing OCL constraints and successfully generated test cases for the largest activity diagram within the model. Finally, we experimentally determined the scalability of the implementation.
 
-\begin{abstract}
-The abstract should summarise the contents of the paper and should
-contain at least 70 and at most 150 words. It should be written using the
-\emph{abstract} environment.
-\keywords{Model-Based Testing, Constraint Solving, Symbolic Execution, Boundary Value Analysis}
-\end{abstract}
-
-
-\section{Introduction}
-From the domain of Model-Based Engineering arises the wish to generate unit tests for functions/operations from their design model. We present a transformation from an activity diagram into an `A Mathematical Programming Language' (AMPL) model. The solution of an AMPL program contains input values causing a certain control flow path to be executed. The oracle value is also computed.\\
-The presented transformation is implemented in a proof-of-concept fully automated test generation tool. It is available as Eclipse Plug-in at \cite{PartegWebsite}\\
-We used depth first search and to find control flow paths for which we generate test data. We also implemented early infeasible path elimination to reduce the runtime of our algorithm.
-\subsection{Literature Review}
-\subsection{Overview}
-\section{Preliminaries}
-\subsection{Semantics of the Test Model}
-As test model we assume an activity diagram with \UMLType{Action}s and \UMLType{ControlFlow}s modelling the control flow of an \UMLType{Operation}. The \UMLType{Activity} is linked as \UMLReference{method} to its specifying \UMLType{Operation}.
-\subsection{AMPL and its Solvers}
-\section{The Algorithm}
-\subsection{AMPL Transformation}
-\subsection{Boundary Value Analysis}
-\subsection{Early Infeasible Path Elimination}
-\section{Results}
-\subsection{Proof--of--Concept Tool}
-\subsection{Case Study}
-\section{Outlook}
-
-\bibliographystyle{splncs}
-\bibliography{../Thesis/bibtex}
+\section{Preliminaries}%
+\subsection{Semantics of the Test Model}%
+% XXX potentially add figure MOF Metamodel of relevant UML Elements%
+For the transformation into `A Mathematical Programming Language' (AMPL) presented in Section \ref{sec:AMPLTransformation} we need to clarify the semantics of the expected input model. In this subsection we first clarify which UML modelling elements we use and then will shortly remind of the Petri--Net semantics of activity diagrams and introduce the notion of states which will be relevant for our algorithm. For further details on the used modelling elements see \cite{UML23Superstructure}.\\%
+As test model we assume an activity diagram with \UMLType{Action}s, \UMLType{ControlNode}s and \UMLType{ControlFlow}s modelling the behaviour and control flow of an \UMLType{Operation}. The \UMLType{Activity} is linked as \UMLReference{method} to its specifying \UMLType{Operation}. Each \UMLType{Action} can contain %
+%hold arbitrary many %
+\UMLType{Constraint} %
+%modelling %
+elements as \UMLReference{localPostcondition} or \UMLReference{localPrecondition}. Every \UMLType{ControlFlow} can hold %
+%other elements %
+\UMLType{ValueSpecification}s%
+in its \UMLReference{guard} reference. In the \UMLReference{guard}, \UMLReference{localPostcondition} and \UMLReference{loaclPrecondition} references we expect textual OCL constraints to be contained directly or indirectly. The textual OCL in the \UMLReference{guard} and \UMLReference{localPrecondition} will be parsed as invariant in the context of the specifying \UMLType{Operation} and the textual OCL in the \UMLReference{localPostcondition} will be parsed as post--condition in the context of the specifying \UMLType{Operation}. That means the OCL constraints can access all elements contained in the \UMLReference{ownedAttribute} reference %
+%\UMLType{Property} elements %
+of the \UMLType{Class} containing the specifying \UMLType{Operation}. Further, all elements contained by the \UMLReference{ownedParameter} reference of the specifying \UMLType{Operation} can be referenced in the textual OCL.\\%
+We keep the Petri--Net like semantics of activity diagrams in mind and take a closer look at how we execute a control flow path in an activity diagram. When executing a control flow path, we have at the beginning a token in the \UMLType{InitialNode}. We allow only one \UMLType{InitialNode} per activity diagram. The token can move along an enabled \UMLType{ControlFlow}. A \UMLType{ControlFlow} is enabled when the OCL constraint in its \UMLReference{guard} evaluates is true. We say that an \UMLType{Action} is being executed when a token resides in the \UMLType{Action}. We interpret every \UMLType{Property} as variable that can change its value during the execution of an \UMLType{Action}. A \UMLType{Parameter} will be interpreted as parameter that can not change its value during the execution of a control flow path. While the token resides in the \UMLType{InitialNode} there is an initial state where every variable and parameter holds a specific value. A state is specified by the complete value assignment for all variables and parameters. After each execution of an \UMLType{Action} the current state might change according to the rules contained in the \UMLType{Action}'s \UMLReference{localPostcondition}. A \UMLType{localPostcondition} can specify a relation between the current state and the previous state. Consequently, the states are interconnected with each other via the textual OCL constraints contained in \UMLReference{localPostcondition} references. The set of all relations contained in \UMLType{localPostcondition}s can be seen as state transition function. For a \UMLType{ControlFlow} to be enabled the textual OCL contained in its \UMLReference{guard} has to evaluate to true with respect to the current state. Guard conditions can only specify a relation between the value assignments within a single state. It is not possible to access the value of a variable in the previous state.%
+\subsection{AMPL and its Solvers}%
+We use `A Mathematical Programming Language' (AMPL) by Robert Fourer \cite{AMPL} as means to formalise the execution of a control flow path in an activity diagram with embedded OCL constraints as constraint satisfaction problem. In this subsection we will first mention the language elements of AMPL that we are using and then introduce the advantage of having AMPL as a common interface to different solvers suitable for distinct specializations of the constraint satisfaction problem.\\%
+An AMPL program consists of two parts, the AMPL model and the AMPL data. In AMPL model we can declare parameters, sets, variables and constraints. In the AMPL data we will give specific values for the parameters and sets. The AMPL program can then be solved by a suitable state--of--the--art solver. Solving the AMPL program means finding one valid assignment for all AMPL variables satisfying all constraints with the given parameters and sets. Additionally it is also possible to declare an objective function that has to be maximised or minimised.%
+\begin{table}%
+\begin{center}%
+\begin{tabular}{l r r r r r r r r}%
+Solver                         & MILP       & NLP        & SMT        & MINLP\\%
+\hline%
+Cplex                          & \checkmark &            &            &\\%
+LPsolve\cite{lpsolve}          & \checkmark &            &            &\\%
+Gurobi                         &            & \checkmark &            &\\%
+Minos                          &            & \checkmark &            &\\%
+IlogCP\cite{ilogcp}            & \checkmark &            & \checkmark &\\%
+GeCoDE\cite{gecode}            &            &            & \checkmark &\\%
+Couenne\cite{Belotti09couenne} & \checkmark & \checkmark &            & \checkmark\\%
+\hline%
+\end{tabular}%
+\end{center}%
+\caption{List of solvers and problems they can solve.}%
+\label{tab:Solvers}%
+\end{table}\\%
+In AMPL we can state linear constraints and non linear constraints. Variables can be continuous or discrete; furthermore, AMPL provides logical operations. Consequently, it is a very expressive language and the AMPL system serves as a common interface to a variety of solvers. Depending on the constraint satisfaction problem encoded in the AMPL program a suitable solver can be selected to solve the problem. E.g. if all constraints are linear we can use a linear programming solver that is highly specialized on mixed integer linear programming (MILP). In the case that the constraints are non linear but convex and all variables are continuous we can use a non--linear programming (NLP) solver that is specialized on convex optimisation. For problems with non--linear constraints and discrete as well as continuous variables we will need a solver capable of solving mixed integer non--linear programming (MINLP). In case the logical operations are used in the constraints a satisfiability modulo theories (SMT) solver supporting appropriate background theories becomes necessary. In Table \ref{tab:Solvers} we show a selection of solvers interfacing with AMPL and their capabilities. A checkmark in a cell means that we have successfully tested the solver in the row on instances of the problem named in the column.%
+\section{The Algorithm}%
+\subsection{AMPL Transformation}%
+\label{sec:AMPLTransformation}%
+\begin{figure}%
+\def\svgwidth{\textwidth}%
+\graphicspath{{./pics/}}%
+\input{./pics/AssignmentDecision.pdf_tex}%
+\caption{A simple UML activity diagram}%
+\label{fig:AssignmentDecision}%
+\end{figure}%
+\subsection{Boundary Value Analysis}%
+\subsection{Early Infeasible Path Elimination}%
+\section{Results}%
+\subsection{Proof--of--Concept Tool}%
+\subsection{Case Study}%
+\section{Outlook}%
+\bibliographystyle{splncs}%
+\bibliography{../Thesis/bibtex}%
 \end{document}

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_824b49cf-8739-46e1-946f-01fe7db160ef" name="BasicExamples">
-  <packageImport xmi:type="uml:PackageImport" xmi:id="_jW4EYO8XEeKmSvuiPtMeiA">
-    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
-  </packageImport>
   <packagedElement xmi:type="uml:Package" xmi:id="_ae57f156-e2a3-4583-82e0-e268d193aafe" name="Package1">
     <packagedElement xmi:type="uml:Class" xmi:id="_b46209c4-a730-4f9c-8663-740dd5f97be7" name="Class1">
       <ownedRule xmi:type="uml:Constraint" xmi:id="_2250400b-aa02-4bb2-aa72-b128a4e31b27" name="RangeOfX" constrainedElement="_b46209c4-a730-4f9c-8663-740dd5f97be7 _02d2fb85-4294-44cb-a4ff-aaff3731fe83">
@@ -129,29 +126,23 @@
           </guard>
         </edge>
         <node xmi:type="uml:InitialNode" xmi:id="_99527bee-8fda-4ee7-a2f3-ad5e084c191d" name="Initial Node1" visibility="public" outgoing="_dfddf444-eb9e-4d72-83ac-66a38f14f4c9"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_3fce6056-fffc-41fe-a8b1-720fa575604a" name="assignment" visibility="public" outgoing="_6f3a5354-688d-46aa-8ae8-48f0c43b3703" incoming="_dfddf444-eb9e-4d72-83ac-66a38f14f4c9">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_otq1nerHEeKjDI40TaMocw" name="convertedPostcondition0">
-            <specification xmi:type="uml:LiteralString" xmi:id="_otq1nurHEeKjDI40TaMocw" name="" value="x*a=2*x@pre*x@pre+3"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_3fce6056-fffc-41fe-a8b1-720fa575604a" name="Assignment" visibility="public" outgoing="_6f3a5354-688d-46aa-8ae8-48f0c43b3703" incoming="_dfddf444-eb9e-4d72-83ac-66a38f14f4c9">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_75B2sIXUEeOu2MRj_-G9qA" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_OpAxoIXaEeOA1dESQwZAhg" value="a*x=2*x@pre*x@pre-3"/>
           </localPostcondition>
         </node>
         <node xmi:type="uml:DecisionNode" xmi:id="_0bcf72d8-eccc-4b81-91ac-2b5a7d6448e0" name="Decision Node1" visibility="public" outgoing="_b1c072ac-2d1b-4706-852e-a780e918a994 _ca37e07b-ba34-421a-bcd9-26124746e884" incoming="_6f3a5354-688d-46aa-8ae8-48f0c43b3703"/>
         <node xmi:type="uml:MergeNode" xmi:id="_3f1dd4cd-f64b-4f07-8330-9bc53e9a98c1" name="Merge Node1" visibility="public" outgoing="_fbff058a-b55d-4d51-8ad0-ed89d0c01d3e" incoming="_a3efb20b-edac-4a0b-a0d6-8c8420ffd161 _601bc576-e951-4fca-b0a6-1f8d47535839"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_f9851fcf-62c5-44dc-aa0a-a83466bb19a4" name="Activity Final Node1" visibility="public" incoming="_fbff058a-b55d-4d51-8ad0-ed89d0c01d3e"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_73322e5b-ea2a-41b5-a3ce-4fa29233c896" name="Opaque Action1" visibility="public" outgoing="_601bc576-e951-4fca-b0a6-1f8d47535839" incoming="_b1c072ac-2d1b-4706-852e-a780e918a994">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_otq1m-rHEeKjDI40TaMocw" name="convertedPostcondition0">
-            <specification xmi:type="uml:LiteralString" xmi:id="_otq1nOrHEeKjDI40TaMocw" value="result=false"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_73322e5b-ea2a-41b5-a3ce-4fa29233c896" name="Else" visibility="public" outgoing="_601bc576-e951-4fca-b0a6-1f8d47535839" incoming="_b1c072ac-2d1b-4706-852e-a780e918a994">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_otq1m-rHEeKjDI40TaMocw" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_otq1nOrHEeKjDI40TaMocw" value="returnValue=false"/>
           </localPostcondition>
         </node>
-        <node xmi:type="uml:OpaqueAction" xmi:id="_d87364fb-914f-47f6-ad09-67e53609d30e" name="Opaque Action2" visibility="public" outgoing="_a3efb20b-edac-4a0b-a0d6-8c8420ffd161" incoming="_ca37e07b-ba34-421a-bcd9-26124746e884">
-          <localPostcondition xmi:type="uml:Constraint" xmi:id="_otq1merHEeKjDI40TaMocw" name="convertedPostcondition0">
-            <specification xmi:type="uml:LiteralString" xmi:id="_otq1murHEeKjDI40TaMocw" value="result=true"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_d87364fb-914f-47f6-ad09-67e53609d30e" name="Then" visibility="public" outgoing="_a3efb20b-edac-4a0b-a0d6-8c8420ffd161" incoming="_ca37e07b-ba34-421a-bcd9-26124746e884">
+          <localPostcondition xmi:type="uml:Constraint" xmi:id="_otq1merHEeKjDI40TaMocw" name="">
+            <specification xmi:type="uml:LiteralString" xmi:id="_otq1murHEeKjDI40TaMocw" value="returnValue=true"/>
           </localPostcondition>
-        </node>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_a14efbf2-b087-425e-b0e4-f08555b642b6" name="a" visibility="public" parameter="_c9139fab-7862-4ddd-9c19-394b71274719">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-        </node>
-        <node xmi:type="uml:ActivityParameterNode" xmi:id="_a7048289-c3fb-44b4-ba88-4bbc0e6ede07" name="nonLinearassignmentDecision" visibility="public" parameter="_bf91084e-921c-4b36-986e-ed761ece9f55return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </node>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_w3esMEIlEeOTmfIU7iF-UA" name="simpleDecision_1" isReentrant="false" specification="_fYA5wEInEeOK28aYEUTBcQ" node="_w3esPEIlEeOTmfIU7iF-UA _w3esPUIlEeOTmfIU7iF-UA _w3esPkIlEeOTmfIU7iF-UA _w3esQkIlEeOTmfIU7iF-UA _w3esRUIlEeOTmfIU7iF-UA _w3esRkIlEeOTmfIU7iF-UA">
@@ -190,7 +181,7 @@
       </ownedBehavior>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_88800fff-8f52-4529-9bed-ec819f29005fop" name="simpleDecision" visibility="public" method="_20448964-8165-41bb-bbd3-58cbbabe7d5d _bf91084e-921c-4b36-986e-ed761ece9f55">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7b9134fc-fc09-4445-8e2c-b80e8460d000" name="a" type="_3_PE8O8WEeKmSvuiPtMeiA"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_wdVjAO4UEeKhs5T3phCz4g" name="result" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return" effect="create"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_wdVjAO4UEeKhs5T3phCz4g" name="returnValue" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return" effect="create"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768op" name="assignmentDecision" visibility="public" method="_78522cd8-0ed5-4f87-940a-71176f2627ab">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_e22f261a-26de-4b5e-8c8e-b0598b863768return" name="result" type="_RMbtMO8XEeKmSvuiPtMeiA" direction="return"/>

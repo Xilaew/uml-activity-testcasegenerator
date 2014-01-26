@@ -1,0 +1,70 @@
+%% Creator: Inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'AssignmentDecision.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{373.24999689bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.23323845)%
+    \put(0,0){\includegraphics[width=\unitlength]{AssignmentDecision.pdf}}%
+    \put(0.11051574,0.14052244){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Assignment}}}%
+    \put(0.47916946,0.1019424){\makebox(0,0)[lb]{\smash{Else}}}%
+    \put(0.47273945,0.18767582){\makebox(0,0)[lb]{\smash{Then}}}%
+    \put(0.72779638,0.17267247){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\guillemotleft{localPostcondition}\guillemotright}}}%
+    \put(0.72136638,0.13623577){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$returnValue=\mbox{true}$}}}%
+    \put(0.72779638,0.05478902){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\guillemotleft{localPostcondition}\guillemotright}}}%
+    \put(0.72136638,0.01835231){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$returnValue=\mbox{false}$}}}%
+    \put(0.05478902,0.05478902){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\guillemotleft{localPostcondition}\guillemotright}}}%
+    \put(0.01406564,0.01835231){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$a\cdot x=2\cdot x\mbox{@pre}\cdot x\mbox{@pre}-3$}}}%
+    \put(0.62491628,0.09551239){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.04835901,0.09551239){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.56490288,0.08050904){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.30555928,0.21125251){\makebox(0,0)[lb]{\smash{$[x\geq a+1]$}}}%
+    \put(0.27126591,0.09551239){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.53275285,0.12766242){\makebox(0,0)[lb]{\smash{ }}}%
+    \put(0.34199598,0.12551909){\makebox(0,0)[lb]{\smash{$[x\leq a]$}}}%
+  \end{picture}%
+\endgroup%
