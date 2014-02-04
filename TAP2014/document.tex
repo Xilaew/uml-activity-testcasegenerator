@@ -4,6 +4,7 @@
 \usepackage{amssymb}%
 \setcounter{tocdepth}{3}%
 \usepackage{graphicx}%
+\usepackage{listings}
 %
 \usepackage{url}%
 \urldef{\mailsa}\path|{felix.kurth, schupp}@tu-harburg.de|%
@@ -16,6 +17,9 @@
 \newcommand{\UMLType}[1]{\textsf{\textit{#1}}} %
 \newcommand{\TCGType}[1]{#1}%
 \newcommand{\UMLReference}[1]{\textsf{\textit{#1}}} %
+\newcommand{\AMPLCode}[1]{\texttt{#1}}
+\newcommand{\OCLCode}[1]{\texttt{#1}}
+\newcommand{\AMPLListing}[1]{\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]{#1}\end{lstlisting}}
 %
 \begin{document}%
 %
@@ -147,9 +151,18 @@ In AMPL we can state linear constraints and non linear constraints. Variables ca
 \caption{A simple UML activity diagram}%
 \label{fig:AssignmentDecision}%
 \end{figure}%
-An AMPL model encodes a complete activity test case graph including all variables and all constraints that are contained. The control flow path within this activity test case graph is encoded in the AMPL data.\\
-The AMPL program models the execution of an activity as a series of states. All post--conditions and guards are contained in the model as constraints, which can be switched on and off for each state within the series of states. 
-Each AMPL model has one parameter called \texttt{pathlength} representing the number of actions on a path. 
+An AMPL model encodes a complete activity diagram including all variables, parameters and all OCL constraints that are contained. A control flow path within this activity test case graph is encoded in the AMPL data. The activity diagram in Figure \ref{fig:AssignmentDecision} will serve as an example.\\
+We model the execution of an \UMLType{Activity} as a series of states. Each AMPL model has one parameter called \AMPLCode{pathlength} representing the number of \UMLType{Actions} on a control flow path. The state always changes during the execution of an \UMLType{Actions}, consequently, there is one initial state and one post state after each execution of an \UMLType{Action}. The OCL constraints in Figure \ref{fig:AssignmentDecision} reference three different variables. We assume $a$ and $returnValue$ are the \UMLType{Parameter}s of the specifying \UMLType{Operation}. A \UMLType{Parameter}'s value can not change during the execution of an activity diagram, consequently they will be modelled as a single variable in AMPL. We assume $x$ to be a \UMLType{Property} that can change its value, consequently we need to model $x$ as an array of variables in AMPL; one variable for each state. We further assume that the \UMLReference{type} of the modelling elements corresponding to the OCL variables $a$, $returnValue$ and $x$ is integer. Consequently, we generate the following AMPL code for them: %
+\begin{lstlisting}[basicstyle=\ttfamily,language=ampl]
+param pathlength;
+var a : integer >= -1000 ;
+var x{0..pathlength} : integer >= 1000;
+\end{lstlisting}%
+%
+During execution a \UMLType{ControlFlow}'s \UMLReference{guard} or an \UMLType{Action}'s \UMLReference{localPostcondition} is always evaluated with respect to the current state. All OCL post--conditions and OCL guards are contained in the AMPL model as constraints, which can be switched on and off for each state.  The set of states in which a \UMLReference{guard} or \UMLReference{localPostcondition} needs to evaluate to true is called activation set.%
+%
+%
+%
 For each action with post--conditions and each control flow with a guard there is one \emph{activation set}. An activation set is required to be a subset of $[1..pathlength]$ and specifies those states, in which a post--condition or guard condition is active. 
 The value of the parameter \texttt{pathlength} as well as the elements of each activation set will be specified in the AMPL data. In this way there is one AMPL model per activity diagram and any control flow path within the activity diagram can be specified in the AMPL data.\\
 Every variable has one out of three possible types: integer, real and boolean. In AMPL, by default, a variable is in the domain of real numbers.
