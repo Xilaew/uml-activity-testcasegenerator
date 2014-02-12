@@ -146,8 +146,8 @@ Couenne\cite{Belotti09couenne} & \checkmark & \checkmark &            & \checkma
 \end{table}\\%
 In AMPL we can state linear constraints and non linear constraints. Variables can be continuous or discrete; furthermore, AMPL provides logical operations. The AMPL system serves as a common interface to a variety of solvers. Depending on the constraint satisfaction problem encoded in the AMPL program a suitable solver can be selected to solve the problem. If all constraints are linear we use solver that is specialized on mixed integer linear programming (MILP). If constraints are non linear but convex and all variables are continuous we use a non--linear programming (NLP) solver. For problems with non--linear constraints and discrete as well as continuous variables we need a solver capable of solving mixed integer non--linear programming (MINLP). If logical operations are used in the constraints a satisfiability modulo theories (SMT) solver supporting appropriate background theories is used. In Table \ref{tab:Solvers} we show a selection of solvers interfacing with AMPL. A checkmark in a cell means that we have successfully tested the solver in the row on the problem named in the column.%
 \section{The Algorithm}%
-
-\label{sec:Algorithm}
+\label{sec:Algorithm}%
+In this section we explain the core ideas of the algorithm that is implemented in the tool available from \cite{PartegWebsite}. First, we demonstrate with a small example how the execution of a control flow path can be formalised. Then we show how to acquire test data that is at the boundary of path constraints and, finally, we present an algorithm that searches for testable control flow paths efficiently.%
 \subsection{AMPL Transformation}%
 \label{sec:AMPLTransformation}%
 \begin{figure}%
@@ -157,34 +157,52 @@ In AMPL we can state linear constraints and non linear constraints. Variables ca
 \caption{A simple UML activity diagram}%
 \label{fig:AssignmentDecision}%
 \end{figure}%
-An AMPL model encodes the relevant variables, parameters and OCL constraints contained in an activity diagram. We call a sequence of \UMLReference{ControlFlow}s \emph{control flow path}. For two subsequent \UMLType{ControlFlow}s A and B in a control flow path the constraint A.target=B.source holds. A control flow path is encoded in the AMPL data. The activity diagram in Figure \ref{fig:AssignmentDecision} will serve as an example.\\
+An AMPL model encodes the relevant variables, parameters and OCL constraints contained in an activity diagram. We call a sequence of \UMLReference{ControlFlow}s \emph{control flow path}. For two subsequent \UMLType{ControlFlow}s A and B in a control flow path the constraint A.target=B.source holds. A control flow path is encoded in the AMPL data. The activity diagram in Figure \ref{fig:AssignmentDecision} will serve as an example.\\%
 We model the execution of a control flow path as a series of states. Each AMPL model has one parameter called \AMPLCode{pathlength} representing the number of \UMLType{Actions} on a control flow path. The state always changes during the execution of an \UMLType{Action}, consequently, there is one initial state and one post state after each execution of an \UMLType{Action}. Since a variable can have a distinct value in each state, each variable will be modelled in AMPL as an array of variables with the length $\AMPLCode{pathlength}+1$. Parameters are constant and cannot change their value from one state to another and will, consequently, be represented by a single AMPL variable. Every variable and parameter has one out of three possible types: integer, real and boolean; In AMPL we specify the domain of an AMPL variable respectively.\\%
-The OCL constraints in Figure \ref{fig:AssignmentDecision} reference three different variables. We assume $a$ and $returnValue$ to be parameters that are modelled as a single variable in AMPL and we assume $x$ to be a variable that is modelled as an array of variables. We further assume that the \UMLReference{type} of the modelling elements corresponding to the OCL variables $a$, $returnValue$ and $x$ is integer. Consequently, we generate the following AMPL code for them: %
+The OCL constraints in Figure \ref{fig:AssignmentDecision} reference three different OCL variables. We assume $a$ and $returnValue$ to be parameters that are modelled as a single variable in AMPL and we assume $x$ to be a variable that is modelled as an array of variables. We further assume that the \UMLReference{type} of the modelling elements corresponding to the OCL variables $a$, $returnValue$ and $x$ is integer. Consequently, we generate the following AMPL code for them: %
 \begin{lstlisting}[basicstyle=\ttfamily,language=ampl]
 param pathlength;
 var a : integer;
 var returnValue : integer;
 var x{0..pathlength} : integer;
 \end{lstlisting}%
-During execution a \UMLType{ControlFlow}'s \UMLReference{guard} or an \UMLType{Action}'s \UMLReference{localPostcondition} is always evaluated with respect to the current state. All OCL post--conditions and OCL guards are contained in the AMPL model as constraints, which can be switched on and off for each state. The set of states in which a \UMLReference{guard} or \UMLReference{localPostcondition} needs to evaluate to true is called activation set.%
-%
-For each action with post--conditions and each control flow with a guard there is one \emph{activation set}. An activation set is required to be a subset of $[1..pathlength]$ and specifies those states, in which a post--condition or guard condition is active. 
-The value of the parameter \texttt{pathlength} as well as the elements of each activation set will be specified in the AMPL data. In this way there is one AMPL model per activity diagram and any control flow path within the activity diagram can be specified in the AMPL data.\\
+A MOF Model to Text Transformation Language\cite{m2t.standard} (MOFM2T) template generating AMPL code from a \UMLType{Parameter} or \UMLType{Property} is shown in Algorithm \ref{alg:m2tvariable}.
+\begin{algorithm}
+\begin{lstlisting}[numbers=left,escapeinside={@}{@},breaklines=true]
+[@\bfseries{template}@ public VariableToAMPL(var : @\UMLType{TypedElement}@)]
+  [@\bfseries{let}@ type : @\UMLType{PrimitiveType} = var.type@]
+    var [var.name/] [@\bfseries{if}@ var.oclIsKindOf(@\UMLType{Property}@)] {0..pathlength} [/@\bfseries{if}@][Type2AMPL(type)/] :=1;
+  [/@\bfseries{let}@]
+[/@\bfseries{template}@]
 
-For each TCGAction the activation set is declared as a subset of $\left[0..\texttt{pathlength}\right]$ in the AMPL model. Each local post--condition of an action is transformed into an indexed collection of constraints over the activation set.\\
-If the variable reference was marked with \verb§@pre§ we are accessing the variable in the previous state and thus need to subtract one from the index; otherwise we access the variable at the index from the activation set.
-The transformation of guards works analogously to the transformation of local post--conditions.
-In cyclic activity diagrams there are paths that contain one control flow several times. The activation set will then contain one entry for each state in which a token moves along the control flow from the source node to the target node. Actions can be executed several times to move from one state to another, thus the corresponding activation set will then contain the index of the state after execution of the action for each execution. \\
-%
-To clarify how the symbolic execution of a control flow path in an activity diagram is done consider again the activity diagram in Figure \ref{fig:AssignmentDecision}. Lets assume we want to generate test data to test the control flow path printed in bold, which executes the Assignment and the Then \UMLType{Action}. We start at the \UMLType{InitialNode}, the current state is the initial state with the index $0$. In this state there are no constraints. When we reach the Assignment \UMLType{Action} our current state switches to $1$. Since there is a post--condition for Assignment we add 1 to the activation set of the Assignment. The next \UMLType{ControlFlow} has a OCL guard, consequently we add $1$ to its activation set. Further, we add $2$ to the activation set of the Then \UMLType{Action}.\\
-In AMPL Syntax the data specifying this path is:
-\begin{lstlisting}[basicstyle=\ttfamily,language=ampl]
-param pathlength;
-var a : integer;
-var returnValue : integer;
-var x{0..pathlength} : integer;
+[@\bfseries{template}@ public Type2AMPL(type : @\UMLType{PrimitiveType}@)]
+  [@\bfseries{if}@ type.name = 'integer'] : integer >=-10000, <= 10000 [/@\bfseries{if}@]
+  [@\bfseries{if}@ type.name = 'boolean'] in 0..1 [/@\bfseries{if}@]
+  [@\bfseries{if}@ type.name = 'real'] >=-10000, <= 10000 [/@\bfseries{if}@]
+[/@\bfseries{template}@]
 \end{lstlisting}%
-The transformation from a sequence of \UMLType{ControlFlow}s and \UMLType{Action}s into an activation set is given in Algoritm \ref{alg:ActivationSet}.
+\caption{Model--to--text transformation from \UMLType{Property} or \UMLType{Parameter} to AMPL model}%
+\label{alg:m2tvariable}%
+\end{algorithm}\\%
+During execution a \UMLType{ControlFlow}'s \UMLReference{guard} or an \UMLType{Action}'s \UMLReference{localPostcondition} is always evaluated with respect to the current state. The set of states in which an \UMLType{Action} or \UMLType{ControlFlow} is executed is called \emph{activation set}. There is one activation set for each \UMLType{ControlFlow} with an OCL \UMLReference{guard} and each \UMLType{Action} with OCL \UMLReference{localPostcondition}. % 
+All OCL post--conditions and OCL guards are contained in the AMPL model as constraints, which can be switched on and off for each state. %
+%
+For each \UMLType{Action} and \UMLType{ControlFlow} the activation set is declared as a subset of $\left[0..\texttt{pathlength}\right]$ in the AMPL model. Each local post--condition of an \UMLType{Action} is transformed into an indexed collection of constraints over the activation set.\\
+If the variable reference was marked with \verb§@pre§ we are accessing the variable in the previous state and thus need to subtract one from the index; otherwise we access the variable at the index from the activation set.%
+The transformation of guards works analogously to the transformation of local post--conditions.
+%In cyclic activity diagrams there are paths that contain one control flow several times. The activation set will then contain one entry for each state in which a token moves along the control flow from the source node to the target node. Actions can be executed several times to move from one state to another, thus the corresponding activation set will then contain the index of the state after execution of the action for each execution. \\
+The value of the parameter \texttt{pathlength} as well as the elements of each activation set will be specified in the AMPL data. In this way there is one AMPL model per activity diagram and any control flow path within the activity diagram can be specified in the AMPL data.\\
+%
+%
+To clarify how the symbolic execution of a control flow path in an activity diagram is done consider again the activity diagram in Figure \ref{fig:AssignmentDecision}. Lets assume we want to generate test data to test the control flow path printed in bold, which executes the Assignment and the Then \UMLType{Action}. We start at the \UMLType{InitialNode}, the current state is the initial state with the index $0$. In this state there are no constraints. When we reach the Assignment \UMLType{Action} our current state switches to $1$. Since there is a post--condition for Assignment we add 1 to the activation set of the Assignment. The next \UMLType{ControlFlow} has a OCL guard, consequently we add $1$ to its activation set. Further, we add $2$ to the activation set of the Then \UMLType{Action}.\\%
+In AMPL Syntax the data specifying this path is:%
+\begin{lstlisting}[basicstyle=\ttfamily,language=ampl]
+param pathlength := 2;
+set Assignment := 1;
+set Cf_Then := 1;
+set Then := 2;
+\end{lstlisting}%
+The transformation from a sequence of \UMLType{ControlFlow}s into a map of activation sets is given in Algorithm \ref{alg:ActivationSet}.%
 \begin{algorithm}
 \begin{algorithmic}[1]
 \Require path := sequence of \UMLType{ControlFlow}s
@@ -203,16 +221,15 @@ The transformation from a sequence of \UMLType{ControlFlow}s and \UMLType{Action
 \end{algorithmic}
 \caption{Transformation from a control flow path to a map of activation sets}
 \label{alg:ActivationSet}
-\end{algorithm}
-
+\end{algorithm}%
 \subsection{Boundary Value Analysis}%
-\label{sec:BoundaryValueAnalysis}
+\label{sec:BoundaryValueAnalysis}%
 Test data at the boundaries of the path constraints is more valuable than arbitrary test data causing the given control flow path to be executed. We will refer to test data at the boundaries of path constraints also as \emph{boundary test data}. Up to now we showed how we generate an AMPL program whose solutions can be used as test data for a given control flow path. Now we want this test data to be at the boundary of certain path constraints. Therefore we add a linear objective function to the AMPL model. When solving AMPL program augmented by such an objective function three things can happen: either the solver generates boundary test data, or the solver reports that the problem is unbounded, or the solving time for the problem increases enormously and the solver exceeds its time limit. The first case is the good case. In the second case we can change the direction of the objective function and try again to hit a boundary. The last case is especially a problem of mixed integer non--linear programming solvers. It is not to hard to find a solution to a mixed integer non linear program, if there are enough solutions, but finding a solution that is optimal with respect to an objective function is much harder. In fact the solvers will try to find the global optimum although also a locally optimal solution with respect to a linear objective function would be suitable boundary test data. In such a case we can first use a global mixed integer non--linear programming solver to solve the original AMPL program. In a second step we add the linear objective function and use a local search algorithm using the solution generated before as starting point to find a solution at the boundary of the path constraints.
 \subsection{Early Infeasible Path Elimination}%
 \label{sec:InfeasiblePathElimination}%
 To identify the control flow paths to generate test data for we construct a \emph{path tree}. A path tree is a tree data structure consisting of path tree nodes. Each path tree node holds a reference to its parent path tree node and a reference to a \UMLType{ControlFlow}. The root node of a path tree points to an \UMLReference{outgoing} \UMLType{ControlFlow} of the \UMLType{InitialNode}. Any path tree node is a representation of a control flow path from the \UMLType{InitialNode} to the \UMLReference{target} of the \UMLType{ControlFlow} referenced by path tree node. Any leaf path tree node points to a \UMLType{ControlFlow} that ends in an \UMLType{ActivityNode} with no \UMLReference{outgoing} \UMLType{ControlFlow}. We call the control flow path represented by a leaf path tree node \emph{abstract test case}.\\
 Not every control flow path within an activity diagram is a \emph{feasible path}. A control flow path is a feasible path, if it is possible to find test data that causes this control flow path to be executed. In other words, for an infeasible path the corresponding AMPL program will contain contradicting constraints, for example: $x_0\leq5; x_0\geq10$. It is quite obvious, that if a path tree node represents an infeasible path any of its child nodes will also represent an infeasible path. Since we are only interested in abstract test cases for which test data can be generated we do not want to generate path tree nodes representing infeasible paths.\\
-We can check whether the control flow path represented by a path tree node is feasible by transforming it into an AMPL program as described in Section \ref{sec:AMPLTransformation} and running a solver. If the solver reports a failure or that the problem is infeasible we assume the control flow path to be infeasible. The earlier during construction of the path tree a control flow path is detected to be infeasible the larger is the portion of the path tree that will not be examined further. If we check for every single path tree node during construction whether it is feasible we will impose unnecessary work. We make a trade off by introducing the parameter \emph{unchecked steps}.
+We can check whether the control flow path represented by a path tree node is feasible by transforming it into an AMPL program as described in Section \ref{sec:AMPLTransformation} and running a solver. If the solver reports a failure or that the problem is infeasible we assume the control flow path to be infeasible. The earlier during construction of the path tree a control flow path is detected to be infeasible the larger is the portion of the path tree that will not be examined further. If we check for every single path tree node during construction whether it is feasible we will impose unnecessary work. We make a trade off by introducing the parameter \emph{unchecked steps}.%
 \begin{algorithm}
 \begin{algorithmic}
 \Require activity := A UML \UMLType{Activity} \\
@@ -237,7 +254,7 @@ UncheckedSteps :=
 \end{algorithmic}
 \caption{Depth first search based algorithm with early infeasible path elimination}
 \label{alg:BreadthFirstSearch}
-\end{algorithm}
+\end{algorithm}%
 \section{Results}%
 \subsection{Proof--of--Concept Tool}%
 \label{sec:EclipsePlugIn}%
