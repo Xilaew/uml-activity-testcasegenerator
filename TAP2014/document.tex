@@ -179,26 +179,26 @@ set Assignment := 1;
 set Cf_Then := 1;
 set Then := 2;
 \end{lstlisting}%
-The transformation from a sequence of \UMLType{ControlFlow}s into a map of activation sets is given in Algorithm \ref{alg:ActivationSet}.%
-\begin{algorithm}
-\begin{algorithmic}
-\Require path := sequence of \UMLType{ControlFlow}s
-\Ensure activationSets contains activation sets representing the given path
-\State activationSets(element : \UMLType{NamedElement}) : Integer Set \Comment Mapping from an UML element to a set of integers. Initially all sets are empty.
-\State i : integer $\gets$ 0 \Comment index of the current state
-\ForAll{cf : \UMLType{ControlFlow} $\in$ path}
-\If{ cf.guard != null}
-\State activationSet(cf).add(i)
-\EndIf
-\If{ cf.target.oclIsKindOf(\UMLType{Action}) }
-\State i $\gets$ i+1 \Comment state changes
-\State activationSet(cf.target).add(i)
-\EndIf
-\EndFor
-\end{algorithmic}
-\caption{Transformation from a control--flow path to activation sets}
-\label{alg:ActivationSet}
-\end{algorithm}%
+% The transformation from a sequence of \UMLType{ControlFlow}s into a map of activation sets is given in Algorithm \ref{alg:ActivationSet}.%
+% \begin{algorithm}
+% \begin{algorithmic}
+% \Require path := sequence of \UMLType{ControlFlow}s
+% \Ensure activationSets contains activation sets representing the given path
+% \State activationSets(element : \UMLType{NamedElement}) : Integer Set \Comment Mapping from an UML element to a set of integers. Initially all sets are empty.
+% \State i : integer $\gets$ 0 \Comment index of the current state
+% \ForAll{cf : \UMLType{ControlFlow} $\in$ path}
+% \If{ cf.guard != null}
+% \State activationSet(cf).add(i)
+% \EndIf
+% \If{ cf.target.oclIsKindOf(\UMLType{Action}) }
+% \State i $\gets$ i+1 \Comment state changes
+% \State activationSet(cf.target).add(i)
+% \EndIf
+% \EndFor
+% \end{algorithmic}
+% \caption{Transformation from a control--flow path to activation sets}
+% \label{alg:ActivationSet}
+% \end{algorithm}%
 \subsection{Boundary Value Analysis}%
 \label{sec:BoundaryValueAnalysis}%
 Test data at the boundaries of the path constraints is more valuable than arbitrary test data causing the given control--flow path to be executed. We will refer to test data at the boundaries of path constraints also as \emph{boundary test data}. Up to now we have shown how we generate an AMPL program whose solutions can be used as test data for a given control--flow path. Now we want this test data to be boundary test data. Therefore, we add a linear objective function to the AMPL model. When solving AMPL programs augmented by such an objective function three things can happen: either the solver generates boundary test data, or the solver reports that the problem is unbounded, or the solving time for the problem increases enormously and the solver exceeds its time limit. The first case is the good case. In the second case we can change the direction of the objective function and try again to hit a boundary. The last case is especially a problem of mixed integer non--linear programming solvers. It is not too hard to find a solution to a mixed integer non--linear program, if there are enough solutions, but finding a solution that is optimal with respect to an objective function is much harder. In fact the solvers will try to find the global optimum although also a locally optimal solution with respect to a linear objective function would be suitable as boundary test data. In such a case we can first use a global mixed integer non--linear programming solver to solve the original AMPL program. In a second step we add the linear objective function and use a local search algorithm using the solution generated before as starting point to find a solution at the boundary of the path constraints.
@@ -209,15 +209,16 @@ Not every control--flow path is a \emph{feasible path}. A control--flow path is 
 We can check whether the control--flow path represented by a path tree node is feasible by transforming it into an AMPL program as described in Section \ref{sec:AMPLTransformation} and running a solver. If the solver reports a failure or infeasibility of a problem, we assume the control--flow path to be infeasible. The earlier during construction of the path tree a control--flow path is detected to be infeasible the larger is the portion of the path tree that will not be examined further. On the other hand, if we check for every single path tree node during construction whether it is feasible we will impose unnecessary work. We allow for a customised trade--off by introducing the parameter \emph{unchecked steps} (UchkSteps). Further, our path search algorithm accepts the parameters \emph{maximum path length} (MaxDepth) bounding the depth of the path tree and \emph{maximum number of test cases} (MaxNoPaths) bounding the number of abstract test cases to find. The pseudo code constructing the path tree  with early infeasible path elimination is given in Algorithm \ref{alg:BreadthFirstSearch}.%
 \begin{algorithm}%
 \begin{algorithmic}%
-\Require root := A root path tree node \\
-MaxDepth := maximum path length for each control--flow path \\
-MaxNoPaths := maximum amount of leaf path tree nodes to find\\
-UchkSteps := number of path decisions without infeasible path check
-\Ensure abstractTestCases := set of at most MaxNoPaths abstract test cases consisting of at most MaxDepth \UMLType{ControlFlow}s each\\
-\State abstractTestCases $\gets$ initially empty set of path tree leaf nodes \Comment initialisation
-\State stack $\gets$ (root) \Comment only root node in stack
+\Require root : path tree node \Comment the root path tree node\\
+MaxDepth : integer \Comment maximum path length for each control--flow path \\
+MaxNoPaths : integer \Comment maximum amount of leaf path tree nodes to find\\
+UchkSteps : integer \Comment number of path decisions without infeasible path check
+\Ensure abstractTestCases : Set of at most MaxNoPaths abstract test cases consisting of at most MaxDepth \UMLType{ControlFlow}s each\\
+\State abstractTestCases : Set of path tree nodes $\gets$ \{\} \Comment initially empty set
+\State stack : LIFO Buffer $\gets$ (root) \Comment only root node in stack
+\State decisions : integer $\gets 0$ \Comment count path decisions
 \While{!stack.isEmpty() \textbf {and} abstractTestCases.size $\leq$ MaxNoPaths}
-\State ptNode $\gets$ stack.pop() \Comment visit next path tree node from the queue
+\State ptNode : path tree node $\gets$ stack.pop() \Comment next path tree node from stack
 \If{ptNode.depth $\leq$ MaxDepth} \label{line:BFSifFeasible}\Comment search only up to MaxDepth
 \For{cf : \UMLType{ControlFlow} $\in$ ptNode.controlFlow.target.outgoing}
 \State stack.push(new PathTreeNode(cf, ptNode.depth + 1, ptNode)) \Comment Add successor nodes to queue
