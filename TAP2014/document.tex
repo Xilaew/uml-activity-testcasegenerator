@@ -121,7 +121,7 @@ In AMPL models we can declare parameters, sets, variables, and constraints. We w
 % \caption{List of solvers and problems they can solve.}%
 % \label{tab:Solvers}%
 % \end{table}\\%
-In AMPL we can state linear, non--linear, and logical constraints. Variables can be continuous or discrete. The AMPL system serves as a common interface to a variety of solvers. Depending on the constraint satisfaction problem encoded in the AMPL program a suitable solver can be selected to solve the problem. If all constraints are linear we use a solver that is specialized on mixed integer linear programming (MILP), for example, Cplex or LPsolve\cite{lpsolve}. If constraints are non--linear but convex and all variables are continuous we use a non--linear programming (NLP) solver. For problems with non--linear constraints and discrete as well as continuous variables we need a solver capable of solving mixed integer non--linear programming (MINLP), for example, Couenne \cite{Belotti09couenne}. If logical operations are used in the constraints, a satisfiability modulo theories (SMT) solver supporting appropriate background theories is used, for example, GeCoDe or IlogCP.% In Table \ref{tab:Solvers} we show a selection of solvers interfacing with AMPL. A checkmark in a cell means that we have successfully tested the solver in the row on the problem named in the column.%
+In AMPL we can state linear, non--linear, and logical constraints. Variables can be continuous or discrete. The AMPL system serves as a common interface to a variety of solvers. Depending on the constraint satisfaction problem encoded in the AMPL program a suitable solver can be selected to solve the problem. If all constraints are linear we use a solver that is specialized on mixed integer linear programming (MILP), for example, Cplex or LPsolve\cite{lpsolve}. If constraints are non--linear but convex and all variables are continuous we use a non--linear programming (NLP) solver. For problems with non--linear constraints and discrete as well as continuous variables we need a solver capable of solving mixed integer non--linear programming (MINLP), for example, Couenne \cite{Belotti09couenne}. If logical operations are used in the constraints, a satisfiability modulo theories (SMT) solver supporting appropriate background theories is used, for example, GeCoDE \cite{gecode} or IlogCP \cite{ilogcp}.% In Table \ref{tab:Solvers} we show a selection of solvers interfacing with AMPL. A checkmark in a cell means that we have successfully tested the solver in the row on the problem named in the column.%
 \section{Semantics of the Test Model}%
 \label{sec:TestModel}%
 For the transformation into `A Mathematical Programming Language' (AMPL) presented in Section \ref{sec:AMPLTransformation} we need to clarify the semantics of the expected input model. Whenever we refer to a modelling element such as \UMLType{Activity} or a reference defined in the UML as, for example, \UMLReference{name} or \UMLReference{ownedParameter} we print it in a special font. In this section, we first clarify which UML modelling elements we use and will then shortly recapitulate the Petri--Net semantics of activity diagrams (see \cite{UML23Superstructure}). Further, we introduce the notion of a \emph{state}, which will be relevant for our algorithm.\\%
@@ -205,14 +205,14 @@ Test data at the boundaries of the path constraints is more valuable than arbitr
 \subsection{Early Infeasible Path Elimination}%
 \label{sec:InfeasiblePathElimination}%
 To identify the control--flow paths to generate test data for we construct a \emph{path tree}. A path tree is a tree data structure consisting of path tree nodes. Each path tree node holds a reference to its parent path--tree node, a reference to a \UMLType{ControlFlow}, and an integer - its depth. The root node of a path tree points to an \UMLReference{outgoing} \UMLType{ControlFlow} of the \UMLType{InitialNode}. Any path tree node is a representation of a control--flow path from the \UMLType{InitialNode} to the \UMLReference{target} of the \UMLType{ControlFlow} referenced by that path tree node. Any leaf path tree node points to a \UMLType{ControlFlow} that ends in an \UMLType{ActivityNode} with no \UMLReference{outgoing} \UMLType{ControlFlow}. We call the control--flow path represented by a leaf path tree node an \emph{abstract test case}.\\
-Not every control--flow path is a \emph{feasible path}. A control--flow path is a feasible path, if it is possible to find test data that causes this control--flow path to be executed. In other words, for an infeasible path the corresponding AMPL program will contain contradicting constraints, for example: $x_0\leq5; x_0\geq10$. It is quite obvious, that if a path tree node represents an infeasible path any of its children nodes will also represent an infeasible path. Since we are only interested in abstract test cases for which test data can be generated we need to prune branches containing no feasible abstract test cases as early as possible.\\
-We can check whether the control--flow path represented by a path tree node is feasible by transforming it into an AMPL program as described in Section \ref{sec:AMPLTransformation} and running a solver. If the solver reports a failure or infeasibility of a problem, we assume the control--flow path to be infeasible. The earlier during construction of the path tree a control--flow path is detected to be infeasible the larger is the portion of the path tree that will not be examined further. On the other hand, if we check for every single path tree node during construction whether it is feasible we will impose unnecessary work. We allow for a customised trade--off by introducing the parameter \emph{unchecked steps}.%
+Not every control--flow path is a \emph{feasible path}. A control--flow path is a feasible path, if there exists test data that causes this control--flow path to be executed. In other words, for an infeasible path the corresponding AMPL program will contain contradicting constraints, for example, $x_0\leq5; x_0\geq10$. It is quite obvious, that if a path tree node represents an infeasible path any of its children nodes will also represent an infeasible path. Since we are only interested in abstract test cases for which test data can be generated we need to prune branches containing no feasible abstract test cases as early as possible.\\
+We can check whether the control--flow path represented by a path tree node is feasible by transforming it into an AMPL program as described in Section \ref{sec:AMPLTransformation} and running a solver. If the solver reports a failure or infeasibility of a problem, we assume the control--flow path to be infeasible. The earlier during construction of the path tree a control--flow path is detected to be infeasible the larger is the portion of the path tree that will not be examined further. On the other hand, if we check for every single path tree node during construction whether it is feasible we will impose unnecessary work. We allow for a customised trade--off by introducing the parameter \emph{unchecked steps} (UchkSteps). Further, our path search algorithm accepts the parameters \emph{maximum path length} (MaxDepth) bounding the depth of the path tree and \emph{maximum number of test cases} (MaxNoPaths) bounding the number of abstract test cases to find. The pseudo code constructing the path tree  with early infeasible path elimination is given in Algorithm \ref{alg:BreadthFirstSearch}.%
 \begin{algorithm}%
 \begin{algorithmic}%
 \Require root := A root path tree node \\
 MaxDepth := maximum path length for each control--flow path \\
 MaxNoPaths := maximum amount of leaf path tree nodes to find\\
-UncheckedSteps := number of path decisions without infeasible path check
+UchkSteps := number of path decisions without infeasible path check
 \Ensure abstractTestCases := set of at most MaxNoPaths abstract test cases consisting of at most MaxDepth \UMLType{ControlFlow}s each\\
 \State abstractTestCases $\gets$ initially empty set of path tree leaf nodes \Comment initialisation
 \State stack $\gets$ (root) \Comment only root node in stack
@@ -228,13 +228,12 @@ UncheckedSteps := number of path decisions without infeasible path check
 % \EndIf
 \EndWhile
 \end{algorithmic}
-\caption{Depth--first search based algorithm with early infeasible path elimination}
+\caption{path search algorithm with early infeasible path elimination}
 \label{alg:BreadthFirstSearch}
 \end{algorithm}%
 \section{Results}%
-The presented algorithm is implemented as an Eclipse plug-in. The tool is called Activity Test Case Generator. It is integrated into the Partition Test Generator (ParTeG) \cite{PartegWebsite} from Stephan Wei{\ss}leder.
-Further the constraint solver--based approach has also been applied to UML \UMLType{StateMashine}s \cite{Amin:Thesis}. Further we built a set of example models with corresponding C implementations to test our implementation. Finally, our tool has also been applied in an industrial case study at Airbus Operations GmbH.\\%
-In this section we will first demonstrate how we generate test data for a model with mixed integer non--linear constraints and then summarise the results of the Industrial case study.
+The presented algorithm is implemented as an Eclipse plug-in. The tool is called Activity Test Generator (ATG). It is integrated into the Partition Test Generator (ParTeG) \cite{PartegWebsite} from Stephan Wei{\ss}leder. We built a set of example models with corresponding C implementations to test our implementation. Finally, our tool has also been applied in an industrial case study at Airbus Operations GmbH. The constraint solver based approach presented here has already been adopted by Amin Rezaee for \UMLType{StateMashine}s \cite{Rezaee2014ANew}.\\%
+In this section we will first evaluate ATG for a model with mixed integer non--linear constraints and then summarise the results of the Industrial case study.%
 \subsection{Mixed Integer Non--Linear Example Model}
 \label{sec:exampleModelNonConvex}
 % \begin{figure}
@@ -242,14 +241,14 @@ In this section we will first demonstrate how we generate test data for a model 
 % \includegraphics[width=\textwidth]{../Thesis/pics/pumpTyre.pdf}
 % \caption{Activity diagram with mixed integer non--linear constraints}
 % \end{figure}
-In the example model collection of our tool there is an activity diagram modelling the physical process of pumping air into a tyre. The relations between $volume$, amount of air ($n$), $pressure$, and $temperature$ are described by the ideal gas equation. The equations for adiabatic compression of air during one pump stroke states a non--convex relation between these physical measures. Additionally we introduced the boolean variables $tyreExploded$ and $tyreMelted$, which will be set when the $pressure$ or $temperature$ inside the tyre raised above a certain threshold. Moreover we introduce an integer loop counter ($counter$) to count the number of pump strokes performed. This model requires mixed integer non--linear programs to be solved in order to generate test data. The solver Couenne from the COIN-OR project is suitable for this task.
-\subsubsection{Runtime Measurement}
-\begin{figure}
-\begin{center}
-\ref{myLegend}
-\end{center}
-\begin{tikzpicture}
-\begin{axis}[
+In the example model collection of our tool there is an activity diagram modelling the physical process of pumping air into a tyre. The relations between $volume$, amount of air ($n$), $pressure$, and $temperature$ are described by the ideal gas equation. The equations for adiabatic compression of air during one pump stroke states a non--convex relation between these physical measures. Additionally we introduced the boolean variables $tyreExploded$ and $tyreMelted$, which will be set when the $pressure$ or $temperature$ inside the tyre raised above a certain threshold. Moreover we introduce an integer loop counter ($counter$) to count the number of pump strokes performed. This model requires mixed integer non--linear programs to be solved in order to generate test data. The solver Couenne \cite{Belotti09couenne} from the COIN-OR project is suitable for this task.%
+\subsubsection{Runtime Measurement}%
+\begin{figure}%
+\begin{center}%
+\ref{myLegend}%
+\end{center}%
+\begin{tikzpicture}%
+\begin{axis}[%
 width=0.498\textwidth,
 height=8cm,
 legend columns=-1,
@@ -284,11 +283,11 @@ xmax=75,
 \addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
 \addlegendentry{10min};
 \addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_2h.csv};
-\addlegendentry{2h};
-\end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}
-\begin{axis}[
+\addlegendentry{2h};%
+\end{axis}%
+\end{tikzpicture}%
+\begin{tikzpicture}%
+\begin{axis}[%
 width=0.498\textwidth,
 height=8cm,
 xlabel={maximum path length},
@@ -312,46 +311,48 @@ xmax=75,
 %\addlegendentry{60sec};
 \addplot[densely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
 %\addlegendentry{10min};
-\end{axis}
-\end{tikzpicture}
-\caption{Runtime consumed and test cases found by our implementation for the tyre pump model. We used depth first search and Couenne as solver. The maximum path length and the solver time limit have been varied.}
-\label{fig:ExplodingTyresRuntime}
-\end{figure}
-Mixed integer non--linear programs are in general undecidable. Consequently, it may happen that a solver trying to solve an instance of an MINLP runs infinitely long. Couenne usually uses less than one minute to generate test data for a feasible control flow path. But it also might run infinitely long.
-%Repetition from section Experiment Description
-Consequently we need to set a suitable time limit after which the solver shall terminate and we assume the currently examined control flow path as infeasible. When the time limit is chosen very small the test generation is faster but on the other hand we will also consider several paths as infeasible although there would be a solution for the corresponding problem instance. When setting a larger time limit to we will certainly find a solution more often and thus generate more Test cases but the overall runtime will grow.\\
+\end{axis}%
+\end{tikzpicture}%
+\caption{Runtime consumed and test cases found for the tyre pump model%
+%. We used Couenne as solver. The maximum path length and the solver time limit have been varied.
+}%
+\label{fig:ExplodingTyresRuntime}%
+\end{figure}%
+Mixed integer non--linear programs are in general undecidable. Consequently, it may happen that a solver trying to solve an instance of an MINLP runs infinitely long. Consequently we need to set a suitable time limit after which the solver shall terminate and we assume the currently examined control flow path as infeasible. When the time limit is chosen very small the test generation is faster but on the other hand we will also consider several paths as infeasible although there would be a solution for the corresponding problem instance. When setting a larger time limit we will certainly find a solution more often and thus generate more test cases but the overall runtime will grow.\\
 In Figure \ref{fig:ExplodingTyresRuntime}, we depict the overall runtime of the test generation for this model using Couenne. For each plot, we used the solver time limit printed in the legend. On the right hand side of Figure \ref{fig:ExplodingTyresRuntime} we depict the amount of test cases found depending on the time limit and the maximum path length. Up to a path length of 30 all problem instances had been solved or found infeasible after less than 10 seconds, thus the set time limits did not make a difference in the runtime as well as for the number of test cases found. Comparing the run time of our algorithm with different time limits for the maximum path length of 60 we recognise that increasing the time limit from 20 seconds to 60 seconds increased the overall runtime by a factor of 2.78 and generated 17 more test cases; those are 9.2\% more test cases. Increasing the time limit from 60 seconds to 600 seconds increased the overall runtime by a factor of 7.67 and produced 11 additional test cases, which amounts to only 5.4\% more test cases. We see that increasing the lime limit for the solver massively increases the overall runtime, but we gain only very little more test cases for that. We therefore recommend using less than 20 seconds as time limit for Couenne.
-\subsubsection{Mutation Test}
-We performed mutation testing with the test cases generated from the model shown in Figure\ref{fig:pumpTyre}. Although we did not do it systematically there is a set of interesting results.\\
-We see in the model there is a loop and in every round the values for $temperature$, $pressure$, amount of air ($n$) are updated depending on the values of those measures before. Consequently, when one of the calculations has a small error the error will be propagated to all three of those measures and we see a lot of failed tests due to just one wrong statement. Similarly, reordering of statements introduced huge errors in all three measures. And finally, a sub--optimal calculation plans caused several test cases to fail due to rounding errors. One might think that the new temperature after the \textsf{CoolALittle} action could be computed either as \verb$temp = (10 * temp + 300) / 11 ;$ or as \verb$temp = 10 * temp / 11 + 300 / 11 ;$. But the automatically generated test cases revealed that those two expressions do not produce the same results.
+\subsubsection{Mutation Testing}
+We performed mutation testing with the test cases generated from the tyre pump model. Although we did not do it systematically there is a set of interesting results.\\
+In the model there is a loop and in every round the values for $temperature$, $pressure$, amount of air ($n$) are updated depending on the values of those measures before. Consequently, when one of the calculations has a small error the error will be propagated to all three of those measures and we see a lot of failed tests due to just one wrong statement. Similarly, reordering of statements introduced huge errors in all three measures. And finally, a sub--optimal calculation plans caused several test cases to fail due to rounding errors. One might think that the C expressions \verb$(10 * temp + 300) / 11$ and \verb$10 * temp / 11 + 300 / 11$ are equivalent. But the automatically generated test cases revealed that those two expressions do not produce the same results.
 \section{Case Study}%
-\label{sec:CaseStudy}
-We tested our implementation on a model modelling the PAX call system from Airbus Operations GmbH. Out of the model of the complete product we selected a large activity diagram. The selected \UMLType{Activity} contains 21 \UMLType{Actions}, 24 \UMLType{ControlNodes}, and two \UMLType{LoopNodes}. Furthermore, there are eight \UMLType{DataStoreNodes} representing function local variables. The branching conditions and the code body of each \UMLType{Action} is given in C syntax. All assignments and conditions consist of linear equations and inequalities only. All variables are in the integer or boolean domain. Consequently, the constraint satisfaction problem to be solved for test data generation is a mixed integer linear program. The solvers Cplex and LPsolve are perfectly suitable for this kind of problem. Couenne can also be used for this task.\\
-The described algorithm has several parameters. We use this case study to evaluate the influence of those parameters on the runtime. The examined parameters are the maximum length of control flow paths, the maximum amount of test cases to be generated, the unchecked steps before an early infeasible path check is performed during the depth--first search, and the solver to use.
-\subsection{Manual Adaptation}
-In order to generate C++ unit test code with our Eclipse plug-in from the described model some pre--processing needs to be performed manually. We need to add all guards and the local post--conditions in OCL syntax, flatten the \UMLType{LoopNodes}, and replace the \UMLType{DataStoreNodes} by \UMLType{Properties}.\\
-The model was provided as XMI export from Atego\textsuperscript{\textregistered} Artisan Studio. Each modelling tool uses its own implementation of the UML meta model. Due to slight differences in the implementations it is not simply possible to load an XMI file from Atego\textsuperscript{\textregistered} in Eclipse. We manually removed some objects not recognised by Eclipse and correct some typing errors in the XMI file. Then we could load the XMI file and browse the model with the Eclipse Modelling Framework.\\
-Every \UMLType{Action} and \UMLReference{ControlFlow} contains C code snippets. There are not yet textual OCL constraints. We make an educated guess to add \UMLReference{guards} and \UMLReference{localPostconditions} reproducing the semantics of the C code snippets contained in the original model. The original model used local C struct variables modelled by the \UMLType{DataStoreNodes} contained by the \UMLType{Activity}. Our implementation can handle primitive data type variables modelled by \UMLType{Property} element. Consequently, we created one \UMLType{Property} per field of a struct variable. The original model also used arrays. We emulated the behaviour of an indexed collection by allowing all variables depending on an index to change to an arbitrary value whenever the index is changed. This may produce wrong behaviour but seemed fair enough to evaluate the runtime of our algorithm.\\
-The \UMLType{LoopNodes} contain further model elements in their \UMLReference{bodyPart}. Those elements from the \UMLReference{bodyPart} are directly included into the parent \UMLType{Activity}. The \UMLType{InitialNode} and \UMLType{FinalNodes} of the loop body are replaced by decision nodes and directly connected to every element that was connected to the \UMLType{LoopNode}. In order to preserve the loop semantics additional \UMLType{ControlFlow}s, \UMLType{DecisionNode}s, and counter incrementing \UMLType{Action}s are added.\\
-The function specifying which \UMLType{ControlFlow} to take after each \UMLType{Action} is well--defined and defined over the complete domain. 
-%Well--defined means there is no possible state in which more than one \UMLReference{guard} evaluates to true, and defined over the complete domain means that there is no value assignment for which every \UMLReference{guard} of the \UMLReference{outgoing} \UMLType{ControlFlow}s evaluate to false.
-\subsection{Runtime Measurement Results}
+\label{sec:CaseStudy}%
+We tested our implementation on a model modelling the PAX call system from Airbus Operations GmbH. Out of the model of the complete product we selected a large activity diagram modelling the control flow of a function. The selected \UMLType{Activity} contains 21 \UMLType{Actions}, 24 \UMLType{ControlNodes}, and two \UMLType{LoopNodes}. Furthermore, there are eight \UMLType{DataStoreNodes} representing function local variables. The branching conditions and the code body of each \UMLType{Action} is given in C syntax. All assignments and conditions consist of linear equations and inequalities only. All variables are in the integer or boolean domain. Consequently, the constraint satisfaction problem to be solved for test data generation is a mixed integer linear program. The solvers Cplex and LPsolve are perfectly suitable for this kind of problem. Couenne can also be used for this task.\\%
+The algorithm described in Section \ref{sec:Algorithm} has several parameters. We use this case study to evaluate the influence of those parameters on the runtime. The examined parameters are the maximum path length, maximum amount of test cases, unchecked steps, and the solver to use.%
+\subsection{Manual Adaptation}%
+In order to generate C++ unit test code with our Eclipse plug-in from the described model some pre--processing needs to be performed manually. We need to import the model, add \UMLReference{guard}s and \UMLReference{localPostcondition}s in OCL syntax, flatten the \UMLType{LoopNodes}, and replace the \UMLType{DataStoreNodes} by \UMLType{Properties}.\\%
+The model was provided as XMI export from Atego\textsuperscript{\textregistered} Artisan Studio. Each modelling tool uses its own implementation of the UML meta model. Due to slight differences in the implementations it is not simply possible to load an XMI file from Atego\textsuperscript{\textregistered} in Eclipse. We manually removed some objects not recognised by Eclipse and correct some typing errors in the XMI file. Then we could load the XMI file and browse the model with the Eclipse Modelling Framework.\\%
+Every \UMLType{Action} and \UMLReference{ControlFlow} contains C code snippets. There are not yet textual OCL constraints. We make an educated guess to add \UMLReference{guards} and \UMLReference{localPostconditions} reproducing the semantics of the C code snippets contained in the original model.\\%
+The original model used local C struct variables modelled by the \UMLType{DataStoreNodes} contained by the \UMLType{Activity}. Our implementation can handle primitive data type variables modelled by \UMLType{Property} element. Consequently, we created one \UMLType{Property} per field of a struct variable. The original model also used arrays. We emulated the behaviour of an indexed collection by allowing all variables depending on an index to change to an arbitrary value whenever the index is changed. This may produce wrong behaviour but seemed fair enough to evaluate the runtime of our algorithm.\\
+The \UMLType{LoopNodes} contain further model elements in their \UMLReference{bodyPart}. We connect those elements from the \UMLReference{bodyPart} to additional \UMLType{ControlFlow}s and \UMLType{ActivityNode}s emulating the counter loop semantic. The \UMLType{LoopNode} is discarded and its augmented \UMLReference{bodyPart} is directly embedded in the \UMLType{Activity}.%
+%Those elements from the \UMLReference{bodyPart} are directly included into the parent \UMLType{Activity}. The \UMLType{InitialNode} and \UMLType{FinalNodes} of the loop body are replaced by decision nodes and directly connected to every element that was connected to the \UMLType{LoopNode}. In order to preserve the loop semantics additional \UMLType{ControlFlow}s, \UMLType{DecisionNode}s, and counter incrementing \UMLType{Action}s are added.
+\\%
+The function specifying which \UMLType{ControlFlow} to take after each \UMLType{Action} is well--defined and defined over the complete domain.%
+\subsection{Runtime Measurement Results}%
 %The implemented algorithm has several properties influencing the exact execution of the \nameref{sec:pathsearch}. 
-We examine the influence of the used solver, the maximum path length, and the maximum number of test cases on the runtime of our algorithm.
-\subsubsection{Different Solvers}
-\begin{figure}
-\begin{tikzpicture}
-\begin{axis}[
-width=0.59\textwidth,
-height=8cm,
+We examine the influence of the used solver, the maximum path length, the maximum number of test cases, and the unchecked steps on the runtime of our algorithm. All runtime measurements have been performed with an Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} 2 Duo CPU.%
+\subsubsection{Different Solvers}%
+\begin{figure}%
+\begin{tikzpicture}%
+\begin{axis}[%
+width=0.59\textwidth,%
+height=8cm,%
 %legend columns=-1,
 %legend to name=solvers,
 legend style={at={(0.02,0.98)},anchor=north west},
 xlabel={maximum path length},
 ylabel={time $[s]$},
-yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
+yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},%
+extra y ticks={3.6e12,2.592e14},%
+extra y tick labels={{1h},{3d}},%
 extra tick style={
         major grid style=black,
         tick align=outside,
@@ -398,12 +399,14 @@ node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.1 ^ {x}$}
 \end{axis}
 \end{tikzpicture}
 %\end{center}
-\caption{Runtime of our algorithm applied to the case study. We measured the runtime with different solvers and varied the maximum path length. The runtime as well as the amount of test cases grow exponentially with the maximum path length.}
-\label{fig:RuntimeExperimentsSolvers}
-\end{figure}
-We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperimentsSolvers}. We performed this experiment with different solvers and fixed the parameter unchecked steps at two. The runtime grows almost perfectly exponential with the maximum path length and the runtime doubles when the maximum path length increases by $6$-$7$. As we see, LPsolve Cplex and GeCoDE are equally fast. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming; it is not perfectly specialized for mixed integer linear programming.\\
-The case study model contains only constraints that are instances of mixed integer linear programming and, therefore, the solvers succeed to find test data for every feasible path. Consequently, our algorithm will produce one test case for every feasible path. The number of test cases grows equally exponential with the maximum path length as the runtime. We plotted the number of test cases depending on the maximum path length on the right of Figure \ref{fig:RuntimeExperimentsSolvers}.
-\subsubsection{Unchecked Steps}
+\caption{Runtime of our algorithm applied to the case study%
+%. We measured the runtime with different solvers and varied the maximum path length. The runtime as well as the amount of test cases grow exponentially with the maximum path length.%
+}%
+\label{fig:RuntimeExperimentsSolvers}%
+\end{figure}%
+We plotted the runtime depending on the maximum path length on the left hand side of Figure \ref{fig:RuntimeExperimentsSolvers}. We performed this experiment with different solvers and fixed the parameter unchecked steps at two. The runtime grows almost perfectly exponential with the maximum path length. It doubles when the maximum path length increases by $6$-$7$. As we see, LPsolve Cplex and GeCoDE are equally fast. Using Couenne and a maximum path length of 60, our algorithm takes round about three times the runtime consumed using LPsolve and twice the runtime consumed with Cplex. This might be because Couenne is actually suitable for the much more general mathematical problem of mixed integer non--linear programming; it is not perfectly specialized for mixed integer linear programming.\\%
+The case study model contains only constraints that are instances of mixed integer linear programming and, therefore, the solvers succeed to find test data for every feasible path. Consequently, our algorithm will produce one test case for every feasible path. The number of test cases grows equally exponential with the maximum path length as the runtime. We plotted the number of test cases depending on the maximum path length on the right of Figure \ref{fig:RuntimeExperimentsSolvers}.%
+\subsubsection{Unchecked Steps}%
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -445,10 +448,12 @@ ymode=log,
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Runtime of our implementation depending on the unchecked steps. The experiment has been performed with Cplex as solver for different maximum path lengths}
-\label{fig:RuntimeUncheckedSteps}
-\end{figure}
-In Figure \ref{fig:RuntimeUncheckedSteps}, we plotted the overall runtime of our algorithm depending on the unchecked steps of the early infeasible path elimination. We used Cplex as solver for this experiment and repeated the experiment for different maximum path lengths. In the plots we see, up to a maximum path length of 50 it is not beneficial to use early infeasible path elimination when generating test cases for the case study model. With longer maximum path lengths the impact of well configured early infeasible path elimination grows. For a maximum path length of 90 our algorithm configured with the optimal value for the unchecked steps parameter takes less than one hour to generate all test cases, while it takes several days when unchecked steps is set to 5 or 6.
+\caption{Runtime of our implementation depending on the unchecked steps%
+%. The experiment has been performed with Cplex as solver for different maximum path lengths
+}%
+\label{fig:RuntimeUncheckedSteps}%
+\end{figure}%
+In Figure \ref{fig:RuntimeUncheckedSteps}, we plotted the overall runtime of our algorithm depending on the unchecked steps of the early infeasible path elimination. We used Cplex as solver for this experiment and repeated the experiment for different maximum path lengths. In the plots we see, up to a maximum path length of 50 it is not beneficial to use early infeasible path elimination when generating test cases for the case study model. With longer maximum path lengths the impact of well configured early infeasible path elimination grows. For a maximum path length of 90 our algorithm configured with the optimal value for the unchecked steps parameter takes less than one hour to generate all test cases, while it takes several days when unchecked steps is set to 5 or 6.%
 \subsubsection{Maximum Amount of Test Cases}
 \begin{figure}
 \begin{tikzpicture}
@@ -516,15 +521,15 @@ xmax=9500,
 ] 
 \addplot[dotted,mark=x] table[x=PathsFound,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv};
 \addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBFS.csv};
-\end{axis}
+\end{axis}%
 \end{tikzpicture}%
-\caption{Runtime of our implementation depending on the number of test cases. Left: depth first search. Right: breadth first search}
+\caption{Runtime depending on the number of test cases. Left: depth--first search. Right: breadth--first search}
 \label{fig:RuntimeExperimentsData}
 \end{figure}
 The runtime as well as the number of control flow paths grows exponentially with the maximum path length. We show this effect in Figure \ref{fig:RuntimeExperimentsSolvers}. The quotient of runtime and generated test cases grows polynomial. 
 To illustrate that, we plotted the runtime of our algorithm against the number of test cases in Figure \ref{fig:RuntimeExperimentsData}. For the plot on the left we used the same data as for the LPsolve plot in Figure \ref{fig:RuntimeExperimentsSolvers}. The plot is logarithmic on both axis and we can see that the runtime grows not linearly with the number of test cases, but it grows with an exponent of $1.45$.\\
 It would not produce useful test cases to use depth first search and no limit on the maximum path length but a limit on the test cases to find. All generated test cases would over and over share very long common sub--paths and some \UMLType{ControlFlow}s would not be checked at all. Since this is not desired in practice, we implemented a breadth--first search--based alternative to the algorithm explained in Section \ref{sec:InfeasiblePathElimination}. We use this alternative to evaluate the effect of the maximum amount of test cases on the runtime.\\
-In Figure \ref{fig:RuntimeExperimentsData}, we plot on the right the runtime of our algorithm with breadth--first search and Cplex as solver. The dotted line shows a small section of the first plot where the previous data has been reused. As we can see breadth first search is considerably slower than depth first search. The reason for that is that breadth first search can not make such a good use of the warm start capabilities of the solvers as depth first search can. In depth--first search between two subsequent solver invocations usually only a small amount of the constraints change. For breadth--first search it will happen several times during the infeasible path elimination that all constraints have changed between two subsequent calls to AMPL. Furthermore, we see that the generation of 9,000 test cases took only slightly longer than the generation of 8,000 test cases. We currently can not explain this strange effect.
+In Figure \ref{fig:RuntimeExperimentsData}, we plot on the right the runtime of our algorithm with breadth--first search and Cplex as solver. The dotted line shows a small section of the first plot where the previous data has been reused. As we can see breadth first search is considerably slower than depth first search. The reason for that is that breadth first search can not make such a good use of the warm start capabilities of the solvers as depth first search can. In depth--first search between two subsequent solver invocations usually only a small amount of the constraints change. For breadth--first search it will happen several times during the infeasible path elimination that all constraints have changed between two subsequent solver invocations. Furthermore, we see that the generation of 9,000 test cases took only slightly longer than the generation of 8,000 test cases. We currently can not explain this strange effect.
 \subsubsection{Boundary Value Analysis}
 \label{sec:caseStudyBoundaryValues}
 \begin{figure}
@@ -556,20 +561,20 @@ ymode=log,
 \addlegendentry{with};
 \addplot[dashed,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
 \addlegendentry{without}
-\end{axis}
+\end{axis}%
 \end{tikzpicture}%
-\end{center}
-\caption{Comparison of runtime with boundary value analysis and without boundary value analysis}
-\label{fig:RuntimeBoundaryValue}
-\end{figure}
-Finally, we also analysed the impact of the boundary value analysis on the runtime of our implementation. As explained in Section \ref{sec:BoundaryValueAnalysis}, an additional objective has been added in the AMPL program. We minimise the sum of all initialisation values. In Figure \ref{fig:RuntimeBoundaryValue}, we show the runtime of our algorithm depending on the maximum path length. We use LPsolve as solver. The runtime with boundary value analysis and the runtime without boundary value analysis are plotted. The plot clearly shows that it does not make a difference at all for the runtime whether we generate boundary test data or just any test data.\\
-This is plausible because the number of solver invocations where really a boundary value analysis is performed is small compared to the number of total solver calls. For example, for a maximum path length of 70 there are 1568 test cases. The solver performs the optimisation only for them. On the other hand, there are 35044 solver invocations in total including those that recognise a control flow path as infeasible. They are performed just in the same way as without boundary value analysis. Consequently, only $\frac{1}{22}$ of all solver invocations is actually performing some extra work. For larger maximum path lengths this fraction is declining.\\
-We definitely recommend to use this feature for mixed integer linear programs in practice because it really comes at no cost, and one can use this feature to generate test data at two or more different boundaries of the feasible set and generate multiple test cases for one control flow path that check all path conditions for the control flow path.
+\end{center}%
+\caption{Comparison of runtime boundary value analysis enabled and disabled}%
+\label{fig:RuntimeBoundaryValue}%
+\end{figure}%
+Finally, we also analysed the impact of the boundary value analysis on the runtime of our implementation. As explained in Section \ref{sec:BoundaryValueAnalysis}, an additional objective has been added in the AMPL program. We minimise the sum of all initialisation values. In Figure \ref{fig:RuntimeBoundaryValue}, we show the runtime of our algorithm depending on the maximum path length. We use LPsolve as solver. The runtime with boundary value analysis and the runtime without boundary value analysis are plotted. The plot clearly shows that it does not make a difference at all for the runtime whether we generate boundary test data or just any test data.\\%
+This is plausible because the number of solver invocations where really a boundary value analysis is performed is small compared to the number of total solver calls. For example, for a maximum path length of $70$ there are $1568$ test cases. The solver performs the optimisation only for them. On the other hand, there are $35044$ solver invocations in total including those that recognise a control flow path as infeasible. Consequently, only $4.5\%$ of all solver invocations are actually performing some extra work. For larger maximum path lengths this fraction is declining.\\%
+We definitely recommend to use this feature for mixed integer linear programs in practice because it really comes at no cost, and one can use this feature to generate test data at two or more different boundaries of the feasible set and generate multiple test cases for one control flow path that check all path conditions for the control flow path.%
 \subsection{Summary and Recommendation}%
-\label{sec:Recommendation}
-We presented an efficient way to integrate state--of--the--art constraint solvers into a model--based testing tool. Depending on the specific needs of the modeller we can allow a wide variety of constraint expressions to be used in the test model. We clearly saw that the automatic test data generation is especially fast when constraints are specified in terms of a decidable theory and solved with a perfectly optimised solver. On the other hand we also successfully generated test data for models whose constraints are formulated as instances of an undecidable problem, for example, mixed integer non--linear programming. Although it is in general possible with our approach to generate test data for models with undecidable constraints it can be much more time consuming than generating test data for models with decidable constraints and it is not guaranteed that an existing solution will be found. We recommend restricting oneself to linear inequalities or another decidable constraint formulation, if that is possible.\\
-We have presented a concept for early infeasible path elimination during generation of abstract test cases and examined its impact on the overall runtime of our algorithm. We have also examined the influence of several parameters on the runtime of our implementation. Using early infeasible path elimination with two unchecked steps massively reduces the runtime of our algorithm especially for larger models when one test case is generated for every feasible path with a maximum path length of 60 control flows or more. Of course, those results strongly depend on the activity diagrams used for this examination, but we assume that our case study model is a good representative of actual models occurring in practice.\\
-Finally, we argued that with the presented approach it is possible to steer the generation of test data in a way that boundary values are produced with no additional effort. It is common knowledge that the use of boundary values as test data tends to trigger existing bugs with a higher probability. Thus we improved the quality of the generated test cases with a minimal additional effort.
+\label{sec:Recommendation}%
+We presented an efficient way to integrate state--of--the--art constraint solvers into a model--based testing tool. Depending on the specific needs of the modeller we can allow a wide variety of constraint expressions to be used in the test model. We clearly saw that the automatic test data generation is especially fast when constraints are specified in terms of a decidable theory and solved with a perfectly optimised solver. On the other hand we also successfully generated test data for models whose constraints are formulated as instances of an undecidable problem, for example, mixed integer non--linear programming. Although it is in general possible with our approach to generate test data for models with undecidable constraints it can be much more time consuming than generating test data for models with decidable constraints and it is not guaranteed that existing test data will be found. We recommend restricting oneself to linear inequalities or another decidable constraint formulation.\\%
+We have presented a concept for early infeasible path elimination during generation of abstract test cases and examined its impact on the overall runtime of our algorithm. Using early infeasible path elimination with two unchecked steps massively reduces the runtime of our algorithm.\\%
+Finally, we argued that with the presented approach it is possible to steer the generation of test data in a way that boundary values are produced with no additional effort. It is common knowledge that the use of boundary values as test data tends to trigger existing bugs with a higher probability. Thus we improved the quality of the generated test cases with a minimal additional effort.%
 \bibliographystyle{splncs}%
 \bibliography{../Thesis/bibtex}%
 \end{document}
