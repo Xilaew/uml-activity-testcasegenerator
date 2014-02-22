@@ -69,7 +69,7 @@ Schwarzenbergstr. 95, 21073 Hamburg, Germany\\%
 \maketitle%
 %
 \begin{abstract}%
-The task of Model--Based Testing is to ensure that the implementation behaves as specified in its model. We present a method to generate test data from UML activity diagrams. Our method uses symbolic execution to collect embedded OCL constraints along a control--flow path and transforms them into `\textbf{A} \textbf{M}athematical \textbf{P}rogramming \textbf{L}anguage' (AMPL). We derive test data from the mathematical program using state--of--the--art constraint solvers. The generated tests will satisfy control--flow--based coverage criteria on the used models. We also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints. The presented method has been implemented in a demo Eclipse plug-in that generates fully automatically compilable C++ unit tests from activity diagrams.%
+The task of Model--Based Testing is to ensure that the implementation behaves as specified in its model. We present a method to generate test data from UML activity diagrams. Our method uses symbolic execution to collect embedded OCL constraints along a control--flow and we derive test data using state--of--the--art constraint solvers. The generated tests will satisfy control--flow--based coverage criteria on the used models. We also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints. The presented method has been implemented in a demo Eclipse plug-in that generates fully automatically compilable C++ unit tests from activity diagrams. We report on an industrial case study with our tool.%
 \keywords{Model-Based Testing, Activity Diagram, Constraint Solving, Mixed Integer Non--Linear Programming, Symbolic Execution, Boundary Value Analysis, Eclipse Plug-In}%
 \end{abstract}%
 \section{Introduction}%
@@ -154,7 +154,6 @@ The underlying MOF Model--to--Text Transformation Language (MOFM2T) template \ci
     var [var.name/] [@\bfseries{if}@ var.oclIsKindOf(@\UMLType{Property}@)] {0..pathlength} [/@\bfseries{if}@][Type2AMPL(type)/] :=1;
   [/@\bfseries{let}@]
 [/@\bfseries{template}@]
-
 [@\bfseries{template}@ public Type2AMPL(type : @\UMLType{PrimitiveType}@)]
   [@\bfseries{if}@ type.name = 'integer'] : integer >=-10000, <= 10000 [/@\bfseries{if}@]
   [@\bfseries{if}@ type.name = 'boolean'] in 0..1 [/@\bfseries{if}@]
@@ -563,8 +562,7 @@ ymode=log,
 \label{fig:RuntimeBoundaryValue}
 \end{figure}
 Finally, we also analysed the impact of the boundary value analysis on the runtime of our implementation. As explained in Section \ref{sec:BoundaryValueAnalysis}, an additional objective has been added in the AMPL program. We minimise the sum of all initialisation values. In Figure \ref{fig:RuntimeBoundaryValue}, we show the runtime of our algorithm depending on the maximum path length. We use LPsolve as solver. The runtime with boundary value analysis and the runtime without boundary value analysis are plotted. The plot clearly shows that it does not make a difference at all for the runtime whether we generate boundary test data or just any test data.\\
-This is plausible because the number of solver invocations where really a boundary value analysis is performed is small compared to the number of total solver calls. For example, for a maximum path length of 70 there are 1568 test cases. The solver performs the optimisation only for them. On the other hand, there are 35044 solver invocations in total including those that recognise a control flow path as infeasible. They are performed just in the same way as without boundary value analysis. The used solver will first determine the feasibility and then optimise. Consequently, only $\frac{1}{22}$ of all solver invocations is actually performing some extra work. For larger maximum path lengths this fraction is declining.\\
-% XXX resume here
+This is plausible because the number of solver invocations where really a boundary value analysis is performed is small compared to the number of total solver calls. For example, for a maximum path length of 70 there are 1568 test cases. The solver performs the optimisation only for them. On the other hand, there are 35044 solver invocations in total including those that recognise a control flow path as infeasible. They are performed just in the same way as without boundary value analysis. Consequently, only $\frac{1}{22}$ of all solver invocations is actually performing some extra work. For larger maximum path lengths this fraction is declining.\\
 We definitely recommend to use this feature for mixed integer linear programs in practice because it really comes at no cost, and one can use this feature to generate test data at two or more different boundaries of the feasible set and generate multiple test cases for one control flow path that check all path conditions for the control flow path.
 \subsection{Summary and Recommendation}%
 \label{sec:Recommendation}
