@@ -35,7 +35,7 @@
 %\title{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers}%
 %
 % a short form should be given in case it is too long for the running head%
-\titlerunning{Automated Generation of Unit Tests}%
+\titlerunning{Automated Generation of Test Data}%
 %
 % the name(s) of the author(s) follow(s) next%
 %
@@ -47,7 +47,9 @@
 % \thanks{Please note that the LNCS Editorial assumes that all authors have used%
 % the western naming convention, with given names preceding surnames. This determines%
 % the structure of the names in the running heads and the author index.}%
-\and Sibylle Schupp}%
+\and Sibylle Schupp%
+%
+\and Stephan Wei{\ss}leder}%
 %
 %\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}%
 % (feature abused for this document to repeat the title also on left hand pages)%
@@ -57,7 +59,7 @@
 \institute{Hamburg University of Technology, Institute for Software Systems,\\%
 Schwarzenbergstr. 95, 21073 Hamburg, Germany\\%
 \mailsa\\%
-\url{http://sts.tu-harburg.de}}%
+\url{http://www.sts.tu-harburg.de}}%
 %
 %
 % NB: a more complex sample for affiliations and the mapping to the%
@@ -589,13 +591,13 @@ xminorgrids=true,
 ymode=log,
 ]
 \addplot[dotted,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
-\addlegendentry{with};
+\addlegendentry{enabled};
 \addplot[dashed,mark=x] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
-\addlegendentry{without}
+\addlegendentry{disabled}
 \end{axis}%
 \end{tikzpicture}%
 \end{center}%
-\caption{Comparison of runtime boundary value analysis enabled and disabled}%
+\caption{Comparison of runtime with boundary value analysis enabled and disabled}%
 \label{fig:RuntimeBoundaryValue}%
 \end{figure}%
 Finally, we also analysed the impact of the boundary value analysis on the runtime of our implementation. As explained in Section \ref{sec:BoundaryValueAnalysis}, an additional objective has been added in the AMPL program. We minimise the sum of all initialisation values. In Figure \ref{fig:RuntimeBoundaryValue}, we show the runtime of our algorithm depending on the maximum path length. We use LPsolve as solver. The runtime with boundary value analysis and the runtime without boundary value analysis are plotted. The plot clearly shows that it does not make a difference at all for the runtime whether we generate boundary test data or just any test data.\\%
