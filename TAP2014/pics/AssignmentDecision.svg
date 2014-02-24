@@ -37,7 +37,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -50,16 +50,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="974"
-     inkscape:window-height="655"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
      id="namedview6045"
      showgrid="false"
      inkscape:zoom="1.7181694"
-     inkscape:cx="227.0949"
+     inkscape:cx="115.63907"
      inkscape:cy="24.691065"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:current-layer="g5670"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -1020,7 +1020,7 @@
        x1="203"
        clip-path="url(#clipPath24)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5979"
        y2="185"
        y1="185"
@@ -1029,7 +1029,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5981"
        y2="185"
        y1="189"
@@ -1038,7 +1038,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath28)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5983"
        y2="181"
        y1="185"
@@ -1056,7 +1056,7 @@
        x="326"
        font-size="13"> </text>
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5987"
        y2="185"
        y1="185"
@@ -1065,7 +1065,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5989"
        y2="185"
        y1="189"
@@ -1074,7 +1074,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath30)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5991"
        y2="181"
        y1="185"
@@ -1101,7 +1101,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5997"
        y2="188"
        y1="195"
@@ -1110,7 +1110,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line5999"
        y2="188"
        y1="195"
@@ -1119,7 +1119,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath32)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6001"
        y2="188"
        y1="188"
@@ -1137,7 +1137,7 @@
        x="298"
        font-size="13"> </text>
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6005"
        y2="163"
        y1="170"
@@ -1146,7 +1146,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6007"
        y2="163"
        y1="163"
@@ -1155,7 +1155,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6009"
        y2="163"
        y1="167"
@@ -1164,7 +1164,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath34)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6011"
        y2="159"
        y1="163"
@@ -1183,7 +1183,7 @@
        font-size="13"
        transform="translate(-6,0)">$[x\geq a+1]$</text>
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6015"
        y2="185"
        y1="185"
@@ -1192,7 +1192,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6017"
        y2="185"
        y1="189"
@@ -1201,7 +1201,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath36)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6019"
        y2="181"
        y1="185"
@@ -1228,7 +1228,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6025"
        y2="181"
        y1="172"
@@ -1237,7 +1237,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6027"
        y2="181"
        y1="180"
@@ -1246,7 +1246,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath38)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.50000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6029"
        y2="173"
        y1="181"
@@ -1255,7 +1255,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath38)" />
     <text
-       style="font-size:13px;stroke:none;font-family:Segoe UI"
+       style="font-size:13px;stroke:none;font-family:Segoe UI;stroke-width:1.00000001;stroke-miterlimit:10;stroke-dasharray:none"
        id="text6031"
        xml:space="preserve"
        text-rendering="optimizeLegibility"
@@ -1264,7 +1264,7 @@
        x="283"
        font-size="13"> </text>
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6033"
        y2="203"
        y1="200"
@@ -1273,7 +1273,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6035"
        y2="203"
        y1="203"
@@ -1282,7 +1282,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath27)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6037"
        y2="203"
        y1="207"
@@ -1291,7 +1291,7 @@
        text-rendering="optimizeLegibility"
        clip-path="url(#clipPath40)" />
     <line
-       style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+       style="fill:none;stroke-width:1.00000001;stroke-linecap:butt;font-family:Segoe UI;stroke-miterlimit:10;stroke-dasharray:none"
        id="line6039"
        y2="199"
        y1="203"
