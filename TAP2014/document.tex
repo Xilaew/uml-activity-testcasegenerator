@@ -46,11 +46,11 @@
 % their surnames. This ensures that the names appear correctly in%
 % the running heads and the author index.%
 %
-\author{Felix Kurth%
+\author{Felix Kurth\inst{1}%
 % \thanks{Please note that the LNCS Editorial assumes that all authors have used%
 % the western naming convention, with given names preceding surnames. This determines%
 % the structure of the names in the running heads and the author index.}%
-\and Sibylle Schupp%
+\and Sibylle Schupp\inst{1}%
 %
 \and Stephan Wei{\ss}leder
 %\thanks{Affiliations?}
@@ -78,9 +78,14 @@ Schwarzenbergstr. 95, 21073 Hamburg, Germany\\%
 \maketitle%
 %
 \begin{abstract}%
-We present a method to generate test data from UML activity diagrams. Our method uses symbolic execution to collect embedded OCL constraints along a control flow, translates those constraints into the modelling language AMPL, and derives test data using state--of--the--art constraint solvers that interface with AMPL; OCL constraints may use mixed integer non--linear programming as well as logical formulas. The generated tests will satisfy control--flow--based coverage criteria on the used models. 
-To improve performance of test-data generation and the quality of the test data themselves, we introduce infeasible path elimination and boundary value analysis. 
-The tool is integrated in the Partition Test Generator ParTeG, available as Eclipse plug-in, and generates fully automatically compilable C++ unit tests from activity diagrams. Using an industrial case study we measure the performance of our tool with different solvers and vary  maximum path lengths and the number of test cases. For path lengths greater than 50 infeasible path elimination reduces computation times from days to less than an hour; boundary value analysis adds only negligible overhead. 
+Testing is one of the most wide-spread means for quality assurance.
+Modeling and test automation are two ways to improve effectivity and efficiency of testing.
+In this paper, we present a method to generate test data from UML activity diagrams and OCL constraints. 
+Our test generation method combines symbolic execution and state--of--the--art constraint solvers.
+The generated tests satisfy control--flow--based coverage criteria on the used models. 
+To improve performance of test-data generation and the quality of the test data, we introduce infeasible path elimination and boundary value analysis. 
+Our prototype implementation is integrated in the existing test generator ParTeG, available as Eclipse plug-in, and generates fully automatically compilable C++ unit tests from activity diagrams. 
+We provide an industrial case study and measure the performance of our tool with different solvers in several scenarios. 
 %We present a method to generate test data from UML activity diagrams. Our method uses symbolic execution to collect embedded OCL constraints along a control--flow and we derive test data using state--of--the--art constraint solvers. The generated tests will satisfy control--flow--based coverage criteria on the used models. We also use boundary value analysis for testing. A special focus is on allowing mixed integer non--linear programming as well as logical formulas in OCL constraints. The presented method has been implemented in a demo Eclipse plug--in that generates fully automatically compilable C++ unit tests from activity diagrams. We report on an industrial case study with our tool.%
 %\keywords{Model--Based Testing, Activity Diagram, AMPL, Constraint Solving, Mixed Integer Non--Linear Programming, Symbolic Execution, Boundary Value Analysis, Eclipse Plug--In, Case Study}%
 \keywords{Model--Based Testing, Activity Diagram, AMPL, Constraint Solving, Infeasible Path Elimination, Boundary Value Analysis, Mixed Integer Non--Linear Programming}%
