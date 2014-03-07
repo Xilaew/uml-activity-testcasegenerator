@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.9)  28 FEB 2014 22:55
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.9)  7 MAR 2014 16:56
 entering extended mode
 **document.tex
 (C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\document.tex
@@ -803,130 +803,125 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (2.77757pt too wide) in paragraph at lines 86--87
+Overfull \hbox (2.77757pt too wide) in paragraph at lines 91--92
 \T1/cmr/bx/n/9 Keywords:\T1/cmr/m/n/9 Model--Based Test-ing, Ac-tiv-ity Di-a-gr
 am, AMPL, Con-straint
  []
+
+
+LaTeX Warning: Citation `Kurth2014AutomatedGen' on page 1 undefined on input li
+ne 103.
+
+
+LaTeX Warning: Citation `PartegWebsite' on page 1 undefined on input line 103.
 
 [1
 
 
 {C:/Users/swe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
-LaTeX Warning: Citation `Kurth2014AutomatedGen' on page 2 undefined on input li
-ne 93.
+LaTeX Warning: Citation `AMPL' on page 2 undefined on input line 119.
 
 
-LaTeX Warning: Citation `PartegWebsite' on page 2 undefined on input line 93.
+LaTeX Warning: Citation `lpsolve' on page 2 undefined on input line 141.
 
 
-LaTeX Warning: Citation `Linzhang04GeneratingTestCasefromActivityGrayBoxMethod'
- on page 2 undefined on input line 98.
+LaTeX Warning: Citation `Belotti09couenne' on page 2 undefined on input line 14
+1.
 
 
-LaTeX Warning: Citation `mingsong2006automatic' on page 2 undefined on input li
-ne 98.
+LaTeX Warning: Citation `gecode' on page 2 undefined on input line 141.
 
 
-LaTeX Warning: Citation `weissleder2008automatic' on page 2 undefined on input 
-line 100.
+LaTeX Warning: Citation `ilogcp' on page 2 undefined on input line 141.
 
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 144.
 
-LaTeX Warning: Citation `ParTeG' on page 2 undefined on input line 100.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
 
-
-LaTeX Warning: Citation `PartegWebsite' on page 2 undefined on input line 100.
+LaTeX Warning: Citation `UML23Superstructure' on page 2 undefined on input line
+ 145.
 
 [2]
 
-LaTeX Warning: Citation `ali2011search' on page 3 undefined on input line 102.
+LaTeX Warning: Citation `Linzhang04GeneratingTestCasefromActivityGrayBoxMethod'
+ on page 3 undefined on input line 156.
 
 
-LaTeX Warning: Citation `krieger2008executingUnderspecifiedOCL' on page 3 undef
-ined on input line 102.
+LaTeX Warning: Citation `mingsong2006automatic' on page 3 undefined on input li
+ne 158.
+
+[3]
+
+LaTeX Warning: Citation `weissleder2008automatic' on page 4 undefined on input 
+line 161.
 
 
-LaTeX Warning: Citation `malburg2011combining' on page 3 undefined on input lin
-e 104.
+LaTeX Warning: Citation `ParTeG' on page 4 undefined on input line 161.
 
 
-LaTeX Warning: Citation `pex' on page 3 undefined on input line 104.
+LaTeX Warning: Citation `PartegWebsite' on page 4 undefined on input line 161.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
+
+LaTeX Warning: Citation `ali2011search' on page 4 undefined on input line 163.
+
+
+LaTeX Warning: Citation `krieger2008executingUnderspecifiedOCL' on page 4 undef
+ined on input line 163.
+
+
+LaTeX Warning: Citation `malburg2011combining' on page 4 undefined on input lin
+e 165.
+
+
+LaTeX Warning: Citation `pex' on page 4 undefined on input line 165.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 165.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
 
 
-LaTeX Warning: Citation `malburg2011combining' on page 3 undefined on input lin
-e 104.
+LaTeX Warning: Citation `malburg2011combining' on page 4 undefined on input lin
+e 165.
 
 
-LaTeX Warning: Citation `pex' on page 3 undefined on input line 104.
+LaTeX Warning: Citation `pex' on page 4 undefined on input line 165.
 
 
-LaTeX Warning: Citation `AMPL' on page 3 undefined on input line 122.
+LaTeX Warning: Citation `PartegWebsite' on page 4 undefined on input line 183.
 
 
-LaTeX Warning: Citation `lpsolve' on page 3 undefined on input line 144.
-
-
-LaTeX Warning: Citation `Belotti09couenne' on page 3 undefined on input line 14
-4.
-
-
-LaTeX Warning: Citation `gecode' on page 3 undefined on input line 144.
-
-
-LaTeX Warning: Citation `ilogcp' on page 3 undefined on input line 144.
-
-[3]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 147.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-
-LaTeX Warning: Citation `UML23Superstructure' on page 4 undefined on input line
- 148.
-
-
-LaTeX Warning: Citation `PartegWebsite' on page 4 undefined on input line 157.
-
-
-Underfull \vbox (badness 4181) has occurred while \output is active []
-
- [4]
 (C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\pics\AssignmentDecisio
-n.pdf_tex <./pics/AssignmentDecision.pdf, id=29, 374.64969pt x 87.3827pt>
+n.pdf_tex <./pics/AssignmentDecision.pdf, id=25, 374.64969pt x 87.3827pt>
 File: ./pics/AssignmentDecision.pdf Graphic file (type pdf)
 
 <use ./pics/AssignmentDecision.pdf>
 Package pdftex.def Info: ./pics/AssignmentDecision.pdf used on input line 52.
 (pdftex.def)             Requested size: 347.12354pt x 80.96638pt.
-)
+) [4]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 173.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 199.
  [5 <C:/Users/swe/git/uml-activity-testcasegenerator/TAP2014/pics/AssignmentDec
-ision.pdf>] [6] [7]
+ision.pdf>] [6]
 
-LaTeX Warning: Citation `PartegWebsite' on page 8 undefined on input line 292.
-
-
-LaTeX Warning: Citation `Rezaee2014ANew' on page 8 undefined on input line 292.
+LaTeX Warning: Citation `PartegWebsite' on page 7 undefined on input line 319.
 
 
-
-LaTeX Warning: Citation `Belotti09couenne' on page 8 undefined on input line 30
-2.
+LaTeX Warning: Citation `Rezaee2014ANew' on page 7 undefined on input line 319.
 
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
+[7]
 
- [8]
+LaTeX Warning: Citation `Belotti09couenne' on page 8 undefined on input line 32
+9.
+
+[8]
 PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv}
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10s.csv}
@@ -944,13 +939,7 @@ PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10s.csv}
 PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv}
 PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_60sec.csv}
 PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10min.csv}
-
-[9] [10]
-Overfull \hbox (0.20831pt too wide) in paragraph at lines 409--410
-\T1/cmr/m/n/10 the max-i-mum path length, the max-i-mum num-ber of test cases, 
-and the unchecked
- []
-
+ [9] [10]
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv}
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
@@ -960,6 +949,7 @@ Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeGecode.csv}
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
+
 NOTE: coordinate (10,0) has been dropped because it is unbounded (in y). (see a
 lso unbounded coords=jump). 
 [11]
@@ -975,7 +965,6 @@ PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps50.csv}
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps40.csv}
 Missing character: There is no ; in font nullfont!
- [12]
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
 
 NOTE: coordinate (0,1921210377) has been dropped because it is unbounded (in x)
@@ -985,25 +974,25 @@ PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeBFS.csv}
 ! Dimension too large.
 <to be read again> 
                    \relax 
-l.593 \end{axis}
+l.620 \end{axis}
                 %
 I can't work with sizes bigger than about 19 feet.
 Continue and I'll use the largest value I can.
 
-[13]
+[12]
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv
 }
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.c
 sv}
- [14]
+ [13] [14]
 No file document.bbl.
 [15] (C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\document.aux) ) 
 Here is how much of TeX's memory you used:
- 21123 strings out of 493921
- 488155 string characters out of 3147289
- 639167 words of memory out of 3000000
- 23957 multiletter control sequences out of 15000+200000
+ 21124 strings out of 493921
+ 488174 string characters out of 3147289
+ 648482 words of memory out of 3000000
+ 23958 multiletter control sequences out of 15000+200000
  20620 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  63i,19n,74p,7354b,2091s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1032,9 +1021,9 @@ ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy9.pfb>
-Output written on document.pdf (15 pages, 341532 bytes).
+Output written on document.pdf (15 pages, 344433 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
+ 805 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
