@@ -1,0 +1,1029 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.8.9)  7 MAR 2014 16:56
+entering extended mode
+**document.tex
+(C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\document.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\llncs.cls
+Document Class: llncs 2013/09/27 v2.18 
+ LaTeX document class for Lecture Notes in Computer Science
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count95
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\aliascnt.sty"
+Package: aliascnt 2009/09/08 v1.3 Alias counters (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\remreset.sty"))
+\c@chapter=\count96
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count97
+\fnindent=\dimen121
+\c@@inst=\count98
+\c@@auth=\count99
+\c@auco=\count100
+\instindent=\dimen122
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count101
+\c@case=\count102
+\c@conjecture=\count103
+\c@corollary=\count104
+\c@definition=\count105
+\c@example=\count106
+\c@exercise=\count107
+\c@lemma=\count108
+\c@note=\count109
+\c@problem=\count110
+\c@property=\count111
+\c@proposition=\count112
+\c@question=\count113
+\c@solution=\count114
+\c@remark=\count115
+\headlineindent=\dimen123
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen124
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen125
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count116
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count117
+\leftroot@=\count118
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count119
+\DOTSCASE@=\count120
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen126
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count121
+\c@MaxMatrixCols=\count122
+\dotsspace@=\muskip10
+\c@parentequation=\count123
+\dspbrk@lvl=\count124
+\tag@help=\toks20
+\row@=\count125
+\column@=\count126
+\maxfields@=\count127
+\andhelp@=\toks21
+\eqnshift@=\dimen127
+\alignsep@=\dimen128
+\tagshift@=\dimen129
+\tagwidth@=\dimen130
+\totwidth@=\dimen131
+\lineht@=\dimen132
+\@envbody=\toks22
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count128
+))
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+\lst@mode=\count129
+\lst@gtempboxa=\box56
+\lst@token=\toks25
+\lst@length=\count130
+\lst@currlwidth=\dimen135
+\lst@column=\count131
+\lst@pos=\count132
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
+\lst@newlines=\count133
+\lst@lineno=\count134
+\lst@maxwidth=\dimen138
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count135
+\lst@skipnumbers=\count136
+\lst@framebox=\box57
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\lstlangampl.sty)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count137
+\float@exts=\toks26
+\float@box=\box58
+\@float@everytoks=\toks27
+\@floatcapt=\box59
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks28
+\c@algorithm=\count138
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algpseudocode.s
+ty
+Package: algpseudocode 
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algorithmicx.st
+y
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count139
+\c@ALG@rem=\count140
+\c@ALG@nested=\count141
+\ALG@tlm=\skip48
+\ALG@thistlm=\skip49
+\c@ALG@Lnr=\count142
+\c@ALG@blocknr=\count143
+\c@ALG@storecount=\count144
+\c@ALG@tmpcounter=\count145
+\ALG@tmplength=\skip50
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.revision
+.tex)
+Package: pgfplots 2013/10/03 v1.9 Data Visualization (1.9)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-comm
+on.tex
+\pgfutil@everybye=\toks29
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-late
+x.def
+\pgfutil@abb=\box60
+ (C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.code.
+tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.cod
+e.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code
+.tex
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfilte
+red.code.tex
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen139
+\pgf@y=\dimen140
+\pgf@xa=\dimen141
+\pgf@ya=\dimen142
+\pgf@xb=\dimen143
+\pgf@yb=\dimen144
+\pgf@xc=\dimen145
+\pgf@yc=\dimen146
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count146
+\c@pgf@countb=\count147
+\c@pgf@countc=\count148
+\c@pgf@countd=\count149
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-pdf
+tex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-com
+mon-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyssoft
+path.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count150
+\pgfsyssoftpath@bigbuffer@items=\count151
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysprot
+ocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.cod
+e.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.code.
+tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.code.
+tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.cod
+e.tex
+\pgfmath@dimen=\dimen147
+\pgfmath@count=\count152
+\pgfmath@box=\box61
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+basic.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+trigonometric.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+random.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+comparison.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+base.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+round.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.
+misc.code.tex)))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.code
+.tex
+\c@pgfmathroundto@lastzeros=\count153
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepoin
+ts.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen148
+\pgf@picmaxx=\dimen149
+\pgf@picminy=\dimen150
+\pgf@picmaxy=\dimen151
+\pgf@pathminx=\dimen152
+\pgf@pathmaxx=\dimen153
+\pgf@pathminy=\dimen154
+\pgf@pathmaxy=\dimen155
+\pgf@xx=\dimen156
+\pgf@xy=\dimen157
+\pgf@yx=\dimen158
+\pgf@yy=\dimen159
+\pgf@zx=\dimen160
+\pgf@zy=\dimen161
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepath
+construct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen162
+\pgf@path@lasty=\dimen163
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepath
+usage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen164
+\pgf@shorten@start@additional=\dimen165
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorescop
+es.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count154
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregrap
+hicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen166
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretran
+sformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen167
+\pgf@pt@y=\dimen168
+\pgf@pt@temp=\dimen169
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequic
+k.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreobje
+cts.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepath
+processing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorearro
+ws.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreshad
+e.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen170
+\pgf@sys@shading@range@num=\count155
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreimag
+e.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreexte
+rnal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box65
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorelaye
+rs.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretran
+sparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepatt
+erns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleshape
+s.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box66
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplot.
+code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-ve
+rsion-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen171
+\pgf@nodesepend=\dimen172
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-ve
+rsion-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code
+.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.code.
+tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen173
+\pgffor@skip=\dimen174
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\tik
+z.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrarypl
+othandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count156
+\pgfplotmarksize=\dimen175
+)
+\tikz@lastx=\dimen176
+\tikz@lasty=\dimen177
+\tikz@lastxsaved=\dimen178
+\tikz@lastysaved=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
+\tikz@figbox=\box67
+\tikz@tempbox=\box68
+\tikztreelevel=\count157
+\tikznumberofchildren=\count158
+\tikznumberofcurrentchild=\count159
+\tikz@fig@count=\count160
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulematri
+x.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count161
+\pgfmatrixcurrentcolumn=\count162
+\pgf@matrix@numberofcolumns=\count163
+)
+\tikz@expandcount=\count164
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\lib
+raries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.code.tex
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscore.code
+.tex
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
+\pgfplots@tmpa=\dimen182
+\c@pgfplots@coordindex=\count165
+\c@pgfplots@scanlineindex=\count166
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgfplotssysge
+neric.code.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgfplotslibr
+ary.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_loader.code.tex
+Package pgfplots: loading complementary code for your PGF version...
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_misc.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks41
+\pgfkeys@temptoks=\toks42
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks43
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count167
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
+\pgf@plot@mark@count=\count168
+\pgfplotmarksize=\dimen183
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgflibraryfpu.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
+\pgfpic=\box69
+\pgf@hbox=\box70
+\pgf@layerbox@main=\box71
+\pgf@picture@serial@count=\count169
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pg
+fplotsoldpgfsupp_pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2012/11/07  (rcs-revision 1.5)
+))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil
+.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgf
+plotsliststructure.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgf
+plotsliststructureext.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgf
+plotsarray.code.tex
+\c@pgfplotsarray@tmp=\count170
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgf
+plotsmatrix.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtable\pgfplots
+tableshared.code.tex
+\c@pgfplotstable@counta=\count171
+\t@pgfplotstable@a=\toks44
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgf
+plotsdeque.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbina
+ry.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbina
+ry.data.code.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil
+.verb.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgflibrarypg
+fplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count172
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgflibrarypgf
+plots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolo
+rmap.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolo
+r.code.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsstackedpl
+ots.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsplothandl
+ers.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsmeshploth
+andler.code.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.scaling.
+code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscoordproc
+essing.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.errorbar
+s.code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.markers.
+code.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsticks.cod
+e.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.paths.co
+de.tex)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\lib
+raries\tikzlibrarydecorations.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduledecor
+ations.code.tex
+\pgfdecoratedcompleteddistance=\dimen184
+\pgfdecoratedremainingdistance=\dimen185
+\pgfdecoratedinputsegmentcompleteddistance=\dimen186
+\pgfdecoratedinputsegmentremainingdistance=\dimen187
+\pgf@decorate@distancetomove=\dimen188
+\pgf@decorate@repeatstate=\count173
+\pgfdecorationsegmentamplitude=\dimen189
+\pgfdecorationsegmentlength=\dimen190
+)
+\tikz@lib@dec@box=\box72
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\lib
+raries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\
+pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\lib
+raries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\
+pgflibrarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count174
+\pgfplots@xmin@reg=\dimen191
+\pgfplots@xmax@reg=\dimen192
+\pgfplots@ymin@reg=\dimen193
+\pgfplots@ymax@reg=\dimen194
+\pgfplots@zmin@reg=\dimen195
+\pgfplots@zmax@reg=\dimen196
+)
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\lib
+raries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrarypl
+otmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
+))) ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\document.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+
+(C:\Users\swe\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count175
+\scratchdimen=\dimen197
+\scratchbox=\box73
+\nofMPsegments=\count176
+\nofMParguments=\count177
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count178
+\MPscratchDim=\dimen198
+\MPnumerator=\count179
+\makeMPintoPDFobject=\count180
+\everyMPtoPDFconversion=\toks46
+)
+\c@lstlisting=\count181
+ ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.9} into y
+our preamble.
+ on input line 32.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 78.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (2.77757pt too wide) in paragraph at lines 91--92
+\T1/cmr/bx/n/9 Keywords:\T1/cmr/m/n/9 Model--Based Test-ing, Ac-tiv-ity Di-a-gr
+am, AMPL, Con-straint
+ []
+
+
+LaTeX Warning: Citation `Kurth2014AutomatedGen' on page 1 undefined on input li
+ne 103.
+
+
+LaTeX Warning: Citation `PartegWebsite' on page 1 undefined on input line 103.
+
+[1
+
+
+{C:/Users/swe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `AMPL' on page 2 undefined on input line 119.
+
+
+LaTeX Warning: Citation `lpsolve' on page 2 undefined on input line 141.
+
+
+LaTeX Warning: Citation `Belotti09couenne' on page 2 undefined on input line 14
+1.
+
+
+LaTeX Warning: Citation `gecode' on page 2 undefined on input line 141.
+
+
+LaTeX Warning: Citation `ilogcp' on page 2 undefined on input line 141.
+
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 144.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+
+LaTeX Warning: Citation `UML23Superstructure' on page 2 undefined on input line
+ 145.
+
+[2]
+
+LaTeX Warning: Citation `Linzhang04GeneratingTestCasefromActivityGrayBoxMethod'
+ on page 3 undefined on input line 156.
+
+
+LaTeX Warning: Citation `mingsong2006automatic' on page 3 undefined on input li
+ne 158.
+
+[3]
+
+LaTeX Warning: Citation `weissleder2008automatic' on page 4 undefined on input 
+line 161.
+
+
+LaTeX Warning: Citation `ParTeG' on page 4 undefined on input line 161.
+
+
+LaTeX Warning: Citation `PartegWebsite' on page 4 undefined on input line 161.
+
+
+LaTeX Warning: Citation `ali2011search' on page 4 undefined on input line 163.
+
+
+LaTeX Warning: Citation `krieger2008executingUnderspecifiedOCL' on page 4 undef
+ined on input line 163.
+
+
+LaTeX Warning: Citation `malburg2011combining' on page 4 undefined on input lin
+e 165.
+
+
+LaTeX Warning: Citation `pex' on page 4 undefined on input line 165.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 165.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
+
+
+LaTeX Warning: Citation `malburg2011combining' on page 4 undefined on input lin
+e 165.
+
+
+LaTeX Warning: Citation `pex' on page 4 undefined on input line 165.
+
+
+LaTeX Warning: Citation `PartegWebsite' on page 4 undefined on input line 183.
+
+
+(C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\pics\AssignmentDecisio
+n.pdf_tex <./pics/AssignmentDecision.pdf, id=25, 374.64969pt x 87.3827pt>
+File: ./pics/AssignmentDecision.pdf Graphic file (type pdf)
+
+<use ./pics/AssignmentDecision.pdf>
+Package pdftex.def Info: ./pics/AssignmentDecision.pdf used on input line 52.
+(pdftex.def)             Requested size: 347.12354pt x 80.96638pt.
+) [4]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 199.
+ [5 <C:/Users/swe/git/uml-activity-testcasegenerator/TAP2014/pics/AssignmentDec
+ision.pdf>] [6]
+
+LaTeX Warning: Citation `PartegWebsite' on page 7 undefined on input line 319.
+
+
+LaTeX Warning: Citation `Rezaee2014ANew' on page 7 undefined on input line 319.
+
+
+[7]
+
+LaTeX Warning: Citation `Belotti09couenne' on page 8 undefined on input line 32
+9.
+
+[8]
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10s.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_60sec.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10min.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_2h.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv}
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10s.csv}
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv}
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_60sec.csv}
+PGFPlots: reading {../Thesis/Experiment-DATA/ExplodingTyres_10min.csv}
+ [9] [10]
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeCouenne.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeGecode.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
+
+NOTE: coordinate (10,0) has been dropped because it is unbounded (in y). (see a
+lso unbounded coords=jump). 
+[11]
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps90.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps80.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps70.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps60.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps50.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyUncheckedSteps40.csv}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv}
+
+NOTE: coordinate (0,1921210377) has been dropped because it is unbounded (in x)
+. (see also unbounded coords=jump). 
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv}
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeBFS.csv}
+! Dimension too large.
+<to be read again> 
+                   \relax 
+l.620 \end{axis}
+                %
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+[12]
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv
+}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.c
+sv}
+ [13] [14]
+No file document.bbl.
+[15] (C:\Users\swe\git\uml-activity-testcasegenerator\TAP2014\document.aux) ) 
+Here is how much of TeX's memory you used:
+ 21124 strings out of 493921
+ 488174 string characters out of 3147289
+ 648482 words of memory out of 3000000
+ 23958 multiletter control sequences out of 15000+200000
+ 20620 words of font info for 51 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 63i,19n,74p,7354b,2091s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <
+C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsi09
+00.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
+0\ecss0900.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ectt1000.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecsi1000.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\swe\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0500.pk> <C:\Users\swe\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\swe\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0900.pk> <C:\User
+s\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk> 
+<C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0
+900.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecrm1000.pk> <C:\Users\swe\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ecbx1440.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb>
+Output written on document.pdf (15 pages, 344433 bytes).
+PDF statistics:
+ 805 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+
