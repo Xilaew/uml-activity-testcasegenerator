@@ -129,7 +129,7 @@ we introduced \emph{early infeasible path elimination} within the depth--first
 search to reduce the runtime of our algorithm. The presented transformation is
 implemented as part of a master thesis~\cite{Kurth2014AutomatedGen} in a
 proof--of--concept fully automated unit test generation tool called Activity
-Test Generator (ATG). The tool is integrated as a feature into the Partition
+Tester (AcT). The tool is integrated as a feature into the Partition
 Test Generator (ParTeG) available as Eclipse plug--in~\cite{PartegWebsite}.
 
 The paper is structured as follows. An introduction to AMPL and the used models
@@ -566,7 +566,7 @@ UchkSteps : \AlgDataType{integer} \Comment number of path decisions without infe
 \end{algorithm}%
 \section{Results}%
 The presented algorithm is implemented as an Eclipse plug--in. The tool is
-called Activity Test Generator (ATG). It is integrated into the Partition Test
+called Activity Tester (AcT). It is integrated into the Partition Test
 Generator (ParTeG)~\cite{PartegWebsite} from Stephan Wei{\ss}leder. We built a
 set of example models with corresponding C implementations to test our
 implementation. Finally, our tool has also been applied in an industrial case
@@ -574,7 +574,7 @@ study at Airbus Operations GmbH. The constraint solver based approach presented
 here has already been adopted by Amin Rezaee for
 \UMLType{StateMachine}s~\cite{Rezaee2014ANew}.
 
-In this section we will first evaluate ATG for a model with mixed integer
+In this section we will first evaluate AcT for a model with mixed integer
 non--linear constraints and then summarise the results of the industrial case
 study.%
 \subsection{Mixed Integer Non--Linear Example Model}
