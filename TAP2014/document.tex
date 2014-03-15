@@ -138,111 +138,7 @@ compares other model--based testing approaches to ours. Definitions and a
 description of the used test models is given in Section~\ref{sec:TestModel}.
 Section~\ref{sec:Algorithm} contains a description of the core ideas of the
 proposed algorithm. The report on our case study is given in
-Section~\ref{sec:CaseStudy}.%
-
-\section{Preliminaries}%
-\label{sec:Preliminaries}%
-
-In this section, we introduce the programming language AMPL and the semantics of
-the used test models.
-
-\subsection{AMPL and its Solvers}%
-\label{sec:AMPL}%
-We use `A Mathematical Programming Language' (AMPL) by Robert Fourer~\cite{AMPL}
-as a means to formalise the execution of a control--flow path in the test model.
-In this section, we will discuss the expressiveness of AMPL and introduce the
-solvers we have successfully used to generate test data.
-% 
-% In AMPL models we can declare parameters, sets, variables, and constraints. We
-% will give specific values for the parameters and sets in the AMPL data. A
-% suitable state--of--the--art solver can assign the variables such that all
-% constraints are satisfied with the given values of parameters and sets.
-\begin{table}%
-\begin{center}%
-\begin{tabular}{l r r r r r r r r}%
-Solver                         & MILP       & NLP        & SMT        & MINLP\\%
-\hline%
-Cplex                          & \checkmark &            &            &\\%
-LPsolve\cite{lpsolve}          & \checkmark &            &            &\\%
-Gurobi                         &            & \checkmark &            &\\%
-Minos                          &            & \checkmark &            &\\%
-IlogCP\cite{ilogcp}            & \checkmark &            & \checkmark &\\%
-GeCoDE\cite{gecode}            &            &            & \checkmark &\\%
-Couenne\cite{Belotti09couenne} & \checkmark & \checkmark &            & \checkmark\\%
-\hline%
-\end{tabular}%
-\end{center}%
-\caption{List of solvers and problems they can solve.}%
-\label{tab:Solvers}%
-\end{table}
-In AMPL we can state linear, non--linear, and logical constraints. Variables can
-be continuous or discrete. The AMPL system serves as a common interface to a
-variety of solvers. Depending on the constraint satisfaction problem encoded in
-the AMPL program a suitable solver can be selected to solve the problem. If all
-constraints are linear we use a solver that is specialized on mixed integer
-linear programming (MILP), for example, Cplex or LPsolve~\cite{lpsolve}. If
-constraints are non--linear but convex and all variables are continuous we use a
-non--linear programming (NLP) solver. For problems with non--linear constraints
-and discrete as well as continuous variables we need a solver capable of solving
-mixed integer non--linear programming (MINLP), for example,
-Couenne~\cite{Belotti09couenne}. If logical operations are used in the
-constraints, a satisfiability modulo theories (SMT) solver supporting
-appropriate background theories is used, for example, GeCoDE~\cite{gecode} or
-IlogCP~\cite{ilogcp}. In Table~\ref{tab:Solvers} we show a selection of solvers
-interfacing with AMPL. A checkmark in a cell means that we have successfully
-tested the solver in the row on the problem named in the column.%
-\subsection{Semantics of the Test Models}%
-\label{sec:TestModel}%
-For the transformation into `A Mathematical Programming Language' (AMPL)
-presented in Section~\ref{sec:AMPLTransformation} we need to clarify the
-semantics of the expected input model. Whenever we refer to a modelling element
-such as \UMLType{Activity} or a reference defined in the UML as, for example,
-\UMLReference{name} or \UMLReference{ownedParameter} we print it in a special
-font. In this section, we first detail which UML modelling elements we
-use and will then shortly recapitulate the Petri--Net semantics of activity
-diagrams (see~\cite{UML23Superstructure}). Further, we introduce the notion of a
-\emph{state}, which will be relevant for our algorithm.
-
-As test model we assume an activity diagram with \UMLType{Action}s,
-\UMLType{ControlNode}s, and \UMLType{ControlFlow}s modelling the control flow of
-an \UMLType{Operation}. The \UMLType{Activity} is linked as
-\UMLReference{method} to its specifying \UMLType{Operation}. Each
-\UMLType{Action} can contain several textual OCL constraints as
-\UMLReference{localPostcondition} and each \UMLType{ControlFlow} can hold a
-textual OCL constraint as \UMLReference{guard}. The textual OCL in the
-\UMLReference{guard} and \UMLReference{localPostcondition} will be parsed in the
-context of the specifying \UMLType{Operation}. That means the OCL constraints
-can access all \UMLReference{ownedAttribute}s of the \UMLType{Class} containing
-the specifying \UMLType{Operation}. Further, all \UMLReference{ownedParameter}s
-of the specifying \UMLType{Operation} can be referenced in the textual OCL. We
-interpret every \UMLType{Property} as variable that can change its value during
-the execution of an \UMLType{Action}. A \UMLType{Parameter} will be interpreted
-as a parameter that can not change its value during the execution of an
-\UMLType{Action}.
-
-When executing a control--flow path, we start with a token in the
-\UMLType{InitialNode}. We allow only one \UMLType{InitialNode} per
-\UMLType{Activity}. The token can move along an enabled \UMLType{ControlFlow}. A
-\UMLType{ControlFlow} is enabled when the OCL constraint in its
-\UMLReference{guard} evaluates to true. We say that an \UMLType{Action} is being
-executed when a token resides in the \UMLType{Action}.
-
-We refer to an assignment of all variables and parameters as \emph{state}. While
-the token resides in the \UMLType{InitialNode} there is an initial state. After
-each execution of an \UMLType{Action} the current state can change according to
-the OCL constraints contained in the \UMLType{Action}'s
-\UMLReference{localPostcondition}. An OCL constraint contained as
-\UMLType{localPostcondition} can specify a relation between the current state
-and the previous state. Consequently, the states are interconnected with each
-other via \UMLReference{localPostcondition}s. The set of all relations contained
-in \UMLType{localPostcondition}s can be seen as state transition function. For a
-\UMLType{ControlFlow} to be enabled the OCL constraint in its
-\UMLReference{guard} has to evaluate to true with respect to the current state.
-OCL constraints contained in a \UMLReference{guard} can only specify a relation
-between the variables and parameters within a single state. It is not possible
-to access the value of a variable in the previous state within a
-\UMLReference{guard}.%
-
+Section~\ref{sec:CaseStudy}.
 \section{Related Work}%
 \label{sec:LiteratureReview}%
 While it is very common to use state machines as the test model, less research
@@ -255,7 +151,10 @@ Minsong et al.~\cite{mingsong2006automatic}. Their approach is to randomly
 generate executable unit tests for a Java implementation and match the execution
 traces of the randomly generated unit tests with the control--flow paths found
 in an activity diagram. They then select a subset from the test cases, which
-covers all simple paths in the test model. Our Method is also path--search--based like ~\cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod} and unlike ~\cite{mingsong2006automatic} we are using constraint solvers to find test data.
+covers all simple paths in the test model. Our Method is also
+path--search--based like
+~\cite{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod} and unlike
+~\cite{mingsong2006automatic} we are using constraint solvers to find test data.
 
 Stephan Wei{\ss}leder and Dehla Sokenou presented a data--oriented approach to
 select test cases~\cite{weissleder2008automatic}. They propose to use abstract
@@ -301,6 +200,101 @@ input data, which is guaranteed to take another control--flow path in the
 program. We are similarly using symbolic execution, since we are only performing
 a static analysis we do not need the source code to generate test cases. So our
 tool is also suitable for black box testing.
+\section{Preliminaries}%
+\label{sec:Preliminaries}
+In this section, we introduce the programming language AMPL and the semantics of
+the used test models.
+\subsection{AMPL and its Solvers}%
+\label{sec:AMPL}%
+We use `A Mathematical Programming Language' (AMPL) by Robert Fourer~\cite{AMPL}
+as a means to formalise the execution of a control--flow path in the test model.
+In this section, we will discuss the expressiveness of AMPL and introduce the
+solvers we have successfully used to generate test data.
+\begin{table}%
+\begin{center}%
+\begin{tabular}{l r r r r r r r r}%
+Solver                         & MILP       & NLP        & SMT        & MINLP\\%
+\hline%
+Cplex                          & \checkmark &            &            &\\%
+LPsolve\cite{lpsolve}          & \checkmark &            &            &\\%
+Gurobi                         &            & \checkmark &            &\\%
+Minos                          &            & \checkmark &            &\\%
+IlogCP\cite{ilogcp}            & \checkmark &            & \checkmark &\\%
+GeCoDE\cite{gecode}            &            &            & \checkmark &\\%
+Couenne\cite{Belotti09couenne} & \checkmark & \checkmark &            & \checkmark\\%
+\hline%
+\end{tabular}%
+\end{center}%
+\caption{List of solvers and problems they can solve.}%
+\label{tab:Solvers}%
+\end{table}
+In AMPL we can state linear, non--linear, and logical constraints. Variables can
+be continuous or discrete. The AMPL system serves as a common interface to a
+variety of solvers. Depending on the constraint satisfaction problem encoded in
+the AMPL program a suitable solver can be selected to solve the problem. If all
+constraints are linear we use a solver that is specialized on mixed integer
+linear programming (MILP), for example, Cplex or LPsolve~\cite{lpsolve}. If
+constraints are non--linear but convex and all variables are continuous we use a
+non--linear programming (NLP) solver. For problems with non--linear constraints
+and discrete as well as continuous variables we need a solver capable of solving
+mixed integer non--linear programming (MINLP), for example,
+Couenne~\cite{Belotti09couenne}. If logical operations are used in the
+constraints, a satisfiability modulo theories (SMT) solver supporting
+appropriate background theories is used, for example, GeCoDE~\cite{gecode} or
+IlogCP~\cite{ilogcp}. In Table~\ref{tab:Solvers} we show a selection of solvers
+interfacing with AMPL. A checkmark in a cell means that we have successfully
+tested the solver in the row on the problem named in the column.%
+\subsection{Semantics of the Test Models}%
+\label{sec:TestModel}%
+For the transformation into `A Mathematical Programming Language' (AMPL)
+presented in Section~\ref{sec:AMPLTransformation} we clarify the semantics of
+the expected input model. Modelling elements of the UML such as
+\UMLType{Activity} and UML references \UMLReference{name} or
+\UMLReference{ownedParameter} are typeset in a special font. In this section, we
+first detail which UML modelling elements we use and will then shortly
+recapitulate the Petri--Net semantics of activity diagrams
+(see~\cite{UML23Superstructure}). Further, we introduce the notion of a
+\emph{state}, which will be relevant for our algorithm.
+
+As test model we assume an activity diagram with \UMLType{Action}s,
+\UMLType{ControlNode}s, and \UMLType{ControlFlow}s modelling the control flow of
+an \UMLType{Operation}. The \UMLType{Activity} is linked as
+\UMLReference{method} to its specifying \UMLType{Operation}. Each
+\UMLType{Action} can contain several textual OCL constraints as
+\UMLReference{localPostcondition} and each \UMLType{ControlFlow} can hold a
+textual OCL constraint as \UMLReference{guard}. The textual OCL in the
+\UMLReference{guard} and \UMLReference{localPostcondition} will be parsed in the
+context of the specifying \UMLType{Operation}. That means the OCL constraints
+can access all \UMLReference{ownedAttribute}s of the \UMLType{Class} containing
+the specifying \UMLType{Operation}. Further, all \UMLReference{ownedParameter}s
+of the specifying \UMLType{Operation} can be referenced in the textual OCL. We
+interpret every \UMLType{Property} as variable that can change its value during
+the execution of an \UMLType{Action}. A \UMLType{Parameter} will be interpreted
+as a parameter that can not change its value during the execution of an
+\UMLType{Action}.
+
+When executing a control--flow path, we start with a token in the
+\UMLType{InitialNode}. We allow only one \UMLType{InitialNode} per
+\UMLType{Activity}. The token can move along an enabled \UMLType{ControlFlow}. A
+\UMLType{ControlFlow} is enabled when the OCL constraint in its
+\UMLReference{guard} evaluates to true. We say that an \UMLType{Action} is being
+executed when a token resides in the \UMLType{Action}.
+
+We refer to an assignment of all variables and parameters as \emph{state}. While
+the token resides in the \UMLType{InitialNode} there is an initial state. After
+each execution of an \UMLType{Action} the current state can change according to
+the OCL constraints contained in the \UMLType{Action}'s
+\UMLReference{localPostcondition}. An OCL constraint contained as
+\UMLType{localPostcondition} can specify a relation between the current state
+and the previous state. Consequently, the states are interconnected with each
+other via \UMLReference{localPostcondition}s. The set of all relations contained
+in \UMLType{localPostcondition}s can be seen as state transition function. For a
+\UMLType{ControlFlow} to be enabled the OCL constraint in its
+\UMLReference{guard} has to evaluate to true with respect to the current state.
+OCL constraints contained in a \UMLReference{guard} can only specify a relation
+between the variables and parameters within a single state. It is not possible
+to access the value of a variable in the previous state within a
+\UMLReference{guard}.
 \section{The Algorithm}%
 \label{sec:Algorithm}%
 In this section we explain the core ideas of the algorithm that we implemented
