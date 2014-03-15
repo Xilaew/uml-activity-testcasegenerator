@@ -679,35 +679,54 @@ xmax=75,
 }%
 \label{fig:ExplodingTyresRuntime}%
 \end{figure}%
-Mixed integer non--linear programs are in general undecidable. Consequently, it
-may happen that a solver trying to solve an instance of an MINLP runs infinitely
-long. Consequently we need to set a suitable time limit after which the solver
-shall terminate and we assume the currently examined control--flow path as
-infeasible. When the chosen time limit is very small test generation is faster
-but on the other hand we will consider paths as infeasible although there would
-be a solution for the corresponding problem instance. When setting a larger time
-limit we will certainly find a solution more often and thus generate more test
-cases but the overall runtime will grow.
+Mixed integer non--linear programs are in general undecidable. Consequently,
+solvers might not halt on an MINLP instance. During test generation we need to
+solve lots of MINLP instances. It is advisable to set a suitable time limit
+after which the solver shall terminate and we assume the currently examined
+control--flow path as infeasible. For very small time limits test generation is
+faster while for longer time limits chances to find a solution for a particular
+MINLP instance are rising. In other words, when setting a larger time limit we
+will certainly find a solution more often and thus generate more test cases but
+the overall runtime will grow.
 
 In Figure~\ref{fig:ExplodingTyresRuntime}, we depict the overall runtime of the
-test generation for this model using Couenne. For each plot, we used the solver
-time limit printed in the legend. On the right hand side of
-Figure~\ref{fig:ExplodingTyresRuntime} we depict the amount of test cases found
-depending on the time limit and the maximum path length. Up to a path length of
-30 all problem instances had been solved or found infeasible after less than 10
-seconds, thus the set time limits did not make a difference in the runtime or
-for the number of test cases found. Comparing the runtime of our algorithm with
-different time limits for the maximum path length of 60 we recognise that
-increasing the time limit from 20 seconds to 60 seconds increased the overall
-runtime by a factor of 2.78 and generated 17 more test cases; those are 9.2\%
-more test cases. Increasing the time limit from 60 seconds to 600 seconds
-increased the overall runtime by a factor of 7.67 and produced 11 additional
-test cases, which amounts to only 5.4\% more test cases. We see that increasing
-the time limit for the solver massively increases the overall runtime, but we
-gain only very few additional test cases for that. We therefore recommend using
-less than 20 seconds as time limit for Couenne.
-% \subsubsection{Mutation Testing}
-% We performed mutation testing with the test cases generated from the tyre pump model. Although the tests were not exhaustive, they yield some interesting results. In the model there is a loop and in every round the values for \OCLVar{temperature}, \OCLVar{pressure}, amount of air (\OCLVar{n}) are updated depending on the values of those measures before. Consequently, when one of the calculations has a small error the error will be propagated to all three of those measures and we see a great number of failed tests due to just one wrong statement. Similarly, reordering of statements introduced huge errors in all three measures. And finally, a sub--optimal calculation plans caused several test cases to fail due to rounding errors. One might think that the C expressions \verb$(10 * temp + 300) / 11$ and \verb$10 * temp / 11 + 300 / 11$ are equivalent. But the automatically generated test cases revealed that those two expressions do not produce the same results.
+test generation for the \UMLType{Activity} from Figure~\ref{fig:pumpTyre}. We
+used Couenne as solver for MINLP instances and varied the time limit to solve
+one MINLP instance between 5 seconds and 10 minutes. On the right hand side of
+Figure~\ref{fig:ExplodingTyresRuntime} we depict the number of abstract test
+cases for which we could actually find test data with the given solver time
+limit. The number of abstract test cases grows exponentially with the maximum
+path length and so does the overall computation time and the number of real test
+cases.
+
+Up to a path length of 30 all problem instances had been solved or found
+infeasible after less than 10 seconds, thus the solver time limits did not make
+a difference in the runtime or for the number of test cases found. Comparing the
+runtime of our algorithm with different time limits for the maximum path length
+of 60 we recognise that increasing the time limit from 20 seconds to 60 seconds
+increased the overall runtime by a factor of 2.78 and generated 17 more real
+test cases; those are 9.2\% more test cases. Increasing the time limit from 60
+seconds to 600 seconds increased the overall runtime by a factor of 7.67 and
+produced 11 additional test cases, which amounts to only 5.4\% more test cases.
+We see that increasing the time limit for the solver massively increases the
+overall runtime, but we gain only very few additional test cases for that and we
+doubt that those additional test cases massively increase the quality of the
+test suite. We therefore recommend using less than 20 seconds as solver time
+limit for Couenne.
+\subsubsection{Mutation Testing}
+We performed mutation testing with the test cases generated from the tyre pump
+model. Although the tests were not exhaustive, they yield some interesting
+results. In the model there is a loop and in every round the values for
+\OCLVar{temperature}, \OCLVar{pressure}, amount of air (\OCLVar{n}) are updated
+depending on the values of those measures before. Consequently, when one of the
+calculations has a small error the error will be propagated to all three of
+those measures and we see a great number of failed tests due to just one wrong
+statement. Similarly, reordering of statements introduced huge errors in all
+three measures. And finally, a sub--optimal calculation plans caused several
+test cases to fail due to rounding errors. One might think that the C
+expressions \verb$(10 * temp + 300) / 11$ and \verb$10 * temp / 11 + 300 / 11$
+are equivalent. But the automatically generated test cases revealed that those
+two expressions do not produce the same results.
 \subsection{Case Study}
 \label{sec:CaseStudy}
 We tested our implementation on a model of the PAX call system from Airbus
@@ -954,12 +973,10 @@ node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$}
 \begin{axis}[
 width=0.49\textwidth,
 height=7cm,
-xlabel={number of test cases},
+xlabel={maximum amount of test cases},
 ylabel={time $[s]$},
+legend style={legend columns=1,at={(0.02,0.98)},anchor=north west},
 scaled y ticks = false,
-% xtick scale label code/.code={\xdef\xtickscale{#1}}, 
-%xtick scale label code/.code={$10^3$}, 
-%xtick scale label code/.code={\xdef\xtickscale{#1}},
 yticklabels={{0},{0},{$2\cdot 10^{3}$},{ },{$6\cdot 10^{3}$},{$8\cdot 10^{3}$}},
 extra y ticks={3.6e12,2.592e14},
 extra y tick labels={{1h},{3d}},
@@ -978,43 +995,45 @@ xmin=500,
 xmax=9500,
 ] 
 \addplot[dotted,mark=x] table[x=PathsFound,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addlegendentry{DFS}
 \addplot[solid,mark=x] table[x=PathsFound,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBFS.csv};
+\addlegendentry{BFS}
 \end{axis}%
 \end{tikzpicture}%
 \caption{Runtime depending on the number of test cases. Left: depth--first search. Right: breadth--first search}
 \label{fig:RuntimeExperimentsData}
 \end{figure}
-The runtime as well as the number of control--flow paths grows exponentially
-with the maximum path length. We show this effect in
-Figure~\ref{fig:RuntimeExperimentsSolvers}. The quotient of runtime and
-generated test cases grows polynomially. To illustrate that, we plotted the
-runtime of our algorithm against the number of test cases in
-Figure~\ref{fig:RuntimeExperimentsData}. For the plot on the left we used the
-same data as for the LPsolve plot in Figure~\ref{fig:RuntimeExperimentsSolvers}.
-The plot is logarithmic on both axes and we can see that the runtime grows not
-linearly with the number of test cases but with an exponent of $1.45$.
+The runtime as well as the number of abstract test cases grows exponentially
+with the maximum path length. The quotient of runtime and generated test cases
+grows polynomially. To illustrate that, we plotted the runtime of our algorithm
+against the number of test cases in Figure~\ref{fig:RuntimeExperimentsData}. 
+
+For the plot of the left we did not use the parameter maximum amount of test
+cases but plotted the number of test cases actually found against the runtime of
+our algorithm using different values for maximum path length. It is logarithmic
+on both axes and we can see that the runtime grows with an exponent of $1.45$.
 
 Depth--first search without limit on the maximum path length but with a limit on
 the number of test cases, would not produce useful test cases. All generated
-test cases would over and over share very long common sub--paths and some
-\UMLType{ControlFlow}s would not be checked at all. Therefore, we implemented a
-breadth--first search--based alternative to the algorithm explained in
-Section~\ref{sec:InfeasiblePathElimination}. We use this alternative to evaluate
-the effect of the maximum amount of test cases on the runtime.
+abstract test cases would over and over share very long common sub--paths and
+some \UMLType{ControlFlow}s would not be checked at all. Therefore, we
+implemented a breadth--first search--based alternative to the algorithm
+explained in Section~\ref{sec:InfeasiblePathElimination}. We use this
+alternative to evaluate the effect of the maximum amount of test cases on the
+runtime.
 
 In Figure~\ref{fig:RuntimeExperimentsData}, we plot on the right the runtime of
 our algorithm with breadth--first search and Cplex as solver. The dotted line
-shows a small section of the first plot where the previous data has been reused.
-As we can see breadth--first search is considerably slower than depth--first
-search. The reason for that is that breadth--first search can not make such a
-good use of the warm start capabilities of the solvers as depth--first search
-can. In depth--first search, usually only a small amount of the constraints
-change between two subsequent solver invocations. For breadth--first search it
-will happen several times during infeasible path elimination that all
-constraints have changed between two subsequent solver invocations. Furthermore,
-we see that the generation of 9,000 test cases took only slightly longer than
-the generation of 8,000 test cases. We currently can not explain this strange
-effect.
+shows a small section of the left plot. As we can see breadth--first search is
+considerably slower than depth--first search. The reason for that is that
+breadth--first search can not make such a good use of the warm start
+capabilities of the solvers as depth--first search can. In depth--first search,
+usually only a small amount of the constraints change between two subsequent
+solver invocations. For breadth--first search it will happen several times
+during infeasible path elimination that all constraints have changed between two
+subsequent solver invocations. Furthermore, we see that the generation of 9,000
+test cases took only slightly longer than the generation of 8,000 test cases. We
+can not explain this last effect.
 \paragraph{Boundary Value Analysis}
 \label{sec:caseStudyBoundaryValues}
 \begin{figure}
@@ -1082,7 +1101,11 @@ decidability. There is no effective method to generate variable instantiations
 that make an arbitrary mathematical term true and heuristics may not halt on
 specially crafted problem instances.
 
-q
+From the UML we currently support only a subset of the activity modelling
+elements. Hierarchical activity diagrams and concurrency are currently not
+supported. Also support for complex data types as well as OCL collections has
+been neglected.
+
 Finally, it is quite obvious that our path search algorithm currently suffers
 from combinatorial explosion; Generating test cases that adhere to a feasible
 coverage criterion, for example control flow coverage, would avert this problem.
