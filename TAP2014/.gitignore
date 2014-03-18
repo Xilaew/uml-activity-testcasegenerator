@@ -1,5 +1,3 @@
-/document.pdf
-/document.synctex.gz
 /tmp
 /splncs_srt.bst
 /splncs03.bst
@@ -19,9 +17,11 @@
 /typeinst.tex
 /history.txt
 /readme.txt
-/documentT1.pdf
 /.settings
+/documentT1.pdf
 /document.aux
 /document.log
 /document.bbl
 /document.blg
+/document.pdf
+/document.synctex.gz
