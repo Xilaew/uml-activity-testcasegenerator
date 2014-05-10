@@ -69,6 +69,11 @@ Fourer, R., Gay, D.M., Kernighan, B.W.:
 Berkelaar, M., Eikland, K., Notebaert, P.:
 \newblock {lpsolve : Open source (Mixed-Integer) Linear Programming system}
 
+\bibitem{Belotti09couenne}
+Belotti, P., Lee, J., Liberti, L., Margot, F., W{\"a}chter, A.:
+\newblock {Branching and Bounds Tightening Techniques for Non--Convex {MINLP}}.
+\newblock Optimization Methods and Software \textbf{24}(4-5) (2009)  597--634
+
 \bibitem{ilogcp}
 Laborie, P.:
 \newblock {IBM ILOG CP Optimizer for Detailed Scheduling Illustrated on Three
@@ -82,11 +87,6 @@ Laborie, P.:
 {Gecode Team}:
 \newblock {Gecode: Generic Constraint Development Environment} (2006)
 
-\bibitem{Belotti09couenne}
-Belotti, P., Lee, J., Liberti, L., Margot, F., W{\"a}chter, A.:
-\newblock {Branching and Bounds Tightening Techniques for Non--Convex {MINLP}}.
-\newblock Optimization Methods and Software \textbf{24}(4-5) (2009)  597--634
-
 \bibitem{UML23Superstructure}
 {Object Management Group (OMG)}:
 \newblock {OMG Unified Modeling Language\textsuperscript{\texttrademark} (OMG
@@ -97,5 +97,10 @@ Rezaee, A.:
 \newblock {A New Approach to Optimized Generation of Test Cases using UML State
   Machine}.
 \newblock Master's thesis, University of Isfahan, Iran, Isfahan (February 2014)
+
+\bibitem{mutate.py}
+Babu, A.:
+\newblock {mutate.py -- Python script performing selective mutation on C
+  programs} (2013)
 
 \end{thebibliography}
