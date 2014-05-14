@@ -1,106 +1,96 @@
 \begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{ali2011search}
+Ali, S., Iqbal, M.Z., Arcuri, A., Briand, L.: {A Search-based OCL Constraint
+  Solver for Model-based Test Data Generation}. In: Quality Software (QSIC),
+  2011 11th International Conference on. pp. 41--50 (July 2011),
+  \url{http://dx.doi.org/10.1109/QSIC.2011.17}
+
+\bibitem{Belotti09couenne}
+Belotti, P., Lee, J., Liberti, L., Margot, F., W{\"a}chter, A.: {Branching and
+  Bounds Tightening Techniques for Non--Convex {MINLP}}. Optimization Methods
+  and Software  24(4-5),  597--634 (2009),
+  \url{http://dx.doi.org/10.1080/10556780903087124}
+
+\bibitem{lpsolve}
+Berkelaar, M., Eikland, K., Notebaert, P.: {lpsolve : Open source
+  (Mixed-Integer) Linear Programming system},
+  \url{http://lpsolve.sourceforge.net/5.5/}
+
+\bibitem{AMPL}
+Fourer, R., Gay, D.M., Kernighan, B.W.: {AMPL: A Modeling Language for
+  Mathematical Programming}. Duxbury Press, 2 edn. (2002),
+  \url{http://ampl.com/resources/the-ampl-book/}
+
+\bibitem{Kosmatov04BoundaryCoverageCrit}
+Kosmatov, N., Legeard, B., Peureux, F., Utting, M.: {Boundary coverage criteria
+  for test generation from formal models}. In: Software Reliability
+  Engineering, 2004. ISSRE 2004. 15th International Symposium on. pp. 139--150
+  (Nov 2004), \url{http://dx.doi.org/10.1109/ISSRE.2004.12}
+
+\bibitem{krieger2008executingUnderspecifiedOCL}
+Krieger, M.P., Knapp, A.: {Executing Underspecified OCL Operation Contracts
+  with a SAT Solver}. Electronic Communications of the EASST  15 (2008),
+  \url{http://journal.ub.tu-berlin.de/eceasst/article/view/176}
 
 \bibitem{Kurth2014AutomatedGen}
-Kurth, F.:
-\newblock {Automated Generation of Unit Tests from UML Activity Diagrams using
-  the AMPL Interface for Constraint Solvers}.
-\newblock Master's thesis, Hamburg University of Technology, Germany, Hamburg
-  (January 2014)
+Kurth, F.: {Automated Generation of Unit Tests from UML Activity Diagrams using
+  the AMPL Interface for Constraint Solvers}. Master's thesis, Hamburg
+  University of Technology, Germany, Hamburg (January 2014),
+  \url{http://www.sts.tuhh.de/pw-and-m-theses/2014/kurth14.pdf}
 
-\bibitem{PartegWebsite}
-Wei{\ss}leder, S.:
-\newblock {ParTeG -- homepage} (2013)
+\bibitem{ilogcp}
+Laborie, P.: {IBM ILOG CP Optimizer for Detailed Scheduling Illustrated on
+  Three Problems}. In: Hoeve, W.J., Hooker, J. (eds.) Integration of AI and OR
+  Techniques in Constraint Programming for Combinatorial Optimization Problems,
+  Lecture Notes in Computer Science, vol. 5547, pp. 148--162. Springer, Berlin,
+  Heidelberg (2009), \url{http://dx.doi.org/10.1007/978-3-642-01929-6_12}
 
 \bibitem{Linzhang04GeneratingTestCasefromActivityGrayBoxMethod}
 Linzhang, W., Jiesong, Y., Xiaofeng, Y., Jun, H., Xuandong, L., Guoliang, Z.:
-\newblock {Generating Test Cases from UML Activity Diagram based on Gray--Box
-  Method}.
-\newblock In: Asia--Pacific Software Engineering Conference, Los Alamitos, CA,
-  USA, IEEE Computer Society (2004)  284--291
-
-\bibitem{mingsong2006automatic}
-Mingsong, C., Xiaokang, Q., Xuandong, L.:
-\newblock {Automatic Test Case Generation for UML Activity Diagrams}.
-\newblock In: International Workshop on Automation of Software Test, ACM (2006)
-   2--8
-
-\bibitem{weissleder2008automatic}
-Wei{\ss}leder, S., Sokenou, D.:
-\newblock {Automatic Test Case Generation from UML Models and OCL Expressions}.
-\newblock In: Software Engineering (Workshops). (2008)  423--426
-
-\bibitem{ParTeG}
-Wei{\ss}leder, S.:
-\newblock {Test Models and Coverage Criteria for Automatic Model--Based Test
-  Generation with UML State Machines}.
-\newblock PhD thesis, Humboldt University Berlin (2010)
-
-\bibitem{ali2011search}
-Ali, S., Iqbal, M.Z., Arcuri, A., Briand, L.:
-\newblock {A Search-based OCL Constraint Solver for Model-based Test Data
-  Generation}.
-\newblock In: International Conference on Quality Software (QSIC). (2011)
-  41--50
-
-\bibitem{krieger2008executingUnderspecifiedOCL}
-Krieger, M.P., Knapp, A.:
-\newblock {Executing Underspecified OCL Operation Contracts with a SAT Solver}.
-\newblock Electronic Communications of the EASST \textbf{15} (2008)
+  {Generating Test Cases from UML Activity Diagram based on Gray--Box Method}.
+  In: Asia--Pacific Software Engineering Conference. pp. 284--291. IEEE
+  Computer Society, Los Alamitos, CA, USA (2004),
+  \url{http://doi.ieeecomputersociety.org/10.1109/APSEC.2004.55}
 
 \bibitem{malburg2011combining}
-Malburg, J., Fraser, G.:
-\newblock {Combining Search--based and Constraint--based Testing}.
-\newblock In: International Conference on Automated Software Engineering, IEEE
-  Computer Society (2011)  436--439
+Malburg, J., Fraser, G.: {Combining Search--based and Constraint--based
+  Testing}. In: International Conference on Automated Software Engineering. pp.
+  436--439. IEEE Computer Society (2011),
+  \url{http://dx.doi.org/10.1109/ASE.2011.6100092}
 
-\bibitem{pex}
-Tillmann, N., Halleux, J.:
-\newblock {Pex-White Box Test Generation for .NET}.
-\newblock In Beckert, B., H{\"a}hnle, R., eds.: Tests and Proofs. Volume 4966
-  of Lecture Notes in Computer Science.
-\newblock Springer, Berlin, Heidelberg (2008)  134--153
-
-\bibitem{AMPL}
-Fourer, R., Gay, D.M., Kernighan, B.W.:
-\newblock {AMPL: A Modeling Language for Mathematical Programming}. 2 edn.
-\newblock Duxbury Press (2002)
-
-\bibitem{lpsolve}
-Berkelaar, M., Eikland, K., Notebaert, P.:
-\newblock {lpsolve : Open source (Mixed-Integer) Linear Programming system}
-
-\bibitem{Belotti09couenne}
-Belotti, P., Lee, J., Liberti, L., Margot, F., W{\"a}chter, A.:
-\newblock {Branching and Bounds Tightening Techniques for Non--Convex {MINLP}}.
-\newblock Optimization Methods and Software \textbf{24}(4-5) (2009)  597--634
-
-\bibitem{ilogcp}
-Laborie, P.:
-\newblock {IBM ILOG CP Optimizer for Detailed Scheduling Illustrated on Three
-  Problems}.
-\newblock In Hoeve, W.J., Hooker, J., eds.: Integration of AI and OR Techniques
-  in Constraint Programming for Combinatorial Optimization Problems. Volume
-  5547 of Lecture Notes in Computer Science.
-\newblock Springer, Berlin, Heidelberg (2009)  148--162
-
-\bibitem{gecode}
-{Gecode Team}:
-\newblock {Gecode: Generic Constraint Development Environment} (2006)
+\bibitem{mingsong2006automatic}
+Mingsong, C., Xiaokang, Q., Xuandong, L.: {Automatic Test Case Generation for
+  UML Activity Diagrams}. In: International Workshop on Automation of Software
+  Test. pp. 2--8. ACM (2006), \url{http://dx.doi.org/10.1145/1138929.1138931}
 
 \bibitem{UML23Superstructure}
-{Object Management Group (OMG)}:
-\newblock {OMG Unified Modeling Language\textsuperscript{\texttrademark} (OMG
-  UML), Superstructure} (May 2010)
+{Object Management Group (OMG)}: {OMG Unified Modeling
+  Language\textsuperscript{\texttrademark} (OMG UML), Superstructure} (May
+  2010), \url{http://www.omg.org/spec/UML/2.3/}
 
 \bibitem{Rezaee2014ANew}
-Rezaee, A.:
-\newblock {A New Approach to Optimized Generation of Test Cases using UML State
-  Machine}.
-\newblock Master's thesis, University of Isfahan, Iran, Isfahan (February 2014)
+Rezaee, A.: {A New Approach to Optimized Generation of Test Cases using UML
+  State Machine}. Master's thesis, University of Isfahan, Iran, Isfahan
+  (February 2014)
 
-\bibitem{mutate.py}
-Babu, A.:
-\newblock {mutate.py -- Python script performing selective mutation on C
-  programs} (2013)
+\bibitem{pex}
+Tillmann, N., Halleux, J.: {Pex-White Box Test Generation for .NET}. In:
+  Beckert, B., H{\"a}hnle, R. (eds.) Tests and Proofs, Lecture Notes in
+  Computer Science, vol. 4966, pp. 134--153. Springer, Berlin, Heidelberg
+  (2008), \url{http://dx.doi.org/10.1007/978-3-540-79124-9_10}
+
+\bibitem{ParTeG}
+Wei{\ss}leder, S.: {Test Models and Coverage Criteria for Automatic
+  Model--Based Test Generation with UML State Machines}. Ph.D. thesis, Humboldt
+  University Berlin (2010),
+  \url{http://model-based-testing.de/data/weissleder_phd_thesis.pdf}
+
+\bibitem{weissleder2008automatic}
+Wei{\ss}leder, S., Sokenou, D.: {Automatic Test Case Generation from UML Models
+  and OCL Expressions}. In: Software Engineering (Workshops)'08. pp. 423--426
+  (2008)
 
 \end{thebibliography}

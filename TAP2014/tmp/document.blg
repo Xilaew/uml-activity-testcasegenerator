@@ -1,15 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: document.aux
-The style file: splncs.bst
-Database file #1: ../Thesis/bibtex.bib
-Warning--entry type for "mutate.py" isn't style-file defined
---line 30 of file ../Thesis/bibtex.bib
+The style file: splncs03.bst
+Database file #1: bibtex.bib
 Warning--entry type for "lpsolve" isn't style-file defined
---line 72 of file ../Thesis/bibtex.bib
-Warning--entry type for "gecode" isn't style-file defined
---line 172 of file ../Thesis/bibtex.bib
+--line 74 of file bibtex.bib
 Warning--entry type for "UML23Superstructure" isn't style-file defined
---line 310 of file ../Thesis/bibtex.bib
-Warning--entry type for "PartegWebsite" isn't style-file defined
---line 483 of file ../Thesis/bibtex.bib
-Warning--I didn't find a database entry for "BoundaryValueTestingIsGood"
-(There were 6 warnings)
+--line 331 of file bibtex.bib
+(There were 2 warnings)

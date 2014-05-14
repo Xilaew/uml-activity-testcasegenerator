@@ -1,6 +1,4 @@
 /tmp
-/splncs_srt.bst
-/splncs03.bst
 /llncs.dem
 /llncs.doc
 /llncs.dvi
@@ -25,3 +23,4 @@
 /document.blg
 /document.pdf
 /document.synctex.gz
+/doc
