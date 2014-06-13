@@ -1,0 +1,34 @@
+\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{import}
+\usepackage{times}
+\usepackage{hyperref}
+%\usepackage{pgf}
+
+\usepackage{listings}%[2000/08/23]
+\usepackage{lstlangampl} % syntax file, I added some more keywords like 'display'
+
+%\usepackage{graphicx}
+%\usepackage{multicol}
+
+%\usepackage{tikz}
+\usepackage{pgfplots}
+\newcommand{\UMLType}[1]{\textsf\textit{#1}}
+\newcommand{\UMLReference}[1]{\textsf\textit{#1}}
+\newcommand{\ATGType}[1]{\textsf{#1}}
+
+\lstnewenvironment{java}
+    {\lstset{language=java,basicstyle=\scriptsize,frame=}}
+    {}
+
+\lstnewenvironment{java2}
+    {\lstset{language=java,basicstyle=\scriptsize}}
+    {}
+
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame} 
+\frametitle{Outline} \tableofcontents[currentsection]
+\end{frame}
+}

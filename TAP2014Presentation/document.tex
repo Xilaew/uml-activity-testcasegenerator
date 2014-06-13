@@ -1,0 +1,369 @@
+\nonstopmode
+\documentclass{beamer}
+
+\mode<presentation>
+{
+\usetheme{sts}
+
+\setbeamercovered{transparent}
+}
+
+%\documentclass[handout]{beamer}
+%\includeonlylecture{week12}
+
+\input{header.tex}
+
+\title[Automated Generation of Test Data using AMPL]{Generating Test Data from a UML Activity using the AMPL Interface for Constraint Solvers} 
+%\subtitle[M.Sc. Thesis]{A Master Thesis} 
+\author[F. Kurth]{Felix Kurth} 
+\institute[sts.tuhh.de]
+{
+Institute for Software Systems\\
+Hamburg University of Technology
+}
+
+\day=25
+\month=7
+\year=2014
+\date[TAP2014]{8th International Conference on Tests \& Proofs\\
+\today
+} 
+
+\pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
+\logo{\pgfuseimage{STS-logo}}
+\subject{Generating Test Data from a UML Activity using the AMPL Interface for Constraint Solvers}
+%\titlegraphic{\includegraphics[height=1cm]{./pics/Airbus.jpg}}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection{Motivation}
+
+% \begin{frame}
+% \frametitle{Motivation}
+% \begin{itemize}
+%   \item Activity diagrams are more intuitive to imperative programmers than state diagrams.
+%   \item Allow different complexities of constraints.
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}
+\frametitle{Reuse Control Flow Information from Activity Diagrams for Test Generation}
+\includegraphics[width=\textwidth]{../Thesis/pics/BasicExamplesSimpleDecision.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Adapt Solver to the Complexity of Constraints}
+\includegraphics[width=\textwidth]{../Thesis/pics/ProblemLatice.pdf}
+\end{frame}
+
+\subsection{Overview}
+\begin{frame}
+\frametitle{Overview of the Solution}
+\begin{description}
+\item[Test Model:] UML activity diagram with embedded OCL constraints modelling an operation/function.
+\item[Symbolic Execution:] Control flow paths within the activity diagram are converted into a constraint satisfaction problem.
+\item[Constraint Solving:] A variety of state--of--the--art constraint solvers are used via AMPL to generate test data.
+%\item[Early Infeasible Path Elimination:] Control flow path search is guided by constraint solver.
+%\item[Boundary Value Analysis:] Constraint solvers support constrained optimisation out of the box.
+\end{description}
+\begin{description}
+\item[Mutation Tests:] Extremly high mutation scores for demo models.
+\item[Experimental Runtime Measurements:] Experimental parameter tweaking for test data generation algorithm has been performed.
+%\item[Language Independent:] Test model and test cases are stored as an instance of intermediate meta models
+\end{description}
+\end{frame}
+
+
+\section{The Algorithm}
+\subsection{Overview}
+\begin{frame}
+\frametitle{Overview of the Algorithm}
+\begin{block}{}
+Map UML/OCL to simplified intermediate representation.
+\end{block}
+\begin{block}{}
+Transform activity diagram into an AMPL model.
+\end{block}
+\begin{block}{}
+Find control flow paths using depth first search with early infeasible path elimination.
+\end{block}
+\begin{block}{}
+Solve constraint satisfaction problem for each control flow path.
+\end{block}
+\begin{block}{}
+Output test cases as C++ unit tests using the Boost test library.
+\end{block}
+\end{frame}
+
+\subsection{AMPL Modelling}
+\begin{frame}
+\frametitle{AMPL Modelling \cite{AMPL}}
+\begin{itemize}
+  \item Represent activity diagram in a form that is understood by constraint solvers.
+  \item Solution of an AMPL program is a sequence of variable assignments.
+  \item Control flow path is specified as AMPL data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Basic Example}
+\begin{columns}
+ \column{.39\textwidth} \ 
+	\begin{block}{Activity Diagram} 
+	\def\svgwidth{\textwidth}
+	\scriptsize
+	\import{pics/}{BasicExamples.pdf_tex}
+	\end{block} 
+\column{.56\textwidth} \ 
+	\begin{block}{AMPL Model} 
+		\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,language=ampl]
+param l; #Pathlength
+
+# Variables (Property or Parameter)
+var x{0..l} : integer := 1;
+var y : integer := 1;
+
+# Postconditions
+set t within {0..l} default {};
+s.t. t_post0{i in t} : (y)=(x[i-1]);
+s.t. t_post1{i in t} : (x[i])=(x[i-1]);
+set e within {0..l} default {};
+s.t. e_post0{i in e} : (y)=(x[i-1]-100);
+s.t. e_post0{i in e} : (x[i])=(x[i-1]);
+
+# Guards
+set d2e within {0..l} default {};
+s.t. d2e_g{i in d2e} : (x[i])>=(6.0);
+set d2t within {0..l} default {};
+s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
+\end{lstlisting}
+	\end{block} 
+\end{columns}
+\end{frame}
+
+% \begin{frame}[fragile]
+% \frametitle{AMPL Modelling}
+% 	\begin{block}{Specify Path} 
+% 		\begin{lstlisting}[basicstyle=\ttfamily\small,language=ampl]
+% param l := 1;
+% set d2f:= 0; # guard 
+% set f:= 1; # post condition
+% 		\end{lstlisting}
+% 	\end{block} 
+% 	\begin{block}{Result} 
+% 		\begin{lstlisting}[basicstyle=\ttfamily\small]
+% Solution determined by presolve.
+% a = 5
+% return = 0
+% 		\end{lstlisting}
+% 	\end{block}
+% \end{frame}
+
+%\subsection{Early Infeasible Path Elimination}
+%TODO
+%\subsection{Boundary Value Analysis}
+%ToDo
+
+\section{Evaluation}
+\subsection{Example Model}
+
+\begin{frame}
+\frametitle{Exploding Tyres}
+% \def\svgwidth{\textwidth}
+% \scriptsize
+% \input{./pics/TriangleClasificator.pdf_tex}
+\includegraphics[width=\textwidth]{./pics/TyrePump.pdf}
+\end{frame}
+\begin{frame}
+\frametitle{Runtime Measurement for Different Solver Time Limits}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+height=7.5cm,
+legend style={legend columns=1,at={(0.02,0.98)},anchor=north west},
+% legend to name=myLegend,
+ylabel={time $[s]$},
+xlabel={maximum path length},
+yticklabels={{0},{$0.1$},{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+xmin=5,
+xmax=75,
+]
+\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
+\addlegendentry{10min};
+\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv};
+\addlegendentry{20sec};
+\addplot[green,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv};
+\addlegendentry{5sec};
+% \addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_10s.csv};
+% \addlegendentry{10sec};
+% \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_60sec.csv};
+% \addlegendentry{60sec};
+% \addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_2h.csv};
+% \addlegendentry{2h};
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+height=7.5cm,
+xlabel={maximum path length},
+ylabel={number of test cases found},
+minor x tick num=1,
+minor y tick num=4,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+xmin=35,
+xmax=75,
+]
+\addplot[green,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv};
+%\addlegendentry{5sec};
+% \addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
+%\addlegendentry{10sec};
+\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv};
+%\addlegendentry{20sec};
+% \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_60sec.csv};
+%\addlegendentry{60sec};
+\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
+%\addlegendentry{10min};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+\subsection{Case Study}
+\begin{frame}
+\frametitle{The Airbus Pax Call Model}
+\begin{itemize}
+  \item The Original Model
+\begin{itemize}
+  \item Activity diagram consists of 21 \UMLType{Action}s, 24 \UMLType{ControlNode}s and two nested \UMLType{LoopNode}s
+  \item C code snippets are embedded
+\end{itemize}
+  \item Manual Adaptations
+  \begin{itemize}
+  \item All variables and C structs are represented by several \UMLType{Property} elements
+  \item OCL constraints are deduced with an educated guess from the embedded C code snippets
+  \item Hierarchical \UMLType{LoopNode}s are flattened
+\end{itemize}
+\end{itemize}
+\begin{block}{}
+The resulting constraint satisfaction problem is a mixed integer linear program
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Runtime Depending on the Unchecked Steps}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.6\textwidth,
+height=7.5cm,
+legend style={legend columns=1,at={(1.02,0.98)},anchor=north west},
+xlabel={unchecked steps},
+xmax=15,
+ylabel={time $[s]$},
+yticklabels={{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addlegendimage{empty legend}
+\addlegendentry{maximum path length}
+\addplot[densely dashed, blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps90.csv};
+\addlegendentry{90};
+\addplot[densely dashed, green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps80.csv};
+\addlegendentry{80};
+\addplot[densely dashed, red] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps70.csv};
+\addlegendentry{70};
+\addplot[blue] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns);]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps60.csv};
+\addlegendentry{60};
+\addplot[green] table[x=PATHSEARCH_UNCHECKED_STEPS,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps50.csv};
+\addlegendentry{50};
+\addplot[red] table[x=PATHSEARCH_UNCHECKED_STEPS,y={time(ns)}]{../Thesis/Experiment-DATA/CaseStudyUncheckedSteps40.csv};
+\addlegendentry{40};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Experiments Summary}
+\begin{itemize}
+  \item Runtime measurements varying solvers and parameters
+  \item Mutation testing
+  \item Runtime grows exponentially with maximum path length
+  \item Early infeasible path recognition drastically reduces the runtime
+  \item Sub--optimal execution plans are detected as error
+\end{itemize}
+\end{frame}
+
+\section{Summary}
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+  \item mixed integer linear programming can be handled especially efficiently
+  \item All control flow paths is not a feasible coverage criterion
+  \vspace{0.2cm}
+%  \item Abstract Test Case Generation will reuse ideas from \cite{ParTeG}
+  \item Add support for further UML/OCL modelling elements and features.
+  \item Add support for other languages and frameworks.
+  \vspace{0.2cm}
+  \item Current constraint solvers can efficiently generate test data for industry scale applications.
+  \item A fully working proof-of-concept tool is available at \href{http://parteg.sourceforge.net/}{http://parteg.sourceforge.net/}.
+\end{itemize}
+\end{frame}
+
+\section{Demo}
+\begin{frame}
+\begin{block}{}
+\begin{center}
+\Huge{Demo!}
+\end{center}
+\end{block}
+\end{frame}
+
+
+
+% \begin{frame}
+% \begin{block}{Thank you!}
+% \begin{center}
+% \Huge{Questions?}
+% \end{center}
+% \end{block}
+% \end{frame}
+\frametitle{Bibliography}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{plain}
+\bibliography{../Thesis/bibtex}
+\end{document}
