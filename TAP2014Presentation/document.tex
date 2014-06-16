@@ -62,13 +62,14 @@ Hamburg University of Technology
 \end{frame}
 
 \begin{frame}
-\frametitle{Adapt Solver to the Complexity of Constraints}
-\includegraphics[width=\textwidth]{../Thesis/pics/ProblemLatice.pdf}
+\frametitle{Expressiveness and Complexity of Constraint Languages}
+\includegraphics[width=\textwidth]{pics/ProblemLatice.pdf}
 \end{frame}
 
 \subsection{Overview}
 \begin{frame}
-\frametitle{Overview of the Solution}
+\frametitle{Overview}
+\begin{block}{Algorithm}
 \begin{description}
 \item[Test Model:] UML activity diagram with embedded OCL constraints modelling an operation/function.
 \item[Symbolic Execution:] Control flow paths within the activity diagram are converted into a constraint satisfaction problem.
@@ -76,42 +77,45 @@ Hamburg University of Technology
 %\item[Early Infeasible Path Elimination:] Control flow path search is guided by constraint solver.
 %\item[Boundary Value Analysis:] Constraint solvers support constrained optimisation out of the box.
 \end{description}
+\end{block}
+\begin{block}{Results}
 \begin{description}
 \item[Mutation Tests:] Extremly high mutation scores for demo models.
 \item[Experimental Runtime Measurements:] Experimental parameter tweaking for test data generation algorithm has been performed.
 %\item[Language Independent:] Test model and test cases are stored as an instance of intermediate meta models
 \end{description}
+\end{block}
 \end{frame}
 
 
 \section{The Algorithm}
-\subsection{Overview}
-\begin{frame}
-\frametitle{Overview of the Algorithm}
-\begin{block}{}
-Map UML/OCL to simplified intermediate representation.
-\end{block}
-\begin{block}{}
-Transform activity diagram into an AMPL model.
-\end{block}
-\begin{block}{}
-Find control flow paths using depth first search with early infeasible path elimination.
-\end{block}
-\begin{block}{}
-Solve constraint satisfaction problem for each control flow path.
-\end{block}
-\begin{block}{}
-Output test cases as C++ unit tests using the Boost test library.
-\end{block}
-\end{frame}
+% \subsection{Overview}
+% \begin{frame}
+% \frametitle{Overview of the Algorithm}
+% \begin{block}{}
+% Map UML/OCL to simplified intermediate representation.
+% \end{block}
+% \begin{block}{}
+% Transform activity diagram into an AMPL model.
+% \end{block}
+% \begin{block}{}
+% Find control flow paths using depth first search with early infeasible path elimination.
+% \end{block}
+% \begin{block}{}
+% Solve constraint satisfaction problem for each control flow path.
+% \end{block}
+% \begin{block}{}
+% Output test cases as C++ unit tests using the Boost test library.
+% \end{block}
+% \end{frame}
 
 \subsection{AMPL Modelling}
 \begin{frame}
 \frametitle{AMPL Modelling \cite{AMPL}}
 \begin{itemize}
   \item Represent activity diagram in a form that is understood by constraint solvers.
-  \item Solution of an AMPL program is a sequence of variable assignments.
   \item Control flow path is specified as AMPL data.
+  \item Solution of an AMPL program is a sequence of variable assignments.
 \end{itemize}
 \end{frame}
 
@@ -169,23 +173,45 @@ s.t. d2t_g{i in d2t} : (x[i])<=(5.0);
 % 	\end{block}
 % \end{frame}
 
-%\subsection{Early Infeasible Path Elimination}
+\subsection{Early Infeasible Path Elimination}
+\begin{frame}
+\frametitle{Early Infeasible Path Elimination}
+	\begin{columns}[c]
+		\column[c]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{./pics/VennTree.pdf}
+		\column{0.6\textwidth}
+				\begin{itemize}
+					\item Determine test scenarios fulfilling model structure based coverage criteria efficiently.
+					\item To ensure termination activity diagram is unrolled up to a maximum path length.
+					\item unchecked steps provide trade--of between early infeasible path elimination and unnecessary overhead.
+				\end{itemize}
+	\end{columns}
+\end{frame}
 %TODO
-%\subsection{Boundary Value Analysis}
+\subsection{Boundary Value Analysis}
+\begin{frame}
+\frametitle{Boundary Value Analysis}
+	\begin{itemize}
+		\item For a certain test scenario get the test data most likely to trigger an error.
+		\item State–of–the–art constraint solver generates test input and the oracle value from the AMPL program.
+		\item Boundary value analysis is possible by adding an objective
+function to the AMPL model.
+	\end{itemize}
+\end{frame}
 %ToDo
 
 \section{Evaluation}
 \subsection{Example Model}
 
 \begin{frame}
-\frametitle{Exploding Tyres}
+\frametitle{Exploding Tyres (mixed integer non linear)}
 % \def\svgwidth{\textwidth}
 % \scriptsize
 % \input{./pics/TriangleClasificator.pdf_tex}
-\includegraphics[width=\textwidth]{./pics/TyrePump.pdf}
+\includegraphics[width=\textwidth]{./pics/TyrePumpModel.pdf}
 \end{frame}
 \begin{frame}
-\frametitle{Runtime Measurement for Different Solver Time Limits}
+\frametitle{Runtime with Different Solver Time Limits}
 \begin{tikzpicture}
 \begin{axis}[
 width=0.498\textwidth,
@@ -253,9 +279,27 @@ xmax=75,
 \end{axis}
 \end{tikzpicture}
 \end{frame}
+\begin{frame}
+\frametitle{Mutation Testing the Example Model}
+\begin{table}[htb]%
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}*4r}
+maximum path length     & 20      & 30      & 40        & 50\\%
+\hline%
+number of test cases    & 4       & 18      & 47        & 97 \\%
+killed mutants          & 553     & 569     & 570       & 573 \\%
+alive mutants           & 20      & 4       &  3        & 0 \\%
+\hline%
+mutation score          & 96.5\%  & 99.3\%  & 99.5\%    & 100\% \\%
+\hline%
+\end{tabular*}
+\label{tab:MutationTesting}%
+\end{table}
+\end{frame}
+
+
 \subsection{Case Study}
 \begin{frame}
-\frametitle{The Airbus Pax Call Model}
+\frametitle{Industrial Case Study (mixed integer linear)}
 \begin{itemize}
   \item The Original Model
 \begin{itemize}
@@ -318,37 +362,139 @@ ymode=log,
 \end{frame}
 
 \begin{frame}
-\frametitle{Experiments Summary}
-\begin{itemize}
-  \item Runtime measurements varying solvers and parameters
-  \item Mutation testing
-  \item Runtime grows exponentially with maximum path length
-  \item Early infeasible path recognition drastically reduces the runtime
-  \item Sub--optimal execution plans are detected as error
-\end{itemize}
+\frametitle{Runtime for Different Solvers}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.59\textwidth,
+height=7.5cm,
+%legend columns=-1,
+%legend to name=solvers,
+legend style={at={(0.02,0.98)},anchor=north west},
+xlabel={maximum path length},
+ylabel={time $[s]$},
+yticklabels={0,{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+xmin=15,
+xmax=115,
+ymax=1e14,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[green] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {../Thesis/Experiment-DATA/CaseStudyRuntimeCplex.csv};
+\addlegendentry{Cplex};
+\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addlegendentry{LPsolve};
+\addplot[orange] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {../Thesis/Experiment-DATA/CaseStudyRuntimeCouenne.csv};
+\addlegendentry{Couenne};
+\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)] {../Thesis/Experiment-DATA/CaseStudyRuntimeGecode.csv};
+\addlegendentry{GeCoDE};
+\addplot[dashed] expression[no markers, domain=30:110]{2e7*1.12^(x)} node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.12 ^ {x}$} ;
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.39\textwidth,
+height=7.5cm,
+ylabel={number of test cases},
+xlabel={maximum path length},
+minor x tick num=4,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/CaseStudyRuntimeLPSolve.csv};
+\addplot[color=black, style=dashed] expression[no markers, domain=30:100]{1.1 ^ (x)} 
+node[pos=0.5,sloped,fill=white, below, opacity=1,text opacity=1] {$1.1 ^ {x}$}
+;
+\end{axis}
+\end{tikzpicture}
 \end{frame}
 
-\section{Summary}
+\begin{frame}
+\frametitle{Runtime with and without Boundary Value Analysis}
+\begin{tikzpicture}
+\begin{axis}[
+width=\textwidth,
+height=7.5cm,
+%title={Influence of boundary value analysis},
+legend style={at={(0.02,0.98)},anchor=north west},
+ylabel={time $[s]$},
+xlabel={maximum path length},
+%ytick={1e8,1e10,1e12,1e14},
+yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+]
+\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
+\addlegendentry{with};
+\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
+\addlegendentry{without}
+\end{axis}
+\end{tikzpicture}%
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Experiments Summary}
+% \begin{itemize}
+%   \item Runtime measurements varying solvers and parameters
+%   \item Mutation testing
+%   \item Runtime grows exponentially with maximum path length
+%   \item Early infeasible path recognition drastically reduces the runtime
+%   \item Sub--optimal execution plans are detected as error
+% \end{itemize}
+% \end{frame}
+
+\section{Summary \& Outlook}
+\subsection{Summary}
 \begin{frame}
 \frametitle{Summary}
 \begin{itemize}
-  \item mixed integer linear programming can be handled especially efficiently
-  \item All control flow paths is not a feasible coverage criterion
-  \vspace{0.2cm}
-%  \item Abstract Test Case Generation will reuse ideas from \cite{ParTeG}
-  \item Add support for further UML/OCL modelling elements and features.
-  \item Add support for other languages and frameworks.
-  \vspace{0.2cm}
   \item Current constraint solvers can efficiently generate test data for industry scale applications.
+  \item Mixed integer linear programming can be handled highly efficient.
+  \item Test generation for models with mixed integer non-linear constraints is possible but time consuming.
+  \item Early infeasible path recognition with 2 unchecked steps drastically reduces the runtime.
+  \item Boundary Value Analysis can be performed with tiny additional effort.
   \item A fully working proof-of-concept tool is available at \href{http://parteg.sourceforge.net/}{http://parteg.sourceforge.net/}.
 \end{itemize}
 \end{frame}
 
-\section{Demo}
+\subsection{Outlook}
+\begin{frame}
+\frametitle{Outlook}
+\begin{itemize}
+  \item Add support for further UML/OCL modelling elements and features e.g. \UMLType{CallBehaviourAction} and complex data types.
+  \item Add support for other output languages and test frameworks.
+  \item Reuse test goal management from ParTeG to support feasible coverage criteria instead of all control flow paths.~\cite{ParTeG}
+\end{itemize}
+\end{frame}
+
+\section{Demonstration}
 \begin{frame}
 \begin{block}{}
 \begin{center}
-\Huge{Demo!}
+\Huge{Demonstration}
 \end{center}
 \end{block}
 \end{frame}

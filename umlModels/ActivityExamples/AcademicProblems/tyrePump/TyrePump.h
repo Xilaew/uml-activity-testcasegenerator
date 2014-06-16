@@ -22,16 +22,16 @@ extern double n;
 extern double temp;
 extern int counter;
 extern bool varMelted;
-extern bool varBursted;
+extern bool varBurst;
 
 
-void pump(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBursted);
+void pump(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBurst);
 //extern void (*pumpInfeasiblePaths)(const int* const, const double* const,
 //		const double* const, bool*, bool*) = pump;
 //extern void (*pumpExtended)(const int* const, const double* const, const double* const,
 //		bool*, bool*) = pump;
-void pumpExtended(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBursted);
-void pumpInfeasiblePaths(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBursted);
+void pumpExtended(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBurst);
+void pumpInfeasiblePaths(const int* const in_pumps, const double* const in_volume, const double* const in_pumpvolume, bool* out_tyreMelted, bool* out_tyreBurst);
 
 #ifdef __cplusplus
 }

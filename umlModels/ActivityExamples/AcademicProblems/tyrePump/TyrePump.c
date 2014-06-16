@@ -12,13 +12,13 @@ double n;
 double temp;
 int counter;
 bool varMelted;
-bool varBursted;
+bool varBurst;
 
 void pump(const int* const in_pumps, const double* const in_volume,
 		const double* const in_pumpvolume, bool* out_tyreMelted,
-		bool* out_tyreBursted) {
+		bool* out_tyreBurst) {
 	*out_tyreMelted = false;
-	*out_tyreBursted = false;
+	*out_tyreBurst = false;
 	varBursted = false;
 	varMelted = false;
 	counter = *in_pumps;
@@ -37,7 +37,7 @@ void pump(const int* const in_pumps, const double* const in_volume,
 		}
 		//Tyre Bursted
 		if (pressure >= 15) {
-			*out_tyreBursted = true;
+			*out_tyreBurst = true;
 			varBursted=true;
 		}
 		//Cool a little
@@ -49,17 +49,17 @@ void pump(const int* const in_pumps, const double* const in_volume,
 
 void pumpExtended(const int* const in_pumps, const double* const in_volume,
 		const double* const in_pumpvolume, bool* out_tyreMelted,
-		bool* out_tyreBursted) {
+		bool* out_tyreBurst) {
 	pump(in_pumps, in_volume,
 			in_pumpvolume, out_tyreMelted,
-			out_tyreBursted);
+			out_tyreBurst);
 }
 void pumpInfeasiblePaths(const int* const in_pumps, const double* const in_volume,
 		const double* const in_pumpvolume, bool* out_tyreMelted,
-		bool* out_tyreBursted) {
+		bool* out_tyreBurst) {
 	pump(in_pumps, in_volume,
 			in_pumpvolume, out_tyreMelted,
-			out_tyreBursted);
+			out_tyreBurst);
 }
 
 

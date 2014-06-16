@@ -1,21 +1,37 @@
 \nonstopmode
 \documentclass{beamer}
+
+\mode<presentation>
+{
+\usetheme{sts}
+
+\setbeamercovered{transparent}
+}
+
 %\documentclass[handout]{beamer}
 %\includeonlylecture{week12}
 
 \input{header.tex}
 
-\title[Automated Generation of Unit Tests]{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers} 
-\subtitle[M.Sc. Thesis]{A Master Thesis} 
+\title[Automated Generation of Test Data using AMPL]{Generating Test Data from a UML Activity using the AMPL Interface for Constraint Solvers} 
+%\subtitle[M.Sc. Thesis]{A Master Thesis} 
 \author[F. Kurth]{Felix Kurth} 
-\day=17
-\month=1
+\institute[sts.tuhh.de]
+{
+Institute for Software Systems\\
+Hamburg University of Technology
+}
+
+\day=25
+\month=7
 \year=2014
-\date[Jan 2014]{\today} 
+\date[TAP2014]{8th International Conference on Tests \& Proofs\\
+\today
+} 
 
 \pgfdeclareimage[height=1.2cm]{STS-logo}{STS-logo}
 \logo{\pgfuseimage{STS-logo}}
-\subject{Automated Generation of Unit Tests from UML Activity Diagrams using the AMPL Interface for Constraint Solvers}
+\subject{Generating Test Data from a UML Activity using the AMPL Interface for Constraint Solvers}
 %\titlegraphic{\includegraphics[height=1cm]{./pics/Airbus.jpg}}
 
 \begin{document}
