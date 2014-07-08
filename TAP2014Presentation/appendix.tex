@@ -1,10 +1,19 @@
-\section*{Appendix}
+\appendix
+\backupbegin
+\section{Appendix}
 
+\subsection{Meta Model}
 \begin{frame}
 \frametitle{The Activity Test Case Graph Model}
 	\includegraphics[width=\textwidth]{../IntermediatePresentation/pics/completeMetamodelforSlideshowN.pdf}
 \end{frame}
 
+\subsection{Solvers}
+
+\begin{frame}
+\frametitle{Expressiveness and Complexity of Constraint Languages}
+\includegraphics[width=\textwidth]{pics/ProblemLatice.pdf}
+\end{frame}
 
 \begin{frame}
 \frametitle{Tested Solvers}
@@ -13,12 +22,12 @@
 Solver & LP & MILP & COP & OP & SAT & SMT & FCSP & MINLP\\
 \hline
 Cplex & \checkmark & \checkmark & & & & & &\\
-IlogCP\cite{ilogcp} & \checkmark & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
-GeCoDE\cite{gecode} & & & & &\checkmark & \checkmark & \checkmark &\\
+IlogCP & \checkmark & \checkmark & & & \checkmark & \checkmark & \checkmark &\\
+GeCoDE & & & & &\checkmark & \checkmark & \checkmark &\\
 JaCoP & & & & &\checkmark & & \checkmark &\\
-Couenne\cite{Belotti09couenne} & \checkmark & \checkmark & \checkmark & \checkmark & & & & \checkmark\\
+Couenne & \checkmark & \checkmark & \checkmark & \checkmark & & & & \checkmark\\
 Gurobi & \checkmark & & \checkmark & & & & &\\
-LPsolve\cite{lpsolve} & \checkmark &\checkmark  & & & & & &\\
+LPsolve & \checkmark &\checkmark  & & & & & &\\
 Minos &\checkmark & &\checkmark & & & & &\\
 % conopt & & & & & & & &\\
 % knitro & & & & & & & &\\
@@ -31,6 +40,7 @@ Minos &\checkmark & &\checkmark & & & & &\\
 \end{tabular}\end{center}
 \end{frame}
 
+\subsection{Binary Counter}
 \begin{frame}
 \frametitle{Binary Counter}
 % \def\svgwidth{\textwidth}
@@ -88,8 +98,7 @@ ylabel={total number of test cases},
 \end{tikzpicture}
 \end{frame}
 
-
-
+\subsection{Case Study}
 \begin{frame}
 \frametitle{Runtime Depending on the Number of Test Cases}
 \begin{tikzpicture}
@@ -134,39 +143,26 @@ node [pos=0.7,sloped,above,fill=white,opacity=0.85,text opacity=1] {$x^{2}$}
 ;
 \end{axis}
 \end{tikzpicture}%
-
 \end{frame}
+
+\subsection{Algorithm}
 \begin{frame}
-\frametitle{Runtime with and without Boundary Value Analysis}
-\begin{tikzpicture}
-\begin{axis}[
-width=\textwidth,
-height=7.5cm,
-%title={Influence of boundary value analysis},
-legend style={at={(0.02,0.98)},anchor=north west},
-ylabel={time $[s]$},
-xlabel={maximum path length},
-%ytick={1e8,1e10,1e12,1e14},
-yticklabels={0,{1},{10},{100},{$10^3$},{$10^4$},{$10^5$}},
-extra y ticks={3.6e12,2.592e14},
-extra y tick labels={{1h},{3d}},
-extra tick style={
-        major grid style=black,
-        tick align=outside,
-        tick style=black
-    },
-ymajorgrids=true,
-yminorgrids=true,
-xmajorgrids=true,
-xminorgrids=true,
-ymode=log,
-]
-\addplot[blue] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeBoundaryValues.csv};
-\addlegendentry{with};
-\addplot[red] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/CaseStudyRuntimeNoBoundaryValues.csv};
-\addlegendentry{without}
-\end{axis}
-\end{tikzpicture}%
+\frametitle{Overview of the Algorithm}
+\begin{block}{}
+Map UML/OCL to simplified intermediate representation.
+\end{block}
+\begin{block}{}
+Transform activity diagram into an AMPL model.
+\end{block}
+\begin{block}{}
+Find control flow paths using depth first search with early infeasible path elimination.
+\end{block}
+\begin{block}{}
+Solve constraint satisfaction problem for each control flow path.
+\end{block}
+\begin{block}{}
+Output test cases as C++ unit tests using the Boost test library.
+\end{block}
 \end{frame}
 
 \begin{frame}
@@ -220,6 +216,7 @@ Subsequent steps are completely independent from the UML/OCL model
 \end{itemize}
 \end{frame}
 
+\subsection{Atego stuff}
 \begin{frame}
 \frametitle{Atego\textsuperscript{\textregistered} Artisan Studio Integration}
 \begin{itemize}
@@ -230,3 +227,118 @@ Subsequent steps are completely independent from the UML/OCL model
 Better let the Normalisation directly access the Atego\textsuperscript{\textregistered} Model API.
 \end{block}
 \end{frame}
+
+\subsection{Exploding Tyres}
+\begin{frame}
+\frametitle{Exploding Tyres (mixed integer non linear)}
+% \def\svgwidth{\textwidth}
+% \scriptsize
+% \input{./pics/TriangleClasificator.pdf_tex}
+\includegraphics[width=\textwidth]{./pics/TyrePumpModel.pdf}
+\end{frame}
+\begin{frame}
+\frametitle{Runtime with Different Solver Time Limits}
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+height=7.5cm,
+legend style={legend columns=1,at={(0.02,0.98)},anchor=north west},
+% legend to name=myLegend,
+ylabel={time $[s]$},
+xlabel={maximum path length},
+yticklabels={{0},{$0.1$},{$1$},{$10$},{$100$},{$10^3$},{$10^4$},{$10^5$}},
+extra y ticks={3.6e12,2.592e14},
+extra y tick labels={{1h},{3d}},
+extra tick style={
+        major grid style=black,
+        tick align=outside,
+        tick style=black
+    },
+minor x tick num=1,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+ymode=log,
+xmin=5,
+xmax=75,
+]
+\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
+\addlegendentry{10min};
+\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv};
+\addlegendentry{20sec};
+\addplot[green,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv};
+\addlegendentry{5sec};
+% \addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_10s.csv};
+% \addlegendentry{10sec};
+% \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_60sec.csv};
+% \addlegendentry{60sec};
+% \addplot[solid,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=time(ns)]{../Thesis/Experiment-DATA/ExplodingTyres_2h.csv};
+% \addlegendentry{2h};
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+width=0.498\textwidth,
+height=7.5cm,
+xlabel={maximum path length},
+ylabel={number of test cases found},
+minor x tick num=1,
+minor y tick num=4,
+ymajorgrids=true,
+yminorgrids=true,
+xmajorgrids=true,
+xminorgrids=true,
+xmin=35,
+xmax=75,
+]
+\addplot[green,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_5sec.csv};
+%\addlegendentry{5sec};
+% \addplot[dash pattern=on 7pt off 3pt,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_10s.csv};
+%\addlegendentry{10sec};
+\addplot[red,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_20sec.csv};
+%\addlegendentry{20sec};
+% \addplot[loosely dashed,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{Experiment-DATA/ExplodingTyres_60sec.csv};
+%\addlegendentry{60sec};
+\addplot[blue,no markers] table[x=PATHSEARCH_MAX_PATHLENGTH,y=PathsFound]{../Thesis/Experiment-DATA/ExplodingTyres_10min.csv};
+%\addlegendentry{10min};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\frametitle{Mutation Testing the Example Model}
+\begin{table}[htb]%
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}*4r}
+maximum path length     & 20      & 30      & 40        & 50\\%
+\hline%
+number of test cases    & 4       & 18      & 47        & 97 \\%
+killed mutants          & 553     & 569     & 570       & 573 \\%
+alive mutants           & 20      & 4       &  3        & 0 \\%
+\hline%
+mutation score          & 96.5\%  & 99.3\%  & 99.5\%    & 100\% \\%
+\hline%
+\end{tabular*}
+\label{tab:MutationTesting}%
+\end{table}
+\end{frame}
+
+\subsection{AMPL Data}
+\begin{frame}[fragile]
+\frametitle{AMPL Modelling}
+	\begin{block}{Specify Path}
+		\begin{lstlisting}[basicstyle=\ttfamily\small,language=ampl]
+param l := 1;
+set d2f:= 0; # guard
+set f:= 1; # post condition
+		\end{lstlisting}
+	\end{block}
+	\begin{block}{Result}
+		\begin{lstlisting}[basicstyle=\ttfamily\small]
+Solution determined by presolve.
+a = 5
+return = 0
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+\backupend
+

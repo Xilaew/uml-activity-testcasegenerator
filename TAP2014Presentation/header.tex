@@ -18,6 +18,15 @@
 \newcommand{\UMLReference}[1]{\textsf\textit{#1}}
 \newcommand{\ATGType}[1]{\textsf{#1}}
 
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+
 \lstnewenvironment{java}
     {\lstset{language=java,basicstyle=\scriptsize,frame=}}
     {}
@@ -26,9 +35,9 @@
     {\lstset{language=java,basicstyle=\scriptsize}}
     {}
 
-\AtBeginSection[] % Do nothing for \section*
-{
-\begin{frame} 
-\frametitle{Outline} \tableofcontents[currentsection]
-\end{frame}
-}
+% \AtBeginSection[] % Do nothing for \section*
+% {
+% \begin{frame} 
+% \frametitle{Outline} \tableofcontents[currentsection]
+% \end{frame}
+% }

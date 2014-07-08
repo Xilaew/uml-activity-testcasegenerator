@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   shape-rendering="auto"
+   width="463.54999"
+   text-rendering="auto"
+   contentScriptType="text/ecmascript"
+   color-interpolation="auto"
+   color-rendering="auto"
+   preserveAspectRatio="xMidYMid meet"
+   font-size="12"
+   viewBox="0 0 463.54999 243.55"
+   image-rendering="auto"
+   stroke-miterlimit="10"
+   zoomAndPan="magnify"
+   version="1.0"
+   contentStyleType="text/css"
+   font-style="normal"
+   height="243.55"
+   font-weight="normal"
+   id="svg6069"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="WorkflowSimplified2.svg"
+   style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
+  <rect
+     x="150"
+     y="320"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6275"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="270"
+     y="320"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6281"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="100"
+     y="245"
+     clip-path="none"
+     width="130"
+     height="60"
+     id="rect6309"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="265"
+     y="245"
+     clip-path="none"
+     width="130"
+     height="60"
+     id="rect6319"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="421"
+     y="160"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6335"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="421"
+     y="199"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6341"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="486"
+     y="215"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6347"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="430"
+     y="335"
+     clip-path="none"
+     width="130"
+     height="60"
+     id="rect6365"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <polygon
+     clip-path="none"
+     points="395,158 395,215 268,215 268,218 398,218 398,158 395,158 "
+     id="polygon6301"
+     style="stroke:none;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="265"
+     y="155"
+     clip-path="none"
+     width="130"
+     height="60"
+     id="rect6299"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="436"
+     y="155"
+     clip-path="none"
+     width="125"
+     rx="7.5"
+     ry="7.5"
+     height="60"
+     id="rect6331"
+     style="fill:url(#linearGradient7387);stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="0.54999995"
+     y="180.55"
+     clip-path="none"
+     width="200"
+     rx="7.5"
+     ry="7.5"
+     height="60"
+     id="rect6271"
+     style="fill:url(#linearGradient7355);fill-opacity:1;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI" />
+  <rect
+     x="0.55000001"
+     y="0.55000001"
+     clip-path="none"
+     width="125"
+     rx="7.5"
+     ry="7.5"
+     height="60"
+     id="rect6241"
+     style="fill:url(#linearGradient7371);fill-opacity:1;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI" />
+  <metadata
+     id="metadata6465">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
+     id="namedview6463"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.7181694"
+     inkscape:cx="229.58771"
+     inkscape:cy="208.13763"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6069" />
+  <!--Generated by the Batik Graphics2D SVG Generator-->
+  <defs
+     id="genericDefs">
+    <linearGradient
+       id="linearGradient7359">
+      <stop
+         id="stop7361"
+         offset="0"
+         style="stop-color:#ffc7c8;stop-opacity:1;" />
+      <stop
+         id="stop7363"
+         offset="1"
+         style="stop-color:#ffffc3;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient7349">
+      <stop
+         style="stop-color:#ffc7c8;stop-opacity:1;"
+         offset="0"
+         id="stop7351" />
+      <stop
+         style="stop-color:#ffffc3;stop-opacity:1;"
+         offset="1"
+         id="stop7353" />
+    </linearGradient>
+    <defs
+       id="defs1">
+      <linearGradient
+         spreadMethod="pad"
+         xlink:show="other"
+         id="linearGradient1"
+         xlink:actuate="onLoad"
+         xlink:type="simple"
+         y2="759"
+         gradientUnits="userSpaceOnUse"
+         y1="17"
+         x2="10"
+         x1="10">
+        <stop
+           id="stop6076"
+           offset="0%"
+           stop-color="white"
+           stop-opacity="1" />
+        <stop
+           id="stop6078"
+           offset="100%"
+           stop-color="rgb(195,209,213)"
+           stop-opacity="1" />
+      </linearGradient>
+      <linearGradient
+         spreadMethod="pad"
+         xlink:show="other"
+         id="linearGradient2"
+         xlink:actuate="onLoad"
+         xlink:type="simple"
+         y2="208"
+         gradientUnits="userSpaceOnUse"
+         y1="162"
+         x2="100"
+         x1="100">
+        <stop
+           id="stop6081"
+           offset="0%"
+           stop-color="white"
+           stop-opacity="1" />
+        <stop
+           id="stop6083"
+           offset="100%"
+           stop-color="rgb(195,209,213)"
+           stop-opacity="1" />
+      </linearGradient>
+      <linearGradient
+         spreadMethod="pad"
+         xlink:show="other"
+         id="linearGradient3"
+         xlink:actuate="onLoad"
+         xlink:type="simple"
+         y2="388"
+         gradientUnits="userSpaceOnUse"
+         y1="342"
+         x2="100"
+         x1="100">
+        <stop
+           id="stop6086"
+           offset="0%"
+           stop-color="white"
+           stop-opacity="1" />
+        <stop
+           id="stop6088"
+           offset="100%"
+           stop-color="rgb(195,209,213)"
+           stop-opacity="1" />
+      </linearGradient>
+      <linearGradient
+         spreadMethod="pad"
+         xlink:show="other"
+         id="linearGradient4"
+         xlink:actuate="onLoad"
+         xlink:type="simple"
+         y2="208"
+         gradientUnits="userSpaceOnUse"
+         y1="162"
+         x2="436"
+         x1="436">
+        <stop
+           id="stop6091"
+           offset="0%"
+           stop-color="white"
+           stop-opacity="1" />
+        <stop
+           id="stop6093"
+           offset="100%"
+           stop-color="rgb(195,209,213)"
+           stop-opacity="1" />
+      </linearGradient>
+      <clipPath
+         id="clipPath1"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6096"
+           d="M 9,9 868,9 868,768 9,768 9,9 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath2"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6099"
+           d="m 19,14 104,0 0,17 -104,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath6"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6111"
+           d="m 44,219 54,0 0,17 -54,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath8"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6117"
+           d="m 194,108 64,0 0,17 -64,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath12"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6129"
+           d="m 34,319 54,0 0,17 -54,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath14"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6135"
+           d="m 389,489 64,0 0,17 -64,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath27"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6174"
+           d="m 455,89 54,0 0,17 -54,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath29"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6180"
+           d="m 610,189 54,0 0,17 -54,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+      <clipPath
+         id="clipPath31"
+         clipPathUnits="userSpaceOnUse">
+        <path
+           id="path6186"
+           d="m 355,119 64,0 0,17 -64,0 0,-17 z"
+           inkscape:connector-curvature="0" />
+      </clipPath>
+    </defs>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient6685"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       x1="100"
+       y1="342"
+       x2="100"
+       y2="388" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="linearGradient6687"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       x1="436"
+       y1="162"
+       x2="436"
+       y2="208" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient6800"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       x1="10"
+       y1="17"
+       x2="10"
+       y2="759" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient6802"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       x1="100"
+       y1="162"
+       x2="100"
+       y2="208" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7349"
+       id="linearGradient7355"
+       x1="93.850792"
+       y1="187.67987"
+       x2="93.971329"
+       y2="232.95001"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7359"
+       id="linearGradient7371"
+       x1="58.600365"
+       y1="8.5595131"
+       x2="58.708782"
+       y2="51.601871"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="linearGradient7373"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       x1="384.38452"
+       y1="9.7915258"
+       x2="386.03073"
+       y2="50.946186"
+       gradientTransform="translate(99.45,154.45)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="linearGradient7387"
+       x1="502.67273"
+       y1="162.73793"
+       x2="502.91199"
+       y2="206.09804"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <text
+     x="62.335644"
+     y="27.563671"
+     clip-path="none"
+     xml:space="preserve"
+     id="text6237"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%"><tspan
+       sodipodi:role="line"
+       id="tspan6829"
+       x="62.335644"
+       y="27.563671">Depth First</tspan><tspan
+       sodipodi:role="line"
+       id="tspan6831"
+       x="62.335644"
+       y="49.563671">Search</tspan></text>
+  <rect
+     x="150"
+     y="215"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6245"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <rect
+     x="225"
+     y="175"
+     clip-path="none"
+     width="15"
+     height="15"
+     id="rect6251"
+     style="fill:#c3d1d5;stroke-width:1.10000002000000000;stroke-linecap:butt;font-family:Segoe UI;stroke:#000000;stroke-opacity:1;fill-opacity:1"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="233"
+     x2="239"
+     y1="179"
+     y2="183"
+     id="line6253"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="239"
+     x2="227"
+     y1="183"
+     y2="183"
+     id="line6255"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="227"
+     x2="239"
+     y1="183"
+     y2="183"
+     id="line6257"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="239"
+     x2="233"
+     y1="183"
+     y2="187"
+     id="line6259"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <text
+     xml:space="preserve"
+     x="99.900101"
+     y="207.25215"
+     clip-path="none"
+     id="text6269"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%"><tspan
+       sodipodi:role="line"
+       id="tspan6812"
+       x="102.90791"
+       y="207.25215">Source-to-source </tspan><tspan
+       sodipodi:role="line"
+       id="tspan6814"
+       x="99.900101"
+       y="229.25215">Translation</tspan></text>
+  <line
+     clip-path="none"
+     x1="274"
+     x2="278"
+     y1="328"
+     y2="322"
+     id="line6283"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="278"
+     x2="278"
+     y1="322"
+     y2="334"
+     id="line6285"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="278"
+     x2="278"
+     y1="334"
+     y2="322"
+     id="line6287"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="278"
+     x2="282"
+     y1="322"
+     y2="328"
+     id="line6289"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <text
+     xml:space="preserve"
+     x="230.17403"
+     y="27.563671"
+     clip-path="none"
+     id="text6297"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%"><tspan
+       sodipodi:role="line"
+       id="tspan6825"
+       x="230.17403"
+       y="27.563671">Control Flow</tspan><tspan
+       sodipodi:role="line"
+       id="tspan6827"
+       x="230.17403"
+       y="49.563671">Path</tspan></text>
+  <text
+     xml:space="preserve"
+     x="64.943008"
+     y="126.61143"
+     clip-path="none"
+     id="text6307"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%">UML Activity</text>
+  <polygon
+     clip-path="none"
+     points="230,248 230,305 103,305 103,308 233,308 233,248 230,248 "
+     id="polygon6311"
+     style="stroke:none;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <text
+     xml:space="preserve"
+     x="231.32344"
+     y="128.56367"
+     clip-path="none"
+     id="text6317"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%">AMPL Model</text>
+  <polygon
+     clip-path="none"
+     points="395,248 395,305 268,305 268,308 398,308 398,248 395,248 "
+     id="polygon6321"
+     style="stroke:none;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <text
+     xml:space="preserve"
+     x="398.57196"
+     y="25.10371"
+     clip-path="none"
+     id="text6329"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%"><tspan
+       sodipodi:role="line"
+       id="tspan7345"
+       x="398.57196"
+       y="25.10371">Solve AMPL</tspan><tspan
+       sodipodi:role="line"
+       id="tspan7347"
+       x="398.57196"
+       y="47.10371">Program</tspan></text>
+  <line
+     clip-path="none"
+     x1="490"
+     x2="494"
+     y1="223"
+     y2="229"
+     id="line6349"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="494"
+     x2="494"
+     y1="229"
+     y2="217"
+     id="line6351"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="494"
+     x2="494"
+     y1="217"
+     y2="229"
+     id="line6353"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     x1="494"
+     x2="498"
+     y1="229"
+     y2="223"
+     id="line6355"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <text
+     xml:space="preserve"
+     x="396.10858"
+     y="218.12325"
+     clip-path="none"
+     id="text6363"
+     style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;stroke:none;font-family:Segoe UI;-inkscape-font-specification:Segoe UI"
+     sodipodi:linespacing="100%">Test Data</text>
+  <polygon
+     clip-path="none"
+     points="560,338 560,395 433,395 433,398 563,398 563,338 560,338 "
+     id="polygon6367"
+     style="stroke:none;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="158"
+     y1="245"
+     y2="231"
+     id="line6371"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="162"
+     x2="158"
+     y1="241"
+     y2="231"
+     id="line6373"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="154"
+     y1="231"
+     y2="241"
+     id="line6375"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="493"
+     x2="493"
+     y1="231"
+     y2="335"
+     id="line6377"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="489"
+     x2="493"
+     y1="325"
+     y2="335"
+     id="line6379"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="493"
+     x2="497"
+     y1="335"
+     y2="325"
+     id="line6381"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="241"
+     x2="265"
+     y1="182"
+     y2="182"
+     id="line6383"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="255"
+     x2="265"
+     y1="186"
+     y2="182"
+     id="line6385"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="265"
+     x2="255"
+     y1="182"
+     y2="178"
+     id="line6387"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="396"
+     x2="410"
+     y1="275"
+     y2="275"
+     id="line6389"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="410"
+     x2="410"
+     y1="275"
+     y2="207"
+     id="line6391"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="410"
+     x2="421"
+     y1="207"
+     y2="207"
+     id="line6393"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="411"
+     x2="421"
+     y1="211"
+     y2="207"
+     id="line6395"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="421"
+     x2="411"
+     y1="207"
+     y2="203"
+     id="line6397"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="158"
+     y1="306"
+     y2="320"
+     id="line6399"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="154"
+     x2="158"
+     y1="310"
+     y2="320"
+     id="line6401"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="162"
+     y1="320"
+     y2="310"
+     id="line6403"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="278"
+     x2="278"
+     y1="320"
+     y2="306"
+     id="line6405"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="282"
+     x2="278"
+     y1="316"
+     y2="306"
+     id="line6407"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="278"
+     x2="274"
+     y1="306"
+     y2="316"
+     id="line6409"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="396"
+     x2="421"
+     y1="168"
+     y2="168"
+     id="line6411"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="411"
+     x2="421"
+     y1="172"
+     y2="168"
+     id="line6413"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="421"
+     x2="411"
+     y1="168"
+     y2="164"
+     id="line6415"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="158"
+     y1="306"
+     y2="320"
+     id="line6417"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="154"
+     x2="158"
+     y1="310"
+     y2="320"
+     id="line6419"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="162"
+     y1="320"
+     y2="310"
+     id="line6421"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="158"
+     y1="245"
+     y2="231"
+     id="line6423"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="162"
+     x2="158"
+     y1="241"
+     y2="231"
+     id="line6425"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="158"
+     x2="154"
+     y1="231"
+     y2="241"
+     id="line6427"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="278"
+     x2="278"
+     y1="320"
+     y2="306"
+     id="line6429"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="282"
+     x2="278"
+     y1="316"
+     y2="306"
+     id="line6431"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="278"
+     x2="274"
+     y1="306"
+     y2="316"
+     id="line6433"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="241"
+     x2="265"
+     y1="182"
+     y2="182"
+     id="line6435"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="255"
+     x2="265"
+     y1="186"
+     y2="182"
+     id="line6437"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="265"
+     x2="255"
+     y1="182"
+     y2="178"
+     id="line6439"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="396"
+     x2="410"
+     y1="275"
+     y2="275"
+     id="line6441"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="410"
+     x2="410"
+     y1="275"
+     y2="207"
+     id="line6443"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="410"
+     x2="421"
+     y1="207"
+     y2="207"
+     id="line6445"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="411"
+     x2="421"
+     y1="211"
+     y2="207"
+     id="line6447"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="421"
+     x2="411"
+     y1="207"
+     y2="203"
+     id="line6449"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="396"
+     x2="421"
+     y1="168"
+     y2="168"
+     id="line6451"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="411"
+     x2="421"
+     y1="172"
+     y2="168"
+     id="line6453"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="421"
+     x2="411"
+     y1="168"
+     y2="164"
+     id="line6455"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="493"
+     x2="493"
+     y1="231"
+     y2="335"
+     id="line6457"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="489"
+     x2="493"
+     y1="325"
+     y2="335"
+     id="line6459"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+  <line
+     clip-path="none"
+     text-rendering="optimizeLegibility"
+     x1="493"
+     x2="497"
+     y1="335"
+     y2="325"
+     id="line6461"
+     style="fill:none;stroke-width:1.10000002;stroke-linecap:butt;font-family:Segoe UI"
+     transform="translate(-99.45,-154.45)" />
+</svg>
